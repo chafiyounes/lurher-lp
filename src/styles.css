@@ -238,6 +238,166 @@
 }
 .btn-primary .material-symbols-outlined { font-size: 20px; }
 
+/* ---------- Express Checkout Form ---------- */
+.checkout-section-wrap {
+  padding: 32px 20px 40px;
+  background: linear-gradient(180deg, var(--bg-white) 0%, var(--bg-warm) 100%);
+}
+.checkout-card {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 28px 24px 24px;
+  box-shadow: 0 8px 40px rgba(98, 4, 165, .10), 0 1px 3px rgba(0,0,0,.06);
+  border: 1px solid rgba(98, 4, 165, .08);
+  position: relative;
+  overflow: hidden;
+}
+.checkout-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--purple), var(--gold), var(--purple));
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.checkout-card__header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+.checkout-card__limited {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--gold);
+  margin-bottom: 4px;
+  animation: pulse 2s ease-in-out infinite;
+}
+.checkout-card__shipping {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--fg);
+}
+
+/* Price */
+.product-price-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.product-price {
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--purple);
+}
+.product-price .currency {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--fg-muted);
+}
+
+/* Form fields */
+.checkout-heading {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--fg);
+  text-align: center;
+}
+.checkout-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.form-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fg-muted);
+}
+.form-group input[type="text"],
+.form-group input[type="tel"] {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-family: var(--font);
+  color: var(--fg);
+  background: #fafafa;
+  transition: var(--transition);
+  outline: none;
+}
+.form-group input:focus {
+  border-color: var(--purple);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(98, 4, 165, .1);
+}
+.form-group input::placeholder {
+  color: #bbb;
+}
+
+/* Submit button */
+.checkout-submit-btn {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 16px;
+  background: linear-gradient(135deg, var(--purple), var(--purple-light));
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: var(--font);
+  box-shadow: 0 4px 20px var(--purple-glow);
+  letter-spacing: .03em;
+}
+.checkout-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px var(--purple-glow);
+}
+.checkout-submit-btn:active {
+  transform: translateY(0);
+}
+
+/* Checkout trust strip */
+.checkout-card__trust {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0,0,0,.06);
+}
+.checkout-card__trust span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--fg-muted);
+}
+.checkout-card__trust .material-symbols-outlined {
+  font-size: 16px;
+  color: var(--purple);
+}
+
+/* Hide YouCan data-pb debug wrappers */
+[data-pb-debug] { all: unset; display: contents; }
+.page-builder-express-checkout-wrapper { display: contents; }
+
 /* ---------- Trust strip ---------- */
 .trust {
   background: var(--bg-warm);

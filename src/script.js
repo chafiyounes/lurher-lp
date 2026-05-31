@@ -207,4 +207,55 @@
   document.addEventListener("touchmove", moveDrag, { passive: false });
   document.addEventListener("touchend", stopDrag);
   document.addEventListener("touchcancel", stopDrag);
+
+  /* ══════════════════════════════════════════
+     STICKY BAR: sync price from checkout form
+     + scroll to form on click
+     ══════════════════════════════════════════ */
+  function syncStickyPrice() {
+    var priceEl = document.querySelector(".product-price");
+    var stickyPriceEl = document.getElementById("stickyPrice");
+    if (priceEl && stickyPriceEl) {
+      var val = priceEl.querySelector(".value");
+      var cur = priceEl.querySelector(".currency");
+      if (val && cur) {
+        stickyPriceEl.textContent = val.textContent.trim() + cur.textContent.trim();
+      }
+    }
+  }
+
+  // Sync price on load and watch for dynamic changes
+  syncStickyPrice();
+  setTimeout(syncStickyPrice, 1000);
+
+  // Observe price changes (YouCan may update price dynamically)
+  var priceTarget = document.querySelector(".product-price .value");
+  if (priceTarget && window.MutationObserver) {
+    new MutationObserver(syncStickyPrice).observe(priceTarget, {
+      childList: true, characterData: true, subtree: true
+    });
+  }
+
+  // Sticky button scrolls to checkout form
+  document.addEventListener("click", function (e) {
+    if (!e.target || !e.target.closest) return;
+    if (e.target.closest("#stickyBtn")) {
+      var form = document.getElementById("checkout-section-wrap");
+      if (form) {
+        form.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  });
+
+  // Final CTA also scrolls to form
+  document.addEventListener("click", function (e) {
+    if (!e.target || !e.target.closest) return;
+    if (e.target.closest(".btn-white")) {
+      var form = document.getElementById("checkout-section-wrap");
+      if (form) {
+        form.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  });
+
 })();

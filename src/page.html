@@ -52,12 +52,82 @@
       <div class="price-sub" data-i18n="price_sub">or 4 payments of $9.75 &middot; <strong>$2.79 per application</strong></div>
     </div>
 
-    <!-- ▼ REPLACE with YouCan Express Checkout block ▼ -->
-    <button class="btn-primary" type="button">
+    <!-- CTA scrolls down to checkout form -->
+    <button class="btn-primary" type="button" onclick="document.getElementById('express-checkout-section').scrollIntoView({behavior:'smooth',block:'start'})">
       <span data-i18n="hero_cta">Add to Cart</span>
       <span class="material-symbols-outlined">arrow_forward</span>
     </button>
-    <!-- ▲ -->
+  </section>
+
+  <!-- ③½ Express Checkout Form -->
+  <section class="checkout-section-wrap" id="checkout-section-wrap">
+    <div class="checkout-card">
+      <div class="checkout-card__header">
+        <p class="checkout-card__limited">الكمية محدودة</p>
+        <p class="checkout-card__shipping">شحن مجاني للسعودية</p>
+      </div>
+
+      <div class="product-price-container">
+        <span class="product-price">
+          <span class="value">189</span>
+          <span class="currency">&nbsp;درهم</span>
+        </span>
+      </div>
+
+      <div id="express-checkout-section" class="product-section checkout-section"
+           data-pb-section="PBS-a3qxpb1753978199917"
+           data-pb-field="product-id"
+           data-pb-type="single-product"
+           data-pb-value="[object Object]">
+        <div class="checkout">
+          <div class="main">
+            <form method="post" id="express-checkout-form">
+              <input type="hidden" name="id" value="f8449957-bd35-443f-af78-e8a43cc43605">
+              <input type="hidden" name="quantity" value="1">
+              <input type="text" name="extra_payload" style="display: none;">
+
+              <div class="checkout-form">
+                <div class="checkout-groups">
+                  <h2 class="checkout-heading">معلومات الزبون</h2>
+
+                  <div class="form-group is-required">
+                    <label class="form-label">الإسم:</label>
+                    <input name="first_name" placeholder="الإسم :" type="text">
+                  </div>
+
+                  <div class="form-group is-required">
+                    <label class="form-label">رقم الهاتف:</label>
+                    <input inputmode="tel" name="phone" placeholder="رقم الهاتف:" type="text">
+                  </div>
+
+                  <div class="form-group is-required">
+                    <label class="form-label">City</label>
+                    <input name="extra_fields[custom_field_cGzlrqWxXctNnheN]" placeholder="المدينة:" type="text">
+                  </div>
+
+                  <div class="form-group" style="display:none;">
+                    <input type="hidden" name="extra_fields[custom_field_dvwbCriA0IY849RF]" value="facebook">
+                  </div>
+                  <div class="form-group" style="display:none;">
+                    <input type="hidden" name="extra_fields[custom_field_nfRXtUfus8GGt1ZD]" value="lureher-sept|120232973246900789|120232973246890789">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" form="express-checkout-form" class="checkout-submit-btn">
+        اطلب الان
+      </button>
+
+      <div class="checkout-card__trust">
+        <span><span class="material-symbols-outlined">lock</span> دفع آمن</span>
+        <span><span class="material-symbols-outlined">local_shipping</span> شحن سريع</span>
+        <span><span class="material-symbols-outlined">verified_user</span> ضمان</span>
+      </div>
+    </div>
   </section>
 
   <!-- ④ Trust Strip -->
@@ -270,7 +340,7 @@
     <p class="copy" data-i18n="foot_copy">&copy; 2024 Hismile. All rights reserved.</p>
   </footer>
 
-  <!-- Sticky Bottom CTA -->
+  <!-- Sticky Bottom CTA — price pulled from checkout form via JS -->
   <div class="sticky-cta">
     <div class="sticky-cta__inner">
       <div class="sticky-cta__left">
@@ -279,12 +349,11 @@
                alt="V34" class="fr-fil fr-dib">
         </div>
         <div>
-          <div class="sticky-cta__name" data-i18n="sticky_name">V34 Strips</div>
-          <div class="sticky-cta__price" data-i18n="sticky_price">$39.00 &middot; 14 uses</div>
+          <div class="sticky-cta__name">V34 Strips</div>
+          <div class="sticky-cta__price" id="stickyPrice">189 درهم</div>
         </div>
       </div>
-      <!-- ▼ REPLACE with YouCan Express Checkout block ▼ -->
-      <button class="sticky-cta__btn" data-i18n="sticky_cta" type="button">Add to Cart</button>
+      <button class="sticky-cta__btn" id="stickyBtn" type="button">اطلب الان</button>
     </div>
   </div>
 
