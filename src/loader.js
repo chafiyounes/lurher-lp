@@ -41,6 +41,7 @@
         document.body.appendChild(target);
       }
       target.innerHTML = html;
+      document.body.classList.add("loader-active");
 
       // ── 3. Inject JS (after HTML is in the DOM) ──
       fetch(FILES.js)

@@ -258,4 +258,171 @@
     }
   });
 
+  // ══════════════════════════════════════════
+  // CUSTOM EXPRESS CHECKOUT SUBMISSION (AJAX)
+  // ══════════════════════════════════════════
+  document.addEventListener("DOMContentLoaded", function () {
+    var form = document.getElementById("express-checkout-form");
+    var submitBtn = document.querySelector(".checkout-submit-btn");
+    if (!form || !submitBtn) return;
+
+    function showErrors(fieldErrors) {
+      for (var fieldKey in fieldErrors) {
+        if (Object.prototype.hasOwnProperty.call(fieldErrors, fieldKey)) {
+          var messages = fieldErrors[fieldKey];
+          var inputName = fieldKey;
+          
+          // Map extra_fields.custom_field_... to extra_fields[custom_field_...]
+          if (fieldKey.indexOf("extra_fields.") === 0) {
+            inputName = fieldKey.replace("extra_fields.", "extra_fields[").replace(/$/, "]");
+          }
+
+          var input = form.querySelector('[name="' + inputName + '"]');
+          if (input) {
+            var parent = input.closest(".form-group");
+            if (parent) {
+              parent.classList.add("has-error");
+              var errEl = parent.querySelector(".error-msg");
+              if (!errEl) {
+                errEl = document.createElement("div");
+                errEl.className = "error-msg";
+                parent.appendChild(errEl);
+              }
+              errEl.textContent = messages[0];
+            }
+          }
+        }
+      }
+    }
+
+    function clearErrors() {
+      var errorGroups = form.querySelectorAll(".form-group.has-error");
+      for (var i = 0; i < errorGroups.length; i++) {
+        errorGroups[i].classList.remove("has-error");
+        var errEl = errorGroups[i].querySelector(".error-msg");
+        if (errEl) errEl.remove();
+      }
+    }
+
+    // Send partial form entries to YouCan (Abandoned Cart tracking)
+    var lastCartData = "";
+    function sendAbandonedCartInfo() {
+      var firstNameVal = form.querySelector('[name="first_name"]')?.value || "";
+      var phoneVal = form.querySelector('[name="phone"]')?.value || "";
+      var cityVal = form.querySelector('[name="extra_fields[custom_field_cGzlrqWxXctNnheN]"]')?.value || "";
+
+      // Only sync if all required fields are filled out
+      if (firstNameVal.trim() !== "" && phoneVal.trim() !== "" && cityVal.trim() !== "") {
+        var currentDataString = firstNameVal + "|" + phoneVal + "|" + cityVal;
+        
+        // Skip duplicate requests if fields haven't changed
+        if (currentDataString === lastCartData) return;
+        lastCartData = currentDataString;
+
+        var formData = new FormData(form);
+        var url = typeof route === "function" ? route("store-front::api.checkout.information.store") : "/checkout/information/store";
+        var csrfToken = document.querySelector('meta[name="csrf-token"]');
+
+        fetch(url, {
+          method: "POST",
+          body: formData,
+          headers: {
+            "X-Requested-With": "XMLHttpRequest",
+            "X-CSRF-TOKEN": csrfToken ? csrfToken.getAttribute("content") : ""
+          }
+        })
+        .then(function (res) {
+          if (res.ok) {
+            console.log("[Checkout] Abandoned cart updated.");
+          }
+        })
+        .catch(function (err) {
+          console.error("[Checkout] Abandoned cart update failed:", err);
+        });
+      }
+    }
+
+    var debounceTimer = null;
+    form.addEventListener("input", function () {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(sendAbandonedCartInfo, 1000);
+    });
+
+    // Clear error on input change
+    form.addEventListener("input", function (e) {
+      if (e.target && e.target.closest) {
+        var group = e.target.closest(".form-group");
+        if (group && group.classList.contains("has-error")) {
+          group.classList.remove("has-error");
+          var errEl = group.querySelector(".error-msg");
+          if (errEl) errEl.remove();
+        }
+      }
+    });
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Prevent double submits
+      if (submitBtn.disabled) return;
+
+      submitBtn.disabled = true;
+      submitBtn.classList.add("loading");
+
+      // Reset errors
+      clearErrors();
+
+      var formData = new FormData(form);
+      var url = typeof route === "function" ? route("store-front::api.checkout.express") : "/checkout/express";
+      var csrfToken = document.querySelector('meta[name="csrf-token"]');
+
+      fetch(url, {
+        method: "POST",
+        body: formData,
+        headers: {
+          "X-Requested-With": "XMLHttpRequest",
+          "X-CSRF-TOKEN": csrfToken ? csrfToken.getAttribute("content") : ""
+        }
+      })
+      .then(function (res) {
+        return res.json().then(function (data) {
+          if (!res.ok) {
+            return Promise.reject({ status: res.status, data: data });
+          }
+          return data;
+        });
+      })
+      .then(function (data) {
+        // Success redirect
+        if (data.has_upsell && data.id) {
+          window.location = typeof route === "function"
+            ? route("store-front::orders.upsells.show", data.id)
+            : "/orders/upsell/" + data.id;
+        } else {
+          window.location = typeof route === "function"
+            ? route("store-front::checkout.thankyou")
+            : "/checkout/thankyou";
+        }
+      })
+      .catch(function (err) {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove("loading");
+
+        var flashMsg = "حدث خطأ غير متوقع. الرجاء المحاولة لاحقاً.";
+        if (err && err.status === 422 && err.data && err.data.meta && err.data.meta.fields) {
+          showErrors(err.data.meta.fields);
+          flashMsg = "الرجاء التحقق من الحقول المطلوبة.";
+        } else if (err && err.data && err.data.detail) {
+          flashMsg = err.data.detail;
+        }
+
+        if (typeof window.flash === "function") {
+          window.flash(flashMsg, "error");
+        } else {
+          alert(flashMsg);
+        }
+      });
+    });
+  });
+
 })();
