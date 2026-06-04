@@ -1,12 +1,20 @@
 /* ============================================================
-   YOUCAN LOADER — Fetches HTML, CSS, JS from GitHub
+   YOUCAN LOADER — Fetches HTML, CSS, JS from GitHub (Parallelized)
    
-   Paste ONLY this script into YouCan's Footer code box.
+   Paste this script into YouCan's Header or Footer code box.
    It pulls the latest files from your GitHub repo on every
    page load. Edit via Antigravity → push to GitHub → done.
    ============================================================ */
 (function () {
   "use strict";
+
+  // ── 0. Prevent Flicker Instantly ──
+  if (!document.getElementById("v34-flicker-prevent")) {
+    var style = document.createElement("style");
+    style.id = "v34-flicker-prevent";
+    style.textContent = "#app { display: none !important; } #v34-root { display: none; } .loader-active #v34-root { display: block !important; }";
+    document.head.appendChild(style);
+  }
 
   var REPO = "chafiyounes/mapper-youcant";
   var BRANCH = "main";
@@ -18,41 +26,59 @@
     js:   BASE + "src/script.js"
   };
 
-  // ── 1. Inject CSS ──
-  fetch(FILES.css)
-    .then(function (r) { return r.text(); })
-    .then(function (css) {
-      var style = document.createElement("style");
-      style.id = "v34-styles";
-      style.textContent = css;
-      document.head.appendChild(style);
-    })
-    .catch(function (e) { console.error("[V34 Loader] CSS failed:", e); });
+  // Helper to fetch text with cache busting in dev mode
+  var cacheBuster = "?t=" + new Date().getTime();
 
-  // ── 2. Inject HTML ──
-  fetch(FILES.html)
-    .then(function (r) { return r.text(); })
-    .then(function (html) {
-      // Find or create the container
-      var target = document.getElementById("v34-root");
-      if (!target) {
-        target = document.createElement("div");
-        target.id = "v34-root";
-        document.body.appendChild(target);
-      }
-      target.innerHTML = html;
-      document.body.classList.add("loader-active");
+  console.log("[V34 Loader] Starting parallel fetch...");
 
-      // ── 3. Inject JS (after HTML is in the DOM) ──
-      fetch(FILES.js)
-        .then(function (r) { return r.text(); })
-        .then(function (js) {
-          var script = document.createElement("script");
-          script.id = "v34-script";
-          script.textContent = js;
-          document.body.appendChild(script);
-        })
-        .catch(function (e) { console.error("[V34 Loader] JS failed:", e); });
-    })
-    .catch(function (e) { console.error("[V34 Loader] HTML failed:", e); });
+  // Fetch all resources in parallel
+  Promise.all([
+    fetch(FILES.css + cacheBuster).then(function (r) { if (!r.ok) throw new Error("CSS HTTP " + r.status); return r.text(); }),
+    fetch(FILES.html + cacheBuster).then(function (r) { if (!r.ok) throw new Error("HTML HTTP " + r.status); return r.text(); }),
+    fetch(FILES.js + cacheBuster).then(function (r) { if (!r.ok) throw new Error("JS HTTP " + r.status); return r.text(); })
+  ])
+  .then(function (results) {
+    var cssText = results[0];
+    var htmlText = results[1];
+    var jsText = results[2];
+
+    console.log("[V34 Loader] All resources loaded successfully.");
+
+    // ── 1. Inject CSS ──
+    var styleEl = document.getElementById("v34-styles");
+    if (!styleEl) {
+      styleEl = document.createElement("style");
+      styleEl.id = "v34-styles";
+      document.head.appendChild(styleEl);
+    }
+    styleEl.textContent = cssText;
+
+    // ── 2. Inject HTML ──
+    var target = document.getElementById("v34-root");
+    if (!target) {
+      target = document.createElement("div");
+      target.id = "v34-root";
+      document.body.appendChild(target);
+    }
+    target.innerHTML = htmlText;
+
+    // ── 3. Inject JS ──
+    var scriptEl = document.getElementById("v34-script");
+    if (scriptEl) scriptEl.remove(); // Remove old script if exists
+    
+    scriptEl = document.createElement("script");
+    scriptEl.id = "v34-script";
+    scriptEl.textContent = jsText;
+    document.body.appendChild(scriptEl);
+
+    // ── 4. Activate ──
+    document.body.classList.add("loader-active");
+    console.log("[V34 Loader] Activation completed successfully.");
+  })
+  .catch(function (err) {
+    console.error("[V34 Loader] Critical error during load:", err);
+    // Fallback: show the default app if loading fails so the store isn't broken
+    var flickerPrevent = document.getElementById("v34-flicker-prevent");
+    if (flickerPrevent) flickerPrevent.remove();
+  });
 })();

@@ -259,58 +259,63 @@
   });
 
   // ══════════════════════════════════════════
-  // CUSTOM EXPRESS CHECKOUT SUBMISSION (AJAX)
+  // CUSTOM EXPRESS CHECKOUT MAPPING & DELEGATION
   // ══════════════════════════════════════════
-  document.addEventListener("DOMContentLoaded", function () {
-    var form = document.getElementById("express-checkout-form");
+  function initCustomCheckout() {
+    var form = document.getElementById("custom-express-checkout-form");
     var submitBtn = document.querySelector(".checkout-submit-btn");
     if (!form || !submitBtn) return;
 
-    // Dynamically sync variant ID from YouCan't default hidden form
-    function syncProductVariantId() {
-      var originalForm = document.querySelector('#app #express-checkout-form');
-      if (originalForm) {
-        var correctVariantId = originalForm.querySelector('[name="id"]')?.value;
-        if (correctVariantId) {
-          var ourVariantInput = form.querySelector('[name="id"]');
-          if (ourVariantInput && ourVariantInput.value !== correctVariantId) {
-            ourVariantInput.value = correctVariantId;
-            console.log("[Checkout] Successfully synced variant ID dynamically:", correctVariantId);
+    console.log("[Checkout] Initializing custom checkout form delegation...");
+
+    // Helper to robustly set a value on Vue-bound inputs/selects/textareas
+    function setVueValue(input, value) {
+      if (!input) return;
+      var prototype = Object.getPrototypeOf(input);
+      var setter = Object.getOwnPropertyDescriptor(prototype, 'value')?.set;
+      if (!setter) {
+        var currentProto = prototype;
+        while (currentProto && !setter) {
+          var desc = Object.getOwnPropertyDescriptor(currentProto, 'value');
+          if (desc && desc.set) {
+            setter = desc.set;
+            break;
           }
+          currentProto = Object.getPrototypeOf(currentProto);
         }
       }
-    }
-    syncProductVariantId();
-
-    function showErrors(fieldErrors) {
-      for (var fieldKey in fieldErrors) {
-        if (Object.prototype.hasOwnProperty.call(fieldErrors, fieldKey)) {
-          var messages = fieldErrors[fieldKey];
-          var inputName = fieldKey;
-          
-          // Map extra_fields.custom_field_... to extra_fields[custom_field_...]
-          if (fieldKey.indexOf("extra_fields.") === 0) {
-            inputName = fieldKey.replace("extra_fields.", "extra_fields[").replace(/$/, "]");
-          }
-
-          var input = form.querySelector('[name="' + inputName + '"]');
-          if (input) {
-            var parent = input.closest(".form-group");
-            if (parent) {
-              parent.classList.add("has-error");
-              var errEl = parent.querySelector(".error-msg");
-              if (!errEl) {
-                errEl = document.createElement("div");
-                errEl.className = "error-msg";
-                parent.appendChild(errEl);
-              }
-              errEl.textContent = messages[0];
-            }
-          }
-        }
+      if (setter) {
+        setter.call(input, value);
+      } else {
+        input.value = value;
       }
+      input.dispatchEvent(new Event('input', { bubbles: true }));
+      input.dispatchEvent(new Event('change', { bubbles: true }));
     }
 
+    // Sync all custom form fields to the native hidden form
+    function syncAllInputsToNative() {
+      var nativeForm = document.querySelector('#app #express-checkout-form');
+      if (!nativeForm) {
+        console.warn("[Checkout] Native express checkout form not found in DOM.");
+        return;
+      }
+
+      var inputs = form.querySelectorAll('input, select, textarea');
+      inputs.forEach(function (ourInput) {
+        var name = ourInput.getAttribute('name');
+        if (!name || name === 'id' || name === 'quantity' || name === 'is_page_builder_express_checkout' || name === 'extra_payload') return;
+
+        var nativeInput = nativeForm.querySelector('[name="' + name + '"]');
+        if (nativeInput) {
+          setVueValue(nativeInput, ourInput.value);
+        } else {
+          console.warn("[Checkout] Native input not found for name:", name);
+        }
+      });
+    }
+
+    // Clear local error classes
     function clearErrors() {
       var errorGroups = form.querySelectorAll(".form-group.has-error");
       for (var i = 0; i < errorGroups.length; i++) {
@@ -320,51 +325,61 @@
       }
     }
 
-    // Send partial form entries to YouCan (Abandoned Cart tracking)
-    var lastCartData = "";
-    function sendAbandonedCartInfo() {
-      var firstNameVal = form.querySelector('[name="first_name"]')?.value || "";
-      var phoneVal = form.querySelector('[name="phone"]')?.value || "";
-      var cityVal = form.querySelector('[name="extra_fields[custom_field_cGzlrqWxXctNnheN]"]')?.value || "";
+    // Sync errors from the native form back to our custom form
+    function syncErrorsFromNative() {
+      var nativeForm = document.querySelector('#app #express-checkout-form');
+      if (!nativeForm) return;
 
-      // Only sync if all required fields are filled out
-      if (firstNameVal.trim() !== "" && phoneVal.trim() !== "" && cityVal.trim() !== "") {
-        var currentDataString = firstNameVal + "|" + phoneVal + "|" + cityVal;
-        
-        // Skip duplicate requests if fields haven't changed
-        if (currentDataString === lastCartData) return;
-        lastCartData = currentDataString;
-
-        var formData = new FormData(form);
-        var url = typeof route === "function" ? route("store-front::api.checkout.information.store") : "/checkout/information/store";
-        var csrfToken = document.querySelector('meta[name="csrf-token"]');
-
-        fetch(url, {
-          method: "POST",
-          body: formData,
-          headers: {
-            "X-Requested-With": "XMLHttpRequest",
-            "X-CSRF-TOKEN": csrfToken ? csrfToken.getAttribute("content") : ""
+      var nativeGroups = nativeForm.querySelectorAll('.form-group');
+      nativeGroups.forEach(function (group) {
+        var hasError = group.classList.contains('has-error') || 
+                       group.classList.contains('has-danger') || 
+                       group.querySelector('.error-message') ||
+                       group.querySelector('.error-msg');
+                       
+        if (hasError) {
+          var input = group.querySelector('input, select, textarea');
+          if (input && input.name) {
+            var ourInput = form.querySelector('[name="' + input.name + '"]');
+            if (ourInput) {
+              var ourGroup = ourInput.closest('.form-group');
+              if (ourGroup) {
+                ourGroup.classList.add('has-error');
+                var errText = group.querySelector('.error-message')?.textContent || 
+                              group.querySelector('.error-msg')?.textContent || 
+                              "هذا الحقل غير صالح";
+                
+                var ourErrEl = ourGroup.querySelector('.error-msg');
+                if (!ourErrEl) {
+                  ourErrEl = document.createElement('div');
+                  ourErrEl.className = 'error-msg';
+                  ourGroup.appendChild(ourErrEl);
+                }
+                ourErrEl.textContent = errText;
+              }
+            }
           }
-        })
-        .then(function (res) {
-          if (res.ok) {
-            console.log("[Checkout] Abandoned cart updated.");
-          }
-        })
-        .catch(function (err) {
-          console.error("[Checkout] Abandoned cart update failed:", err);
-        });
-      }
+        }
+      });
     }
 
-    var debounceTimer = null;
-    form.addEventListener("input", function () {
-      clearTimeout(debounceTimer);
-      debounceTimer = setTimeout(sendAbandonedCartInfo, 1000);
+    // Real-time synchronization as the user types
+    form.addEventListener('input', function (e) {
+      if (e.target && e.target.name) {
+        var name = e.target.name;
+        if (name === 'id' || name === 'quantity' || name === 'is_page_builder_express_checkout' || name === 'extra_payload') return;
+        
+        var nativeForm = document.querySelector('#app #express-checkout-form');
+        if (nativeForm) {
+          var nativeInput = nativeForm.querySelector('[name="' + name + '"]');
+          if (nativeInput) {
+            setVueValue(nativeInput, e.target.value);
+          }
+        }
+      }
     });
 
-    // Clear error on input change
+    // Clear error locally on input change
     form.addEventListener("input", function (e) {
       if (e.target && e.target.closest) {
         var group = e.target.closest(".form-group");
@@ -376,72 +391,92 @@
       }
     });
 
+    // Handle custom form submission
     form.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      // Prevent double submits
       if (submitBtn.disabled) return;
 
-      submitBtn.disabled = true;
-      submitBtn.classList.add("loading");
-
-      // Reset errors
       clearErrors();
 
-      // Ensure variant ID is synced dynamically from YouCan't default hidden form
-      syncProductVariantId();
-
-      var formData = new FormData(form);
-      var url = typeof route === "function" ? route("store-front::api.checkout.express") : "/checkout/express";
-      var csrfToken = document.querySelector('meta[name="csrf-token"]');
-
-      fetch(url, {
-        method: "POST",
-        body: formData,
-        headers: {
-          "X-Requested-With": "XMLHttpRequest",
-          "X-CSRF-TOKEN": csrfToken ? csrfToken.getAttribute("content") : ""
-        }
-      })
-      .then(function (res) {
-        return res.json().then(function (data) {
-          if (!res.ok) {
-            return Promise.reject({ status: res.status, data: data });
+      // Client-side validation: ensure required fields are not empty
+      var hasError = false;
+      var fieldsToValidate = ['first_name', 'phone', 'extra_fields[custom_field_cGzlrqWxXctNnheN]'];
+      fieldsToValidate.forEach(function (name) {
+        var input = form.querySelector('[name="' + name + '"]');
+        if (input && !input.value.trim()) {
+          hasError = true;
+          var parent = input.closest(".form-group");
+          if (parent) {
+            parent.classList.add("has-error");
+            var errEl = parent.querySelector(".error-msg");
+            if (!errEl) {
+              errEl = document.createElement("div");
+              errEl.className = "error-msg";
+              parent.appendChild(errEl);
+            }
+            errEl.textContent = "هذا الحقل مطلوب";
           }
-          return data;
-        });
-      })
-      .then(function (data) {
-        // Success redirect
-        if (data.has_upsell && data.id) {
-          window.location = typeof route === "function"
-            ? route("store-front::orders.upsells.show", data.id)
-            : "/orders/upsell/" + data.id;
-        } else {
-          window.location = typeof route === "function"
-            ? route("store-front::checkout.thankyou")
-            : "/checkout/thankyou";
         }
-      })
-      .catch(function (err) {
-        submitBtn.disabled = false;
-        submitBtn.classList.remove("loading");
+      });
 
-        var flashMsg = "حدث خطأ غير متوقع. الرجاء المحاولة لاحقاً.";
-        if (err && err.status === 422 && err.data && err.data.meta && err.data.meta.fields) {
-          showErrors(err.data.meta.fields);
-          flashMsg = "الرجاء التحقق من الحقول المطلوبة.";
-        } else if (err && err.data && err.data.detail) {
-          flashMsg = err.data.detail;
-        }
-
+      if (hasError) {
+        var flashMsg = "الرجاء التحقق من الحقول المطلوبة.";
         if (typeof window.flash === "function") {
           window.flash(flashMsg, "error");
         } else {
           alert(flashMsg);
         }
-      });
+        return;
+      }
+
+      // Sync all fields to native form
+      syncAllInputsToNative();
+
+      // Find native submit button
+      var nativeSubmitBtn = document.querySelector('.express-checkout-form-section .single-submit');
+      if (!nativeSubmitBtn) {
+        nativeSubmitBtn = document.querySelector('#app #express-checkout-form button[type="submit"]') ||
+                           document.querySelector('#app .checkout-submit-btn');
+      }
+
+      if (nativeSubmitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.classList.add("loading");
+        
+        console.log("[Checkout] Sync complete. Triggering native submit button click.");
+        nativeSubmitBtn.click();
+        
+        // Monitor native submit button for completion/error
+        var checkInterval = setInterval(function () {
+          if (!nativeSubmitBtn.disabled && !nativeSubmitBtn.classList.contains('loading')) {
+            console.log("[Checkout] Native submission finished (failed or completed). Re-enabling submit button.");
+            submitBtn.disabled = false;
+            submitBtn.classList.remove("loading");
+            syncErrorsFromNative();
+            clearInterval(checkInterval);
+          }
+        }, 500);
+
+        // Safety timeout to prevent permanent lock
+        setTimeout(function () {
+          clearInterval(checkInterval);
+          submitBtn.disabled = false;
+          submitBtn.classList.remove("loading");
+        }, 10000);
+
+      } else {
+        console.error("[Checkout] Native submit button not found!");
+        alert("حدث خطأ في النظام. الرجاء المحاولة لاحقاً.");
+      }
     });
-  });
+  }
+
+  // Initialize form mapping when DOM is ready
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initCustomCheckout);
+  } else {
+    initCustomCheckout();
+  }
 
 })();

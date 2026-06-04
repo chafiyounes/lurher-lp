@@ -967,8 +967,11 @@
   to { transform: rotate(360deg); }
 }
 
-/* Hide default YouCan #app layout when loader injects custom landing page */
-body.loader-active #app {
+/* Hide default YouCan #app layout */
+#app {
   display: none !important;
+}
+#v34-root {
+  display: block !important;
 }
 
