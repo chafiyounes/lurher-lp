@@ -266,6 +266,22 @@
     var submitBtn = document.querySelector(".checkout-submit-btn");
     if (!form || !submitBtn) return;
 
+    // Dynamically sync variant ID from YouCan't default hidden form
+    function syncProductVariantId() {
+      var originalForm = document.querySelector('#app #express-checkout-form');
+      if (originalForm) {
+        var correctVariantId = originalForm.querySelector('[name="id"]')?.value;
+        if (correctVariantId) {
+          var ourVariantInput = form.querySelector('[name="id"]');
+          if (ourVariantInput && ourVariantInput.value !== correctVariantId) {
+            ourVariantInput.value = correctVariantId;
+            console.log("[Checkout] Successfully synced variant ID dynamically:", correctVariantId);
+          }
+        }
+      }
+    }
+    syncProductVariantId();
+
     function showErrors(fieldErrors) {
       for (var fieldKey in fieldErrors) {
         if (Object.prototype.hasOwnProperty.call(fieldErrors, fieldKey)) {
@@ -371,6 +387,9 @@
 
       // Reset errors
       clearErrors();
+
+      // Ensure variant ID is synced dynamically from YouCan't default hidden form
+      syncProductVariantId();
 
       var formData = new FormData(form);
       var url = typeof route === "function" ? route("store-front::api.checkout.express") : "/checkout/express";
