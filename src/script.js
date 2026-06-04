@@ -15,7 +15,6 @@
   try {
     I18N = TRANSLATIONS_INLINE || {};
   } catch (e) {
-    // Fallback: inline translations object
     I18N = {
       announce: { en: "Free Shipping on Orders Over $50 | 30-Day Money Back Guarantee", ar: "شحن مجاني للطلبات فوق 50$ | ضمان استرداد الأموال خلال 30 يوماً", fr: "Livraison gratuite à partir de 50$ | Garantie de remboursement de 30 jours" },
       hero_badge: { en: "Colour Correction Technology", ar: "تقنية تصحيح اللون", fr: "Technologie de Correction de Couleur" },
@@ -24,6 +23,11 @@
       hero_reviews: { en: "4.5/5 from 172+ verified reviews", ar: "4.5/5 من 172+ مراجعة موثقة", fr: "4.5/5 à partir de 172+ avis vérifiés" },
       hero_cta: { en: "Shop Now", ar: "تسوق الآن", fr: "Acheter maintenant" },
       see_how_it_works: { en: "See how it works", ar: "اكتشف كيف يعمل", fr: "Voir comment ça marche" },
+      sold_badge: { en: "10,000,000+ V34 PRODUCTS SOLD WORLDWIDE", ar: "أكثر من 10,000,000 منتج V34 تم بيعه عالمياً", fr: "PLUS DE 10 000 000 DE PRODUITS V34 VENDUS DANS LE MONDE" },
+      tech_pap_h: { en: "PAP+ Technology", ar: "تقنية PAP+", fr: "Technologie PAP+" },
+      tech_pap_p: { en: "Our clinically proven formula whitens teeth safely without pain or sensitivity, breaking down stains gently.", ar: "تركيبتنا المثبتة سريرياً تبيض الأسنان بأمان دون ألم أو حساسية، وتكسر البقع بلطف.", fr: "Notre formule cliniquement prouvée blanchit les dents en toute sécurité, sans douleur ni sensibilité." },
+      tech_cc_h: { en: "Colour Correction", ar: "تصحيح اللون", fr: "Correction de Couleur" },
+      tech_cc_p: { en: "Just like purple shampoo cancels yellow blonde hair, V34's deep purple tones cancel out yellow stains on teeth instantly.", ar: "تماماً كما يلغي الشامبو البنفسجي اللون الأصفر في الشعر، تلغي نغمات V34 البنفسجية العميقة البقع الصفراء على الأسنان فوراً.", fr: "Tout comme le shampoing violet annule les tons jaunes des cheveux blonds, le V34 annule les taches jaunes sur les dents." },
       mech_eyebrow: { en: "How it Works", ar: "كيف يعمل", fr: "Comment ça marche" },
       step1_h: { en: "Peel & Apply", ar: "قشر وطبّق", fr: "Décollez et appliquez" },
       step1_p: { en: "Dry teeth and apply the V34 strip firmly.", ar: "جفف أسنانك وطبق شريحة V34 بإحكام.", fr: "Séchez vos dents et appliquez fermement la bande V34." },
@@ -33,6 +37,7 @@
       step3_p: { en: "Remove and rinse for an instantly whiter smile.", ar: "أزلها واشطف للحصول على ابتسامة أكثر بياضاً فوراً.", fr: "Retirez et rincez pour un sourire instantanément plus blanc." },
       demo_title: { en: "Real Results", ar: "نتائج حقيقية", fr: "Résultats Réels" },
       demo_hint: { en: "← Drag to reveal your results →", ar: "← اسحب لكشف النتيجة →", fr: "← Faites glisser pour voir les résultats →" },
+      before_after_label: { en: "BEFORE &nbsp;|&nbsp; AFTER", ar: "قبل &nbsp;|&nbsp; بعد", fr: "AVANT &nbsp;|&nbsp; APRÈS" },
       final_h2: { en: "Get Your V34 Strips.", ar: "احصل على شرائح V34.", fr: "Obtenez vos bandes V34." },
       price_main: { en: "$39 AUD", ar: "39$ AUD", fr: "39$ AUD" },
       price_sub: { en: "or 4 payments of $9.75 · $2.79 per application", ar: "أو 4 دفعات بقيمة 9.75$ · 2.79$ لكل تطبيق", fr: "ou 4 paiements de 9.75$ · 2.79$ par application" },
@@ -60,13 +65,9 @@
     };
   }
 
-  // Define supported languages and start with English
   var langs = ["en", "ar", "fr"];
-  var currentLangIndex = 0; // 0 = en, 1 = ar, 2 = fr
+  var currentLangIndex = 0;
 
-  /* ══════════════════════════════════════════
-     CLIENT-SIDE ROUTING (Multi-page)
-     ══════════════════════════════════════════ */
   function renderRoute() {
     var hash = window.location.hash || '#home';
     var viewHome = document.getElementById("view-home");
@@ -74,7 +75,6 @@
     
     if (!viewHome || !viewLanding) return;
 
-    // Reset animations
     var reveals = document.querySelectorAll('.reveal');
     reveals.forEach(function(el) { el.classList.remove('active'); });
 
@@ -84,22 +84,17 @@
       window.scrollTo(0, 0);
       document.title = "Hismile V34 - Express Checkout";
     } else {
-      // Default to home
       viewLanding.classList.remove('active');
       viewHome.classList.add('active');
       window.scrollTo(0, 0);
       document.title = "Hismile V34 - Official Site";
     }
     
-    // Trigger scroll event to animate reveals
     setTimeout(handleScroll, 50);
   }
 
   window.addEventListener("hashchange", renderRoute);
 
-  /* ══════════════════════════════════════════
-     LANGUAGE TOGGLE
-     ══════════════════════════════════════════ */
   function applyLang(index) {
     currentLangIndex = index;
     var l = langs[currentLangIndex];
@@ -125,15 +120,11 @@
   document.addEventListener("click", function (e) {
     if (!e.target || !e.target.closest) return;
     if (e.target.closest("#langToggle")) {
-      console.log("[V34] language button clicked");
       var nextIndex = (currentLangIndex + 1) % langs.length;
       applyLang(nextIndex);
     }
   });
 
-  /* ══════════════════════════════════════════
-     ANIMATIONS & SCROLL OBSERVERS
-     ══════════════════════════════════════════ */
   function handleScroll() {
     var reveals = document.querySelectorAll(".reveal:not(.active)");
     for (var i = 0; i < reveals.length; i++) {
@@ -145,21 +136,18 @@
       }
     }
 
-    // Sticky Bottom CTA Logic
     var bottomCta = document.getElementById('bottom-cta');
     var hash = window.location.hash || '#home';
     
     if (bottomCta) {
       if (hash === '#home') {
         var currentScrollY = window.scrollY;
-        // Show after scrolling 500px on home
         if (currentScrollY > 500) {
           bottomCta.classList.add('visible');
         } else {
           bottomCta.classList.remove('visible');
         }
       } else {
-        // Hide on landing (checkout) page
         bottomCta.classList.remove('visible');
       }
     }
@@ -167,9 +155,6 @@
 
   window.addEventListener("scroll", handleScroll);
 
-  /* ══════════════════════════════════════════
-     BEFORE / AFTER SLIDER
-     ══════════════════════════════════════════ */
   function initSlider() {
     var slider = document.getElementById('slider');
     var sliderAfter = document.getElementById('slider-after');
@@ -212,14 +197,10 @@
         window.addEventListener('mousemove', moveDrag);
         window.addEventListener('touchmove', moveDrag, { passive: false });
         
-        // Prevent default image drag
         slider.addEventListener("dragstart", function(e) { e.preventDefault(); });
     }
   }
 
-  /* ══════════════════════════════════════════
-     ACCORDION
-     ══════════════════════════════════════════ */
   window.toggleAccordion = function(id) {
     var content = document.getElementById(id);
     var icon = document.getElementById('icon-' + id);
@@ -234,17 +215,11 @@
     }
   };
 
-  /* ══════════════════════════════════════════
-     CUSTOM EXPRESS CHECKOUT MAPPING
-     ══════════════════════════════════════════ */
   function initCustomCheckout() {
     var form = document.getElementById("custom-express-checkout-form");
     var submitBtn = document.querySelector("#view-landing button[type='submit']");
     if (!form || !submitBtn) return;
 
-    console.log("[Checkout] Initializing custom checkout form delegation...");
-
-    // Helper to robustly set a value on Vue-bound inputs
     function setVueValue(input, value) {
       if (!input) return;
       var prototype = Object.getPrototypeOf(input);
@@ -269,7 +244,6 @@
       input.dispatchEvent(new Event('change', { bubbles: true }));
     }
 
-    // Sync to native hidden form
     function syncAllInputsToNative() {
       var nativeForm = document.querySelector('#app #express-checkout-form');
       if (!nativeForm) return;
@@ -286,7 +260,6 @@
       });
     }
 
-    // Handle input validation visuals
     form.addEventListener("input", function (e) {
       if (e.target && e.target.closest) {
         var group = e.target.closest(".form-group");
@@ -298,13 +271,11 @@
       }
     });
 
-    // Handle form submission
     form.addEventListener("submit", function (e) {
       e.preventDefault();
 
       if (submitBtn.disabled) return;
 
-      // Basic client validation
       var hasError = false;
       var fieldsToValidate = ['first_name', 'phone', 'extra_fields[custom_field_cGzlrqWxXctNnheN]'];
       fieldsToValidate.forEach(function (name) {
@@ -338,7 +309,6 @@
         submitBtn.classList.add("loading");
         nativeSubmitBtn.click();
         
-        // Wait for native button to become enabled again (or redirect)
         var checkInterval = setInterval(function () {
           if (!nativeSubmitBtn.disabled && !nativeSubmitBtn.classList.contains('loading')) {
             submitBtn.disabled = false;
@@ -359,15 +329,13 @@
     });
   }
 
-  // ── INIT ──
   function init() {
     renderRoute();
-    applyLang(currentLangIndex); // Default to EN
+    applyLang(currentLangIndex);
     handleScroll();
     initSlider();
     initCustomCheckout();
     
-    // Sync price from native form if needed
     var priceTarget = document.querySelector(".product-price .value");
     if (priceTarget) {
       var stickyPriceEl = document.getElementById("stickyPrice");
