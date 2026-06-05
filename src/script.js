@@ -1,110 +1,238 @@
 /* ============================================================
-   HISMILE V34 Whitening Strips — Landing Page JavaScript
-   Managed by: Antigravity → GitHub → YouCan sync pipeline
+   HISMILE V34 — Landing Page JavaScript
+   Moroccan COD Landing Page — Arabic (Darija) default
    ============================================================ */
 (function () {
   "use strict";
 
   console.log(
     "%c[V34] custom script loaded",
-    "color:#6204a5;font-weight:bold;font-size:14px"
+    "color:#6C3FA0;font-weight:bold;font-size:14px"
   );
 
-  /* ── Load translations ── */
-  var I18N = {};
+  /* ── i18n Dictionary ── */
+  var I18N = {
+    /* Announcement */
+    announce: {
+      ar: "🚚 التوصيل لجميع مدن المغرب — الدفع عند الاستلام",
+      en: "🚚 Free Delivery Across Morocco — Cash on Delivery",
+      fr: "🚚 Livraison partout au Maroc — Paiement à la livraison"
+    },
+    nav_shop: { ar: "اطلب الآن", en: "Order Now", fr: "Commander" },
+
+    /* ─── HOME PAGE ─── */
+    home_badge: { ar: "تقنية تصحيح اللون", en: "Colour Correction Technology", fr: "Technologie de Correction Couleur" },
+    home_hero_h: {
+      ar: "ابتسامتك هي أول حاجة<br>كيشوفوها فيك.",
+      en: "Your Smile Is The First Thing<br>People Notice.",
+      fr: "Votre sourire est la première chose<br>que les gens remarquent."
+    },
+    home_hero_sub: {
+      ar: "الأسنان البيضا ماشي غير زين — هي ثقة، حضور، وأول انطباع كيبقى فالذاكرة.",
+      en: "White teeth aren't just beautiful — they're confidence, presence, and a lasting first impression.",
+      fr: "Des dents blanches ne sont pas qu'esthétiques — c'est de la confiance et une première impression durable."
+    },
+    home_hero_cta: {
+      ar: "اكتشف V34 <span class='material-symbols-outlined' style='font-size:20px;'>arrow_back</span>",
+      en: "Discover V34 <span class='material-symbols-outlined' style='font-size:20px;'>arrow_forward</span>",
+      fr: "Découvrir V34 <span class='material-symbols-outlined' style='font-size:20px;'>arrow_forward</span>"
+    },
+    home_brand_h: { ar: "شنو هي Hismile؟", en: "What is Hismile?", fr: "Qu'est-ce que Hismile ?" },
+    home_brand_p: {
+      ar: "Hismile هي علامة تجارية عالمية رائدة فمجال تبييض الأسنان. كتستعمل تقنيات متطورة بحال PAP+ وتصحيح اللون بدلاً من المواد الكيماوية القاسية. أكثر من 10 مليون منتج تباع فالعالم كامل.",
+      en: "Hismile is a globally leading teeth whitening brand. It uses advanced technologies like PAP+ and colour correction instead of harsh chemicals. Over 10 million products sold worldwide.",
+      fr: "Hismile est une marque leader mondial du blanchiment dentaire. Elle utilise des technologies avancées comme PAP+ et la correction de couleur au lieu de produits chimiques agressifs."
+    },
+    home_pap_h: { ar: "تقنية PAP+", en: "PAP+ Technology", fr: "Technologie PAP+" },
+    home_pap_sub: {
+      ar: "تبييض حقيقي بلا بيروكسيد — آمن 100% على المينا والأسنان الحساسة.",
+      en: "Real whitening without peroxide — 100% safe for enamel and sensitive teeth.",
+      fr: "Blanchiment réel sans peroxyde — 100% sûr pour l'émail et les dents sensibles."
+    },
+    home_feat1_h: { ar: "بلا بيروكسيد", en: "Peroxide-Free", fr: "Sans peroxyde" },
+    home_feat1_p: {
+      ar: "أغلب منتجات التبييض كتستعمل الماء الأوكسجيني اللي كيضر المينا. PAP+ كيبيض بطريقة آمنة بلا ألم ولا حساسية.",
+      en: "Most whitening products use peroxide that damages enamel. PAP+ whitens safely without pain or sensitivity.",
+      fr: "La plupart des produits utilisent du peroxyde qui endommage l'émail. PAP+ blanchit sans douleur ni sensibilité."
+    },
+    home_feat2_h: { ar: "مثبت سريرياً", en: "Clinically Proven", fr: "Prouvé cliniquement" },
+    home_feat2_p: {
+      ar: "تركيبة مدروسة ومثبتة بالدراسات. النتيجة كتبان من أول استعمال وكتزيد مع الوقت.",
+      en: "A researched formula proven by studies. Results visible from first use and improve over time.",
+      fr: "Formule étudiée et prouvée. Résultats visibles dès la première utilisation."
+    },
+    home_cc_h: { ar: "تصحيح اللون الفوري", en: "Instant Colour Correction", fr: "Correction de couleur instantanée" },
+    home_cc_p: {
+      ar: "نفس مبدأ الشامبو البنفسجي للشعر، ولكن للأسنان. اللون البنفسجي ديال V34 كيلغي الاصفرار فوراً — النتيجة كتبان من أول استعمال.",
+      en: "Same principle as purple shampoo for hair, but for teeth. V34's purple tone cancels yellowness instantly — visible from first use.",
+      fr: "Même principe que le shampoing violet pour les cheveux, mais pour les dents. Le ton violet de V34 annule le jaunissement instantanément."
+    },
+    home_cta_h: { ar: "واجد لابتسامة كتبهر؟", en: "Ready for a brighter smile?", fr: "Prêt pour un sourire éclatant ?" },
+    home_cta_sub: {
+      ar: "اكتشف شرائط V34 وجرب الفرق بنفسك.",
+      en: "Discover V34 strips and see the difference for yourself.",
+      fr: "Découvrez les bandes V34 et voyez la différence."
+    },
+    home_cta_btn: { ar: "تسوق الآن", en: "Shop Now", fr: "Acheter maintenant" },
+
+    /* ─── LANDING PAGE ─── */
+    land_badge: { ar: "الأكثر مبيعاً", en: "Best Seller", fr: "Best-seller" },
+    land_hero_h: { ar: "أسنان بيضا فـ30 دقيقة", en: "Whiter Teeth in 30 Minutes", fr: "Des dents plus blanches en 30 minutes" },
+    land_hero_sub: {
+      ar: "شرائط V34 كتعطيك أسنان أكثر بياضاً من أول استعمال. تقنية مزدوجة: تصحيح اللون الفوري + تبييض PAP+.",
+      en: "V34 strips give you visibly whiter teeth from first use. Dual technology: instant colour correction + PAP+ whitening.",
+      fr: "Les bandes V34 vous donnent des dents visiblement plus blanches dès la première utilisation."
+    },
+    land_price: { ar: "245 د.م.", en: "245 MAD", fr: "245 MAD" },
+    land_price_sub: {
+      ar: "الدفع عند الاستلام — التوصيل لجميع المدن",
+      en: "Cash on Delivery — Free shipping to all cities",
+      fr: "Paiement à la livraison — Livraison gratuite"
+    },
+    land_hero_cta: { ar: "اطلب الآن 👇", en: "Order Now 👇", fr: "Commander maintenant 👇" },
+    land_sold: { ar: "+10,000,000<br>منتج تم بيعه", en: "10,000,000+<br>Products Sold", fr: "10 000 000+<br>Produits vendus" },
+
+    trust_guarantee: { ar: "ضمان استرجاع الفلوس", en: "Money-back guarantee", fr: "Garantie de remboursement" },
+    trust_ship: { ar: "التوصيل لجميع المدن", en: "Delivery to all cities", fr: "Livraison partout" },
+    trust_cod: { ar: "الدفع عند الاستلام", en: "Cash on Delivery", fr: "Paiement à la livraison" },
+    trust_reviews: { ar: "+172 تقييم إيجابي", en: "172+ positive reviews", fr: "172+ avis positifs" },
+
+    land_how_h: { ar: "كيفاش كتستعمل؟", en: "How to Use?", fr: "Comment utiliser ?" },
+    step1_h: { ar: "نشّف وحط", en: "Dry & Apply", fr: "Séchez et appliquez" },
+    step1_p: { ar: "نشّف أسنانك وحط شريط V34 بإحكام.", en: "Dry your teeth and apply the V34 strip firmly.", fr: "Séchez vos dents et appliquez la bande V34." },
+    step2_h: { ar: "استنى 30 دقيقة", en: "Wait 30 Minutes", fr: "Attendez 30 minutes" },
+    step2_p: { ar: "خلي تقنية تصحيح اللون تخدم.", en: "Let the colour correction technology work.", fr: "Laissez la technologie agir." },
+    step3_h: { ar: "نحّي وشوف الفرق", en: "Remove & Reveal", fr: "Retirez et admirez" },
+    step3_p: { ar: "نحّي الشريط واشطب — ابتسامة بيضا فوراً.", en: "Remove the strip and rinse — instantly whiter smile.", fr: "Retirez et rincez — sourire plus blanc instantanément." },
+
+    land_ba_h: { ar: "نتائج حقيقية", en: "Real Results", fr: "Résultats réels" },
+    land_ba_hint: { ar: "← اسحب لكشف النتيجة →", en: "← Drag to reveal →", fr: "← Glissez pour révéler →" },
+    land_mid_cta: { ar: "اطلب الآن — 245 د.م.", en: "Order Now — 245 MAD", fr: "Commander — 245 MAD" },
+
+    land_why_h: { ar: "علاش V34 مختلفة؟", en: "Why is V34 Different?", fr: "Pourquoi V34 est différent ?" },
+    land_why_sub: {
+      ar: "أغلب منتجات التبييض كتاخد أسابيع ولا كتضر المينا. حنا اخترنا طريق آخر.",
+      en: "Most whitening products take weeks or damage enamel. We chose a different path.",
+      fr: "La plupart des produits prennent des semaines ou abîment l'émail. Nous avons choisi une autre voie."
+    },
+    land_feat1_h: { ar: "🟣 تصحيح اللون الفوري", en: "🟣 Instant Colour Correction", fr: "🟣 Correction de couleur instantanée" },
+    land_feat1_p: {
+      ar: "اللون البنفسجي كيلغي الاصفرار — نفس مبدأ الشامبو البنفسجي للشعر، ولكن للأسنان.",
+      en: "Purple tone cancels yellowness — same principle as purple shampoo for hair, but for teeth.",
+      fr: "Le ton violet annule le jaunissement — même principe que le shampoing violet."
+    },
+    land_feat2_h: { ar: "⚪ تبييض PAP+ آمن", en: "⚪ Safe PAP+ Whitening", fr: "⚪ Blanchiment PAP+ sûr" },
+    land_feat2_p: {
+      ar: "تبييض حقيقي كيزيد مع الوقت — بلا بيروكسيد، آمن 100% على المينا والأسنان الحساسة.",
+      en: "Real whitening that improves over time — peroxide-free, 100% safe for enamel.",
+      fr: "Blanchiment réel qui s'améliore — sans peroxyde, 100% sûr."
+    },
+
+    land_order_h: { ar: "صيفط طلبيتك دابا 👇", en: "Place Your Order Now 👇", fr: "Passez votre commande 👇" },
+    land_order_sub: { ar: "الدفع عند الاستلام — التوصيل مجاني", en: "Cash on Delivery — Free Shipping", fr: "Paiement à la livraison — Livraison gratuite" },
+
+    form_name: { ar: "الإسم الكامل", en: "Full Name", fr: "Nom complet" },
+    form_phone: { ar: "رقم الهاتف", en: "Phone Number", fr: "Numéro de téléphone" },
+    form_city: { ar: "المدينة", en: "City", fr: "Ville" },
+    form_name_ph: { ar: "محمد / فاطمة", en: "Your name", fr: "Votre nom" },
+    form_phone_ph: { ar: "06XX XXX XXX", en: "06XX XXX XXX", fr: "06XX XXX XXX" },
+    form_city_ph: { ar: "الدار البيضاء، الرباط...", en: "Casablanca, Rabat...", fr: "Casablanca, Rabat..." },
+    submit_order: {
+      ar: "اطلب الآن — الدفع عند الاستلام",
+      en: "Order Now — Cash on Delivery",
+      fr: "Commander — Paiement à la livraison"
+    },
+
+    ct_secure: { ar: "دفع آمن", en: "Secure", fr: "Sécurisé" },
+    ct_ship: { ar: "توصيل مجاني", en: "Free shipping", fr: "Livraison gratuite" },
+    ct_guarantee: { ar: "ضمان استرجاع", en: "Money-back", fr: "Garantie" },
+
+    faq_title: { ar: "أسئلة شائعة", en: "FAQ", fr: "Questions fréquentes" },
+    faq_q1: { ar: "واش آمنة على المينا؟", en: "Is it safe for enamel?", fr: "Est-ce sûr pour l'émail ?" },
+    faq_a1: {
+      ar: "نعم، آمنة تماماً. V34 كتستعمل تقنية تصحيح اللون وPAP+ — بلا ماء أوكسجيني، ما كتضرش المينا نهائياً.",
+      en: "Yes, completely safe. V34 uses colour correction and PAP+ — no peroxide, zero damage to enamel.",
+      fr: "Oui, totalement sûr. V34 utilise la correction de couleur et PAP+ — sans peroxyde."
+    },
+    faq_q2: { ar: "شحال ديال الاستعمالات فالعلبة؟", en: "How many uses per box?", fr: "Combien d'utilisations par boîte ?" },
+    faq_a2: {
+      ar: "كل علبة فيها 14 استعمال. نشّف أسنانك، حط الشريط 30 دقيقة، نحّيه واشطب. بسيطة!",
+      en: "Each box has 14 uses. Dry your teeth, apply for 30 mins, remove and rinse. Simple!",
+      fr: "Chaque boîte contient 14 utilisations. Séchez, appliquez 30 min, retirez et rincez."
+    },
+    faq_q3: { ar: "كيفاش كيتم التوصيل والدفع؟", en: "How does delivery and payment work?", fr: "Comment fonctionne la livraison ?" },
+    faq_a3: {
+      ar: "التوصيل لجميع مدن المغرب. الدفع عند الاستلام — ما كتخلصش حتى يوصلك المنتج لباب دارك.",
+      en: "Delivery to all Moroccan cities. Cash on Delivery — you don't pay until the product is at your door.",
+      fr: "Livraison dans toutes les villes. Paiement à la livraison — vous ne payez qu'à réception."
+    },
+
+    sticky_name: { ar: "شرائط V34", en: "V34 Strips", fr: "Bandes V34" },
+    sticky_price: { ar: "245 د.م.", en: "245 MAD", fr: "245 MAD" },
+    sticky_cta: { ar: "اطلب الآن", en: "Order Now", fr: "Commander" },
+
+    foot_privacy: { ar: "سياسة الخصوصية", en: "Privacy Policy", fr: "Politique de confidentialité" },
+    foot_terms: { ar: "الشروط", en: "Terms", fr: "Conditions" },
+    foot_ship: { ar: "الشحن", en: "Shipping", fr: "Livraison" },
+    foot_contact: { ar: "اتصل بنا", en: "Contact", fr: "Contact" },
+    foot_copy: { ar: "© 2024 HISMILE. جميع الحقوق محفوظة.", en: "© 2024 HISMILE. ALL RIGHTS RESERVED.", fr: "© 2024 HISMILE. TOUS DROITS RÉSERVÉS." }
+  };
+
+  /* ── Language Detection & State ── */
+  var langs = ["ar", "en", "fr"];
+  var currentLangIndex = 0; // Default: Arabic
+
+  // Auto-detect: if browser language is French, switch to French. Otherwise Arabic.
   try {
-    I18N = TRANSLATIONS_INLINE || {};
-  } catch (e) {
-    I18N = {
-      announce: { en: "Free Shipping on Orders Over $50 | 30-Day Money Back Guarantee", ar: "شحن مجاني للطلبات فوق 50$ | ضمان استرداد الأموال خلال 30 يوماً", fr: "Livraison gratuite à partir de 50$ | Garantie de remboursement de 30 jours" },
-      hero_badge: { en: "Colour Correction Technology", ar: "تقنية تصحيح اللون", fr: "Technologie de Correction de Couleur" },
-      hero_h1: { en: "Whiter Teeth.<br>One Strip.<br>One Use.", ar: "أسنان أكثر بياضاً.<br>شريحة واحدة.<br>استخدام واحد.", fr: "Des dents plus blanches.<br>Une bande.<br>Une utilisation." },
-      hero_sub: { en: "Clinically proven to cancel out yellow stains instantly.", ar: "مثبت سريرياً لقدرته على إخفاء البقع الصفراء على الفور.", fr: "Prouvé cliniquement pour annuler les taches jaunes instantanément." },
-      hero_reviews: { en: "4.5/5 from 172+ verified reviews", ar: "4.5/5 من 172+ مراجعة موثقة", fr: "4.5/5 à partir de 172+ avis vérifiés" },
-      hero_cta: { en: "Shop Now", ar: "تسوق الآن", fr: "Acheter maintenant" },
-      see_how_it_works: { en: "See how it works", ar: "اكتشف كيف يعمل", fr: "Voir comment ça marche" },
-      sold_badge: { en: "10,000,000+ V34 PRODUCTS SOLD WORLDWIDE", ar: "أكثر من 10,000,000 منتج V34 تم بيعه عالمياً", fr: "PLUS DE 10 000 000 DE PRODUITS V34 VENDUS DANS LE MONDE" },
-      tech_pap_h: { en: "PAP+ Technology", ar: "تقنية PAP+", fr: "Technologie PAP+" },
-      tech_pap_p: { en: "Our clinically proven formula whitens teeth safely without pain or sensitivity, breaking down stains gently.", ar: "تركيبتنا المثبتة سريرياً تبيض الأسنان بأمان دون ألم أو حساسية، وتكسر البقع بلطف.", fr: "Notre formule cliniquement prouvée blanchit les dents en toute sécurité, sans douleur ni sensibilité." },
-      tech_cc_h: { en: "Colour Correction", ar: "تصحيح اللون", fr: "Correction de Couleur" },
-      tech_cc_p: { en: "Just like purple shampoo cancels yellow blonde hair, V34's deep purple tones cancel out yellow stains on teeth instantly.", ar: "تماماً كما يلغي الشامبو البنفسجي اللون الأصفر في الشعر، تلغي نغمات V34 البنفسجية العميقة البقع الصفراء على الأسنان فوراً.", fr: "Tout comme le shampoing violet annule les tons jaunes des cheveux blonds, le V34 annule les taches jaunes sur les dents." },
-      mech_eyebrow: { en: "How it Works", ar: "كيف يعمل", fr: "Comment ça marche" },
-      step1_h: { en: "Peel & Apply", ar: "قشر وطبّق", fr: "Décollez et appliquez" },
-      step1_p: { en: "Dry teeth and apply the V34 strip firmly.", ar: "جفف أسنانك وطبق شريحة V34 بإحكام.", fr: "Séchez vos dents et appliquez fermement la bande V34." },
-      step2_h: { en: "Wait 30 Mins", ar: "انتظر 30 دقيقة", fr: "Attendez 30 minutes" },
-      step2_p: { en: "Let the colour correction technology work.", ar: "دع تقنية تصحيح اللون تعمل.", fr: "Laissez agir la technologie de correction de couleur." },
-      step3_h: { en: "Reveal", ar: "اكتشف", fr: "Découvrez" },
-      step3_p: { en: "Remove and rinse for an instantly whiter smile.", ar: "أزلها واشطف للحصول على ابتسامة أكثر بياضاً فوراً.", fr: "Retirez et rincez pour un sourire instantanément plus blanc." },
-      demo_title: { en: "Real Results", ar: "نتائج حقيقية", fr: "Résultats Réels" },
-      demo_hint: { en: "← Drag to reveal your results →", ar: "← اسحب لكشف النتيجة →", fr: "← Faites glisser pour voir les résultats →" },
-      before_after_label: { en: "BEFORE &nbsp;|&nbsp; AFTER", ar: "قبل &nbsp;|&nbsp; بعد", fr: "AVANT &nbsp;|&nbsp; APRÈS" },
-      final_h2: { en: "Get Your V34 Strips.", ar: "احصل على شرائح V34.", fr: "Obtenez vos bandes V34." },
-      price_main: { en: "$39 AUD", ar: "39$ AUD", fr: "39$ AUD" },
-      price_sub: { en: "or 4 payments of $9.75 · $2.79 per application", ar: "أو 4 دفعات بقيمة 9.75$ · 2.79$ لكل تطبيق", fr: "ou 4 paiements de 9.75$ · 2.79$ par application" },
-      limited_qty: { en: "Limited Quantity Available", ar: "الكمية المتوفرة محدودة", fr: "Quantité limitée disponible" },
-      checkout_info: { en: "Customer Information", ar: "معلومات الزبون", fr: "Informations Client" },
-      form_name: { en: "Name", ar: "الإسم", fr: "Nom" },
-      form_phone: { en: "Phone Number", ar: "رقم الهاتف", fr: "Numéro de téléphone" },
-      form_city: { en: "City", ar: "المدينة", fr: "Ville" },
-      submit_order: { en: "Place Order", ar: "اطلب الآن", fr: "Passer la commande" },
-      faq_title: { en: "Good to Know", ar: "معلومات مهمة", fr: "Bon à savoir" },
-      faq_q1: { en: "Is it safe for enamel?", ar: "هل هي آمنة على المينا؟", fr: "Est-ce sûr pour l'émail ?" },
-      faq_a1: { en: "Yes, V34 is completely safe for enamel. It uses color correcting technology, not harsh abrasives or bleaching agents.", ar: "نعم، آمنة تماماً. تستخدم تقنية تصحيح اللون وليس التبييض القاسي.", fr: "Oui, totalement sûr pour l'émail. Il utilise une technologie de correction de couleur." },
-      faq_q2: { en: "How do I use them?", ar: "كيف أستخدمها؟", fr: "Comment les utiliser ?" },
-      faq_a2: { en: "Dry your teeth, apply the long strip to your top teeth and the short strip to your bottom teeth, wait 30 minutes, then remove.", ar: "جفف أسنانك، طبق الشريحة وانتظر 30 دقيقة ثم أزلها.", fr: "Séchez vos dents, appliquez la bande, attendez 30 minutes, puis retirez." },
-      foot_secure: { en: "Secure checkout", ar: "دفع آمن", fr: "Paiement sécurisé" },
-      foot_ship: { en: "Free shipping", ar: "شحن مجاني", fr: "Livraison gratuite" },
-      foot_mbg: { en: "Money-back guarantee", ar: "ضمان استرداد الأموال", fr: "Garantie de remboursement" },
-      foot_link_ship: { en: "Shipping", ar: "الشحن", fr: "Livraison" },
-      foot_link_contact: { en: "Contact", ar: "اتصل بنا", fr: "Contact" },
-      foot_link_privacy: { en: "Privacy Policy", ar: "سياسة الخصوصية", fr: "Politique de confidentialité" },
-      foot_link_terms: { en: "Terms", ar: "الشروط", fr: "Conditions" },
-      foot_copy: { en: "© 2024 HISMILE. ALL RIGHTS RESERVED.", ar: "© 2024 HISMILE. جميع الحقوق محفوظة.", fr: "© 2024 HISMILE. TOUS DROITS RÉSERVÉS." },
-      sticky_name: { en: "V34 Strips", ar: "شرائح V34", fr: "Bandes V34" },
-      sticky_price: { en: "$39.00 · 14 uses", ar: "39.00$ · 14 استخداماً", fr: "39.00$ · 14 utilisations" }
-    };
-  }
+    var browserLang = (navigator.language || navigator.userLanguage || "ar").toLowerCase();
+    if (browserLang.indexOf("fr") === 0) {
+      currentLangIndex = 2;
+    } else if (browserLang.indexOf("en") === 0) {
+      currentLangIndex = 1;
+    }
+  } catch (e) { /* fallback to Arabic */ }
 
-  var langs = ["en", "ar", "fr"];
-  var currentLangIndex = 0;
-
+  /* ── Routing ── */
   function renderRoute() {
-    var hash = window.location.hash || '#home';
+    var hash = window.location.hash || "#home";
     var viewHome = document.getElementById("view-home");
     var viewLanding = document.getElementById("view-landing");
-    
+
     if (!viewHome || !viewLanding) return;
 
-    var reveals = document.querySelectorAll('.reveal');
-    reveals.forEach(function(el) { el.classList.remove('active'); });
+    // Reset reveals
+    var reveals = document.querySelectorAll(".reveal");
+    for (var i = 0; i < reveals.length; i++) { reveals[i].classList.remove("active"); }
 
-    if (hash === '#landing') {
-      viewHome.classList.remove('active');
-      viewLanding.classList.add('active');
+    if (hash === "#landing") {
+      viewHome.classList.remove("active");
+      viewLanding.classList.add("active");
       window.scrollTo(0, 0);
-      document.title = "Hismile V34 - Express Checkout";
+      document.title = "Hismile V34 — اطلب الآن";
     } else {
-      viewLanding.classList.remove('active');
-      viewHome.classList.add('active');
+      viewLanding.classList.remove("active");
+      viewHome.classList.add("active");
       window.scrollTo(0, 0);
-      document.title = "Hismile V34 - Official Site";
+      document.title = "Hismile — تبييض الأسنان";
     }
-    
+
     setTimeout(handleScroll, 50);
   }
 
   window.addEventListener("hashchange", renderRoute);
 
+  /* ── i18n Apply ── */
   function applyLang(index) {
     currentLangIndex = index;
     var l = langs[currentLangIndex];
     var app = document.querySelector(".app");
-    
+
     if (app) {
       app.setAttribute("lang", l);
       app.setAttribute("dir", l === "ar" ? "rtl" : "ltr");
     }
-    
+
+    // Text content
     var nodes = document.querySelectorAll("[data-i18n]");
     for (var i = 0; i < nodes.length; i++) {
       var k = nodes[i].getAttribute("data-i18n");
@@ -112,11 +240,21 @@
         nodes[i].innerHTML = I18N[k][l];
       }
     }
-    
+
+    // Placeholders
+    var phNodes = document.querySelectorAll("[data-i18n-placeholder]");
+    for (var j = 0; j < phNodes.length; j++) {
+      var pk = phNodes[j].getAttribute("data-i18n-placeholder");
+      if (I18N[pk] && I18N[pk][l] != null) {
+        phNodes[j].setAttribute("placeholder", I18N[pk][l]);
+      }
+    }
+
     var label = document.getElementById("langLabel");
     if (label) label.textContent = l.toUpperCase();
   }
 
+  /* ── Language Toggle ── */
   document.addEventListener("click", function (e) {
     if (!e.target || !e.target.closest) return;
     if (e.target.closest("#langToggle")) {
@@ -125,142 +263,147 @@
     }
   });
 
+  /* ── Scroll Handler ── */
   function handleScroll() {
     var reveals = document.querySelectorAll(".reveal:not(.active)");
     for (var i = 0; i < reveals.length; i++) {
-      var windowHeight = window.innerHeight;
-      var elementTop = reveals[i].getBoundingClientRect().top;
-      var elementVisible = 50;
-      if (elementTop < windowHeight - elementVisible) {
+      var wh = window.innerHeight;
+      var et = reveals[i].getBoundingClientRect().top;
+      if (et < wh - 40) {
         reveals[i].classList.add("active");
       }
     }
 
-    var bottomCta = document.getElementById('bottom-cta');
-    var hash = window.location.hash || '#home';
-    
+    // Sticky CTA visibility
+    var bottomCta = document.getElementById("bottom-cta");
+    var hash = window.location.hash || "#home";
     if (bottomCta) {
-      if (hash === '#home') {
-        var currentScrollY = window.scrollY;
-        if (currentScrollY > 500) {
-          bottomCta.classList.add('visible');
-        } else {
-          bottomCta.classList.remove('visible');
-        }
+      if (hash === "#home" && window.scrollY > 400) {
+        bottomCta.classList.add("visible");
       } else {
-        bottomCta.classList.remove('visible');
+        bottomCta.classList.remove("visible");
       }
     }
   }
 
   window.addEventListener("scroll", handleScroll);
 
+  /* ── Smooth Scroll to Checkout ── */
+  document.addEventListener("click", function (e) {
+    if (!e.target || !e.target.closest) return;
+    var btn = e.target.closest(".scroll-to-checkout");
+    if (btn) {
+      e.preventDefault();
+      var section = document.getElementById("checkout-section");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }
+  });
+
+  /* ── Before/After Slider ── */
   function initSlider() {
-    var slider = document.getElementById('slider');
-    var sliderAfter = document.getElementById('slider-after');
-    var sliderHandle = document.getElementById('slider-handle');
+    var slider = document.getElementById("slider");
+    var sliderAfter = document.getElementById("slider-after");
+    var sliderHandle = document.getElementById("slider-handle");
 
-    if(slider && sliderAfter && sliderHandle) {
-        var isDragging = false;
+    if (slider && sliderAfter && sliderHandle) {
+      var isDragging = false;
 
-        function moveSlider(clientX) {
-            var rect = slider.getBoundingClientRect();
-            var position = clientX - rect.left;
-            if (position < 0) position = 0;
-            if (position > rect.width) position = rect.width;
-            var percentage = (position / rect.width) * 100;
-            
-            sliderHandle.style.left = percentage + '%';
-            sliderAfter.style.clipPath = 'inset(0 0 0 ' + percentage + '%)';
-        }
+      function moveSlider(clientX) {
+        var rect = slider.getBoundingClientRect();
+        var position = clientX - rect.left;
+        if (position < 0) position = 0;
+        if (position > rect.width) position = rect.width;
+        var pct = (position / rect.width) * 100;
+        sliderHandle.style.left = pct + "%";
+        sliderAfter.style.clipPath = "inset(0 0 0 " + pct + "%)";
+      }
 
-        var startDrag = function(e) {
-            isDragging = true;
-            var clientX = e.touches ? e.touches[0].clientX : e.clientX;
-            moveSlider(clientX);
-            if (e.cancelable) e.preventDefault();
-        };
+      var startDrag = function (e) {
+        isDragging = true;
+        var cx = e.touches ? e.touches[0].clientX : e.clientX;
+        moveSlider(cx);
+        if (e.cancelable) e.preventDefault();
+      };
+      var moveDrag = function (e) {
+        if (!isDragging) return;
+        var cx = e.touches ? e.touches[0].clientX : e.clientX;
+        moveSlider(cx);
+        if (e.cancelable) e.preventDefault();
+      };
+      var stopDrag = function () { isDragging = false; };
 
-        var moveDrag = function(e) {
-            if (!isDragging) return;
-            var clientX = e.touches ? e.touches[0].clientX : e.clientX;
-            moveSlider(clientX);
-            if (e.cancelable) e.preventDefault();
-        };
-
-        var stopDrag = function() { isDragging = false; };
-
-        slider.addEventListener('mousedown', startDrag);
-        slider.addEventListener('touchstart', startDrag, { passive: false });
-        window.addEventListener('mouseup', stopDrag);
-        window.addEventListener('touchend', stopDrag);
-        window.addEventListener('mousemove', moveDrag);
-        window.addEventListener('touchmove', moveDrag, { passive: false });
-        
-        slider.addEventListener("dragstart", function(e) { e.preventDefault(); });
+      slider.addEventListener("mousedown", startDrag);
+      slider.addEventListener("touchstart", startDrag, { passive: false });
+      window.addEventListener("mouseup", stopDrag);
+      window.addEventListener("touchend", stopDrag);
+      window.addEventListener("mousemove", moveDrag);
+      window.addEventListener("touchmove", moveDrag, { passive: false });
+      slider.addEventListener("dragstart", function (e) { e.preventDefault(); });
     }
   }
 
-  window.toggleAccordion = function(id) {
+  /* ── Accordion ── */
+  window.toggleAccordion = function (id) {
     var content = document.getElementById(id);
-    var icon = document.getElementById('icon-' + id);
+    var icon = document.getElementById("icon-" + id);
     if (!content || !icon) return;
-    
-    if (content.classList.contains('open')) {
-        content.classList.remove('open');
-        icon.classList.remove('open');
+
+    if (content.classList.contains("open")) {
+      content.classList.remove("open");
+      icon.classList.remove("open");
     } else {
-        content.classList.add('open');
-        icon.classList.add('open');
+      content.classList.add("open");
+      icon.classList.add("open");
     }
   };
 
+  /* ── Checkout Form ── */
   function initCustomCheckout() {
     var form = document.getElementById("custom-express-checkout-form");
-    var submitBtn = document.querySelector("#view-landing button[type='submit']");
+    var submitBtn = document.querySelector("#checkout-section button[type='submit']");
     if (!form || !submitBtn) return;
 
     function setVueValue(input, value) {
       if (!input) return;
-      var prototype = Object.getPrototypeOf(input);
-      var desc = Object.getOwnPropertyDescriptor(prototype, 'value');
-      var setter = desc ? desc.set : undefined;
-      if (!setter) {
-        var currentProto = prototype;
-        while (currentProto && !setter) {
-          var desc = Object.getOwnPropertyDescriptor(currentProto, 'value');
-          if (desc && desc.set) {
-            setter = desc.set;
-            break;
-          }
-          currentProto = Object.getPrototypeOf(currentProto);
+      var proto = Object.getPrototypeOf(input);
+      var setter = null;
+      var currentProto = proto;
+      while (currentProto && !setter) {
+        var desc = Object.getOwnPropertyDescriptor(currentProto, "value");
+        if (desc && desc.set) {
+          setter = desc.set;
+          break;
         }
+        currentProto = Object.getPrototypeOf(currentProto);
       }
       if (setter) {
         setter.call(input, value);
       } else {
         input.value = value;
       }
-      input.dispatchEvent(new Event('input', { bubbles: true }));
-      input.dispatchEvent(new Event('change', { bubbles: true }));
+      input.dispatchEvent(new Event("input", { bubbles: true }));
+      input.dispatchEvent(new Event("change", { bubbles: true }));
     }
 
     function syncAllInputsToNative() {
-      var nativeForm = document.querySelector('#app #express-checkout-form');
+      var nativeForm = document.querySelector("#app #express-checkout-form");
       if (!nativeForm) return;
 
-      var inputs = form.querySelectorAll('input, select, textarea');
-      inputs.forEach(function (ourInput) {
-        var name = ourInput.getAttribute('name');
-        if (!name || name === 'id' || name === 'quantity' || name === 'is_page_builder_express_checkout' || name === 'extra_payload') return;
-
+      var inputs = form.querySelectorAll("input, select, textarea");
+      for (var i = 0; i < inputs.length; i++) {
+        var ourInput = inputs[i];
+        var name = ourInput.getAttribute("name");
+        if (!name || name === "id" || name === "quantity" || name === "is_page_builder_express_checkout" || name === "extra_payload") continue;
         var nativeInput = nativeForm.querySelector('[name="' + name + '"]');
         if (nativeInput) {
           setVueValue(nativeInput, ourInput.value);
         }
-      });
+      }
     }
 
+    // Clear errors on input
     form.addEventListener("input", function (e) {
       if (e.target && e.target.closest) {
         var group = e.target.closest(".form-group");
@@ -272,14 +415,15 @@
       }
     });
 
+    // Submit
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-
       if (submitBtn.disabled) return;
 
       var hasError = false;
-      var fieldsToValidate = ['first_name', 'phone', 'extra_fields[custom_field_cGzlrqWxXctNnheN]'];
-      fieldsToValidate.forEach(function (name) {
+      var fieldsToValidate = ["first_name", "phone", "extra_fields[custom_field_cGzlrqWxXctNnheN]"];
+      for (var i = 0; i < fieldsToValidate.length; i++) {
+        var name = fieldsToValidate[i];
         var input = form.querySelector('[name="' + name + '"]');
         if (input && !input.value.trim()) {
           hasError = true;
@@ -292,26 +436,27 @@
               errEl.className = "error-msg";
               parent.appendChild(errEl);
             }
-            errEl.textContent = "Required";
+            var l = langs[currentLangIndex];
+            errEl.textContent = l === "ar" ? "مطلوب" : l === "fr" ? "Requis" : "Required";
           }
         }
-      });
+      }
 
       if (hasError) return;
 
       syncAllInputsToNative();
 
-      var nativeSubmitBtn = document.querySelector('.express-checkout-form-section .single-submit') ||
-                            document.querySelector('#app #express-checkout-form button[type="submit"]') ||
-                            document.querySelector('#app .checkout-submit-btn');
+      var nativeSubmitBtn = document.querySelector(".express-checkout-form-section .single-submit") ||
+        document.querySelector("#app #express-checkout-form button[type=\"submit\"]") ||
+        document.querySelector("#app .checkout-submit-btn");
 
       if (nativeSubmitBtn) {
         submitBtn.disabled = true;
         submitBtn.classList.add("loading");
         nativeSubmitBtn.click();
-        
+
         var checkInterval = setInterval(function () {
-          if (!nativeSubmitBtn.disabled && !nativeSubmitBtn.classList.contains('loading')) {
+          if (!nativeSubmitBtn.disabled && !nativeSubmitBtn.classList.contains("loading")) {
             submitBtn.disabled = false;
             submitBtn.classList.remove("loading");
             clearInterval(checkInterval);
@@ -323,28 +468,20 @@
           submitBtn.disabled = false;
           submitBtn.classList.remove("loading");
         }, 10000);
-
       } else {
-        alert("System error. Please try again later.");
+        var l = langs[currentLangIndex];
+        alert(l === "ar" ? "خطأ في النظام. حاول مرة أخرى." : "System error. Please try again.");
       }
     });
   }
 
+  /* ── Init ── */
   function init() {
     renderRoute();
     applyLang(currentLangIndex);
     handleScroll();
     initSlider();
     initCustomCheckout();
-    
-    var priceTarget = document.querySelector(".product-price .value");
-    if (priceTarget) {
-      var stickyPriceEl = document.getElementById("stickyPrice");
-      var cur = document.querySelector(".product-price .currency");
-      if (stickyPriceEl && cur) {
-        stickyPriceEl.textContent = priceTarget.textContent.trim() + cur.textContent.trim();
-      }
-    }
   }
 
   if (document.readyState === "loading") {
