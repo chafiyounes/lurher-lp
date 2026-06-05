@@ -18,7 +18,7 @@
 
   var REPO = "chafiyounes/mapper-youcant";
   var BRANCH = "main";
-  var BASE = "https://cdn.jsdelivr.net/gh/" + REPO + "@" + BRANCH + "/";
+  var BASE = "https://raw.githubusercontent.com/" + REPO + "/" + BRANCH + "/";
 
   var FILES = {
     css:  BASE + "src/styles.css",
@@ -77,6 +77,13 @@
   })
   .catch(function (err) {
     console.error("[V34 Loader] Critical error during load:", err);
+    
+    // VISUAL DEBUGGER FOR PHONE:
+    var errBox = document.createElement("div");
+    errBox.style.cssText = "position:fixed;top:0;left:0;width:100%;background:#D0021B;color:white;z-index:999999;padding:24px;font-size:16px;font-family:sans-serif;box-sizing:border-box;border-bottom:4px solid #000;";
+    errBox.innerHTML = "<strong style='font-size:20px'>[DEBUG] V34 Script Failed!</strong><br><br><b>Error:</b> " + (err.message || err) + "<br><br>Please take a screenshot of this red box and show it to your developer to prove exactly why it isn't working on this phone.";
+    document.body.appendChild(errBox);
+
     // Fallback: show the default app if loading fails so the store isn't broken
     var flickerPrevent = document.getElementById("v34-flicker-prevent");
     if (flickerPrevent) flickerPrevent.remove();
