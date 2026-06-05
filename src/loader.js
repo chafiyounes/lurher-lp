@@ -18,7 +18,7 @@
 
   var REPO = "chafiyounes/mapper-youcant";
   var BRANCH = "main";
-  var BASE = "https://raw.githubusercontent.com/" + REPO + "/" + BRANCH + "/";
+  var BASE = "https://cdn.jsdelivr.net/gh/" + REPO + "@" + BRANCH + "/";
 
   var FILES = {
     css:  BASE + "src/styles.css",

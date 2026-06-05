@@ -223,7 +223,8 @@
     function setVueValue(input, value) {
       if (!input) return;
       var prototype = Object.getPrototypeOf(input);
-      var setter = Object.getOwnPropertyDescriptor(prototype, 'value')?.set;
+      var desc = Object.getOwnPropertyDescriptor(prototype, 'value');
+      var setter = desc ? desc.set : undefined;
       if (!setter) {
         var currentProto = prototype;
         while (currentProto && !setter) {
