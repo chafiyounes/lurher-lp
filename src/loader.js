@@ -8,23 +8,6 @@
 (function () {
   "use strict";
 
-  // ── Configuration: Only run on these specific URL paths ──
-  // If this array is empty, it runs on ALL pages. 
-  // Example: ["/products/v34-strips", "/pages/checkout-test"]
-  var TARGET_URLS = ["/products/v34", "test2"]; 
-
-  var isTargetPage = TARGET_URLS.length === 0;
-  var currentPath = window.location.pathname + window.location.search;
-  for (var i = 0; i < TARGET_URLS.length; i++) {
-    if (currentPath.indexOf(TARGET_URLS[i]) !== -1) {
-      isTargetPage = true;
-      break;
-    }
-  }
-
-  // If we are not on the targeted landing page, stop the script completely and let YouCan load normally.
-  if (!isTargetPage) return;
-
   // ── 0. Prevent Flicker Instantly ──
   if (!document.getElementById("v34-flicker-prevent")) {
     var style = document.createElement("style");
@@ -35,7 +18,7 @@
 
   var REPO = "chafiyounes/mapper-youcant";
   var BRANCH = "main";
-  var BASE = "https://raw.githubusercontent.com/" + REPO + "/" + BRANCH + "/";
+  var BASE = "https://cdn.jsdelivr.net/gh/" + REPO + "@" + BRANCH + "/";
 
   var FILES = {
     css: BASE + "src/styles.css",
@@ -118,7 +101,8 @@
       }
       var errBox = document.createElement("div");
       errBox.style.cssText = "position:fixed;top:0;left:0;width:100%;background:#D0021B;color:white;z-index:999999;padding:24px;font-size:16px;font-family:sans-serif;box-sizing:border-box;border-bottom:4px solid #000;";
-      errBox.innerHTML = "<strong style='font-size:20px'>[DEBUG] V34 Script Failed!</strong><br><br><b>Error:</b> " + (err.message || err) + "<br><br>Please take a screenshot of this red box and show it to your developer to prove exactly why it isn't working on this phone.";
+      var errorMsg = err ? (err.stack || err.message || JSON.stringify(err) || String(err)) : "Unknown Error";
+      errBox.innerHTML = "<strong style='font-size:20px'>[DEBUG] V34 Script Failed!</strong><br><br><b>Error:</b> " + errorMsg + "<br><br>Please take a screenshot of this red box and show it to your developer to prove exactly why it isn't working on this phone.";
       document.body.appendChild(errBox);
 
       // Fallback: show the default app if loading fails so the store isn't broken
