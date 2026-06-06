@@ -147,7 +147,7 @@
 
   /* ── Routing ── */
   function renderRoute() {
-    var hash = window.location.hash || "#home";
+    var hash = window.location.hash || "#landing";
     var viewHome = document.getElementById("view-home");
     var viewLanding = document.getElementById("view-landing");
 
@@ -225,7 +225,7 @@
     }
 
     var bottomCta = document.getElementById("bottom-cta");
-    var hash = window.location.hash || "#home";
+    var hash = window.location.hash || "#landing";
     if (bottomCta) {
       // Show sticky CTA immediately on landing page, or after scroll on home page
       if (hash === "#landing" || (hash === "#home" && window.scrollY > 400)) {
