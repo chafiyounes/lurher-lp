@@ -1,5 +1,5 @@
 <!-- ============================================================
-     HISMILE V34 — Premium Landing Page (Funnel)
+     HISMILE V34 — Dual Page Architecture
      RTL-first, Arabic (Darija) default
      ============================================================ -->
 
@@ -13,84 +13,124 @@
   <!-- Navigation -->
   <header class="nav-header">
     <div class="nav-inner">
-      <div class="nav-brand">HISMILE</div>
-      <button aria-label="Switch language" id="langToggle" type="button" style="display:flex; align-items:center; gap:4px; font-weight:700; background:var(--surface-alt); padding:6px 12px; border-radius:var(--radius-full);">
-        <span class="material-symbols-outlined" style="font-size:18px;">language</span>
-        <span id="langLabel">AR</span>
-      </button>
+      <a href="#home" class="nav-brand">HISMILE</a>
+      <div style="display:flex; align-items:center; gap:8px;">
+        <a href="#landing" class="btn-primary" style="padding:8px 16px; min-height:auto; font-size:14px;" data-i18n="nav_shop">اطلب الآن</a>
+        <button aria-label="Switch language" id="langToggle" type="button" style="display:flex; align-items:center; gap:4px; font-weight:700; background:var(--surface-alt); padding:6px 12px; border-radius:var(--radius-full);">
+          <span class="material-symbols-outlined" style="font-size:18px;">language</span>
+          <span id="langLabel">AR</span>
+        </button>
+      </div>
     </div>
   </header>
 
   <main>
-    <!-- ==================== LANDING FUNNEL ==================== -->
-    <div id="view-landing" class="view-container active">
+    <!-- ==================== HOME VIEW (Brand Focus) ==================== -->
+    <div id="view-home" class="view-container">
 
-      <!-- Hero Section -->
+      <!-- Home Hero -->
       <section class="hero reveal active">
-        <h1 class="t-hero" data-i18n="land_hero_h">أسنان بيضا فـ30 دقيقة</h1>
-        <p class="t-body-lg t-muted" data-i18n="land_hero_sub" style="max-width:500px; margin:0 auto;">شرائط V34 كتعطيك أسنان أكثر بياضاً من أول استعمال. تقنية مزدوجة: تصحيح اللون الفوري + تبييض PAP+.</p>
+        <h1 class="t-hero" data-i18n="home_hero_h">ابتسامتك هي أول حاجة<br>كيشوفوها فيك.</h1>
+        <p class="t-body-lg t-muted" data-i18n="home_hero_sub" style="max-width:500px; margin:0 auto;">الأسنان البيضا ماشي غير زين — هي ثقة، حضور، وأول انطباع كيبقى فالذاكرة.</p>
+        
+        <div class="hero-img-wrap">
+          <img alt="Hismile Smile" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-05-V34Strips-updated22_10_25_1208x.webp" style="object-fit:cover; height:300px; width:100%;" />
+        </div>
+
+        <a href="#landing" class="btn-primary" style="max-width:320px; margin:0 auto;">
+          <span data-i18n="home_hero_cta">اكتشف منتجاتنا 👇</span>
+        </a>
+      </section>
+
+      <!-- Tech Explanation -->
+      <section class="split-section bg-white reveal">
+        <div class="split-row">
+          <div class="split-content">
+            <h2 class="t-h2" data-i18n="home_brand_h">شنو هي Hismile؟</h2>
+            <p class="t-body t-muted" data-i18n="home_brand_p">Hismile هي علامة تجارية عالمية رائدة فمجال تبييض الأسنان. كتستعمل تقنيات متطورة بحال PAP+ وتصحيح اللون بدلاً من المواد الكيماوية القاسية.</p>
+            <div class="h-card" style="margin-top:16px;">
+              <span class="material-symbols-outlined">science</span>
+              <div>
+                <h3 class="t-h3" data-i18n="home_feat1_h">بلا بيروكسيد</h3>
+                <p class="t-body t-muted" style="font-size:14px;" data-i18n="home_feat1_p">أغلب منتجات التبييض كتضر المينا. تقنيتنا آمنة 100%.</p>
+              </div>
+            </div>
+          </div>
+          <div class="split-media">
+            <img src="https://cdn.converty.shop/images/4fac6dd98719acdbff811add8ea11e05671317afafaa1f3b1044b099e25863ef_lg.gif" alt="Brand tech" />
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+
+    <!-- ==================== LANDING VIEW (Aggressive Funnel - V2 Copy) ==================== -->
+    <div id="view-landing" class="view-container">
+
+      <!-- Landing Hero -->
+      <section class="hero reveal active">
+        <h1 class="t-hero" data-i18n="land_hero_h" style="font-size: clamp(28px, 7vw, 42px);">ابتسامتك هي أول حاجة كيشوفوها فيك. خليها بيضا.</h1>
+        <p class="t-body-lg t-muted" data-i18n="land_hero_sub" style="max-width:550px; margin:0 auto;">تخيّل: كتهدر مع شي حد، كتبسم، وكتشوف نظرتو كتبدل. الأسنان البيضا ماشي غير زين — هي ثقة، هي حضور. شرائط V34 كتعطيك هاد الإحساس فـ30 دقيقة فقط.</p>
         
         <div class="hero-img-wrap">
           <img alt="V34 Whitening Strips" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-01-V34Strips_no-badge31_10_15_595x.webp" />
         </div>
 
-        <a href="javascript:void(0)" class="btn-primary scroll-to-checkout" style="max-width:320px; margin:0 auto;">
-          <span data-i18n="land_hero_cta">اطلب الآن 👇</span>
-        </a>
+        <button type="button" class="btn-primary scroll-to-checkout" style="max-width:340px; margin:0 auto;">
+          <span data-i18n="land_hero_cta">صيفط طلبيتك دابا 👇</span>
+        </button>
       </section>
 
       <!-- Trust Bar -->
       <div class="trust-bar reveal stagger-1">
-        <div class="trust-item"><span class="material-symbols-outlined">local_shipping</span> <span data-i18n="trust_ship">توصيل مجاني</span></div>
+        <div class="trust-item"><span class="material-symbols-outlined">local_shipping</span> <span data-i18n="trust_ship">توصيل لجميع المدن</span></div>
         <div class="trust-item"><span class="material-symbols-outlined">lock</span> <span data-i18n="trust_cod">الدفع عند الاستلام</span></div>
-        <div class="trust-item"><span class="material-symbols-outlined">verified_user</span> <span data-i18n="trust_guarantee">ضمان استرجاع</span></div>
+        <div class="trust-item"><span class="material-symbols-outlined">verified_user</span> <span data-i18n="trust_guarantee">ضمان استرجاع الفلوس</span></div>
       </div>
 
-      <!-- Split: The Problem / Solution -->
+      <!-- The 'Why' -->
       <section class="split-section bg-white reveal">
         <div class="split-row">
           <div class="split-content">
-            <h2 class="t-h2" data-i18n="home_cc_h">تصحيح اللون الفوري 🟣</h2>
-            <p class="t-body t-muted" data-i18n="home_cc_p" style="margin-bottom:16px;">نفس مبدأ الشامبو البنفسجي للشعر، ولكن للأسنان. اللون البنفسجي ديال V34 كيلغي الاصفرار فوراً — النتيجة كتبان من أول استعمال.</p>
+            <h2 class="t-h2" data-i18n="land_why_h">علاش V34 مختلفة على كلشي؟</h2>
+            <p class="t-body t-muted" data-i18n="land_why_sub" style="margin-bottom:16px;">أغلب منتجات التبييض إما كتاخد أسابيع باش تبان، ولا كتضر المينا ديالك بالماء الأوكسجيني. حنا اخترنا طريق آخر:</p>
             <div class="h-card">
               <span class="material-symbols-outlined">science</span>
               <div>
-                <h3 class="t-h3" data-i18n="home_feat1_h">بلا بيروكسيد</h3>
-                <p class="t-body t-muted" style="font-size:14px;" data-i18n="home_feat1_p">أغلب منتجات التبييض كتضر المينا. V34 آمن 100%.</p>
+                <h3 class="t-h3" data-i18n="land_feat1_h">🟣 تصحيح اللون الفوري</h3>
+                <p class="t-body t-muted" style="font-size:14px;" data-i18n="land_feat1_p">اللون البنفسجي كيلغي الاصفرار — نفس مبدأ الشامبو البنفسجي للشعر، ولكن للأسنان. النتيجة كتبان من أول استعمال.</p>
+              </div>
+            </div>
+            <div class="h-card" style="margin-top:12px;">
+              <span class="material-symbols-outlined">verified</span>
+              <div>
+                <h3 class="t-h3" data-i18n="land_feat2_h">⚪ تبييض PAP+</h3>
+                <p class="t-body t-muted" style="font-size:14px;" data-i18n="land_feat2_p">تبييض حقيقي كيزيد مع الوقت — بلا بيروكسيد، آمن 100% على المينا والأسنان الحساسة.</p>
               </div>
             </div>
           </div>
           <div class="split-media">
-            <!-- Converty GIF Reference -->
             <img src="https://cdn.converty.shop/images/4fac6dd98719acdbff811add8ea11e05671317afafaa1f3b1044b099e25863ef_lg.gif" alt="Colour correction action" />
           </div>
         </div>
       </section>
 
-      <!-- Split: PAP+ Technology (Reverse layout) -->
+      <!-- The Benefits List -->
       <section class="split-section bg-alt reveal">
         <div class="split-row reverse">
           <div class="split-content">
-            <h2 class="t-h2" data-i18n="home_pap_h">كيفاش كتستعمل؟ ⏱️</h2>
-            <p class="t-body t-muted" data-i18n="land_how_sub" style="margin-bottom:16px;">طريقة سهلة ومريحة، استعملها فأي وقت وفأي مكان.</p>
-            
-            <div style="display:flex; flex-direction:column; gap:12px; margin-top:20px;">
-              <div style="display:flex; gap:12px; align-items:flex-start;">
-                <div style="background:var(--primary); color:#fff; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; flex-shrink:0;">1</div>
-                <div><strong data-i18n="step1_h">نشّف وحط:</strong> <span class="t-muted" data-i18n="step1_p">نشّف أسنانك وحط الشريط.</span></div>
-              </div>
-              <div style="display:flex; gap:12px; align-items:flex-start;">
-                <div style="background:var(--primary); color:#fff; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; flex-shrink:0;">2</div>
-                <div><strong data-i18n="step2_h">استنى 30 دقيقة:</strong> <span class="t-muted" data-i18n="step2_p">خلي التقنية تخدم.</span></div>
-              </div>
-              <div style="display:flex; gap:12px; align-items:flex-start;">
-                <div style="background:var(--primary); color:#fff; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; flex-shrink:0;">3</div>
-                <div><strong data-i18n="step3_h">نحّي وشوف الفرق:</strong> <span class="t-muted" data-i18n="step3_p">ابتسامة بيضا فوراً.</span></div>
-              </div>
-            </div>
+            <h2 class="t-h2" data-i18n="land_benefits_h">شنو غادي تربح:</h2>
+            <ul style="list-style:none; display:flex; flex-direction:column; gap:12px; margin-top:20px; font-weight:700; font-size:16px;">
+              <li style="display:flex; gap:12px;"><span style="color:var(--primary);">✓</span> <span data-i18n="ben_1">أسنان أبيض ملحوظ من أول استعمال</span></li>
+              <li style="display:flex; gap:12px;"><span style="color:var(--primary);">✓</span> <span data-i18n="ben_2">نتيجة فـ30 دقيقة — ماشي أسابيع</span></li>
+              <li style="display:flex; gap:12px;"><span style="color:var(--primary);">✓</span> <span data-i18n="ben_3">آمن تمامًا — بلا ألم، بلا حساسية</span></li>
+              <li style="display:flex; gap:12px;"><span style="color:var(--primary);">✓</span> <span data-i18n="ben_4">سهل: حط، استنى 30 دقيقة، نحّي</span></li>
+              <li style="display:flex; gap:12px;"><span style="color:var(--primary);">✓</span> <span data-i18n="ben_5">14 استعمال فكل علبة</span></li>
+              <li style="display:flex; gap:12px;"><span style="color:var(--primary);">✓</span> <span data-i18n="ben_6">ضمان استرجاع الفلوس — إلا ماعجبكش، ترجع ليك فلوسك</span></li>
+            </ul>
           </div>
           <div class="split-media">
-            <!-- Converty GIF Reference -->
             <img src="https://cdn.converty.shop/images/8c0d8a24c2eb7d1bdfc4bb8331533143dcf99d11d77b92b0cd48c1b15f258933_lg.gif" alt="How to use" />
           </div>
         </div>
@@ -98,20 +138,17 @@
 
       <!-- Before/After Slider -->
       <section class="split-section bg-gradient text-center reveal">
-        <h2 class="t-h2" style="color:#fff;" data-i18n="land_ba_h">نتائج حقيقية من أول استعمال</h2>
+        <h2 class="t-h2" style="color:#fff;" data-i18n="land_ba_h">الناس كتخلّص المئات فعيادات التبييض... حنا جبنا ليك نفس النتيجة لدارك.</h2>
         <p style="color:rgba(255,255,255,0.8); margin-bottom:24px;" data-i18n="land_ba_hint">← اسحب لكشف النتيجة →</p>
         <div class="slider-wrap" id="slider">
           <img alt="Before" class="slider-img" src="https://cdn.youcan.shop/stores/cdf38917b082e4c6fc949eb37193611f/others/KjnsemXnvmTjspdXcZ9K8gs309Gmu63yV0cCCwDf.jpg"/>
           <img alt="After" class="slider-img slider-after" id="slider-after" src="https://cdn.youcan.shop/stores/cdf38917b082e4c6fc949eb37193611f/others/YDXC54YBjdrXLUzY12QtqGSvWS8klC6HXytO95vk.jpg"/>
           <div class="slider-handle" id="slider-handle"></div>
         </div>
-        <div style="margin-top:32px;">
-          <a href="javascript:void(0)" class="btn-primary scroll-to-checkout" style="background:#fff; color:var(--primary-dark); box-shadow:0 10px 30px rgba(0,0,0,0.3);" data-i18n="land_mid_cta">اطلب الآن — 245 د.م.</a>
-        </div>
       </section>
 
       <!-- Customer Reviews -->
-      <section class="split-section bg-alt reveal">
+      <section class="split-section bg-white reveal">
         <h2 class="t-h2 text-center" style="margin-bottom:24px;" data-i18n="rev_title">آراء الزبناء ⭐⭐⭐⭐⭐</h2>
         
         <div class="review-card">
@@ -123,7 +160,6 @@
             <div class="stars">★★★★★</div>
           </div>
           <p class="t-body" data-i18n="rev1_text">صراحة ما توقعتش هاد النتيجة! أسناني كانو صفرين بزاف بسبب القهوة، ومن أول استعمال بان الفرق واضح. غادي نزيد نطلب وحدة أخرى.</p>
-          <!-- Using placeholder image to simulate realistic user photo -->
           <img src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-03-V34Strips-updated22_10_25_595x.webp" class="review-img" alt="Review 1" />
         </div>
 
@@ -141,17 +177,16 @@
       </section>
 
       <!-- ★ PREMIUM INLINE CHECKOUT FORM ★ -->
-      <section class="checkout-section bg-white" id="checkout-section">
+      <section class="checkout-section bg-alt" id="checkout-section">
         <div class="checkout-box reveal">
           <div class="text-center" style="margin-bottom:24px;">
-            <span style="background:var(--primary-light); color:var(--primary-dark); padding:4px 12px; border-radius:20px; font-weight:800; font-size:14px;" data-i18n="checkout_badge">عرض محدود ⏳</span>
-            <h2 class="t-h2" style="margin-top:12px;" data-i18n="land_order_h">صيفط طلبيتك دابا 👇</h2>
+            <h2 class="t-h2" style="margin-top:12px;" data-i18n="land_order_h">كل يوم كتأجّل، هو يوم بأسنان أقل بياضًا. صيفط طلبيتك دابا 👇</h2>
             
             <div style="display:flex; align-items:baseline; justify-content:center; gap:8px;">
               <div class="price-tag-big" data-i18n="land_price">245 د.م.</div>
               <div class="strike-price" data-i18n="land_strike">350 د.م.</div>
             </div>
-            <p class="t-muted" style="font-weight:700;" data-i18n="land_order_sub">الدفع عند الاستلام — التوصيل مجاني لجميع المدن</p>
+            <p class="t-muted" style="font-weight:700;" data-i18n="land_order_sub">الدفع عند الاستلام، بلا خلاص مسبق. التوصيل لجميع مدن المغرب.</p>
           </div>
 
           <div id="express-checkout-section" class="product-section"
@@ -192,24 +227,13 @@
           <button type="submit" form="custom-express-checkout-form" class="btn-primary btn-full">
             <span data-i18n="submit_order">أكد الطلب — الدفع عند الاستلام</span>
           </button>
-
-          <div style="display:flex; justify-content:center; gap:16px; margin-top:20px;">
-            <div style="text-align:center;">
-              <span class="material-symbols-outlined" style="font-size:28px; color:var(--primary);">verified_user</span>
-              <div style="font-size:12px; font-weight:700; color:var(--on-surface-muted);" data-i18n="ct_guarantee">ضمان 100%</div>
-            </div>
-            <div style="text-align:center;">
-              <span class="material-symbols-outlined" style="font-size:28px; color:var(--primary);">local_shipping</span>
-              <div style="font-size:12px; font-weight:700; color:var(--on-surface-muted);" data-i18n="ct_ship">توصيل سريع</div>
-            </div>
-          </div>
         </div>
       </section>
 
     </div>
   </main>
 
-  <!-- Sticky Bottom CTA -->
+  <!-- Sticky Bottom CTA (Only visible on Landing Page, or Home Page when scrolled) -->
   <nav class="sticky-cta" id="bottom-cta">
     <div class="sticky-info">
       <img alt="V34" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-01-V34Strips_no-badge31_10_15_595x.webp"/>
@@ -218,16 +242,12 @@
         <span style="font-size:14px; font-weight:700; color:var(--primary);" data-i18n="sticky_price">245 د.م.</span>
       </div>
     </div>
-    <a href="#landing" class="btn-primary scroll-to-checkout" id="stickyBtn" data-i18n="sticky_cta" style="min-height:44px; padding:0 20px; font-size:15px;">اطلب الآن</a>
+    <button type="button" class="btn-primary scroll-to-checkout" id="stickyBtn" data-i18n="sticky_cta" style="min-height:44px; padding:0 20px; font-size:15px; animation:none; width:auto;">اطلب الآن</button>
   </nav>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="nav-brand">HISMILE</div>
-    <p style="margin-bottom:8px;">
-      <a href="#" style="margin:0 8px;">سياسة الخصوصية</a> | 
-      <a href="#" style="margin:0 8px;">شروط الاستخدام</a>
-    </p>
     <p data-i18n="foot_copy">© 2024 HISMILE. جميع الحقوق محفوظة.</p>
   </footer>
 

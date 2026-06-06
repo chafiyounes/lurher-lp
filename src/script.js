@@ -21,7 +21,6 @@
     nav_shop: { ar: "اطلب الآن", en: "Order Now", fr: "Commander" },
 
     /* ─── HOME PAGE ─── */
-    home_badge: { ar: "تقنية تصحيح اللون", en: "Colour Correction Technology", fr: "Technologie de Correction Couleur" },
     home_hero_h: {
       ar: "ابتسامتك هي أول حاجة<br>كيشوفوها فيك.",
       en: "Your Smile Is The First Thing<br>People Notice.",
@@ -33,103 +32,83 @@
       fr: "Des dents blanches ne sont pas qu'esthétiques — c'est de la confiance et une première impression durable."
     },
     home_hero_cta: {
-      ar: "اكتشف V34 <span class='material-symbols-outlined' style='font-size:20px;'>arrow_back</span>",
-      en: "Discover V34 <span class='material-symbols-outlined' style='font-size:20px;'>arrow_forward</span>",
-      fr: "Découvrir V34 <span class='material-symbols-outlined' style='font-size:20px;'>arrow_forward</span>"
+      ar: "اكتشف منتجاتنا 👇",
+      en: "Discover our products 👇",
+      fr: "Découvrez nos produits 👇"
     },
     home_brand_h: { ar: "شنو هي Hismile؟", en: "What is Hismile?", fr: "Qu'est-ce que Hismile ?" },
     home_brand_p: {
-      ar: "Hismile هي علامة تجارية عالمية رائدة فمجال تبييض الأسنان. كتستعمل تقنيات متطورة بحال PAP+ وتصحيح اللون بدلاً من المواد الكيماوية القاسية. أكثر من 10 مليون منتج تباع فالعالم كامل.",
-      en: "Hismile is a globally leading teeth whitening brand. It uses advanced technologies like PAP+ and colour correction instead of harsh chemicals. Over 10 million products sold worldwide.",
-      fr: "Hismile est une marque leader mondial du blanchiment dentaire. Elle utilise des technologies avancées comme PAP+ et la correction de couleur au lieu de produits chimiques agressifs."
-    },
-    home_pap_h: { ar: "تقنية PAP+", en: "PAP+ Technology", fr: "Technologie PAP+" },
-    home_pap_sub: {
-      ar: "تبييض حقيقي بلا بيروكسيد — آمن 100% على المينا والأسنان الحساسة.",
-      en: "Real whitening without peroxide — 100% safe for enamel and sensitive teeth.",
-      fr: "Blanchiment réel sans peroxyde — 100% sûr pour l'émail et les dents sensibles."
+      ar: "Hismile هي علامة تجارية عالمية رائدة فمجال تبييض الأسنان. كتستعمل تقنيات متطورة بحال PAP+ وتصحيح اللون بدلاً من المواد الكيماوية القاسية.",
+      en: "Hismile is a global leading brand in teeth whitening. It uses advanced tech like PAP+ and colour correction instead of harsh chemicals.",
+      fr: "Hismile est une marque mondiale de blanchiment dentaire. Elle utilise des technologies avancées comme PAP+ et la correction de couleur."
     },
     home_feat1_h: { ar: "بلا بيروكسيد", en: "Peroxide-Free", fr: "Sans peroxyde" },
     home_feat1_p: {
-      ar: "أغلب منتجات التبييض كتستعمل الماء الأوكسجيني اللي كيضر المينا. PAP+ كيبيض بطريقة آمنة بلا ألم ولا حساسية.",
-      en: "Most whitening products use peroxide that damages enamel. PAP+ whitens safely without pain or sensitivity.",
-      fr: "La plupart des produits utilisent du peroxyde qui endommage l'émail. PAP+ blanchit sans douleur ni sensibilité."
+      ar: "أغلب منتجات التبييض كتضر المينا. تقنيتنا آمنة 100%.",
+      en: "Most whitening products damage enamel. Our tech is 100% safe.",
+      fr: "La plupart des produits abîment l'émail. Notre technologie est 100% sûre."
     },
-    home_feat2_h: { ar: "مثبت سريرياً", en: "Clinically Proven", fr: "Prouvé cliniquement" },
-    home_feat2_p: {
-      ar: "تركيبة مدروسة ومثبتة بالدراسات. النتيجة كتبان من أول استعمال وكتزيد مع الوقت.",
-      en: "A researched formula proven by studies. Results visible from first use and improve over time.",
-      fr: "Formule étudiée et prouvée. Résultats visibles dès la première utilisation."
-    },
-    home_cc_h: { ar: "تصحيح اللون الفوري", en: "Instant Colour Correction", fr: "Correction de couleur instantanée" },
-    home_cc_p: {
-      ar: "نفس مبدأ الشامبو البنفسجي للشعر، ولكن للأسنان. اللون البنفسجي ديال V34 كيلغي الاصفرار فوراً — النتيجة كتبان من أول استعمال.",
-      en: "Same principle as purple shampoo for hair, but for teeth. V34's purple tone cancels yellowness instantly — visible from first use.",
-      fr: "Même principe que le shampoing violet pour les cheveux, mais pour les dents. Le ton violet de V34 annule le jaunissement instantanément."
-    },
-    home_cta_h: { ar: "واجد لابتسامة كتبهر؟", en: "Ready for a brighter smile?", fr: "Prêt pour un sourire éclatant ?" },
-    home_cta_sub: {
-      ar: "اكتشف شرائط V34 وجرب الفرق بنفسك.",
-      en: "Discover V34 strips and see the difference for yourself.",
-      fr: "Découvrez les bandes V34 et voyez la différence."
-    },
-    home_cta_btn: { ar: "تسوق الآن", en: "Shop Now", fr: "Acheter maintenant" },
 
-    /* ─── LANDING PAGE ─── */
-    land_badge: { ar: "الأكثر مبيعاً", en: "Best Seller", fr: "Best-seller" },
-    land_hero_h: { ar: "أسنان بيضا فـ30 دقيقة", en: "Whiter Teeth in 30 Minutes", fr: "Des dents plus blanches en 30 minutes" },
+    /* ─── LANDING PAGE (Version 2) ─── */
+    land_hero_h: { 
+      ar: "ابتسامتك هي أول حاجة كيشوفوها فيك. خليها بيضا.", 
+      en: "Your smile is the first thing they see. Make it white.", 
+      fr: "Votre sourire est la première chose qu'ils voient. Rendez-le blanc." 
+    },
     land_hero_sub: {
-      ar: "شرائط V34 كتعطيك أسنان أكثر بياضاً من أول استعمال. تقنية مزدوجة: تصحيح اللون الفوري + تبييض PAP+.",
-      en: "V34 strips give you visibly whiter teeth from first use. Dual technology: instant colour correction + PAP+ whitening.",
-      fr: "Les bandes V34 vous donnent des dents visiblement plus blanches dès la première utilisation."
+      ar: "تخيّل: كتهدر مع شي حد، كتبسم، وكتشوف نظرتو كتبدل. الأسنان البيضا ماشي غير زين — هي ثقة، هي حضور. شرائط V34 كتعطيك هاد الإحساس فـ30 دقيقة فقط.",
+      en: "Imagine: you talk to someone, smile, and see their look change. White teeth aren't just beauty — they're confidence, they're presence. V34 strips give you this feeling in just 30 minutes.",
+      fr: "Imaginez : vous parlez, souriez et voyez leur regard changer. Les dents blanches ne sont pas qu'une question de beauté — c'est de la confiance. Les bandes V34 vous donnent cette sensation en 30 minutes."
     },
-    land_price: { ar: "245 د.م.", en: "245 MAD", fr: "245 MAD" },
-    land_price_sub: {
-      ar: "الدفع عند الاستلام — التوصيل لجميع المدن",
-      en: "Cash on Delivery — Free shipping to all cities",
-      fr: "Paiement à la livraison — Livraison gratuite"
-    },
-    land_hero_cta: { ar: "اطلب الآن 👇", en: "Order Now 👇", fr: "Commander maintenant 👇" },
-    land_sold: { ar: "+10,000,000<br>منتج تم بيعه", en: "10,000,000+<br>Products Sold", fr: "10 000 000+<br>Produits vendus" },
-
+    land_hero_cta: { ar: "صيفط طلبيتك دابا 👇", en: "Order Now 👇", fr: "Commander maintenant 👇" },
+    
     trust_guarantee: { ar: "ضمان استرجاع الفلوس", en: "Money-back guarantee", fr: "Garantie de remboursement" },
-    trust_ship: { ar: "التوصيل لجميع المدن", en: "Delivery to all cities", fr: "Livraison partout" },
+    trust_ship: { ar: "توصيل لجميع المدن", en: "Delivery to all cities", fr: "Livraison partout" },
     trust_cod: { ar: "الدفع عند الاستلام", en: "Cash on Delivery", fr: "Paiement à la livraison" },
-    trust_reviews: { ar: "+172 تقييم إيجابي", en: "172+ positive reviews", fr: "172+ avis positifs" },
 
-    land_how_h: { ar: "كيفاش كتستعمل؟", en: "How to Use?", fr: "Comment utiliser ?" },
-    step1_h: { ar: "نشّف وحط", en: "Dry & Apply", fr: "Séchez et appliquez" },
-    step1_p: { ar: "نشّف أسنانك وحط شريط V34 بإحكام.", en: "Dry your teeth and apply the V34 strip firmly.", fr: "Séchez vos dents et appliquez la bande V34." },
-    step2_h: { ar: "استنى 30 دقيقة", en: "Wait 30 Minutes", fr: "Attendez 30 minutes" },
-    step2_p: { ar: "خلي تقنية تصحيح اللون تخدم.", en: "Let the colour correction technology work.", fr: "Laissez la technologie agir." },
-    step3_h: { ar: "نحّي وشوف الفرق", en: "Remove & Reveal", fr: "Retirez et admirez" },
-    step3_p: { ar: "نحّي الشريط واشطب — ابتسامة بيضا فوراً.", en: "Remove the strip and rinse — instantly whiter smile.", fr: "Retirez et rincez — sourire plus blanc instantanément." },
-
-    land_ba_h: { ar: "نتائج حقيقية", en: "Real Results", fr: "Résultats réels" },
-    land_ba_hint: { ar: "← اسحب لكشف النتيجة →", en: "← Drag to reveal →", fr: "← Glissez pour révéler →" },
-    land_mid_cta: { ar: "اطلب الآن — 245 د.م.", en: "Order Now — 245 MAD", fr: "Commander — 245 MAD" },
-
-    land_why_h: { ar: "علاش V34 مختلفة؟", en: "Why is V34 Different?", fr: "Pourquoi V34 est différent ?" },
+    land_why_h: { ar: "علاش V34 مختلفة على كلشي؟", en: "Why is V34 Different?", fr: "Pourquoi V34 est différent ?" },
     land_why_sub: {
-      ar: "أغلب منتجات التبييض كتاخد أسابيع ولا كتضر المينا. حنا اخترنا طريق آخر.",
-      en: "Most whitening products take weeks or damage enamel. We chose a different path.",
-      fr: "La plupart des produits prennent des semaines ou abîment l'émail. Nous avons choisi une autre voie."
+      ar: "أغلب منتجات التبييض إما كتاخد أسابيع باش تبان، ولا كتضر المينا ديالك بالماء الأوكسجيني. حنا اخترنا طريق آخر:",
+      en: "Most whitening products take weeks or damage enamel. We chose a different path:",
+      fr: "La plupart des produits prennent des semaines ou abîment l'émail. Nous avons choisi une autre voie :"
     },
     land_feat1_h: { ar: "🟣 تصحيح اللون الفوري", en: "🟣 Instant Colour Correction", fr: "🟣 Correction de couleur instantanée" },
     land_feat1_p: {
-      ar: "اللون البنفسجي كيلغي الاصفرار — نفس مبدأ الشامبو البنفسجي للشعر، ولكن للأسنان.",
-      en: "Purple tone cancels yellowness — same principle as purple shampoo for hair, but for teeth.",
-      fr: "Le ton violet annule le jaunissement — même principe que le shampoing violet."
+      ar: "اللون البنفسجي كيلغي الاصفرار — نفس مبدأ الشامبو البنفسجي للشعر، ولكن للأسنان. النتيجة كتبان من أول استعمال.",
+      en: "Purple tone cancels yellowness — same principle as purple shampoo for hair, but for teeth. Visible from first use.",
+      fr: "Le ton violet annule le jaunissement — même principe que le shampoing violet. Visible dès la première utilisation."
     },
-    land_feat2_h: { ar: "⚪ تبييض PAP+ آمن", en: "⚪ Safe PAP+ Whitening", fr: "⚪ Blanchiment PAP+ sûr" },
+    land_feat2_h: { ar: "⚪ تبييض PAP+", en: "⚪ PAP+ Whitening", fr: "⚪ Blanchiment PAP+" },
     land_feat2_p: {
       ar: "تبييض حقيقي كيزيد مع الوقت — بلا بيروكسيد، آمن 100% على المينا والأسنان الحساسة.",
       en: "Real whitening that improves over time — peroxide-free, 100% safe for enamel.",
       fr: "Blanchiment réel qui s'améliore — sans peroxyde, 100% sûr."
     },
 
-    land_order_h: { ar: "صيفط طلبيتك دابا 👇", en: "Place Your Order Now 👇", fr: "Passez votre commande 👇" },
-    land_order_sub: { ar: "الدفع عند الاستلام — التوصيل مجاني", en: "Cash on Delivery — Free Shipping", fr: "Paiement à la livraison — Livraison gratuite" },
+    land_benefits_h: { ar: "شنو غادي تربح:", en: "What you will gain:", fr: "Ce que vous y gagnez :" },
+    ben_1: { ar: "أسنان أبيض ملحوظ من أول استعمال", en: "Visibly whiter teeth from first use", fr: "Dents visiblement plus blanches dès la première utilisation" },
+    ben_2: { ar: "نتيجة فـ30 دقيقة — ماشي أسابيع", en: "Results in 30 minutes — not weeks", fr: "Résultats en 30 minutes — pas en semaines" },
+    ben_3: { ar: "آمن تمامًا — بلا ألم، بلا حساسية", en: "Completely safe — no pain, no sensitivity", fr: "Totalement sûr — sans douleur, sans sensibilité" },
+    ben_4: { ar: "سهل: حط، استنى 30 دقيقة، نحّي", en: "Easy: apply, wait 30 mins, remove", fr: "Facile : appliquez, attendez 30 min, retirez" },
+    ben_5: { ar: "14 استعمال فكل علبة", en: "14 uses in each box", fr: "14 utilisations par boîte" },
+    ben_6: { ar: "ضمان استرجاع الفلوس — إلا ماعجبكش، ترجع ليك فلوسك", en: "Money-back guarantee — if you don't like it, get a refund", fr: "Garantie de remboursement — si vous n'aimez pas, vous êtes remboursé" },
+
+    land_ba_h: { ar: "الناس كتخلّص المئات فعيادات التبييض... حنا جبنا ليك نفس النتيجة لدارك.", en: "People pay hundreds at clinics... We brought the same result to your home.", fr: "Les gens paient des centaines en clinique... Nous avons apporté le même résultat chez vous." },
+    land_ba_hint: { ar: "← اسحب لكشف النتيجة →", en: "← Drag to reveal →", fr: "← Glissez pour révéler →" },
+
+    rev_title: { ar: "آراء الزبناء ⭐⭐⭐⭐⭐", en: "Customer Reviews ⭐⭐⭐⭐⭐", fr: "Avis Clients ⭐⭐⭐⭐⭐" },
+    rev1_name: { ar: "سناء .م", en: "Sanaa .M", fr: "Sanaa .M" },
+    rev1_city: { ar: "الدار البيضاء", en: "Casablanca", fr: "Casablanca" },
+    rev1_text: { ar: "صراحة ما توقعتش هاد النتيجة! أسناني كانو صفرين بزاف بسبب القهوة، ومن أول استعمال بان الفرق واضح. غادي نزيد نطلب وحدة أخرى.", en: "Honestly didn't expect this! My teeth were very yellow from coffee, and the difference is clear from the first use. Will order another.", fr: "Je ne m'attendais pas à ce résultat ! Mes dents étaient très jaunes à cause du café. La différence est claire dès la première utilisation." },
+    rev2_name: { ar: "ياسين .ب", en: "Yassine .B", fr: "Yassine .B" },
+    rev2_city: { ar: "الرباط", en: "Rabat", fr: "Rabat" },
+    rev2_text: { ar: "التوصيل كان سريع، والمنتج فعال. كيعطي لمعة زوينة للأسنان وكيبيدهم مزيان. شكراً هيسمايل.", en: "Fast delivery, effective product. Gives a nice shine and whitens well. Thanks Hismile.", fr: "Livraison rapide, produit efficace. Donne une belle brillance et blanchit bien. Merci Hismile." },
+
+    land_order_h: { ar: "كل يوم كتأجّل، هو يوم بأسنان أقل بياضًا. صيفط طلبيتك دابا 👇", en: "Every day you delay is a day with less white teeth. Order Now 👇", fr: "Chaque jour de retard est un jour avec des dents moins blanches. Commandez maintenant 👇" },
+    land_order_sub: { ar: "الدفع عند الاستلام، بلا خلاص مسبق. التوصيل لجميع مدن المغرب.", en: "Cash on Delivery, no upfront payment. Delivery to all Moroccan cities.", fr: "Paiement à la livraison, aucun paiement d'avance. Livraison dans tout le Maroc." },
+    land_price: { ar: "245 د.م.", en: "245 MAD", fr: "245 MAD" },
+    land_strike: { ar: "350 د.م.", en: "350 MAD", fr: "350 MAD" },
+    checkout_badge: { ar: "عرض محدود ⏳", en: "Limited Offer ⏳", fr: "Offre Limitée ⏳" },
 
     form_name: { ar: "الإسم الكامل", en: "Full Name", fr: "Nom complet" },
     form_phone: { ar: "رقم الهاتف", en: "Phone Number", fr: "Numéro de téléphone" },
@@ -138,43 +117,18 @@
     form_phone_ph: { ar: "06XX XXX XXX", en: "06XX XXX XXX", fr: "06XX XXX XXX" },
     form_city_ph: { ar: "الدار البيضاء، الرباط...", en: "Casablanca, Rabat...", fr: "Casablanca, Rabat..." },
     submit_order: {
-      ar: "اطلب الآن — الدفع عند الاستلام",
-      en: "Order Now — Cash on Delivery",
-      fr: "Commander — Paiement à la livraison"
+      ar: "أكد الطلب — الدفع عند الاستلام",
+      en: "Confirm Order — Cash on Delivery",
+      fr: "Confirmer la commande — Paiement à la livraison"
     },
 
-    ct_secure: { ar: "دفع آمن", en: "Secure", fr: "Sécurisé" },
-    ct_ship: { ar: "توصيل مجاني", en: "Free shipping", fr: "Livraison gratuite" },
-    ct_guarantee: { ar: "ضمان استرجاع", en: "Money-back", fr: "Garantie" },
-
-    faq_title: { ar: "أسئلة شائعة", en: "FAQ", fr: "Questions fréquentes" },
-    faq_q1: { ar: "واش آمنة على المينا؟", en: "Is it safe for enamel?", fr: "Est-ce sûr pour l'émail ?" },
-    faq_a1: {
-      ar: "نعم، آمنة تماماً. V34 كتستعمل تقنية تصحيح اللون وPAP+ — بلا ماء أوكسجيني، ما كتضرش المينا نهائياً.",
-      en: "Yes, completely safe. V34 uses colour correction and PAP+ — no peroxide, zero damage to enamel.",
-      fr: "Oui, totalement sûr. V34 utilise la correction de couleur et PAP+ — sans peroxyde."
-    },
-    faq_q2: { ar: "شحال ديال الاستعمالات فالعلبة؟", en: "How many uses per box?", fr: "Combien d'utilisations par boîte ?" },
-    faq_a2: {
-      ar: "كل علبة فيها 14 استعمال. نشّف أسنانك، حط الشريط 30 دقيقة، نحّيه واشطب. بسيطة!",
-      en: "Each box has 14 uses. Dry your teeth, apply for 30 mins, remove and rinse. Simple!",
-      fr: "Chaque boîte contient 14 utilisations. Séchez, appliquez 30 min, retirez et rincez."
-    },
-    faq_q3: { ar: "كيفاش كيتم التوصيل والدفع؟", en: "How does delivery and payment work?", fr: "Comment fonctionne la livraison ?" },
-    faq_a3: {
-      ar: "التوصيل لجميع مدن المغرب. الدفع عند الاستلام — ما كتخلصش حتى يوصلك المنتج لباب دارك.",
-      en: "Delivery to all Moroccan cities. Cash on Delivery — you don't pay until the product is at your door.",
-      fr: "Livraison dans toutes les villes. Paiement à la livraison — vous ne payez qu'à réception."
-    },
+    ct_ship: { ar: "توصيل سريع", en: "Fast shipping", fr: "Livraison rapide" },
+    ct_guarantee: { ar: "ضمان 100%", en: "100% Guarantee", fr: "Garantie 100%" },
 
     sticky_name: { ar: "شرائط V34", en: "V34 Strips", fr: "Bandes V34" },
     sticky_price: { ar: "245 د.م.", en: "245 MAD", fr: "245 MAD" },
     sticky_cta: { ar: "اطلب الآن", en: "Order Now", fr: "Commander" },
 
-    foot_privacy: { ar: "سياسة الخصوصية", en: "Privacy Policy", fr: "Politique de confidentialité" },
-    foot_terms: { ar: "الشروط", en: "Terms", fr: "Conditions" },
-    foot_ship: { ar: "الشحن", en: "Shipping", fr: "Livraison" },
-    foot_contact: { ar: "اتصل بنا", en: "Contact", fr: "Contact" },
     foot_copy: { ar: "© 2024 HISMILE. جميع الحقوق محفوظة.", en: "© 2024 HISMILE. ALL RIGHTS RESERVED.", fr: "© 2024 HISMILE. TOUS DROITS RÉSERVÉS." }
   };
 
@@ -182,7 +136,6 @@
   var langs = ["ar", "en", "fr"];
   var currentLangIndex = 0; // Default: Arabic
 
-  // Auto-detect: if browser language is French, switch to French. Otherwise Arabic.
   try {
     var browserLang = (navigator.language || navigator.userLanguage || "ar").toLowerCase();
     if (browserLang.indexOf("fr") === 0) {
@@ -200,7 +153,6 @@
 
     if (!viewHome || !viewLanding) return;
 
-    // Reset reveals
     var reveals = document.querySelectorAll(".reveal");
     for (var i = 0; i < reveals.length; i++) { reveals[i].classList.remove("active"); }
 
@@ -232,7 +184,6 @@
       app.setAttribute("dir", l === "ar" ? "rtl" : "ltr");
     }
 
-    // Text content
     var nodes = document.querySelectorAll("[data-i18n]");
     for (var i = 0; i < nodes.length; i++) {
       var k = nodes[i].getAttribute("data-i18n");
@@ -241,7 +192,6 @@
       }
     }
 
-    // Placeholders
     var phNodes = document.querySelectorAll("[data-i18n-placeholder]");
     for (var j = 0; j < phNodes.length; j++) {
       var pk = phNodes[j].getAttribute("data-i18n-placeholder");
@@ -274,11 +224,11 @@
       }
     }
 
-    // Sticky CTA visibility
     var bottomCta = document.getElementById("bottom-cta");
     var hash = window.location.hash || "#home";
     if (bottomCta) {
-      if (hash === "#home" && window.scrollY > 400) {
+      // Show sticky CTA immediately on landing page, or after scroll on home page
+      if (hash === "#landing" || (hash === "#home" && window.scrollY > 400)) {
         bottomCta.classList.add("visible");
       } else {
         bottomCta.classList.remove("visible");
@@ -294,9 +244,16 @@
     var btn = e.target.closest(".scroll-to-checkout");
     if (btn) {
       e.preventDefault();
-      var section = document.getElementById("checkout-section");
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth", block: "center" });
+      
+      if (window.location.hash !== "#landing") {
+        window.location.hash = "#landing";
+        setTimeout(function() {
+          var section = document.getElementById("checkout-section");
+          if (section) section.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 100);
+      } else {
+        var section = document.getElementById("checkout-section");
+        if (section) section.scrollIntoView({ behavior: "smooth", block: "center" });
       }
     }
   });
@@ -344,21 +301,6 @@
     }
   }
 
-  /* ── Accordion ── */
-  window.toggleAccordion = function (id) {
-    var content = document.getElementById(id);
-    var icon = document.getElementById("icon-" + id);
-    if (!content || !icon) return;
-
-    if (content.classList.contains("open")) {
-      content.classList.remove("open");
-      icon.classList.remove("open");
-    } else {
-      content.classList.add("open");
-      icon.classList.add("open");
-    }
-  };
-
   /* ── Checkout Form ── */
   function initCustomCheckout() {
     var form = document.getElementById("custom-express-checkout-form");
@@ -403,7 +345,6 @@
       }
     }
 
-    // Clear errors on input
     form.addEventListener("input", function (e) {
       if (e.target && e.target.closest) {
         var group = e.target.closest(".form-group");
@@ -415,7 +356,6 @@
       }
     });
 
-    // Submit
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (submitBtn.disabled) return;
