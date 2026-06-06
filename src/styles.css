@@ -5,7 +5,7 @@
    ============================================================ */
 
 /* ---------- Fonts & Icons ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
 
 /* ---------- Design Tokens ---------- */
@@ -30,9 +30,9 @@
   --danger: #D32F2F;
   --success: #2E7D32;
 
-  --font-display: 'DM Sans', 'Noto Sans Arabic', sans-serif;
-  --font-body: 'Inter', 'Noto Sans Arabic', sans-serif;
-  --font-ar: 'Noto Sans Arabic', 'Inter', sans-serif;
+  --font-display: 'DM Sans', 'Cairo', sans-serif;
+  --font-body: 'Inter', 'Cairo', sans-serif;
+  --font-ar: 'Cairo', 'Inter', sans-serif;
 
   --section-py: 48px;
   --section-px: 20px;
@@ -538,8 +538,8 @@
   position: fixed;
   bottom: 0; left: 0; right: 0;
   background: var(--surface-white);
-  box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
-  padding: 10px var(--section-px);
+  box-shadow: 0 -6px 25px rgba(0,0,0,0.1);
+  padding: 14px var(--section-px);
   z-index: 100;
   display: flex;
   align-items: center;
@@ -551,16 +551,16 @@
 .sticky-cta-info {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
-.sticky-img { width: 36px; height: 36px; border-radius: var(--radius-sm); object-fit: cover; }
+.sticky-img { width: 44px; height: 44px; border-radius: var(--radius-md); object-fit: cover; }
 .sticky-cta-btn {
   background: var(--primary);
   color: var(--on-primary);
   border-radius: var(--radius-full);
-  padding: 10px 22px;
+  padding: 12px 26px;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 15px;
   transition: background 0.2s;
 }
 .sticky-cta-btn:hover { background: var(--primary-dark); }
