@@ -5,11 +5,6 @@
 (function () {
   "use strict";
 
-  console.log(
-    "%c[V34] custom script loaded",
-    "color:#6C3FA0;font-weight:bold;font-size:14px"
-  );
-
   /* ── i18n Dictionary ── */
   var I18N = {
     /* Announcement */
@@ -20,36 +15,7 @@
     },
     nav_shop: { ar: "اطلب الآن", en: "Order Now", fr: "Commander" },
 
-    /* ─── HOME PAGE ─── */
-    home_hero_h: {
-      ar: "ابتسامتك هي أول حاجة<br>كيشوفوها فيك.",
-      en: "Your Smile Is The First Thing<br>People Notice.",
-      fr: "Votre sourire est la première chose<br>que les gens remarquent."
-    },
-    home_hero_sub: {
-      ar: "الأسنان البيضا ماشي غير زين — هي ثقة، حضور، وأول انطباع كيبقى فالذاكرة.",
-      en: "White teeth aren't just beautiful — they're confidence, presence, and a lasting first impression.",
-      fr: "Des dents blanches ne sont pas qu'esthétiques — c'est de la confiance et une première impression durable."
-    },
-    home_hero_cta: {
-      ar: "اكتشف منتجاتنا 👇",
-      en: "Discover our products 👇",
-      fr: "Découvrez nos produits 👇"
-    },
-    home_brand_h: { ar: "شنو هي Hismile؟", en: "What is Hismile?", fr: "Qu'est-ce que Hismile ?" },
-    home_brand_p: {
-      ar: "Hismile هي علامة تجارية عالمية رائدة فمجال تبييض الأسنان. كتستعمل تقنيات متطورة بحال PAP+ وتصحيح اللون بدلاً من المواد الكيماوية القاسية.",
-      en: "Hismile is a global leading brand in teeth whitening. It uses advanced tech like PAP+ and colour correction instead of harsh chemicals.",
-      fr: "Hismile est une marque mondiale de blanchiment dentaire. Elle utilise des technologies avancées comme PAP+ et la correction de couleur."
-    },
-    home_feat1_h: { ar: "بلا بيروكسيد", en: "Peroxide-Free", fr: "Sans peroxyde" },
-    home_feat1_p: {
-      ar: "أغلب منتجات التبييض كتضر المينا. تقنيتنا آمنة 100%.",
-      en: "Most whitening products damage enamel. Our tech is 100% safe.",
-      fr: "La plupart des produits abîment l'émail. Notre technologie est 100% sûre."
-    },
-
-    /* ─── LANDING PAGE (Version 2) ─── */
+    /* ─── LANDING PAGE ─── */
     land_hero_h: { 
       ar: "ابتسامتك هي أول حاجة كيشوفوها فيك. خليها بيضا.", 
       en: "Your smile is the first thing they see. Make it white.", 
@@ -104,6 +70,13 @@
     rev2_city: { ar: "الرباط", en: "Rabat", fr: "Rabat" },
     rev2_text: { ar: "التوصيل كان سريع، والمنتج فعال. كيعطي لمعة زوينة للأسنان وكيبيدهم مزيان. شكراً هيسمايل.", en: "Fast delivery, effective product. Gives a nice shine and whitens well. Thanks Hismile.", fr: "Livraison rapide, produit efficace. Donne une belle brillance et blanchit bien. Merci Hismile." },
 
+    rev3_name: { ar: "مريم .أ", en: "Meryem .A", fr: "Meryem .A" },
+    rev3_city: { ar: "طنجة", en: "Tangier", fr: "Tanger" },
+    rev3_text: { ar: "النتيجة صراحة صدماتني! كنت خايفة تضر ليا أسناني حيت عندي حساسة ولكن الحمد لله ما كاين حتى ألم والبياض رائع.", en: "Honestly, the result shocked me! I was worried about my sensitive teeth, but no pain at all and the whiteness is amazing.", fr: "Franchement, le résultat m'a bluffée ! J'avais peur pour mes dents sensibles, mais aucune douleur et la blancheur est là." },
+    rev4_name: { ar: "أمين .ر", en: "Amine .R", fr: "Amine .R" },
+    rev4_city: { ar: "مراكش", en: "Marrakech", fr: "Marrakech" },
+    rev4_text: { ar: "منتج ممتاز وتوصيل سريع في يومين فقط للدار البيضاء. طريقة الاستعمال ساهلة بزاف والنتيجة كتبان من أول مرة.", en: "Excellent product and fast delivery in 2 days. Very easy to use and visible results from the first use.", fr: "Excellent produit et livraison rapide en 2 jours. Très simple à utiliser et résultat visible dès la première fois." },
+
     land_order_h: { ar: "كل يوم كتأجّل، هو يوم بأسنان أقل بياضًا. صيفط طلبيتك دابا 👇", en: "Every day you delay is a day with less white teeth. Order Now 👇", fr: "Chaque jour de retard est un jour avec des dents moins blanches. Commandez maintenant 👇" },
     land_order_sub: { ar: "الدفع عند الاستلام، بلا خلاص مسبق. التوصيل لجميع مدن المغرب.", en: "Cash on Delivery, no upfront payment. Delivery to all Moroccan cities.", fr: "Paiement à la livraison, aucun paiement d'avance. Livraison dans tout le Maroc." },
     land_price: { ar: "245 د.م.", en: "245 MAD", fr: "245 MAD" },
@@ -122,14 +95,56 @@
       fr: "Confirmer la commande — Paiement à la livraison"
     },
 
-    ct_ship: { ar: "توصيل سريع", en: "Fast shipping", fr: "Livraison rapide" },
+    ct_ship: { ar: "توصيل سريع", en: "Fast Shipping", fr: "Livraison Rapide" },
+    ct_ship_sub: { ar: "فابور و سريع (24-48 ساعة)", en: "Free and fast (24-48h)", fr: "Gratuit et rapide (24-48h)" },
+    trust_cod_sub: { ar: "تأكد من المنتج عاد خلص", en: "Check your product, then pay", fr: "Vérifiez avant de payer" },
     ct_guarantee: { ar: "ضمان 100%", en: "100% Guarantee", fr: "Garantie 100%" },
+    ct_guarantee_sub: { ar: "ضمان 30 يوم استرجاع الفلوس", en: "30-day money-back guarantee", fr: "Garantie de remboursement de 30 jours" },
 
     sticky_name: { ar: "شرائط V34", en: "V34 Strips", fr: "Bandes V34" },
     sticky_price: { ar: "245 د.م.", en: "245 MAD", fr: "245 MAD" },
     sticky_cta: { ar: "اطلب الآن", en: "Order Now", fr: "Commander" },
 
-    foot_copy: { ar: "© 2024 HISMILE. جميع الحقوق محفوظة.", en: "© 2024 HISMILE. ALL RIGHTS RESERVED.", fr: "© 2024 HISMILE. TOUS DROITS RÉSERVÉS." }
+    foot_copy: { ar: "© 2024 HISMILE. جميع الحقوق محفوظة.", en: "© 2024 HISMILE. ALL RIGHTS RESERVED.", fr: "© 2024 HISMILE. TOUS DROITS RÉSERVÉS." },
+
+    /* FAQ translations */
+    faq_title: { ar: "الأسئلة الشائعة", en: "Frequently Asked Questions", fr: "Questions Fréquentes" },
+    faq_q1: { ar: "كيفاش كنستعمل شرائط V34؟", en: "How do I use V34 strips?", fr: "Comment utiliser les bandes V34 ?" },
+    faq_a1: {
+      ar: "نشّف سنانك مزيان، حط الشريطة الطويلة على سنانك الفوقانيين والصغيرة على التحتانيين. خليها 30 دقيقة، من بعد حيدها وشلل فمك بالماء وحك البقايا البنفسجية بالشيّتة.",
+      en: "Dry your teeth, apply the long strip to your top teeth and the short strip to your bottom teeth. Wait 30 minutes, then remove and brush off any purple residue.",
+      fr: "Séchez vos dents, appliquez la bande longue sur les dents du haut et la courte sur celles du bas. Attendez 30 minutes, retirez et brossez le résidu violet."
+    },
+    faq_q2: { ar: "شحال كتصبر النتيجة؟", en: "How long do results last?", fr: "Combien de temps dure le résultat ?" },
+    faq_a2: {
+      ar: "النتيجة الفورية ديال تصحيح اللون كتصبر يومين إلى 3 أيام حسب الماكلة والشراب ديالك (أتاي، قهوة، سجائر). ومع الاستعمال المتكرر لتقنية PAP+، التبييض كيولي دائم ومستمر.",
+      en: "The instant colour correction lasts 2 to 3 days depending on diet (tea, coffee, smoking). With regular PAP+ tech, teeth whitening improves and lasts longer.",
+      fr: "La correction instantanée dure 2 à 3 jours selon l'alimentation (café, thé, tabac). Avec la technologie PAP+, le blanchiment devient plus durable."
+    },
+    faq_q3: { ar: "واش آمنة على الأسنان الحساسة والمينا؟", en: "Is it safe for sensitive teeth?", fr: "Est-ce sûr pour les dents sensibles ?" },
+    faq_a3: {
+      ar: "نعم، آمنة 100%. شرائط V34 خالية تماماً من البيروكسيد (الماء الأوكسجيني) اللي كيسبب الألم والحساسية. كتخدم بتقنية تصحيح اللون الطبيعي وتبييض PAP+ الطبي الآمن.",
+      en: "Yes, 100% safe. V34 strips are peroxide-free to avoid sensitivity and pain, using natural color correction and dentist-approved PAP+ whitening.",
+      fr: "Oui, 100% sûr. Les bandes V34 sont sans peroxyde pour éviter la sensibilité, utilisant la correction de couleur naturelle et le blanchiment PAP+."
+    },
+    faq_q4: { ar: "شحال من استعمال كاين فالباطة؟", en: "How many uses in each box?", fr: "Combien d'utilisations par boîte ?" },
+    faq_a4: {
+      ar: "كل باطة كتحتوي على 14 شريطة للأسنان العلوية و 14 شريطة للأسنان السفلية، يعني كافية لـ 14 حصة تبييض كاملة.",
+      en: "Each box contains 14 strips for upper teeth and 14 strips for lower teeth, providing 14 full treatment applications.",
+      fr: "Chaque boîte contient 14 bandes pour le haut et 14 pour le bas, soit 14 applications complètes."
+    },
+    faq_q5: { ar: "شحال وقت التوصيل وكيفاش كنخلص؟", en: "What is delivery time & payment?", fr: "Délai de livraison & paiement ?" },
+    faq_a5: {
+      ar: "التوصيل فابور وسريع لجميع مدن المغرب (من 24 لـ 48 ساعة). الدفع كيكون عند الاستلام (COD)، يعني كتخلص حتى كتوصلك الطلبية ليديك وتأكد منها.",
+      en: "Free and fast delivery across Morocco (24 to 48 hours). Payment is cash on delivery (COD), meaning you only pay when you receive and check your order.",
+      fr: "Livraison gratuite et rapide partout au Maroc (24 à 48h). Paiement en espèces à la livraison (COD), vous ne payez qu'après vérification."
+    },
+    faq_q6: { ar: "شنو هي سياسة الإرجاع؟", en: "What is the return policy?", fr: "Quelle est la politique de retour ?" },
+    faq_a6: {
+      ar: "حنا واثقين من جودة المنتج، داكشي علاش كنقدّمو ضمان استرجاع الأموال لمدة 30 يوم. إلا ماعجبتكش النتيجة، تواصل معانا ورجع فلوسك بلا تعقيدات.",
+      en: "We are confident in our quality, which is why we offer a 30-day money-back guarantee. If you are not satisfied, contact us for a hassle-free refund.",
+      fr: "Confiants de notre qualité, nous offrons une garantie de 30 jours. Si vous n'êtes pas satisfait, contactez-nous pour un remboursement facile."
+    }
   };
 
   /* ── Language Detection & State ── */
@@ -144,34 +159,6 @@
       currentLangIndex = 1;
     }
   } catch (e) { /* fallback to Arabic */ }
-
-  /* ── Routing ── */
-  function renderRoute() {
-    var hash = window.location.hash || "#landing";
-    var viewHome = document.getElementById("view-home");
-    var viewLanding = document.getElementById("view-landing");
-
-    if (!viewHome || !viewLanding) return;
-
-    var reveals = document.querySelectorAll(".reveal");
-    for (var i = 0; i < reveals.length; i++) { reveals[i].classList.remove("active"); }
-
-    if (hash === "#landing") {
-      viewHome.classList.remove("active");
-      viewLanding.classList.add("active");
-      window.scrollTo(0, 0);
-      document.title = "Hismile V34 — اطلب الآن";
-    } else {
-      viewLanding.classList.remove("active");
-      viewHome.classList.add("active");
-      window.scrollTo(0, 0);
-      document.title = "Hismile — تبييض الأسنان";
-    }
-
-    setTimeout(handleScroll, 50);
-  }
-
-  window.addEventListener("hashchange", renderRoute);
 
   /* ── i18n Apply ── */
   function applyLang(index) {
@@ -202,6 +189,14 @@
 
     var label = document.getElementById("langLabel");
     if (label) label.textContent = l.toUpperCase();
+
+    // Dynamically update document title based on language
+    var titleDict = {
+      ar: "Hismile V34 — شرائح تبييض الأسنان",
+      en: "Hismile V34 — Teeth Whitening Strips",
+      fr: "Hismile V34 — Bandes de Blanchiment"
+    };
+    document.title = titleDict[l] || "Hismile V34";
   }
 
   /* ── Language Toggle ── */
@@ -225,10 +220,9 @@
     }
 
     var bottomCta = document.getElementById("bottom-cta");
-    var hash = window.location.hash || "#landing";
     if (bottomCta) {
-      // Show sticky CTA immediately on landing page, or after scroll on home page
-      if (hash === "#landing" || (hash === "#home" && window.scrollY > 400)) {
+      // Show sticky CTA after scrolling past 300px
+      if (window.scrollY > 300) {
         bottomCta.classList.add("visible");
       } else {
         bottomCta.classList.remove("visible");
@@ -238,23 +232,24 @@
 
   window.addEventListener("scroll", handleScroll);
 
+  /* ── Smooth Scroll to Top ── */
+  document.addEventListener("click", function (e) {
+    if (!e.target || !e.target.closest) return;
+    var btn = e.target.closest(".scroll-to-top");
+    if (btn) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  });
+
   /* ── Smooth Scroll to Checkout ── */
   document.addEventListener("click", function (e) {
     if (!e.target || !e.target.closest) return;
     var btn = e.target.closest(".scroll-to-checkout");
     if (btn) {
       e.preventDefault();
-      
-      if (window.location.hash !== "#landing") {
-        window.location.hash = "#landing";
-        setTimeout(function() {
-          var section = document.getElementById("checkout-section");
-          if (section) section.scrollIntoView({ behavior: "smooth", block: "center" });
-        }, 100);
-      } else {
-        var section = document.getElementById("checkout-section");
-        if (section) section.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
+      var section = document.getElementById("checkout-section");
+      if (section) section.scrollIntoView({ behavior: "smooth", block: "center" });
     }
   });
 
@@ -298,6 +293,31 @@
       window.addEventListener("mousemove", moveDrag);
       window.addEventListener("touchmove", moveDrag, { passive: false });
       slider.addEventListener("dragstart", function (e) { e.preventDefault(); });
+    }
+  }
+
+  /* ── FAQ Accordion ── */
+  function initFaq() {
+    var faqItems = document.querySelectorAll(".faq-item");
+    for (var i = 0; i < faqItems.length; i++) {
+      var btn = faqItems[i].querySelector(".faq-question");
+      if (btn) {
+        btn.addEventListener("click", function (e) {
+          var currentItem = this.closest(".faq-item");
+          var isOpen = currentItem.classList.contains("faq-open");
+
+          // Close all FAQ items
+          var allItems = document.querySelectorAll(".faq-item");
+          for (var j = 0; j < allItems.length; j++) {
+            allItems[j].classList.remove("faq-open");
+          }
+
+          // Toggle current item
+          if (!isOpen) {
+            currentItem.classList.add("faq-open");
+          }
+        });
+      }
     }
   }
 
@@ -417,11 +437,11 @@
 
   /* ── Init ── */
   function init() {
-    renderRoute();
     applyLang(currentLangIndex);
     handleScroll();
     initSlider();
     initCustomCheckout();
+    initFaq();
   }
 
   if (document.readyState === "loading") {
