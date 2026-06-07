@@ -15,6 +15,12 @@
     },
     nav_shop: { ar: "اطلب الآن", en: "Order Now", fr: "Commander" },
 
+    /* Hero extras */
+    hero_badge: { ar: "🏆 الأكثر مبيعاً في المغرب", en: "🏆 Best Seller in Morocco", fr: "🏆 Meilleure vente au Maroc" },
+    hero_proof: { ar: "+2,000 طلبية سلمات فالمغرب", en: "+2,000 orders delivered in Morocco", fr: "+2 000 commandes livrées au Maroc" },
+    hero_cod:   { ar: "✓ الدفع عند الاستلام   ·   ✓ توصيل مجاني", en: "✓ Cash on Delivery   ·   ✓ Free Shipping", fr: "✓ Paiement à la livraison   ·   ✓ Livraison gratuite" },
+    trust_safe: { ar: "آمن على المينا", en: "Enamel-safe", fr: "Sans danger pour l'émail" },
+
     /* ─── LANDING PAGE ─── */
     land_hero_h: { 
       ar: "ابتسامتك هي أول حاجة كيشوفوها فيك. خليها بيضا.", 
@@ -50,6 +56,12 @@
       en: "Real whitening that improves over time — peroxide-free, 100% safe for enamel.",
       fr: "Blanchiment réel qui s'améliore — sans peroxyde, 100% sûr."
     },
+    land_feat3_h: { ar: "⏱️ نتيجة فـ 30 دقيقة", en: "⏱️ Results in 30 Minutes", fr: "⏱️ Résultats en 30 minutes" },
+    land_feat3_p: {
+      ar: "حط الشريطة، استنى 30 دقيقة، شوف الفرق. ما محتاجش تبات معها، ما محتاجش ضوء خاص.",
+      en: "Apply the strip, wait 30 minutes, see the difference. No overnight treatment, no special light needed.",
+      fr: "Appliquez la bande, attendez 30 minutes, voyez la différence. Pas de traitement de nuit, pas de lumière spéciale."
+    },
 
     land_benefits_h: { ar: "شنو غادي تربح:", en: "What you will gain:", fr: "Ce que vous y gagnez :" },
     ben_1: { ar: "أسنان أبيض ملحوظ من أول استعمال", en: "Visibly whiter teeth from first use", fr: "Dents visiblement plus blanches dès la première utilisation" },
@@ -79,8 +91,9 @@
 
     land_order_h: { ar: "كل يوم كتأجّل، هو يوم بأسنان أقل بياضًا. صيفط طلبيتك دابا 👇", en: "Every day you delay is a day with less white teeth. Order Now 👇", fr: "Chaque jour de retard est un jour avec des dents moins blanches. Commandez maintenant 👇" },
     land_order_sub: { ar: "الدفع عند الاستلام، بلا خلاص مسبق. التوصيل لجميع مدن المغرب.", en: "Cash on Delivery, no upfront payment. Delivery to all Moroccan cities.", fr: "Paiement à la livraison, aucun paiement d'avance. Livraison dans tout le Maroc." },
-    land_price: { ar: "245 د.م.", en: "245 MAD", fr: "245 MAD" },
-    land_strike: { ar: "350 د.م.", en: "350 MAD", fr: "350 MAD" },
+    land_price:   { ar: "245 د.م.", en: "245 MAD", fr: "245 MAD" },
+    land_strike:  { ar: "350 د.م.", en: "350 MAD", fr: "350 MAD" },
+    savings_tag:  { ar: "وفّرت 105 د.م. (30%)", en: "You save 105 MAD (30%)", fr: "Vous économisez 105 MAD (30%)" },
     checkout_badge: { ar: "عرض محدود ⏳", en: "Limited Offer ⏳", fr: "Offre Limitée ⏳" },
 
     form_name: { ar: "الإسم الكامل", en: "Full Name", fr: "Nom complet" },
@@ -89,6 +102,17 @@
     form_name_ph: { ar: "محمد / فاطمة", en: "Your name", fr: "Votre nom" },
     form_phone_ph: { ar: "06XX XXX XXX", en: "06XX XXX XXX", fr: "06XX XXX XXX" },
     form_city_ph: { ar: "الدار البيضاء، الرباط...", en: "Casablanca, Rabat...", fr: "Casablanca, Rabat..." },
+    form_title: {
+      ar: "أكمل طلبيتك دابا 👇",
+      en: "Complete your order now 👇",
+      fr: "Complétez votre commande maintenant 👇"
+    },
+    form_subtitle: {
+      ar: "ملي تضغط 'أكد الطلب'، غادي يتواصل معك أحد دفرقة ديالنا باش يأكد التوصيل.",
+      en: "Once you click 'Confirm Order', our team will contact you to confirm delivery.",
+      fr: "Une fois que vous cliquez sur 'Confirmer', notre équipe vous contactera pour confirmer la livraison."
+    },
+    form_secure: { ar: "معلوماتك آمنة ومحمية", en: "Your information is safe and secure", fr: "Vos informations sont sécurisées" },
     submit_order: {
       ar: "أكد الطلب — الدفع عند الاستلام",
       en: "Confirm Order — Cash on Delivery",
@@ -324,7 +348,8 @@
   /* ── Checkout Form ── */
   function initCustomCheckout() {
     var form = document.getElementById("custom-express-checkout-form");
-    var submitBtn = document.querySelector("#checkout-section button[type='submit']");
+    var submitBtn = document.querySelector("#checkout-section .btn-submit") ||
+                  document.querySelector("#checkout-section button[type='submit']");
     if (!form || !submitBtn) return;
 
     function setVueValue(input, value) {
