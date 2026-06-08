@@ -175,7 +175,7 @@
       <div class="section-container">
 
         <div class="checkout-headline text-center">
-          <h2 class="t-h2" data-i18n="land_order_h">كل يوم كتأجّل، هو يوم بأسنان أقل بياضًا.</h2>
+          <h2 class="t-h2" data-i18n="land_checkout_h">أكمل طلبيتك دابا — الدفع عند الاستلام</h2>
           <p class="t-body t-muted" data-i18n="land_order_sub">الدفع عند الاستلام، بلا خلاص مسبق. التوصيل لجميع مدن المغرب.</p>
         </div>
 
@@ -383,12 +383,15 @@
       <div class="ba-inner">
         <h2 class="t-h2" style="color:#fff; margin-bottom:8px;" data-i18n="land_ba_h">الناس كتخلّص المئات فعيادات التبييض... حنا جبنا ليك نفس النتيجة لدارك.</h2>
         <p class="ba-hint" data-i18n="land_ba_hint">← اسحب لكشف النتيجة →</p>
+        <!-- Swap images: replace slider_before_cropped.jpg & slider_after_cropped.jpg in repo /images/ -->
         <div class="slider-wrap" id="slider">
-          <!-- BEFORE: yellow/stained teeth -->
-          <img alt="Before — أسنان قبل التبييض" class="slider-img" src="https://raw.githubusercontent.com/chafiyounes/mapper-youcant/main/images/slider_before_cropped.jpg?v=2"/>
-          <!-- AFTER: white teeth -->
-          <img alt="After — أسنان بعد التبييض" class="slider-img slider-after" id="slider-after" src="https://raw.githubusercontent.com/chafiyounes/mapper-youcant/main/images/slider_after_cropped.jpg?v=2"/>
-          <div class="slider-handle" id="slider-handle"></div>
+          <span class="slider-label slider-label-before" data-i18n="ba_before">قبل</span>
+          <span class="slider-label slider-label-after" data-i18n="ba_after">بعد</span>
+          <img alt="Before — أسنان قبل التبييض" class="slider-img" id="slider-before" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/slider_before_cropped.jpg?v=3" loading="eager" decoding="async"/>
+          <img alt="After — أسنان بعد التبييض" class="slider-img slider-after" id="slider-after" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/slider_after_cropped.jpg?v=3" loading="eager" decoding="async"/>
+          <div class="slider-handle" id="slider-handle" aria-hidden="true">
+            <span class="material-symbols-outlined">unfold_more</span>
+          </div>
         </div>
       </div>
     </section>

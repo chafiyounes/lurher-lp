@@ -73,6 +73,13 @@
 
     land_ba_h: { ar: "الناس كتخلّص المئات فعيادات التبييض... حنا جبنا ليك نفس النتيجة لدارك.", en: "People pay hundreds at clinics... We brought the same result to your home.", fr: "Les gens paient des centaines en clinique... Nous avons apporté le même résultat chez vous." },
     land_ba_hint: { ar: "← اسحب لكشف النتيجة →", en: "← Drag to reveal →", fr: "← Glissez pour révéler →" },
+    ba_before: { ar: "قبل", en: "BEFORE", fr: "AVANT" },
+    ba_after: { ar: "بعد", en: "AFTER", fr: "APRÈS" },
+    land_checkout_h: {
+      ar: "أكمل طلبيتك دابا — الدفع عند الاستلام",
+      en: "Complete your order — Cash on Delivery",
+      fr: "Complétez votre commande — Paiement à la livraison"
+    },
 
     rev_title: { ar: "آراء الزبناء ⭐⭐⭐⭐⭐", en: "Customer Reviews ⭐⭐⭐⭐⭐", fr: "Avis Clients ⭐⭐⭐⭐⭐" },
     rev1_name: { ar: "سناء .م", en: "Sanaa .M", fr: "Sanaa .M" },
@@ -309,16 +316,23 @@
 
     if (slider && sliderAfter && sliderHandle) {
       var isDragging = false;
-
       function moveSlider(clientX) {
         var rect = slider.getBoundingClientRect();
         var position = clientX - rect.left;
         if (position < 0) position = 0;
         if (position > rect.width) position = rect.width;
         var pct = (position / rect.width) * 100;
+        var isRtl = document.querySelector(".app") &&
+          document.querySelector(".app").getAttribute("dir") === "rtl";
         sliderHandle.style.left = pct + "%";
-        sliderAfter.style.clipPath = "inset(0 0 0 " + pct + "%)";
+        if (isRtl) {
+          sliderAfter.style.clipPath = "inset(0 " + (100 - pct) + "% 0 0)";
+        } else {
+          sliderAfter.style.clipPath = "inset(0 0 0 " + pct + "%)";
+        }
       }
+
+      moveSlider(slider.getBoundingClientRect().left + slider.getBoundingClientRect().width / 2);
 
       var startDrag = function (e) {
         isDragging = true;
