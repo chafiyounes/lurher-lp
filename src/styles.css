@@ -331,9 +331,14 @@
 .ba-hint { color: rgba(255,255,255,0.8); font-size: 14px; font-weight: 700; }
 .slider-wrap {
   position: relative; width: 100%; max-width: 480px;
-  aspect-ratio: 3/4; overflow: hidden;
+  /* aspect-ratio: 3/4 fallback */
+  padding-bottom: 133.33%; 
+  overflow: hidden;
   border-radius: var(--r-lg); box-shadow: var(--sh-lg);
   touch-action: none; border: 4px solid rgba(255,255,255,0.4);
+}
+@supports (aspect-ratio: 3/4) {
+  .slider-wrap { padding-bottom: 0; aspect-ratio: 3/4; }
 }
 .slider-img { position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; object-position: center 85%; }
 .slider-after { clip-path: inset(0 0 0 50%); }
