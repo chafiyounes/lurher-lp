@@ -122,14 +122,16 @@
   background: linear-gradient(135deg, #7c24d4 0%, var(--primary) 100%);
   color: #fff !important;
   border-radius: var(--r-full);
-  padding: 18px 40px;
-  font-size: clamp(17px, 2vw, 22px);
+  padding: 16px 36px;
+  font-size: clamp(16px, 1.8vw, 20px);
   font-weight: 900;
   cursor: pointer;
   box-shadow: var(--sh-md);
   transition: all 0.3s cubic-bezier(0.2,0,0,1);
-  min-height: 60px;
-  width: 100%;
+  min-height: 56px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
   animation: pulseGlow 2.5s infinite;
   letter-spacing: 0.01em;
 }
@@ -140,8 +142,6 @@
 }
 .btn-primary.btn-full { width: 100%; }
 .btn-primary .material-symbols-outlined { font-size: 22px; }
-
-@media (min-width: 600px) { .btn-primary { width: auto; } }
 
 /* Nav small CTA */
 .btn-nav-cta {
