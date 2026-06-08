@@ -327,11 +327,11 @@
 .ba-hint { color: rgba(255,255,255,0.8); font-size: 14px; font-weight: 700; }
 .slider-wrap {
   position: relative; width: 100%; max-width: 680px;
-  aspect-ratio: 4/3; overflow: hidden;
+  aspect-ratio: 3/2; overflow: hidden;
   border-radius: var(--r-lg); box-shadow: var(--sh-lg);
   touch-action: none; border: 4px solid rgba(255,255,255,0.4);
 }
-.slider-img { position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; }
+.slider-img { position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; object-position: center 65%; }
 .slider-after { clip-path: inset(0 0 0 50%); }
 .slider-handle {
   position: absolute; top:0; bottom:0; left:50%;
@@ -616,3 +616,21 @@
 .app[dir="ltr"] .benefits-list { text-align: left; }
 .app[dir="ltr"] .hero-content  { align-items: flex-start; }
 .app[dir="ltr"] .hero-social-proof { justify-content: flex-start; }
+
+/* ─── Nuclear Button Override (defeats YouCan theme CSS) ─── */
+/* YouCan's page builder injects CSS that can override button text color.
+   These rules use the highest specificity possible to enforce white text. */
+.app .btn-primary,
+.app .btn-primary *,
+.app button.btn-primary,
+.app button.btn-primary span,
+.app button.btn-primary .material-symbols-outlined,
+button.btn-primary,
+button.btn-primary span,
+button.btn-primary .material-symbols-outlined {
+  color: #ffffff !important;
+}
+.app .btn-primary,
+.app button.btn-primary {
+  background: linear-gradient(135deg, #7c24d4 0%, #5b009e 100%) !important;
+}
