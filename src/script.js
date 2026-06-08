@@ -173,12 +173,39 @@
 
   /* ── Language Detection & State ── */
   var langs = ["ar", "en", "fr"];
-  var currentLangIndex = 0; // Default: Arabic (forced)
+  
+  // 1. Check local storage
+  var savedLang = localStorage.getItem("hismile_lang");
+  var currentLangIndex = 0; // Default Arabic
+
+  if (savedLang) {
+    currentLangIndex = langs.indexOf(savedLang);
+    if (currentLangIndex === -1) currentLangIndex = 0;
+  } else {
+    // 2. Check browser language if no saved preference
+    try {
+      var browserLang = (navigator.language || navigator.userLanguage || "ar").toLowerCase();
+      // "if the browser language is french or arabic then use the arabic page"
+      if (browserLang.indexOf("fr") === 0 || browserLang.indexOf("ar") === 0) {
+        currentLangIndex = 0;
+      } 
+      // "if its english then keep it english"
+      else if (browserLang.indexOf("en") === 0) {
+        currentLangIndex = 1;
+      }
+    } catch (e) { /* fallback to Arabic */ }
+  }
 
   /* ── i18n Apply ── */
   function applyLang(index) {
     currentLangIndex = index;
     var l = langs[currentLangIndex];
+
+    // Save preference
+    try {
+      localStorage.setItem("hismile_lang", l);
+    } catch(e) {}
+
     var app = document.querySelector(".app");
 
     if (app) {
