@@ -181,18 +181,6 @@
   /* ── Language Detection & State ── */
   var langs = ["ar", "en", "fr"];
 
-  function detectBrowserLang() {
-    var prefs = (navigator.languages && navigator.languages.length)
-      ? navigator.languages
-      : [navigator.language || navigator.userLanguage || "ar"];
-    for (var i = 0; i < prefs.length; i++) {
-      var code = (prefs[i] || "").toLowerCase();
-      if (code.indexOf("ar") === 0 || code.indexOf("fr") === 0) return "ar";
-      if (code.indexOf("en") === 0) return "en";
-    }
-    return "ar";
-  }
-
   function resolveInitialLang() {
     try {
       var savedLang = localStorage.getItem("v34_lang");
@@ -201,7 +189,7 @@
     if (window.__V34_INITIAL_LANG && langs.indexOf(window.__V34_INITIAL_LANG) !== -1) {
       return window.__V34_INITIAL_LANG;
     }
-    return detectBrowserLang();
+    return "ar";
   }
 
   var currentLangIndex = langs.indexOf(resolveInitialLang());

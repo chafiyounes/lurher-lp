@@ -32,14 +32,6 @@
       var saved = localStorage.getItem("v34_lang");
       if (saved && supported.indexOf(saved) !== -1) return saved;
     } catch (e) {}
-    var prefs = (navigator.languages && navigator.languages.length)
-      ? navigator.languages
-      : [navigator.language || navigator.userLanguage || "ar"];
-    for (var i = 0; i < prefs.length; i++) {
-      var code = (prefs[i] || "").toLowerCase();
-      if (code.indexOf("ar") === 0 || code.indexOf("fr") === 0) return "ar";
-      if (code.indexOf("en") === 0) return "en";
-    }
     return "ar";
   }
 
