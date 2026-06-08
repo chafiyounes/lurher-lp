@@ -15,7 +15,7 @@
     <div class="nav-inner">
       <a href="#" class="nav-brand scroll-to-top">HISMILE</a>
       <div style="display:flex; align-items:center; gap:8px;">
-        <button type="button" class="btn-nav-cta scroll-to-checkout" data-i18n="nav_shop">اطلب الآن</button>
+        <button type="button" class="btn-nav-cta scroll-to-checkout" data-i18n="nav_shop" onclick="window.goToCheckout()">اطلب الآن</button>
         <button aria-label="Switch language" id="langToggle" type="button" class="lang-toggle-btn">
           <span class="material-symbols-outlined" style="font-size:18px;">language</span>
           <span id="langLabel">AR</span>
@@ -24,7 +24,6 @@
     </div>
   </header>
 
-  <main>
   <main>
     <!-- ══════════════════════════════════════════════════════
          BRAND HOME PAGE VIEW
@@ -39,7 +38,7 @@
               <div class="mini-stars">★★★★★</div>
               <span data-i18n="home_proof">+10 مليون زبون فالعالم</span>
             </div>
-            <button type="button" class="btn-primary" onclick="window.location.hash='#landing'" style="margin-top:10px;">
+            <button type="button" class="btn-primary scroll-to-checkout" onclick="window.goToCheckout()" style="margin-top:10px;">
               <span class="material-symbols-outlined">explore</span>
               <span data-i18n="home_cta">اكتشف منتجاتنا</span>
             </button>

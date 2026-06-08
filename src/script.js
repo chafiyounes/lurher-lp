@@ -475,11 +475,37 @@
       var home = document.getElementById('view-home');
       if (home) home.style.display = 'block';
     }
-    // Scroll to top when view changes
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // Only scroll to top if we aren't explicitly trying to go to checkout
+    if (!window.isGoingToCheckout) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    window.isGoingToCheckout = false;
   }
 
   window.addEventListener("hashchange", handleHashRoute);
+
+  window.goToCheckout = function() {
+    var checkout = document.getElementById('checkout-section');
+    if (window.location.hash !== '#landing') {
+      window.isGoingToCheckout = true;
+      window.location.hash = '#landing';
+      setTimeout(function() {
+        if (checkout) checkout.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      if (checkout) checkout.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  function initCheckoutScrolls() {
+    var btns = document.querySelectorAll('.scroll-to-checkout');
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener('click', function(e) {
+        e.preventDefault();
+        window.goToCheckout();
+      });
+    }
+  }
 
   function init() {
     applyLang(currentLangIndex);
@@ -488,6 +514,7 @@
     initSlider();
     initCustomCheckout();
     initFaq();
+    initCheckoutScrolls();
   }
 
   if (document.readyState === "loading") {
