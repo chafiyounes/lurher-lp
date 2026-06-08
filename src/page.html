@@ -131,17 +131,45 @@
     </div>
 
     <!-- ══════════════════════════════════════════════════════
-         PREMIUM CHECKOUT SECTION (Moved Up)
+         PREMIUM CHECKOUT SECTION
     ══════════════════════════════════════════════════════ -->
-    <section class="checkout-section" id="checkout-section" style="padding-top:40px;">
+    <section class="checkout-section" id="checkout-section">
       <div class="section-container">
+
         <div class="checkout-headline text-center">
           <h2 class="t-h2" data-i18n="land_order_h">كل يوم كتأجّل، هو يوم بأسنان أقل بياضًا.</h2>
           <p class="t-body t-muted" data-i18n="land_order_sub">الدفع عند الاستلام، بلا خلاص مسبق. التوصيل لجميع مدن المغرب.</p>
         </div>
 
         <div class="checkout-box reveal">
-          <!-- Right: Order form (Moved visually first on mobile via flex-direction: column-reverse or CSS) -->
+          <!-- Left: Product info -->
+          <div class="checkout-info">
+            <div class="checkout-trust-badges">
+              <div class="badge-item">
+                <span class="material-symbols-outlined">local_shipping</span>
+                <div class="badge-texts">
+                  <strong data-i18n="ct_ship">توصيل مجاني وسريع</strong>
+                  <span data-i18n="ct_ship_sub">24-48 ساعة لجميع مدن المغرب</span>
+                </div>
+              </div>
+              <div class="badge-item">
+                <span class="material-symbols-outlined">payments</span>
+                <div class="badge-texts">
+                  <strong data-i18n="trust_cod">الدفع عند الاستلام</strong>
+                  <span data-i18n="trust_cod_sub">تأكد من المنتج عاد خلص</span>
+                </div>
+              </div>
+              <div class="badge-item">
+                <span class="material-symbols-outlined">verified_user</span>
+                <div class="badge-texts">
+                  <strong data-i18n="ct_guarantee">ضمان 30 يوم</strong>
+                  <span data-i18n="ct_guarantee_sub">إلا ماعجبكش نرجعو ليك فلوسك</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Order form -->
           <div class="checkout-form-side">
             <div class="form-header">
               <h3 class="form-title" data-i18n="form_title">أكمل طلبيتك دابا 👇</h3>
@@ -185,55 +213,23 @@
                   </div>
                 </div>
 
-                <!-- Error message container -->
-                <div id="checkout-error" class="error-msg" style="display:none; text-align:center; font-size:14px; margin-bottom:10px;"></div>
-
-                <button type="submit" class="btn-primary btn-submit btn-full" id="btn-submit" style="color:#fff !important; background:linear-gradient(135deg,#7c24d4 0%,#5b009e 100%) !important;">
-                  <span class="material-symbols-outlined" style="color:#fff !important;">shopping_cart_checkout</span>
-                  <span data-i18n="form_submit" style="color:#fff !important;">أكد الطلب — 245 د.م.</span>
-                </button>
-                <div class="form-security-note">
-                  <span class="material-symbols-outlined">lock</span>
-                  <span data-i18n="form_secure">معلوماتك مشفرة ومحمية 100%</span>
+                <div style="display:none;">
+                  <input type="hidden" name="extra_fields[custom_field_dvwbCriA0IY849RF]" value="organic">
+                  <input type="hidden" name="extra_fields[custom_field_nfRXtUfus8GGt1ZD]" value="">
                 </div>
               </form>
             </div>
-          </div>
-          
-          <!-- Left: Product info (Guarantees only) -->
-          <div class="checkout-info">
-            <ul class="checkout-mini-benefits">
-              <li><span class="bullet">✓</span> <span data-i18n="ben_1">أسنان أبيض ملحوظ من أول استعمال</span></li>
-              <li><span class="bullet">✓</span> <span data-i18n="ben_3">آمن تمامًا — بلا ألم، بلا حساسية</span></li>
-              <li><span class="bullet">✓</span> <span data-i18n="ben_5">14 استعمال فكل علبة</span></li>
-              <li><span class="bullet">✓</span> <span data-i18n="ben_2">نتيجة فـ30 دقيقة</span></li>
-            </ul>
 
-            <div class="checkout-trust-badges">
-              <div class="badge-item">
-                <span class="material-symbols-outlined">local_shipping</span>
-                <div class="badge-texts">
-                  <strong data-i18n="ct_ship">توصيل مجاني وسريع</strong>
-                  <span data-i18n="ct_ship_sub">24-48 ساعة لجميع مدن المغرب</span>
-                </div>
-              </div>
-              <div class="badge-item">
-                <span class="material-symbols-outlined">payments</span>
-                <div class="badge-texts">
-                  <strong data-i18n="trust_cod">الدفع عند الاستلام</strong>
-                  <span data-i18n="trust_cod_sub">تأكد من المنتج عاد خلص</span>
-                </div>
-              </div>
-              <div class="badge-item">
-                <span class="material-symbols-outlined">verified_user</span>
-                <div class="badge-texts">
-                  <strong data-i18n="ct_guarantee">ضمان 30 يوم</strong>
-                  <span data-i18n="ct_guarantee_sub">إلا ماعجبكش نرجعو ليك فلوسك</span>
-                </div>
-              </div>
-            </div>
-          </div>
+            <button type="submit" form="custom-express-checkout-form" class="btn-primary btn-full btn-submit" style="color:#fff !important; background:linear-gradient(135deg,#7c24d4 0%,#5b009e 100%) !important;">
+              <span class="material-symbols-outlined" style="color:#fff !important;">shopping_bag</span>
+              <span data-i18n="submit_order" style="color:#fff !important;">أكد الطلب — الدفع عند الاستلام</span>
+            </button>
 
+            <p class="form-security-note">
+              <span class="material-symbols-outlined" style="font-size:14px;">lock</span>
+              <span data-i18n="form_secure">معلوماتك آمنة ومحمية</span>
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -449,99 +445,7 @@
         </div>
       </div>
     </section>
-              <li><span class="bullet">✓</span> <span data-i18n="ben_5">14 استعمال فكل علبة</span></li>
-              <li><span class="bullet">✓</span> <span data-i18n="ben_2">نتيجة فـ30 دقيقة</span></li>
-            </ul>
 
-            <div class="checkout-trust-badges">
-              <div class="badge-item">
-                <span class="material-symbols-outlined">local_shipping</span>
-                <div class="badge-texts">
-                  <strong data-i18n="ct_ship">توصيل مجاني وسريع</strong>
-                  <span data-i18n="ct_ship_sub">24-48 ساعة لجميع مدن المغرب</span>
-                </div>
-              </div>
-              <div class="badge-item">
-                <span class="material-symbols-outlined">payments</span>
-                <div class="badge-texts">
-                  <strong data-i18n="trust_cod">الدفع عند الاستلام</strong>
-                  <span data-i18n="trust_cod_sub">تأكد من المنتج عاد خلص</span>
-                </div>
-              </div>
-              <div class="badge-item">
-                <span class="material-symbols-outlined">verified_user</span>
-                <div class="badge-texts">
-                  <strong data-i18n="ct_guarantee">ضمان 30 يوم</strong>
-                  <span data-i18n="ct_guarantee_sub">إلا ماعجبكش نرجعو ليك فلوسك</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right: Order form -->
-          <div class="checkout-form-side">
-            <div class="form-header">
-              <h3 class="form-title" data-i18n="form_title">أكمل طلبيتك دابا 👇</h3>
-              <p class="form-subtitle" data-i18n="form_subtitle">ملي تضغط "أكد الطلب"، غادي يتواصل معك أحد دفرقة ديالنا باش يأكد التوصيل.</p>
-            </div>
-
-            <div id="express-checkout-section" class="product-section"
-                 data-pb-section="PBS-w3wje1780392350746"
-                 data-pb-field="product-id"
-                 data-pb-type="single-product"
-                 data-pb-value="[object Object]">
-
-              <form method="post" id="custom-express-checkout-form">
-                <!-- Hidden Native Mapping Inputs — DO NOT CHANGE -->
-                <input type="hidden" name="id" value="0b8ab67f-dca6-4c23-a2fe-cb31083b3123">
-                <input type="hidden" name="quantity" value="1">
-                <input type="hidden" name="is_page_builder_express_checkout" value="true">
-                <input type="hidden" name="extra_payload" value="">
-
-                <div class="form-group">
-                  <label data-i18n="form_name">الإسم الكامل</label>
-                  <div class="input-wrap">
-                    <span class="material-symbols-outlined input-icon">person</span>
-                    <input name="first_name" type="text" placeholder="محمد / فاطمة" data-i18n-placeholder="form_name_ph" autocomplete="name">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label data-i18n="form_phone">رقم الهاتف</label>
-                  <div class="input-wrap">
-                    <span class="material-symbols-outlined input-icon">phone</span>
-                    <input inputmode="tel" name="phone" type="text" placeholder="06XX XXX XXX" data-i18n-placeholder="form_phone_ph" autocomplete="tel">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label data-i18n="form_city">المدينة</label>
-                  <div class="input-wrap">
-                    <span class="material-symbols-outlined input-icon">location_on</span>
-                    <input name="extra_fields[custom_field_cGzlrqWxXctNnheN]" type="text" placeholder="الدار البيضاء، الرباط..." data-i18n-placeholder="form_city_ph" autocomplete="address-level2">
-                  </div>
-                </div>
-
-                <div style="display:none;">
-                  <input type="hidden" name="extra_fields[custom_field_dvwbCriA0IY849RF]" value="organic">
-                  <input type="hidden" name="extra_fields[custom_field_nfRXtUfus8GGt1ZD]" value="">
-                </div>
-              </form>
-            </div>
-
-            <button type="submit" form="custom-express-checkout-form" class="btn-primary btn-full btn-submit" style="color:#fff !important; background:linear-gradient(135deg,#7c24d4 0%,#5b009e 100%) !important;">
-              <span class="material-symbols-outlined" style="color:#fff !important;">shopping_bag</span>
-              <span data-i18n="submit_order" style="color:#fff !important;">أكد الطلب — الدفع عند الاستلام</span>
-            </button>
-
-            <p class="form-security-note">
-              <span class="material-symbols-outlined" style="font-size:14px;">lock</span>
-              <span data-i18n="form_secure">معلوماتك آمنة ومحمية</span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
     </div> <!-- END view-landing -->
   </main>
 

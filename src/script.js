@@ -173,39 +173,25 @@
 
   /* ── Language Detection & State ── */
   var langs = ["ar", "en", "fr"];
-  
-  // 1. Check local storage
-  var savedLang = localStorage.getItem("hismile_lang");
-  var currentLangIndex = 0; // Default Arabic
+  var savedLang = localStorage.getItem("v34_lang");
+  var currentLangIndex = 0; // Default: Arabic
 
-  if (savedLang) {
+  if (savedLang && langs.indexOf(savedLang) !== -1) {
     currentLangIndex = langs.indexOf(savedLang);
-    if (currentLangIndex === -1) currentLangIndex = 0;
   } else {
-    // 2. Check browser language if no saved preference
-    try {
-      var browserLang = (navigator.language || navigator.userLanguage || "ar").toLowerCase();
-      // "if the browser language is french or arabic then use the arabic page"
-      if (browserLang.indexOf("fr") === 0 || browserLang.indexOf("ar") === 0) {
-        currentLangIndex = 0;
-      } 
-      // "if its english then keep it english"
-      else if (browserLang.indexOf("en") === 0) {
-        currentLangIndex = 1;
-      }
-    } catch (e) { /* fallback to Arabic */ }
+    var browserLang = (navigator.language || navigator.userLanguage || "").toLowerCase();
+    if (browserLang.indexOf("en") === 0) {
+      currentLangIndex = 1; // English
+    } else {
+      currentLangIndex = 0; // French/Arabic or others default to Arabic
+    }
   }
 
   /* ── i18n Apply ── */
   function applyLang(index) {
     currentLangIndex = index;
     var l = langs[currentLangIndex];
-
-    // Save preference
-    try {
-      localStorage.setItem("hismile_lang", l);
-    } catch(e) {}
-
+    localStorage.setItem("v34_lang", l);
     var app = document.querySelector(".app");
 
     if (app) {
