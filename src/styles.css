@@ -154,15 +154,28 @@
 
 /* Lang toggle */
 .lang-toggle-btn {
-  display: flex; align-items: center; gap: 4px;
-  font-weight: 800; font-size: 13px;
-  background: var(--surface-alt);
-  padding: 8px 14px;
+  display: flex; align-items: center; gap: 6px;
+  font-weight: 900; font-size: 15px;
+  background: var(--primary-ultra);
+  color: var(--primary-dark);
+  padding: 10px 18px;
   border-radius: var(--r-full);
-  border: 1px solid var(--border);
-  transition: background 0.2s;
+  border: 2px solid var(--primary-light);
+  transition: all 0.2s ease;
+  box-shadow: var(--sh-sm);
+  text-transform: uppercase;
 }
-.lang-toggle-btn:hover { background: var(--border); }
+.lang-toggle-btn:hover { 
+  background: var(--primary-light); 
+  color: var(--primary-dark); 
+  transform: translateY(-2px); 
+  box-shadow: var(--sh-md); 
+}
+
+/* Language Images Toggling */
+.app[lang="ar"] .img-fr, .app[lang="ar"] .img-en { display: none !important; }
+.app[lang="fr"] .img-ar, .app[lang="fr"] .img-en { display: none !important; }
+.app[lang="en"] .img-ar, .app[lang="en"] .img-fr { display: none !important; }
 
 /* ─── Announcement Bar ─── */
 .announce-bar {
