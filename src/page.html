@@ -131,6 +131,116 @@
     </div>
 
     <!-- ══════════════════════════════════════════════════════
+         PREMIUM CHECKOUT SECTION (MOVED TO TOP)
+    ══════════════════════════════════════════════════════ -->
+    <section class="checkout-section" id="checkout-section">
+      <div class="section-container">
+
+        <div class="checkout-headline text-center">
+          <h2 class="t-h2" data-i18n="land_order_h">كل يوم كتأجّل، هو يوم بأسنان أقل بياضًا.</h2>
+          <p class="t-body t-muted" data-i18n="land_order_sub">الدفع عند الاستلام، بلا خلاص مسبق. التوصيل لجميع مدن المغرب.</p>
+        </div>
+
+        <div class="checkout-box reveal">
+          <!-- Left: Product info -->
+          <div class="checkout-info">
+            <!-- Removed product preview image and stats to show fields faster on mobile -->
+            <ul class="checkout-mini-benefits" style="margin-top:0;">
+              <li><span class="bullet">✓</span> <span data-i18n="ben_1">أسنان أبيض ملحوظ من أول استعمال</span></li>
+              <li><span class="bullet">✓</span> <span data-i18n="ben_3">آمن تمامًا — بلا ألم، بلا حساسية</span></li>
+              <li><span class="bullet">✓</span> <span data-i18n="ben_5">14 استعمال فكل علبة</span></li>
+              <li><span class="bullet">✓</span> <span data-i18n="ben_2">نتيجة فـ30 دقيقة</span></li>
+            </ul>
+
+            <div class="checkout-trust-badges">
+              <div class="badge-item">
+                <span class="material-symbols-outlined">local_shipping</span>
+                <div class="badge-texts">
+                  <strong data-i18n="ct_ship">توصيل مجاني وسريع</strong>
+                  <span data-i18n="ct_ship_sub">24-48 ساعة لجميع مدن المغرب</span>
+                </div>
+              </div>
+              <div class="badge-item">
+                <span class="material-symbols-outlined">payments</span>
+                <div class="badge-texts">
+                  <strong data-i18n="trust_cod">الدفع عند الاستلام</strong>
+                  <span data-i18n="trust_cod_sub">تأكد من المنتج عاد خلص</span>
+                </div>
+              </div>
+              <div class="badge-item">
+                <span class="material-symbols-outlined">verified_user</span>
+                <div class="badge-texts">
+                  <strong data-i18n="ct_guarantee">ضمان 30 يوم</strong>
+                  <span data-i18n="ct_guarantee_sub">إلا ماعجبكش نرجعو ليك فلوسك</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Order form -->
+          <div class="checkout-form-side">
+            <div class="form-header">
+              <h3 class="form-title" data-i18n="form_title">أكمل طلبيتك دابا 👇</h3>
+              <p class="form-subtitle" data-i18n="form_subtitle">ملي تضغط "أكد الطلب"، غادي يتواصل معك أحد دفرقة ديالنا باش يأكد التوصيل.</p>
+            </div>
+
+            <div id="express-checkout-section" class="product-section"
+                 data-pb-section="PBS-w3wje1780392350746"
+                 data-pb-field="product-id"
+                 data-pb-type="single-product"
+                 data-pb-value="[object Object]">
+
+              <form method="post" id="custom-express-checkout-form">
+                <!-- Hidden Native Mapping Inputs — DO NOT CHANGE -->
+                <input type="hidden" name="id" value="0b8ab67f-dca6-4c23-a2fe-cb31083b3123">
+                <input type="hidden" name="quantity" value="1">
+                <input type="hidden" name="is_page_builder_express_checkout" value="true">
+                <input type="hidden" name="extra_payload" value="">
+
+                <div class="form-group">
+                  <label data-i18n="form_name">الإسم الكامل</label>
+                  <div class="input-wrap">
+                    <span class="material-symbols-outlined input-icon">person</span>
+                    <input name="first_name" type="text" placeholder="محمد / فاطمة" data-i18n-placeholder="form_name_ph" autocomplete="name">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label data-i18n="form_phone">رقم الهاتف</label>
+                  <div class="input-wrap">
+                    <span class="material-symbols-outlined input-icon">phone</span>
+                    <input inputmode="tel" name="phone" type="text" placeholder="06XX XXX XXX" data-i18n-placeholder="form_phone_ph" autocomplete="tel">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label data-i18n="form_city">المدينة</label>
+                  <div class="input-wrap">
+                    <span class="material-symbols-outlined input-icon">location_on</span>
+                    <input name="extra_fields[custom_field_cGzlrqWxXctNnheN]" type="text" placeholder="الدار البيضاء، الرباط..." data-i18n-placeholder="form_city_ph" autocomplete="address-level2">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label data-i18n="form_address">العنوان (اختياري)</label>
+                  <div class="input-wrap">
+                    <span class="material-symbols-outlined input-icon">home</span>
+                    <input name="extra_fields[custom_field_Z9F5QkO20c9xIfT1]" type="text" placeholder="الحي، الشارع، رقم الدار..." data-i18n-placeholder="form_address_ph" autocomplete="street-address">
+                  </div>
+                </div>
+
+                <button type="submit" class="btn-submit" id="checkout-submit-btn">
+                  <span class="material-symbols-outlined btn-icon">check_circle</span>
+                  <span data-i18n="form_submit">أكد الطلب ديالي</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
          WHY V34 — split two-column
     ══════════════════════════════════════════════════════ -->
     <section class="split-section bg-white reveal">
@@ -185,10 +295,6 @@
             <li><span class="benefit-check">✓</span> <span data-i18n="ben_5">14 استعمال فكل علبة</span></li>
             <li><span class="benefit-check">✓</span> <span data-i18n="ben_6">ضمان استرجاع الفلوس — إلا ماعجبكش، ترجع ليك فلوسك</span></li>
           </ul>
-          <button type="button" class="btn-primary scroll-to-checkout" style="margin-top:28px; color:#fff !important; background:linear-gradient(135deg,#7c24d4 0%,#5b009e 100%) !important;">
-            <span class="material-symbols-outlined" style="color:#fff !important;">shopping_bag</span>
-            <span data-i18n="land_hero_cta" style="color:#fff !important;">صيفط طلبيتك دابا</span>
-          </button>
         </div>
         <div class="split-media">
           <!-- Benefits section: product lifestyle image, NO GIF -->
