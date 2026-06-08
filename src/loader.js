@@ -26,6 +26,25 @@
     js: BASE + "src/script.js"
   };
 
+  function detectV34Lang() {
+    var supported = ["ar", "en", "fr"];
+    try {
+      var saved = localStorage.getItem("v34_lang");
+      if (saved && supported.indexOf(saved) !== -1) return saved;
+    } catch (e) {}
+    var prefs = (navigator.languages && navigator.languages.length)
+      ? navigator.languages
+      : [navigator.language || navigator.userLanguage || "ar"];
+    for (var i = 0; i < prefs.length; i++) {
+      var code = (prefs[i] || "").toLowerCase();
+      if (code.indexOf("ar") === 0 || code.indexOf("fr") === 0) return "ar";
+      if (code.indexOf("en") === 0) return "en";
+    }
+    return "ar";
+  }
+
+  window.__V34_INITIAL_LANG = detectV34Lang();
+
   // Helper to fetch text with cache busting in dev mode
   var cacheBuster = "?t=" + new Date().getTime();
 
@@ -69,6 +88,15 @@
           document.body.appendChild(target);
         }
         target.innerHTML = htmlText;
+
+        var earlyLang = window.__V34_INITIAL_LANG || "ar";
+        var appRoot = target.querySelector(".app");
+        if (appRoot) {
+          appRoot.setAttribute("lang", earlyLang);
+          appRoot.setAttribute("dir", earlyLang === "ar" ? "rtl" : "ltr");
+        }
+        var langLabel = target.querySelector("#langLabel");
+        if (langLabel) langLabel.textContent = earlyLang.toUpperCase();
 
         // ── 3. Inject JS ──
         var scriptEl = document.getElementById("v34-script");

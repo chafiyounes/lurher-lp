@@ -466,6 +466,12 @@
   background: linear-gradient(90deg, var(--primary-light), var(--primary), var(--primary-dark));
 }
 
+@media (max-width: 899px) {
+  .checkout-form-side { order: -1; }
+  .checkout-info { order: 1; }
+  .checkout-trust-badges { border-top: none; padding-top: 0; }
+}
+
 @media (min-width: 900px) {
   .checkout-box {
     flex-direction: row;

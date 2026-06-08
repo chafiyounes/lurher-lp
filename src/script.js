@@ -173,19 +173,32 @@
 
   /* ── Language Detection & State ── */
   var langs = ["ar", "en", "fr"];
-  var savedLang = localStorage.getItem("v34_lang");
-  var currentLangIndex = 0; // Default: Arabic
 
-  if (savedLang && langs.indexOf(savedLang) !== -1) {
-    currentLangIndex = langs.indexOf(savedLang);
-  } else {
-    var browserLang = (navigator.language || navigator.userLanguage || "").toLowerCase();
-    if (browserLang.indexOf("en") === 0) {
-      currentLangIndex = 1; // English
-    } else {
-      currentLangIndex = 0; // French/Arabic or others default to Arabic
+  function detectBrowserLang() {
+    var prefs = (navigator.languages && navigator.languages.length)
+      ? navigator.languages
+      : [navigator.language || navigator.userLanguage || "ar"];
+    for (var i = 0; i < prefs.length; i++) {
+      var code = (prefs[i] || "").toLowerCase();
+      if (code.indexOf("ar") === 0 || code.indexOf("fr") === 0) return "ar";
+      if (code.indexOf("en") === 0) return "en";
     }
+    return "ar";
   }
+
+  function resolveInitialLang() {
+    try {
+      var savedLang = localStorage.getItem("v34_lang");
+      if (savedLang && langs.indexOf(savedLang) !== -1) return savedLang;
+    } catch (e) {}
+    if (window.__V34_INITIAL_LANG && langs.indexOf(window.__V34_INITIAL_LANG) !== -1) {
+      return window.__V34_INITIAL_LANG;
+    }
+    return detectBrowserLang();
+  }
+
+  var currentLangIndex = langs.indexOf(resolveInitialLang());
+  if (currentLangIndex < 0) currentLangIndex = 0;
 
   /* ── i18n Apply ── */
   function applyLang(index) {
@@ -276,8 +289,15 @@
     var btn = e.target.closest(".scroll-to-checkout");
     if (btn) {
       e.preventDefault();
-      var section = document.getElementById("checkout-section");
-      if (section) section.scrollIntoView({ behavior: "smooth", block: "center" });
+      var target = document.getElementById("checkout-form") ||
+        document.querySelector(".checkout-form-side") ||
+        document.getElementById("checkout-section");
+      if (target) {
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: window.innerWidth < 900 ? "start" : "center"
+        });
+      }
     }
   });
 
