@@ -44,19 +44,19 @@
       en: "Most whitening products take weeks or damage enamel. We chose a different path:",
       fr: "La plupart des produits prennent des semaines ou abîment l'émail. Nous avons choisi une autre voie :"
     },
-    land_feat1_h: { ar: "🟣 تصحيح اللون الفوري", en: "🟣 Instant Colour Correction", fr: "🟣 Correction de couleur instantanée" },
+    land_feat1_h: { ar: "تصحيح اللون الفوري", en: "Instant Colour Correction", fr: "Correction de couleur instantanée" },
     land_feat1_p: {
       ar: "اللون البنفسجي كيلغي الاصفرار — نفس مبدأ الشامبو البنفسجي للشعر، ولكن للأسنان. النتيجة كتبان من أول استعمال.",
       en: "Purple tone cancels yellowness — same principle as purple shampoo for hair, but for teeth. Visible from first use.",
       fr: "Le ton violet annule le jaunissement — même principe que le shampoing violet. Visible dès la première utilisation."
     },
-    land_feat2_h: { ar: "⚪ تبييض PAP+", en: "⚪ PAP+ Whitening", fr: "⚪ Blanchiment PAP+" },
+    land_feat2_h: { ar: "تبييض PAP+", en: "PAP+ Whitening", fr: "Blanchiment PAP+" },
     land_feat2_p: {
       ar: "تبييض حقيقي كيزيد مع الوقت — بلا بيروكسيد، آمن 100% على المينا والأسنان الحساسة.",
       en: "Real whitening that improves over time — peroxide-free, 100% safe for enamel.",
       fr: "Blanchiment réel qui s'améliore — sans peroxyde, 100% sûr."
     },
-    land_feat3_h: { ar: "⏱️ نتيجة فـ 30 دقيقة", en: "⏱️ Results in 30 Minutes", fr: "⏱️ Résultats en 30 minutes" },
+    land_feat3_h: { ar: "نتيجة فـ 30 دقيقة", en: "Results in 30 Minutes", fr: "Résultats en 30 minutes" },
     land_feat3_p: {
       ar: "حط الشريطة، استنى 30 دقيقة، شوف الفرق. ما محتاجش تبات معها، ما محتاجش ضوء خاص.",
       en: "Apply the strip, wait 30 minutes, see the difference. No overnight treatment, no special light needed.",
@@ -262,8 +262,8 @@
 
     var bottomCta = document.getElementById("bottom-cta");
     if (bottomCta) {
-      // Show sticky CTA after scrolling past 300px
-      if (window.scrollY > 300) {
+      // Show sticky CTA once user scrolls past hero
+      if (window.scrollY > 120) {
         bottomCta.classList.add("visible");
       } else {
         bottomCta.classList.remove("visible");
@@ -486,7 +486,7 @@
 
   /* ── Init & Hash Routing ── */
   function handleHashRoute() {
-    var hash = window.location.hash || '#home';
+    var hash = window.location.hash || '#landing';
     var views = document.querySelectorAll('.view-container');
     for (var i = 0; i < views.length; i++) {
       views[i].style.display = 'none';
