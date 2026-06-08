@@ -15,7 +15,7 @@
     <div class="nav-inner">
       <a href="#" class="nav-brand scroll-to-top">HISMILE</a>
       <div style="display:flex; align-items:center; gap:8px;">
-        <button type="button" class="btn-nav-cta scroll-to-checkout" data-i18n="nav_shop" onclick="window.goToCheckout()">اطلب الآن</button>
+        <button type="button" class="btn-nav-cta scroll-to-checkout" data-i18n="nav_shop">اطلب الآن</button>
         <button aria-label="Switch language" id="langToggle" type="button" class="lang-toggle-btn">
           <span class="material-symbols-outlined" style="font-size:18px;">language</span>
           <span id="langLabel">AR</span>
@@ -24,6 +24,7 @@
     </div>
   </header>
 
+  <main>
   <main>
     <!-- ══════════════════════════════════════════════════════
          BRAND HOME PAGE VIEW
@@ -38,7 +39,7 @@
               <div class="mini-stars">★★★★★</div>
               <span data-i18n="home_proof">+10 مليون زبون فالعالم</span>
             </div>
-            <button type="button" class="btn-primary scroll-to-checkout" onclick="window.goToCheckout()" style="margin-top:10px;">
+            <button type="button" class="btn-primary" onclick="window.location.hash='#landing'" style="margin-top:10px;">
               <span class="material-symbols-outlined">explore</span>
               <span data-i18n="home_cta">اكتشف منتجاتنا</span>
             </button>
@@ -209,9 +210,9 @@
         <p class="ba-hint" data-i18n="land_ba_hint">← اسحب لكشف النتيجة →</p>
         <div class="slider-wrap" id="slider">
           <!-- BEFORE: yellow/stained teeth -->
-          <img alt="Before — أسنان قبل التبييض" class="slider-img" src="https://cdn.youcan.shop/stores/cdf38917b082e4c6fc949eb37193611f/others/KjnsemXnvmTjspdXcZ9K8gs309Gmu63yV0cCCwDf.jpg"/>
+          <img alt="Before — أسنان قبل التبييض" class="slider-img" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/slider_before_cropped.jpg"/>
           <!-- AFTER: white teeth -->
-          <img alt="After — أسنان بعد التبييض" class="slider-img slider-after" id="slider-after" src="https://cdn.youcan.shop/stores/cdf38917b082e4c6fc949eb37193611f/others/YDXC54YBjdrXLUzY12QtqGSvWS8klC6HXytO95vk.jpg"/>
+          <img alt="After — أسنان بعد التبييض" class="slider-img slider-after" id="slider-after" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/slider_after_cropped.jpg"/>
           <div class="slider-handle" id="slider-handle"></div>
         </div>
       </div>
@@ -235,7 +236,7 @@
               <div class="stars">★★★★★</div>
             </div>
             <p class="t-body review-text" data-i18n="rev1_text">صراحة ما توقعتش هاد النتيجة! أسناني كانو صفرين بزاف بسبب القهوة، ومن أول استعمال بان الفرق واضح. غادي نزيد نطلب وحدة أخرى.</p>
-            <img src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/rev-1.png" class="review-img" alt="Review image" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP_-_02_-_V34_Strips_f50db329-96e5-450a-9000-6543cf8b387b_595x.webp" class="review-img" alt="Review image" loading="lazy" />
           </div>
 
           <div class="review-card">
@@ -248,7 +249,7 @@
               <div class="stars">★★★★★</div>
             </div>
             <p class="t-body review-text" data-i18n="rev2_text">التوصيل كان سريع، والمنتج فعال. كيعطي لمعة زوينة للأسنان وكيبيدهم مزيان. شكراً هيسمايل.</p>
-            <img src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/rev-2.png" class="review-img" alt="Review image" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-03-V34Strips-updated22_10_25_595x.webp" class="review-img" alt="Review image" loading="lazy" />
           </div>
 
           <div class="review-card">
@@ -261,7 +262,7 @@
               <div class="stars">★★★★★</div>
             </div>
             <p class="t-body review-text" data-i18n="rev3_text">النتيجة صراحة صدماتني! كنت خايفة تضر ليا أسناني حيت عندي حساسة ولكن الحمد لله ما كاين حتى ألم والبياض رائع.</p>
-            <img src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/rev-3.png" class="review-img" alt="Review image" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-04-V34Strips-updated22_10_25_595x.webp" class="review-img" alt="Review image" loading="lazy" />
           </div>
 
           <div class="review-card">
@@ -274,6 +275,7 @@
               <div class="stars">★★★★★</div>
             </div>
             <p class="t-body review-text" data-i18n="rev4_text">منتج ممتاز وتوصيل سريع في يومين فقط. طريقة الاستعمال ساهلة بزاف والنتيجة كتبان من أول مرة.</p>
+            <img src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-01-V34Strips_no-badge31_10_15_595x.webp" class="review-img" alt="Review image" loading="lazy" />
           </div>
         </div>
       </div>
@@ -481,7 +483,7 @@
         <span data-i18n="sticky_price">245 د.م.</span>
       </div>
     </div>
-    <button type="button" class="btn-primary scroll-to-checkout" id="stickyBtn" data-i18n="sticky_cta" onclick="window.goToCheckout()" style="color:#fff !important; background:linear-gradient(135deg,#7c24d4 0%,#5b009e 100%) !important;">اطلب الآن</button>
+    <button type="button" class="btn-primary scroll-to-checkout" id="stickyBtn" data-i18n="sticky_cta" style="color:#fff !important; background:linear-gradient(135deg,#7c24d4 0%,#5b009e 100%) !important;">اطلب الآن</button>
   </nav>
 
   <!-- Footer -->
