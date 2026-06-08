@@ -460,9 +460,30 @@
     });
   }
 
-  /* ── Init ── */
+  /* ── Init & Hash Routing ── */
+  function handleHashRoute() {
+    var hash = window.location.hash || '#home';
+    var views = document.querySelectorAll('.view-container');
+    for (var i = 0; i < views.length; i++) {
+      views[i].style.display = 'none';
+    }
+    
+    if (hash === '#landing') {
+      var landing = document.getElementById('view-landing');
+      if (landing) landing.style.display = 'block';
+    } else {
+      var home = document.getElementById('view-home');
+      if (home) home.style.display = 'block';
+    }
+    // Scroll to top when view changes
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  window.addEventListener("hashchange", handleHashRoute);
+
   function init() {
     applyLang(currentLangIndex);
+    handleHashRoute();
     handleScroll();
     initSlider();
     initCustomCheckout();
