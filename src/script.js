@@ -88,7 +88,7 @@
     rev_title: { ar: "آراء الزبناء", en: "Customer Reviews", fr: "Avis Clients" },
     rev_eyebrow: { ar: "آراء حقيقية", en: "Real reviews", fr: "Avis vérifiés" },
     rev_sub: {
-      ar: "+2,000 طلبية سلمات فالمغرب — هادو شي من التعليقات ديال زبنائنا",
+      ar: "+2,000 طلبية وصلات للمغرب — هادو شي تعليقات من زبنائنا",
       en: "+2,000 orders delivered in Morocco — here are some of our customers' reviews",
       fr: "+2 000 commandes livrées au Maroc — voici quelques avis de nos clients"
     },
@@ -96,35 +96,35 @@
     rev_verified: { ar: "طلبية مؤكدة", en: "Verified order", fr: "Commande vérifiée" },
     rev_tap_img: { ar: "اضغط لمشاهدة الصور بوضوح", en: "Tap to view photos clearly", fr: "Appuyez pour voir les photos" },
     rev_instructions_note: {
-      ar: "السر: اتبع التعليمات بالحرف — نشّف سنانك بالورقة، حط الشرائط، خليهم 30 دقيقة لساعة (بلا حساسية)، وفرك عادي من بعد. هادو الصور من زبناء تبعو الخطوات مزيان.",
+      ar: "نصيحة مهمة: اتبع التعليمات مزيان — نشّف سنانك بالمنشفة الورقية، حط الشرائط، خليهم من 30 دقيقة لساعة (ما كاينش حساسية)، وفرك عادي من بعد. هاد الصور ديال زبناء تبعو نفس الخطوات.",
       en: "The secret: follow the instructions exactly — dry teeth with a paper towel, apply strips, leave 30 minutes to 1 hour (no sensitivity), then brush normally. These photos are from customers who followed the steps properly.",
       fr: "Le secret : suivez les instructions à la lettre — séchez avec un essuie, appliquez les bandes, laissez 30 min à 1 h (sans sensibilité), puis brossez normalement."
     },
     rev1_name: { ar: "سناء .م", en: "Sanaa .M", fr: "Sanaa .M" },
     rev1_city: { ar: "الدار البيضاء", en: "Casablanca", fr: "Casablanca" },
     rev1_text: {
-      ar: "من بعد ما بديت كنشّف سناني بالورقة وكنتبع التعليمات بالحرف، بانت ليا الفرق واضح — قبل، حين التطبيق، ومن بعد. خليتها ساعة وما حسّيت حتى بألم.",
+      ar: "منين بديت كنشّف سناني بالورقة وكنطبّق التعليمات كيف ما كاينين، الفرق ولى واضح: قبل، أثناء، وبعد. خليت الشرائط ساعة وما حسّيت بأي ألم.",
       en: "Once I started drying my teeth with a paper towel and following the instructions exactly, the difference was clear — before, during, and after. I left them on for an hour with zero pain.",
       fr: "Une fois que j'ai séché mes dents avec un essuie et suivi les instructions à la lettre, la différence était claire — avant, pendant et après. Une heure sans aucune douleur."
     },
     rev2_name: { ar: "ياسين .ب", en: "Yassine .B", fr: "Yassine .B" },
     rev2_city: { ar: "الرباط", en: "Rabat", fr: "Rabat" },
     rev2_text: {
-      ar: "المرة الأولى ما تبعتش التعليمات وماشي حاجة. الثانية نشّفت سناني مزيان، حطيت الشرائط بالبلاستيك، خليتها 45 دقيقة، وفركت من بعد — النتيجة فالصورة كتتكلم.",
+      ar: "أول مرة ما تبعتش التعليمات وما بان حتى فرق. الثانية نشّفت سناني مزيان، لصقت الشرائط مزيان، خليتها 45 دقيقة وفركت من بعد — النتيجة باينة فالصور.",
       en: "First time I didn't follow the instructions — nothing happened. Second time I dried properly, applied with the plastic strip, waited 45 minutes, brushed after — the photos speak for themselves.",
       fr: "La première fois sans suivre les instructions — rien. La deuxième fois : séchage, application, 45 minutes, brossage après — les photos parlent d'elles-mêmes."
     },
     rev3_name: { ar: "مريم .أ", en: "Meryem .A", fr: "Meryem .A" },
     rev3_city: { ar: "طنجة", en: "Tangier", fr: "Tanger" },
     rev3_text: {
-      ar: "عندي أسنان حساسة وكنخاف من التبييض. بلا بيروكسيد، خليت الشرائط ساعة كاملة بلا ألم. المهم: سنان جافين قبل التطبيق وفرك عادي من بعد.",
+      ar: "عندي سنان حساسة وكنت خايفة من التبييض. بلا بيروكسيد، خليت الشرائط ساعة كاملة بلا ما نحس بألم. المهم: يكونو السنان جافين قبل ما تحطي، ومن بعد تفركي عادي.",
       en: "I have sensitive teeth and was scared of whitening. Peroxide-free — left strips on a full hour, no pain. Key: dry teeth before applying and brush normally after.",
       fr: "Dents sensibles — j'avais peur. Sans peroxyde, une heure complète sans douleur. Clé : dents sèches avant et brossage normal après."
     },
     rev4_name: { ar: "أمين .ر", en: "Amine .R", fr: "Amine .R" },
     rev4_city: { ar: "مراكش", en: "Marrakech", fr: "Marrakech" },
     rev4_text: {
-      ar: "المنتج وصل أصلي والباطة فيها 14 استعمال. قريت التعليمات فالعلبة: نشّف، حط، استنى 30 دقيقة على الأقل، حيد وفرك — هاد هي الطريقة باش تجيب أحسن نتيجة.",
+      ar: "المنتج وصل أصلي والعلبة فيها 14 استعمال. قريت التعليمات: نشّف، حط، استنّى 30 دقيقة على الأقل، حيد الشرائط وفرك — هكذا كتطلع أحسن نتيجة.",
       en: "Genuine product, 14 uses in the box. Read the box instructions: dry, apply, wait at least 30 minutes, remove and brush — that's how you get the best results.",
       fr: "Produit authentique, 14 utilisations. Instructions sur la boîte : sécher, appliquer, attendre 30 min minimum, retirer et brosser — pour le meilleur résultat."
     },
