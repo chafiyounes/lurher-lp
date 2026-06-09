@@ -80,8 +80,20 @@
       en: "Complete your order — Cash on Delivery",
       fr: "Complétez votre commande — Paiement à la livraison"
     },
+    checkout_eyebrow: { ar: "اطلب دابا", en: "Order now", fr: "Commandez" },
+    why_eyebrow: { ar: "التكنولوجيا", en: "The technology", fr: "La technologie" },
+    ben_eyebrow: { ar: "الفوائد", en: "Benefits", fr: "Avantages" },
+    ba_eyebrow: { ar: "نتائج حقيقية", en: "Real results", fr: "Résultats réels" },
 
-    rev_title: { ar: "آراء الزبناء ⭐⭐⭐⭐⭐", en: "Customer Reviews ⭐⭐⭐⭐⭐", fr: "Avis Clients ⭐⭐⭐⭐⭐" },
+    rev_title: { ar: "آراء الزبناء", en: "Customer Reviews", fr: "Avis Clients" },
+    rev_eyebrow: { ar: "آراء حقيقية", en: "Real reviews", fr: "Avis vérifiés" },
+    rev_sub: {
+      ar: "+2,000 طلبية سلمات فالمغرب — هادو شي من التعليقات ديال زبنائنا",
+      en: "+2,000 orders delivered in Morocco — here are some of our customers' reviews",
+      fr: "+2 000 commandes livrées au Maroc — voici quelques avis de nos clients"
+    },
+    rev_rating_label: { ar: "معدل التقييم", en: "Average rating", fr: "Note moyenne" },
+    rev_verified: { ar: "طلبية مؤكدة", en: "Verified order", fr: "Commande vérifiée" },
     rev1_name: { ar: "سناء .م", en: "Sanaa .M", fr: "Sanaa .M" },
     rev1_city: { ar: "الدار البيضاء", en: "Casablanca", fr: "Casablanca" },
     rev1_text: { ar: "صراحة ما توقعتش هاد النتيجة! أسناني كانو صفرين بزاف بسبب القهوة، ومن أول استعمال بان الفرق واضح. غادي نزيد نطلب وحدة أخرى.", en: "Honestly didn't expect this! My teeth were very yellow from coffee, and the difference is clear from the first use. Will order another.", fr: "Je ne m'attendais pas à ce résultat ! Mes dents étaient très jaunes à cause du café. La différence est claire dès la première utilisation." },
@@ -96,12 +108,12 @@
     rev4_city: { ar: "مراكش", en: "Marrakech", fr: "Marrakech" },
     rev4_text: { ar: "منتج ممتاز وتوصيل سريع في يومين فقط للدار البيضاء. طريقة الاستعمال ساهلة بزاف والنتيجة كتبان من أول مرة.", en: "Excellent product and fast delivery in 2 days. Very easy to use and visible results from the first use.", fr: "Excellent produit et livraison rapide en 2 jours. Très simple à utiliser et résultat visible dès la première fois." },
 
-    land_order_h: { ar: "كل يوم كتأجّل، هو يوم بأسنان أقل بياضًا. صيفط طلبيتك دابا 👇", en: "Every day you delay is a day with less white teeth. Order Now 👇", fr: "Chaque jour de retard est un jour avec des dents moins blanches. Commandez maintenant 👇" },
+    land_order_h: { ar: "كل يوم كتأجّل، هو يوم بأسنان أقل بياضًا.", en: "Every day you delay is a day with less white teeth.", fr: "Chaque jour de retard est un jour avec des dents moins blanches." },
     land_order_sub: { ar: "الدفع عند الاستلام، بلا خلاص مسبق. التوصيل لجميع مدن المغرب.", en: "Cash on Delivery, no upfront payment. Delivery to all Moroccan cities.", fr: "Paiement à la livraison, aucun paiement d'avance. Livraison dans tout le Maroc." },
     land_price:   { ar: "245 د.م.", en: "245 MAD", fr: "245 MAD" },
     land_strike:  { ar: "350 د.م.", en: "350 MAD", fr: "350 MAD" },
     savings_tag:  { ar: "وفّرت 105 د.م. (30%)", en: "You save 105 MAD (30%)", fr: "Vous économisez 105 MAD (30%)" },
-    checkout_badge: { ar: "عرض محدود ⏳", en: "Limited Offer ⏳", fr: "Offre Limitée ⏳" },
+    checkout_badge: { ar: "عرض محدود", en: "Limited Offer", fr: "Offre Limitée" },
 
     form_name: { ar: "الإسم الكامل", en: "Full Name", fr: "Nom complet" },
     form_phone: { ar: "رقم الهاتف", en: "Phone Number", fr: "Numéro de téléphone" },
@@ -136,10 +148,26 @@
     sticky_price: { ar: "245 د.م.", en: "245 MAD", fr: "245 MAD" },
     sticky_cta: { ar: "اطلب الآن", en: "Order Now", fr: "Commander" },
 
-    foot_copy: { ar: "© 2024 HISMILE. جميع الحقوق محفوظة.", en: "© 2024 HISMILE. ALL RIGHTS RESERVED.", fr: "© 2024 HISMILE. TOUS DROITS RÉSERVÉS." },
+    foot_copy: { ar: "© 2025 HISMILE. جميع الحقوق محفوظة.", en: "© 2025 HISMILE. All rights reserved.", fr: "© 2025 HISMILE. Tous droits réservés." },
+    foot_tagline: {
+      ar: "تبييض أسنان آمن — توصيل لجميع مدن المغرب",
+      en: "Safe teeth whitening — delivery across Morocco",
+      fr: "Blanchiment sûr — livraison partout au Maroc"
+    },
 
     /* FAQ translations */
-    faq_title: { ar: "الأسئلة الشائعة", en: "Frequently Asked Questions", fr: "Questions Fréquentes" },
+    faq_eyebrow: { ar: "أسئلة شائعة", en: "FAQ", fr: "FAQ" },
+    faq_title: { ar: "كل ما خصك تعرف قبل الطلب", en: "Everything you need to know before ordering", fr: "Tout ce qu'il faut savoir avant de commander" },
+    faq_sub: {
+      ar: "مازال عندك شك؟ هاد الإجابات كتغطي الاستعمال، الأمان، التوصيل والإرجاع.",
+      en: "Still unsure? These answers cover usage, safety, delivery and returns.",
+      fr: "Encore des doutes ? Ces réponses couvrent l'utilisation, la sécurité, la livraison et les retours."
+    },
+    faq_cta: {
+      ar: "جاهز؟ صيفط طلبيتك دابا — الدفع عند الاستلام",
+      en: "Ready? Place your order — Cash on Delivery",
+      fr: "Prêt ? Commandez — Paiement à la livraison"
+    },
     faq_q1: { ar: "كيفاش كنستعمل شرائط V34؟", en: "How do I use V34 strips?", fr: "Comment utiliser les bandes V34 ?" },
     faq_a1: {
       ar: "نشّف سنانك مزيان، حط الشريطة الطويلة على سنانك الفوقانيين والصغيرة على التحتانيين. خليها 30 دقيقة، من بعد حيدها وشلل فمك بالماء وحك البقايا البنفسجية بالشيّتة.",
@@ -352,19 +380,20 @@
     for (var i = 0; i < faqItems.length; i++) {
       var btn = faqItems[i].querySelector(".faq-question");
       if (btn) {
-        btn.addEventListener("click", function (e) {
+        btn.addEventListener("click", function () {
           var currentItem = this.closest(".faq-item");
           var isOpen = currentItem.classList.contains("faq-open");
-
-          // Close all FAQ items
           var allItems = document.querySelectorAll(".faq-item");
+
           for (var j = 0; j < allItems.length; j++) {
             allItems[j].classList.remove("faq-open");
+            var q = allItems[j].querySelector(".faq-question");
+            if (q) q.setAttribute("aria-expanded", "false");
           }
 
-          // Toggle current item
           if (!isOpen) {
             currentItem.classList.add("faq-open");
+            this.setAttribute("aria-expanded", "true");
           }
         });
       }
