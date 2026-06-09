@@ -532,6 +532,7 @@
   font-size: 11px; font-weight: 800; color: var(--success);
   background: #e8f5e9; padding: 3px 10px;
   border-radius: var(--r-full); width: fit-content;
+  margin-inline: 2px;
 }
 .review-verified .material-symbols-outlined { font-size: 14px; }
 .reviews-grid {
@@ -560,11 +561,11 @@
 }
 .review-card {
   background: var(--surface-white);
-  border-radius: var(--r-lg); padding: 22px 24px 20px;
+  border-radius: var(--r-lg); padding: 26px 28px 24px;
   box-shadow: var(--sh-sm); border: 1.5px solid var(--border);
   display: flex; flex-direction: column; gap: 14px;
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-  width: 100%; text-align: inherit; font-family: inherit; color: inherit;
+  width: 100%; min-width: 0; text-align: inherit; font-family: inherit; color: inherit;
 }
 .review-card--gallery { cursor: pointer; }
 .review-card--gallery:hover,
@@ -578,27 +579,28 @@
   box-shadow: var(--sh-md), 0 0 0 3px var(--primary-glow);
 }
 .review-header {
-  display: flex; align-items: center; gap: 12px;
+  display: flex; align-items: center; gap: 14px;
+  padding-inline: 2px;
 }
 .reviewer-avatar {
-  width: 42px; height: 42px; border-radius: 50%;
+  width: 38px; height: 38px; border-radius: 50%;
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  color: #fff; font-weight: 900; font-size: 18px;
+  color: #fff; font-weight: 900; font-size: 16px;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
 }
 .reviewer-info { display: flex; flex-direction: column; flex: 1; }
 .reviewer-name { font-weight: 800; font-size: 15px; }
 .reviewer-city { font-size: 12px; color: var(--on-muted); font-weight: 600; }
-.stars { color: #F5A623; font-size: 16px; letter-spacing: -1px; margin-right: auto; }
-.app[dir="ltr"] .stars { margin-right: 0; margin-left: auto; }
+.stars { color: #F5A623; font-size: 16px; letter-spacing: -1px; margin-right: auto; margin-inline-start: 4px; }
+.app[dir="ltr"] .stars { margin-right: 0; margin-left: auto; margin-inline-start: 4px; }
 .review-text {
   font-size: 14px; line-height: 1.7; color: var(--on-muted); flex: 1;
-  text-align: start; padding-inline: 2px;
+  text-align: start;
 }
 .review-thumbs {
   display: grid; gap: 8px; margin-top: auto;
-  padding: 10px;
+  padding: 12px;
   background: var(--surface-alt);
   border: 1px solid var(--border);
   border-radius: var(--r-md);
@@ -615,15 +617,15 @@
 .review-tap-hint {
   display: inline-flex; align-items: center; justify-content: center; gap: 6px;
   font-size: 11px; font-weight: 800; color: var(--primary);
-  margin-top: 2px; padding: 8px 4px 0; width: 100%;
+  margin-top: 2px; padding: 8px 4px 4px; width: 100%;
 }
 .review-tap-hint .material-symbols-outlined { font-size: 16px; }
 
-/* Review image lightbox */
+/* Review split modal */
 .review-lightbox {
   position: fixed; inset: 0; z-index: 200;
   display: flex; align-items: center; justify-content: center;
-  padding: 20px;
+  padding: 16px;
   opacity: 0; visibility: hidden;
   transition: opacity 0.25s ease, visibility 0.25s ease;
 }
@@ -635,46 +637,84 @@
 }
 .review-lightbox-panel {
   position: relative; z-index: 1;
-  width: min(92vw, 720px);
-  max-height: 90vh;
+  width: min(94vw, 920px);
+  max-height: min(88vh, 640px);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(220px, 50vh) 1fr;
+  background: var(--surface-white);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-lg);
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .review-lightbox-panel {
+    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-rows: 1fr;
+    max-height: min(88vh, 560px);
+  }
+}
+.review-lightbox-media {
+  position: relative;
   display: flex; align-items: center; justify-content: center;
+  background: #1a1028;
+  min-height: 0;
+  padding: 16px;
 }
 .review-lightbox-img {
-  max-width: 100%; max-height: 85vh;
+  max-width: 100%; max-height: 100%;
   width: auto; height: auto;
-  border-radius: var(--r-md);
-  box-shadow: var(--sh-lg);
   object-fit: contain;
-  background: #111;
+  border-radius: var(--r-sm);
+}
+.review-lightbox-details {
+  display: flex; flex-direction: column; gap: 14px;
+  padding: 24px 28px;
+  overflow-y: auto;
+  min-height: 0;
+  text-align: start;
+}
+.review-lightbox-header {
+  display: flex; align-items: center; gap: 14px;
+  padding-inline: 2px;
+}
+.review-lightbox-text {
+  font-size: 15px; line-height: 1.75; color: var(--on-muted);
+  margin: 0; flex: 1;
 }
 .review-lightbox-close {
-  position: absolute; top: -48px; inset-inline-end: 0;
-  width: 40px; height: 40px;
+  position: absolute; top: 12px; inset-inline-end: 12px;
+  width: 36px; height: 36px;
   display: flex; align-items: center; justify-content: center;
-  background: rgba(255,255,255,0.15); color: #fff;
-  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.95); color: var(--primary-dark);
+  border: 1px solid var(--border);
   border-radius: 50%; cursor: pointer;
-  z-index: 2;
+  z-index: 3;
+  box-shadow: var(--sh-sm);
+}
+@media (min-width: 768px) {
+  .review-lightbox-close {
+    top: 10px; inset-inline-end: auto; inset-inline-start: 10px;
+    background: rgba(0,0,0,0.45); color: #fff;
+    border-color: rgba(255,255,255,0.25);
+  }
 }
 .review-lightbox-nav {
   position: absolute; top: 50%; transform: translateY(-50%);
-  width: 44px; height: 44px;
+  width: 40px; height: 40px;
   display: flex; align-items: center; justify-content: center;
   background: rgba(255,255,255,0.92); color: var(--primary-dark);
   border: none; border-radius: 50%;
   box-shadow: var(--sh-md); cursor: pointer; z-index: 2;
 }
-.review-lightbox-prev { inset-inline-start: -8px; }
-.review-lightbox-next { inset-inline-end: -8px; }
-@media (max-width: 640px) {
-  .review-lightbox-prev { inset-inline-start: 4px; }
-  .review-lightbox-next { inset-inline-end: 4px; }
-  .review-lightbox-close { top: 8px; inset-inline-end: 8px; background: rgba(0,0,0,0.5); }
-}
+.review-lightbox-prev { inset-inline-start: 10px; }
+.review-lightbox-next { inset-inline-end: 10px; }
 .review-lightbox-nav.is-hidden { display: none; }
 .review-lightbox-counter {
-  position: absolute; bottom: -36px; left: 50%; transform: translateX(-50%);
-  color: rgba(255,255,255,0.85); font-size: 13px; font-weight: 700;
+  position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+  color: rgba(255,255,255,0.9); font-size: 12px; font-weight: 700;
+  background: rgba(0,0,0,0.45); padding: 4px 12px;
+  border-radius: var(--r-full);
 }
 
 /* ─── FAQ ─── */

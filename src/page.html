@@ -514,23 +514,6 @@
             <span class="review-tap-hint"><span class="material-symbols-outlined">zoom_in</span><span data-i18n="rev_tap_img">اضغط لمشاهدة الصور بوضوح</span></span>
           </button>
         </div>
-
-        <div class="review-lightbox" id="review-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
-          <button type="button" class="review-lightbox-backdrop" id="review-lightbox-backdrop" aria-label="Close"></button>
-          <div class="review-lightbox-panel">
-            <button type="button" class="review-lightbox-close" id="review-lightbox-close" aria-label="Close">
-              <span class="material-symbols-outlined">close</span>
-            </button>
-            <button type="button" class="review-lightbox-nav review-lightbox-prev" id="review-lightbox-prev" aria-label="Previous">
-              <span class="material-symbols-outlined">chevron_right</span>
-            </button>
-            <img class="review-lightbox-img" id="review-lightbox-img" alt="" />
-            <button type="button" class="review-lightbox-nav review-lightbox-next" id="review-lightbox-next" aria-label="Next">
-              <span class="material-symbols-outlined">chevron_left</span>
-            </button>
-            <span class="review-lightbox-counter" id="review-lightbox-counter"></span>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -662,6 +645,41 @@
 
     </div> <!-- END view-landing -->
   </main>
+
+  <!-- Review modal (outside .reveal sections so position:fixed centers on viewport) -->
+  <div class="review-lightbox" id="review-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <button type="button" class="review-lightbox-backdrop" id="review-lightbox-backdrop" aria-label="Close"></button>
+    <div class="review-lightbox-panel" role="document">
+      <button type="button" class="review-lightbox-close" id="review-lightbox-close" aria-label="Close">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+      <div class="review-lightbox-media">
+        <button type="button" class="review-lightbox-nav review-lightbox-prev" id="review-lightbox-prev" aria-label="Previous">
+          <span class="material-symbols-outlined">chevron_right</span>
+        </button>
+        <img class="review-lightbox-img" id="review-lightbox-img" alt="" />
+        <button type="button" class="review-lightbox-nav review-lightbox-next" id="review-lightbox-next" aria-label="Next">
+          <span class="material-symbols-outlined">chevron_left</span>
+        </button>
+        <span class="review-lightbox-counter" id="review-lightbox-counter"></span>
+      </div>
+      <div class="review-lightbox-details">
+        <div class="review-lightbox-header">
+          <div class="reviewer-avatar" id="review-lightbox-avatar">س</div>
+          <div class="reviewer-info">
+            <span class="reviewer-name" id="review-lightbox-name">سناء .م</span>
+            <span class="reviewer-city" id="review-lightbox-city">الدار البيضاء</span>
+          </div>
+          <div class="stars" id="review-lightbox-stars">★★★★★</div>
+        </div>
+        <span class="review-verified" id="review-lightbox-verified">
+          <span class="material-symbols-outlined">verified</span>
+          <span data-i18n="rev_verified">طلبية مؤكدة</span>
+        </span>
+        <p class="review-lightbox-text" id="review-lightbox-text"></p>
+      </div>
+    </div>
+  </div>
 
   <!-- Sticky Bottom CTA -->
   <nav class="sticky-cta" id="bottom-cta">

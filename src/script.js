@@ -536,16 +536,25 @@
     });
   }
 
-  /* ── Review image lightbox ── */
+  /* ── Review split modal ── */
   function initReviewLightbox() {
     var lightbox = document.getElementById("review-lightbox");
     var lbImg = document.getElementById("review-lightbox-img");
     var lbCounter = document.getElementById("review-lightbox-counter");
+    var lbAvatar = document.getElementById("review-lightbox-avatar");
+    var lbName = document.getElementById("review-lightbox-name");
+    var lbCity = document.getElementById("review-lightbox-city");
+    var lbStars = document.getElementById("review-lightbox-stars");
+    var lbText = document.getElementById("review-lightbox-text");
     var btnClose = document.getElementById("review-lightbox-close");
     var btnBackdrop = document.getElementById("review-lightbox-backdrop");
     var btnPrev = document.getElementById("review-lightbox-prev");
     var btnNext = document.getElementById("review-lightbox-next");
     if (!lightbox || !lbImg) return;
+
+    if (lightbox.parentElement !== document.body) {
+      document.body.appendChild(lightbox);
+    }
 
     var gallery = [];
     var index = 0;
@@ -562,9 +571,23 @@
       if (btnNext) btnNext.classList.toggle("is-hidden", !multi);
     }
 
-    function openLightbox(images, startAt) {
+    function fillDetails(card) {
+      var avatar = card.querySelector(".reviewer-avatar");
+      var name = card.querySelector(".reviewer-name");
+      var city = card.querySelector(".reviewer-city");
+      var stars = card.querySelector(".stars");
+      var text = card.querySelector(".review-text");
+      if (lbAvatar && avatar) lbAvatar.textContent = avatar.textContent;
+      if (lbName && name) lbName.textContent = name.textContent;
+      if (lbCity && city) lbCity.textContent = city.textContent;
+      if (lbStars && stars) lbStars.innerHTML = stars.innerHTML;
+      if (lbText && text) lbText.textContent = text.textContent;
+    }
+
+    function openLightbox(card, images, startAt) {
       gallery = images;
       index = startAt || 0;
+      fillDetails(card);
       renderSlide();
       lightbox.classList.add("is-open");
       lightbox.setAttribute("aria-hidden", "false");
@@ -590,7 +613,7 @@
       cards[i].addEventListener("click", function () {
         try {
           var imgs = JSON.parse(this.getAttribute("data-review-images") || "[]");
-          if (imgs.length) openLightbox(imgs, 0);
+          if (imgs.length) openLightbox(this, imgs, 0);
         } catch (e) {}
       });
     }
