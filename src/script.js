@@ -110,9 +110,9 @@
     form_phone_ph: { ar: "06XX XXX XXX", en: "06XX XXX XXX", fr: "06XX XXX XXX" },
     form_city_ph: { ar: "الدار البيضاء، الرباط...", en: "Casablanca, Rabat...", fr: "Casablanca, Rabat..." },
     form_title: {
-      ar: "أكمل طلبيتك دابا 👇",
-      en: "Complete your order now 👇",
-      fr: "Complétez votre commande maintenant 👇"
+      ar: "أكمل طلبيتك دابا",
+      en: "Complete your order",
+      fr: "Complétez votre commande"
     },
     form_subtitle: {
       ar: "ملي تضغط 'أكد الطلب'، غادي يتواصل معك أحد دفرقة ديالنا باش يأكد التوصيل.",
@@ -418,7 +418,7 @@
 
     form.addEventListener("input", function (e) {
       if (e.target && e.target.closest) {
-        var group = e.target.closest(".form-group");
+        var group = e.target.closest(".form-group, .premium-field");
         if (group && group.classList.contains("has-error")) {
           group.classList.remove("has-error");
           var errEl = group.querySelector(".error-msg");
@@ -438,7 +438,7 @@
         var input = form.querySelector('[name="' + name + '"]');
         if (input && !input.value.trim()) {
           hasError = true;
-          var parent = input.closest(".form-group");
+          var parent = input.closest(".form-group, .premium-field");
           if (parent) {
             parent.classList.add("has-error");
             var errEl = parent.querySelector(".error-msg");

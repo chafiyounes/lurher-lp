@@ -207,77 +207,84 @@
             </div>
           </div>
 
-          <!-- Right: Order form (first on mobile) -->
+          <!-- Right: Premium order card (first on mobile) -->
           <div class="checkout-form-side" id="checkout-form">
-            <div class="checkout-price-strip">
-              <div class="checkout-price-row">
-                <span class="price-tag-big" data-i18n="land_price">245 د.م.</span>
-                <span class="strike-price" data-i18n="land_strike">350 د.م.</span>
+            <div class="order-card">
+              <div class="order-card-top">
+                <img class="order-card-thumb" alt="V34 Strips" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-01-V34Strips_no-badge31_10_15_595x.webp" loading="eager"/>
+                <div class="order-card-offer">
+                  <span class="order-card-badge" data-i18n="checkout_badge">عرض محدود</span>
+                  <div class="checkout-price-row">
+                    <span class="price-tag-big" data-i18n="land_price">245 د.م.</span>
+                    <span class="strike-price" data-i18n="land_strike">350 د.م.</span>
+                  </div>
+                  <span class="savings-tag" data-i18n="savings_tag">وفّرت 105 د.م. (30%)</span>
+                  <p class="checkout-proof-line">
+                    <span class="mini-stars">★★★★★</span>
+                    <span data-i18n="hero_proof">+2,000 طلبية سلمات فالمغرب</span>
+                  </p>
+                </div>
               </div>
-              <span class="savings-tag" data-i18n="savings_tag">وفّرت 105 د.م. (30%)</span>
-              <p class="checkout-proof-line">
-                <span class="mini-stars">★★★★★</span>
-                <span data-i18n="hero_proof">+2,000 طلبية سلمات فالمغرب</span>
-              </p>
+
+              <div class="order-card-body">
+                <h3 class="form-title" data-i18n="form_title">أكمل طلبيتك دابا</h3>
+                <p class="form-subtitle" data-i18n="form_subtitle">ملي تضغط "أكد الطلب"، غادي يتواصل معك أحد دفرقة ديالنا باش يأكد التوصيل.</p>
+
+                <div id="express-checkout-section" class="product-section"
+                     data-pb-section="PBS-w3wje1780392350746"
+                     data-pb-field="product-id"
+                     data-pb-type="single-product"
+                     data-pb-value="[object Object]">
+
+                  <form method="post" id="custom-express-checkout-form" class="premium-form">
+                    <input type="hidden" name="id" value="0b8ab67f-dca6-4c23-a2fe-cb31083b3123">
+                    <input type="hidden" name="quantity" value="1">
+                    <input type="hidden" name="is_page_builder_express_checkout" value="true">
+                    <input type="hidden" name="extra_payload" value="">
+
+                    <div class="premium-field form-group">
+                      <label class="field-label" data-i18n="form_name">الإسم الكامل</label>
+                      <div class="field-row">
+                        <span class="material-symbols-outlined">person</span>
+                        <input name="first_name" type="text" placeholder="محمد / فاطمة" data-i18n-placeholder="form_name_ph" autocomplete="name">
+                      </div>
+                    </div>
+
+                    <div class="premium-field form-group">
+                      <label class="field-label" data-i18n="form_phone">رقم الهاتف</label>
+                      <div class="field-row">
+                        <span class="material-symbols-outlined">phone</span>
+                        <input inputmode="tel" name="phone" type="text" placeholder="06XX XXX XXX" data-i18n-placeholder="form_phone_ph" autocomplete="tel">
+                      </div>
+                    </div>
+
+                    <div class="premium-field form-group">
+                      <label class="field-label" data-i18n="form_city">المدينة</label>
+                      <div class="field-row">
+                        <span class="material-symbols-outlined">location_on</span>
+                        <input name="extra_fields[custom_field_cGzlrqWxXctNnheN]" type="text" placeholder="الدار البيضاء، الرباط..." data-i18n-placeholder="form_city_ph" autocomplete="address-level2">
+                      </div>
+                    </div>
+
+                    <div style="display:none;">
+                      <input type="hidden" name="extra_fields[custom_field_dvwbCriA0IY849RF]" value="organic">
+                      <input type="hidden" name="extra_fields[custom_field_nfRXtUfus8GGt1ZD]" value="">
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <div class="order-card-footer">
+                <button type="submit" form="custom-express-checkout-form" class="btn-primary btn-full btn-submit order-submit">
+                  <span class="material-symbols-outlined">shopping_bag</span>
+                  <span data-i18n="submit_order">أكد الطلب — الدفع عند الاستلام</span>
+                </button>
+                <p class="form-security-note">
+                  <span class="material-symbols-outlined">lock</span>
+                  <span data-i18n="form_secure">معلوماتك آمنة ومحمية</span>
+                </p>
+              </div>
             </div>
-            <div class="form-header">
-              <h3 class="form-title" data-i18n="form_title">أكمل طلبيتك دابا 👇</h3>
-              <p class="form-subtitle" data-i18n="form_subtitle">ملي تضغط "أكد الطلب"، غادي يتواصل معك أحد دفرقة ديالنا باش يأكد التوصيل.</p>
-            </div>
-
-            <div id="express-checkout-section" class="product-section"
-                 data-pb-section="PBS-w3wje1780392350746"
-                 data-pb-field="product-id"
-                 data-pb-type="single-product"
-                 data-pb-value="[object Object]">
-
-              <form method="post" id="custom-express-checkout-form">
-                <!-- Hidden Native Mapping Inputs — DO NOT CHANGE -->
-                <input type="hidden" name="id" value="0b8ab67f-dca6-4c23-a2fe-cb31083b3123">
-                <input type="hidden" name="quantity" value="1">
-                <input type="hidden" name="is_page_builder_express_checkout" value="true">
-                <input type="hidden" name="extra_payload" value="">
-
-                <div class="form-group">
-                  <label data-i18n="form_name">الإسم الكامل</label>
-                  <div class="input-wrap">
-                    <span class="material-symbols-outlined input-icon">person</span>
-                    <input name="first_name" type="text" placeholder="محمد / فاطمة" data-i18n-placeholder="form_name_ph" autocomplete="name">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label data-i18n="form_phone">رقم الهاتف</label>
-                  <div class="input-wrap">
-                    <span class="material-symbols-outlined input-icon">phone</span>
-                    <input inputmode="tel" name="phone" type="text" placeholder="06XX XXX XXX" data-i18n-placeholder="form_phone_ph" autocomplete="tel">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label data-i18n="form_city">المدينة</label>
-                  <div class="input-wrap">
-                    <span class="material-symbols-outlined input-icon">location_on</span>
-                    <input name="extra_fields[custom_field_cGzlrqWxXctNnheN]" type="text" placeholder="الدار البيضاء، الرباط..." data-i18n-placeholder="form_city_ph" autocomplete="address-level2">
-                  </div>
-                </div>
-
-                <div style="display:none;">
-                  <input type="hidden" name="extra_fields[custom_field_dvwbCriA0IY849RF]" value="organic">
-                  <input type="hidden" name="extra_fields[custom_field_nfRXtUfus8GGt1ZD]" value="">
-                </div>
-              </form>
-            </div>
-
-            <button type="submit" form="custom-express-checkout-form" class="btn-primary btn-full btn-submit" style="color:#fff !important; background:linear-gradient(135deg,#7c24d4 0%,#5b009e 100%) !important;">
-              <span class="material-symbols-outlined" style="color:#fff !important;">shopping_bag</span>
-              <span data-i18n="submit_order" style="color:#fff !important;">أكد الطلب — الدفع عند الاستلام</span>
-            </button>
-
-            <p class="form-security-note">
-              <span class="material-symbols-outlined" style="font-size:14px;">lock</span>
-              <span data-i18n="form_secure">معلوماتك آمنة ومحمية</span>
-            </p>
           </div>
         </div>
       </div>
@@ -387,8 +394,8 @@
         <div class="slider-wrap" id="slider">
           <span class="slider-label slider-label-before" data-i18n="ba_before">قبل</span>
           <span class="slider-label slider-label-after" data-i18n="ba_after">بعد</span>
-          <img alt="Before — أسنان قبل التبييض" class="slider-img" id="slider-before" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/slider_before_cropped.jpg?v=3" loading="eager" decoding="async"/>
-          <img alt="After — أسنان بعد التبييض" class="slider-img slider-after" id="slider-after" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/slider_after_cropped.jpg?v=3" loading="eager" decoding="async"/>
+          <img alt="Before — أسنان قبل التبييض" class="slider-img" id="slider-before" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/before_image.jpg" loading="eager" decoding="async"/>
+          <img alt="After — أسنان بعد التبييض" class="slider-img slider-after" id="slider-after" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/after_image.jpg" loading="eager" decoding="async"/>
           <div class="slider-handle" id="slider-handle" aria-hidden="true">
             <span class="material-symbols-outlined">unfold_more</span>
           </div>
