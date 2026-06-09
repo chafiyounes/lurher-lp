@@ -149,7 +149,8 @@
   .reveal { opacity: 1; transform: none; transition: none; }
   .btn-primary { animation: none !important; }
   .sticky-cta { transition: none; }
-  .faq-answer { transition: none; }
+  .faq-answer { transition: none; grid-template-rows: 1fr !important; }
+  .faq-chevron .material-symbols-outlined { transition: none; }
 }
 
 /* ─── Primary Button ─── */
@@ -565,7 +566,17 @@
 .reviewer-city { font-size: 12px; color: var(--on-muted); font-weight: 600; }
 .stars { color: #F5A623; font-size: 16px; letter-spacing: -1px; margin-right: auto; }
 .app[dir="ltr"] .stars { margin-right: 0; margin-left: auto; }
-.review-text { font-size: 14px; line-height: 1.65; color: var(--on-muted); flex: 1; min-height: 4.5em; }
+.review-text { font-size: 14px; line-height: 1.6; color: var(--on-muted); flex: 1; }
+.review-img {
+  width: 100%; border-radius: var(--r-md); margin-top: auto;
+  max-height: 120px; object-fit: cover; object-position: center 68%;
+  background: var(--surface-alt);
+  aspect-ratio: 16 / 10;
+}
+.review-img--a { object-position: 42% 65%; }
+.review-img--b { object-position: 58% 62%; transform: scale(1.08); }
+.review-img--c { object-position: 50% 70%; filter: saturate(0.92); }
+.review-img--d { object-position: 35% 60%; transform: scale(1.05); }
 
 /* ─── FAQ ─── */
 .faq-section { padding: var(--sec-py) var(--sec-px); }
@@ -576,10 +587,10 @@
   border: 1px solid var(--border);
   box-shadow: var(--sh-card);
   overflow: hidden;
-  padding: 8px 12px;
+  padding: 12px 16px;
 }
 @media (min-width: 768px) {
-  .faq-panel { padding: 12px 20px; }
+  .faq-panel { padding: 16px 28px; }
 }
 .faq-item {
   border-bottom: 1px solid var(--border);
@@ -590,13 +601,13 @@
 .app[dir="ltr"] .faq-item.faq-open { background: linear-gradient(270deg, var(--primary-ultra) 0%, #fff 100%); }
 .faq-question {
   width: 100%; display: flex; align-items: center;
-  padding: 16px 12px; text-align: start;
+  padding: 16px 8px; text-align: start;
   font-family: var(--font-ar); border: none; background: none; cursor: pointer;
   transition: background 0.2s ease;
   border-radius: var(--r-md);
 }
 @media (min-width: 768px) {
-  .faq-question { padding: 18px 16px; }
+  .faq-question { padding: 18px 12px; }
 }
 .faq-question:hover { background: rgba(91,0,158,0.03); }
 .faq-q-start {
@@ -624,24 +635,30 @@
   border-radius: 50%;
   transition: transform 0.3s ease, background 0.2s ease;
 }
-.faq-chevron .material-symbols-outlined { font-size: 22px; color: var(--primary); transition: transform 0.3s ease; }
+.faq-chevron .material-symbols-outlined { font-size: 22px; color: var(--primary); transition: transform 0.28s linear; }
 .faq-item.faq-open .faq-chevron { background: var(--primary-ultra); }
 .faq-item.faq-open .faq-chevron .material-symbols-outlined { transform: rotate(180deg); }
 .faq-answer {
-  max-height: 0; overflow: hidden;
-  transition: max-height 0.35s cubic-bezier(0.165,0.84,0.44,1), padding 0.3s;
-  padding: 0 16px 0 56px;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.28s linear;
+  padding-inline: 8px;
 }
-.app[dir="ltr"] .faq-answer { padding: 0 56px 0 16px; }
-.faq-item.faq-open .faq-answer { max-height: 400px; padding: 0 16px 18px 56px; }
-.app[dir="ltr"] .faq-item.faq-open .faq-answer { padding: 0 56px 18px 16px; }
+.faq-item.faq-open .faq-answer { grid-template-rows: 1fr; }
+.faq-answer-inner {
+  overflow: hidden;
+  min-height: 0;
+  padding-inline-start: 52px;
+  padding-inline-end: 8px;
+}
+.faq-answer-inner p {
+  font-size: 14px; font-weight: 500; color: var(--on-muted); line-height: 1.75;
+  padding-bottom: 16px;
+}
 @media (min-width: 768px) {
-  .faq-answer { padding: 0 20px 0 64px; }
-  .app[dir="ltr"] .faq-answer { padding: 0 64px 0 20px; }
-  .faq-item.faq-open .faq-answer { padding: 0 20px 20px 64px; }
-  .app[dir="ltr"] .faq-item.faq-open .faq-answer { padding: 0 64px 20px 20px; }
+  .faq-answer-inner { padding-inline-start: 56px; }
+  .faq-answer-inner p { padding-bottom: 18px; }
 }
-.faq-answer p { font-size: 14px; font-weight: 500; color: var(--on-muted); line-height: 1.75; }
 .faq-cta-wrap { text-align: center; margin-top: 28px; }
 .faq-checkout-link {
   display: inline-flex; align-items: center; justify-content: center;

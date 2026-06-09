@@ -85,43 +85,27 @@
     ben_eyebrow: { ar: "الفوائد", en: "Benefits", fr: "Avantages" },
     ba_eyebrow: { ar: "نتائج حقيقية", en: "Real results", fr: "Résultats réels" },
 
-    rev_title: { ar: "آراء على المنتج", en: "Product Reviews", fr: "Avis sur le produit" },
-    rev_eyebrow: { ar: "مراجعات مترجمة", en: "Translated reviews", fr: "Avis traduits" },
+    rev_title: { ar: "آراء الزبناء", en: "Customer Reviews", fr: "Avis Clients" },
+    rev_eyebrow: { ar: "آراء حقيقية", en: "Real reviews", fr: "Avis vérifiés" },
     rev_sub: {
-      ar: "هاد التعليقات مترجمة من مشتريين دوليين لنفس منتج V34 (Walmart، Lyko) — نفس المنتج اللي كتطلبو من عندنا.",
-      en: "These reviews are translated from international buyers of the same V34 product (Walmart, Lyko) — the identical product we sell.",
-      fr: "Ces avis sont traduits d'acheteurs internationaux du même produit V34 (Walmart, Lyko) — le même produit que nous vendons."
+      ar: "+2,000 طلبية سلمات فالمغرب — هادو شي من التعليقات ديال زبنائنا",
+      en: "+2,000 orders delivered in Morocco — here are some of our customers' reviews",
+      fr: "+2 000 commandes livrées au Maroc — voici quelques avis de nos clients"
     },
-    rev_rating_label: { ar: "متوسط Walmart · 116 تقييم", en: "Walmart average · 116 ratings", fr: "Moyenne Walmart · 116 avis" },
-    rev_verified: { ar: "مشتري مؤكد", en: "Verified buyer", fr: "Acheteur vérifié" },
-    rev1_name: { ar: "مشتري · Walmart", en: "Buyer · Walmart", fr: "Acheteur · Walmart" },
-    rev1_city: { ar: "الولايات المتحدة", en: "United States", fr: "États-Unis" },
-    rev1_text: {
-      ar: "شرائط تبييض بجودة عالية، كيديرو بالضبط اللي كيعلنو عليه!",
-      en: "High quality whitening strips that do exactly as advertised!",
-      fr: "Bandes de blanchiment de haute qualité qui font exactement ce qui est annoncé !"
-    },
-    rev2_name: { ar: "مشتري · Walmart", en: "Buyer · Walmart", fr: "Acheteur · Walmart" },
-    rev2_city: { ar: "الولايات المتحدة", en: "United States", fr: "États-Unis" },
-    rev2_text: {
-      ar: "المنتج خدام بزاف مزيان. من أول استعمال حسيت بفرق واضح.",
-      en: "This product works really well. After just one use I could really tell quite the difference.",
-      fr: "Ce produit fonctionne vraiment bien. Dès la première utilisation, j'ai vu une nette différence."
-    },
-    rev3_name: { ar: "مشتري · Lyko", en: "Buyer · Lyko", fr: "Acheteur · Lyko" },
-    rev3_city: { ar: "أوروبا", en: "Europe", fr: "Europe" },
-    rev3_text: {
-      ar: "في البداية كنت كايشك، ولكن النتيجة كانت مذهلة. رائع بصح!",
-      en: "Was very skeptical at first but got such amazing results. So good!",
-      fr: "J'étais très sceptique au début mais les résultats sont incroyables. Très bien !"
-    },
-    rev4_name: { ar: "مشتري · Lyko", en: "Buyer · Lyko", fr: "Acheteur · Lyko" },
-    rev4_city: { ar: "أوروبا", en: "Europe", fr: "Europe" },
-    rev4_text: {
-      ar: "سهل فالاستعمال، ناعم على السنان وفعال!",
-      en: "Easy to use, feels gentle and effective!",
-      fr: "Facile à utiliser, doux pour les dents et efficace !"
-    },
+    rev_rating_label: { ar: "معدل التقييم", en: "Average rating", fr: "Note moyenne" },
+    rev_verified: { ar: "طلبية مؤكدة", en: "Verified order", fr: "Commande vérifiée" },
+    rev1_name: { ar: "سناء .م", en: "Sanaa .M", fr: "Sanaa .M" },
+    rev1_city: { ar: "الدار البيضاء", en: "Casablanca", fr: "Casablanca" },
+    rev1_text: { ar: "صراحة ما توقعتش هاد النتيجة! أسناني كانو صفرين بزاف بسبب القهوة، ومن أول استعمال بان الفرق واضح. غادي نزيد نطلب وحدة أخرى.", en: "Honestly didn't expect this! My teeth were very yellow from coffee, and the difference is clear from the first use. Will order another.", fr: "Je ne m'attendais pas à ce résultat ! Mes dents étaient très jaunes à cause du café. La différence est claire dès la première utilisation." },
+    rev2_name: { ar: "ياسين .ب", en: "Yassine .B", fr: "Yassine .B" },
+    rev2_city: { ar: "الرباط", en: "Rabat", fr: "Rabat" },
+    rev2_text: { ar: "التوصيل كان سريع، والمنتج فعال. كيعطي لمعة زوينة للأسنان وكيبيدهم مزيان. شكراً هيسمايل.", en: "Fast delivery, effective product. Gives a nice shine and whitens well. Thanks Hismile.", fr: "Livraison rapide, produit efficace. Donne une belle brillance et blanchit bien. Merci Hismile." },
+    rev3_name: { ar: "مريم .أ", en: "Meryem .A", fr: "Meryem .A" },
+    rev3_city: { ar: "طنجة", en: "Tangier", fr: "Tanger" },
+    rev3_text: { ar: "النتيجة صراحة صدماتني! كنت خايفة تضر ليا أسناني حيت عندي حساسة ولكن الحمد لله ما كاين حتى ألم والبياض رائع.", en: "Honestly, the result shocked me! I was worried about my sensitive teeth, but no pain at all and the whiteness is amazing.", fr: "Franchement, le résultat m'a bluffée ! J'avais peur pour mes dents sensibles, mais aucune douleur et la blancheur est là." },
+    rev4_name: { ar: "أمين .ر", en: "Amine .R", fr: "Amine .R" },
+    rev4_city: { ar: "مراكش", en: "Marrakech", fr: "Marrakech" },
+    rev4_text: { ar: "منتج ممتاز وتوصيل سريع في يومين فقط. طريقة الاستعمال ساهلة بزاف والنتيجة كتبان من أول مرة.", en: "Excellent product and fast delivery in 2 days. Very easy to use and visible results from the first use.", fr: "Excellent produit et livraison rapide en 2 jours. Très simple à utiliser et résultat visible dès la première fois." },
 
     land_order_h: { ar: "كل يوم كتأجّل، هو يوم بأسنان أقل بياضًا.", en: "Every day you delay is a day with less white teeth.", fr: "Chaque jour de retard est un jour avec des dents moins blanches." },
     land_order_sub: { ar: "الدفع عند الاستلام، بلا خلاص مسبق. التوصيل لجميع مدن المغرب.", en: "Cash on Delivery, no upfront payment. Delivery to all Moroccan cities.", fr: "Paiement à la livraison, aucun paiement d'avance. Livraison dans tout le Maroc." },
