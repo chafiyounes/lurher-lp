@@ -58,9 +58,9 @@
     },
     land_feat3_h: { ar: "نتيجة فـ 30 دقيقة", en: "Results in 30 Minutes", fr: "Résultats en 30 minutes" },
     land_feat3_p: {
-      ar: "حط الشريطة، استنى 30 دقيقة، شوف الفرق. ما محتاجش تبات معها، ما محتاجش ضوء خاص.",
-      en: "Apply the strip, wait 30 minutes, see the difference. No overnight treatment, no special light needed.",
-      fr: "Appliquez la bande, attendez 30 minutes, voyez la différence. Pas de traitement de nuit, pas de lumière spéciale."
+      ar: "نشّف سنانك بالورقة، حط الشرائط، وخليهم من 30 دقيقة لساعة — بلا بيروكسيد، بلا حساسية. حيدهم وفرك عادي.",
+      en: "Dry teeth with a paper towel, apply strips, leave 30 minutes to 1 hour — peroxide-free, no sensitivity. Remove and brush normally.",
+      fr: "Séchez avec un essuie, appliquez les bandes, laissez 30 min à 1 h — sans peroxyde, sans sensibilité. Retirez et brossez normalement."
     },
 
     land_benefits_h: { ar: "شنو غادي تربح:", en: "What you will gain:", fr: "Ce que vous y gagnez :" },
@@ -94,18 +94,40 @@
     },
     rev_rating_label: { ar: "معدل التقييم", en: "Average rating", fr: "Note moyenne" },
     rev_verified: { ar: "طلبية مؤكدة", en: "Verified order", fr: "Commande vérifiée" },
+    rev_tap_img: { ar: "اضغط لمشاهدة الصور بوضوح", en: "Tap to view photos clearly", fr: "Appuyez pour voir les photos" },
+    rev_instructions_note: {
+      ar: "السر: اتبع التعليمات بالحرف — نشّف سنانك بالورقة، حط الشرائط، خليهم 30 دقيقة لساعة (بلا حساسية)، وفرك عادي من بعد. هادو الصور من زبناء تبعو الخطوات مزيان.",
+      en: "The secret: follow the instructions exactly — dry teeth with a paper towel, apply strips, leave 30 minutes to 1 hour (no sensitivity), then brush normally. These photos are from customers who followed the steps properly.",
+      fr: "Le secret : suivez les instructions à la lettre — séchez avec un essuie, appliquez les bandes, laissez 30 min à 1 h (sans sensibilité), puis brossez normalement."
+    },
     rev1_name: { ar: "سناء .م", en: "Sanaa .M", fr: "Sanaa .M" },
     rev1_city: { ar: "الدار البيضاء", en: "Casablanca", fr: "Casablanca" },
-    rev1_text: { ar: "صراحة ما توقعتش هاد النتيجة! أسناني كانو صفرين بزاف بسبب القهوة، ومن أول استعمال بان الفرق واضح. غادي نزيد نطلب وحدة أخرى.", en: "Honestly didn't expect this! My teeth were very yellow from coffee, and the difference is clear from the first use. Will order another.", fr: "Je ne m'attendais pas à ce résultat ! Mes dents étaient très jaunes à cause du café. La différence est claire dès la première utilisation." },
+    rev1_text: {
+      ar: "من بعد ما بديت كنشّف سناني بالورقة وكنتبع التعليمات بالحرف، بانت ليا الفرق واضح — قبل، حين التطبيق، ومن بعد. خليتها ساعة وما حسّيت حتى بألم.",
+      en: "Once I started drying my teeth with a paper towel and following the instructions exactly, the difference was clear — before, during, and after. I left them on for an hour with zero pain.",
+      fr: "Une fois que j'ai séché mes dents avec un essuie et suivi les instructions à la lettre, la différence était claire — avant, pendant et après. Une heure sans aucune douleur."
+    },
     rev2_name: { ar: "ياسين .ب", en: "Yassine .B", fr: "Yassine .B" },
     rev2_city: { ar: "الرباط", en: "Rabat", fr: "Rabat" },
-    rev2_text: { ar: "التوصيل كان سريع، والمنتج فعال. كيعطي لمعة زوينة للأسنان وكيبيدهم مزيان. شكراً هيسمايل.", en: "Fast delivery, effective product. Gives a nice shine and whitens well. Thanks Hismile.", fr: "Livraison rapide, produit efficace. Donne une belle brillance et blanchit bien. Merci Hismile." },
+    rev2_text: {
+      ar: "المرة الأولى ما تبعتش التعليمات وماشي حاجة. الثانية نشّفت سناني مزيان، حطيت الشرائط بالبلاستيك، خليتها 45 دقيقة، وفركت من بعد — النتيجة فالصورة كتتكلم.",
+      en: "First time I didn't follow the instructions — nothing happened. Second time I dried properly, applied with the plastic strip, waited 45 minutes, brushed after — the photos speak for themselves.",
+      fr: "La première fois sans suivre les instructions — rien. La deuxième fois : séchage, application, 45 minutes, brossage après — les photos parlent d'elles-mêmes."
+    },
     rev3_name: { ar: "مريم .أ", en: "Meryem .A", fr: "Meryem .A" },
     rev3_city: { ar: "طنجة", en: "Tangier", fr: "Tanger" },
-    rev3_text: { ar: "النتيجة صراحة صدماتني! كنت خايفة تضر ليا أسناني حيت عندي حساسة ولكن الحمد لله ما كاين حتى ألم والبياض رائع.", en: "Honestly, the result shocked me! I was worried about my sensitive teeth, but no pain at all and the whiteness is amazing.", fr: "Franchement, le résultat m'a bluffée ! J'avais peur pour mes dents sensibles, mais aucune douleur et la blancheur est là." },
+    rev3_text: {
+      ar: "عندي أسنان حساسة وكنخاف من التبييض. بلا بيروكسيد، خليت الشرائط ساعة كاملة بلا ألم. المهم: سنان جافين قبل التطبيق وفرك عادي من بعد.",
+      en: "I have sensitive teeth and was scared of whitening. Peroxide-free — left strips on a full hour, no pain. Key: dry teeth before applying and brush normally after.",
+      fr: "Dents sensibles — j'avais peur. Sans peroxyde, une heure complète sans douleur. Clé : dents sèches avant et brossage normal après."
+    },
     rev4_name: { ar: "أمين .ر", en: "Amine .R", fr: "Amine .R" },
     rev4_city: { ar: "مراكش", en: "Marrakech", fr: "Marrakech" },
-    rev4_text: { ar: "منتج ممتاز وتوصيل سريع في يومين فقط. طريقة الاستعمال ساهلة بزاف والنتيجة كتبان من أول مرة.", en: "Excellent product and fast delivery in 2 days. Very easy to use and visible results from the first use.", fr: "Excellent produit et livraison rapide en 2 jours. Très simple à utiliser et résultat visible dès la première fois." },
+    rev4_text: {
+      ar: "المنتج وصل أصلي والباطة فيها 14 استعمال. قريت التعليمات فالعلبة: نشّف، حط، استنى 30 دقيقة على الأقل، حيد وفرك — هاد هي الطريقة باش تجيب أحسن نتيجة.",
+      en: "Genuine product, 14 uses in the box. Read the box instructions: dry, apply, wait at least 30 minutes, remove and brush — that's how you get the best results.",
+      fr: "Produit authentique, 14 utilisations. Instructions sur la boîte : sécher, appliquer, attendre 30 min minimum, retirer et brosser — pour le meilleur résultat."
+    },
 
     land_order_h: { ar: "كل يوم كتأجّل، هو يوم بأسنان أقل بياضًا.", en: "Every day you delay is a day with less white teeth.", fr: "Chaque jour de retard est un jour avec des dents moins blanches." },
     land_order_sub: { ar: "الدفع عند الاستلام، بلا خلاص مسبق. التوصيل لجميع مدن المغرب.", en: "Cash on Delivery, no upfront payment. Delivery to all Moroccan cities.", fr: "Paiement à la livraison, aucun paiement d'avance. Livraison dans tout le Maroc." },
@@ -169,9 +191,9 @@
     },
     faq_q1: { ar: "كيفاش كنستعمل شرائط V34؟", en: "How do I use V34 strips?", fr: "Comment utiliser les bandes V34 ?" },
     faq_a1: {
-      ar: "نشّف سنانك مزيان، حط الشريطة الطويلة على سنانك الفوقانيين والصغيرة على التحتانيين. خليها 30 دقيقة، من بعد حيدها وشلل فمك بالماء وحك البقايا البنفسجية بالشيّتة.",
-      en: "Dry your teeth, apply the long strip to your top teeth and the short strip to your bottom teeth. Wait 30 minutes, then remove and brush off any purple residue.",
-      fr: "Séchez vos dents, appliquez la bande longue sur les dents du haut et la courte sur celles du bas. Attendez 30 minutes, retirez et brossez le résidu violet."
+      ar: "① نشّف سنانك مزيان بالورقة أو منشفة ورقية — خاص يكونو جافين باش الشريطة تلصق. ② حط الشريطة الكبيرة فالفوق والصغيرة فالتحت، ضغط على البلاستيك باش تثبت. ③ خليها من 30 دقيقة لساعة — بلا بيروكسيد، ما كيسببوش حساسية حتى مع وقت طويل. ④ حيد الشرائط وفرك سنانك عادي بالشيّتة باش تحيد البقايا البنفسجية. كتبع التعليمات بالحرف باش تجيب أحسن نتيجة.",
+      en: "① Dry teeth thoroughly with a paper towel — they must be dry for strips to stick. ② Apply long strip to upper teeth, short to lower, press firmly. ③ Leave 30 minutes to 1 hour — peroxide-free, no sensitivity even with longer wear. ④ Remove and brush normally to clear purple residue. Follow instructions exactly for best results.",
+      fr: "① Séchez bien avec un essuie — dents sèches pour que les bandes adhèrent. ② Bande longue en haut, courte en bas, appuyez fermement. ③ Laissez 30 min à 1 h — sans peroxyde, pas de sensibilité. ④ Retirez et brossez normalement. Suivez les instructions pour le meilleur résultat."
     },
     faq_q2: { ar: "شحال كتصبر النتيجة؟", en: "How long do results last?", fr: "Combien de temps dure le résultat ?" },
     faq_a2: {
@@ -514,6 +536,78 @@
     });
   }
 
+  /* ── Review image lightbox ── */
+  function initReviewLightbox() {
+    var lightbox = document.getElementById("review-lightbox");
+    var lbImg = document.getElementById("review-lightbox-img");
+    var lbCounter = document.getElementById("review-lightbox-counter");
+    var btnClose = document.getElementById("review-lightbox-close");
+    var btnBackdrop = document.getElementById("review-lightbox-backdrop");
+    var btnPrev = document.getElementById("review-lightbox-prev");
+    var btnNext = document.getElementById("review-lightbox-next");
+    if (!lightbox || !lbImg) return;
+
+    var gallery = [];
+    var index = 0;
+
+    function renderSlide() {
+      if (!gallery.length) return;
+      lbImg.src = gallery[index];
+      lbImg.alt = "Review photo " + (index + 1);
+      if (lbCounter) {
+        lbCounter.textContent = gallery.length > 1 ? (index + 1) + " / " + gallery.length : "";
+      }
+      var multi = gallery.length > 1;
+      if (btnPrev) btnPrev.classList.toggle("is-hidden", !multi);
+      if (btnNext) btnNext.classList.toggle("is-hidden", !multi);
+    }
+
+    function openLightbox(images, startAt) {
+      gallery = images;
+      index = startAt || 0;
+      renderSlide();
+      lightbox.classList.add("is-open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("is-open");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      lbImg.src = "";
+      gallery = [];
+    }
+
+    function step(dir) {
+      if (gallery.length < 2) return;
+      index = (index + dir + gallery.length) % gallery.length;
+      renderSlide();
+    }
+
+    var cards = document.querySelectorAll(".review-card--gallery");
+    for (var i = 0; i < cards.length; i++) {
+      cards[i].addEventListener("click", function () {
+        try {
+          var imgs = JSON.parse(this.getAttribute("data-review-images") || "[]");
+          if (imgs.length) openLightbox(imgs, 0);
+        } catch (e) {}
+      });
+    }
+
+    if (btnClose) btnClose.addEventListener("click", closeLightbox);
+    if (btnBackdrop) btnBackdrop.addEventListener("click", closeLightbox);
+    if (btnPrev) btnPrev.addEventListener("click", function (e) { e.stopPropagation(); step(-1); });
+    if (btnNext) btnNext.addEventListener("click", function (e) { e.stopPropagation(); step(1); });
+
+    document.addEventListener("keydown", function (e) {
+      if (!lightbox.classList.contains("is-open")) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowRight") step(-1);
+      if (e.key === "ArrowLeft") step(1);
+    });
+  }
+
   /* ── Init & Hash Routing ── */
   function handleHashRoute() {
     var hash = window.location.hash || '#landing';
@@ -542,6 +636,7 @@
     initSlider();
     initCustomCheckout();
     initFaq();
+    initReviewLightbox();
   }
 
   if (document.readyState === "loading") {
