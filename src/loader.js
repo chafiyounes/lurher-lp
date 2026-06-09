@@ -18,7 +18,7 @@
 
   var REPO = "chafiyounes/mapper-youcant";
   var BRANCH = "main";
-  var LOADER_VERSION = "38973cf-faq"; /* bump when asking user to re-paste footer snippet */
+  var LOADER_VERSION = "faq-fix-1"; /* bump when asking user to re-paste footer snippet */
   var BASE = "https://raw.githubusercontent.com/" + REPO + "/" + BRANCH + "/";
 
   var FILES = {
