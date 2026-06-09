@@ -18,6 +18,7 @@
 
   var REPO = "chafiyounes/mapper-youcant";
   var BRANCH = "main";
+  var LOADER_VERSION = "e40dd08"; /* bump when asking user to re-paste footer snippet */
   var BASE = "https://raw.githubusercontent.com/" + REPO + "/" + BRANCH + "/";
 
   var FILES = {
@@ -40,7 +41,10 @@
   // Helper to fetch text with cache busting in dev mode
   var cacheBuster = "?t=" + new Date().getTime();
 
-  console.log("[V34 Loader] Starting parallel fetch...");
+  console.log("[V34 Loader] v" + LOADER_VERSION + " → " + BASE);
+  if (window.location && window.location.href && window.location.href.indexOf("jsdelivr") !== -1) {
+    console.warn("[V34 Loader] OLD jsdelivr loader detected in page — replace footer snippet with latest from repo.");
+  }
 
   // Fetch all resources in parallel
   Promise.all([
