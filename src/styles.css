@@ -565,17 +565,7 @@
 .reviewer-city { font-size: 12px; color: var(--on-muted); font-weight: 600; }
 .stars { color: #F5A623; font-size: 16px; letter-spacing: -1px; margin-right: auto; }
 .app[dir="ltr"] .stars { margin-right: 0; margin-left: auto; }
-.review-text { font-size: 14px; line-height: 1.6; color: var(--on-muted); flex: 1; }
-.review-img {
-  width: 100%; border-radius: var(--r-md); margin-top: auto;
-  max-height: 120px; object-fit: cover; object-position: center 68%;
-  background: var(--surface-alt);
-  aspect-ratio: 16 / 10;
-}
-.review-img--a { object-position: 42% 65%; }
-.review-img--b { object-position: 58% 62%; transform: scale(1.08); }
-.review-img--c { object-position: 50% 70%; filter: saturate(0.92); }
-.review-img--d { object-position: 35% 60%; transform: scale(1.05); }
+.review-text { font-size: 14px; line-height: 1.65; color: var(--on-muted); flex: 1; min-height: 4.5em; }
 
 /* ─── FAQ ─── */
 .faq-section { padding: var(--sec-py) var(--sec-px); }
