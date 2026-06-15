@@ -71,6 +71,20 @@
     ben_5: { ar: "14 استعمال فكل علبة", en: "14 uses in each box", fr: "14 utilisations par boîte" },
     ben_6: { ar: "ضمان استرجاع الفلوس — إلا ماعجبكش، ترجع ليك فلوسك", en: "Money-back guarantee — if you don't like it, get a refund", fr: "Garantie de remboursement — si vous n'aimez pas, vous êtes remboursé" },
 
+    proof_10m: { ar: "منتج V34 تباع حول العالم", en: "V34 products sold worldwide", fr: "Produits V34 vendus dans le monde" },
+    proof_96_lead: { ar: "في دراسة سريرية*", en: "In a clinical study*", fr: "Dans une étude clinique*" },
+    proof_96_sub: { ar: "من المشاركين لاحظوا درجتين أفتح أو أكثر", en: "of participants had 2+ shades whiter teeth", fr: "des participants ont eu 2 nuances ou plus" },
+    proof_96_foot: { ar: "*النتائج الفردية كتختلف", en: "*Individual results may vary", fr: "*Les résultats individuels peuvent varier" },
+    proof_one_use: {
+      ar: "أسنان أبيض ملحوظ من <strong>أول استعمال*</strong>",
+      en: "Whiter teeth after <strong>just one use*</strong>",
+      fr: "Dents plus blanches dès la <strong>première utilisation*</strong>"
+    },
+    proof_guarantee: { ar: "ضمان استرجاع الفلوس", en: "Money back guarantee", fr: "Garantie satisfait ou remboursé" },
+    proof_guarantee_sub: { ar: "إلا ما عجبكش — نرجعو ليك فلوسك", en: "Not satisfied? Get your money back", fr: "Pas satisfait ? Remboursement" },
+    proof_morocco: { ar: "طلبية وصلات للمغرب", en: "orders delivered in Morocco", fr: "commandes livrées au Maroc" },
+    proof_results_cap: { ar: "نتائج حقيقية من زبنائنا", en: "Real results from our customers", fr: "Résultats réels de nos clients" },
+
     land_ba_h: { ar: "الناس كتخلّص المئات فعيادات التبييض... حنا جبنا ليك نفس النتيجة لدارك.", en: "People pay hundreds at clinics... We brought the same result to your home.", fr: "Les gens paient des centaines en clinique... Nous avons apporté le même résultat chez vous." },
     land_ba_hint: { ar: "← اسحب لكشف النتيجة →", en: "← Drag to reveal →", fr: "← Glissez pour révéler →" },
     ba_before: { ar: "قبل", en: "BEFORE", fr: "AVANT" },
@@ -282,6 +296,7 @@
       fr: "Hismile V34 — Bandes de Blanchiment"
     };
     document.title = titleDict[l] || "Hismile V34";
+    updateHeroGalleryAlts();
   }
 
   /* ── Language Toggle ── */
@@ -344,6 +359,356 @@
       }
     }
   });
+
+  /* ── Shared horizontal carousel (hero gallery, proof section) ── */
+  var HERO_MANIFEST_URL = "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/hero/manifest.json";
+
+  var HERO_MANIFEST_FALLBACK = {
+    baseUrl: "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/hero/",
+    slides: [
+      {
+        id: "product",
+        image: "01-product.webp",
+        thumb: "01-product-thumb.webp",
+        fallback: "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-01-V34Strips_no-badge31_10_15_595x.webp",
+        alt: { ar: "شرائط Hismile V34 للتبييض", en: "Hismile V34 Whitening Strips", fr: "Bandes blanchissantes Hismile V34" }
+      },
+      {
+        id: "sold-10m",
+        image: "02-sold-10m.webp",
+        thumb: "02-sold-10m-thumb.webp",
+        fallback: "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-05-V34Strips-updated22_10_25_1208x.webp",
+        alt: { ar: "+10 مليون منتج V34 تباع حول العالم", en: "10 million+ V34 products sold worldwide", fr: "+10 millions de produits V34 vendus" }
+      },
+      {
+        id: "study-96",
+        image: "03-study-96.webp",
+        thumb: "03-study-96-thumb.webp",
+        fallback: "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-04-V34Strips-updated22_10_25_595x.webp",
+        alt: { ar: "96% من المشاركين لاحظوا درجتين أفتح أو أكثر", en: "96% of participants had 2+ shades whiter teeth", fr: "96% des participants ont eu 2 nuances ou plus" }
+      },
+      {
+        id: "showcase",
+        image: "04-showcase.webp",
+        thumb: "04-showcase-thumb.webp",
+        fallback: "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/products/showcase.jpg",
+        alt: { ar: "عرض المنتج والعلبة", en: "Product and box showcase", fr: "Présentation du produit" }
+      },
+      {
+        id: "guarantee",
+        image: "05-guarantee.webp",
+        thumb: "05-guarantee-thumb.webp",
+        fallback: "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/products/box-showcase.jpg",
+        alt: { ar: "ضمان استرجاع الفلوس", en: "Money-back guarantee", fr: "Garantie satisfait ou remboursé" }
+      },
+      {
+        id: "results",
+        image: "06-results.webp",
+        thumb: "06-results-thumb.webp",
+        fallback: "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/after_image.jpg",
+        alt: { ar: "نتائج قبل وبعد", en: "Before and after results", fr: "Résultats avant et après" }
+      }
+    ]
+  };
+
+  function heroSlideAlt(slide, lang) {
+    if (slide.alt && slide.alt[lang]) return slide.alt[lang];
+    return slide.alt && slide.alt.ar ? slide.alt.ar : "";
+  }
+
+  function bindImageFallback(img, primarySrc, fallbackSrc) {
+    img.src = primarySrc;
+    img.addEventListener("error", function onErr() {
+      if (img.src !== fallbackSrc && fallbackSrc) {
+        img.src = fallbackSrc;
+      }
+    });
+  }
+
+  function initMediaCarousel(root, options) {
+    if (!root) return null;
+    options = options || {};
+    var track = root.querySelector(options.trackSelector || ".media-carousel-track");
+    if (!track) return null;
+    var slideSelector = options.slideSelector || ".media-carousel-slide";
+    var btnPrev = root.querySelector(options.prevSelector || ".media-carousel-prev, .proof-carousel-prev");
+    var btnNext = root.querySelector(options.nextSelector || ".media-carousel-next, .proof-carousel-next");
+    var thumbsWrap = options.thumbsEl || root.querySelector(".media-carousel-thumbs");
+    var dotsWrap = options.dotsEl || root.querySelector(".proof-carousel-dots");
+    var autoplayMs = options.autoplayMs != null ? options.autoplayMs : 0;
+    var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    var index = 0;
+    var timer = null;
+
+    function slides() {
+      return track.querySelectorAll(slideSelector);
+    }
+
+    function thumbButtons() {
+      return thumbsWrap ? thumbsWrap.querySelectorAll(".media-carousel-thumb, .proof-carousel-dot") : [];
+    }
+
+    function goTo(i) {
+      var slideList = slides();
+      var total = slideList.length;
+      if (!total) return;
+      index = (i + total) % total;
+      var isRtl = document.querySelector(".app") &&
+        document.querySelector(".app").getAttribute("dir") === "rtl";
+      var offset = isRtl ? index : -index;
+      track.style.transform = "translateX(" + (offset * 100) + "%)";
+      for (var s = 0; s < slideList.length; s++) {
+        slideList[s].classList.toggle("is-active", s === index);
+      }
+      var thumbs = thumbButtons();
+      for (var t = 0; t < thumbs.length; t++) {
+        thumbs[t].classList.toggle("is-active", t === index);
+        thumbs[t].setAttribute("aria-selected", t === index ? "true" : "false");
+      }
+      if (options.onChange) options.onChange(index);
+    }
+
+    function step(delta) {
+      goTo(index + delta);
+    }
+
+    function resetAutoplay() {
+      if (timer) clearInterval(timer);
+      if (!autoplayMs || reducedMotion) return;
+      timer = setInterval(function () { step(1); }, autoplayMs);
+    }
+
+    if (btnPrev) btnPrev.addEventListener("click", function () { step(-1); resetAutoplay(); });
+    if (btnNext) btnNext.addEventListener("click", function () { step(1); resetAutoplay(); });
+
+    var viewport = root.querySelector(options.viewportSelector || ".media-carousel-viewport, .proof-carousel-viewport");
+    if (viewport) {
+      var touchStartX = 0;
+      viewport.addEventListener("touchstart", function (e) {
+        touchStartX = e.touches[0].clientX;
+      }, { passive: true });
+      viewport.addEventListener("touchend", function (e) {
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(dx) < 40) return;
+        var isRtl = document.querySelector(".app") &&
+          document.querySelector(".app").getAttribute("dir") === "rtl";
+        if (isRtl) dx = -dx;
+        step(dx > 0 ? -1 : 1);
+        resetAutoplay();
+      }, { passive: true });
+    }
+
+    if (autoplayMs) {
+      root.addEventListener("mouseenter", function () {
+        if (timer) clearInterval(timer);
+      });
+      root.addEventListener("mouseleave", resetAutoplay);
+    }
+
+    goTo(0);
+    resetAutoplay();
+
+    return {
+      goTo: goTo,
+      step: step,
+      resetAutoplay: resetAutoplay,
+      getIndex: function () { return index; }
+    };
+  }
+
+  var heroGalleryController = null;
+
+  function buildHeroGallery(manifest) {
+    var root = document.getElementById("hero-gallery");
+    var track = document.getElementById("hero-gallery-track");
+    var thumbs = document.getElementById("hero-gallery-thumbs");
+    if (!root || !track || !thumbs || !manifest || !manifest.slides) return;
+
+    var lang = langs[currentLangIndex];
+    var base = manifest.baseUrl || "";
+    track.innerHTML = "";
+    thumbs.innerHTML = "";
+
+    manifest.slides.forEach(function (slide, i) {
+      var mainSrc = slide.image.indexOf("http") === 0 ? slide.image : base + slide.image;
+      var thumbSrc = slide.thumb.indexOf("http") === 0 ? slide.thumb : base + (slide.thumb || slide.image);
+      var fallback = slide.fallback || mainSrc;
+      var alt = heroSlideAlt(slide, lang);
+
+      var li = document.createElement("li");
+      li.className = "media-carousel-slide" + (i === 0 ? " is-active" : "");
+      li.setAttribute("data-slide-id", slide.id);
+      var img = document.createElement("img");
+      img.alt = alt;
+      img.loading = i === 0 ? "eager" : "lazy";
+      img.decoding = "async";
+      img.setAttribute("data-alt-ar", slide.alt && slide.alt.ar ? slide.alt.ar : "");
+      img.setAttribute("data-alt-en", slide.alt && slide.alt.en ? slide.alt.en : "");
+      img.setAttribute("data-alt-fr", slide.alt && slide.alt.fr ? slide.alt.fr : "");
+      bindImageFallback(img, mainSrc, fallback);
+      li.appendChild(img);
+      track.appendChild(li);
+
+      var thumbBtn = document.createElement("button");
+      thumbBtn.type = "button";
+      thumbBtn.className = "media-carousel-thumb" + (i === 0 ? " is-active" : "");
+      thumbBtn.setAttribute("role", "tab");
+      thumbBtn.setAttribute("aria-label", alt || "Slide " + (i + 1));
+      thumbBtn.setAttribute("aria-selected", i === 0 ? "true" : "false");
+      var thumbImg = document.createElement("img");
+      thumbImg.alt = "";
+      bindImageFallback(thumbImg, thumbSrc, fallback);
+      thumbBtn.appendChild(thumbImg);
+      (function (idx) {
+        thumbBtn.addEventListener("click", function () {
+          if (heroGalleryController) heroGalleryController.goTo(idx);
+          if (heroGalleryController) heroGalleryController.resetAutoplay();
+        });
+      })(i);
+      thumbs.appendChild(thumbBtn);
+    });
+
+    heroGalleryController = initMediaCarousel(root, {
+      slideSelector: ".media-carousel-slide",
+      autoplayMs: 6000
+    });
+  }
+
+  function updateHeroGalleryAlts() {
+    var lang = langs[currentLangIndex];
+    var imgs = document.querySelectorAll("#hero-gallery-track img[data-alt-ar]");
+    for (var i = 0; i < imgs.length; i++) {
+      var key = "data-alt-" + lang;
+      var alt = imgs[i].getAttribute(key) || imgs[i].getAttribute("data-alt-ar") || "";
+      imgs[i].alt = alt;
+    }
+    var thumbBtns = document.querySelectorAll("#hero-gallery-thumbs .media-carousel-thumb");
+    for (var j = 0; j < thumbBtns.length; j++) {
+      var slideImg = document.querySelectorAll("#hero-gallery-track img")[j];
+      if (slideImg) thumbBtns[j].setAttribute("aria-label", slideImg.alt || "Slide " + (j + 1));
+    }
+  }
+
+  function initHeroGallery() {
+    var root = document.getElementById("hero-gallery");
+    if (!root) return;
+
+    fetch(HERO_MANIFEST_URL, { cache: "no-cache" })
+      .then(function (r) {
+        if (!r.ok) throw new Error("manifest fetch failed");
+        return r.json();
+      })
+      .then(function (data) {
+        buildHeroGallery(data);
+        updateHeroGalleryAlts();
+      })
+      .catch(function () {
+        buildHeroGallery(HERO_MANIFEST_FALLBACK);
+        updateHeroGalleryAlts();
+      });
+  }
+
+  /* ── Proof carousel (benefits section) ── */
+  function initProofCarousel() {
+    var root = document.getElementById("proof-carousel");
+    if (!root) return;
+
+    var track = root.querySelector(".proof-carousel-track");
+    var slides = root.querySelectorAll(".proof-slide");
+    var btnPrev = root.querySelector(".proof-carousel-prev");
+    var btnNext = root.querySelector(".proof-carousel-next");
+    var dotsWrap = root.querySelector(".proof-carousel-dots");
+    if (!track || !slides.length) return;
+
+    var index = 0;
+    var total = slides.length;
+    var timer = null;
+    var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    slides.forEach(function (slide, i) {
+      var imgs = slide.querySelectorAll(".proof-slide-photo[data-proof-fallback]");
+      var loaded = false;
+      imgs.forEach(function (img) {
+        if (img.complete && img.naturalWidth > 0) {
+          loaded = true;
+        }
+        img.addEventListener("load", function () {
+          slide.classList.add("proof-slide--image");
+        });
+        img.addEventListener("error", function () {
+          img.setAttribute("hidden", "");
+        });
+      });
+      if (loaded) slide.classList.add("proof-slide--image");
+
+      var dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "proof-carousel-dot" + (i === 0 ? " is-active" : "");
+      dot.setAttribute("role", "tab");
+      dot.setAttribute("aria-label", "Slide " + (i + 1));
+      dot.setAttribute("aria-selected", i === 0 ? "true" : "false");
+      (function (idx) {
+        dot.addEventListener("click", function () { goTo(idx); resetAutoplay(); });
+      })(i);
+      dotsWrap.appendChild(dot);
+    });
+
+    var dots = dotsWrap.querySelectorAll(".proof-carousel-dot");
+
+    function goTo(i) {
+      index = (i + total) % total;
+      var isRtl = document.querySelector(".app") &&
+        document.querySelector(".app").getAttribute("dir") === "rtl";
+      var offset = isRtl ? index : -index;
+      track.style.transform = "translateX(" + (offset * 100) + "%)";
+      for (var s = 0; s < slides.length; s++) {
+        slides[s].classList.toggle("is-active", s === index);
+      }
+      for (var d = 0; d < dots.length; d++) {
+        dots[d].classList.toggle("is-active", d === index);
+        dots[d].setAttribute("aria-selected", d === index ? "true" : "false");
+      }
+    }
+
+    function step(delta) {
+      goTo(index + delta);
+    }
+
+    function resetAutoplay() {
+      if (timer) clearInterval(timer);
+      if (reducedMotion) return;
+      timer = setInterval(function () { step(1); }, 5000);
+    }
+
+    if (btnPrev) btnPrev.addEventListener("click", function () { step(-1); resetAutoplay(); });
+    if (btnNext) btnNext.addEventListener("click", function () { step(1); resetAutoplay(); });
+
+    var touchStartX = 0;
+    var viewport = root.querySelector(".proof-carousel-viewport");
+    if (viewport) {
+      viewport.addEventListener("touchstart", function (e) {
+        touchStartX = e.touches[0].clientX;
+      }, { passive: true });
+      viewport.addEventListener("touchend", function (e) {
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(dx) < 40) return;
+        var isRtl = document.querySelector(".app") &&
+          document.querySelector(".app").getAttribute("dir") === "rtl";
+        if (isRtl) dx = -dx;
+        step(dx > 0 ? -1 : 1);
+        resetAutoplay();
+      }, { passive: true });
+    }
+
+    root.addEventListener("mouseenter", function () {
+      if (timer) clearInterval(timer);
+    });
+    root.addEventListener("mouseleave", resetAutoplay);
+
+    goTo(0);
+    resetAutoplay();
+  }
 
   /* ── Before/After Slider ── */
   function initSlider() {
@@ -657,6 +1022,8 @@
     handleHashRoute();
     handleScroll();
     initSlider();
+    initHeroGallery();
+    initProofCarousel();
     initCustomCheckout();
     initFaq();
     initReviewLightbox();

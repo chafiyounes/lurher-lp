@@ -124,25 +124,22 @@
         </div>
 
         <div class="hero-media">
-          <div class="hero-img-wrap">
-            <img
-              class="img-ar"
-              alt="Hismile V34 Whitening Strips — شرائط التبييض"
-              src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-01-V34Strips_no-badge31_10_15_595x.webp"
-              loading="eager"
-            />
-            <img
-              class="img-fr"
-              alt="Bandes de Blanchiment"
-              src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-01-V34Strips_no-badge31_10_15_595x.webp"
-              loading="eager"
-            />
-            <img
-              class="img-en"
-              alt="Whitening Strips"
-              src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-01-V34Strips_no-badge31_10_15_595x.webp"
-              loading="eager"
-            />
+          <div
+            class="media-carousel hero-gallery"
+            id="hero-gallery"
+            aria-roledescription="carousel"
+            aria-label="Product and proof gallery"
+          >
+            <button type="button" class="media-carousel-btn media-carousel-prev" aria-label="Previous image">
+              <span class="material-symbols-outlined">chevron_right</span>
+            </button>
+            <div class="media-carousel-viewport">
+              <ol class="media-carousel-track" id="hero-gallery-track"></ol>
+            </div>
+            <button type="button" class="media-carousel-btn media-carousel-next" aria-label="Next image">
+              <span class="material-symbols-outlined">chevron_left</span>
+            </button>
+            <div class="media-carousel-thumbs" id="hero-gallery-thumbs" role="tablist" aria-label="Gallery thumbnails"></div>
           </div>
         </div>
       </div>
@@ -352,12 +349,103 @@
     </section>
 
     <!-- ══════════════════════════════════════════════════════
-         BENEFITS — split reversed
+         BENEFITS + proof carousel (drop Arabic graphics in images/proof/)
     ══════════════════════════════════════════════════════ -->
-    <section class="split-section bg-alt reveal">
-      <div class="split-row reverse">
-        <div class="split-content">
-          <div class="section-head">
+    <section class="benefits-section bg-alt reveal" id="benefits-section">
+      <div class="benefits-inner section-container">
+        <div class="proof-carousel" id="proof-carousel" aria-roledescription="carousel" aria-label="Proof and results">
+          <button type="button" class="proof-carousel-btn proof-carousel-prev" aria-label="Previous slide">
+            <span class="material-symbols-outlined">chevron_right</span>
+          </button>
+          <div class="proof-carousel-viewport">
+            <ol class="proof-carousel-track">
+              <li class="proof-slide is-active" data-proof-slide="0">
+                <div class="proof-slide-media">
+                  <img class="proof-slide-photo img-ar" alt="" loading="lazy" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/proof/proof-10m-ar.webp" data-proof-fallback />
+                  <img class="proof-slide-photo img-fr" alt="" loading="lazy" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/proof/proof-10m-fr.webp" data-proof-fallback />
+                  <img class="proof-slide-photo img-en" alt="" loading="lazy" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/proof/proof-10m-en.webp" data-proof-fallback />
+                  <div class="proof-slide-card proof-stat-card proof-stat-card--banner">
+                    <span class="proof-stat-num">10,000,000+</span>
+                    <span class="proof-stat-label" data-i18n="proof_10m">منتج V34 تباع حول العالم</span>
+                  </div>
+                </div>
+              </li>
+              <li class="proof-slide" data-proof-slide="1">
+                <div class="proof-slide-media">
+                  <img class="proof-slide-photo img-ar" alt="" loading="lazy" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/proof/proof-96-ar.webp" data-proof-fallback />
+                  <img class="proof-slide-photo img-fr" alt="" loading="lazy" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/proof/proof-96-fr.webp" data-proof-fallback />
+                  <img class="proof-slide-photo img-en" alt="" loading="lazy" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/proof/proof-96-en.webp" data-proof-fallback />
+                  <div class="proof-slide-card proof-stat-card proof-stat-card--study">
+                    <p class="proof-study-lead" data-i18n="proof_96_lead">في دراسة سريرية*</p>
+                    <span class="proof-stat-num proof-stat-num--hero">96%</span>
+                    <p class="proof-study-sub" data-i18n="proof_96_sub">من المشاركين لاحظوا درجتين أفتح أو أكثر</p>
+                    <div class="proof-bar-chart" aria-hidden="true">
+                      <div class="proof-bar proof-bar--high"><span>96%</span></div>
+                      <div class="proof-bar proof-bar--low"><span>4%</span></div>
+                    </div>
+                    <p class="proof-footnote" data-i18n="proof_96_foot">*نتائج فردية كتختلف</p>
+                  </div>
+                </div>
+              </li>
+              <li class="proof-slide" data-proof-slide="2">
+                <div class="proof-slide-media">
+                  <img class="proof-slide-photo img-ar" alt="" loading="lazy" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/proof/proof-one-use-ar.webp" data-proof-fallback />
+                  <img class="proof-slide-photo img-fr" alt="" loading="lazy" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/proof/proof-one-use-fr.webp" data-proof-fallback />
+                  <img class="proof-slide-photo img-en" alt="" loading="lazy" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/proof/proof-one-use-en.webp" data-proof-fallback />
+                  <div class="proof-slide-card proof-stat-card proof-stat-card--one-use">
+                    <span class="material-symbols-outlined proof-card-icon">auto_awesome</span>
+                    <p class="proof-one-use-line" data-i18n="proof_one_use">أسنان أبيض ملحوظ من <strong>أول استعمال*</strong></p>
+                  </div>
+                </div>
+              </li>
+              <li class="proof-slide" data-proof-slide="3">
+                <div class="proof-slide-media">
+                  <img class="proof-slide-photo img-ar" alt="" loading="lazy" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/proof/proof-guarantee-ar.webp" data-proof-fallback />
+                  <img class="proof-slide-photo img-fr" alt="" loading="lazy" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/proof/proof-guarantee-fr.webp" data-proof-fallback />
+                  <img class="proof-slide-photo img-en" alt="" loading="lazy" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/proof/proof-guarantee-en.webp" data-proof-fallback />
+                  <div class="proof-slide-card proof-stat-card proof-stat-card--guarantee">
+                    <span class="material-symbols-outlined proof-card-icon">verified_user</span>
+                    <span class="proof-guarantee-title" data-i18n="proof_guarantee">ضمان استرجاع الفلوس</span>
+                    <p class="proof-guarantee-sub" data-i18n="proof_guarantee_sub">إلا ما عجبكش — نرجعو ليك فلوسك</p>
+                  </div>
+                </div>
+              </li>
+              <li class="proof-slide" data-proof-slide="4">
+                <div class="proof-slide-media">
+                  <img class="proof-slide-photo img-ar" alt="" loading="lazy" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/proof/proof-morocco-ar.webp" data-proof-fallback />
+                  <img class="proof-slide-photo img-fr" alt="" loading="lazy" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/proof/proof-morocco-fr.webp" data-proof-fallback />
+                  <img class="proof-slide-photo img-en" alt="" loading="lazy" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/proof/proof-morocco-en.webp" data-proof-fallback />
+                  <div class="proof-slide-card proof-stat-card proof-stat-card--morocco">
+                    <span class="proof-stat-num proof-stat-num--md">+2,000</span>
+                    <span class="proof-stat-label" data-i18n="proof_morocco">طلبية وصلات للمغرب</span>
+                    <div class="proof-mini-stars">★★★★★</div>
+                  </div>
+                </div>
+              </li>
+              <li class="proof-slide" data-proof-slide="5">
+                <div class="proof-slide-media">
+                  <img class="proof-slide-photo img-ar" alt="" loading="lazy" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/proof/proof-results-ar.webp" data-proof-fallback />
+                  <img class="proof-slide-photo img-fr" alt="" loading="lazy" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/proof/proof-results-fr.webp" data-proof-fallback />
+                  <img class="proof-slide-photo img-en" alt="" loading="lazy" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/proof/proof-results-en.webp" data-proof-fallback />
+                  <div class="proof-slide-card proof-stat-card proof-stat-card--results">
+                    <div class="proof-ba-pair">
+                      <img src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/before_image.jpg" alt="" loading="lazy" />
+                      <img src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/after_image.jpg" alt="" loading="lazy" />
+                    </div>
+                    <p class="proof-results-caption" data-i18n="proof_results_cap">نتائج حقيقية من زبنائنا</p>
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <button type="button" class="proof-carousel-btn proof-carousel-next" aria-label="Next slide">
+            <span class="material-symbols-outlined">chevron_left</span>
+          </button>
+          <div class="proof-carousel-dots" role="tablist" aria-label="Proof slides"></div>
+        </div>
+
+        <div class="benefits-body">
+          <div class="section-head text-center">
             <span class="section-eyebrow" data-i18n="ben_eyebrow">الفوائد</span>
             <h2 class="t-h2" data-i18n="land_benefits_h">شنو غادي تربح</h2>
           </div>
@@ -369,27 +457,6 @@
             <li class="benefit-item"><span class="benefit-icon"><span class="material-symbols-outlined">check_circle</span></span><span data-i18n="ben_5">14 استعمال فكل علبة</span></li>
             <li class="benefit-item"><span class="benefit-icon"><span class="material-symbols-outlined">check_circle</span></span><span data-i18n="ben_6">ضمان استرجاع الفلوس — إلا ماعجبكش، ترجع ليك فلوسك</span></li>
           </ul>
-        </div>
-        <div class="split-media">
-          <!-- Benefits section: product lifestyle image, NO GIF -->
-          <img
-            class="img-ar"
-            src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-04-V34Strips-updated22_10_25_595x.webp"
-            alt="V34 Whitening Strips — شنو غادي تربح"
-            loading="lazy"
-          />
-          <img
-            class="img-fr"
-            src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-04-V34Strips-updated22_10_25_595x.webp"
-            alt="V34 Whitening Strips FR"
-            loading="lazy"
-          />
-          <img
-            class="img-en"
-            src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-04-V34Strips-updated22_10_25_595x.webp"
-            alt="V34 Whitening Strips EN"
-            loading="lazy"
-          />
         </div>
       </div>
     </section>
