@@ -360,7 +360,7 @@
     }
   });
 
-  /* ── Shared horizontal carousel (hero gallery, proof section) ── */
+  /* ── Shared horizontal carousel (hero gallery only) ── */
   var HERO_MANIFEST_URL = "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/hero/manifest.json";
 
   var HERO_MANIFEST_FALLBACK = {
@@ -431,10 +431,9 @@
     var track = root.querySelector(options.trackSelector || ".media-carousel-track");
     if (!track) return null;
     var slideSelector = options.slideSelector || ".media-carousel-slide";
-    var btnPrev = root.querySelector(options.prevSelector || ".media-carousel-prev, .proof-carousel-prev");
-    var btnNext = root.querySelector(options.nextSelector || ".media-carousel-next, .proof-carousel-next");
+    var btnPrev = root.querySelector(options.prevSelector || ".media-carousel-prev");
+    var btnNext = root.querySelector(options.nextSelector || ".media-carousel-next");
     var thumbsWrap = options.thumbsEl || root.querySelector(".media-carousel-thumbs");
-    var dotsWrap = options.dotsEl || root.querySelector(".proof-carousel-dots");
     var autoplayMs = options.autoplayMs != null ? options.autoplayMs : 0;
     var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -446,7 +445,7 @@
     }
 
     function thumbButtons() {
-      return thumbsWrap ? thumbsWrap.querySelectorAll(".media-carousel-thumb, .proof-carousel-dot") : [];
+      return thumbsWrap ? thumbsWrap.querySelectorAll(".media-carousel-thumb") : [];
     }
 
     function goTo(i) {
@@ -482,7 +481,7 @@
     if (btnPrev) btnPrev.addEventListener("click", function () { step(-1); resetAutoplay(); });
     if (btnNext) btnNext.addEventListener("click", function () { step(1); resetAutoplay(); });
 
-    var viewport = root.querySelector(options.viewportSelector || ".media-carousel-viewport, .proof-carousel-viewport");
+    var viewport = root.querySelector(options.viewportSelector || ".media-carousel-viewport");
     if (viewport) {
       var touchStartX = 0;
       viewport.addEventListener("touchstart", function (e) {
@@ -607,107 +606,6 @@
         buildHeroGallery(HERO_MANIFEST_FALLBACK);
         updateHeroGalleryAlts();
       });
-  }
-
-  /* ── Proof carousel (benefits section) ── */
-  function initProofCarousel() {
-    var root = document.getElementById("proof-carousel");
-    if (!root) return;
-
-    var track = root.querySelector(".proof-carousel-track");
-    var slides = root.querySelectorAll(".proof-slide");
-    var btnPrev = root.querySelector(".proof-carousel-prev");
-    var btnNext = root.querySelector(".proof-carousel-next");
-    var dotsWrap = root.querySelector(".proof-carousel-dots");
-    if (!track || !slides.length) return;
-
-    var index = 0;
-    var total = slides.length;
-    var timer = null;
-    var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    slides.forEach(function (slide, i) {
-      var imgs = slide.querySelectorAll(".proof-slide-photo[data-proof-fallback]");
-      var loaded = false;
-      imgs.forEach(function (img) {
-        if (img.complete && img.naturalWidth > 0) {
-          loaded = true;
-        }
-        img.addEventListener("load", function () {
-          slide.classList.add("proof-slide--image");
-        });
-        img.addEventListener("error", function () {
-          img.setAttribute("hidden", "");
-        });
-      });
-      if (loaded) slide.classList.add("proof-slide--image");
-
-      var dot = document.createElement("button");
-      dot.type = "button";
-      dot.className = "proof-carousel-dot" + (i === 0 ? " is-active" : "");
-      dot.setAttribute("role", "tab");
-      dot.setAttribute("aria-label", "Slide " + (i + 1));
-      dot.setAttribute("aria-selected", i === 0 ? "true" : "false");
-      (function (idx) {
-        dot.addEventListener("click", function () { goTo(idx); resetAutoplay(); });
-      })(i);
-      dotsWrap.appendChild(dot);
-    });
-
-    var dots = dotsWrap.querySelectorAll(".proof-carousel-dot");
-
-    function goTo(i) {
-      index = (i + total) % total;
-      var isRtl = document.querySelector(".app") &&
-        document.querySelector(".app").getAttribute("dir") === "rtl";
-      var offset = isRtl ? index : -index;
-      track.style.transform = "translateX(" + (offset * 100) + "%)";
-      for (var s = 0; s < slides.length; s++) {
-        slides[s].classList.toggle("is-active", s === index);
-      }
-      for (var d = 0; d < dots.length; d++) {
-        dots[d].classList.toggle("is-active", d === index);
-        dots[d].setAttribute("aria-selected", d === index ? "true" : "false");
-      }
-    }
-
-    function step(delta) {
-      goTo(index + delta);
-    }
-
-    function resetAutoplay() {
-      if (timer) clearInterval(timer);
-      if (reducedMotion) return;
-      timer = setInterval(function () { step(1); }, 5000);
-    }
-
-    if (btnPrev) btnPrev.addEventListener("click", function () { step(-1); resetAutoplay(); });
-    if (btnNext) btnNext.addEventListener("click", function () { step(1); resetAutoplay(); });
-
-    var touchStartX = 0;
-    var viewport = root.querySelector(".proof-carousel-viewport");
-    if (viewport) {
-      viewport.addEventListener("touchstart", function (e) {
-        touchStartX = e.touches[0].clientX;
-      }, { passive: true });
-      viewport.addEventListener("touchend", function (e) {
-        var dx = e.changedTouches[0].clientX - touchStartX;
-        if (Math.abs(dx) < 40) return;
-        var isRtl = document.querySelector(".app") &&
-          document.querySelector(".app").getAttribute("dir") === "rtl";
-        if (isRtl) dx = -dx;
-        step(dx > 0 ? -1 : 1);
-        resetAutoplay();
-      }, { passive: true });
-    }
-
-    root.addEventListener("mouseenter", function () {
-      if (timer) clearInterval(timer);
-    });
-    root.addEventListener("mouseleave", resetAutoplay);
-
-    goTo(0);
-    resetAutoplay();
   }
 
   /* ── Before/After Slider ── */
@@ -1023,7 +921,6 @@
     handleScroll();
     initSlider();
     initHeroGallery();
-    initProofCarousel();
     initCustomCheckout();
     initFaq();
     initReviewLightbox();
