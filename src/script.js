@@ -62,6 +62,14 @@
       en: "Dry teeth with a paper towel, apply strips, leave 30 minutes to 1 hour — peroxide-free, no sensitivity. Remove and brush normally.",
       fr: "Séchez avec un essuie, appliquez les bandes, laissez 30 min à 1 h — sans peroxyde, sans sensibilité. Retirez et brossez normalement."
     },
+    triptych_before: { ar: "قبل", en: "Before", fr: "Avant" },
+    triptych_apply: { ar: "أثناء الاستعمال", en: "During use", fr: "Pendant l'application" },
+    triptych_after: { ar: "بعد", en: "After", fr: "Après" },
+    v34_disclaimer: {
+      ar: "*النتائج كتختلف من شخص لآخر. اتبع التعليمات على العلبة باش تجيب أحسن نتيجة. الصور للتوضيح فقط.",
+      en: "*Results vary by person. Follow the box instructions for best results. Images are illustrative only.",
+      fr: "*Les résultats varient. Suivez les instructions de la boîte. Images à titre illustratif."
+    },
 
     land_benefits_h: { ar: "شنو غادي تربح:", en: "What you will gain:", fr: "Ce que vous y gagnez :" },
     ben_1: { ar: "أسنان أبيض ملحوظ من أول استعمال", en: "Visibly whiter teeth from first use", fr: "Dents visiblement plus blanches dès la première utilisation" },
@@ -320,13 +328,58 @@
     }
 
     var bottomCta = document.getElementById("bottom-cta");
-    if (bottomCta) {
-      // Show sticky CTA once user scrolls past hero
+    if (bottomCta && !window.__stickyCtaIO) {
       if (window.scrollY > 120) {
         bottomCta.classList.add("visible");
       } else {
         bottomCta.classList.remove("visible");
       }
+    }
+  }
+
+  function initStickyCta() {
+    var bottomCta = document.getElementById("bottom-cta");
+    var hero = document.getElementById("landing-hero");
+    var checkoutForm = document.getElementById("checkout-form");
+    var stickyBtn = document.getElementById("stickyBtn");
+    if (!bottomCta) return;
+
+    var pastHero = false;
+    var formVisible = false;
+
+    function updateSticky() {
+      if (formVisible) {
+        bottomCta.classList.remove("visible");
+        bottomCta.classList.add("is-hidden-over-form");
+      } else if (pastHero) {
+        bottomCta.classList.add("visible");
+        bottomCta.classList.remove("is-hidden-over-form");
+      } else {
+        bottomCta.classList.remove("visible");
+        bottomCta.classList.remove("is-hidden-over-form");
+      }
+    }
+
+    if ("IntersectionObserver" in window) {
+      window.__stickyCtaIO = true;
+      if (hero) {
+        new IntersectionObserver(function (entries) {
+          pastHero = !entries[0].isIntersecting;
+          updateSticky();
+        }, { threshold: 0, rootMargin: "0px 0px -40% 0px" }).observe(hero);
+      }
+      if (checkoutForm) {
+        new IntersectionObserver(function (entries) {
+          formVisible = entries[0].isIntersecting && entries[0].intersectionRatio > 0.12;
+          updateSticky();
+        }, { threshold: [0, 0.12, 0.25] }).observe(checkoutForm);
+      }
+    }
+
+    if (stickyBtn) {
+      stickyBtn.addEventListener("click", function () {
+        stickyBtn.classList.add("pulse-stopped");
+      });
     }
   }
 
@@ -374,18 +427,11 @@
         alt: { ar: "شرائط Hismile V34 للتبييض", en: "Hismile V34 Whitening Strips", fr: "Bandes blanchissantes Hismile V34" }
       },
       {
-        id: "sold-10m",
-        image: "02-sold-10m.webp",
-        thumb: "02-sold-10m-thumb.webp",
-        fallback: "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-05-V34Strips-updated22_10_25_1208x.webp",
-        alt: { ar: "+10 مليون منتج V34 تباع حول العالم", en: "10 million+ V34 products sold worldwide", fr: "+10 millions de produits V34 vendus" }
-      },
-      {
-        id: "study-96",
-        image: "03-study-96.webp",
-        thumb: "03-study-96-thumb.webp",
-        fallback: "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-04-V34Strips-updated22_10_25_595x.webp",
-        alt: { ar: "96% من المشاركين لاحظوا درجتين أفتح أو أكثر", en: "96% of participants had 2+ shades whiter teeth", fr: "96% des participants ont eu 2 nuances ou plus" }
+        id: "results",
+        image: "06-results.webp",
+        thumb: "06-results-thumb.webp",
+        fallback: "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/after_image.jpg",
+        alt: { ar: "نتائج قبل وبعد", en: "Before and after results", fr: "Résultats avant et après" }
       },
       {
         id: "showcase",
@@ -402,11 +448,18 @@
         alt: { ar: "ضمان استرجاع الفلوس", en: "Money-back guarantee", fr: "Garantie satisfait ou remboursé" }
       },
       {
-        id: "results",
-        image: "06-results.webp",
-        thumb: "06-results-thumb.webp",
-        fallback: "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/after_image.jpg",
-        alt: { ar: "نتائج قبل وبعد", en: "Before and after results", fr: "Résultats avant et après" }
+        id: "study-96",
+        image: "03-study-96.webp",
+        thumb: "03-study-96-thumb.webp",
+        fallback: "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-04-V34Strips-updated22_10_25_595x.webp",
+        alt: { ar: "96% من المشاركين لاحظوا درجتين أفتح أو أكثر", en: "96% of participants had 2+ shades whiter teeth", fr: "96% des participants ont eu 2 nuances ou plus" }
+      },
+      {
+        id: "sold-10m",
+        image: "02-sold-10m.webp",
+        thumb: "02-sold-10m-thumb.webp",
+        fallback: "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-05-V34Strips-updated22_10_25_1208x.webp",
+        alt: { ar: "+10 مليون منتج V34 تباع حول العالم", en: "10 million+ V34 products sold worldwide", fr: "+10 millions de produits V34 vendus" }
       }
     ]
   };
@@ -435,7 +488,10 @@
     var btnNext = root.querySelector(options.nextSelector || ".media-carousel-next");
     var thumbsWrap = options.thumbsEl || root.querySelector(".media-carousel-thumbs");
     var autoplayMs = options.autoplayMs != null ? options.autoplayMs : 0;
+    var crossfade = !!options.crossfade;
     var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (crossfade) root.classList.add("media-carousel--crossfade");
 
     var index = 0;
     var timer = null;
@@ -453,12 +509,19 @@
       var total = slideList.length;
       if (!total) return;
       index = (i + total) % total;
-      var isRtl = document.querySelector(".app") &&
-        document.querySelector(".app").getAttribute("dir") === "rtl";
-      var offset = isRtl ? index : -index;
-      track.style.transform = "translateX(" + (offset * 100) + "%)";
-      for (var s = 0; s < slideList.length; s++) {
-        slideList[s].classList.toggle("is-active", s === index);
+      if (crossfade) {
+        track.style.transform = "none";
+        for (var s = 0; s < slideList.length; s++) {
+          slideList[s].classList.toggle("is-active", s === index);
+        }
+      } else {
+        var isRtl = document.querySelector(".app") &&
+          document.querySelector(".app").getAttribute("dir") === "rtl";
+        var offset = isRtl ? index : -index;
+        track.style.transform = "translateX(" + (offset * 100) + "%)";
+        for (var s2 = 0; s2 < slideList.length; s2++) {
+          slideList[s2].classList.toggle("is-active", s2 === index);
+        }
       }
       var thumbs = thumbButtons();
       for (var t = 0; t < thumbs.length; t++) {
@@ -474,7 +537,7 @@
 
     function resetAutoplay() {
       if (timer) clearInterval(timer);
-      if (!autoplayMs || reducedMotion) return;
+      if (!autoplayMs || reducedMotion || document.hidden) return;
       timer = setInterval(function () { step(1); }, autoplayMs);
     }
 
@@ -484,18 +547,43 @@
     var viewport = root.querySelector(options.viewportSelector || ".media-carousel-viewport");
     if (viewport) {
       var touchStartX = 0;
+      var touchStartY = 0;
       viewport.addEventListener("touchstart", function (e) {
         touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        if (timer) clearInterval(timer);
       }, { passive: true });
       viewport.addEventListener("touchend", function (e) {
         var dx = e.changedTouches[0].clientX - touchStartX;
-        if (Math.abs(dx) < 40) return;
+        var dy = e.changedTouches[0].clientY - touchStartY;
+        if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) {
+          resetAutoplay();
+          return;
+        }
         var isRtl = document.querySelector(".app") &&
           document.querySelector(".app").getAttribute("dir") === "rtl";
         if (isRtl) dx = -dx;
         step(dx > 0 ? -1 : 1);
         resetAutoplay();
       }, { passive: true });
+
+      if (window.PointerEvent) {
+        var pointerStartX = 0;
+        viewport.addEventListener("pointerdown", function (e) {
+          if (e.pointerType === "mouse" && e.button !== 0) return;
+          pointerStartX = e.clientX;
+        });
+        viewport.addEventListener("pointerup", function (e) {
+          if (e.pointerType === "mouse") return;
+          var dx = e.clientX - pointerStartX;
+          if (Math.abs(dx) < 40) return;
+          var isRtl2 = document.querySelector(".app") &&
+            document.querySelector(".app").getAttribute("dir") === "rtl";
+          if (isRtl2) dx = -dx;
+          step(dx > 0 ? -1 : 1);
+          resetAutoplay();
+        });
+      }
     }
 
     if (autoplayMs) {
@@ -503,6 +591,13 @@
         if (timer) clearInterval(timer);
       });
       root.addEventListener("mouseleave", resetAutoplay);
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) {
+          if (timer) clearInterval(timer);
+        } else {
+          resetAutoplay();
+        }
+      });
     }
 
     goTo(0);
@@ -570,7 +665,8 @@
 
     heroGalleryController = initMediaCarousel(root, {
       slideSelector: ".media-carousel-slide",
-      autoplayMs: 6000
+      autoplayMs: 5000,
+      crossfade: true
     });
   }
 
@@ -613,15 +709,26 @@
     var slider = document.getElementById("slider");
     var sliderAfter = document.getElementById("slider-after");
     var sliderHandle = document.getElementById("slider-handle");
+    var baHint = document.getElementById("ba-hint");
 
     if (slider && sliderAfter && sliderHandle) {
       var isDragging = false;
+      var currentPct = 50;
+      var hintHidden = false;
+
+      function hideHint() {
+        if (hintHidden || !baHint) return;
+        hintHidden = true;
+        baHint.classList.add("is-hidden");
+      }
+
       function moveSlider(clientX) {
         var rect = slider.getBoundingClientRect();
         var position = clientX - rect.left;
         if (position < 0) position = 0;
         if (position > rect.width) position = rect.width;
         var pct = (position / rect.width) * 100;
+        currentPct = pct;
         var isRtl = document.querySelector(".app") &&
           document.querySelector(".app").getAttribute("dir") === "rtl";
         sliderHandle.style.left = pct + "%";
@@ -630,12 +737,14 @@
         } else {
           sliderAfter.style.clipPath = "inset(0 0 0 " + pct + "%)";
         }
+        slider.setAttribute("aria-valuenow", Math.round(pct));
       }
 
       moveSlider(slider.getBoundingClientRect().left + slider.getBoundingClientRect().width / 2);
 
       var startDrag = function (e) {
         isDragging = true;
+        hideHint();
         var cx = e.touches ? e.touches[0].clientX : e.clientX;
         moveSlider(cx);
         if (e.cancelable) e.preventDefault();
@@ -655,6 +764,29 @@
       window.addEventListener("mousemove", moveDrag);
       window.addEventListener("touchmove", moveDrag, { passive: false });
       slider.addEventListener("dragstart", function (e) { e.preventDefault(); });
+
+      slider.addEventListener("keydown", function (e) {
+        var isRtl = document.querySelector(".app") &&
+          document.querySelector(".app").getAttribute("dir") === "rtl";
+        var step = 4;
+        if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          hideHint();
+          currentPct = isRtl
+            ? Math.min(100, currentPct + step)
+            : Math.max(0, currentPct - step);
+        } else if (e.key === "ArrowRight") {
+          e.preventDefault();
+          hideHint();
+          currentPct = isRtl
+            ? Math.max(0, currentPct - step)
+            : Math.min(100, currentPct + step);
+        } else {
+          return;
+        }
+        var rect = slider.getBoundingClientRect();
+        moveSlider(rect.left + (rect.width * currentPct / 100));
+      });
     }
   }
 
@@ -886,6 +1018,22 @@
     if (btnPrev) btnPrev.addEventListener("click", function (e) { e.stopPropagation(); step(-1); });
     if (btnNext) btnNext.addEventListener("click", function (e) { e.stopPropagation(); step(1); });
 
+    var lbMedia = lightbox.querySelector(".review-lightbox-media");
+    if (lbMedia) {
+      var lbTouchX = 0;
+      lbMedia.addEventListener("touchstart", function (e) {
+        lbTouchX = e.touches[0].clientX;
+      }, { passive: true });
+      lbMedia.addEventListener("touchend", function (e) {
+        var dx = e.changedTouches[0].clientX - lbTouchX;
+        if (Math.abs(dx) < 50) return;
+        var isRtl = document.querySelector(".app") &&
+          document.querySelector(".app").getAttribute("dir") === "rtl";
+        if (isRtl) dx = -dx;
+        step(dx > 0 ? -1 : 1);
+      }, { passive: true });
+    }
+
     document.addEventListener("keydown", function (e) {
       if (!lightbox.classList.contains("is-open")) return;
       if (e.key === "Escape") closeLightbox();
@@ -921,6 +1069,7 @@
     handleScroll();
     initSlider();
     initHeroGallery();
+    initStickyCta();
     initCustomCheckout();
     initFaq();
     initReviewLightbox();

@@ -106,19 +106,19 @@
       <!-- ══════════════════════════════════════════════════════
            HERO — Two columns on desktop, stacked on mobile
       ══════════════════════════════════════════════════════ -->
-    <section class="hero reveal active">
+    <section class="hero landing-hero reveal active" id="landing-hero">
       <div class="hero-inner">
         <div class="hero-content">
           <div class="hero-badge" data-i18n="hero_badge">🏆 الأكثر مبيعاً في المغرب</div>
-          <h1 class="t-hero" data-i18n="land_hero_h">ابتسامتك هي أول حاجة كيشوفوها فيك. خليها بيضا.</h1>
+          <h1 class="t-hero landing-hero-title" data-i18n="land_hero_h">ابتسامتك هي أول حاجة كيشوفوها فيك. خليها بيضا.</h1>
           <p class="t-body-lg t-muted" data-i18n="land_hero_sub">تخيّل: كتهدر مع شي حد، كتبسم، وكتشوف نظرتو كتبدل. الأسنان البيضا ماشي غير زين — هي ثقة، هي حضور. شرائط V34 كتعطيك هاد الإحساس فـ30 دقيقة فقط.</p>
           <div class="hero-social-proof">
             <div class="mini-stars">★★★★★</div>
             <span data-i18n="hero_proof">+2,000 طلبية سلمات فالمغرب</span>
           </div>
-          <button type="button" class="btn-primary scroll-to-checkout hero-cta" style="color:#fff !important; background:linear-gradient(135deg,#7c24d4 0%,#5b009e 100%) !important;">
-            <span class="material-symbols-outlined" style="color:#fff !important;">shopping_bag</span>
-            <span data-i18n="land_hero_cta" style="color:#fff !important;">صيفط طلبيتك دابا 👇</span>
+          <button type="button" class="btn-primary scroll-to-checkout hero-cta">
+            <span class="material-symbols-outlined">shopping_bag</span>
+            <span data-i18n="land_hero_cta">صيفط طلبيتك دابا 👇</span>
           </button>
           <p class="hero-cod-note" data-i18n="hero_cod">✓ الدفع عند الاستلام &nbsp;·&nbsp; ✓ توصيل مجاني</p>
         </div>
@@ -325,25 +325,22 @@
             </div>
           </div>
         </div>
-        <div class="split-media">
-          <img
-            class="img-ar"
-            src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-05-V34Strips-updated22_10_25_1208x.webp"
-            alt="V34 Whitening Strips Product"
-            loading="lazy"
-          />
-          <img
-            class="img-fr"
-            src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-05-V34Strips-updated22_10_25_1208x.webp"
-            alt="V34 Whitening Strips Product FR"
-            loading="lazy"
-          />
-          <img
-            class="img-en"
-            src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-05-V34Strips-updated22_10_25_1208x.webp"
-            alt="V34 Whitening Strips Product EN"
-            loading="lazy"
-          />
+        <div class="split-media split-media--triptych">
+          <div class="v34-triptych" role="group" aria-label="V34 before, apply, after">
+            <figure class="v34-triptych-panel">
+              <img src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/products/before.jpg" alt="" loading="lazy" />
+              <figcaption data-i18n="triptych_before">قبل</figcaption>
+            </figure>
+            <figure class="v34-triptych-panel">
+              <img src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/products/during.jpg" alt="" loading="lazy" />
+              <figcaption data-i18n="triptych_apply">أثناء الاستعمال</figcaption>
+            </figure>
+            <figure class="v34-triptych-panel">
+              <img src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/products/after.jpg" alt="" loading="lazy" />
+              <figcaption data-i18n="triptych_after">بعد</figcaption>
+            </figure>
+          </div>
+          <p class="v34-disclaimer" data-i18n="v34_disclaimer">*النتائج كتختلف من شخص لآخر. اتبع التعليمات على العلبة باش تجيب أحسن نتيجة. الصور للتوضيح فقط.</p>
         </div>
       </div>
     </section>
@@ -373,17 +370,18 @@
     ══════════════════════════════════════════════════════ -->
     <section class="ba-section bg-gradient reveal">
       <div class="ba-inner">
-        <div class="section-head section-head--light text-center">
-          <span class="section-eyebrow section-eyebrow--light" data-i18n="ba_eyebrow">نتائج حقيقية</span>
-          <h2 class="t-h2 ba-title" data-i18n="land_ba_h">الناس كتخلّص المئات فعيادات التبييض... حنا جبنا ليك نفس النتيجة لدارك.</h2>
-          <p class="ba-hint" data-i18n="land_ba_hint">← اسحب لكشف النتيجة →</p>
+        <div class="ba-copy">
+          <div class="section-head section-head--light">
+            <span class="section-eyebrow section-eyebrow--light" data-i18n="ba_eyebrow">نتائج حقيقية</span>
+            <h2 class="t-h2 ba-title" data-i18n="land_ba_h">الناس كتخلّص المئات فعيادات التبييض... حنا جبنا ليك نفس النتيجة لدارك.</h2>
+            <p class="ba-hint" id="ba-hint" data-i18n="land_ba_hint">← اسحب لكشف النتيجة →</p>
+          </div>
         </div>
-        <!-- Swap images: replace slider_before_cropped.jpg & slider_after_cropped.jpg in repo /images/ -->
-        <div class="slider-wrap" id="slider">
+        <div class="slider-wrap" id="slider" tabindex="0" role="slider" aria-label="Before and after comparison" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
           <span class="slider-label slider-label-before" data-i18n="ba_before">قبل</span>
           <span class="slider-label slider-label-after" data-i18n="ba_after">بعد</span>
-          <img alt="Before — أسنان قبل التبييض" class="slider-img" id="slider-before" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/before_image.jpg" loading="eager" decoding="async"/>
-          <img alt="After — أسنان بعد التبييض" class="slider-img slider-after" id="slider-after" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/after_image.jpg" loading="eager" decoding="async"/>
+          <img alt="After — أسنان بعد التبييض" class="slider-img" id="slider-before" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/after_image.jpg" loading="eager" decoding="async"/>
+          <img alt="Before — أسنان قبل التبييض" class="slider-img slider-after" id="slider-after" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/before_image.jpg" loading="eager" decoding="async"/>
           <div class="slider-handle" id="slider-handle" aria-hidden="true">
             <span class="material-symbols-outlined">unfold_more</span>
           </div>
@@ -433,7 +431,6 @@
               <img src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/products/during.jpg" alt="أثناء" loading="lazy" />
               <img src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/products/after.jpg" alt="بعد" loading="lazy" />
             </div>
-            <span class="review-tap-hint"><span class="material-symbols-outlined">zoom_in</span><span data-i18n="rev_tap_img">اضغط لمشاهدة الصور بوضوح</span></span>
           </button>
 
           <button type="button" class="review-card review-card--gallery" data-review-images='["https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/products/before2.jpg","https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/products/after2.jpg"]'>
@@ -451,7 +448,6 @@
               <img src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/products/before2.jpg" alt="قبل" loading="lazy" />
               <img src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/products/after2.jpg" alt="بعد" loading="lazy" />
             </div>
-            <span class="review-tap-hint"><span class="material-symbols-outlined">zoom_in</span><span data-i18n="rev_tap_img">اضغط لمشاهدة الصور بوضوح</span></span>
           </button>
 
           <button type="button" class="review-card review-card--gallery" data-review-images='["https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/products/showcase.jpg"]'>
@@ -468,7 +464,6 @@
             <div class="review-thumbs review-thumbs--1">
               <img src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/products/showcase.jpg" alt="نتيجة V34" loading="lazy" />
             </div>
-            <span class="review-tap-hint"><span class="material-symbols-outlined">zoom_in</span><span data-i18n="rev_tap_img">اضغط لمشاهدة الصور بوضوح</span></span>
           </button>
 
           <button type="button" class="review-card review-card--gallery" data-review-images='["https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/products/box-showcase.jpg"]'>
@@ -485,7 +480,6 @@
             <div class="review-thumbs review-thumbs--1">
               <img src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/products/box-showcase.jpg" alt="علبة V34" loading="lazy" />
             </div>
-            <span class="review-tap-hint"><span class="material-symbols-outlined">zoom_in</span><span data-i18n="rev_tap_img">اضغط لمشاهدة الصور بوضوح</span></span>
           </button>
         </div>
       </div>
@@ -612,7 +606,7 @@
           </div>
         </div>
         <p class="faq-cta-wrap">
-          <button type="button" class="faq-checkout-link scroll-to-checkout" data-i18n="faq_cta">جاهز؟ صيفط طلبيتك دابا — الدفع عند الاستلام</button>
+          <button type="button" class="btn-primary btn-full scroll-to-checkout faq-cta-btn" data-i18n="faq_cta">جاهز؟ صيفط طلبيتك دابا — الدفع عند الاستلام</button>
         </p>
       </div>
     </section>
@@ -664,7 +658,7 @@
         <span data-i18n="sticky_price">245 د.م.</span>
       </div>
     </div>
-    <button type="button" class="btn-primary scroll-to-checkout" id="stickyBtn" data-i18n="sticky_cta" style="color:#fff !important; background:linear-gradient(135deg,#7c24d4 0%,#5b009e 100%) !important;">اطلب الآن</button>
+    <button type="button" class="btn-primary scroll-to-checkout sticky-cta-btn" id="stickyBtn" data-i18n="sticky_cta">اطلب الآن</button>
   </nav>
 
   <!-- Footer -->

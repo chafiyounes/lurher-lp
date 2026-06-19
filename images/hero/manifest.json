@@ -13,25 +13,14 @@
       }
     },
     {
-      "id": "sold-10m",
-      "image": "02-sold-10m.webp",
-      "thumb": "02-sold-10m-thumb.webp",
-      "fallback": "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-05-V34Strips-updated22_10_25_1208x.webp",
+      "id": "results",
+      "image": "06-results.webp",
+      "thumb": "06-results-thumb.webp",
+      "fallback": "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/after_image.jpg",
       "alt": {
-        "ar": "+10 مليون منتج V34 تباع حول العالم",
-        "en": "10 million+ V34 products sold worldwide",
-        "fr": "+10 millions de produits V34 vendus"
-      }
-    },
-    {
-      "id": "study-96",
-      "image": "03-study-96.webp",
-      "thumb": "03-study-96-thumb.webp",
-      "fallback": "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-04-V34Strips-updated22_10_25_595x.webp",
-      "alt": {
-        "ar": "96% من المشاركين لاحظوا درجتين أفتح أو أكثر",
-        "en": "96% of participants had 2+ shades whiter teeth",
-        "fr": "96% des participants ont eu 2 nuances ou plus"
+        "ar": "نتائج قبل وبعد",
+        "en": "Before and after results",
+        "fr": "Résultats avant et après"
       }
     },
     {
@@ -57,14 +46,25 @@
       }
     },
     {
-      "id": "results",
-      "image": "06-results.webp",
-      "thumb": "06-results-thumb.webp",
-      "fallback": "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/after_image.jpg",
+      "id": "study-96",
+      "image": "03-study-96.webp",
+      "thumb": "03-study-96-thumb.webp",
+      "fallback": "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-04-V34Strips-updated22_10_25_595x.webp",
       "alt": {
-        "ar": "نتائج قبل وبعد",
-        "en": "Before and after results",
-        "fr": "Résultats avant et après"
+        "ar": "96% من المشاركين لاحظوا درجتين أفتح أو أكثر",
+        "en": "96% of participants had 2+ shades whiter teeth",
+        "fr": "96% des participants ont eu 2 nuances ou plus"
+      }
+    },
+    {
+      "id": "sold-10m",
+      "image": "02-sold-10m.webp",
+      "thumb": "02-sold-10m-thumb.webp",
+      "fallback": "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-05-V34Strips-updated22_10_25_1208x.webp",
+      "alt": {
+        "ar": "+10 مليون منتج V34 تباع حول العالم",
+        "en": "10 million+ V34 products sold worldwide",
+        "fr": "+10 millions de produits V34 vendus"
       }
     }
   ]
