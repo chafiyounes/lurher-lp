@@ -345,8 +345,12 @@
 
 /* Mobile: visual-first, edge-to-edge gallery, compact copy */
 @media (max-width: 1023px) {
+  #view-landing > .landing-hero {
+    padding-top: 4px;
+    padding-bottom: 14px;
+  }
   .landing-hero .hero-inner {
-    gap: 12px;
+    gap: 8px;
     width: 100%;
     max-width: 100%;
     overflow-x: clip;
@@ -360,8 +364,17 @@
     margin-inline: 0;
   }
   .landing-hero .hero-sub-long { display: none; }
-  .landing-hero .hero-sub-short { display: block; }
-  .landing-hero .hero-badge { margin-bottom: 8px; font-size: 12px; }
+  .landing-hero .hero-sub-short {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    line-height: 1.45;
+  }
+  .landing-hero .hero-badge { margin-bottom: 6px; font-size: 11px; padding: 4px 10px; }
+  .landing-hero-title { margin-bottom: 6px !important; }
+  .landing-hero .hero-action-stack { margin-top: 8px; gap: 8px; }
+  .landing-hero .hero-social-proof { font-size: 13px; }
+  .landing-hero .hero-cod-note { font-size: 12px; }
   .landing-hero .media-carousel-viewport {
     border-radius: 0;
     border-inline: none;
@@ -369,29 +382,30 @@
     box-shadow: none;
   }
   .landing-hero .media-carousel-slide {
-    min-height: clamp(220px, 40svh, 340px);
-    padding: 10px var(--sec-px);
+    min-height: clamp(160px, 28svh, 240px);
+    padding: 8px var(--sec-px) 6px;
   }
   .landing-hero .media-carousel--crossfade .media-carousel-slide.is-active {
-    min-height: clamp(220px, 40svh, 340px);
+    min-height: clamp(160px, 28svh, 240px);
   }
   .landing-hero .media-carousel-slide img {
     width: 100%;
-    max-height: min(38svh, 320px);
+    max-height: min(26svh, 220px);
     object-fit: cover;
     border-radius: var(--r-md);
   }
   .landing-hero .media-carousel-thumbs {
-    margin-top: 8px;
+    margin-top: 4px;
     padding-inline: var(--sec-px);
+    gap: 6px;
   }
   .landing-hero .media-carousel-thumb {
-    width: 56px;
-    height: 56px;
+    width: 48px;
+    height: 48px;
   }
   .trust-bar-wrap {
-    padding-top: 4px;
-    padding-bottom: 20px;
+    padding-top: 2px;
+    padding-bottom: 16px;
   }
 }
 
