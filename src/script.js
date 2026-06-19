@@ -350,6 +350,9 @@
     if (!bottomCta) return;
 
     window.__stickyCtaIO = true;
+    bottomCta.classList.remove("visible");
+    bottomCta.classList.remove("is-hidden-over-form");
+
     var pastHero = false;
     var formVisible = false;
 
@@ -369,7 +372,11 @@
     function syncStickyState() {
       if (hero) {
         var heroRect = hero.getBoundingClientRect();
-        pastHero = heroRect.bottom <= Math.min(window.innerHeight * 0.42, 360);
+        var heroReady = heroRect.height > 200;
+        pastHero =
+          heroReady &&
+          window.scrollY > 80 &&
+          heroRect.bottom <= Math.min(window.innerHeight * 0.42, 360);
       }
       if (checkoutForm) {
         var formRect = checkoutForm.getBoundingClientRect();
@@ -380,7 +387,14 @@
 
     window.addEventListener("scroll", syncStickyState, { passive: true });
     window.addEventListener("resize", syncStickyState, { passive: true });
+    window.addEventListener("load", syncStickyState);
+    if (hero && window.ResizeObserver) {
+      new ResizeObserver(syncStickyState).observe(hero);
+    }
     syncStickyState();
+    requestAnimationFrame(function () {
+      requestAnimationFrame(syncStickyState);
+    });
 
     if (stickyBtn) {
       stickyBtn.addEventListener("click", function () {
