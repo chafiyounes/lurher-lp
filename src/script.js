@@ -395,6 +395,8 @@
     requestAnimationFrame(function () {
       requestAnimationFrame(syncStickyState);
     });
+    setTimeout(syncStickyState, 600);
+    setTimeout(syncStickyState, 2000);
 
     if (stickyBtn) {
       stickyBtn.addEventListener("click", function () {
@@ -1077,8 +1079,8 @@
       var home = document.getElementById('view-home');
       if (home) home.style.display = 'block';
     }
-    // Scroll to top when view changes
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // Scroll to top when view changes (instant — avoids spurious sticky CTA during smooth scroll)
+    window.scrollTo(0, 0);
   }
 
   window.addEventListener("hashchange", handleHashRoute);
