@@ -32,6 +32,11 @@
       en: "Imagine: you talk to someone, smile, and see their look change. White teeth aren't just beauty — they're confidence, they're presence. V34 strips give you this feeling in just 30 minutes.",
       fr: "Imaginez : vous parlez, souriez et voyez leur regard changer. Les dents blanches ne sont pas qu'une question de beauté — c'est de la confiance. Les bandes V34 vous donnent cette sensation en 30 minutes."
     },
+    land_hero_sub_short: {
+      ar: "بياض ملحوظ فـ30 دقيقة — بلا ألم، بلا بيروكسيد.",
+      en: "Visible whitening in 30 minutes — no pain, no peroxide.",
+      fr: "Blanchiment visible en 30 minutes — sans douleur, sans peroxyde."
+    },
     land_hero_cta: { ar: "صيفط طلبيتك دابا 👇", en: "Order Now 👇", fr: "Commander maintenant 👇" },
     
     trust_guarantee: { ar: "ضمان استرجاع الفلوس", en: "Money-back guarantee", fr: "Garantie de remboursement" },
@@ -344,6 +349,7 @@
     var stickyBtn = document.getElementById("stickyBtn");
     if (!bottomCta) return;
 
+    window.__stickyCtaIO = true;
     var pastHero = false;
     var formVisible = false;
 
@@ -360,21 +366,21 @@
       }
     }
 
-    if ("IntersectionObserver" in window) {
-      window.__stickyCtaIO = true;
+    function syncStickyState() {
       if (hero) {
-        new IntersectionObserver(function (entries) {
-          pastHero = !entries[0].isIntersecting;
-          updateSticky();
-        }, { threshold: 0, rootMargin: "0px 0px -40% 0px" }).observe(hero);
+        var heroRect = hero.getBoundingClientRect();
+        pastHero = heroRect.bottom <= Math.min(window.innerHeight * 0.42, 360);
       }
       if (checkoutForm) {
-        new IntersectionObserver(function (entries) {
-          formVisible = entries[0].isIntersecting && entries[0].intersectionRatio > 0.12;
-          updateSticky();
-        }, { threshold: [0, 0.12, 0.25] }).observe(checkoutForm);
+        var formRect = checkoutForm.getBoundingClientRect();
+        formVisible = formRect.top < window.innerHeight * 0.82 && formRect.bottom > 72;
       }
+      updateSticky();
     }
+
+    window.addEventListener("scroll", syncStickyState, { passive: true });
+    window.addEventListener("resize", syncStickyState, { passive: true });
+    syncStickyState();
 
     if (stickyBtn) {
       stickyBtn.addEventListener("click", function () {
