@@ -353,14 +353,34 @@
     bottomCta.classList.remove("visible");
     bottomCta.classList.remove("is-hidden-over-form");
 
-    var pastHero = false;
-    var formVisible = false;
+    function syncStickyState() {
+      var vh = window.innerHeight;
+      var shouldShow = false;
+      var hideForForm = false;
 
-    function updateSticky() {
-      if (formVisible) {
+      if (hero) {
+        var heroRect = hero.getBoundingClientRect();
+        var heroReady = heroRect.height > 200;
+        // Show once the hero has mostly scrolled away
+        shouldShow = heroReady && window.scrollY > 60 && heroRect.bottom < vh * 0.38;
+      }
+
+      if (checkoutForm && shouldShow) {
+        var formRect = checkoutForm.getBoundingClientRect();
+        var visTop = Math.max(0, formRect.top);
+        var visBottom = Math.min(vh, formRect.bottom);
+        var visibleFormH = Math.max(0, visBottom - visTop);
+        // Hide only when the order card fills most of the screen (user is on the form)
+        hideForForm =
+          visibleFormH >= vh * 0.55 &&
+          formRect.top < vh * 0.32 &&
+          formRect.bottom > vh * 0.45;
+      }
+
+      if (hideForForm) {
         bottomCta.classList.remove("visible");
         bottomCta.classList.add("is-hidden-over-form");
-      } else if (pastHero) {
+      } else if (shouldShow) {
         bottomCta.classList.add("visible");
         bottomCta.classList.remove("is-hidden-over-form");
       } else {
@@ -369,27 +389,14 @@
       }
     }
 
-    function syncStickyState() {
-      if (hero) {
-        var heroRect = hero.getBoundingClientRect();
-        var heroReady = heroRect.height > 200;
-        pastHero =
-          heroReady &&
-          window.scrollY > 80 &&
-          heroRect.bottom <= Math.min(window.innerHeight * 0.42, 360);
-      }
-      if (checkoutForm) {
-        var formRect = checkoutForm.getBoundingClientRect();
-        formVisible = formRect.top < window.innerHeight * 0.82 && formRect.bottom > 72;
-      }
-      updateSticky();
-    }
-
     window.addEventListener("scroll", syncStickyState, { passive: true });
     window.addEventListener("resize", syncStickyState, { passive: true });
     window.addEventListener("load", syncStickyState);
     if (hero && window.ResizeObserver) {
       new ResizeObserver(syncStickyState).observe(hero);
+    }
+    if (checkoutForm && window.ResizeObserver) {
+      new ResizeObserver(syncStickyState).observe(checkoutForm);
     }
     syncStickyState();
     requestAnimationFrame(function () {
