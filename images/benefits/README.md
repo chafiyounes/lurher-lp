@@ -1,6 +1,6 @@
 # Benefits infographic (AR / EN / FR)
 
-Raster infographics for the benefits section. **EN** is the master template; **AR** is generated from EN via OpenAI `gpt-image-1` edit.
+Raster infographics for the benefits section. **EN** is the master template; **AR** is generated from EN via OpenAI image edit (`dall-e-2` preferred, falls back to `gpt-image-1`).
 
 | File | Language | Source |
 |------|----------|--------|
