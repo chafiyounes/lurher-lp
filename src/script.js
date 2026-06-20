@@ -452,7 +452,7 @@
   });
 
   /* ── Shared horizontal carousel (hero gallery only) ── */
-  var HERO_MANIFEST_URL = "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/hero/manifest.json?v=5";
+  var HERO_MANIFEST_URL = "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/hero/manifest.json?v=6";
 
   var HERO_MANIFEST_FALLBACK = {
     baseUrl: "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/hero/",
