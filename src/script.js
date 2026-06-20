@@ -63,11 +63,11 @@
       en: "Real whitening that improves over time — peroxide-free, 100% safe for enamel.",
       fr: "Blanchiment réel qui s'améliore — sans peroxyde, 100% sûr."
     },
-    land_feat3_h: { ar: "نتيجة فـ 30 دقيقة", en: "Results in 30 Minutes", fr: "Résultats en 30 minutes" },
+    land_feat3_h: { ar: "جرّبوه ملايين حول العالم", en: "Tried by millions worldwide", fr: "Des millions de personnes l'ont essayé" },
     land_feat3_p: {
-      ar: "نشّف سنانك بالورقة، حط الشرائط، وخليهم من 30 دقيقة لساعة — بلا بيروكسيد، بلا حساسية. حيدهم وفرك عادي.",
-      en: "Dry teeth with a paper towel, apply strips, leave 30 minutes to 1 hour — peroxide-free, no sensitivity. Remove and brush normally.",
-      fr: "Séchez avec un essuie, appliquez les bandes, laissez 30 min à 1 h — sans peroxyde, sans sensibilité. Retirez et brossez normalement."
+      ar: "أكثر من 10 ملايين منتج V34 تباع عالمياً — ملايين اختاروه قبلك.",
+      en: "10M+ V34 products sold worldwide — millions chose it before you.",
+      fr: "Plus de 10 millions de produits V34 vendus — des millions l'ont choisi avant vous."
     },
     triptych_before: { ar: "قبل", en: "Before", fr: "Avant" },
     triptych_apply: { ar: "أثناء الاستعمال", en: "During use", fr: "Pendant l'application" },

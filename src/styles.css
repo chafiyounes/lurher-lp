@@ -901,13 +901,22 @@
   max-width: var(--max-w);
   margin: 0 auto;
 }
-.benefits-inner .section-head { margin-bottom: 8px; }
+.benefits-inner .section-head { margin-bottom: 12px; }
+.benefits-infographic-wrap {
+  margin: 0 auto;
+  max-width: min(920px, 100%);
+}
+.benefits-infographic {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-md);
+  border: 1px solid var(--border);
+  background: #fff;
+}
 @media (min-width: 900px) {
-  .benefits-section .benefits-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
+  .benefits-infographic-wrap { max-width: 880px; }
 }
 
 /* ─── Benefits List ─── */
