@@ -79,12 +79,12 @@
     },
 
     land_benefits_h: { ar: "شنو غادي تربح:", en: "What you will gain:", fr: "Ce que vous y gagnez :" },
-    ben_1: { ar: "أسنان أبيض ملحوظ من أول استعمال", en: "Visibly whiter teeth from first use", fr: "Dents visiblement plus blanches dès la première utilisation" },
-    ben_2: { ar: "نتيجة فـ30 دقيقة — ماشي أسابيع", en: "Results in 30 minutes — not weeks", fr: "Résultats en 30 minutes — pas en semaines" },
-    ben_3: { ar: "آمن تمامًا — بلا ألم، بلا حساسية", en: "Completely safe — no pain, no sensitivity", fr: "Totalement sûr — sans douleur, sans sensibilité" },
-    ben_4: { ar: "سهل: حط، استنى 30 دقيقة، نحّي", en: "Easy: apply, wait 30 mins, remove", fr: "Facile : appliquez, attendez 30 min, retirez" },
-    ben_5: { ar: "14 استعمال فكل علبة", en: "14 uses in each box", fr: "14 utilisations par boîte" },
-    ben_6: { ar: "ضمان استرجاع الفلوس — إلا ماعجبكش، ترجع ليك فلوسك", en: "Money-back guarantee — if you don't like it, get a refund", fr: "Garantie de remboursement — si vous n'aimez pas, vous êtes remboursé" },
+    ben_1: { ar: "أسنان أكثر بياضاً بشكل ملحوظ من أول استعمال", en: "Visibly whiter teeth from the very first use", fr: "Des dents visiblement plus blanches dès la première utilisation" },
+    ben_2: { ar: "نتيجة في 30 دقيقة وليس بعد أسابيع", en: "Results in 30 minutes — not weeks", fr: "Résultat en 30 minutes — pas en plusieurs semaines" },
+    ben_3: { ar: "آمن تماماً — بلا ألم وبلا حساسية", en: "Completely safe — no pain, no sensitivity", fr: "Totalement sûr — sans douleur, sans sensibilité" },
+    ben_4: { ar: "سهل الاستعمال: ضع، انتظر 30 دقيقة، ثم أزل", en: "Easy: apply, wait 30 minutes, peel off", fr: "Facile : posez, attendez 30 minutes, retirez" },
+    ben_5: { ar: "14 استعمالاً في كل علبة", en: "14 uses in every box", fr: "14 utilisations dans chaque boîte" },
+    ben_6: { ar: "ضمان استرجاع المال — إذا لم يعجبك، نُعيد لك أموالك", en: "Money-back guarantee — don't love it? Full refund", fr: "Satisfait ou remboursé — si ça ne vous plaît pas, on vous rembourse" },
 
     proof_10m: { ar: "منتج V34 تباع حول العالم", en: "V34 products sold worldwide", fr: "Produits V34 vendus dans le monde" },
     proof_96_lead: { ar: "في دراسة سريرية*", en: "In a clinical study*", fr: "Dans une étude clinique*" },

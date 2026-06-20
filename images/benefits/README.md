@@ -1,19 +1,21 @@
 # Benefits infographic (AR / EN / FR)
 
-Language-specific marketing graphics for the benefits section.
+**Live page:** uses native HTML/CSS (`.benefits-visual`) with i18n strings — perfect Arabic and blends with `--surface-alt` (`#f4f0f9`).
+
+**Optional raster exports** (AI text often breaks Arabic — not used on page):
 
 | File | Language |
 |------|----------|
-| `benefits-infographic-ar.webp` | Arabic |
-| `benefits-infographic-en.webp` | English |
-| `benefits-infographic-fr.webp` | French |
+| `benefits-infographic-ar.webp` | Arabic (legacy) |
+| `benefits-infographic-en.webp` | English (legacy) |
+| `benefits-infographic-fr.webp` | French (legacy) |
+| `strip-center.webp` | Center product strip crop |
 
-Regenerate from `source.png` (copy of root `product image.png`):
+Regenerate rasters (OpenAI `dall-e-2` edit, not Nano Banana):
 
 ```bash
-OPENAI_API_KEY=... python scripts/generate-benefits-infographic.py ar
-# verify Arabic, then:
-OPENAI_API_KEY=... python scripts/generate-benefits-infographic.py en fr
+set OPENAI_API_KEY=your_key
+python scripts/generate-benefits-infographic.py ar --model dall-e-2
 ```
 
-Then convert to WebP with Pillow if needed. Push to `main` for jsDelivr CDN.
+Source: `source.png` (from root `product image.png`).
