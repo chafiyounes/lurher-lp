@@ -139,8 +139,8 @@
               <span data-i18n="hero_proof">+2,000 طلبية سلمات فالمغرب</span>
             </div>
             <button type="button" class="btn-primary scroll-to-checkout hero-cta">
-              <span class="material-symbols-outlined">shopping_bag</span>
-              <span data-i18n="land_hero_cta">صيفط طلبيتك دابا 👇</span>
+              <span class="material-symbols-outlined" aria-hidden="true">shopping_bag</span>
+              <span class="btn-label" data-i18n="land_hero_cta">صيفط طلبيتك دابا</span>
             </button>
             <p class="hero-cod-note" data-i18n="hero_cod">✓ الدفع عند الاستلام &nbsp;·&nbsp; ✓ توصيل مجاني</p>
           </div>
@@ -163,10 +163,6 @@
           <span class="trust-icon"><span class="material-symbols-outlined">verified_user</span></span>
           <span data-i18n="trust_guarantee">ضمان استرجاع الفلوس</span>
         </div>
-        <div class="trust-item">
-          <span class="trust-icon"><span class="material-symbols-outlined">science</span></span>
-          <span data-i18n="trust_safe">آمن على المينا</span>
-        </div>
       </div>
     </div>
 
@@ -177,42 +173,13 @@
       <div class="section-container">
 
         <div class="section-head text-center checkout-headline">
-          <span class="section-eyebrow" data-i18n="checkout_eyebrow">اطلب دابا</span>
-          <h2 class="t-h2" data-i18n="land_checkout_h">أكمل طلبيتك دابا — الدفع عند الاستلام</h2>
-          <p class="section-desc" data-i18n="land_order_sub">الدفع عند الاستلام، بلا خلاص مسبق. التوصيل لجميع مدن المغرب.</p>
+          <h2 class="t-h2 checkout-title" data-i18n="land_checkout_h">أكمل طلبيتك دابا — الدفع عند الاستلام</h2>
+          <p class="section-desc checkout-desc" data-i18n="land_order_sub">الدفع عند الاستلام، بلا خلاص مسبق. التوصيل لجميع مدن المغرب.</p>
         </div>
 
         <div class="checkout-box reveal">
-          <!-- Left: Product info -->
-          <div class="checkout-info">
-            <div class="checkout-trust-badges">
-              <div class="badge-item">
-                <span class="material-symbols-outlined">local_shipping</span>
-                <div class="badge-texts">
-                  <strong data-i18n="ct_ship">توصيل مجاني وسريع</strong>
-                  <span data-i18n="ct_ship_sub">24-48 ساعة لجميع مدن المغرب</span>
-                </div>
-              </div>
-              <div class="badge-item">
-                <span class="material-symbols-outlined">payments</span>
-                <div class="badge-texts">
-                  <strong data-i18n="trust_cod">الدفع عند الاستلام</strong>
-                  <span data-i18n="trust_cod_sub">تأكد من المنتج عاد خلص</span>
-                </div>
-              </div>
-              <div class="badge-item">
-                <span class="material-symbols-outlined">verified_user</span>
-                <div class="badge-texts">
-                  <strong data-i18n="ct_guarantee">ضمان 30 يوم</strong>
-                  <span data-i18n="ct_guarantee_sub">إلا ماعجبكش نرجعو ليك فلوسك</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right: Premium order card (first on mobile) -->
           <div class="checkout-form-side" id="checkout-form">
-            <div class="order-card">
+            <div class="order-card order-card--compact">
               <div class="order-card-top">
                 <img class="order-card-thumb" alt="V34 Strips" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-01-V34Strips_no-badge31_10_15_595x.webp" loading="eager"/>
                 <div class="order-card-offer">
@@ -222,17 +189,10 @@
                     <span class="strike-price" data-i18n="land_strike">350 د.م.</span>
                   </div>
                   <span class="savings-tag" data-i18n="savings_tag">وفّرت 105 د.م. (30%)</span>
-                  <p class="checkout-proof-line">
-                    <span class="mini-stars">★★★★★</span>
-                    <span data-i18n="hero_proof">+2,000 طلبية سلمات فالمغرب</span>
-                  </p>
                 </div>
               </div>
 
               <div class="order-card-body">
-                <h3 class="form-title" data-i18n="form_title">أكمل طلبيتك دابا</h3>
-                <p class="form-subtitle" data-i18n="form_subtitle">ملي تضغط "أكد الطلب"، غادي يتواصل معك أحد دفرقة ديالنا باش يأكد التوصيل.</p>
-
                 <div id="express-checkout-section" class="product-section"
                      data-pb-section="PBS-w3wje1780392350746"
                      data-pb-field="product-id"
@@ -279,8 +239,8 @@
 
               <div class="order-card-footer">
                 <button type="submit" form="custom-express-checkout-form" class="btn-primary btn-full btn-submit order-submit">
-                  <span class="material-symbols-outlined">shopping_bag</span>
-                  <span data-i18n="submit_order">أكد الطلب — الدفع عند الاستلام</span>
+                  <span class="material-symbols-outlined" aria-hidden="true">shopping_bag</span>
+                  <span class="btn-label" data-i18n="submit_order">أكد الطلب</span>
                 </button>
                 <p class="form-security-note">
                   <span class="material-symbols-outlined">lock</span>
@@ -289,6 +249,30 @@
               </div>
             </div>
           </div>
+
+          <aside class="checkout-assurance" aria-label="Order guarantees">
+            <div class="badge-item">
+              <span class="material-symbols-outlined">local_shipping</span>
+              <div class="badge-texts">
+                <strong data-i18n="ct_ship">توصيل سريع</strong>
+                <span data-i18n="ct_ship_sub">فابور و سريع (24-48 ساعة)</span>
+              </div>
+            </div>
+            <div class="badge-item">
+              <span class="material-symbols-outlined">payments</span>
+              <div class="badge-texts">
+                <strong data-i18n="trust_cod">الدفع عند الاستلام</strong>
+                <span data-i18n="trust_cod_sub">تأكد من المنتج عاد خلص</span>
+              </div>
+            </div>
+            <div class="badge-item">
+              <span class="material-symbols-outlined">verified_user</span>
+              <div class="badge-texts">
+                <strong data-i18n="ct_guarantee">ضمان 100%</strong>
+                <span data-i18n="ct_guarantee_sub">ضمان 30 يوم استرجاع الفلوس</span>
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
@@ -505,8 +489,8 @@
             </div>
           </div>
           <button type="button" class="btn-primary scroll-to-checkout final-cta-btn">
-            <span class="material-symbols-outlined">shopping_bag</span>
-            <span data-i18n="submit_order">أكد الطلب — الدفع عند الاستلام</span>
+            <span class="material-symbols-outlined" aria-hidden="true">shopping_bag</span>
+            <span class="btn-label" data-i18n="submit_order_long">أكد الطلب — الدفع عند الاستلام</span>
           </button>
         </div>
       </div>
@@ -609,7 +593,9 @@
           </div>
         </div>
         <p class="faq-cta-wrap">
-          <button type="button" class="btn-primary btn-full scroll-to-checkout faq-cta-btn" data-i18n="faq_cta">جاهز؟ صيفط طلبيتك دابا — الدفع عند الاستلام</button>
+          <button type="button" class="btn-primary btn-full scroll-to-checkout faq-cta-btn">
+            <span class="btn-label" data-i18n="faq_cta">صيفط طلبيتك دابا</span>
+          </button>
         </p>
       </div>
     </section>
@@ -661,7 +647,9 @@
         <span data-i18n="sticky_price">245 د.م.</span>
       </div>
     </div>
-    <button type="button" class="btn-primary scroll-to-checkout sticky-cta-btn" id="stickyBtn" data-i18n="sticky_cta">اطلب الآن</button>
+    <button type="button" class="btn-primary scroll-to-checkout sticky-cta-btn" id="stickyBtn">
+      <span class="btn-label" data-i18n="sticky_cta">اطلب الآن</span>
+    </button>
   </nav>
 
   <!-- Footer -->

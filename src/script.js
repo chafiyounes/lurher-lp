@@ -37,7 +37,7 @@
       en: "Visible whitening in 30 minutes — no pain, no peroxide.",
       fr: "Blanchiment visible en 30 minutes — sans douleur, sans peroxyde."
     },
-    land_hero_cta: { ar: "صيفط طلبيتك دابا 👇", en: "Order Now 👇", fr: "Commander maintenant 👇" },
+    land_hero_cta: { ar: "صيفط طلبيتك دابا", en: "Order now", fr: "Commander" },
     
     trust_guarantee: { ar: "ضمان استرجاع الفلوس", en: "Money-back guarantee", fr: "Garantie de remboursement" },
     trust_ship: { ar: "توصيل لجميع المدن", en: "Delivery to all cities", fr: "Livraison partout" },
@@ -181,9 +181,14 @@
     },
     form_secure: { ar: "معلوماتك آمنة ومحمية", en: "Your information is safe and secure", fr: "Vos informations sont sécurisées" },
     submit_order: {
+      ar: "أكد الطلب",
+      en: "Confirm order",
+      fr: "Confirmer"
+    },
+    submit_order_long: {
       ar: "أكد الطلب — الدفع عند الاستلام",
-      en: "Confirm Order — Cash on Delivery",
-      fr: "Confirmer la commande — Paiement à la livraison"
+      en: "Confirm — cash on delivery",
+      fr: "Confirmer — paiement à la livraison"
     },
 
     ct_ship: { ar: "توصيل سريع", en: "Fast Shipping", fr: "Livraison Rapide" },
@@ -212,9 +217,9 @@
       fr: "Encore des doutes ? Ces réponses couvrent l'utilisation, la sécurité, la livraison et les retours."
     },
     faq_cta: {
-      ar: "جاهز؟ صيفط طلبيتك دابا — الدفع عند الاستلام",
-      en: "Ready? Place your order — Cash on Delivery",
-      fr: "Prêt ? Commandez — Paiement à la livraison"
+      ar: "صيفط طلبيتك دابا",
+      en: "Order now",
+      fr: "Commander"
     },
     faq_q1: { ar: "كيفاش كنستعمل شرائط V34؟", en: "How do I use V34 strips?", fr: "Comment utiliser les bandes V34 ?" },
     faq_a1: {
@@ -355,26 +360,16 @@
 
     function syncStickyState() {
       var vh = window.innerHeight;
-      var shouldShow = false;
       var hideForForm = false;
+      // Follow the user through the whole page — only tuck away on the form itself
+      var shouldShow = window.scrollY > 24;
 
-      if (hero) {
-        var heroRect = hero.getBoundingClientRect();
-        var heroReady = heroRect.height > 200;
-        // Show once the hero has mostly scrolled away
-        shouldShow = heroReady && window.scrollY > 60 && heroRect.bottom < vh * 0.38;
-      }
-
-      if (checkoutForm && shouldShow) {
+      if (checkoutForm) {
         var formRect = checkoutForm.getBoundingClientRect();
         var visTop = Math.max(0, formRect.top);
         var visBottom = Math.min(vh, formRect.bottom);
         var visibleFormH = Math.max(0, visBottom - visTop);
-        // Hide only when the order card fills most of the screen (user is on the form)
-        hideForForm =
-          visibleFormH >= vh * 0.55 &&
-          formRect.top < vh * 0.32 &&
-          formRect.bottom > vh * 0.45;
+        hideForForm = visibleFormH >= vh * 0.5 && formRect.top < vh * 0.38;
       }
 
       if (hideForForm) {
@@ -691,6 +686,8 @@
       })(i);
       thumbs.appendChild(thumbBtn);
     });
+
+    root.style.setProperty("--hero-thumb-cols", String(manifest.slides.length));
 
     heroGalleryController = initMediaCarousel(root, {
       slideSelector: ".media-carousel-slide",
