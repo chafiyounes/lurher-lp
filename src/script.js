@@ -9,9 +9,9 @@
   var I18N = {
     /* Announcement */
     announce: {
-      ar: "🚚 التوصيل لجميع مدن المغرب — الدفع عند الاستلام",
-      en: "🚚 Free Delivery Across Morocco — Cash on Delivery",
-      fr: "🚚 Livraison partout au Maroc — Paiement à la livraison"
+      ar: "🚚 توصيل مجاني لجميع مدن المغرب",
+      en: "🚚 Free delivery across Morocco",
+      fr: "🚚 Livraison gratuite partout au Maroc"
     },
     nav_shop: { ar: "اطلب الآن", en: "Order Now", fr: "Commander" },
 
@@ -19,7 +19,7 @@
     hero_badge: { ar: "🏆 الأكثر مبيعاً في المغرب", en: "🏆 Best Seller in Morocco", fr: "🏆 Meilleure vente au Maroc" },
     hero_proof: { ar: "+2,000 طلبية سلمات فالمغرب", en: "+2,000 orders delivered in Morocco", fr: "+2 000 commandes livrées au Maroc" },
     hero_cod:   { ar: "✓ الدفع عند الاستلام   ·   ✓ توصيل مجاني", en: "✓ Cash on Delivery   ·   ✓ Free Shipping", fr: "✓ Paiement à la livraison   ·   ✓ Livraison gratuite" },
-    hero_cod_cod: { ar: "الدفع عند الاستلام", en: "Cash on Delivery", fr: "Paiement à la livraison" },
+    hero_cod_cod: { ar: "بلا خلاص مسبق", en: "No upfront payment", fr: "Sans paiement d'avance" },
     hero_cod_ship: { ar: "توصيل مجاني", en: "Free shipping", fr: "Livraison gratuite" },
     trust_safe: { ar: "آمن على المينا", en: "Enamel-safe", fr: "Sans danger pour l'émail" },
 
@@ -105,9 +105,9 @@
     ba_before: { ar: "قبل", en: "BEFORE", fr: "AVANT" },
     ba_after: { ar: "بعد", en: "AFTER", fr: "APRÈS" },
     land_checkout_h: {
-      ar: "أكمل طلبيتك دابا — الدفع عند الاستلام",
-      en: "Complete your order — Cash on Delivery",
-      fr: "Complétez votre commande — Paiement à la livraison"
+      ar: "أكمل طلبيتك دابا",
+      en: "Complete your order now",
+      fr: "Complétez votre commande"
     },
     checkout_eyebrow: { ar: "اطلب دابا", en: "Order now", fr: "Commandez" },
     why_eyebrow: { ar: "التكنولوجيا", en: "The technology", fr: "La technologie" },
@@ -160,6 +160,11 @@
 
     land_order_h: { ar: "كل يوم كتأجّل، هو يوم بأسنان أقل بياضًا.", en: "Every day you delay is a day with less white teeth.", fr: "Chaque jour de retard est un jour avec des dents moins blanches." },
     land_order_sub: { ar: "الدفع عند الاستلام، بلا خلاص مسبق. التوصيل لجميع مدن المغرب.", en: "Cash on Delivery, no upfront payment. Delivery to all Moroccan cities.", fr: "Paiement à la livraison, aucun paiement d'avance. Livraison dans tout le Maroc." },
+    final_cta_sub: {
+      ar: "ضمان استرجاع الفلوس — آخر فرصة على هاد الثمن.",
+      en: "Money-back guarantee — last chance at this price.",
+      fr: "Garantie satisfait ou remboursé — dernière chance à ce prix."
+    },
     land_price:   { ar: "245 د.م.", en: "245 MAD", fr: "245 MAD" },
     land_strike:  { ar: "350 د.م.", en: "350 MAD", fr: "350 MAD" },
     savings_tag:  { ar: "وفّرت 105 د.م. (30%)", en: "You save 105 MAD (30%)", fr: "Vous économisez 105 MAD (30%)" },
@@ -440,7 +445,7 @@
   });
 
   /* ── Shared horizontal carousel (hero gallery only) ── */
-  var HERO_MANIFEST_URL = "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/hero/manifest.json?v=3";
+  var HERO_MANIFEST_URL = "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/hero/manifest.json?v=4";
 
   var HERO_MANIFEST_FALLBACK = {
     baseUrl: "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/hero/",
