@@ -157,14 +157,6 @@
       en: "Genuine product, 14 uses in the box. Read the box instructions: dry, apply, wait at least 30 minutes, remove and brush — that's how you get the best results.",
       fr: "Produit authentique, 14 utilisations. Instructions sur la boîte : sécher, appliquer, attendre 30 min minimum, retirer et brosser — pour le meilleur résultat."
     },
-    rev5_name: { ar: "ليلى .ك", en: "Layla .K", fr: "Layla .K" },
-    rev5_city: { ar: "أكادير", en: "Agadir", fr: "Agadir" },
-    rev5_text: {
-      ar: "قبل، أثناء، وبعد — الفرق باين فـ30 دقيقة. نشّفت سناني، حطيت الشرائط، وخليتهم نص ساعة. النتيجة كتبان فالصورة.",
-      en: "Before, during, and after — the difference shows in 30 minutes. Dried my teeth, applied the strips, left them 30 minutes. Results speak in the photo.",
-      fr: "Avant, pendant et après — la différence en 30 minutes. Dents sèches, bandes posées, 30 minutes d'attente. Le résultat parle en photo."
-    },
-
     land_order_h: { ar: "كل يوم كتأجّل، هو يوم بأسنان أقل بياضًا.", en: "Every day you delay is a day with less white teeth.", fr: "Chaque jour de retard est un jour avec des dents moins blanches." },
     land_order_sub: { ar: "الدفع عند الاستلام، بلا خلاص مسبق. التوصيل لجميع مدن المغرب.", en: "Cash on Delivery, no upfront payment. Delivery to all Moroccan cities.", fr: "Paiement à la livraison, aucun paiement d'avance. Livraison dans tout le Maroc." },
     final_cta_sub: {
@@ -452,7 +444,10 @@
   });
 
   /* ── Shared horizontal carousel (hero gallery only) ── */
-  var HERO_MANIFEST_URL = "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/hero/manifest.json?v=6";
+  var HERO_ASSET_VERSION = 7;
+  var HERO_MANIFEST_URL =
+    "https://raw.githubusercontent.com/chafiyounes/mapper-youcant/main/images/hero/manifest.json?v=" +
+    HERO_ASSET_VERSION;
 
   var HERO_MANIFEST_FALLBACK = {
     baseUrl: "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/hero/",
@@ -497,7 +492,10 @@
       }
     }
     if (!file) return "";
-    return file.indexOf("http") === 0 ? file : base + file;
+    if (file.indexOf("http") === 0) return file;
+    var url = base + file;
+    var sep = url.indexOf("?") >= 0 ? "&" : "?";
+    return url + sep + "v=" + HERO_ASSET_VERSION;
   }
 
   function heroSlideAlt(slide, lang) {
