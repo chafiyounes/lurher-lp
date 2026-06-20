@@ -146,16 +146,16 @@
     rev3_name: { ar: "مريم .أ", en: "Meryem .A", fr: "Meryem .A" },
     rev3_city: { ar: "طنجة", en: "Tangier", fr: "Tanger" },
     rev3_text: {
-      ar: "عندي سنان حساسة وكنت خايفة من التبييض. بلا بيروكسيد، خليت الشرائط ساعة كاملة بلا ما نحس بألم. المهم: يكونو السنان جافين قبل ما تحطي، ومن بعد تفركي عادي.",
-      en: "I have sensitive teeth and was scared of whitening. Peroxide-free — left strips on a full hour, no pain. Key: dry teeth before applying and brush normally after.",
-      fr: "Dents sensibles — j'avais peur. Sans peroxyde, une heure complète sans douleur. Clé : dents sèches avant et brossage normal après."
+      ar: "عندي سنان حساسة وكنت خايفة نجرب. ولكن بلا بيروكسيد، ما حسّيت بحتى حساسية. من أول أسبوع بدا الفرق يبان، وبعد 14 استعمال سناني أفتح بكثير. توصيتها لـ3 صاحبات وكلهم راضيين.",
+      en: "I have sensitive teeth and was nervous to try. But no peroxide means zero sensitivity. After the first week I started seeing a difference — and after 14 uses my teeth were noticeably brighter. Recommended it to 3 friends, all happy.",
+      fr: "Dents sensibles, j'hésitais. Mais sans peroxyde, aucune sensibilité ressentie. Dès la première semaine la différence se voyait. Après 14 utilisations mes dents sont bien plus claires. Recommandé à 3 amies, toutes satisfaites."
     },
     rev4_name: { ar: "أمين .ر", en: "Amine .R", fr: "Amine .R" },
     rev4_city: { ar: "مراكش", en: "Marrakech", fr: "Marrakech" },
     rev4_text: {
-      ar: "المنتج وصل أصلي والعلبة فيها 14 استعمال. قريت التعليمات: نشّف، حط، استنّى 30 دقيقة على الأقل، حيد الشرائط وفرك — هكذا كتطلع أحسن نتيجة.",
-      en: "Genuine product, 14 uses in the box. Read the box instructions: dry, apply, wait at least 30 minutes, remove and brush — that's how you get the best results.",
-      fr: "Produit authentique, 14 utilisations. Instructions sur la boîte : sécher, appliquer, attendre 30 min minimum, retirer et brosser — pour le meilleur résultat."
+      ar: "المنتج وصل بالتغليف الأصلي مافيه أي خدش. العلبة فيها 14 شريط — كافيين لشهر كامل. الفرق فسناني بان واضح والناس بدات تلاحظ. صورة المنتج صادقة 100%.",
+      en: "Product arrived in perfect original packaging. The box has 14 strips — enough for a full month. The difference in my teeth was obvious and people started to notice. The product photos are 100% accurate.",
+      fr: "Produit reçu dans son emballage d'origine impeccable. La boîte contient 14 bandes — suffisant pour un mois entier. La différence était visible et mon entourage l'a remarqué. Les photos du produit sont fidèles à la réalité."
     },
     land_order_h: { ar: "كل يوم كتأجّل، هو يوم بأسنان أقل بياضًا.", en: "Every day you delay is a day with less white teeth.", fr: "Chaque jour de retard est un jour avec des dents moins blanches." },
     land_order_sub: { ar: "الدفع عند الاستلام، بلا خلاص مسبق. التوصيل لجميع مدن المغرب.", en: "Cash on Delivery, no upfront payment. Delivery to all Moroccan cities.", fr: "Paiement à la livraison, aucun paiement d'avance. Livraison dans tout le Maroc." },
@@ -450,7 +450,7 @@
     HERO_ASSET_VERSION;
 
   var HERO_MANIFEST_FALLBACK = {
-    baseUrl: "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/hero/",
+    baseUrl: "https://raw.githubusercontent.com/chafiyounes/mapper-youcant/main/images/hero/",
     slides: [
       {
         id: "main",
