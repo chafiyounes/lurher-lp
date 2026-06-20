@@ -157,6 +157,13 @@
       en: "Genuine product, 14 uses in the box. Read the box instructions: dry, apply, wait at least 30 minutes, remove and brush — that's how you get the best results.",
       fr: "Produit authentique, 14 utilisations. Instructions sur la boîte : sécher, appliquer, attendre 30 min minimum, retirer et brosser — pour le meilleur résultat."
     },
+    rev5_name: { ar: "ليلى .ك", en: "Layla .K", fr: "Layla .K" },
+    rev5_city: { ar: "أكادير", en: "Agadir", fr: "Agadir" },
+    rev5_text: {
+      ar: "قبل، أثناء، وبعد — الفرق باين فـ30 دقيقة. نشّفت سناني، حطيت الشرائط، وخليتهم نص ساعة. النتيجة كتبان فالصورة.",
+      en: "Before, during, and after — the difference shows in 30 minutes. Dried my teeth, applied the strips, left them 30 minutes. Results speak in the photo.",
+      fr: "Avant, pendant et après — la différence en 30 minutes. Dents sèches, bandes posées, 30 minutes d'attente. Le résultat parle en photo."
+    },
 
     land_order_h: { ar: "كل يوم كتأجّل، هو يوم بأسنان أقل بياضًا.", en: "Every day you delay is a day with less white teeth.", fr: "Chaque jour de retard est un jour avec des dents moins blanches." },
     land_order_sub: { ar: "الدفع عند الاستلام، بلا خلاص مسبق. التوصيل لجميع مدن المغرب.", en: "Cash on Delivery, no upfront payment. Delivery to all Moroccan cities.", fr: "Paiement à la livraison, aucun paiement d'avance. Livraison dans tout le Maroc." },
@@ -445,32 +452,53 @@
   });
 
   /* ── Shared horizontal carousel (hero gallery only) ── */
-  var HERO_MANIFEST_URL = "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/hero/manifest.json?v=4";
+  var HERO_MANIFEST_URL = "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/hero/manifest.json?v=5";
 
   var HERO_MANIFEST_FALLBACK = {
     baseUrl: "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/hero/",
     slides: [
       {
-        id: "product",
-        image: "01-product.webp",
-        thumb: "01-product-thumb.webp",
-        fallback: "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-01-V34Strips_no-badge31_10_15_595x.webp",
-        alt: { ar: "شرائط Hismile V34 للتبييض", en: "Hismile V34 Whitening Strips", fr: "Bandes blanchissantes Hismile V34" }
+        id: "main",
+        image: "01-main.webp",
+        thumb: "01-main-thumb.webp",
+        alt: { ar: "أكثر من 10 ملايين منتج V34 تباع عالمياً", en: "10M+ V34 products sold worldwide", fr: "Plus de 10 millions de produits V34 vendus" }
       },
       {
-        id: "showcase",
-        image: "04-showcase.webp",
-        thumb: "04-showcase-thumb.webp",
-        alt: { ar: "عرض المنتج والعلبة", en: "Product and box showcase", fr: "Présentation du produit" }
+        id: "main2",
+        image: { ar: "02-main2-ar.webp", en: "02-main2-en.webp", fr: "02-main2-fr.webp" },
+        thumb: { ar: "02-main2-ar-thumb.webp", en: "02-main2-en-thumb.webp", fr: "02-main2-fr-thumb.webp" },
+        alt: { ar: "نتائج حقيقية — بدون مبالغة", en: "Real results — no exaggeration", fr: "Résultats réels — sans exagération" }
       },
       {
-        id: "guarantee",
-        image: "05-guarantee.webp",
-        thumb: "05-guarantee-thumb.webp",
-        alt: { ar: "ضمان استرجاع الفلوس", en: "Money-back guarantee", fr: "Garantie satisfait ou remboursé" }
+        id: "info",
+        image: { ar: "03-info-ar.webp", en: "03-info-en.webp", fr: "03-info-fr.webp" },
+        thumb: { ar: "03-info-ar-thumb.webp", en: "03-info-en-thumb.webp", fr: "03-info-fr-thumb.webp" },
+        alt: { ar: "96% من المشاركين أسنانهم أفتح بدرجتين أو أكثر", en: "96% of participants had teeth two shades whiter or more", fr: "96% des participants : dents deux teintes plus blanches" }
+      },
+      {
+        id: "topresults",
+        image: "04-topresults.webp",
+        thumb: "04-topresults-thumb.webp",
+        alt: { ar: "أفضل نتائج التبييض", en: "Top teeth whitening results", fr: "Meilleurs résultats de blanchiment" }
       }
     ]
   };
+
+  var heroManifestCache = null;
+
+  function heroSlideAsset(asset, lang, base) {
+    if (!asset) return "";
+    var file = asset;
+    if (typeof asset === "object") {
+      file = asset[lang] || asset.en || asset.ar || asset.fr;
+      if (!file) {
+        var keys = Object.keys(asset);
+        file = keys.length ? asset[keys[0]] : "";
+      }
+    }
+    if (!file) return "";
+    return file.indexOf("http") === 0 ? file : base + file;
+  }
 
   function heroSlideAlt(slide, lang) {
     if (slide.alt && slide.alt[lang]) return slide.alt[lang];
@@ -628,14 +656,15 @@
     var thumbs = document.getElementById("hero-gallery-thumbs");
     if (!root || !track || !thumbs || !manifest || !manifest.slides) return;
 
+    heroManifestCache = manifest;
     var lang = langs[currentLangIndex];
     var base = manifest.baseUrl || "";
     track.innerHTML = "";
     thumbs.innerHTML = "";
 
     manifest.slides.forEach(function (slide, i) {
-      var mainSrc = slide.image.indexOf("http") === 0 ? slide.image : base + slide.image;
-      var thumbSrc = slide.thumb.indexOf("http") === 0 ? slide.thumb : base + (slide.thumb || slide.image);
+      var mainSrc = heroSlideAsset(slide.image, lang, base);
+      var thumbSrc = heroSlideAsset(slide.thumb || slide.image, lang, base);
       var fallback = slide.fallback || null;
       var alt = heroSlideAlt(slide, lang);
 
@@ -646,6 +675,7 @@
       img.alt = alt;
       img.loading = i === 0 ? "eager" : "lazy";
       img.decoding = "async";
+      img.setAttribute("data-slide-index", String(i));
       img.setAttribute("data-alt-ar", slide.alt && slide.alt.ar ? slide.alt.ar : "");
       img.setAttribute("data-alt-en", slide.alt && slide.alt.en ? slide.alt.en : "");
       img.setAttribute("data-alt-fr", slide.alt && slide.alt.fr ? slide.alt.fr : "");
@@ -661,6 +691,7 @@
       thumbBtn.setAttribute("aria-selected", i === 0 ? "true" : "false");
       var thumbImg = document.createElement("img");
       thumbImg.alt = "";
+      thumbImg.setAttribute("data-slide-index", String(i));
       bindImageFallback(thumbImg, thumbSrc, fallback);
       thumbBtn.appendChild(thumbImg);
       (function (idx) {
@@ -681,7 +712,28 @@
     });
   }
 
+  function updateHeroGalleryImages() {
+    if (!heroManifestCache || !heroManifestCache.slides) return;
+    var lang = langs[currentLangIndex];
+    var base = heroManifestCache.baseUrl || "";
+    var slideImgs = document.querySelectorAll("#hero-gallery-track img[data-slide-index]");
+    var thumbImgs = document.querySelectorAll("#hero-gallery-thumbs img[data-slide-index]");
+    heroManifestCache.slides.forEach(function (slide, i) {
+      var mainSrc = heroSlideAsset(slide.image, lang, base);
+      var thumbSrc = heroSlideAsset(slide.thumb || slide.image, lang, base);
+      if (slideImgs[i]) {
+        slideImgs[i].dataset.fallbackTried = "";
+        slideImgs[i].src = mainSrc;
+      }
+      if (thumbImgs[i]) {
+        thumbImgs[i].dataset.fallbackTried = "";
+        thumbImgs[i].src = thumbSrc;
+      }
+    });
+  }
+
   function updateHeroGalleryAlts() {
+    updateHeroGalleryImages();
     var lang = langs[currentLangIndex];
     var imgs = document.querySelectorAll("#hero-gallery-track img[data-alt-ar]");
     for (var i = 0; i < imgs.length; i++) {

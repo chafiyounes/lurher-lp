@@ -1,32 +1,33 @@
 # Hero gallery images
 
-The hero carousel reads [`manifest.json`](manifest.json). Add your Arabic diagrams/graphics here, then push to GitHub.
+The hero carousel reads [`manifest.json`](manifest.json). Four slides: **main**, **main2**, **info**, **topresults**.
 
-## File naming
+## Slides
 
-For each slide in `manifest.json`:
+| ID | Files | Language |
+|----|-------|----------|
+| `main` | `01-main.webp` | Same for AR / EN / FR |
+| `main2` | `02-main2-{ar,en,fr}.webp` | Per language |
+| `info` | `03-info-{ar,en,fr}.webp` | Per language (96% study) |
+| `topresults` | `04-topresults.webp` | Same for all |
 
-| Field | Purpose |
-|-------|---------|
-| `image` | Main slide (e.g. `02-sold-10m.webp`) — full width in carousel |
-| `thumb` | Thumbnail under carousel (e.g. `02-sold-10m-thumb.webp`) — ~120px wide |
-| `fallback` | Used until your file exists on CDN (optional after upload) |
+Each slide has a `-thumb.webp` variant for the thumbnail row below the viewport.
 
-## Adding a new slide
-
-1. Drop `07-my-slide.webp` and `07-my-slide-thumb.webp` in this folder.
-2. Append to `manifest.json`:
+## Lang-keyed slide (manifest)
 
 ```json
 {
-  "id": "my-slide",
-  "image": "07-my-slide.webp",
-  "thumb": "07-my-slide-thumb.webp",
-  "fallback": "https://...",
+  "id": "main2",
+  "image": { "ar": "02-main2-ar.webp", "en": "02-main2-en.webp", "fr": "02-main2-fr.webp" },
+  "thumb": { "ar": "02-main2-ar-thumb.webp", "en": "02-main2-en-thumb.webp", "fr": "02-main2-fr-thumb.webp" },
   "alt": { "ar": "...", "en": "...", "fr": "..." }
 }
 ```
 
-3. Push to `main` — no HTML/JS edit required unless you change layout.
+Regenerate from source assets in `images/`:
 
-Recommended: WebP, ~1200px wide for main slides, ~200px for thumbs.
+```bash
+python scripts/optimize-landing-images.py
+```
+
+Push to `main` and bump `manifest.json?v=` in `src/script.js` if CDN caches stale.

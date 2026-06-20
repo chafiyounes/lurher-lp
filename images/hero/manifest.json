@@ -2,33 +2,59 @@
   "baseUrl": "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/hero/",
   "slides": [
     {
-      "id": "product",
-      "image": "01-product.webp",
-      "thumb": "01-product-thumb.webp",
+      "id": "main",
+      "image": "01-main.webp",
+      "thumb": "01-main-thumb.webp",
       "alt": {
-        "ar": "شرائط Hismile V34 للتبييض",
-        "en": "Hismile V34 Whitening Strips",
-        "fr": "Bandes blanchissantes Hismile V34"
+        "ar": "أكثر من 10 ملايين منتج V34 تباع عالمياً",
+        "en": "10M+ V34 products sold worldwide",
+        "fr": "Plus de 10 millions de produits V34 vendus"
       }
     },
     {
-      "id": "showcase",
-      "image": "04-showcase.webp",
-      "thumb": "04-showcase-thumb.webp",
+      "id": "main2",
+      "image": {
+        "ar": "02-main2-ar.webp",
+        "en": "02-main2-en.webp",
+        "fr": "02-main2-fr.webp"
+      },
+      "thumb": {
+        "ar": "02-main2-ar-thumb.webp",
+        "en": "02-main2-en-thumb.webp",
+        "fr": "02-main2-fr-thumb.webp"
+      },
       "alt": {
-        "ar": "عرض المنتج والعلبة",
-        "en": "Product and box showcase",
-        "fr": "Présentation du produit"
+        "ar": "نتائج حقيقية — بدون مبالغة",
+        "en": "Real results — no exaggeration",
+        "fr": "Résultats réels — sans exagération"
       }
     },
     {
-      "id": "guarantee",
-      "image": "05-guarantee.webp",
-      "thumb": "05-guarantee-thumb.webp",
+      "id": "info",
+      "image": {
+        "ar": "03-info-ar.webp",
+        "en": "03-info-en.webp",
+        "fr": "03-info-fr.webp"
+      },
+      "thumb": {
+        "ar": "03-info-ar-thumb.webp",
+        "en": "03-info-en-thumb.webp",
+        "fr": "03-info-fr-thumb.webp"
+      },
       "alt": {
-        "ar": "ضمان استرجاع الفلوس",
-        "en": "Money-back guarantee",
-        "fr": "Garantie satisfait ou remboursé"
+        "ar": "96% من المشاركين أسنانهم أفتح بدرجتين أو أكثر",
+        "en": "96% of participants had teeth two shades whiter or more",
+        "fr": "96% des participants : dents deux teintes plus blanches"
+      }
+    },
+    {
+      "id": "topresults",
+      "image": "04-topresults.webp",
+      "thumb": "04-topresults-thumb.webp",
+      "alt": {
+        "ar": "أفضل نتائج التبييض",
+        "en": "Top teeth whitening results",
+        "fr": "Meilleurs résultats de blanchiment"
       }
     }
   ]
