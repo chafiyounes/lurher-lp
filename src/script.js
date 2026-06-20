@@ -19,6 +19,8 @@
     hero_badge: { ar: "🏆 الأكثر مبيعاً في المغرب", en: "🏆 Best Seller in Morocco", fr: "🏆 Meilleure vente au Maroc" },
     hero_proof: { ar: "+2,000 طلبية سلمات فالمغرب", en: "+2,000 orders delivered in Morocco", fr: "+2 000 commandes livrées au Maroc" },
     hero_cod:   { ar: "✓ الدفع عند الاستلام   ·   ✓ توصيل مجاني", en: "✓ Cash on Delivery   ·   ✓ Free Shipping", fr: "✓ Paiement à la livraison   ·   ✓ Livraison gratuite" },
+    hero_cod_cod: { ar: "الدفع عند الاستلام", en: "Cash on Delivery", fr: "Paiement à la livraison" },
+    hero_cod_ship: { ar: "توصيل مجاني", en: "Free shipping", fr: "Livraison gratuite" },
     trust_safe: { ar: "آمن على المينا", en: "Enamel-safe", fr: "Sans danger pour l'émail" },
 
     /* ─── LANDING PAGE ─── */
@@ -438,7 +440,7 @@
   });
 
   /* ── Shared horizontal carousel (hero gallery only) ── */
-  var HERO_MANIFEST_URL = "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/hero/manifest.json";
+  var HERO_MANIFEST_URL = "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/hero/manifest.json?v=3";
 
   var HERO_MANIFEST_FALLBACK = {
     baseUrl: "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/hero/",
@@ -451,39 +453,16 @@
         alt: { ar: "شرائط Hismile V34 للتبييض", en: "Hismile V34 Whitening Strips", fr: "Bandes blanchissantes Hismile V34" }
       },
       {
-        id: "results",
-        image: "06-results.webp",
-        thumb: "06-results-thumb.webp",
-        fallback: "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/after_image.jpg",
-        alt: { ar: "نتائج قبل وبعد", en: "Before and after results", fr: "Résultats avant et après" }
-      },
-      {
         id: "showcase",
         image: "04-showcase.webp",
         thumb: "04-showcase-thumb.webp",
-        fallback: "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/products/showcase.jpg",
         alt: { ar: "عرض المنتج والعلبة", en: "Product and box showcase", fr: "Présentation du produit" }
       },
       {
         id: "guarantee",
         image: "05-guarantee.webp",
         thumb: "05-guarantee-thumb.webp",
-        fallback: "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/products/box-showcase.jpg",
         alt: { ar: "ضمان استرجاع الفلوس", en: "Money-back guarantee", fr: "Garantie satisfait ou remboursé" }
-      },
-      {
-        id: "study-96",
-        image: "03-study-96.webp",
-        thumb: "03-study-96-thumb.webp",
-        fallback: "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-04-V34Strips-updated22_10_25_595x.webp",
-        alt: { ar: "96% من المشاركين لاحظوا درجتين أفتح أو أكثر", en: "96% of participants had 2+ shades whiter teeth", fr: "96% des participants ont eu 2 nuances ou plus" }
-      },
-      {
-        id: "sold-10m",
-        image: "02-sold-10m.webp",
-        thumb: "02-sold-10m-thumb.webp",
-        fallback: "https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-05-V34Strips-updated22_10_25_1208x.webp",
-        alt: { ar: "+10 مليون منتج V34 تباع حول العالم", en: "10 million+ V34 products sold worldwide", fr: "+10 millions de produits V34 vendus" }
       }
     ]
   };
@@ -495,10 +474,11 @@
 
   function bindImageFallback(img, primarySrc, fallbackSrc) {
     img.src = primarySrc;
+    if (!fallbackSrc || fallbackSrc === primarySrc) return;
     img.addEventListener("error", function onErr() {
-      if (img.src !== fallbackSrc && fallbackSrc) {
-        img.src = fallbackSrc;
-      }
+      if (img.dataset.fallbackTried === "1") return;
+      img.dataset.fallbackTried = "1";
+      if (img.src !== fallbackSrc) img.src = fallbackSrc;
     });
   }
 
@@ -651,7 +631,7 @@
     manifest.slides.forEach(function (slide, i) {
       var mainSrc = slide.image.indexOf("http") === 0 ? slide.image : base + slide.image;
       var thumbSrc = slide.thumb.indexOf("http") === 0 ? slide.thumb : base + (slide.thumb || slide.image);
-      var fallback = slide.fallback || mainSrc;
+      var fallback = slide.fallback || null;
       var alt = heroSlideAlt(slide, lang);
 
       var li = document.createElement("li");

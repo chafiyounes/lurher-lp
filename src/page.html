@@ -123,8 +123,8 @@
               <button type="button" class="media-carousel-btn media-carousel-next" aria-label="Next image">
                 <span class="material-symbols-outlined">chevron_left</span>
               </button>
+              <div class="media-carousel-thumbs media-carousel-thumbs--overlay" id="hero-gallery-thumbs" role="tablist" aria-label="Gallery thumbnails"></div>
             </div>
-            <div class="media-carousel-thumbs" id="hero-gallery-thumbs" role="tablist" aria-label="Gallery thumbnails"></div>
           </div>
         </div>
 
@@ -134,15 +134,18 @@
           <p class="hero-sub-short t-body t-muted" data-i18n="land_hero_sub_short">بياض ملحوظ فـ30 دقيقة — بلا ألم، بلا بيروكسيد.</p>
           <p class="hero-sub-long t-body-lg t-muted" data-i18n="land_hero_sub">تخيّل: كتهدر مع شي حد، كتبسم، وكتشوف نظرتو كتبدل. الأسنان البيضا ماشي غير زين — هي ثقة، هي حضور. شرائط V34 كتعطيك هاد الإحساس فـ30 دقيقة فقط.</p>
           <div class="hero-action-stack">
-            <div class="hero-social-proof">
-              <div class="mini-stars">★★★★★</div>
-              <span data-i18n="hero_proof">+2,000 طلبية سلمات فالمغرب</span>
+            <div class="hero-social-proof" aria-label="Customer rating">
+              <span class="mini-stars" aria-hidden="true">★★★★★</span>
+              <span class="hero-proof-text" data-i18n="hero_proof">+2,000 طلبية سلمات فالمغرب</span>
             </div>
             <button type="button" class="btn-primary scroll-to-checkout hero-cta">
               <span class="material-symbols-outlined" aria-hidden="true">shopping_bag</span>
               <span class="btn-label" data-i18n="land_hero_cta">صيفط طلبيتك دابا</span>
             </button>
-            <p class="hero-cod-note" data-i18n="hero_cod">✓ الدفع عند الاستلام &nbsp;·&nbsp; ✓ توصيل مجاني</p>
+            <ul class="hero-trust-chips" aria-label="Order benefits">
+              <li><span data-i18n="hero_cod_cod">الدفع عند الاستلام</span></li>
+              <li><span data-i18n="hero_cod_ship">توصيل مجاني</span></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -180,19 +183,18 @@
         <div class="checkout-box reveal">
           <div class="checkout-form-side" id="checkout-form">
             <div class="order-card order-card--compact">
-              <div class="order-card-top">
+              <div class="order-card-top order-card-top--slim">
                 <img class="order-card-thumb" alt="V34 Strips" src="https://cdn.jsdelivr.net/gh/chafiyounes/mapper-youcant@main/images/PP-01-V34Strips_no-badge31_10_15_595x.webp" loading="eager"/>
                 <div class="order-card-offer">
-                  <span class="order-card-badge" data-i18n="checkout_badge">عرض محدود</span>
                   <div class="checkout-price-row">
                     <span class="price-tag-big" data-i18n="land_price">245 د.م.</span>
                     <span class="strike-price" data-i18n="land_strike">350 د.م.</span>
+                    <span class="savings-tag savings-tag--inline" data-i18n="savings_tag">وفّرت 105 د.م. (30%)</span>
                   </div>
-                  <span class="savings-tag" data-i18n="savings_tag">وفّرت 105 د.م. (30%)</span>
                 </div>
               </div>
 
-              <div class="order-card-body">
+              <div class="order-card-body order-card-body--slim">
                 <div id="express-checkout-section" class="product-section"
                      data-pb-section="PBS-w3wje1780392350746"
                      data-pb-field="product-id"
@@ -206,7 +208,7 @@
                     <input type="hidden" name="extra_payload" value="">
 
                     <div class="premium-field form-group">
-                      <label class="field-label" data-i18n="form_name">الإسم الكامل</label>
+                      <label class="field-label visually-hidden" data-i18n="form_name">الإسم الكامل</label>
                       <div class="field-row">
                         <span class="material-symbols-outlined">person</span>
                         <input name="first_name" type="text" placeholder="محمد / فاطمة" data-i18n-placeholder="form_name_ph" autocomplete="name">
@@ -214,7 +216,7 @@
                     </div>
 
                     <div class="premium-field form-group">
-                      <label class="field-label" data-i18n="form_phone">رقم الهاتف</label>
+                      <label class="field-label visually-hidden" data-i18n="form_phone">رقم الهاتف</label>
                       <div class="field-row">
                         <span class="material-symbols-outlined">phone</span>
                         <input inputmode="tel" name="phone" type="text" placeholder="06XX XXX XXX" data-i18n-placeholder="form_phone_ph" autocomplete="tel">
@@ -222,7 +224,7 @@
                     </div>
 
                     <div class="premium-field form-group">
-                      <label class="field-label" data-i18n="form_city">المدينة</label>
+                      <label class="field-label visually-hidden" data-i18n="form_city">المدينة</label>
                       <div class="field-row">
                         <span class="material-symbols-outlined">location_on</span>
                         <input name="extra_fields[custom_field_cGzlrqWxXctNnheN]" type="text" placeholder="الدار البيضاء، الرباط..." data-i18n-placeholder="form_city_ph" autocomplete="address-level2">
