@@ -1192,7 +1192,10 @@
   padding: var(--sec-py) var(--sec-px);
   padding-bottom: calc(var(--sec-py) + 88px);
 }
-.faq-section .section-desc { color: #4a4a58; }
+.faq-section .section-head {
+  margin-bottom: clamp(28px, 4vw, 40px);
+}
+.faq-section .section-desc { color: #4a4a58; margin-bottom: 0; }
 .faq-panel {
   max-width: var(--max-w-narrow); margin: 0 auto;
   background: var(--surface-white);
@@ -1281,12 +1284,12 @@
 }
 .faq-cta-wrap {
   text-align: center;
-  margin-top: 32px;
-  padding-top: 4px;
-  max-width: 520px;
+  margin-top: clamp(40px, 6vw, 56px);
+  padding-top: 0;
+  max-width: var(--max-w-narrow);
   margin-inline: auto;
 }
-.faq-cta-btn { margin: 0; animation: none; width: 100%; }
+.faq-cta-btn { margin: 0; animation: none; width: 100%; max-width: 520px; }
 
 /* ─── CHECKOUT SECTION (HiSmile-style: light tint, purple on accents only) ─── */
 .checkout-section {
