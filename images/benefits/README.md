@@ -1,21 +1,18 @@
 # Benefits infographic (AR / EN / FR)
 
-**Live page:** uses native HTML/CSS (`.benefits-visual`) with i18n strings — perfect Arabic and blends with `--surface-alt` (`#f4f0f9`).
+Raster infographics for the benefits section. **EN** is the master template; **AR** is generated from EN via OpenAI `gpt-image-1` edit.
 
-**Optional raster exports** (AI text often breaks Arabic — not used on page):
+| File | Language | Source |
+|------|----------|--------|
+| `benefits-infographic-en.png` | English | `source.png` |
+| `benefits-infographic-ar.png` | Arabic | `benefits-infographic-en.png` |
+| `benefits-infographic-fr.png` | French | `benefits-infographic-en.png` |
 
-| File | Language |
-|------|----------|
-| `benefits-infographic-ar.webp` | Arabic (legacy) |
-| `benefits-infographic-en.webp` | English (legacy) |
-| `benefits-infographic-fr.webp` | French (legacy) |
-| `strip-center.webp` | Center product strip crop |
-
-Regenerate rasters (OpenAI `dall-e-2` edit, not Nano Banana):
+Regenerate Arabic only:
 
 ```bash
 set OPENAI_API_KEY=your_key
-python scripts/generate-benefits-infographic.py ar --model dall-e-2
+python scripts/generate-benefits-infographic.py ar --source benefits-infographic-en.png
 ```
 
-Source: `source.png` (from root `product image.png`).
+Section background is **white** (`#fff`) to match the image. Push `.webp` files to `main` for jsDelivr.
