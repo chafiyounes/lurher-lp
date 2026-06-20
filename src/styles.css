@@ -925,8 +925,7 @@
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
   object-fit: cover;
   object-position: center center;
-  transform: scale(1.03);
-  transform-origin: center center;
+  will-change: clip-path;
   border-radius: 0;
 }
 .slider-after { clip-path: inset(0 0 0 50%); z-index: 1; }
@@ -971,7 +970,7 @@
     max-width: 640px;
     justify-self: end;
   }
-  .slider-img { transform: scale(1.02); }
+  .slider-img { will-change: clip-path; }
 }
 
 /* ─── Reviews ─── */
@@ -1284,8 +1283,8 @@
 }
 .faq-cta-wrap {
   text-align: center;
-  margin-top: clamp(40px, 6vw, 56px);
-  padding-top: 0;
+  margin-top: 52px;
+  padding-top: 8px;
   max-width: var(--max-w-narrow);
   margin-inline: auto;
 }
@@ -1330,15 +1329,15 @@
 
 @media (min-width: 900px) {
   .checkout-box {
-    grid-template-columns: minmax(0, 1fr) 260px;
-    gap: 20px;
+    grid-template-columns: minmax(0, 1fr) 290px;
+    gap: 24px;
     align-items: start;
   }
   .checkout-assurance {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 16px;
+    gap: 16px;
+    padding: 20px;
     background: var(--surface-white);
     border: 1px solid var(--border);
     border-radius: var(--r-xl);
@@ -1346,10 +1345,10 @@
     position: sticky;
     top: 88px;
   }
-  .checkout-assurance .badge-item { gap: 10px; }
-  .checkout-assurance .badge-item .material-symbols-outlined { padding: 8px; font-size: 20px; }
-  .checkout-assurance .badge-texts strong { font-size: 13px; }
-  .checkout-assurance .badge-texts span { font-size: 11px; }
+  .checkout-assurance .badge-item { gap: 14px; }
+  .checkout-assurance .badge-item .material-symbols-outlined { padding: 10px; font-size: 24px; }
+  .checkout-assurance .badge-texts strong { font-size: 15px; }
+  .checkout-assurance .badge-texts span { font-size: 13px; }
 }
 
 /* Checkout product info column */

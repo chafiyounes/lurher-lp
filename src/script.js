@@ -801,7 +801,14 @@
         slider.setAttribute("aria-valuenow", Math.round(pct));
       }
 
-      moveSlider(slider.getBoundingClientRect().left + slider.getBoundingClientRect().width / 2);
+      (function initSliderPosition() {
+        var rect = slider.getBoundingClientRect();
+        if (rect.width > 0) {
+          moveSlider(rect.left + rect.width / 2);
+        } else {
+          requestAnimationFrame(initSliderPosition);
+        }
+      })();
 
       var startDrag = function (e) {
         isDragging = true;
