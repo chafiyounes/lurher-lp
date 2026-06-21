@@ -1738,3 +1738,177 @@ button.btn-primary .material-symbols-outlined {
   box-shadow: 0 12px 30px rgba(91,0,158,0.4) !important;
   filter: brightness(1.15) !important;
 }
+
+/* ═══ mobile-fixes.md contract ═══ */
+.is-hidden { display: none !important; }
+
+/* Announce marquee */
+.announce-bar { overflow: hidden; padding: 0; }
+.announce-marquee { overflow: hidden; width: 100%; }
+.announce-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 0;
+  animation: announce-scroll 28s linear infinite;
+  padding: 11px 0;
+}
+.app[dir="rtl"] .announce-marquee-track { animation-name: announce-scroll-rtl; }
+.announce-msg { white-space: nowrap; padding-inline: 28px; font-size: 13px; font-weight: 700; }
+.announce-sep { opacity: 0.45; }
+@keyframes announce-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes announce-scroll-rtl {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(50%); }
+}
+
+/* Logo */
+.nav-brand { display: flex; align-items: center; line-height: 0; }
+.nav-logo { height: 26px; width: auto; max-width: 120px; object-fit: contain; display: block; }
+
+/* Mobile hero + form-first funnel */
+@media (max-width: 639px) {
+  .hero-content--desktop-only { display: none !important; }
+  .checkout-headline--desktop { display: none; }
+
+  #view-landing > .landing-hero {
+    padding-bottom: 0;
+    min-height: 0;
+  }
+  .landing-hero .hero-inner {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding-inline: 0;
+  }
+  .landing-hero .hero-media,
+  .landing-hero .hero-gallery {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Swipe carousel (not crossfade) */
+  .landing-hero .media-carousel-btn { display: none !important; }
+  .landing-hero .media-carousel-viewport {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    touch-action: pan-x pan-y;
+    aspect-ratio: 4 / 5;
+    max-height: min(58dvh, 520px);
+  }
+  .landing-hero .media-carousel--crossfade .media-carousel-viewport,
+  .landing-hero .media-carousel--scroll .media-carousel-viewport {
+    position: relative;
+  }
+  .landing-hero .media-carousel-track {
+    display: flex;
+    transform: none !important;
+    transition: none !important;
+    width: auto;
+    height: 100%;
+  }
+  .landing-hero .media-carousel-slide,
+  .landing-hero .media-carousel--crossfade .media-carousel-slide,
+  .landing-hero .media-carousel--crossfade .media-carousel-slide.is-active {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    inset: auto;
+    pointer-events: auto;
+  }
+
+  /* Form peeks below first screen */
+  #checkout-section.checkout-section {
+    margin-top: -88px;
+    padding-top: 0;
+    padding-inline: 0;
+    position: relative;
+    z-index: 5;
+  }
+  #checkout-section .section-container {
+    padding-inline: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+  #checkout-section .checkout-box {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    border-radius: var(--r-lg) var(--r-lg) 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  #checkout-section .checkout-form-side,
+  #checkout-section .order-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+  #checkout-section .order-card {
+    margin-inline: 0;
+    border-radius: var(--r-lg) var(--r-lg) 0 0;
+    padding-inline: 18px;
+  }
+  #checkout-section .checkout-assurance--mobile-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px 18px 20px;
+    background: var(--surface-alt);
+    border-top: 1px solid var(--border);
+  }
+
+  /* Full-width sections — no squish */
+  .app { overflow-x: clip; max-width: 100vw; }
+  .section-container,
+  .ba-inner,
+  .benefits-inner,
+  .split-row,
+  .reviews-section .section-container {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  /* Reviews spacing */
+  .reviews-section { padding-inline: var(--sec-px); }
+  .reviews-grid { padding-inline: 0; }
+  .review-card { padding: 24px 20px 22px; margin-inline: 0; }
+  .review-header { padding-inline: 0; }
+}
+
+/* BA slider — allow vertical page scroll */
+.slider-wrap {
+  touch-action: pan-y pinch-zoom;
+}
+
+/* Desktop checkout layout unchanged */
+@media (min-width: 640px) {
+  .checkout-assurance--mobile-stack { /* uses grid from checkout-box */ }
+  .landing-hero .media-carousel-viewport { touch-action: pan-y; }
+}
+
+@media (min-width: 640px) {
+  .checkout-box .checkout-assurance--mobile-stack {
+    display: contents;
+  }
+}
+
+/* Lazy sections start transparent until near viewport */
+.reveal[data-lazy-section]:not(.is-visible) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 480px;
+}

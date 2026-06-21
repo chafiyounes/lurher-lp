@@ -6,14 +6,26 @@
 <div class="app" dir="rtl" lang="ar">
 
   <!-- Announcement Bar -->
-  <div class="announce-bar">
-    <span data-i18n="announce">🚚 توصيل مجاني لجميع مدن المغرب</span>
+  <div class="announce-bar" aria-live="polite">
+    <div class="announce-marquee">
+      <div class="announce-marquee-track">
+        <span class="announce-msg" data-i18n="announce">🚚 توصيل مجاني لجميع مدن المغرب</span>
+        <span class="announce-sep" aria-hidden="true"> · </span>
+        <span class="announce-msg announce-stock" aria-live="polite"></span>
+        <span class="announce-sep" aria-hidden="true"> · </span>
+        <span class="announce-msg" data-i18n="announce">🚚 توصيل مجاني لجميع مدن المغرب</span>
+        <span class="announce-sep" aria-hidden="true"> · </span>
+        <span class="announce-msg announce-stock" aria-hidden="true"></span>
+      </div>
+    </div>
   </div>
 
   <!-- Navigation -->
   <header class="nav-header">
     <div class="nav-inner">
-      <a href="#" class="nav-brand scroll-to-top">HISMILE</a>
+      <a href="#" class="nav-brand scroll-to-top" aria-label="hismile">
+        <img class="nav-logo" src="https://raw.githubusercontent.com/chafiyounes/mapper-youcant/main/images/logos/logo_text.webp" alt="hismile" width="112" height="28" loading="eager" decoding="async"/>
+      </a>
       <div style="display:flex; align-items:center; gap:8px;">
         <button aria-label="Switch language" id="langToggle" type="button" class="lang-toggle-btn">
           <span class="material-symbols-outlined" style="font-size:18px;">language</span>
@@ -126,7 +138,7 @@
           </div>
         </div>
 
-        <div class="hero-content">
+        <div class="hero-content hero-content--desktop-only">
           <div class="hero-badge" data-i18n="hero_badge">🏆 الأكثر مبيعاً في المغرب</div>
           <h1 class="t-hero landing-hero-title" data-i18n="land_hero_h">تعبتي من الصفر فالأسنان؟ V34 كتبيّضهم فـ30 دقيقة — بلا ألم.</h1>
           <p class="hero-sub-short t-body t-muted" data-i18n="land_hero_sub_short">شرائط تبييض من Hismile — بلا بيروكسيد، آمنة على المينا والسنان الحساسة. الدفع عند الاستلام.</p>
@@ -149,36 +161,12 @@
     </section>
 
     <!-- ══════════════════════════════════════════════════════
-         BEFORE / AFTER SLIDER
-    ══════════════════════════════════════════════════════ -->
-    <section class="ba-section reveal" id="ba-section">
-      <div class="ba-inner">
-        <div class="ba-copy">
-          <div class="section-head text-center">
-            <span class="section-eyebrow" data-i18n="ba_eyebrow">نتائج حقيقية</span>
-            <h2 class="t-h2 ba-title" data-i18n="land_ba_h">الناس كتخلّص المئات فعيادات التبييض... حنا جبنا ليك نفس النتيجة لدارك.</h2>
-            <p class="ba-hint" id="ba-hint" data-i18n="land_ba_hint">← اسحب لكشف النتيجة →</p>
-          </div>
-        </div>
-        <div class="slider-wrap" id="slider" tabindex="0" role="slider" aria-label="Before and after comparison" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
-          <span class="slider-label slider-label-before" data-i18n="ba_before">قبل</span>
-          <span class="slider-label slider-label-after" data-i18n="ba_after">بعد</span>
-          <img alt="After — أسنان بعد التبييض" class="slider-img" id="slider-before" src="https://raw.githubusercontent.com/chafiyounes/mapper-youcant/main/images/contrast/after_image.webp" loading="eager" decoding="async"/>
-          <img alt="Before — أسنان قبل التبييض" class="slider-img slider-after" id="slider-after" src="https://raw.githubusercontent.com/chafiyounes/mapper-youcant/main/images/contrast/before_image.webp" loading="eager" decoding="async"/>
-          <div class="slider-handle" id="slider-handle" aria-hidden="true">
-            <span class="material-symbols-outlined">unfold_more</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════════════════
-         PREMIUM CHECKOUT SECTION
+         PREMIUM CHECKOUT SECTION (mobile: peeks below hero gallery)
     ══════════════════════════════════════════════════════ -->
     <section class="checkout-section" id="checkout-section">
       <div class="section-container">
 
-        <div class="section-head text-center checkout-headline">
+        <div class="section-head text-center checkout-headline checkout-headline--desktop">
           <h2 class="t-h2 checkout-title" data-i18n="land_checkout_h">أكمل طلبيتك دابا</h2>
           <p class="section-desc checkout-desc" data-i18n="land_order_sub" hidden>الدفع عند الاستلام، بلا خلاص مسبق. التوصيل لجميع مدن المغرب.</p>
         </div>
@@ -187,12 +175,12 @@
           <div class="checkout-form-side" id="checkout-form">
             <div class="order-card order-card--compact">
               <div class="order-card-top order-card-top--slim">
-                <img class="order-card-thumb" alt="V34 Strips" src="https://raw.githubusercontent.com/chafiyounes/mapper-youcant/main/images/PP-01-V34Strips_no-badge31_10_15_595x.webp" loading="eager"/>
+                <img class="order-card-thumb" alt="V34 Strips" src="https://raw.githubusercontent.com/chafiyounes/mapper-youcant/main/images/PP-01-V34Strips_no-badge31_10_15_595x.webp" width="80" height="80" loading="eager" decoding="async"/>
                 <div class="order-card-offer">
                   <div class="checkout-price-row">
-                    <span class="price-tag-big" data-i18n="land_price">245 درهم</span>
-                    <span class="strike-price" data-i18n="land_strike">350 درهم</span>
-                    <span class="savings-tag savings-tag--inline" data-i18n="savings_tag">وفّرت 105 درهم (30%)</span>
+                    <span class="price-tag-big" id="display-price">245 درهم</span>
+                    <span class="strike-price is-hidden" id="compare-price-display" hidden></span>
+                    <span class="savings-tag savings-tag--inline is-hidden" id="savings-display" hidden></span>
                   </div>
                 </div>
               </div>
@@ -255,7 +243,7 @@
             </div>
           </div>
 
-          <aside class="checkout-assurance" aria-label="Order guarantees">
+          <aside class="checkout-assurance checkout-assurance--mobile-stack" aria-label="Order guarantees">
             <div class="badge-item">
               <span class="material-symbols-outlined">local_shipping</span>
               <div class="badge-texts">
@@ -273,11 +261,35 @@
             <div class="badge-item">
               <span class="material-symbols-outlined">verified_user</span>
               <div class="badge-texts">
-                <strong data-i18n="ct_guarantee">ضمان 100%</strong>
-                <span data-i18n="ct_guarantee_sub">ضمان 30 يوم استرجاع الفلوس</span>
+                <strong data-i18n="ct_guarantee">ضمان استرجاع الفلوس</strong>
+                <span data-i18n="ct_guarantee_sub">200 درهم مضمونة — صور قبل/بعد + 15 يوم من التوصيل</span>
               </div>
             </div>
           </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         BEFORE / AFTER SLIDER
+    ══════════════════════════════════════════════════════ -->
+    <section class="ba-section reveal" id="ba-section">
+      <div class="ba-inner">
+        <div class="ba-copy">
+          <div class="section-head text-center">
+            <span class="section-eyebrow" data-i18n="ba_eyebrow">نتائج حقيقية</span>
+            <h2 class="t-h2 ba-title" data-i18n="land_ba_h">الناس كتخلّص المئات فعيادات التبييض... حنا جبنا ليك نفس النتيجة لدارك.</h2>
+            <p class="ba-hint" id="ba-hint" data-i18n="land_ba_hint">← اسحب لكشف النتيجة →</p>
+          </div>
+        </div>
+        <div class="slider-wrap" id="slider" tabindex="0" role="slider" aria-label="Before and after comparison" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+          <span class="slider-label slider-label-before" data-i18n="ba_before">قبل</span>
+          <span class="slider-label slider-label-after" data-i18n="ba_after">بعد</span>
+          <img alt="After — أسنان بعد التبييض" class="slider-img" id="slider-before" src="https://raw.githubusercontent.com/chafiyounes/mapper-youcant/main/images/contrast/after_image.webp" loading="lazy" decoding="async"/>
+          <img alt="Before — أسنان قبل التبييض" class="slider-img slider-after" id="slider-after" src="https://raw.githubusercontent.com/chafiyounes/mapper-youcant/main/images/contrast/before_image.webp" loading="lazy" decoding="async"/>
+          <div class="slider-handle" id="slider-handle" aria-hidden="true">
+            <span class="material-symbols-outlined">unfold_more</span>
+          </div>
         </div>
       </div>
     </section>
@@ -314,15 +326,15 @@
             <div class="h-card">
               <span class="material-symbols-outlined">palette</span>
               <div>
-                <h3 class="t-h3" data-i18n="land_feat1_h">تصحيح اللون الفوري</h3>
-                <p class="t-body t-muted h-card-p" data-i18n="land_feat1_p">اللون البنفسجي كيلغي الاصفرار — نفس مبدأ الشامبو البنفسجي للشعر، ولكن للأسنان. النتيجة كتبان من أول استعمال.</p>
+                <h3 class="t-h3" data-i18n="land_feat1_h">بياض فوري للأسنان الصفراء</h3>
+                <p class="t-body t-muted h-card-p" data-i18n="land_feat1_p">تكنولوجيا تصحيح اللون البنفسجي كت-neutralize الاصفرار — ابتسامة أفتح واضحة من أول استعمال.</p>
               </div>
             </div>
             <div class="h-card">
               <span class="material-symbols-outlined">verified</span>
               <div>
-                <h3 class="t-h3" data-i18n="land_feat2_h">تبييض PAP+</h3>
-                <p class="t-body t-muted h-card-p" data-i18n="land_feat2_p">تبييض حقيقي كيزيد مع الوقت — بلا بيروكسيد، آمن 100% على المينا والأسنان الحساسة.</p>
+                <h3 class="t-h3" data-i18n="land_feat2_h">آمنة حتى للأسنان الحساسة</h3>
+                <p class="t-body t-muted h-card-p" data-i18n="land_feat2_p">مدعومة بتقنية PAP+ كتبيّض تدريجياً بلا بيروكسيد وبلا ضرر على المينا.</p>
               </div>
             </div>
             <div class="h-card">
@@ -472,9 +484,9 @@
             <h2 class="t-h2" data-i18n="land_order_h">كل يوم كتأجّل، هو يوم بأسنان أقل بياضًا.</h2>
             <p class="section-desc final-cta-sub" data-i18n="final_cta_sub">ضمان استرجاع الفلوس — آخر فرصة على هاد الثمن.</p>
             <div class="final-price-row">
-              <span class="price-tag-big" data-i18n="land_price">245 درهم</span>
-              <span class="strike-price" data-i18n="land_strike">350 درهم</span>
-              <span class="savings-tag" data-i18n="savings_tag">وفّرت 105 درهم (30%)</span>
+              <span class="price-tag-big final-display-price">245 درهم</span>
+              <span class="strike-price is-hidden final-compare-price" hidden></span>
+              <span class="savings-tag is-hidden final-savings-tag" hidden></span>
             </div>
           </div>
           <button type="button" class="btn-primary scroll-to-checkout final-cta-btn">

@@ -10,8 +10,13 @@
     /* Announcement */
     announce: {
       ar: "🚚 توصيل مجاني لجميع مدن المغرب",
-      en: "🚚 Free delivery across Morocco",
+      en: "🚚 Free shipping anywhere in Morocco",
       fr: "🚚 Livraison gratuite partout au Maroc"
+    },
+    announce_stock: {
+      ar: "باقي غير <strong>{n}</strong> فالمخزون",
+      en: "Only <strong>{n}</strong> left in stock",
+      fr: "Plus que <strong>{n}</strong> en stock"
     },
     nav_shop: { ar: "اطلب الآن", en: "Order Now", fr: "Commander" },
 
@@ -51,23 +56,23 @@
       en: "Most whitening products take weeks or damage enamel. We chose a different path:",
       fr: "La plupart des produits prennent des semaines ou abîment l'émail. Nous avons choisi une autre voie :"
     },
-    land_feat1_h: { ar: "تصحيح اللون الفوري", en: "Instant Colour Correction", fr: "Correction de couleur instantanée" },
+    land_feat1_h: { ar: "بياض فوري للأسنان الصفراء", en: "Instantly Brightens Yellow Teeth", fr: "Éclaircit instantanément les dents jaunes" },
     land_feat1_p: {
-      ar: "اللون البنفسجي كيلغي الاصفرار — نفس مبدأ الشامبو البنفسجي للشعر، ولكن للأسنان. النتيجة كتبان من أول استعمال.",
-      en: "Purple tone cancels yellowness — same principle as purple shampoo for hair, but for teeth. Visible from first use.",
-      fr: "Le ton violet annule le jaunissement — même principe que le shampoing violet. Visible dès la première utilisation."
+      ar: "تكنولوجيا تصحيح اللون البنفسجي كت-neutralize الاصفرار — ابتسامة أفتح واضحة من أول استعمال.",
+      en: "Purple colour-correcting technology neutralizes yellow tones for a visibly brighter smile from the very first use.",
+      fr: "La technologie de correction violette neutralise les tons jaunes pour un sourire visiblement plus éclatant dès la première utilisation."
     },
-    land_feat2_h: { ar: "تبييض PAP+", en: "PAP+ Whitening", fr: "Blanchiment PAP+" },
+    land_feat2_h: { ar: "آمنة حتى للأسنان الحساسة", en: "Safe Even for Sensitive Teeth", fr: "Sûr même pour les dents sensibles" },
     land_feat2_p: {
-      ar: "تبييض حقيقي كيزيد مع الوقت — بلا بيروكسيد، آمن 100% على المينا والأسنان الحساسة.",
-      en: "Real whitening that improves over time — peroxide-free, 100% safe for enamel.",
-      fr: "Blanchiment réel qui s'améliore — sans peroxyde, 100% sûr."
+      ar: "مدعومة بتقنية PAP+ كتبيّض تدريجياً بلا بيروكسيد وبلا ضرر على المينا.",
+      en: "Powered by PAP+ technology to gradually whiten teeth without peroxide and without damaging enamel.",
+      fr: "Propulsé par la technologie PAP+ pour blanchir progressivement sans peroxyde et sans abîmer l'émail."
     },
-    land_feat3_h: { ar: "جرّبوه ملايين حول العالم", en: "Tried by millions worldwide", fr: "Des millions de personnes l'ont essayé" },
+    land_feat3_h: { ar: "موثوقة من أكثر من 10 ملايين زبون", en: "Trusted by Over 10 Million Customers", fr: "Approuvé par plus de 10 millions de clients" },
     land_feat3_p: {
-      ar: "أكثر من 10 ملايين منتج V34 تباع عالمياً — ملايين اختاروه قبلك.",
-      en: "10M+ V34 products sold worldwide — millions chose it before you.",
-      fr: "Plus de 10 millions de produits V34 vendus — des millions l'ont choisi avant vous."
+      ar: "ملايين الناس فالعالم اختارو V34 كحل ديالهم باش يبانو بابتسامة أفتح.",
+      en: "Millions worldwide have chosen V34 as their go-to solution for a brighter-looking smile.",
+      fr: "Des millions de personnes dans le monde ont choisi V34 pour un sourire plus lumineux."
     },
     triptych_before: { ar: "قبل", en: "Before", fr: "Avant" },
     triptych_apply: { ar: "أثناء الاستعمال", en: "During use", fr: "Pendant l'application" },
@@ -165,8 +170,7 @@
       fr: "Garantie satisfait ou remboursé — dernière chance à ce prix."
     },
     land_price:   { ar: "245 درهم", en: "245 MAD", fr: "245 MAD" },
-    land_strike:  { ar: "350 درهم", en: "350 MAD", fr: "350 MAD" },
-    savings_tag:  { ar: "وفّرت 105 درهم (30%)", en: "You save 105 MAD (30%)", fr: "Vous économisez 105 MAD (30%)" },
+        savings_tag:  { ar: "وفّرت 105 درهم (30%)", en: "You save 105 MAD (30%)", fr: "Vous économisez 105 MAD (30%)" },
     checkout_badge: { ar: "عرض محدود", en: "Limited Offer", fr: "Offre Limitée" },
 
     form_name: { ar: "الإسم الكامل", en: "Full Name", fr: "Nom complet" },
@@ -201,7 +205,11 @@
     ct_ship_sub: { ar: "فابور و سريع (24-48 ساعة)", en: "Free and fast (24-48h)", fr: "Gratuit et rapide (24-48h)" },
     trust_cod_sub: { ar: "تأكد من المنتج عاد خلص", en: "Check your product, then pay", fr: "Vérifiez avant de payer" },
     ct_guarantee: { ar: "ضمان 100%", en: "100% Guarantee", fr: "Garantie 100%" },
-    ct_guarantee_sub: { ar: "ضمان 30 يوم استرجاع الفلوس", en: "30-day money-back guarantee", fr: "Garantie de remboursement de 30 jours" },
+    ct_guarantee_sub: {
+      ar: "إيلا ما شفتيش نتيجة من بعد ما استعملتي المنتج بطريقة صحيحة لمدة 15 يوم، كنرجعو ليك 200 درهم مضمونة — بصور قبل/بعد قبل 15 يوم من التوصيل.",
+      en: "If you see no results after using the product as directed within 15 days of delivery, we refund 200 MAD — submit before/after photos before the 15-day deadline from delivery.",
+      fr: "Si aucun résultat après utilisation correcte pendant 15 jours après livraison, remboursement de 200 MAD — photos avant/après obligatoires avant la fin du délai de 15 jours."
+    },
 
     sticky_name: { ar: "شرائط V34", en: "V34 Strips", fr: "Bandes V34" },
     sticky_price: { ar: "245 درهم", en: "245 MAD", fr: "245 MAD" },
@@ -259,9 +267,9 @@
     },
     faq_q6: { ar: "شنو هي سياسة الإرجاع؟", en: "What is the return policy?", fr: "Quelle est la politique de retour ?" },
     faq_a6: {
-      ar: "حنا واثقين من جودة المنتج، داكشي علاش كنقدّمو ضمان استرجاع الأموال لمدة 30 يوم. إلا ماعجبتكش النتيجة، تواصل معانا ورجع فلوسك بلا تعقيدات.",
-      en: "We are confident in our quality, which is why we offer a 30-day money-back guarantee. If you are not satisfied, contact us for a hassle-free refund.",
-      fr: "Confiants de notre qualité, nous offrons une garantie de 30 jours. Si vous n'êtes pas satisfait, contactez-nous pour un remboursement facile."
+      ar: "إيلا ما شفتيش نتيجة من بعد ما استعملتي المنتج بطريقة صحيحة لمدة 15 يوم، كنرجعو ليك فلوسك مضمونة — 200 درهم. خاصك ترفع طلب الإرجاع مع صور قبل وبعد قبل ما يكمل 15 يوم من التوصيل. من بعد 15 يوم من التوصيل بلا طلب = لا استرجاع.",
+      en: "If you see no results after using the product as directed within 15 days of delivery, you get a guaranteed 200 MAD refund. Submit your claim with before & after photos before the 15-day-from-delivery deadline. No claim within 15 days of delivery = no refund.",
+      fr: "Si aucun résultat après utilisation correcte dans les 15 jours suivant la livraison, remboursement garanti de 200 MAD. Envoyez votre demande avec photos avant/après avant la fin du délai de 15 jours. Passé ce délai, aucun remboursement."
     }
   };
 
@@ -321,6 +329,22 @@
     };
     document.title = titleDict[l] || "Hismile V34";
     updateHeroGalleryAlts();
+    updateStockLabels(window.__V34_STOCK_COUNT || 20);
+    loadDeferredLangAssets(l);
+    syncPricesFromYouCan();
+  }
+
+  function updateStockLabels(n) {
+    var l = langs[currentLangIndex];
+    var templates = {
+      ar: "باقي غير <strong>{n}</strong> فالمخزون",
+      en: "Only <strong>{n}</strong> left in stock",
+      fr: "Plus que <strong>{n}</strong> en stock"
+    };
+    var html = (templates[l] || templates.ar).replace("{n}", String(n));
+    document.querySelectorAll(".announce-stock").forEach(function (el) {
+      el.innerHTML = html;
+    });
   }
 
   /* ── Language Toggle ── */
@@ -524,9 +548,11 @@
     var thumbsWrap = options.thumbsEl || root.querySelector(".media-carousel-thumbs");
     var autoplayMs = options.autoplayMs != null ? options.autoplayMs : 0;
     var crossfade = !!options.crossfade;
+    var scrollSnap = !!options.scrollSnap;
     var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (crossfade) root.classList.add("media-carousel--crossfade");
+    if (scrollSnap) root.classList.add("media-carousel--scroll");
 
     var index = 0;
     var timer = null;
@@ -548,6 +574,18 @@
         track.style.transform = "none";
         for (var s = 0; s < slideList.length; s++) {
           slideList[s].classList.toggle("is-active", s === index);
+        }
+      } else if (scrollSnap && viewport) {
+        track.style.transform = "none";
+        var isRtlSnap = document.querySelector(".app") &&
+          document.querySelector(".app").getAttribute("dir") === "rtl";
+        var w = viewport.clientWidth || 1;
+        var target = isRtlSnap ? -(index * w) : index * w;
+        if (Math.abs(viewport.scrollLeft - target) > 2) {
+          viewport.scrollTo({ left: target, behavior: reducedMotion ? "auto" : "smooth" });
+        }
+        for (var sSnap = 0; sSnap < slideList.length; sSnap++) {
+          slideList[sSnap].classList.toggle("is-active", sSnap === index);
         }
       } else {
         var isRtl = document.querySelector(".app") &&
@@ -580,7 +618,28 @@
     if (btnNext) btnNext.addEventListener("click", function () { step(1); resetAutoplay(); });
 
     var viewport = root.querySelector(options.viewportSelector || ".media-carousel-viewport");
-    if (viewport) {
+    if (viewport && scrollSnap) {
+      viewport.addEventListener("scroll", function () {
+        var slideList = slides();
+        var w = viewport.clientWidth;
+        if (!w || !slideList.length) return;
+        var isRtlScroll = document.querySelector(".app") &&
+          document.querySelector(".app").getAttribute("dir") === "rtl";
+        var raw = Math.abs(viewport.scrollLeft) / w;
+        var i = Math.round(raw);
+        if (i < 0) i = 0;
+        if (i >= slideList.length) i = slideList.length - 1;
+        if (i === index) return;
+        index = i;
+        var thumbs = thumbButtons();
+        for (var t2 = 0; t2 < thumbs.length; t2++) {
+          thumbs[t2].classList.toggle("is-active", t2 === index);
+          thumbs[t2].setAttribute("aria-selected", t2 === index ? "true" : "false");
+        }
+        if (options.onChange) options.onChange(index);
+      }, { passive: true });
+    }
+    if (viewport && !scrollSnap) {
       var touchStartX = 0;
       var touchStartY = 0;
       viewport.addEventListener("touchstart", function (e) {
@@ -703,10 +762,14 @@
 
     root.style.setProperty("--hero-thumb-cols", String(manifest.slides.length));
 
+    var isMobileCarousel = window.matchMedia("(max-width: 639px)").matches;
+    if (isMobileCarousel) root.classList.add("media-carousel--scroll");
+
     heroGalleryController = initMediaCarousel(root, {
       slideSelector: ".media-carousel-slide",
-      autoplayMs: 5000,
-      crossfade: true
+      autoplayMs: isMobileCarousel ? 0 : 5000,
+      crossfade: !isMobileCarousel,
+      scrollSnap: isMobileCarousel
     });
   }
 
@@ -811,6 +874,12 @@
       })();
 
       var startDrag = function (e) {
+        if (e.type === "touchstart" && e.touches) {
+          slider._touchStartX = e.touches[0].clientX;
+          slider._touchStartY = e.touches[0].clientY;
+          slider._touchAxis = null;
+          return;
+        }
         isDragging = true;
         hideHint();
         var cx = e.touches ? e.touches[0].clientX : e.clientX;
@@ -818,15 +887,35 @@
         if (e.cancelable) e.preventDefault();
       };
       var moveDrag = function (e) {
+        if (e.type === "touchmove" && e.touches) {
+          var dx = e.touches[0].clientX - slider._touchStartX;
+          var dy = e.touches[0].clientY - slider._touchStartY;
+          if (!slider._touchAxis) {
+            if (Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(dy) * 1.15) {
+              slider._touchAxis = "x";
+              isDragging = true;
+              hideHint();
+            } else if (Math.abs(dy) > 8 && Math.abs(dy) > Math.abs(dx)) {
+              slider._touchAxis = "y";
+              return;
+            } else {
+              return;
+            }
+          }
+          if (slider._touchAxis === "y") return;
+        }
         if (!isDragging) return;
-        var cx = e.touches ? e.touches[0].clientX : e.clientX;
-        moveSlider(cx);
+        var cx2 = e.touches ? e.touches[0].clientX : e.clientX;
+        moveSlider(cx2);
         if (e.cancelable) e.preventDefault();
       };
-      var stopDrag = function () { isDragging = false; };
+      var stopDrag = function () {
+        isDragging = false;
+        slider._touchAxis = null;
+      };
 
       slider.addEventListener("mousedown", startDrag);
-      slider.addEventListener("touchstart", startDrag, { passive: false });
+      slider.addEventListener("touchstart", startDrag, { passive: true });
       window.addEventListener("mouseup", stopDrag);
       window.addEventListener("touchend", stopDrag);
       window.addEventListener("mousemove", moveDrag);
@@ -1137,6 +1226,164 @@
     });
   }
 
+  /* ── Price sync from YouCan native form ── */
+  function parsePriceNum(text) {
+    if (!text) return null;
+    var m = String(text).match(/[\d]+(?:[.,]\d+)?/);
+    if (!m) return null;
+    return parseFloat(m[0].replace(",", "."));
+  }
+
+  function syncPricesFromYouCan() {
+    var nativeRoot = document.getElementById("app") || document.body;
+    var priceText = "";
+    var compareText = "";
+    var selectors = [
+      ".express-checkout-form-section .product-price",
+      ".single-product-price",
+      "[class*='product-price']",
+      "[class*='ProductPrice']",
+      ".price-current",
+      ".final-price"
+    ];
+    for (var i = 0; i < selectors.length && !priceText; i++) {
+      var el = nativeRoot.querySelector(selectors[i]);
+      if (el && el.textContent.trim() && !el.closest("#v34-root")) priceText = el.textContent.trim();
+    }
+    if (!priceText) {
+      var nodes = nativeRoot.querySelectorAll("h2, h3, span, div, p");
+      for (var j = 0; j < nodes.length; j++) {
+        if (nodes[j].closest("#v34-root")) continue;
+        var t = nodes[j].textContent.trim();
+        if (t.length < 24 && /(\d[\d\s.,]*)\s*(درهم|MAD|د\.?\s*م)/i.test(t)) {
+          priceText = t;
+          break;
+        }
+      }
+    }
+    var compareSelectors = [".compare-price", ".was-price", ".old-price", "[class*='compare']", ".price-before"];
+    for (var k = 0; k < compareSelectors.length; k++) {
+      var cel = nativeRoot.querySelector(compareSelectors[k]);
+      if (cel && cel.textContent.trim() && !cel.closest("#v34-root")) {
+        compareText = cel.textContent.trim();
+        break;
+      }
+    }
+
+    var display = document.getElementById("display-price");
+    var compareEl = document.getElementById("compare-price-display");
+    var savingsEl = document.getElementById("savings-display");
+    var finalPrice = document.querySelector(".final-display-price");
+    var finalCompare = document.querySelector(".final-compare-price");
+    var finalSavings = document.querySelector(".final-savings-tag");
+    var stickyPrice = document.querySelector(".sticky-price");
+
+    if (priceText) {
+      if (display) display.textContent = priceText;
+      if (finalPrice) finalPrice.textContent = priceText;
+      if (stickyPrice) stickyPrice.textContent = priceText;
+    }
+
+    var cur = parsePriceNum(priceText);
+    var cmp = parsePriceNum(compareText);
+    var showCompare = cmp && cur && cmp > cur;
+    var lang = langs[currentLangIndex];
+
+    function setCompare(el, on, text) {
+      if (!el) return;
+      if (on) {
+        el.textContent = text;
+        el.hidden = false;
+        el.classList.remove("is-hidden");
+      } else {
+        el.hidden = true;
+        el.classList.add("is-hidden");
+      }
+    }
+    function setSavings(el, on, saved, pct) {
+      if (!el) return;
+      if (on) {
+        el.textContent = lang === "ar"
+          ? "وفّرت " + saved + " درهم (" + pct + "%)"
+          : lang === "fr"
+            ? "Économie " + saved + " MAD (" + pct + "%)"
+            : "You save " + saved + " MAD (" + pct + "%)";
+        el.hidden = false;
+        el.classList.remove("is-hidden");
+      } else {
+        el.hidden = true;
+        el.classList.add("is-hidden");
+      }
+    }
+
+    if (showCompare) {
+      var saved = Math.round(cmp - cur);
+      var pct = Math.round((saved / cmp) * 100);
+      setCompare(compareEl, true, compareText);
+      setCompare(finalCompare, true, compareText);
+      setSavings(savingsEl, true, saved, pct);
+      setSavings(finalSavings, true, saved, pct);
+    } else {
+      setCompare(compareEl, false);
+      setCompare(finalCompare, false);
+      setSavings(savingsEl, false);
+      setSavings(finalSavings, false);
+    }
+  }
+
+  /* ── Stock ticker in announce bar ── */
+  function initStockTicker() {
+    window.__V34_STOCK_COUNT = 20;
+    updateStockLabels(window.__V34_STOCK_COUNT);
+    function tick() {
+      window.__V34_STOCK_COUNT -= 1;
+      if (window.__V34_STOCK_COUNT < 3) window.__V34_STOCK_COUNT = 30;
+      updateStockLabels(window.__V34_STOCK_COUNT);
+      var delay = 6000 + Math.floor(Math.random() * 9000);
+      setTimeout(tick, delay);
+    }
+    setTimeout(tick, 6000 + Math.floor(Math.random() * 9000));
+  }
+
+  /* ── Defer non-default language image assets ── */
+  function deferNonDefaultLangAssets() {
+    if (langs[currentLangIndex] !== "ar") return;
+    var imgs = document.querySelectorAll(".img-en, .img-fr, .benefits-infographic.img-en, .benefits-infographic.img-fr");
+    for (var i = 0; i < imgs.length; i++) {
+      if (!imgs[i].dataset.deferredSrc && imgs[i].getAttribute("src")) {
+        imgs[i].dataset.deferredSrc = imgs[i].getAttribute("src");
+        imgs[i].removeAttribute("src");
+      }
+    }
+  }
+
+  function loadDeferredLangAssets(lang) {
+    if (lang === "ar") return;
+    var imgs = document.querySelectorAll(".img-" + lang);
+    for (var i = 0; i < imgs.length; i++) {
+      if (imgs[i].dataset.deferredSrc && !imgs[i].getAttribute("src")) {
+        imgs[i].setAttribute("src", imgs[i].dataset.deferredSrc);
+      }
+    }
+  }
+
+  /* ── Lazy below-fold sections ── */
+  function initLazySections() {
+    var sels = ["#ba-section", "#benefits-section", "#why-section", ".reviews-section", "#final-cta", "#faq-section"];
+    for (var i = 0; i < sels.length; i++) {
+      var el = document.querySelector(sels[i]);
+      if (el) el.setAttribute("data-lazy-section", "");
+    }
+    if (!("IntersectionObserver" in window)) return;
+    var obs = new IntersectionObserver(function (entries) {
+      for (var j = 0; j < entries.length; j++) {
+        if (entries[j].isIntersecting) entries[j].target.classList.add("is-visible");
+      }
+    }, { rootMargin: "180px 0px" });
+    var lazy = document.querySelectorAll("[data-lazy-section]");
+    for (var k = 0; k < lazy.length; k++) obs.observe(lazy[k]);
+  }
+
   /* ── Init & Hash Routing ── */
   function handleHashRoute() {
     var hash = window.location.hash || '#landing';
@@ -1162,10 +1409,16 @@
     applyLang(currentLangIndex);
     handleHashRoute();
     handleScroll();
+    deferNonDefaultLangAssets();
+    initLazySections();
+    initStockTicker();
     initSlider();
     initHeroGallery();
     initStickyCta();
     initCustomCheckout();
+    syncPricesFromYouCan();
+    setTimeout(syncPricesFromYouCan, 800);
+    setTimeout(syncPricesFromYouCan, 2500);
     initFaq();
     initReviewLightbox();
   }
