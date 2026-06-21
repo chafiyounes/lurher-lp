@@ -1911,14 +1911,7 @@ button.btn-primary .material-symbols-outlined {
 
 /* Desktop checkout layout unchanged */
 @media (min-width: 640px) {
-  .checkout-assurance--mobile-stack { /* uses grid from checkout-box */ }
   .landing-hero .media-carousel-viewport { touch-action: pan-y; }
-}
-
-@media (min-width: 640px) {
-  .checkout-box .checkout-assurance--mobile-stack {
-    display: contents;
-  }
 }
 
 /* Lazy sections start transparent until near viewport */
