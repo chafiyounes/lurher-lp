@@ -25,21 +25,21 @@
 
     /* ─── LANDING PAGE ─── */
     land_hero_h: { 
-      ar: "ابتسامتك هي أول حاجة كيشوفوها فيك. خليها بيضا.", 
-      en: "Your smile is the first thing they see. Make it white.", 
-      fr: "Votre sourire est la première chose qu'ils voient. Rendez-le blanc." 
+      ar: "تعبتي من الصفر فالأسنان؟ V34 كتبيّضهم فـ30 دقيقة — بلا ألم.", 
+      en: "Tired of yellow teeth in every photo? V34 whitens visibly in 30 minutes — zero pain.",
+      fr: "Marre des dents jaunes sur chaque photo ? V34 blanchit visiblement en 30 minutes — sans douleur."
     },
     land_hero_sub: {
-      ar: "تخيّل: كتهدر مع شي حد، كتبسم، وكتشوف نظرتو كتبدل. الأسنان البيضا ماشي غير زين — هي ثقة، هي حضور. شرائط V34 كتعطيك هاد الإحساس فـ30 دقيقة فقط.",
-      en: "Imagine: you talk to someone, smile, and see their look change. White teeth aren't just beauty — they're confidence, they're presence. V34 strips give you this feeling in just 30 minutes.",
-      fr: "Imaginez : vous parlez, souriez et voyez leur regard changer. Les dents blanches ne sont pas qu'une question de beauté — c'est de la confiance. Les bandes V34 vous donnent cette sensation en 30 minutes."
+      ar: "نفس النتيجة اللي كتخلّص المئات فعيادات التبييض — ولكن من دارك. 14 استعمال فالعلبة، توصيل مجاني لجميع مدن المغرب، وضمان استرجاع الفلوس.",
+      en: "The same results people pay hundreds for at clinics — but at home. 14 uses per box, free delivery across Morocco, money-back guarantee.",
+      fr: "Le même résultat qu'en clinique — chez vous. 14 utilisations par boîte, livraison gratuite au Maroc, satisfait ou remboursé."
     },
     land_hero_sub_short: {
-      ar: "بياض ملحوظ فـ30 دقيقة — بلا ألم، بلا بيروكسيد.",
-      en: "Visible whitening in 30 minutes — no pain, no peroxide.",
-      fr: "Blanchiment visible en 30 minutes — sans douleur, sans peroxyde."
+      ar: "شرائط تبييض من Hismile — بلا بيروكسيد، آمنة على المينا والسنان الحساسة. الدفع عند الاستلام.",
+      en: "Hismile whitening strips — peroxide-free, enamel-safe, even for sensitive teeth. Pay on delivery.",
+      fr: "Bandes Hismile — sans peroxyde, sans danger pour l'émail ni les dents sensibles. Paiement à la livraison."
     },
-    land_hero_cta: { ar: "صيفط طلبيتك دابا", en: "Order now", fr: "Commander" },
+    land_hero_cta: { ar: "صيفط طلبيتك دابا — 245 درهم", en: "Order now — 245 MAD", fr: "Commander — 245 MAD" },
     
     trust_guarantee: { ar: "ضمان استرجاع الفلوس", en: "Money-back guarantee", fr: "Garantie de remboursement" },
     trust_ship: { ar: "توصيل لجميع المدن", en: "Delivery to all cities", fr: "Livraison partout" },

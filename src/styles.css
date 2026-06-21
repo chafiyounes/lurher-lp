@@ -1007,7 +1007,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
-  padding: 0 4px;
+  padding: 0;
   align-items: stretch;
 }
 @media (min-width: 640px)  { .reviews-grid { grid-template-columns: repeat(2, 1fr); gap: 22px; padding: 0; } }
@@ -1018,7 +1018,7 @@
 
 .review-card {
   background: var(--surface-white);
-  border-radius: var(--r-lg); padding: 24px 22px 20px;
+  border-radius: var(--r-lg); padding: 24px 24px 20px;
   box-shadow: var(--sh-sm); border: 1.5px solid var(--border);
   display: flex; flex-direction: column; gap: 12px;
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
@@ -1041,7 +1041,7 @@
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  padding-inline: 2px;
+  padding-inline: 0;
 }
 .reviewer-meta {
   flex: 1;
@@ -1687,7 +1687,8 @@
   }
 
   /* More gap between review cards on mobile */
-  .reviews-grid { gap: 28px; padding: 0; }
+  .reviews-grid { gap: 28px; }
+  .review-card { padding: 26px 22px 22px; }
 
   /* Bigger gap inside section heads on phones */
   .section-head { margin-bottom: 28px; }
