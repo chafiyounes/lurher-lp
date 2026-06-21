@@ -206,9 +206,9 @@
     trust_cod_sub: { ar: "تأكد من المنتج عاد خلص", en: "Check your product, then pay", fr: "Vérifiez avant de payer" },
     ct_guarantee: { ar: "ضمان 100%", en: "100% Guarantee", fr: "Garantie 100%" },
     ct_guarantee_sub: {
-      ar: "إيلا ما شفتيش نتيجة من بعد ما استعملتي المنتج بطريقة صحيحة لمدة 15 يوم، كنرجعو ليك 200 درهم مضمونة — بصور قبل/بعد قبل 15 يوم من التوصيل.",
-      en: "If you see no results after using the product as directed within 15 days of delivery, we refund 200 MAD — submit before/after photos before the 15-day deadline from delivery.",
-      fr: "Si aucun résultat après utilisation correcte pendant 15 jours après livraison, remboursement de 200 MAD — photos avant/après obligatoires avant la fin du délai de 15 jours."
+      ar: "إلا ما عجبكش النتيجة — فلوسك مضمونة",
+      en: "Not happy with results? Money back.",
+      fr: "Pas satisfait ? Remboursement garanti."
     },
 
     sticky_name: { ar: "شرائط V34", en: "V34 Strips", fr: "Bandes V34" },
