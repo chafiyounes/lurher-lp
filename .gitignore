@@ -1,0 +1,60 @@
+# ============================================================
+# Git tracks WEBSITE ASSETS ONLY: src/ and images/
+# Everything else is local (Cursor skills, scripts, guides).
+# ============================================================
+
+# Cursor / agents / local AI config
+.cursor/
+.agents/
+
+# Dev tooling & audits
+node_modules/
+scripts/
+package.json
+package-lock.json
+audit-screenshots/
+.playwright-mcp/
+.github/
+
+# Guides & notes (live in ~/.cursor/skills/landing-page-master/)
+good_landing_page_guide.md
+master-creatives-and-landing-pages.md
+NOTES.md
+prompt.md
+design-system/
+i18n/
+
+# YouCan dev artifacts
+checkoutform.html
+expresscheckoutform.html
+youcan.theme.json
+youcan-loader-snippet.html
+page_live.html
+test_local.html
+scratch_page.html
+
+# Environment & secrets
+.env
+config.json
+config.example.json
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build / scratch
+dist/
+__pycache__/
+brain/
+products/
+
+# Loose local files (not deployed)
+youssef.py
+after3.jpg
+before3.jpg
+product image.png
