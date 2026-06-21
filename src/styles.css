@@ -202,7 +202,7 @@
 .hero-cta.btn-primary { animation: pulseGlow 2.5s infinite; }
 .sticky-cta.visible .sticky-cta-btn:not(.pulse-stopped) { animation: ctaSheen 1.6s ease-in-out infinite; }
 .btn-primary:hover, .btn-primary:focus { 
-  transform: translateY(-3px) scale(1.02); 
+  transform: translateY(-3px); 
   box-shadow: var(--sh-lg); 
   filter: brightness(1.15); 
 }
@@ -1700,7 +1700,9 @@ button.btn-primary .material-symbols-outlined {
 }
 .app .btn-primary:hover,
 .app button.btn-primary:hover {
-  transform: translateY(-3px) scale(1.02) !important;
+  /* No scale() — scaling full-width buttons overflows the viewport and gets
+     clipped by .app overflow-x:hidden (the recurring edge-clipping bug). */
+  transform: translateY(-3px) !important;
   box-shadow: 0 12px 30px rgba(91,0,158,0.4) !important;
   filter: brightness(1.15) !important;
 }
