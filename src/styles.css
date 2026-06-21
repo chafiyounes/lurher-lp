@@ -999,7 +999,8 @@
   font-size: 11px; font-weight: 800; color: var(--success);
   background: #e8f5e9; padding: 3px 10px;
   border-radius: var(--r-full); width: fit-content;
-  margin-inline: 2px;
+  margin-inline: 0;
+  flex-shrink: 0;
 }
 .review-verified .material-symbols-outlined { font-size: 14px; }
 .reviews-grid {
@@ -1007,9 +1008,13 @@
   grid-template-columns: 1fr;
   gap: 20px;
   padding: 0 4px;
+  align-items: stretch;
 }
 @media (min-width: 640px)  { .reviews-grid { grid-template-columns: repeat(2, 1fr); gap: 22px; padding: 0; } }
-@media (min-width: 1200px) { .reviews-grid { grid-template-columns: repeat(4, 1fr); gap: 28px; } }
+@media (min-width: 1200px) {
+  .reviews-grid { grid-template-columns: repeat(4, 1fr); gap: 28px; }
+  .review-thumbs img { height: 160px; }
+}
 
 .review-card {
   background: var(--surface-white);
@@ -1031,9 +1036,27 @@
 .review-card--gallery:focus-visible {
   box-shadow: var(--sh-md), 0 0 0 3px var(--primary-glow);
 }
-.review-header {
-  display: flex; align-items: center; gap: 14px;
+.review-header,
+.review-lightbox-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
   padding-inline: 2px;
+}
+.reviewer-meta {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.reviewer-name-row,
+.reviewer-sub-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 .reviewer-avatar {
   width: 38px; height: 38px; border-radius: 50%;
@@ -1042,11 +1065,10 @@
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
 }
-.reviewer-info { display: flex; flex-direction: column; flex: 1; }
-.reviewer-name { font-weight: 800; font-size: 15px; }
-.reviewer-city { font-size: 12px; color: var(--on-muted); font-weight: 600; }
-.stars { color: #F5A623; font-size: 16px; letter-spacing: -1px; margin-right: auto; margin-inline-start: 4px; }
-.app[dir="ltr"] .stars { margin-right: 0; margin-left: auto; margin-inline-start: 4px; }
+.reviewer-info { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.reviewer-name { font-weight: 800; font-size: 15px; line-height: 1.3; }
+.reviewer-city { font-size: 12px; color: var(--on-muted); font-weight: 600; line-height: 1.3; }
+.stars { color: #F5A623; font-size: 14px; letter-spacing: -1px; flex-shrink: 0; line-height: 1; }
 .review-text {
   font-size: 14px; line-height: 1.7; color: var(--on-muted); flex: 1;
   text-align: start;
@@ -1128,10 +1150,6 @@
   overflow-y: auto;
   min-height: 0;
   text-align: start;
-}
-.review-lightbox-header {
-  display: flex; align-items: center; gap: 14px;
-  padding-inline: 2px;
 }
 .review-lightbox-text {
   font-size: 15px; line-height: 1.75; color: var(--on-muted);
@@ -1445,7 +1463,6 @@
 @media (max-width: 899px) {
   .checkout-headline { margin-bottom: 8px; }
   .checkout-title { font-size: 1.1rem !important; }
-  .checkout-section { padding-top: 18px; padding-bottom: 20px; }
   .order-card--compact .order-card-top--slim { padding: 10px 12px 8px; }
 }
 .visually-hidden {
@@ -1641,6 +1658,12 @@
 @media (max-width: 639px) {
   :root { --sec-py: 64px; }
 
+  .app { padding-bottom: calc(108px + env(safe-area-inset-bottom)); }
+
+  #view-landing > .landing-hero {
+    padding-bottom: 28px;
+  }
+
   /* Extra breathing room between hero and the BA slider on phones */
   .ba-section { padding-top: 56px; padding-bottom: 56px; }
 
@@ -1654,14 +1677,19 @@
   /* Reviews */
   .reviews-section { padding-top: 60px; padding-bottom: 60px; }
 
-  /* FAQ */
-  .faq-section { padding-top: 60px; }
+  /* FAQ — extra bottom space so sticky bar doesn't cover content */
+  .faq-section {
+    padding-top: 60px;
+    padding-bottom: calc(60px + 108px);
+  }
 
   /* More gap between review cards on mobile */
-  .reviews-grid { gap: 28px; }
+  .reviews-grid { gap: 28px; padding: 0; }
 
   /* Bigger gap inside section heads on phones */
   .section-head { margin-bottom: 28px; }
+
+  .final-cta-section { padding-top: 64px; padding-bottom: 64px; }
 }
 
 /* ─── LTR Overrides ─── */
