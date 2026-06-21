@@ -1406,6 +1406,24 @@
     for (var k = 0; k < lazy.length; k++) obs.observe(lazy[k]);
   }
 
+  /* ── SEO meta (injected HTML cannot set document head) ── */
+  function injectPageSeoMeta() {
+    var desc = {
+      ar: "شرائح Hismile V34 للتبييض — نتائج في 30 دقيقة، آمنة للأسنان الحساسة، الدفع عند الاستلام في المغرب.",
+      en: "Hismile V34 whitening strips — visible results in 30 minutes, enamel-safe, cash on delivery in Morocco.",
+      fr: "Bandes blanchissantes Hismile V34 — résultats en 30 minutes, sans danger, paiement à la livraison au Maroc."
+    };
+    var l = langs[currentLangIndex];
+    var content = desc[l] || desc.ar;
+    var m = document.querySelector('meta[name="description"]');
+    if (!m) {
+      m = document.createElement("meta");
+      m.setAttribute("name", "description");
+      document.head.appendChild(m);
+    }
+    if (!m.content || m.content === "test2" || m.content.length < 12) m.content = content;
+  }
+
   /* ── Init & Hash Routing ── */
   function handleHashRoute() {
     var hash = window.location.hash || '#landing';
@@ -1428,7 +1446,9 @@
   window.addEventListener("hashchange", handleHashRoute);
 
   function init() {
+    injectPageSeoMeta();
     applyLang(currentLangIndex);
+    injectPageSeoMeta();
     handleHashRoute();
     handleScroll();
     deferNonDefaultLangAssets();
