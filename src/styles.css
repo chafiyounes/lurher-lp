@@ -1765,8 +1765,22 @@ button.btn-primary .material-symbols-outlined {
 }
 
 /* Logo */
-.nav-brand { display: flex; align-items: center; line-height: 0; }
-.nav-logo { height: 26px; width: auto; max-width: 120px; object-fit: contain; display: block; }
+.nav-brand { display: flex; align-items: center; line-height: 0; max-height: 68px; overflow: hidden; }
+.nav-logo {
+  height: 26px !important;
+  width: auto !important;
+  max-width: 112px !important;
+  max-height: 28px !important;
+  object-fit: contain !important;
+  display: block;
+}
+.app .nav-header .nav-logo,
+.app .nav-brand .nav-logo {
+  height: 26px !important;
+  width: auto !important;
+  max-width: 112px !important;
+  max-height: 28px !important;
+}
 
 /* Mobile hero + form-first funnel */
 @media (max-width: 639px) {
