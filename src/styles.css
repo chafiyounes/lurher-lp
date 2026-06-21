@@ -1792,7 +1792,7 @@ button.btn-primary .material-symbols-outlined {
   /* Swipe carousel (not crossfade) */
   .landing-hero .media-carousel-btn { display: none !important; }
   .landing-hero .media-carousel-viewport {
-    overflow-x: auto;
+    overflow-x: auto !important;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;

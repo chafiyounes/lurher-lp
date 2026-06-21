@@ -577,12 +577,9 @@
         }
       } else if (scrollSnap && viewport) {
         track.style.transform = "none";
-        var isRtlSnap = document.querySelector(".app") &&
-          document.querySelector(".app").getAttribute("dir") === "rtl";
-        var w = viewport.clientWidth || 1;
-        var target = isRtlSnap ? -(index * w) : index * w;
-        if (Math.abs(viewport.scrollLeft - target) > 2) {
-          viewport.scrollTo({ left: target, behavior: reducedMotion ? "auto" : "smooth" });
+        var targetSlide = slideList[index];
+        if (targetSlide && targetSlide.scrollIntoView) {
+          targetSlide.scrollIntoView({ inline: "start", block: "nearest", behavior: reducedMotion ? "auto" : "smooth" });
         }
         for (var sSnap = 0; sSnap < slideList.length; sSnap++) {
           slideList[sSnap].classList.toggle("is-active", sSnap === index);
