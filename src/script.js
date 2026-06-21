@@ -164,17 +164,17 @@
       en: "Money-back guarantee — last chance at this price.",
       fr: "Garantie satisfait ou remboursé — dernière chance à ce prix."
     },
-    land_price:   { ar: "245 د.م.", en: "245 MAD", fr: "245 MAD" },
-    land_strike:  { ar: "350 د.م.", en: "350 MAD", fr: "350 MAD" },
-    savings_tag:  { ar: "وفّرت 105 د.م. (30%)", en: "You save 105 MAD (30%)", fr: "Vous économisez 105 MAD (30%)" },
+    land_price:   { ar: "245 درهم", en: "245 MAD", fr: "245 MAD" },
+    land_strike:  { ar: "350 درهم", en: "350 MAD", fr: "350 MAD" },
+    savings_tag:  { ar: "وفّرت 105 درهم (30%)", en: "You save 105 MAD (30%)", fr: "Vous économisez 105 MAD (30%)" },
     checkout_badge: { ar: "عرض محدود", en: "Limited Offer", fr: "Offre Limitée" },
 
     form_name: { ar: "الإسم الكامل", en: "Full Name", fr: "Nom complet" },
     form_phone: { ar: "رقم الهاتف", en: "Phone Number", fr: "Numéro de téléphone" },
     form_city: { ar: "المدينة", en: "City", fr: "Ville" },
-    form_name_ph: { ar: "محمد / فاطمة", en: "Your name", fr: "Votre nom" },
+    form_name_ph: { ar: "اسم", en: "Your name", fr: "Votre nom" },
     form_phone_ph: { ar: "06XX XXX XXX", en: "06XX XXX XXX", fr: "06XX XXX XXX" },
-    form_city_ph: { ar: "الدار البيضاء، الرباط...", en: "Casablanca, Rabat...", fr: "Casablanca, Rabat..." },
+    form_city_ph: { ar: "مدينة", en: "City", fr: "Ville" },
     form_title: {
       ar: "أكمل طلبيتك دابا",
       en: "Complete your order",
@@ -204,7 +204,7 @@
     ct_guarantee_sub: { ar: "ضمان 30 يوم استرجاع الفلوس", en: "30-day money-back guarantee", fr: "Garantie de remboursement de 30 jours" },
 
     sticky_name: { ar: "شرائط V34", en: "V34 Strips", fr: "Bandes V34" },
-    sticky_price: { ar: "245 د.م.", en: "245 MAD", fr: "245 MAD" },
+    sticky_price: { ar: "245 درهم", en: "245 MAD", fr: "245 MAD" },
     sticky_cta: { ar: "اطلب الآن", en: "Order Now", fr: "Commander" },
 
     foot_copy: { ar: "© 2025 HISMILE. جميع الحقوق محفوظة.", en: "© 2025 HISMILE. All rights reserved.", fr: "© 2025 HISMILE. Tous droits réservés." },
@@ -890,6 +890,33 @@
     var submitBtn = document.querySelector("#checkout-section .btn-submit") ||
                   document.querySelector("#checkout-section button[type='submit']");
     if (!form || !submitBtn) return;
+
+    // Sync hidden fields from YouCan's native page-builder form so we never
+    // need to hard-code product IDs or field slugs in this file.
+    (function syncHiddenFromNative() {
+      var native = document.querySelector("#app #express-checkout-form") ||
+                   document.querySelector(".express-checkout-form-section form") ||
+                   document.querySelector("[data-pb-type='single-product'] form");
+      if (!native) return;
+      var SKIP = { first_name: 1, phone: 1, "": 1 };
+      var nativeInputs = native.querySelectorAll("input[type='hidden'], input[name]");
+      for (var i = 0; i < nativeInputs.length; i++) {
+        var ni = nativeInputs[i];
+        var n = ni.getAttribute("name");
+        if (!n || SKIP[n]) continue;
+        var ours = form.querySelector('[name="' + n + '"]');
+        if (ours && !ours.value) {
+          ours.value = ni.value;
+        } else if (!ours) {
+          // native has a field we don't — add it as hidden so it gets submitted
+          var clone = document.createElement("input");
+          clone.type = "hidden";
+          clone.name = n;
+          clone.value = ni.value;
+          form.appendChild(clone);
+        }
+      }
+    })();
 
     function setVueValue(input, value) {
       if (!input) return;
