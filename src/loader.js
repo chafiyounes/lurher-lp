@@ -18,7 +18,7 @@
 
   var REPO = "chafiyounes/mapper-youcant";
   var BRANCH = "main";
-  var LOADER_VERSION = "mobile-fixes-4"; /* bump when asking user to re-paste footer snippet */
+  var LOADER_VERSION = "website-fixes-v2-1"; /* bump when asking user to re-paste footer snippet */
   var BASE = "https://raw.githubusercontent.com/" + REPO + "/" + BRANCH + "/";
 
   var FILES = {
@@ -37,6 +37,29 @@
   }
 
   window.__V34_INITIAL_LANG = detectV34Lang();
+
+  function injectSeoMeta() {
+    if (document.getElementById("v34-seo-meta")) return;
+    var wrap = document.createElement("div");
+    wrap.id = "v34-seo-meta";
+    wrap.innerHTML = [
+      '<meta name="description" content="شرائح Hismile V34 للتبييض — نتائج في 30 دقيقة، آمنة للأسنان الحساسة، الدفع عند الاستلام في المغرب.">',
+      '<meta property="og:title" content="Hismile V34 — شرائح تبييض الأسنان">',
+      '<meta property="og:description" content="تبييض أسنان فوري في 30 دقيقة — بلا بيروكسيد، توصيل مجاني، الدفع عند الاستلام.">',
+      '<meta property="og:image" content="' + BASE + 'images/PP-01-V34Strips_no-badge31_10_15_595x.webp">',
+      '<meta property="og:type" content="product">',
+      '<meta name="twitter:card" content="summary_large_image">',
+      '<meta name="twitter:title" content="Hismile V34 — شرائح تبييض الأسنان">',
+      '<meta name="twitter:description" content="تبييض أسنان فوري في 30 دقيقة — الدفع عند الاستلام.">',
+      '<meta name="twitter:image" content="' + BASE + 'images/PP-01-V34Strips_no-badge31_10_15_595x.webp">'
+    ].join("");
+    while (wrap.firstChild) document.head.appendChild(wrap.firstChild);
+    if (!document.title || document.title === "test2") {
+      document.title = "Hismile V34 — شرائح تبييض الأسنان";
+    }
+  }
+
+  injectSeoMeta();
 
   // Helper to fetch text with cache busting in dev mode
   var cacheBuster = "?t=" + new Date().getTime();

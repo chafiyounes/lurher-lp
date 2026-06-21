@@ -9,11 +9,11 @@
   <div class="announce-bar" aria-live="polite">
     <div class="announce-marquee">
       <div class="announce-marquee-track">
-        <span class="announce-msg" data-i18n="announce">🚚 توصيل مجاني لجميع مدن المغرب</span>
+        <span class="announce-msg" data-i18n="announce">🚚 شحن مجاني إلى جميع أنحاء المغرب</span>
         <span class="announce-sep" aria-hidden="true"> · </span>
         <span class="announce-msg announce-stock" aria-live="polite"></span>
         <span class="announce-sep" aria-hidden="true"> · </span>
-        <span class="announce-msg" data-i18n="announce">🚚 توصيل مجاني لجميع مدن المغرب</span>
+        <span class="announce-msg" data-i18n="announce">🚚 شحن مجاني إلى جميع أنحاء المغرب</span>
         <span class="announce-sep" aria-hidden="true"> · </span>
         <span class="announce-msg announce-stock" aria-hidden="true"></span>
       </div>
@@ -178,7 +178,7 @@
                 <img class="order-card-thumb" alt="V34 Strips" src="https://raw.githubusercontent.com/chafiyounes/mapper-youcant/main/images/PP-01-V34Strips_no-badge31_10_15_595x.webp" width="80" height="80" loading="eager" decoding="async"/>
                 <div class="order-card-offer">
                   <div class="checkout-price-row">
-                    <span class="price-tag-big" id="display-price">245 درهم</span>
+                    <span class="price-tag-big" id="display-price"></span>
                     <span class="strike-price is-hidden" id="compare-price-display" hidden></span>
                     <span class="savings-tag savings-tag--inline is-hidden" id="savings-display" hidden></span>
                   </div>
@@ -222,6 +222,14 @@
                       </div>
                     </div>
 
+                    <div class="premium-field form-group">
+                      <label class="field-label visually-hidden" data-i18n="form_address">العنوان</label>
+                      <div class="field-row">
+                        <span class="material-symbols-outlined">home</span>
+                        <input name="region" type="text" placeholder="العنوان" data-i18n-placeholder="form_address_ph" autocomplete="street-address">
+                      </div>
+                    </div>
+
                     <div style="display:none;">
                       <input type="hidden" name="extra_fields[custom_field_dvwbCriA0IY849RF]" value="organic">
                       <input type="hidden" name="extra_fields[custom_field_nfRXtUfus8GGt1ZD]" value="">
@@ -262,7 +270,7 @@
               <span class="material-symbols-outlined">verified_user</span>
               <div class="badge-texts">
                 <strong data-i18n="ct_guarantee">ضمان استرجاع الفلوس</strong>
-                <span data-i18n="ct_guarantee_sub">إلا ما عجبكش النتيجة — فلوسك مضمونة</span>
+                <span data-i18n="ct_guarantee_sub">إذا لم تعجبك النتيجة — أموالك مضمونة</span>
               </div>
             </div>
           </aside>
@@ -277,8 +285,7 @@
       <div class="ba-inner">
         <div class="ba-copy">
           <div class="section-head text-center">
-            <span class="section-eyebrow" data-i18n="ba_eyebrow">نتائج حقيقية</span>
-            <h2 class="t-h2 ba-title" data-i18n="land_ba_h">الناس كتخلّص المئات فعيادات التبييض... حنا جبنا ليك نفس النتيجة لدارك.</h2>
+            <h2 class="t-h2 ba-title" data-i18n="land_ba_h">يُمكنك أن تدفع آلاف الدراهم عند الأطباء، أو أن تحصل على منتجٍ مؤكَّد ومضمون من منزلك.</h2>
             <p class="ba-hint" id="ba-hint" data-i18n="land_ba_hint">← اسحب لكشف النتيجة →</p>
           </div>
         </div>
@@ -300,8 +307,7 @@
     <section class="benefits-section reveal" id="benefits-section">
       <div class="benefits-inner section-container">
         <div class="section-head text-center">
-          <span class="section-eyebrow" data-i18n="ben_eyebrow">الفوائد</span>
-          <h2 class="t-h2" data-i18n="land_benefits_h">شنو غادي تربح</h2>
+          <h2 class="t-h2" data-i18n="land_benefits_h">ما الذي ستحصل عليه</h2>
         </div>
         <figure class="benefits-infographic-wrap">
           <img class="img-ar benefits-infographic" src="https://raw.githubusercontent.com/chafiyounes/mapper-youcant/main/images/benefits/benefits-infographic-ar.webp" alt="أسنان أكثر بياضاً، نتيجة في 30 دقيقة، آمن تماماً، سهل الاستعمال، 14 استعمالاً، ضمان استرجاع المال" width="1024" height="1024" loading="lazy" decoding="async"/>
@@ -318,50 +324,22 @@
       <div class="split-row">
         <div class="split-content">
           <div class="section-head">
-            <span class="section-eyebrow" data-i18n="why_eyebrow">التكنولوجيا</span>
-            <h2 class="t-h2" data-i18n="land_why_h">علاش V34 مختلفة على كلشي؟</h2>
-            <p class="section-desc" data-i18n="land_why_sub">أغلب منتجات التبييض إما كتاخد أسابيع باش تبان، ولا كتضر المينا ديالك بالماء الأوكسجيني. حنا اخترنا طريق آخر:</p>
+            <h2 class="t-h2" data-i18n="why_title">التكنولوجيا</h2>
           </div>
           <div class="feature-stack">
             <div class="h-card">
               <span class="material-symbols-outlined">palette</span>
               <div>
                 <h3 class="t-h3" data-i18n="land_feat1_h">بياض فوري للأسنان الصفراء</h3>
-                <p class="t-body t-muted h-card-p" data-i18n="land_feat1_p">تكنولوجيا تصحيح اللون البنفسجي كت-neutralize الاصفرار — ابتسامة أفتح واضحة من أول استعمال.</p>
               </div>
             </div>
             <div class="h-card">
               <span class="material-symbols-outlined">verified</span>
               <div>
                 <h3 class="t-h3" data-i18n="land_feat2_h">آمنة حتى للأسنان الحساسة</h3>
-                <p class="t-body t-muted h-card-p" data-i18n="land_feat2_p">مدعومة بتقنية PAP+ كتبيّض تدريجياً بلا بيروكسيد وبلا ضرر على المينا.</p>
-              </div>
-            </div>
-            <div class="h-card">
-              <span class="material-symbols-outlined">public</span>
-              <div>
-                <h3 class="t-h3" data-i18n="land_feat3_h">جرّبوه ملايين حول العالم</h3>
-                <p class="t-body t-muted h-card-p" data-i18n="land_feat3_p">أكثر من 10 ملايين منتج V34 تباع عالمياً — ملايين اختاروه قبلك.</p>
               </div>
             </div>
           </div>
-        </div>
-        <div class="split-media split-media--triptych">
-          <div class="v34-triptych" role="group" aria-label="V34 before, apply, after">
-            <figure class="v34-triptych-panel">
-              <img src="https://raw.githubusercontent.com/chafiyounes/mapper-youcant/main/images/products/before.jpg" alt="" loading="lazy" />
-              <figcaption data-i18n="triptych_before">قبل</figcaption>
-            </figure>
-            <figure class="v34-triptych-panel">
-              <img src="https://raw.githubusercontent.com/chafiyounes/mapper-youcant/main/images/products/during.jpg" alt="" loading="lazy" />
-              <figcaption data-i18n="triptych_apply">أثناء الاستعمال</figcaption>
-            </figure>
-            <figure class="v34-triptych-panel">
-              <img src="https://raw.githubusercontent.com/chafiyounes/mapper-youcant/main/images/products/after.webp" alt="" loading="lazy" />
-              <figcaption data-i18n="triptych_after">بعد</figcaption>
-            </figure>
-          </div>
-          <p class="v34-disclaimer" data-i18n="v34_disclaimer">*النتائج كتختلف من شخص لآخر. اتبع التعليمات على العلبة باش تجيب أحسن نتيجة. الصور للتوضيح فقط.</p>
         </div>
       </div>
     </section>
@@ -372,9 +350,7 @@
     <section class="reviews-section bg-white reveal">
       <div class="section-container">
         <div class="section-head text-center">
-          <span class="section-eyebrow" data-i18n="rev_eyebrow">آراء حقيقية</span>
           <h2 class="t-h2" data-i18n="rev_title">آراء الزبناء</h2>
-          <p class="section-desc" data-i18n="rev_sub">+2,000 طلبية وصلات للمغرب — هادو شي تعليقات من زبنائنا</p>
         </div>
         <div class="reviews-summary">
           <div class="reviews-score">
@@ -474,38 +450,12 @@
     </section>
 
     <!-- ══════════════════════════════════════════════════════
-         FINAL CTA — repeat offer for scroll-through visitors
-    ══════════════════════════════════════════════════════ -->
-    <section class="final-cta-section reveal" id="final-cta">
-      <div class="section-container">
-        <div class="final-cta-card">
-          <div class="final-cta-copy">
-            <span class="checkout-badge-offer" data-i18n="checkout_badge">عرض محدود</span>
-            <h2 class="t-h2" data-i18n="land_order_h">كل يوم كتأجّل، هو يوم بأسنان أقل بياضًا.</h2>
-            <p class="section-desc final-cta-sub" data-i18n="final_cta_sub">ضمان استرجاع الفلوس — آخر فرصة على هاد الثمن.</p>
-            <div class="final-price-row">
-              <span class="price-tag-big final-display-price">245 درهم</span>
-              <span class="strike-price is-hidden final-compare-price" hidden></span>
-              <span class="savings-tag is-hidden final-savings-tag" hidden></span>
-            </div>
-          </div>
-          <button type="button" class="btn-primary scroll-to-checkout final-cta-btn">
-            <span class="material-symbols-outlined" aria-hidden="true">shopping_bag</span>
-            <span class="btn-label" data-i18n="submit_order_long">أكد الطلب — الدفع عند الاستلام</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════════════════
          FAQ SECTION
     ══════════════════════════════════════════════════════ -->
     <section class="faq-section bg-alt reveal" id="faq-section">
       <div class="section-container">
         <div class="section-head text-center">
-          <span class="section-eyebrow" data-i18n="faq_eyebrow">أسئلة شائعة</span>
           <h2 class="t-h2" data-i18n="faq_title">كل ما خصك تعرف قبل الطلب</h2>
-          <p class="section-desc" data-i18n="faq_sub">مازال عندك شك؟ هاد الإجابات كتغطي الاستعمال، الأمان، التوصيل والإرجاع.</p>
         </div>
         <div class="faq-panel">
           <div class="faq-item">
@@ -533,20 +483,6 @@
             <div class="faq-answer">
               <div class="faq-answer-inner">
               <p data-i18n="faq_a2">النتيجة الفورية ديال تصحيح اللون كتصبر يومين إلى 3 أيام حسب الماكلة والشراب ديالك (أتاي، قهوة، سجائر). ومع الاستعمال المتكرر لتقنية PAP+، التبييض كيولي دائم ومستمر.</p>
-              </div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span class="faq-q-start">
-                <span class="faq-topic-icon"><span class="material-symbols-outlined">health_and_safety</span></span>
-                <span class="faq-q-text" data-i18n="faq_q3">واش آمنة على الأسنان الحساسة والمينا؟</span>
-                <span class="faq-chevron" aria-hidden="true"><span class="material-symbols-outlined">expand_more</span></span>
-              </span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-              <p data-i18n="faq_a3">نعم، آمنة 100%. شرائط V34 خالية تماماً من البيروكسيد (الماء الأوكسجيني) اللي كيسبب الألم والحساسية. كتخدم بتقنية تصحيح اللون الطبيعي وتبييض PAP+ الطبي الآمن.</p>
               </div>
             </div>
           </div>
@@ -656,5 +592,22 @@
       <span class="btn-label" data-i18n="sticky_cta">اطلب الآن</span>
     </button>
   </nav>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Hismile V34",
+    "offers": {
+      "@type": "Offer",
+      "price": "250",
+      "priceCurrency": "MAD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9"
+    }
+  }
+  </script>
 
 </div>

@@ -9,12 +9,12 @@
   var I18N = {
     /* Announcement */
     announce: {
-      ar: "🚚 توصيل مجاني لجميع مدن المغرب",
+      ar: "🚚 شحن مجاني إلى جميع أنحاء المغرب",
       en: "🚚 Free shipping anywhere in Morocco",
       fr: "🚚 Livraison gratuite partout au Maroc"
     },
     announce_stock: {
-      ar: "باقي غير <strong>{n}</strong> فالمخزون",
+      ar: "بقي <strong>{n}</strong> فقط في المخزون",
       en: "Only <strong>{n}</strong> left in stock",
       fr: "Plus que <strong>{n}</strong> en stock"
     },
@@ -50,30 +50,9 @@
     trust_ship: { ar: "توصيل لجميع المدن", en: "Delivery to all cities", fr: "Livraison partout" },
     trust_cod: { ar: "الدفع عند الاستلام", en: "Cash on Delivery", fr: "Paiement à la livraison" },
 
-    land_why_h: { ar: "علاش V34 مختلفة على كلشي؟", en: "Why is V34 Different?", fr: "Pourquoi V34 est différent ?" },
-    land_why_sub: {
-      ar: "أغلب منتجات التبييض إما كتاخد أسابيع باش تبان، ولا كتضر المينا ديالك بالماء الأوكسجيني. حنا اخترنا طريق آخر:",
-      en: "Most whitening products take weeks or damage enamel. We chose a different path:",
-      fr: "La plupart des produits prennent des semaines ou abîment l'émail. Nous avons choisi une autre voie :"
-    },
-    land_feat1_h: { ar: "بياض فوري للأسنان الصفراء", en: "Instantly Brightens Yellow Teeth", fr: "Éclaircit instantanément les dents jaunes" },
-    land_feat1_p: {
-      ar: "تكنولوجيا تصحيح اللون البنفسجي كت-neutralize الاصفرار — ابتسامة أفتح واضحة من أول استعمال.",
-      en: "Purple colour-correcting technology neutralizes yellow tones for a visibly brighter smile from the very first use.",
-      fr: "La technologie de correction violette neutralise les tons jaunes pour un sourire visiblement plus éclatant dès la première utilisation."
-    },
-    land_feat2_h: { ar: "آمنة حتى للأسنان الحساسة", en: "Safe Even for Sensitive Teeth", fr: "Sûr même pour les dents sensibles" },
-    land_feat2_p: {
-      ar: "مدعومة بتقنية PAP+ كتبيّض تدريجياً بلا بيروكسيد وبلا ضرر على المينا.",
-      en: "Powered by PAP+ technology to gradually whiten teeth without peroxide and without damaging enamel.",
-      fr: "Propulsé par la technologie PAP+ pour blanchir progressivement sans peroxyde et sans abîmer l'émail."
-    },
-    land_feat3_h: { ar: "موثوقة من أكثر من 10 ملايين زبون", en: "Trusted by Over 10 Million Customers", fr: "Approuvé par plus de 10 millions de clients" },
-    land_feat3_p: {
-      ar: "ملايين الناس فالعالم اختارو V34 كحل ديالهم باش يبانو بابتسامة أفتح.",
-      en: "Millions worldwide have chosen V34 as their go-to solution for a brighter-looking smile.",
-      fr: "Des millions de personnes dans le monde ont choisi V34 pour un sourire plus lumineux."
-    },
+    why_title: { ar: "التكنولوجيا", en: "Technology", fr: "Technologie" },
+    land_feat1_h: { ar: "يبيّض الأسنان الصفراء فوراً", en: "Instantly Brightens Yellow Teeth", fr: "Éclaircit instantanément les dents jaunes" },
+    land_feat2_h: { ar: "آمن حتى للأسنان الحساسة", en: "Safe Even for Sensitive Teeth", fr: "Sûr même pour les dents sensibles" },
     triptych_before: { ar: "قبل", en: "Before", fr: "Avant" },
     triptych_apply: { ar: "أثناء الاستعمال", en: "During use", fr: "Pendant l'application" },
     triptych_after: { ar: "بعد", en: "After", fr: "Après" },
@@ -83,7 +62,7 @@
       fr: "*Les résultats varient. Suivez les instructions de la boîte. Images à titre illustratif."
     },
 
-    land_benefits_h: { ar: "شنو غادي تربح:", en: "What you will gain:", fr: "Ce que vous y gagnez :" },
+    land_benefits_h: { ar: "ما الذي ستحصل عليه", en: "What you will gain", fr: "Ce que vous obtenez" },
     ben_1: { ar: "أسنان أكثر بياضاً بشكل ملحوظ من أول استعمال", en: "Visibly whiter teeth from the very first use", fr: "Des dents visiblement plus blanches dès la première utilisation" },
     ben_2: { ar: "نتيجة في 30 دقيقة وليس بعد أسابيع", en: "Results in 30 minutes — not weeks", fr: "Résultat en 30 minutes — pas en plusieurs semaines" },
     ben_3: { ar: "آمن تماماً — بلا ألم وبلا حساسية", en: "Completely safe — no pain, no sensitivity", fr: "Totalement sûr — sans douleur, sans sensibilité" },
@@ -105,12 +84,16 @@
     proof_morocco: { ar: "طلبية وصلات للمغرب", en: "orders delivered in Morocco", fr: "commandes livrées au Maroc" },
     proof_results_cap: { ar: "نتائج حقيقية من زبنائنا", en: "Real results from our customers", fr: "Résultats réels de nos clients" },
 
-    land_ba_h: { ar: "الناس كتخلّص المئات فعيادات التبييض... حنا جبنا ليك نفس النتيجة لدارك.", en: "People pay hundreds at clinics... We brought the same result to your home.", fr: "Les gens paient des centaines en clinique... Nous avons apporté le même résultat chez vous." },
+    land_ba_h: {
+      ar: "يُمكنك أن تدفع آلاف الدراهم عند الأطباء، أو أن تحصل على منتجٍ مؤكَّد ومضمون من منزلك.",
+      en: "You can pay thousands at clinics — or get a proven, guaranteed product from home.",
+      fr: "Vous pouvez payer des milliers chez le dentiste — ou obtenir un produit éprouvé et garanti chez vous."
+    },
     land_ba_hint: { ar: "← اسحب لكشف النتيجة →", en: "← Drag to reveal →", fr: "← Glissez pour révéler →" },
     ba_before: { ar: "قبل", en: "BEFORE", fr: "AVANT" },
     ba_after: { ar: "بعد", en: "AFTER", fr: "APRÈS" },
     land_checkout_h: {
-      ar: "أكمل طلبيتك دابا",
+      ar: "أكمل طلبك الآن",
       en: "Complete your order now",
       fr: "Complétez votre commande"
     },
@@ -119,7 +102,7 @@
     ben_eyebrow: { ar: "الفوائد", en: "Benefits", fr: "Avantages" },
     ba_eyebrow: { ar: "نتائج حقيقية", en: "Real results", fr: "Résultats réels" },
 
-    rev_title: { ar: "آراء الزبناء", en: "Customer Reviews", fr: "Avis Clients" },
+    rev_title: { ar: "آراء العملاء", en: "Customer Reviews", fr: "Avis clients" },
     rev_eyebrow: { ar: "آراء حقيقية", en: "Real reviews", fr: "Avis vérifiés" },
     rev_sub: {
       ar: "+2,000 طلبية وصلات للمغرب — هادو شي تعليقات من زبنائنا",
@@ -178,7 +161,9 @@
     form_city: { ar: "المدينة", en: "City", fr: "Ville" },
     form_name_ph: { ar: "اسم", en: "Your name", fr: "Votre nom" },
     form_phone_ph: { ar: "06XX XXX XXX", en: "06XX XXX XXX", fr: "06XX XXX XXX" },
-    form_city_ph: { ar: "مدينة", en: "City", fr: "Ville" },
+    form_city_ph: { ar: "المدينة", en: "City", fr: "Ville" },
+    form_address: { ar: "العنوان", en: "Address", fr: "Adresse" },
+    form_address_ph: { ar: "العنوان", en: "Address", fr: "Adresse" },
     form_title: {
       ar: "أكمل طلبيتك دابا",
       en: "Complete your order",
@@ -202,11 +187,11 @@
     },
 
     ct_ship: { ar: "توصيل سريع", en: "Fast Shipping", fr: "Livraison Rapide" },
-    ct_ship_sub: { ar: "فابور و سريع (24-48 ساعة)", en: "Free and fast (24-48h)", fr: "Gratuit et rapide (24-48h)" },
-    trust_cod_sub: { ar: "تأكد من المنتج عاد خلص", en: "Check your product, then pay", fr: "Vérifiez avant de payer" },
-    ct_guarantee: { ar: "ضمان 100%", en: "100% Guarantee", fr: "Garantie 100%" },
+    ct_ship_sub: { ar: "مجاني وسريع (24–48 ساعة)", en: "Free and fast (24–48h)", fr: "Gratuit et rapide (24–48h)" },
+    trust_cod_sub: { ar: "تحقق من المنتج ثم ادفع", en: "Check your product, then pay", fr: "Vérifiez avant de payer" },
+    ct_guarantee: { ar: "ضمان استرجاع الأموال", en: "Money-back guarantee", fr: "Garantie de remboursement" },
     ct_guarantee_sub: {
-      ar: "إلا ما عجبكش النتيجة — فلوسك مضمونة",
+      ar: "إذا لم تعجبك النتيجة — أموالك مضمونة",
       en: "Not happy with results? Money back.",
       fr: "Pas satisfait ? Remboursement garanti."
     },
@@ -224,7 +209,7 @@
 
     /* FAQ translations */
     faq_eyebrow: { ar: "أسئلة شائعة", en: "FAQ", fr: "FAQ" },
-    faq_title: { ar: "كل ما خصك تعرف قبل الطلب", en: "Everything you need to know before ordering", fr: "Tout ce qu'il faut savoir avant de commander" },
+    faq_title: { ar: "كل ما تحتاج معرفته قبل الطلب", en: "Everything you need to know before ordering", fr: "Tout ce qu'il faut savoir avant de commander" },
     faq_sub: {
       ar: "مازال عندك شك؟ هاد الإجابات كتغطي الاستعمال، الأمان، التوصيل والإرجاع.",
       en: "Still unsure? These answers cover usage, safety, delivery and returns.",
@@ -267,7 +252,7 @@
     },
     faq_q6: { ar: "شنو هي سياسة الإرجاع؟", en: "What is the return policy?", fr: "Quelle est la politique de retour ?" },
     faq_a6: {
-      ar: "إيلا ما شفتيش نتيجة من بعد ما استعملتي المنتج بطريقة صحيحة لمدة 15 يوم، كنرجعو ليك فلوسك مضمونة — 200 درهم. خاصك ترفع طلب الإرجاع مع صور قبل وبعد قبل ما يكمل 15 يوم من التوصيل. من بعد 15 يوم من التوصيل بلا طلب = لا استرجاع.",
+      ar: "إذا لم تلاحظ أي نتيجة بعد استعمال المنتج بالطريقة الصحيحة لمدة 15 يوماً، نُعيد لك أموالك مضمونة — 200 درهم. يجب تقديم طلب الاسترجاع مع صور قبل وبعد قبل انتهاء مدة 15 يوماً من التوصيل. بعد 15 يوماً من التوصيل دون طلب = لا استرجاع.",
       en: "If you see no results after using the product as directed within 15 days of delivery, you get a guaranteed 200 MAD refund. Submit your claim with before & after photos before the 15-day-from-delivery deadline. No claim within 15 days of delivery = no refund.",
       fr: "Si aucun résultat après utilisation correcte dans les 15 jours suivant la livraison, remboursement garanti de 200 MAD. Envoyez votre demande avec photos avant/après avant la fin du délai de 15 jours. Passé ce délai, aucun remboursement."
     }
@@ -329,19 +314,16 @@
     };
     document.title = titleDict[l] || "Hismile V34";
     updateHeroGalleryAlts();
-    updateStockLabels(window.__V34_STOCK_COUNT || 20);
+    updateStockLabels(window.__V34_STOCK_COUNT || computeDeterministicStock());
     loadDeferredLangAssets(l);
     syncPricesFromYouCan();
+    syncFormLabelsFromYouCan();
   }
 
   function updateStockLabels(n) {
     var l = langs[currentLangIndex];
-    var templates = {
-      ar: "باقي غير <strong>{n}</strong> فالمخزون",
-      en: "Only <strong>{n}</strong> left in stock",
-      fr: "Plus que <strong>{n}</strong> en stock"
-    };
-    var html = (templates[l] || templates.ar).replace("{n}", String(n));
+    var tpl = I18N.announce_stock && I18N.announce_stock[l] ? I18N.announce_stock[l] : "Only <strong>{n}</strong> left in stock";
+    var html = tpl.replace("{n}", String(n));
     document.querySelectorAll(".announce-stock").forEach(function (el) {
       el.innerHTML = html;
     });
@@ -1059,6 +1041,10 @@
 
       var hasError = false;
       var fieldsToValidate = ["first_name", "phone", "extra_fields[custom_field_cGzlrqWxXctNnheN]"];
+      var nativeForm = document.querySelector("#app #express-checkout-form");
+      if (nativeForm && nativeForm.querySelector('[name="region"]')) {
+        fieldsToValidate.push("region");
+      }
       for (var i = 0; i < fieldsToValidate.length; i++) {
         var name = fieldsToValidate[i];
         var input = form.querySelector('[name="' + name + '"]');
@@ -1223,6 +1209,38 @@
     });
   }
 
+  function syncFormLabelsFromYouCan() {
+    var native = document.querySelector("#app #express-checkout-form") ||
+      document.querySelector(".express-checkout-form-section form") ||
+      document.querySelector("[data-pb-type='single-product'] form");
+    var form = document.getElementById("custom-express-checkout-form");
+    if (!native || !form) return;
+
+    var nativeGroups = native.querySelectorAll(".form-group");
+    for (var g = 0; g < nativeGroups.length; g++) {
+      var group = nativeGroups[g];
+      var label = group.querySelector(".form-label");
+      var input = group.querySelector("input:not([type='hidden']), select, textarea");
+      if (!input) continue;
+      var name = input.getAttribute("name");
+      if (!name) continue;
+      var ours = form.querySelector('[name="' + name + '"]');
+      if (!ours) continue;
+      var labelText = label ? label.textContent.replace(/:\s*$/, "").trim() : "";
+      var ph = input.getAttribute("placeholder") || labelText;
+      if (ph) ours.setAttribute("placeholder", ph);
+      var ourLabel = ours.closest(".premium-field, .form-group");
+      if (ourLabel) {
+        var lbl = ourLabel.querySelector(".field-label");
+        if (lbl && labelText) lbl.textContent = labelText;
+      }
+    }
+
+    var nativeId = native.querySelector('input[name="id"]');
+    var ourId = form.querySelector('input[name="id"]');
+    if (nativeId && ourId && nativeId.value) ourId.value = nativeId.value;
+  }
+
   /* ── Price sync from YouCan native form ── */
   function parsePriceNum(text) {
     if (!text) return null;
@@ -1273,12 +1291,17 @@
     var finalPrice = document.querySelector(".final-display-price");
     var finalCompare = document.querySelector(".final-compare-price");
     var finalSavings = document.querySelector(".final-savings-tag");
-    var stickyPrice = document.querySelector(".sticky-price");
+    var stickyPrice = document.querySelector(".sticky-price span:last-child") ||
+      document.querySelector(".sticky-price");
 
     if (priceText) {
       if (display) display.textContent = priceText;
       if (finalPrice) finalPrice.textContent = priceText;
-      if (stickyPrice) stickyPrice.textContent = priceText;
+      if (stickyPrice && stickyPrice.tagName === "SPAN") stickyPrice.textContent = priceText;
+      else if (stickyPrice) {
+        var spans = stickyPrice.querySelectorAll("span");
+        if (spans.length > 1) spans[spans.length - 1].textContent = priceText;
+      }
     }
 
     var cur = parsePriceNum(priceText);
@@ -1328,18 +1351,20 @@
     }
   }
 
-  /* ── Stock ticker in announce bar ── */
+  /* ── Stock count (deterministic on page load) ── */
+  function computeDeterministicStock() {
+    var MIN = 3;
+    var MAX = 30;
+    var DROP_PER_DAY = 3.5;
+    var cycleDays = (MAX - MIN) / DROP_PER_DAY;
+    var daysFloat = (Date.now() / 36e5) / 24;
+    var phase = daysFloat % cycleDays;
+    return Math.max(MIN, Math.round(MAX - phase * DROP_PER_DAY));
+  }
+
   function initStockTicker() {
-    window.__V34_STOCK_COUNT = 20;
+    window.__V34_STOCK_COUNT = computeDeterministicStock();
     updateStockLabels(window.__V34_STOCK_COUNT);
-    function tick() {
-      window.__V34_STOCK_COUNT -= 1;
-      if (window.__V34_STOCK_COUNT < 3) window.__V34_STOCK_COUNT = 30;
-      updateStockLabels(window.__V34_STOCK_COUNT);
-      var delay = 6000 + Math.floor(Math.random() * 9000);
-      setTimeout(tick, delay);
-    }
-    setTimeout(tick, 6000 + Math.floor(Math.random() * 9000));
   }
 
   /* ── Defer non-default language image assets ── */
@@ -1366,7 +1391,7 @@
 
   /* ── Lazy below-fold sections ── */
   function initLazySections() {
-    var sels = ["#ba-section", "#benefits-section", "#why-section", ".reviews-section", "#final-cta", "#faq-section"];
+    var sels = ["#ba-section", "#benefits-section", "#why-section", ".reviews-section", "#faq-section"];
     for (var i = 0; i < sels.length; i++) {
       var el = document.querySelector(sels[i]);
       if (el) el.setAttribute("data-lazy-section", "");
@@ -1414,8 +1439,11 @@
     initStickyCta();
     initCustomCheckout();
     syncPricesFromYouCan();
+    syncFormLabelsFromYouCan();
     setTimeout(syncPricesFromYouCan, 800);
+    setTimeout(syncFormLabelsFromYouCan, 800);
     setTimeout(syncPricesFromYouCan, 2500);
+    setTimeout(syncFormLabelsFromYouCan, 2500);
     initFaq();
     initReviewLightbox();
   }
