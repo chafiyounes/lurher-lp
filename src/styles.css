@@ -1668,7 +1668,10 @@
   .ba-section { padding-top: 56px; padding-bottom: 56px; }
 
   /* Checkout section on mobile: a bit more air */
-  .checkout-section { padding-top: 56px; padding-bottom: 56px; }
+  .app #checkout-section.checkout-section {
+    padding-block: 56px;
+    padding-inline: var(--sec-px);
+  }
 
   /* Benefits and technology sections */
   .benefits-section,
