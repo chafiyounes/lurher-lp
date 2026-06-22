@@ -1448,7 +1448,6 @@
   function init() {
     injectPageSeoMeta();
     applyLang(currentLangIndex);
-    injectPageSeoMeta();
     handleHashRoute();
     handleScroll();
     deferNonDefaultLangAssets();
