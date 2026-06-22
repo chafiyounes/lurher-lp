@@ -1779,29 +1779,29 @@ button.btn-primary .material-symbols-outlined {
 }
 
 /* Logo */
-.nav-brand { display: flex; align-items: center; line-height: 0; max-height: 96px; overflow: hidden; }
+.nav-brand { display: flex; align-items: center; line-height: 0; max-height: 120px; overflow: hidden; }
 .nav-logo {
-  height: 60px !important;
+  height: 88px !important;
   width: auto !important;
-  max-width: 240px !important;
-  max-height: 64px !important;
+  max-width: 320px !important;
+  max-height: 96px !important;
   object-fit: contain !important;
   display: block;
 }
 .app .nav-header .nav-logo,
 .app .nav-brand .nav-logo {
-  height: 60px !important;
+  height: 88px !important;
   width: auto !important;
-  max-width: 240px !important;
-  max-height: 64px !important;
+  max-width: 320px !important;
+  max-height: 96px !important;
 }
 @media (max-width: 639px) {
   .nav-logo,
   .app .nav-header .nav-logo,
   .app .nav-brand .nav-logo {
-    height: 50px !important;
-    max-width: 200px !important;
-    max-height: 54px !important;
+    height: 70px !important;
+    max-width: 260px !important;
+    max-height: 76px !important;
   }
 }
 
