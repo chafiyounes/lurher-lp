@@ -196,17 +196,6 @@
       fr: "Confirmer — paiement à la livraison"
     },
 
-    /* Buy-box benefit bullets (HiSmile-style) */
-    buy_bullet1: { ar: "أسنان أكثر بياضاً من أول استعمال", en: "Whiter teeth after just one use", fr: "Des dents plus blanches dès la première utilisation" },
-    buy_bullet2: { ar: "ضمان استرجاع المال إن لم تقتنع بالنتيجة", en: "Not satisfied? Get your money back", fr: "Pas satisfait ? Remboursement garanti" },
-    buy_bullet3: { ar: "نتائج تبييض واضحة في 30 دقيقة", en: "Visible whitening in 30 minutes", fr: "Blanchiment visible en 30 minutes" },
-    buy_how_t: { ar: "كيف تعمل شرائط V34؟", en: "How do V34 strips work?", fr: "Comment fonctionnent les bandes V34 ?" },
-    buy_how_p: {
-      ar: "تجمع شرائط V34 بين تصحيح اللون البنفسجي الذي يعادل الاصفرار فوراً، وتقنية PAP+ التي تبيّض الأسنان تدريجياً دون بيروكسيد ودون أي ضرر على المينا أو حساسية.",
-      en: "V34 strips combine purple colour-correcting that instantly neutralises yellow tones with PAP+ technology that gradually whitens — no peroxide, no enamel damage, no sensitivity.",
-      fr: "Les bandes V34 associent la correction de couleur violette qui neutralise instantanément le jaune à la technologie PAP+ qui blanchit progressivement — sans peroxyde, sans abîmer l'émail, sans sensibilité."
-    },
-
     ct_ship: { ar: "توصيل سريع", en: "Fast Shipping", fr: "Livraison Rapide" },
     ct_ship_sub: { ar: "مجاني وسريع (24–48 ساعة)", en: "Free and fast (24–48h)", fr: "Gratuit et rapide (24–48h)" },
     trust_cod_sub: { ar: "تحقق من المنتج ثم ادفع", en: "Check your product, then pay", fr: "Vérifiez avant de payer" },
@@ -1466,7 +1455,7 @@
   /* ── Defer non-default language image assets ── */
   function deferNonDefaultLangAssets() {
     if (langs[currentLangIndex] !== DEFAULT_LANG) return;
-    var imgs = document.querySelectorAll(".img-ar, .img-en, .benefits-infographic.img-ar, .benefits-infographic.img-en");
+    var imgs = document.querySelectorAll(".img-ar:not(.benefits-infographic), .img-en:not(.benefits-infographic)");
     for (var i = 0; i < imgs.length; i++) {
       if (!imgs[i].dataset.deferredSrc && imgs[i].getAttribute("src")) {
         imgs[i].dataset.deferredSrc = imgs[i].getAttribute("src");
