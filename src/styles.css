@@ -1746,26 +1746,36 @@ button.btn-primary .material-symbols-outlined {
 /* ═══ mobile-fixes.md contract ═══ */
 .is-hidden { display: none !important; }
 
-/* Announce marquee */
+/* Announce marquee — seamless loop.
+   Track = two identical .announce-group halves. The animation translates by
+   exactly one half (-50%), so the loop point is pixel-identical = no jump.
+   JS repeats the messages inside each group until a group is wider than the
+   viewport, so there is never an empty gap on any screen size. */
 .announce-bar { overflow: hidden; padding: 0; }
 .announce-marquee { overflow: hidden; width: 100%; }
 .announce-marquee-track {
   display: flex;
   width: max-content;
+  flex-wrap: nowrap;
   gap: 0;
-  animation: announce-scroll 28s linear infinite;
+  animation: announce-scroll 32s linear infinite;
   padding: 11px 0;
+  will-change: transform;
 }
+.announce-group { display: flex; flex: 0 0 auto; align-items: center; }
 .app[dir="rtl"] .announce-marquee-track { animation-name: announce-scroll-rtl; }
 .announce-msg { white-space: nowrap; padding-inline: 28px; font-size: 13px; font-weight: 700; }
 .announce-sep { opacity: 0.45; }
 @keyframes announce-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 @keyframes announce-scroll-rtl {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(50%); }
+  from { transform: translateX(0); }
+  to   { transform: translateX(50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .announce-marquee-track { animation: none; }
 }
 
 /* Logo */

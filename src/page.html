@@ -5,17 +5,22 @@
 
 <div class="app" dir="rtl" lang="ar">
 
-  <!-- Announcement Bar -->
+  <!-- Announcement Bar (seamless marquee: two identical groups, JS widens to fill) -->
   <div class="announce-bar" aria-live="polite">
     <div class="announce-marquee">
-      <div class="announce-marquee-track">
-        <span class="announce-msg" data-i18n="announce">🚚 شحن مجاني إلى جميع أنحاء المغرب</span>
-        <span class="announce-sep" aria-hidden="true"> · </span>
-        <span class="announce-msg announce-stock" aria-live="polite"></span>
-        <span class="announce-sep" aria-hidden="true"> · </span>
-        <span class="announce-msg" data-i18n="announce">🚚 شحن مجاني إلى جميع أنحاء المغرب</span>
-        <span class="announce-sep" aria-hidden="true"> · </span>
-        <span class="announce-msg announce-stock" aria-hidden="true"></span>
+      <div class="announce-marquee-track" id="announce-track">
+        <div class="announce-group">
+          <span class="announce-msg" data-i18n="announce">🚚 شحن مجاني إلى جميع أنحاء المغرب</span>
+          <span class="announce-sep" aria-hidden="true"> · </span>
+          <span class="announce-msg announce-stock"></span>
+          <span class="announce-sep" aria-hidden="true"> · </span>
+        </div>
+        <div class="announce-group" aria-hidden="true">
+          <span class="announce-msg" data-i18n="announce">🚚 شحن مجاني إلى جميع أنحاء المغرب</span>
+          <span class="announce-sep" aria-hidden="true"> · </span>
+          <span class="announce-msg announce-stock"></span>
+          <span class="announce-sep" aria-hidden="true"> · </span>
+        </div>
       </div>
     </div>
   </div>

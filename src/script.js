@@ -285,6 +285,25 @@
   var currentLangIndex = langs.indexOf(resolveInitialLang());
   if (currentLangIndex < 0) currentLangIndex = 0;
 
+  /* Localize a subtree (data-i18n + data-i18n-placeholder). Defaults to whole doc. */
+  function localize(root, l) {
+    root = root || document;
+    var nodes = root.querySelectorAll("[data-i18n]");
+    for (var i = 0; i < nodes.length; i++) {
+      var k = nodes[i].getAttribute("data-i18n");
+      if (I18N[k] && I18N[k][l] != null) {
+        nodes[i].innerHTML = I18N[k][l];
+      }
+    }
+    var phNodes = root.querySelectorAll("[data-i18n-placeholder]");
+    for (var j = 0; j < phNodes.length; j++) {
+      var pk = phNodes[j].getAttribute("data-i18n-placeholder");
+      if (I18N[pk] && I18N[pk][l] != null) {
+        phNodes[j].setAttribute("placeholder", I18N[pk][l]);
+      }
+    }
+  }
+
   /* ── i18n Apply ── */
   function applyLang(index) {
     currentLangIndex = index;
@@ -297,21 +316,7 @@
       app.setAttribute("dir", l === "ar" ? "rtl" : "ltr");
     }
 
-    var nodes = document.querySelectorAll("[data-i18n]");
-    for (var i = 0; i < nodes.length; i++) {
-      var k = nodes[i].getAttribute("data-i18n");
-      if (I18N[k] && I18N[k][l] != null) {
-        nodes[i].innerHTML = I18N[k][l];
-      }
-    }
-
-    var phNodes = document.querySelectorAll("[data-i18n-placeholder]");
-    for (var j = 0; j < phNodes.length; j++) {
-      var pk = phNodes[j].getAttribute("data-i18n-placeholder");
-      if (I18N[pk] && I18N[pk][l] != null) {
-        phNodes[j].setAttribute("placeholder", I18N[pk][l]);
-      }
-    }
+    localize(document, l);
 
     var label = document.getElementById("langLabel");
     if (label) label.textContent = l.toUpperCase();
@@ -325,6 +330,7 @@
     document.title = titleDict[l] || "Hismile V34";
     updateHeroGalleryAlts();
     updateStockLabels(window.__V34_STOCK_COUNT || computeDeterministicStock());
+    if (window.__V34_REBUILD_MARQUEE) window.__V34_REBUILD_MARQUEE();
     loadDeferredLangAssets(l);
     syncPricesFromYouCan();
     syncFormLabelsFromYouCan();
@@ -1361,20 +1367,76 @@
     }
   }
 
-  /* ── Stock count (deterministic on page load) ── */
+  /* ── Stock count (deterministic on page load) ──
+     Granularity is ONE DAY: the value is identical all day (a visitor who
+     returns a minute later sees the same number), then drops by DROP_PER_DAY
+     each calendar day. When a cycle ends it jumps back up to a pseudo-random
+     "restock" max — deterministic per cycle, so it's not a live timer. Pure
+     math → instant. */
   function computeDeterministicStock() {
-    var MIN = 3;
-    var MAX = 30;
-    var DROP_PER_DAY = 3.5;
-    var cycleDays = (MAX - MIN) / DROP_PER_DAY;
-    var daysFloat = (Date.now() / 36e5) / 24;
-    var phase = daysFloat % cycleDays;
-    return Math.max(MIN, Math.round(MAX - phase * DROP_PER_DAY));
+    var MIN = 4;
+    var DROP_PER_DAY = 2;
+    var CYCLE_DAYS = 12;
+    var dayIndex = Math.floor(Date.now() / 86400000); // whole days since epoch
+    var cycleIndex = Math.floor(dayIndex / CYCLE_DAYS);
+    var dayInCycle = dayIndex - cycleIndex * CYCLE_DAYS;
+    // Deterministic pseudo-random restock max for this cycle (24..32).
+    var seed = Math.sin(cycleIndex * 127.13 + 11.7) * 10000;
+    var rnd = seed - Math.floor(seed);
+    var startMax = 24 + Math.floor(rnd * 9);
+    var n = startMax - dayInCycle * DROP_PER_DAY;
+    return n < MIN ? MIN : n;
   }
 
   function initStockTicker() {
     window.__V34_STOCK_COUNT = computeDeterministicStock();
     updateStockLabels(window.__V34_STOCK_COUNT);
+  }
+
+  /* ── Announce marquee: fill each half so it always exceeds the viewport,
+        keep the two halves identical for a seamless (jump-free) loop. ── */
+  function initAnnounceMarquee() {
+    var track = document.getElementById("announce-track");
+    var marquee = track && track.parentNode;
+    if (!track || !marquee) return;
+
+    var firstGroup = track.querySelector(".announce-group");
+    if (!firstGroup) return;
+    var unitHtml = firstGroup.innerHTML; // one set of messages (+ trailing separator)
+
+    function build() {
+      var vw = marquee.clientWidth || window.innerWidth || 360;
+      var group = document.createElement("div");
+      group.className = "announce-group";
+      group.innerHTML = unitHtml;
+      track.innerHTML = "";
+      track.appendChild(group);
+
+      // Repeat the unit until one group is wider than the viewport (+buffer),
+      // so after translating -50% there is never an empty gap.
+      var guard = 0;
+      while (group.scrollWidth < vw + 80 && guard < 40) {
+        group.insertAdjacentHTML("beforeend", unitHtml);
+        guard++;
+      }
+
+      var clone = group.cloneNode(true);
+      clone.setAttribute("aria-hidden", "true");
+      track.appendChild(clone);
+
+      // Re-localize + refresh stock for the freshly built nodes.
+      localize(track, langs[currentLangIndex]);
+      updateStockLabels(window.__V34_STOCK_COUNT || computeDeterministicStock());
+    }
+
+    build();
+    window.__V34_REBUILD_MARQUEE = build;
+
+    var t;
+    window.addEventListener("resize", function () {
+      clearTimeout(t);
+      t = setTimeout(build, 200);
+    }, { passive: true });
   }
 
   /* ── Defer non-default language image assets ── */
@@ -1463,6 +1525,7 @@
     deferNonDefaultLangAssets();
     initLazySections();
     initStockTicker();
+    initAnnounceMarquee();
     initSlider();
     initHeroGallery();
     initStickyCta();
