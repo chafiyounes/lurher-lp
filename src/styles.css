@@ -251,14 +251,14 @@
 
 /* ─── Announcement Bar ─── */
 .announce-bar {
-  background: linear-gradient(90deg, #f3ebfc 0%, #ebe2f7 50%, #f3ebfc 100%);
-  color: var(--primary-dark);
+  background: var(--primary);
+  color: #fff;
   text-align: center;
   padding: 11px var(--sec-px);
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.02em;
-  border-bottom: 1px solid var(--border);
+  border-bottom: none;
 }
 
 /* ─── Navigation ─── */
@@ -286,7 +286,7 @@
 .hero {
   padding: var(--gap-xl) var(--sec-px) 0;
   width: 100%;
-  background: linear-gradient(160deg, #fff 0%, var(--surface-alt) 55%, #efe6f8 100%);
+  background: var(--surface);
   position: relative;
   overflow: hidden;
 }
@@ -317,13 +317,7 @@
 .hero-action-stack .hero-cod-note { margin-top: 0; }
 .hero-action-stack .hero-trust-chips { margin-top: 0; }
 .hero::before {
-  content: '';
-  position: absolute;
-  width: 520px; height: 520px;
-  top: -180px; left: 50%;
-  transform: translateX(-50%);
-  background: radial-gradient(circle, rgba(124,36,212,0.14) 0%, transparent 68%);
-  pointer-events: none;
+  content: none;
 }
 .hero-inner { position: relative; z-index: 1; }
 .hero-inner {
@@ -1952,7 +1946,7 @@ button.btn-primary .material-symbols-outlined {
   contain-intrinsic-size: auto 480px;
 }
 
-/* ─── B11: Section headers — Amiri Arabic serif + light purple box ─── */
+/* ─── Section headers — clean HiSmile-style (geometric sans, no box) ─── */
 .section-eyebrow { display: none !important; }
 .section-head .t-h2,
 .checkout-title,
@@ -1961,19 +1955,29 @@ button.btn-primary .material-symbols-outlined {
 .benefits-section .t-h2,
 .reviews-section .t-h2,
 .faq-section .t-h2 {
-  font-family: 'Amiri', 'Playfair Display', Georgia, 'Times New Roman', serif !important;
-  font-size: clamp(1.8rem, 6vw, 3rem) !important;
+  font-family: var(--font-ar);
+  font-size: clamp(1.6rem, 4.2vw, 2.6rem) !important;
   font-weight: 700 !important;
-  line-height: 1.2 !important;
+  line-height: 1.18 !important;
   letter-spacing: 0;
   margin-bottom: 0 !important;
-  display: inline-block;
-  background: rgba(124, 36, 212, 0.07) !important;
-  border: 1.5px solid rgba(124, 36, 212, 0.18) !important;
-  padding: 8px 28px !important;
-  border-radius: 10px !important;
-  box-shadow: 0 0 28px rgba(124, 36, 212, 0.10) !important;
-  text-shadow: 0 0 24px rgba(124, 36, 212, 0.18);
+  display: block;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  text-shadow: none;
+  color: var(--on-surface) !important;
+}
+.app[dir="ltr"] .section-head .t-h2,
+.app[dir="ltr"] .checkout-title,
+.app[dir="ltr"] .ba-title,
+.app[dir="ltr"] #why-section .t-h2,
+.app[dir="ltr"] .benefits-section .t-h2,
+.app[dir="ltr"] .reviews-section .t-h2,
+.app[dir="ltr"] .faq-section .t-h2 {
+  font-family: var(--font-en);
+  letter-spacing: -0.02em;
 }
 .section-head { margin-bottom: 28px; }
 .section-head .section-desc { display: none !important; }
