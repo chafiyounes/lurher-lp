@@ -1509,6 +1509,41 @@
   margin-top: 8px; font-size: 12px; font-weight: 700; color: var(--on-muted);
 }
 
+/* ─── Buy-box benefit bullets + 'How it works' expandable (HiSmile-style) ─── */
+.buy-bullets {
+  list-style: none; margin: 0; padding: 14px 22px 4px;
+  display: flex; flex-direction: column; gap: 9px;
+}
+.buy-bullets li {
+  display: flex; align-items: flex-start; gap: 9px;
+  font-size: 14px; font-weight: 600; line-height: 1.4;
+  color: var(--on-strong); text-align: start;
+}
+.buy-bullets li .material-symbols-outlined {
+  font-size: 20px; color: var(--primary); flex-shrink: 0;
+  margin-top: 1px;
+}
+.buy-how {
+  margin: 6px 22px 0; border-top: 1px solid var(--border);
+}
+.buy-how summary {
+  display: flex; align-items: center; gap: 8px;
+  padding: 12px 0; cursor: pointer; list-style: none;
+  font-size: 14px; font-weight: 700; color: var(--on-strong);
+}
+.buy-how summary::-webkit-details-marker { display: none; }
+.buy-how .buy-how-lead { font-size: 19px; color: var(--primary); flex-shrink: 0; }
+.buy-how .buy-how-title { flex: 1; text-align: start; }
+.buy-how .buy-how-chevron { font-size: 22px; color: var(--on-muted); transition: transform 0.25s ease; }
+.buy-how[open] .buy-how-chevron { transform: rotate(180deg); }
+.buy-how .buy-how-body {
+  margin: 0 0 12px; padding-inline-start: 27px;
+  font-size: 13px; font-weight: 500; line-height: 1.6; color: var(--on-muted);
+}
+.order-card--compact .buy-bullets { padding: 10px 14px 2px; gap: 7px; }
+.order-card--compact .buy-bullets li { font-size: 13px; }
+.order-card--compact .buy-how { margin: 4px 14px 0; }
+
 .order-card-body { padding: 22px 22px 8px; }
 .form-title {
   font-size: clamp(20px, 2vw, 24px); font-weight: 900;
