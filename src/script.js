@@ -280,17 +280,20 @@
   };
 
   /* ── Language Detection & State ── */
-  var langs = ["ar", "en", "fr"];
+  var langs = ["fr", "ar"];
+  var DEFAULT_LANG = "fr";
 
   function resolveInitialLang() {
     try {
       var savedLang = localStorage.getItem("v34_lang");
+      if (savedLang === "en") return DEFAULT_LANG;
       if (savedLang && langs.indexOf(savedLang) !== -1) return savedLang;
     } catch (e) {}
-    if (window.__V34_INITIAL_LANG && langs.indexOf(window.__V34_INITIAL_LANG) !== -1) {
-      return window.__V34_INITIAL_LANG;
+    if (window.__V34_INITIAL_LANG) {
+      if (window.__V34_INITIAL_LANG === "en") return DEFAULT_LANG;
+      if (langs.indexOf(window.__V34_INITIAL_LANG) !== -1) return window.__V34_INITIAL_LANG;
     }
-    return "ar";
+    return DEFAULT_LANG;
   }
 
   var currentLangIndex = langs.indexOf(resolveInitialLang());
@@ -1462,8 +1465,8 @@
 
   /* ── Defer non-default language image assets ── */
   function deferNonDefaultLangAssets() {
-    if (langs[currentLangIndex] !== "ar") return;
-    var imgs = document.querySelectorAll(".img-en, .img-fr, .benefits-infographic.img-en, .benefits-infographic.img-fr");
+    if (langs[currentLangIndex] !== DEFAULT_LANG) return;
+    var imgs = document.querySelectorAll(".img-ar, .img-en, .benefits-infographic.img-ar, .benefits-infographic.img-en");
     for (var i = 0; i < imgs.length; i++) {
       if (!imgs[i].dataset.deferredSrc && imgs[i].getAttribute("src")) {
         imgs[i].dataset.deferredSrc = imgs[i].getAttribute("src");
@@ -1473,7 +1476,7 @@
   }
 
   function loadDeferredLangAssets(lang) {
-    if (lang === "ar") return;
+    if (lang === DEFAULT_LANG) return;
     var imgs = document.querySelectorAll(".img-" + lang);
     for (var i = 0; i < imgs.length; i++) {
       if (imgs[i].dataset.deferredSrc && !imgs[i].getAttribute("src")) {

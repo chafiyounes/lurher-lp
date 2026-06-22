@@ -1,6 +1,6 @@
 /* ============================================================
    HISMILE V34 — Premium COD Landing Page
-   RTL-first (Cairo font) · Full-width desktop · Tight funnel
+   FR default · Monadi Arabic · Full-width desktop · Tight funnel
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
@@ -8,6 +8,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
+
+@font-face {
+  font-family: 'Monadi';
+  src: url('https://raw.githubusercontent.com/chafiyounes/mapper-youcant/main/fonts/monadi.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* ─── Design Tokens ─── */
 :root {
@@ -32,7 +40,7 @@
   --danger:         #d32f2f;
   --success:        #2e7d32;
 
-  --font-ar:   'Cairo', sans-serif;
+  --font-ar:   'Monadi', 'Cairo', sans-serif;
   --font-en:   'Outfit', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   /* Spacing */
@@ -244,10 +252,10 @@
   box-shadow: var(--sh-md); 
 }
 
-/* Language Images Toggling */
-.app[lang="ar"] .img-fr, .app[lang="ar"] .img-en { display: none !important; }
-.app[lang="fr"] .img-ar, .app[lang="fr"] .img-en { display: none !important; }
-.app[lang="en"] .img-ar, .app[lang="en"] .img-fr { display: none !important; }
+/* Language Images Toggling — English hidden site-wide (assets kept in repo) */
+.app .img-en { display: none !important; }
+.app[lang="ar"] .img-fr { display: none !important; }
+.app[lang="fr"] .img-ar { display: none !important; }
 
 /* ─── Announcement Bar ─── */
 .announce-bar {
@@ -2014,6 +2022,15 @@ button.btn-primary .material-symbols-outlined {
   font-family: var(--font-en);
   letter-spacing: -0.02em;
 }
+.app[lang="ar"] .section-head .t-h2,
+.app[lang="ar"] .checkout-title,
+.app[lang="ar"] .ba-title,
+.app[lang="ar"] #why-section .t-h2,
+.app[lang="ar"] .benefits-section .t-h2,
+.app[lang="ar"] .reviews-section .t-h2,
+.app[lang="ar"] .faq-section .t-h2 {
+  font-family: 'Monadi', 'Cairo', sans-serif !important;
+}
 .section-head { margin-bottom: 28px; }
 .section-head .section-desc { display: none !important; }
 
@@ -2071,28 +2088,27 @@ button.btn-primary .material-symbols-outlined {
     max-width: 100% !important;
     min-width: 0 !important;
   }
-  /* Guarantees: compact horizontal 3-up strip beneath the form so the whole
-     form + guarantees fit on one screen (no 290px side column, no tall stack) */
+  /* Guarantees: vertical stack beneath the form (same as mobile) */
   .landing-hero #checkout-section .checkout-assurance {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 8px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
     width: 100% !important;
     max-width: 100% !important;
     margin-top: 12px !important;
     position: static !important;
     top: auto !important;
-    padding: 12px !important;
+    padding: 14px 16px !important;
     background: var(--surface-white) !important;
     border: 1px solid var(--border) !important;
     border-radius: var(--r-xl) !important;
     box-shadow: var(--sh-sm) !important;
   }
   .landing-hero #checkout-section .checkout-assurance .badge-item {
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    gap: 6px !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    text-align: start !important;
+    gap: 12px !important;
   }
   .landing-hero #checkout-section .checkout-assurance .badge-item .material-symbols-outlined {
     padding: 8px !important;
@@ -2166,5 +2182,5 @@ button.btn-primary .material-symbols-outlined {
 .faq-q-text { color: var(--on-strong); }
 
 /* ==BUILDER-OVERRIDES START (managed by builder, safe to keep)== */
-#in1b6{display:flex;align-items:center;gap:8px;}#ilqkt{margin-top:10px;}#view-home{display:none;}#iu05cp{display:none;}.field-row{margin:-10px 0px 0px 0px;}.premium-form{margin:10px 0px 0px 0px;padding:0 0px 0px 0px;}#i8yezj{margin:0 0 0 0;}
+#i8l8p{display:flex;align-items:center;gap:8px;}#ipsan{margin-top:10px;}#view-home{display:none;}#icri9e{display:none;}.nav-logo{margin:0px 40px 0px 0px;min-height:20px;position:static;padding:15px 0 10px 0px;}
 /* ==BUILDER-OVERRIDES END== */

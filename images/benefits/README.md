@@ -1,18 +1,19 @@
-# Benefits infographic (AR / EN / FR)
+# Benefits infographic (AR / FR / EN hidden)
 
-Raster infographics for the benefits section. **EN** is the master template; **AR** is generated from EN via OpenAI image edit (`dall-e-2` preferred, falls back to `gpt-image-1`).
+Vertical benefit graphics per language. **EN** is kept in the repo but hidden on the live site.
 
-| File | Language | Source |
+| File | Language | Notes |
 |------|----------|--------|
-| `benefits-infographic-en.png` | English | `source.png` |
-| `benefits-infographic-ar.png` | Arabic | `benefits-infographic-en.png` |
-| `benefits-infographic-fr.png` | French | `benefits-infographic-en.png` |
+| `benifits-ar.png` / `.webp` | Arabic | Active |
+| `benifits-fr.png` / `.webp` | French | Active (default language) |
+| `benifits-en.png` / `.webp` | English | Hidden — kept for easy restore |
 
-Regenerate Arabic only:
+Legacy infographics live in `old/` (`benefits-infographic-*.webp`).
+
+Regenerate WebP after editing PNGs:
 
 ```bash
-set OPENAI_API_KEY=your_key
-python scripts/generate-benefits-infographic.py ar --source benefits-infographic-en.png
+python -c "from PIL import Image; import sys; s,d=sys.argv[1],sys.argv[2]; Image.open(s).save(d,'WEBP',quality=88,method=6)"
 ```
 
-Section background is **white** (`#fff`) to match the image. Push `.webp` files to `main` for jsDelivr.
+Bump `?v=` on image URLs in `src/page.html` after pushing.

@@ -53,6 +53,9 @@ __pycache__/
 brain/
 products/
 
+# Local page builder (dev tool, not deployed)
+builder/backups/
+
 # Loose local files (not deployed)
 youssef.py
 after3.jpg

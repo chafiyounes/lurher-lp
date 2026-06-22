@@ -18,7 +18,7 @@
 
   var REPO = "chafiyounes/mapper-youcant";
   var BRANCH = "main";
-  var LOADER_VERSION = "website-fixes-v2-3"; /* bump when asking user to re-paste footer snippet */
+  var LOADER_VERSION = "website-fixes-v2-4"; /* bump when asking user to re-paste footer snippet */
   var BASE = "https://raw.githubusercontent.com/" + REPO + "/" + BRANCH + "/";
 
   var FILES = {
@@ -28,12 +28,13 @@
   };
 
   function detectV34Lang() {
-    var supported = ["ar", "en", "fr"];
+    var supported = ["fr", "ar"];
     try {
       var saved = localStorage.getItem("v34_lang");
+      if (saved === "en") return "fr";
       if (saved && supported.indexOf(saved) !== -1) return saved;
     } catch (e) {}
-    return "ar";
+    return "fr";
   }
 
   window.__V34_INITIAL_LANG = detectV34Lang();
@@ -99,12 +100,12 @@
         }
         styleEl.textContent = cssText;
 
-        // ── 1b. Inject Amiri Arabic font (for section headers) ──
-        if (!document.getElementById("v34-amiri-font")) {
+        // ── 1b. Inject Monadi Arabic font ──
+        if (!document.getElementById("v34-monadi-font")) {
           var fontLink = document.createElement("link");
-          fontLink.id = "v34-amiri-font";
+          fontLink.id = "v34-monadi-font";
           fontLink.rel = "stylesheet";
-          fontLink.href = "https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap";
+          fontLink.href = BASE + "fonts/monadi.css";
           document.head.appendChild(fontLink);
         }
 
@@ -117,7 +118,7 @@
         }
         target.innerHTML = htmlText;
 
-        var earlyLang = window.__V34_INITIAL_LANG || "ar";
+        var earlyLang = window.__V34_INITIAL_LANG || "fr";
         var appRoot = target.querySelector(".app");
         if (appRoot) {
           appRoot.setAttribute("lang", earlyLang);
