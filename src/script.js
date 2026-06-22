@@ -51,18 +51,28 @@
     trust_cod: { ar: "الدفع عند الاستلام", en: "Cash on Delivery", fr: "Paiement à la livraison" },
 
     why_title: { ar: "التكنولوجيا", en: "Technology", fr: "Technologie" },
-    land_feat1_h: { ar: "يبيّض الأسنان الصفراء فوراً", en: "Instantly Brightens Yellow Teeth", fr: "Éclaircit instantanément les dents jaunes" },
-    land_feat2_h: { ar: "آمن حتى للأسنان الحساسة", en: "Safe Even for Sensitive Teeth", fr: "Sûr même pour les dents sensibles" },
+    land_feat1_h: { ar: "تصحيح اللون الفوري", en: "Instant Color Correction", fr: "Correction de couleur instantanée" },
+    land_feat1_p: {
+      ar: "تعمل تقنية تصحيح اللون البنفسجي على معادلة الاصفرار — ابتسامة أفتح واضحة من أول استعمال.",
+      en: "Purple colour-correcting technology neutralizes yellow tones for a visibly brighter smile from the very first use.",
+      fr: "La technologie de correction violette neutralise les tons jaunes pour un sourire visiblement plus éclatant dès la première utilisation."
+    },
+    land_feat2_h: { ar: "تبييض PAP+", en: "PAP+ Whitening", fr: "Blanchiment PAP+" },
+    land_feat2_p: {
+      ar: "مدعومة بتقنية PAP+ لتبييض تدريجي بلا بيروكسيد وبلا ضرر على المينا.",
+      en: "Powered by PAP+ technology to gradually whiten teeth without peroxide and without damaging enamel.",
+      fr: "Propulsé par la technologie PAP+ pour blanchir progressivement sans peroxyde et sans abîmer l'émail."
+    },
     triptych_before: { ar: "قبل", en: "Before", fr: "Avant" },
     triptych_apply: { ar: "أثناء الاستعمال", en: "During use", fr: "Pendant l'application" },
     triptych_after: { ar: "بعد", en: "After", fr: "Après" },
     v34_disclaimer: {
-      ar: "*النتائج كتختلف من شخص لآخر. اتبع التعليمات على العلبة باش تجيب أحسن نتيجة. الصور للتوضيح فقط.",
+      ar: "*تختلف النتائج من شخص لآخر. اتبع التعليمات على العلبة للحصول على أفضل نتيجة. الصور للتوضيح فقط.",
       en: "*Results vary by person. Follow the box instructions for best results. Images are illustrative only.",
       fr: "*Les résultats varient. Suivez les instructions de la boîte. Images à titre illustratif."
     },
 
-    land_benefits_h: { ar: "ما الذي ستحصل عليه", en: "What you will gain", fr: "Ce que vous obtenez" },
+    land_benefits_h: { ar: "خصائص المنتج", en: "Product Characteristics", fr: "Caractéristiques du produit" },
     ben_1: { ar: "أسنان أكثر بياضاً بشكل ملحوظ من أول استعمال", en: "Visibly whiter teeth from the very first use", fr: "Des dents visiblement plus blanches dès la première utilisation" },
     ben_2: { ar: "نتيجة في 30 دقيقة وليس بعد أسابيع", en: "Results in 30 minutes — not weeks", fr: "Résultat en 30 minutes — pas en plusieurs semaines" },
     ben_3: { ar: "آمن تماماً — بلا ألم وبلا حساسية", en: "Completely safe — no pain, no sensitivity", fr: "Totalement sûr — sans douleur, sans sensibilité" },
