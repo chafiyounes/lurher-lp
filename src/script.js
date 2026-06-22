@@ -1420,9 +1420,19 @@
         guard++;
       }
 
+      var groupWidth = group.scrollWidth;
+
       var clone = group.cloneNode(true);
       clone.setAttribute("aria-hidden", "true");
       track.appendChild(clone);
+
+      // Keep a CONSTANT on-screen speed (px/sec) no matter how many times the
+      // unit was repeated. The loop distance is exactly one group width, so
+      // duration = groupWidth / speed. (Fixed-duration CSS made it look fast on
+      // wide builds and slow on narrow ones after a resize.)
+      var SPEED_PX_PER_SEC = 70;
+      var duration = Math.max(12, Math.round(groupWidth / SPEED_PX_PER_SEC));
+      track.style.animationDuration = duration + "s";
 
       // Re-localize + refresh stock for the freshly built nodes.
       localize(track, langs[currentLangIndex]);

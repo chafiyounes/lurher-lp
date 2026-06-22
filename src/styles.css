@@ -269,7 +269,10 @@
 }
 .nav-inner {
   display: flex; justify-content: space-between; align-items: center;
-  height: 78px; max-width: var(--max-w); margin: 0 auto; padding: 0 var(--sec-px);
+  height: 110px; max-width: var(--max-w); margin: 0 auto; padding: 0 var(--sec-px);
+}
+@media (max-width: 639px) {
+  .nav-inner { height: 84px; }
 }
 .nav-brand {
   font-size: 28px; font-weight: 900; color: var(--primary-dark);
@@ -2027,22 +2030,40 @@ button.btn-primary .material-symbols-outlined {
     max-width: 100% !important;
     min-width: 0 !important;
   }
-  /* Guarantees stack full-width beneath the form (no 290px side column) */
+  /* Guarantees: compact horizontal 3-up strip beneath the form so the whole
+     form + guarantees fit on one screen (no 290px side column, no tall stack) */
   .landing-hero #checkout-section .checkout-assurance {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 12px !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
     width: 100% !important;
     max-width: 100% !important;
-    margin-top: 14px !important;
+    margin-top: 12px !important;
     position: static !important;
     top: auto !important;
-    padding: 18px !important;
+    padding: 12px !important;
     background: var(--surface-white) !important;
     border: 1px solid var(--border) !important;
     border-radius: var(--r-xl) !important;
     box-shadow: var(--sh-sm) !important;
   }
+  .landing-hero #checkout-section .checkout-assurance .badge-item {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 6px !important;
+  }
+  .landing-hero #checkout-section .checkout-assurance .badge-item .material-symbols-outlined {
+    padding: 8px !important;
+    font-size: 22px !important;
+  }
+  .landing-hero #checkout-section .checkout-assurance .badge-texts strong { font-size: 12.5px !important; line-height: 1.25 !important; }
+  .landing-hero #checkout-section .checkout-assurance .badge-texts span { font-size: 11px !important; line-height: 1.3 !important; }
+
+  /* Squeeze the form fields tighter so everything stays above the fold */
+  .landing-hero #checkout-section .premium-field { margin-bottom: 8px !important; }
+  .landing-hero #checkout-section .premium-field .field-label { font-size: 12px !important; margin-bottom: 3px !important; }
+  .landing-hero #checkout-section .premium-field .field-row { padding: 7px 12px !important; min-height: 38px !important; }
 }
 
 /* Fix: guarantees were hidden between 640–899px (shown only <640 and ≥900) */
@@ -2102,3 +2123,7 @@ button.btn-primary .material-symbols-outlined {
 /* Reviewer names + FAQ questions: brand-tinted dark */
 .reviewer-name,
 .faq-q-text { color: var(--on-strong); }
+
+/* ==BUILDER-OVERRIDES START (managed by builder, safe to keep)== */
+#in1b6{display:flex;align-items:center;gap:8px;}#ilqkt{margin-top:10px;}#view-home{display:none;}#iu05cp{display:none;}.field-row{margin:-10px 0px 0px 0px;}.premium-form{margin:10px 0px 0px 0px;padding:0 0px 0px 0px;}#i8yezj{margin:0 0 0 0;}
+/* ==BUILDER-OVERRIDES END== */
