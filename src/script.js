@@ -333,7 +333,7 @@
     document.title = titleDict[l] || "Hismile V34";
     updateHeroGalleryAlts();
     updateStockLabels(window.__V34_STOCK_COUNT || computeDeterministicStock());
-    if (window.__V34_REBUILD_MARQUEE) window.__V34_REBUILD_MARQUEE();
+    if (window.__V34_REFRESH_ANNOUNCE) window.__V34_REFRESH_ANNOUNCE();
     loadDeferredLangAssets(l);
     syncPricesFromYouCan();
     syncFormLabelsFromYouCan();
@@ -1403,20 +1403,33 @@
     var marquee = track && track.parentNode;
     if (!track || !marquee) return;
 
-    var firstGroup = track.querySelector(".announce-group");
-    if (!firstGroup) return;
-    var unitHtml = firstGroup.innerHTML; // one set of messages (+ trailing separator)
+    var SPEED_PX_PER_SEC = 42;
+    var lastViewportWidth = 0;
 
-    function build() {
+    function getUnitHtml() {
+      var l = langs[currentLangIndex];
+      var announce = (I18N.announce && I18N.announce[l]) ? I18N.announce[l] : "";
+      var stockTpl = (I18N.announce_stock && I18N.announce_stock[l]) ? I18N.announce_stock[l] : "";
+      var stockN = window.__V34_STOCK_COUNT || computeDeterministicStock();
+      var stockHtml = stockTpl.replace("{n}", String(stockN));
+      return (
+        '<span class="announce-msg" data-i18n="announce">' + announce + "</span>" +
+        '<span class="announce-sep" aria-hidden="true"> · </span>' +
+        '<span class="announce-msg announce-stock">' + stockHtml + "</span>" +
+        '<span class="announce-sep" aria-hidden="true"> · </span>'
+      );
+    }
+
+    function buildLayout() {
       var vw = marquee.clientWidth || window.innerWidth || 360;
+      lastViewportWidth = vw;
+      var unitHtml = getUnitHtml();
       var group = document.createElement("div");
       group.className = "announce-group";
       group.innerHTML = unitHtml;
       track.innerHTML = "";
       track.appendChild(group);
 
-      // Repeat the unit until one group is wider than the viewport (+buffer),
-      // so after translating -50% there is never an empty gap.
       var guard = 0;
       while (group.scrollWidth < vw + 80 && guard < 40) {
         group.insertAdjacentHTML("beforeend", unitHtml);
@@ -1424,31 +1437,36 @@
       }
 
       var groupWidth = group.scrollWidth;
-
       var clone = group.cloneNode(true);
       clone.setAttribute("aria-hidden", "true");
       track.appendChild(clone);
 
-      // Keep a CONSTANT on-screen speed (px/sec) no matter how many times the
-      // unit was repeated. The loop distance is exactly one group width, so
-      // duration = groupWidth / speed. (Fixed-duration CSS made it look fast on
-      // wide builds and slow on narrow ones after a resize.)
-      var SPEED_PX_PER_SEC = 70;
-      var duration = Math.max(12, Math.round(groupWidth / SPEED_PX_PER_SEC));
-      track.style.animationDuration = duration + "s";
+      var duration = Math.max(24, Math.round(groupWidth / SPEED_PX_PER_SEC));
+      track.style.setProperty("--announce-duration", duration + "s");
+      track.classList.add("is-ready");
+    }
 
-      // Re-localize + refresh stock for the freshly built nodes.
+    function refreshAnnounceContent() {
+      if (!track.querySelector(".announce-group")) {
+        buildLayout();
+        return;
+      }
       localize(track, langs[currentLangIndex]);
       updateStockLabels(window.__V34_STOCK_COUNT || computeDeterministicStock());
     }
 
-    build();
-    window.__V34_REBUILD_MARQUEE = build;
+    buildLayout();
+    window.__V34_REBUILD_MARQUEE = buildLayout;
+    window.__V34_REFRESH_ANNOUNCE = refreshAnnounceContent;
 
     var t;
     window.addEventListener("resize", function () {
       clearTimeout(t);
-      t = setTimeout(build, 200);
+      t = setTimeout(function () {
+        var vw = marquee.clientWidth || window.innerWidth || 360;
+        if (Math.abs(vw - lastViewportWidth) < 48) return;
+        buildLayout();
+      }, 350);
     }, { passive: true });
   }
 

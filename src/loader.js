@@ -18,7 +18,7 @@
 
   var REPO = "chafiyounes/mapper-youcant";
   var BRANCH = "main";
-  var LOADER_VERSION = "website-fixes-v2-5"; /* bump when asking user to re-paste footer snippet */
+  var LOADER_VERSION = "website-fixes-v2-6"; /* bump when asking user to re-paste footer snippet */
   var BASE = "https://raw.githubusercontent.com/" + REPO + "/" + BRANCH + "/";
 
   var FILES = {
@@ -99,15 +99,6 @@
           document.head.appendChild(styleEl);
         }
         styleEl.textContent = cssText;
-
-        // ── 1b. Inject Monadi Arabic font ──
-        if (!document.getElementById("v34-monadi-font")) {
-          var fontLink = document.createElement("link");
-          fontLink.id = "v34-monadi-font";
-          fontLink.rel = "stylesheet";
-          fontLink.href = BASE + "fonts/monadi.css";
-          document.head.appendChild(fontLink);
-        }
 
         // ── 2. Inject HTML ──
         var target = document.getElementById("v34-root");
