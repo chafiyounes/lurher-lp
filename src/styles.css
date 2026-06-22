@@ -1786,7 +1786,7 @@ button.btn-primary .material-symbols-outlined {
 .nav-logo {
   height: 88px !important;
   width: auto !important;
-  max-width: 320px !important;
+  max-width: 420px !important;
   max-height: 96px !important;
   object-fit: contain !important;
   display: block;
@@ -1795,7 +1795,7 @@ button.btn-primary .material-symbols-outlined {
 .app .nav-brand .nav-logo {
   height: 88px !important;
   width: auto !important;
-  max-width: 320px !important;
+  max-width: 420px !important;
   max-height: 96px !important;
 }
 @media (max-width: 639px) {
@@ -1803,7 +1803,7 @@ button.btn-primary .material-symbols-outlined {
   .app .nav-header .nav-logo,
   .app .nav-brand .nav-logo {
     height: 70px !important;
-    max-width: 260px !important;
+    max-width: 320px !important;
     max-height: 76px !important;
   }
 }
