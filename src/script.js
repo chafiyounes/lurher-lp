@@ -72,7 +72,7 @@
       fr: "*Les résultats varient. Suivez les instructions de la boîte. Images à titre illustratif."
     },
 
-    land_benefits_h: { ar: "خصائص المنتج", en: "Product Characteristics", fr: "Caractéristiques du produit" },
+    land_benefits_h: { ar: "خصائص المنتج", en: "Characteristics", fr: "Caractéristiques du produit" },
     ben_1: { ar: "أسنان أكثر بياضاً بشكل ملحوظ من أول استعمال", en: "Visibly whiter teeth from the very first use", fr: "Des dents visiblement plus blanches dès la première utilisation" },
     ben_2: { ar: "نتيجة في 30 دقيقة وليس بعد أسابيع", en: "Results in 30 minutes — not weeks", fr: "Résultat en 30 minutes — pas en plusieurs semaines" },
     ben_3: { ar: "آمن تماماً — بلا ألم وبلا حساسية", en: "Completely safe — no pain, no sensitivity", fr: "Totalement sûr — sans douleur, sans sensibilité" },

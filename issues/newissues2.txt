@@ -1,0 +1,13 @@
+1- as you can see in image.png the garentees are not setup properly.
+2- stock goes down every few seconds i was thinking more like every day 3 to 4 until it goes back up again. the scale of the function is a little wrong. when the website is loaded it should take the day and hour plug it into the function and get the supposed stock amount, it should only change on load of the page if it does change.
+3- remove the every day you delay is one with less white teeth the whole section is gone.
+4- make the titles like "technlogy" or "benifits" much bigger and clearer and make the design better, a different font no box.
+5- remove the text in technlogy section and the bought by 10million people across the globe. those are distactions. it should be the title technlogy and the 2 technlogies.
+6- same thing with benifits remove the text under it.
+7- use msa instead of darija for most of the text except the testimonials altought i might have to rewrite them.
+8- pull all the information from the express checkout form including the fill in the box whether its اسم or الاسم الكامل etc. i can just chnage it in youcan and it should change here.
+9- remove the faq is it safe for teeth and enamel it might stop people who want to buy from buying.
+10- the section above the before and after slider can be replaced by this instead "يمكن تدفع ٱلاف الدراهم عند الأطباء أو يمكن تاخد منتوج مأكد و مضمون و من المنزل" its much better.
+11- again remove the text under the faq title the title is enough.
+additional info:
+the express checkout form is in the current workspace with the name express-checkout-form.html

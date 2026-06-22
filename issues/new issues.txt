@@ -1,0 +1,27 @@
+phone related issues:
+1- overall the scaling in the phone is wrong, some elements get squished instead of filling to the whole screen. 
+2- the scroll is a fade scroll instead of the images looking like they are side by side when you scroll, a drag left to right scroll( it should be simpler to implement)
+3- the form should be apparent from the top. replace the text in the hero section with the form. the garentees should appear under the form.
+the structure of thehero on phone should be images on top with the form sticking out in the bottom, and when you go down a little you find the form fill information out and you can always go down for more info.
+4-you can't scroll down freely when you are in the drag before and after section.
+5- remove the 350 compare price. and pull the actual price from the youcan form as well as the compare price if it is there in the future i removed it from that form as well.
+6- the form on the phone doesnt take the whole screen i already mentioned this issue in the first thing.
+7-the technlogy section is not clear, reading just the titles won't provide any meaningful information lets switch it a litte the titles should provide information but if you want details you read the body of the 3 sections:
+instant color correction -> Instantly Brightens Yellow Teeth
+Purple colour-correcting technology neutralizes yellow tones for a visibly brighter smile from the very first use.
+PAP+ Whitening -> safe even for sensitive teeth
+Powered by PAP+ technology to gradually whiten teeth without peroxide and without damaging enamel.
+Tried by millions worldwide -> Trusted by Over 10 Million Customers
+Millions worldwide have chosen V34 as their go-to solution for a brighter-looking smile.
+translate this to other languages.
+8- the info bar on top should be dynamic it should be like a news bar effect where multiple sentences go right to left(depending on language), also add another sentences besides free shipping anywhere in morocco."only 20 left in stock" the 20 should be a little dynamic make a function right now where the number 20 keeps dropping until it get to 3 and then it gets stocked back up to 30 and again it drops.
+9- the website needs to be faster:
+    this calls for lazy loading the bottom sections, to lazy load the other images in the scroll, and make an order to how things load according to the order they are viewed.
+    this also calls for adjusting the size of the images that occupy a small div. 
+    we also need to not load the other languages until everything in the website is loaded for the default language.
+
+10- hismile logo should be minuscule. use the images i put in the images/logos folder, resize them appropriatly so they don't slow down the website.
+11- the side to side buttons for the image scroll on the hero section should not show for phone.
+12- fix the issue of margins in the review boxes or steal a review box design from the internet you have multiple sources in the skills and rules etc. if not then search in websites that compile html and css animations and already made elements.
+13- the return policy will be this. if a client didn't see any results after all 14 uses, they can get 200 dh back, they jsut have to send us before and after pictures before the 15 days is over and we will send them their money back. "إيلا ما شفتيش نتيجة من بعد ما استعملتي المنتج بطريقة صحيحة لمدة 15 يوم، كنرجعو ليك فلوسك مضمونة"
+combine this with the one in the website and you will get a very good copy. and remember to translate.

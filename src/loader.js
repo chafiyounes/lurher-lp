@@ -18,7 +18,7 @@
 
   var REPO = "chafiyounes/mapper-youcant";
   var BRANCH = "main";
-  var LOADER_VERSION = "website-fixes-v2-2"; /* bump when asking user to re-paste footer snippet */
+  var LOADER_VERSION = "website-fixes-v2-3"; /* bump when asking user to re-paste footer snippet */
   var BASE = "https://raw.githubusercontent.com/" + REPO + "/" + BRANCH + "/";
 
   var FILES = {
@@ -98,6 +98,15 @@
           document.head.appendChild(styleEl);
         }
         styleEl.textContent = cssText;
+
+        // ── 1b. Inject Amiri Arabic font (for section headers) ──
+        if (!document.getElementById("v34-amiri-font")) {
+          var fontLink = document.createElement("link");
+          fontLink.id = "v34-amiri-font";
+          fontLink.rel = "stylesheet";
+          fontLink.href = "https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap";
+          document.head.appendChild(fontLink);
+        }
 
         // ── 2. Inject HTML ──
         var target = document.getElementById("v34-root");
