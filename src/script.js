@@ -51,15 +51,15 @@
     why_title: { ar: "التكنولوجيا", en: "Technology", fr: "Technologie" },
     land_feat1_h: { ar: "تصحيح اللون الفوري", en: "Instant Color Correction", fr: "Correction de couleur instantanée" },
     land_feat1_p: {
-      ar: "تعمل تقنية تصحيح اللون البنفسجي على معادلة الاصفرار — ابتسامة أفتح واضحة من أول استعمال.",
-      en: "Purple colour-correcting technology neutralizes yellow tones for a visibly brighter smile from the very first use.",
-      fr: "La technologie de correction violette neutralise les tons jaunes pour un sourire visiblement plus éclatant dès la première utilisation."
+      ar: "الشريطة البنفسجية تقلّل اصفرار الأسنان فوراً — ابتسامة أوضح من أول استعمال.",
+      en: "The purple strip counters yellow stains instantly — a brighter smile from the first use.",
+      fr: "La bande violette atténue le jaune instantanément — un sourire plus éclatant dès la première fois."
     },
     land_feat2_h: { ar: "تبييض PAP+", en: "PAP+ Whitening", fr: "Blanchiment PAP+" },
     land_feat2_p: {
-      ar: "مدعومة بتقنية PAP+ لتبييض تدريجي بلا بيروكسيد وبلا ضرر على المينا.",
-      en: "Powered by PAP+ technology to gradually whiten teeth without peroxide and without damaging enamel.",
-      fr: "Propulsé par la technologie PAP+ pour blanchir progressivement sans peroxyde et sans abîmer l'émail."
+      ar: "تقنية PAP+ تبيّض تدريجياً بدون بيروكسيد وبدون إيذاء المينا.",
+      en: "PAP+ whitens gradually — no peroxide, no enamel damage.",
+      fr: "La PAP+ blanchit en douceur — sans peroxyde, sans abîmer l'émail."
     },
     triptych_before: { ar: "قبل", en: "Before", fr: "Avant" },
     triptych_apply: { ar: "أثناء الاستعمال", en: "During use", fr: "Pendant l'application" },
@@ -236,15 +236,15 @@
     },
     faq_q2: { ar: "شحال كتصبر النتيجة؟", en: "How long do results last?", fr: "Combien de temps dure le résultat ?" },
     faq_a2: {
-      ar: "النتيجة الفورية ديال تصحيح اللون كتصبر يومين إلى 3 أيام حسب الماكلة والشراب ديالك (أتاي، قهوة، سجائر). ومع الاستعمال المتكرر لتقنية PAP+، التبييض كيولي دائم ومستمر.",
-      en: "The instant colour correction lasts 2 to 3 days depending on diet (tea, coffee, smoking). With regular PAP+ tech, teeth whitening improves and lasts longer.",
-      fr: "La correction instantanée dure 2 à 3 jours selon l'alimentation (café, thé, tabac). Avec la technologie PAP+, le blanchiment devient plus durable."
+      ar: "البياض الفوري يدوم يومين إلى 3 أيام حسب القهوة والتدخين. مع الاستعمال المنتظم، يستمر التبييض.",
+      en: "Instant brightness lasts 2–3 days depending on coffee, tea, and smoking. Regular use keeps improving whiteness.",
+      fr: "L'éclat instantané dure 2 à 3 jours selon café et tabac. L'usage régulier prolonge le blanchiment."
     },
     faq_q3: { ar: "واش آمنة على الأسنان الحساسة والمينا؟", en: "Is it safe for sensitive teeth?", fr: "Est-ce sûr pour les dents sensibles ?" },
     faq_a3: {
-      ar: "نعم، آمنة 100%. شرائط V34 خالية تماماً من البيروكسيد (الماء الأوكسجيني) اللي كيسبب الألم والحساسية. كتخدم بتقنية تصحيح اللون الطبيعي وتبييض PAP+ الطبي الآمن.",
-      en: "Yes, 100% safe. V34 strips are peroxide-free to avoid sensitivity and pain, using natural color correction and dentist-approved PAP+ whitening.",
-      fr: "Oui, 100% sûr. Les bandes V34 sont sans peroxyde pour éviter la sensibilité, utilisant la correction de couleur naturelle et le blanchiment PAP+."
+      ar: "نعم. بدون بيروكسيد — لون بنفسجي فوري وتبييض PAP+ لطيف على المينا.",
+      en: "Yes. Peroxide-free — instant purple tone boost plus gentle PAP+ whitening.",
+      fr: "Oui. Sans peroxyde — éclat violet instantané et blanchiment PAP+ doux pour l'émail."
     },
     faq_q4: { ar: "شحال من استعمال كاين فالباطة؟", en: "How many uses in each box?", fr: "Combien d'utilisations par boîte ?" },
     faq_a4: {
@@ -268,6 +268,7 @@
 
   var langs = ["fr", "ar"];
   var DEFAULT_LANG = "fr";
+  var LANG_LABELS = { fr: "Français", ar: "العربية" };
 
   function resolveInitialLang() {
     try {
@@ -318,7 +319,7 @@
     localize(document, l);
 
     var label = document.getElementById("langLabel");
-    if (label) label.textContent = l.toUpperCase();
+    if (label) label.textContent = LANG_LABELS[l] || l;
 
     // Dynamically update document title based on language
     var titleDict = {

@@ -18,7 +18,7 @@
 
   var REPO = "chafiyounes/mapper-youcant";
   var BRANCH = "main";
-  var LOADER_VERSION = "website-fixes-v2-8";
+  var LOADER_VERSION = "website-fixes-v2-9";
   var BASE = "https://raw.githubusercontent.com/" + REPO + "/" + BRANCH + "/";
 
   var FILES = {
@@ -115,8 +115,9 @@
           appRoot.setAttribute("lang", earlyLang);
           appRoot.setAttribute("dir", earlyLang === "ar" ? "rtl" : "ltr");
         }
+        var LANG_LABELS = { fr: "Français", ar: "العربية" };
         var langLabel = target.querySelector("#langLabel");
-        if (langLabel) langLabel.textContent = earlyLang.toUpperCase();
+        if (langLabel) langLabel.textContent = LANG_LABELS[earlyLang] || earlyLang;
 
         // ── 3. Inject JS ──
         var scriptEl = document.getElementById("v34-script");
