@@ -269,17 +269,33 @@
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   box-shadow: var(--sh-sm);
+  overflow: visible;
 }
 .nav-inner {
-  display: flex; justify-content: space-between; align-items: center;
-  height: 110px; max-width: var(--max-w); margin: 0 auto; padding: 0 var(--sec-px);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: 48px;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--sec-px);
+  overflow: visible;
 }
+.nav-side { display: flex; align-items: center; min-width: 0; }
+.nav-side--start { justify-self: start; }
+.nav-side--end { justify-self: end; }
 @media (max-width: 639px) {
-  .nav-inner { height: 84px; }
+  .nav-inner { height: 44px; }
+  .lang-toggle-btn { padding: 7px 12px; font-size: 13px; }
 }
 .nav-brand {
-  font-size: 28px; font-weight: 900; color: var(--primary-dark);
-  letter-spacing: -1.5px; font-family: var(--font-en); cursor: pointer;
+  justify-self: center;
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  line-height: 0;
 }
 
 /* ─── Hero ─── */
@@ -291,7 +307,7 @@
   overflow: hidden;
 }
 #view-landing > .landing-hero {
-  padding: 8px 0 18px;
+  padding: 0 0 12px;
 }
 .landing-hero-title {
   font-size: clamp(1.65rem, 7.2vw, 3.5rem) !important;
@@ -442,7 +458,7 @@
     border-radius: 0;
     border: none;
     box-shadow: none;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 1200 / 1448;
     width: 100%;
     max-height: none;
   }
@@ -1671,16 +1687,15 @@
   .app { padding-bottom: calc(108px + env(safe-area-inset-bottom)); }
 
   #view-landing > .landing-hero {
-    padding-bottom: 28px;
+    padding-bottom: 0;
   }
 
   /* Extra breathing room between hero and the BA slider on phones */
   .ba-section { padding-top: 56px; padding-bottom: 56px; }
 
-  /* Checkout section on mobile: a bit more air */
   .app #checkout-section.checkout-section {
-    padding-block: 56px;
-    padding-inline: var(--sec-px);
+    padding-block: 0;
+    padding-inline: 0;
   }
 
   /* Benefits and technology sections */
@@ -1759,7 +1774,7 @@ button.btn-primary .material-symbols-outlined {
   width: max-content;
   flex-wrap: nowrap;
   gap: 0;
-  padding: 11px 0;
+  padding: 7px 0;
   will-change: transform;
   animation: none;
 }
@@ -1786,27 +1801,28 @@ button.btn-primary .material-symbols-outlined {
 /* Logo */
 .nav-brand { display: flex; align-items: center; line-height: 0; max-height: 120px; overflow: hidden; }
 .nav-logo {
-  height: 88px !important;
+  height: 56px !important;
   width: auto !important;
-  max-width: 420px !important;
-  max-height: 96px !important;
+  max-width: min(72vw, 220px) !important;
+  max-height: none !important;
   object-fit: contain !important;
   display: block;
+  margin-block: -6px;
 }
 .app .nav-header .nav-logo,
 .app .nav-brand .nav-logo {
-  height: 88px !important;
+  height: 56px !important;
   width: auto !important;
-  max-width: 420px !important;
-  max-height: 96px !important;
+  max-width: min(72vw, 220px) !important;
+  max-height: none !important;
 }
 @media (max-width: 639px) {
   .nav-logo,
   .app .nav-header .nav-logo,
   .app .nav-brand .nav-logo {
-    height: 70px !important;
-    max-width: 320px !important;
-    max-height: 76px !important;
+    height: 48px !important;
+    max-width: min(68vw, 200px) !important;
+    margin-block: -4px;
   }
 }
 
@@ -1831,7 +1847,7 @@ button.btn-primary .material-symbols-outlined {
     max-width: 100%;
   }
 
-  /* Swipe carousel (not crossfade) — peek effect shows edges of adjacent images */
+  /* Swipe carousel — full-width slides, box sized for tallest hero asset */
   .landing-hero .media-carousel-btn { display: none !important; }
   .landing-hero .media-carousel-viewport {
     overflow-x: auto !important;
@@ -1840,9 +1856,9 @@ button.btn-primary .material-symbols-outlined {
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
     touch-action: pan-x pan-y;
-    aspect-ratio: 4 / 5;
-    max-height: min(58dvh, 520px);
-    padding-inline: 5% !important;
+    aspect-ratio: 1200 / 1448;
+    max-height: none;
+    padding-inline: 0 !important;
     box-sizing: border-box !important;
   }
   .landing-hero .media-carousel--crossfade .media-carousel-viewport,
@@ -1863,20 +1879,30 @@ button.btn-primary .material-symbols-outlined {
     position: relative;
     opacity: 1;
     visibility: visible;
-    flex: 0 0 88%;
+    flex: 0 0 100%;
     scroll-snap-align: center;
     scroll-snap-stop: always;
-    min-width: 88%;
-    width: 88%;
-    border-radius: var(--r-md) !important;
+    min-width: 100%;
+    width: 100%;
+    border-radius: 0 !important;
     height: 100%;
     inset: auto;
     pointer-events: auto;
+    gap: 0;
+  }
+  .landing-hero .media-carousel-slide img {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: contain;
+    object-position: center;
+    padding: 0;
+    border-radius: 0;
   }
 
-  /* Form peeks below first screen */
+  /* Form sits tight under carousel for screenshot-friendly first screen */
   #checkout-section.checkout-section {
-    margin-top: -88px;
+    margin-top: 0;
     padding-top: 0;
     padding-inline: 0;
     position: relative;
@@ -1910,8 +1936,8 @@ button.btn-primary .material-symbols-outlined {
   #checkout-section .checkout-assurance--mobile-stack {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 14px 18px 20px;
+    gap: 8px;
+    padding: 10px 14px 14px;
     background: var(--surface-alt);
     border-top: 1px solid var(--border);
   }
@@ -2105,8 +2131,8 @@ button.btn-primary .material-symbols-outlined {
     gap: 0;
   }
   .landing-hero .media-carousel-viewport {
-    min-height: min(52dvh, 420px);
-    max-height: min(58dvh, 480px);
+    min-height: 0;
+    max-height: none;
   }
 }
 
@@ -2136,5 +2162,5 @@ button.btn-primary .material-symbols-outlined {
 .faq-q-text { color: var(--on-strong); }
 
 /* ==BUILDER-OVERRIDES START (managed by builder, safe to keep)== */
-#in1b6{display:flex;align-items:center;gap:8px;}#ilqkt{margin-top:10px;}#view-home{display:none;}#iu05cp{display:none;}.field-row{margin:-10px 0px 0px 0px;}.premium-form{margin:10px 0px 0px 0px;padding:0 0px 0px 0px;}#i8yezj{margin:0 0 0 0;}
+.nav-logo{margin:0px 40px 0px 0px;min-height:20px;position:static;padding:15px 0 10px 0px;}
 /* ==BUILDER-OVERRIDES END== */

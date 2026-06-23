@@ -1403,7 +1403,7 @@
     var marquee = track && track.parentNode;
     if (!track || !marquee) return;
 
-    var SPEED_PX_PER_SEC = 42;
+    var SPEED_PX_PER_SEC = 22;
     var lastViewportWidth = 0;
 
     function getUnitHtml() {
@@ -1441,7 +1441,7 @@
       clone.setAttribute("aria-hidden", "true");
       track.appendChild(clone);
 
-      var duration = Math.max(24, Math.round(groupWidth / SPEED_PX_PER_SEC));
+      var duration = Math.max(48, Math.round(groupWidth / SPEED_PX_PER_SEC));
       track.style.setProperty("--announce-duration", duration + "s");
       track.classList.add("is-ready");
     }
