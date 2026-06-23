@@ -5,7 +5,6 @@
 (function () {
   "use strict";
 
-  /* ── i18n Dictionary ── */
   var I18N = {
     /* Announcement */
     announce: {
@@ -28,8 +27,7 @@
     hero_cod_ship: { ar: "توصيل مجاني", en: "Free shipping", fr: "Livraison gratuite" },
     trust_safe: { ar: "آمن على المينا", en: "Enamel-safe", fr: "Sans danger pour l'émail" },
 
-    /* ─── LANDING PAGE ─── */
-    land_hero_h: { 
+      land_hero_h: { 
       ar: "تعبتي من الصفر فالأسنان؟ V34 كتبيّضهم فـ30 دقيقة — بلا ألم.", 
       en: "Tired of yellow teeth in every photo? V34 whitens visibly in 30 minutes — zero pain.",
       fr: "Marre des dents jaunes sur chaque photo ? V34 blanchit visiblement en 30 minutes — sans douleur."
@@ -232,9 +230,9 @@
     },
     faq_q1: { ar: "كيفاش كنستعمل شرائط V34؟", en: "How do I use V34 strips?", fr: "Comment utiliser les bandes V34 ?" },
     faq_a1: {
-      ar: "① نشّف سنانك مزيان بالورقة أو منشفة ورقية — خاص يكونو جافين باش الشريطة تلصق. ② حط الشريطة الكبيرة فالفوق والصغيرة فالتحت، ضغط على البلاستيك باش تثبت. ③ خليها من 30 دقيقة لساعة — بلا بيروكسيد، ما كيسببوش حساسية حتى مع وقت طويل. ④ حيد الشرائط وفرك سنانك عادي بالشيّتة باش تحيد البقايا البنفسجية. كتبع التعليمات بالحرف باش تجيب أحسن نتيجة.",
-      en: "① Dry teeth thoroughly with a paper towel — they must be dry for strips to stick. ② Apply long strip to upper teeth, short to lower, press firmly. ③ Leave 30 minutes to 1 hour — peroxide-free, no sensitivity even with longer wear. ④ Remove and brush normally to clear purple residue. Follow instructions exactly for best results.",
-      fr: "① Séchez bien avec un essuie — dents sèches pour que les bandes adhèrent. ② Bande longue en haut, courte en bas, appuyez fermement. ③ Laissez 30 min à 1 h — sans peroxyde, pas de sensibilité. ④ Retirez et brossez normalement. Suivez les instructions pour le meilleur résultat."
+      ar: "① نشّف سنانك مزيان بالورقة أو منشفة ورقية — خاص يكونو جافين باش الشريطة تلصق.<br>② حط الشريطة الكبيرة فالفوق والصغيرة فالتحت، ضغط على البلاستيك باش تثبت.<br>③ خليها من 30 دقيقة لساعة — بلا بيروكسيد، ما كيسببوش حساسية حتى مع وقت طويل.<br>④ حيد الشرائط وفرك سنانك عادي بالشيّتة باش تحيد البقايا البنفسجية. كتبع التعليمات بالحرف باش تجيب أحسن نتيجة.",
+      en: "① Dry teeth thoroughly with a paper towel — they must be dry for strips to stick.<br>② Apply long strip to upper teeth, short to lower, press firmly.<br>③ Leave 30 minutes to 1 hour — peroxide-free, no sensitivity even with longer wear.<br>④ Remove and brush normally to clear purple residue. Follow instructions exactly for best results.",
+      fr: "① Séchez bien avec un essuie — dents sèches pour que les bandes adhèrent.<br>② Bande longue en haut, courte en bas, appuyez fermement.<br>③ Laissez 30 min à 1 h — sans peroxyde, pas de sensibilité.<br>④ Retirez et brossez normalement. Suivez les instructions pour le meilleur résultat."
     },
     faq_q2: { ar: "شحال كتصبر النتيجة؟", en: "How long do results last?", fr: "Combien de temps dure le résultat ?" },
     faq_a2: {
@@ -262,13 +260,12 @@
     },
     faq_q6: { ar: "شنو هي سياسة الإرجاع؟", en: "What is the return policy?", fr: "Quelle est la politique de retour ?" },
     faq_a6: {
-      ar: "إذا لم تلاحظ أي نتيجة بعد استعمال المنتج بالطريقة الصحيحة لمدة 15 يوماً، نُعيد لك أموالك مضمونة — 200 درهم. يجب تقديم طلب الاسترجاع مع صور قبل وبعد قبل انتهاء مدة 15 يوماً من التوصيل. بعد 15 يوماً من التوصيل دون طلب = لا استرجاع.",
-      en: "If you see no results after using the product as directed within 15 days of delivery, you get a guaranteed 200 MAD refund. Submit your claim with before & after photos before the 15-day-from-delivery deadline. No claim within 15 days of delivery = no refund.",
-      fr: "Si aucun résultat après utilisation correcte dans les 15 jours suivant la livraison, remboursement garanti de 200 MAD. Envoyez votre demande avec photos avant/après avant la fin du délai de 15 jours. Passé ce délai, aucun remboursement."
+      ar: "إذا لم تلاحظ أي نتيجة بعد استعمال المنتج بالطريقة الصحيحة لمدة 15 يوماً، نُعيد لك أموالك مضمونة — 200 درهم.<br>يجب تقديم طلب الاسترجاع مع صور قبل وبعد قبل انتهاء مدة 15 يوماً من التوصيل.<br>بعد 15 يوماً من التوصيل دون طلب = لا استرجاع.",
+      en: "If you see no results after using the product as directed within 15 days of delivery, you get a guaranteed 200 MAD refund.<br>Submit your claim with before & after photos before the 15-day-from-delivery deadline.<br>No claim within 15 days of delivery = no refund.",
+      fr: "Si aucun résultat après utilisation correcte dans les 15 jours suivant la livraison, remboursement garanti de 200 MAD.<br>Envoyez votre demande avec photos avant/après avant la fin du délai de 15 jours.<br>Passé ce délai, aucun remboursement."
     }
   };
 
-  /* ── Language Detection & State ── */
   var langs = ["fr", "ar"];
   var DEFAULT_LANG = "fr";
 
@@ -307,7 +304,6 @@
     }
   }
 
-  /* ── i18n Apply ── */
   function applyLang(index) {
     currentLangIndex = index;
     var l = langs[currentLangIndex];
@@ -348,7 +344,6 @@
     });
   }
 
-  /* ── Language Toggle ── */
   document.addEventListener("click", function (e) {
     if (!e.target || !e.target.closest) return;
     if (e.target.closest("#langToggle")) {
@@ -357,7 +352,6 @@
     }
   });
 
-  /* ── Scroll Handler ── */
   function handleScroll() {
     var reveals = document.querySelectorAll(".reveal:not(.active)");
     for (var i = 0; i < reveals.length; i++) {
@@ -440,7 +434,6 @@
 
   window.addEventListener("scroll", handleScroll);
 
-  /* ── Smooth Scroll to Top ── */
   document.addEventListener("click", function (e) {
     if (!e.target || !e.target.closest) return;
     var btn = e.target.closest(".scroll-to-top");
@@ -450,7 +443,6 @@
     }
   });
 
-  /* ── Smooth Scroll to Checkout ── */
   document.addEventListener("click", function (e) {
     if (!e.target || !e.target.closest) return;
     var btn = e.target.closest(".scroll-to-checkout");
@@ -468,7 +460,6 @@
     }
   });
 
-  /* ── Shared horizontal carousel (hero gallery only) ── */
   var HERO_ASSET_VERSION = 7;
   var HERO_MANIFEST_URL =
     "https://raw.githubusercontent.com/chafiyounes/mapper-youcant/main/images/hero/manifest.json?v=" +
@@ -826,7 +817,6 @@
       });
   }
 
-  /* ── Before/After Slider ── */
   function initSlider() {
     var slider = document.getElementById("slider");
     var sliderAfter = document.getElementById("slider-after");
@@ -945,7 +935,6 @@
     }
   }
 
-  /* ── FAQ Accordion ── */
   function initFaq() {
     var faqItems = document.querySelectorAll(".faq-item");
     for (var i = 0; i < faqItems.length; i++) {
@@ -971,7 +960,6 @@
     }
   }
 
-  /* ── Checkout Form ── */
   function initCustomCheckout() {
     var form = document.getElementById("custom-express-checkout-form");
     var submitBtn = document.querySelector("#checkout-section .btn-submit") ||
@@ -1117,7 +1105,6 @@
     });
   }
 
-  /* ── Review split modal ── */
   function initReviewLightbox() {
     var lightbox = document.getElementById("review-lightbox");
     var lbImg = document.getElementById("review-lightbox-img");
@@ -1260,7 +1247,6 @@
     if (nativeId && ourId && nativeId.value) ourId.value = nativeId.value;
   }
 
-  /* ── Price sync from YouCan native form ── */
   function parsePriceNum(text) {
     if (!text) return null;
     var m = String(text).match(/[\d]+(?:[.,]\d+)?/);
@@ -1396,14 +1382,12 @@
     updateStockLabels(window.__V34_STOCK_COUNT);
   }
 
-  /* ── Announce marquee: fill each half so it always exceeds the viewport,
-        keep the two halves identical for a seamless (jump-free) loop. ── */
   function initAnnounceMarquee() {
     var track = document.getElementById("announce-track");
     var marquee = track && track.parentNode;
     if (!track || !marquee) return;
 
-    var SPEED_PX_PER_SEC = 22;
+    var SPEED_PX_PER_SEC = 11;
     var lastViewportWidth = 0;
 
     function getUnitHtml() {
@@ -1441,7 +1425,7 @@
       clone.setAttribute("aria-hidden", "true");
       track.appendChild(clone);
 
-      var duration = Math.max(48, Math.round(groupWidth / SPEED_PX_PER_SEC));
+      var duration = Math.max(96, Math.round(groupWidth / SPEED_PX_PER_SEC));
       track.style.setProperty("--announce-duration", duration + "s");
       track.classList.add("is-ready");
     }
@@ -1470,7 +1454,6 @@
     }, { passive: true });
   }
 
-  /* ── Defer non-default language image assets ── */
   function deferNonDefaultLangAssets() {
     if (langs[currentLangIndex] !== DEFAULT_LANG) return;
     var imgs = document.querySelectorAll(".img-ar:not(.benefits-infographic), .img-en:not(.benefits-infographic)");
@@ -1492,7 +1475,6 @@
     }
   }
 
-  /* ── Lazy below-fold sections ── */
   function initLazySections() {
     var sels = ["#ba-section", "#benefits-section", "#why-section", ".reviews-section", "#faq-section"];
     for (var i = 0; i < sels.length; i++) {
@@ -1509,7 +1491,6 @@
     for (var k = 0; k < lazy.length; k++) obs.observe(lazy[k]);
   }
 
-  /* ── SEO meta (injected HTML cannot set document head) ── */
   function injectPageSeoMeta() {
     var desc = {
       ar: "شرائح Hismile V34 للتبييض — نتائج في 30 دقيقة، آمنة للأسنان الحساسة، الدفع عند الاستلام في المغرب.",
@@ -1527,7 +1508,6 @@
     if (!m.content || m.content === "test2" || m.content.length < 12) m.content = content;
   }
 
-  /* ── Init & Hash Routing ── */
   function handleHashRoute() {
     var hash = window.location.hash || '#landing';
     var views = document.querySelectorAll('.view-container');
