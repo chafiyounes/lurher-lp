@@ -1,14 +1,8 @@
-/* ============================================================
-   YOUCAN LOADER — Fetches HTML, CSS, JS from GitHub (Parallelized)
-   
-   Paste this script into YouCan's Header or Footer code box.
-   It pulls the latest files from your GitHub repo on every
-   page load. Edit via Antigravity → push to GitHub → done.
-   ============================================================ */
+
 (function () {
   "use strict";
 
-  // ── 0. Prevent Flicker Instantly ──
+
   if (!document.getElementById("v34-flicker-prevent")) {
     var style = document.createElement("style");
     style.id = "v34-flicker-prevent";
@@ -18,7 +12,7 @@
 
   var REPO = "chafiyounes/mapper-youcant";
   var BRANCH = "main";
-  var LOADER_VERSION = "website-fixes-v2-14";
+  var LOADER_VERSION = "website-fixes-v2-15";
   var BASE = "https://raw.githubusercontent.com/" + REPO + "/" + BRANCH + "/";
 
   var FILES = {
@@ -62,7 +56,7 @@
 
   injectSeoMeta();
 
-  // Helper to fetch text with cache busting in dev mode
+
   var cacheBuster = "?t=" + new Date().getTime();
 
   console.log("[V34 Loader] v" + LOADER_VERSION + " → " + BASE);
@@ -70,7 +64,7 @@
     console.warn("[V34 Loader] OLD jsdelivr loader detected in page — replace footer snippet with latest from repo.");
   }
 
-  // Fetch all resources in parallel
+
   Promise.all([
     fetch(FILES.css + cacheBuster).then(function (r) { if (!r.ok) throw new Error("CSS HTTP " + r.status); return r.text(); }),
     fetch(FILES.html + cacheBuster).then(function (r) { if (!r.ok) throw new Error("HTML HTTP " + r.status); return r.text(); }),
@@ -84,14 +78,14 @@
     console.log("[V34 Loader] All resources fetched. Waiting for document.body...");
 
     function doInject() {
-      // 💥 CRITICAL FIX: On mobile, fetch can resolve before HTML parses the body!
+
       if (!document.body) {
         setTimeout(doInject, 20);
         return;
       }
 
       try {
-        // ── 1. Inject CSS ──
+
         var styleEl = document.getElementById("v34-styles");
         if (!styleEl) {
           styleEl = document.createElement("style");
@@ -100,7 +94,7 @@
         }
         styleEl.textContent = cssText;
 
-        // ── 2. Inject HTML ──
+
         var target = document.getElementById("v34-root");
         if (!target) {
           target = document.createElement("div");
@@ -119,7 +113,7 @@
         var langLabel = target.querySelector("#langLabel");
         if (langLabel) langLabel.textContent = LANG_LABELS[earlyLang] || earlyLang;
 
-        // ── 3. Inject JS ──
+
         var scriptEl = document.getElementById("v34-script");
         if (scriptEl) scriptEl.remove();
         
@@ -128,7 +122,7 @@
         scriptEl.textContent = jsText;
         document.body.appendChild(scriptEl);
 
-        // ── 4. Activate ──
+
         document.body.classList.add("loader-active");
         console.log("[V34 Loader] Activation completed successfully.");
       } catch (injectionError) {
@@ -142,7 +136,7 @@
   .catch(function (err) {
     console.error("[V34 Loader] Critical error during load:", err);
     
-    // VISUAL DEBUGGER FOR PHONE:
+
     function showDebug() {
       if (!document.body) {
         setTimeout(showDebug, 20);
@@ -154,7 +148,7 @@
       errBox.innerHTML = "<strong style='font-size:20px'>[DEBUG] V34 Script Failed!</strong><br><br><b>Error:</b> " + errorMsg + "<br><br>Please take a screenshot of this red box and show it to your developer to prove exactly why it isn't working on this phone.";
       document.body.appendChild(errBox);
 
-      // Fallback: show the default app if loading fails so the store isn't broken
+
       var flickerPrevent = document.getElementById("v34-flicker-prevent");
       if (flickerPrevent) flickerPrevent.remove();
     }

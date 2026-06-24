@@ -1,12 +1,9 @@
-/* ============================================================
-   HISMILE V34 — Landing Page JavaScript
-   Moroccan COD Landing Page — Arabic (Darija) default
-   ============================================================ */
+
 (function () {
   "use strict";
 
   var I18N = {
-    /* Announcement */
+    
     announce: {
       ar: "🚚 شحن مجاني إلى جميع أنحاء المغرب",
       en: "🚚 Free shipping anywhere in Morocco",
@@ -19,7 +16,7 @@
     },
     nav_shop: { ar: "اطلب الآن", en: "Order Now", fr: "Commander" },
 
-    /* Hero extras */
+    
     hero_badge: { ar: "🏆 الأكثر مبيعاً في المغرب", en: "🏆 Best Seller in Morocco", fr: "🏆 Meilleure vente au Maroc" },
     hero_proof: { ar: "+2,000 طلبية سلمات فالمغرب", en: "+2,000 orders delivered in Morocco", fr: "+2 000 commandes livrées au Maroc" },
     hero_cod:   { ar: "✓ الدفع عند الاستلام   ·   ✓ توصيل مجاني", en: "✓ Cash on Delivery   ·   ✓ Free Shipping", fr: "✓ Paiement à la livraison   ·   ✓ Livraison gratuite" },
@@ -215,7 +212,7 @@
       fr: "Blanchiment sûr — livraison partout au Maroc"
     },
 
-    /* FAQ translations */
+    
     faq_eyebrow: { ar: "أسئلة شائعة", en: "FAQ", fr: "FAQ" },
     faq_title: { ar: "كل ما تحتاج معرفته قبل الطلب", en: "Everything you need to know before ordering", fr: "Tout ce qu'il faut savoir avant de commander" },
     faq_sub: {
@@ -286,7 +283,7 @@
   var currentLangIndex = langs.indexOf(resolveInitialLang());
   if (currentLangIndex < 0) currentLangIndex = 0;
 
-  /* Localize a subtree (data-i18n + data-i18n-placeholder). Defaults to whole doc. */
+  
   function localize(root, l) {
     root = root || document;
     var nodes = root.querySelectorAll("[data-i18n]");
@@ -318,8 +315,7 @@
 
     localize(document, l);
 
-    // Guard: keep our submit button label correct even if an external script
-    // (YouCan hydration) tries to relabel it (e.g. to "Send").
+
     var submitLabel = document.querySelector("#checkout-section .order-submit .btn-label");
     if (submitLabel && I18N.submit_order && I18N.submit_order[l]) {
       submitLabel.textContent = I18N.submit_order[l];
@@ -328,7 +324,7 @@
     var label = document.getElementById("langLabel");
     if (label) label.textContent = LANG_LABELS[l] || l;
 
-    // Dynamically update document title based on language
+
     var titleDict = {
       ar: "Hismile V34 — شرائح تبييض الأسنان",
       en: "Hismile V34 — Teeth Whitening Strips",
@@ -394,7 +390,7 @@
     function syncStickyState() {
       var vh = window.innerHeight;
       var hideForForm = false;
-      // Follow the user through the whole page — only tuck away on the form itself
+
       var shouldShow = window.scrollY > 24;
 
       if (checkoutForm) {
@@ -974,8 +970,7 @@
                   document.querySelector("#checkout-section button[type='submit']");
     if (!form || !submitBtn) return;
 
-    // Sync hidden fields from YouCan's native page-builder form so we never
-    // need to hard-code product IDs or field slugs in this file.
+
     (function syncHiddenFromNative() {
       var native = document.querySelector("#app #express-checkout-form") ||
                    document.querySelector(".express-checkout-form-section form") ||
@@ -991,7 +986,7 @@
         if (ours && !ours.value) {
           ours.value = ni.value;
         } else if (!ours) {
-          // native has a field we don't — add it as hidden so it gets submitted
+
           var clone = document.createElement("input");
           clone.type = "hidden";
           clone.name = n;
@@ -1364,20 +1359,15 @@
     }
   }
 
-  /* ── Stock count (deterministic on page load) ──
-     Granularity is ONE DAY: the value is identical all day (a visitor who
-     returns a minute later sees the same number), then drops by DROP_PER_DAY
-     each calendar day. When a cycle ends it jumps back up to a pseudo-random
-     "restock" max — deterministic per cycle, so it's not a live timer. Pure
-     math → instant. */
+  
   function computeDeterministicStock() {
     var MIN = 4;
     var DROP_PER_DAY = 2;
     var CYCLE_DAYS = 12;
-    var dayIndex = Math.floor(Date.now() / 86400000); // whole days since epoch
+    var dayIndex = Math.floor(Date.now() / 86400000);
     var cycleIndex = Math.floor(dayIndex / CYCLE_DAYS);
     var dayInCycle = dayIndex - cycleIndex * CYCLE_DAYS;
-    // Deterministic pseudo-random restock max for this cycle (24..32).
+
     var seed = Math.sin(cycleIndex * 127.13 + 11.7) * 10000;
     var rnd = seed - Math.floor(seed);
     var startMax = 24 + Math.floor(rnd * 9);
@@ -1530,7 +1520,7 @@
       var home = document.getElementById('view-home');
       if (home) home.style.display = 'block';
     }
-    // Scroll to top when view changes (instant — avoids spurious sticky CTA during smooth scroll)
+
     window.scrollTo(0, 0);
   }
 

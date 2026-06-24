@@ -81,18 +81,26 @@ Status legend: **DONE** = implemented & verified in code · **PARTIAL** = partly
 |---|-------------|--------|------------------|
 | F1 | Lazy-load bottom sections | DONE | `[data-lazy-section]` + `content-visibility` |
 | F2 | Lazy-load below-the-fold images, ordered by view | DONE | `loading="lazy"` on lower imgs, eager on hero |
-| F3 | Right-size images that sit in small divs | PARTIAL | thumbs constrained via CSS; source assets not all resized |
+| F3 | Right-size images that sit in small divs / easy resizing | DONE | `npm run resize <img> --width N --format webp` (sharp); thumbs constrained via CSS |
 
 ## G. Code quality
 
 | # | Requirement | Status | Evidence / Notes |
 |---|-------------|--------|------------------|
-| G1 | Remove AI-tell comments | PARTIAL | obvious narration removed; some structural comments remain |
+| G1 | Remove AI-tell comments | DONE | all CSS/HTML/JS comments stripped via `npm run strip-comments` (syntax-verified) |
+
+## H. Live audit fixes (this round)
+
+| # | Requirement | Status | Evidence / Notes |
+|---|-------------|--------|------------------|
+| H1 | PC: empty white box in form (guarantees invisible) | DONE | removed obsolete `.checkout-assurance` sidebar rules (white bg + white text) |
+| H2 | "Send" button on buttons | DONE | confirmed by user; submit-label guard added |
+| H3 | Keep darija (no MSA sweep) | DONE | E1 intentionally left as-is per user |
+| H4 | FR stock wording too complex ("plus que 20 en stock") | DONE | now "Reste {n} en stock" |
+| H5 | Hero: stark white space around slides | DONE | letterbox now brand-tinted gradient; images never overflow |
+| H6 | Hero: clicking arrows → glitch cascade | DONE | guarded `localStorage.setItem` (init no longer aborts mid-run) |
 
 ---
 
 ### Open items to action
-- **B12** — confirm submit button label on the live site after re-pasting the v2-14 footer.
-- **E1** — some keys still use darija (الفلوس) vs MSA (الأموال); decide brand voice then sweep.
-- **F3** — resize a few source assets that render in small containers.
-- **G1** — final pass to strip remaining structural code comments.
+- **B12** — verified by user (no "Send"). Confirm again on live after re-pasting **v2-15** footer.
