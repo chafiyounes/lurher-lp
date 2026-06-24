@@ -193,14 +193,22 @@
   line-height: 1.25;
 }
 .btn-primary .btn-label {
-  flex: 1 1 auto;
+  flex: 0 1 auto;
   min-width: 0;
   max-width: 100%;
+}
+.btn-primary.btn-full {
+  padding-inline: clamp(28px, 6vw, 36px);
+  gap: 10px;
+}
+.btn-primary:has(.material-symbols-outlined) {
+  justify-content: center;
+  gap: 10px;
 }
 .btn-primary .material-symbols-outlined {
   font-size: 20px;
   flex-shrink: 0;
-  margin-inline: 2px;
+  margin-inline: 0;
 }
 @keyframes ctaSheen {
   0%, 100% { box-shadow: var(--sh-md); }
@@ -1284,7 +1292,7 @@
 .app[dir="ltr"] .faq-item.faq-open { background: linear-gradient(270deg, var(--primary-ultra) 0%, #fff 100%); }
 .faq-question {
   width: 100%; display: flex; align-items: center;
-  padding: 16px 12px; text-align: start;
+  padding: 16px 16px; text-align: start;
   font-family: var(--font-ar); border: none; background: none; cursor: pointer;
   transition: background 0.2s ease;
   border-radius: var(--r-md);
@@ -1624,7 +1632,7 @@
 }
 .order-submit {
   margin: 0;
-  padding: 18px 28px;
+  padding: 16px clamp(32px, 7vw, 40px);
   font-size: clamp(15px, 1.8vw, 18px);
   box-shadow: 0 12px 28px rgba(91,0,158,0.35);
 }
@@ -1660,7 +1668,7 @@
 .sticky-price span:last-child  { font-size: 15px; font-weight: 800; color: var(--primary); }
 .sticky-cta-btn {
   min-height: 56px !important;
-  padding: 0 24px !important;
+  padding: 0 clamp(28px, 5vw, 36px) !important;
   font-size: clamp(16px, 2vw, 18px) !important;
   width: auto !important;
   flex-shrink: 0;
@@ -1805,6 +1813,16 @@ button.btn-primary .material-symbols-outlined {
   transform: translateY(-3px) !important;
   box-shadow: 0 12px 30px rgba(91,0,158,0.4) !important;
   filter: brightness(1.15) !important;
+}
+.app .btn-primary.btn-full,
+.app button.btn-primary.btn-full {
+  padding-inline: clamp(28px, 6vw, 36px) !important;
+  justify-content: center !important;
+  gap: 10px !important;
+}
+.app .btn-primary:has(.material-symbols-outlined) .btn-label,
+.app button.btn-primary:has(.material-symbols-outlined) .btn-label {
+  flex: 0 1 auto !important;
 }
 
 /* ═══ mobile-fixes.md contract ═══ */
@@ -1982,7 +2000,33 @@ button.btn-primary .material-symbols-outlined {
     display: flex;
     flex-direction: column;
     gap: 0;
-    padding-top: 20px;
+    padding-top: 36px;
+  }
+  #checkout-section .order-card--compact .order-card-top--slim {
+    padding: 18px 14px 10px !important;
+  }
+  #checkout-section .order-card--compact .order-card-body--slim {
+    padding: 10px 14px 0 !important;
+  }
+  #checkout-section .premium-form {
+    gap: 8px !important;
+  }
+  #checkout-section .order-card--compact .premium-field {
+    margin-bottom: 0 !important;
+  }
+  #checkout-section .order-card--compact .premium-field .field-row {
+    min-height: 36px !important;
+    padding: 3px 12px !important;
+  }
+  #checkout-section .order-card--compact .premium-field .field-row input {
+    font-size: 14px !important;
+  }
+  #checkout-section .order-card--compact .premium-field .field-row .material-symbols-outlined {
+    font-size: 17px !important;
+    width: 20px !important;
+  }
+  #checkout-section .order-card--compact .order-card-footer {
+    padding: 12px 14px 16px !important;
   }
   #checkout-section .checkout-form-side,
   #checkout-section .order-card {
