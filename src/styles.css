@@ -1438,12 +1438,16 @@
 }
 .checkout-assurance--inline .badge-texts span { display: none; }
 
-#checkout-section .checkout-box,
-#checkout-section .checkout-form-side,
-#checkout-section .order-card {
-  width: 100%;
-  max-width: var(--checkout-phone-w);
-  margin-inline: auto;
+/* Phone (<640): form is full-bleed edge-to-edge. Tablet/desktop: capped at
+   typical phone width so it never stretches uncomfortably wide. */
+@media (min-width: 640px) {
+  #checkout-section .checkout-box,
+  #checkout-section .checkout-form-side,
+  #checkout-section .order-card {
+    width: 100%;
+    max-width: var(--checkout-phone-w);
+    margin-inline: auto;
+  }
 }
 
 @media (min-width: 900px) {

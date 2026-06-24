@@ -194,8 +194,7 @@
       fr: "Confirmer — paiement à la livraison"
     },
 
-    ct_ship: { ar: "توصيل سريع", en: "Fast delivery", fr: "Livraison rapide" },
-    ct_free: { ar: "مجاني", en: "Free", fr: "Gratuit" },
+    ct_ship: { ar: "توصيل مجاني و سريع", en: "Free & fast delivery", fr: "Livraison gratuite et rapide" },
     ct_ship_sub: { ar: "مجاني وسريع (24–48 ساعة)", en: "Free and fast (24–48h)", fr: "Gratuit et rapide (24–48h)" },
     trust_cod_sub: { ar: "تحقق من المنتج ثم ادفع", en: "Check your product, then pay", fr: "Vérifiez avant de payer" },
     ct_guarantee: { ar: "ضمان استرجاع الأموال", en: "Money-back guarantee", fr: "Garantie de remboursement" },
@@ -318,6 +317,13 @@
     }
 
     localize(document, l);
+
+    // Guard: keep our submit button label correct even if an external script
+    // (YouCan hydration) tries to relabel it (e.g. to "Send").
+    var submitLabel = document.querySelector("#checkout-section .order-submit .btn-label");
+    if (submitLabel && I18N.submit_order && I18N.submit_order[l]) {
+      submitLabel.textContent = I18N.submit_order[l];
+    }
 
     var label = document.getElementById("langLabel");
     if (label) label.textContent = LANG_LABELS[l] || l;
