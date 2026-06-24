@@ -655,12 +655,13 @@
     inset: 0;
     min-height: 100%;
     height: 100%;
-    padding: 8px 12px;
-    background: #fff;
+    padding: 0;
+    background: linear-gradient(160deg, #faf5ff 0%, #fff 50%, #f6f0fc 100%);
   }
   .landing-hero .media-carousel-slide img {
     width: 100%;
     height: 100%;
+    max-width: 100%;
     max-height: none;
     object-fit: contain;
     object-position: center;
@@ -1450,29 +1451,8 @@
   }
 }
 
-@media (min-width: 900px) {
-  .checkout-box {
-    grid-template-columns: minmax(0, 1fr) 290px;
-    gap: 24px;
-    align-items: start;
-  }
-  .checkout-assurance {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    padding: 20px;
-    background: var(--surface-white);
-    border: 1px solid var(--border);
-    border-radius: var(--r-xl);
-    box-shadow: var(--sh-sm);
-    position: sticky;
-    top: 88px;
-  }
-  .checkout-assurance .badge-item { gap: 14px; }
-  .checkout-assurance .badge-item .material-symbols-outlined { padding: 10px; font-size: 24px; }
-  .checkout-assurance .badge-texts strong { font-size: 15px; }
-  .checkout-assurance .badge-texts span { font-size: 13px; }
-}
+/* Obsolete two-column checkout sidebar removed — guarantees now live as an
+   inline strip inside the order card (.checkout-assurance--inline). */
 
 /* Checkout product info column */
 .checkout-product-preview {
@@ -1995,10 +1975,12 @@ button.btn-primary .material-symbols-outlined {
     inset: auto;
     pointer-events: auto;
     gap: 0;
+    background: linear-gradient(160deg, #faf5ff 0%, #fff 50%, #f6f0fc 100%);
   }
   .landing-hero .media-carousel-slide img {
     width: 100%;
     height: 100%;
+    max-width: 100%;
     max-height: none;
     object-fit: contain;
     object-position: center;

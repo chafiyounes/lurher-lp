@@ -15,7 +15,7 @@
     announce_stock: {
       ar: "بقي <strong>{n}</strong> فقط في المخزون",
       en: "Only <strong>{n}</strong> left in stock",
-      fr: "Plus que <strong>{n}</strong> en stock"
+      fr: "Reste <strong>{n}</strong> en stock"
     },
     nav_shop: { ar: "اطلب الآن", en: "Order Now", fr: "Commander" },
 
@@ -308,7 +308,7 @@
   function applyLang(index) {
     currentLangIndex = index;
     var l = langs[currentLangIndex];
-    localStorage.setItem("v34_lang", l);
+    try { localStorage.setItem("v34_lang", l); } catch (e) {}
     var app = document.querySelector(".app");
 
     if (app) {
