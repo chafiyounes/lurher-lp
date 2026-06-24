@@ -861,11 +861,10 @@
   }
   .benefits-inner {
     max-width: none;
-    padding-inline-start: var(--sec-px);
-    padding-inline-end: 0;
+    padding-inline: 0;
   }
   .benefits-inner .section-head {
-    padding-inline-end: var(--sec-px);
+    padding-inline: var(--sec-px);
   }
   .benefits-infographic-wrap {
     margin: 0;
@@ -876,18 +875,11 @@
     width: 100%;
     max-width: 100%;
     object-fit: contain;
-    object-position: right center;
-  }
-  .app[dir="ltr"] .benefits-inner {
-    padding-inline-start: 0;
-    padding-inline-end: var(--sec-px);
-  }
-  .app[dir="ltr"] .benefits-infographic {
-    object-position: left center;
+    object-position: center;
   }
 }
 @media (min-width: 900px) {
-  .benefits-infographic-wrap { max-width: 880px; }
+  .benefits-infographic-wrap { max-width: 1040px; }
 }
 @media (max-width: 1023px) {
   .order-card-top,
