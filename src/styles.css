@@ -49,6 +49,7 @@
   /* Container widths */
   --max-w:       1240px;   /* full content container */
   --max-w-narrow: 780px;  /* FAQ / text blocks */
+  --checkout-phone-w: 430px; /* form column ≈ typical phone width */
 
   /* Shadows */
   --sh-sm:  0 2px 8px rgba(0,0,0,0.06);
@@ -1405,6 +1406,46 @@
 
 .checkout-assurance { display: none; }
 
+.checkout-assurance--inline {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 10px;
+  padding: 10px 14px 12px;
+  background: linear-gradient(155deg, #5b009e 0%, #3a0068 100%);
+  border-bottom: 1px solid rgba(91, 0, 158, 0.1);
+}
+.checkout-assurance--inline .badge-item {
+  flex: 1;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.checkout-assurance--inline .badge-item .material-symbols-outlined {
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  padding: 7px;
+  font-size: 20px;
+  border-radius: 50%;
+}
+.checkout-assurance--inline .badge-texts strong {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+.checkout-assurance--inline .badge-texts span { display: none; }
+
+#checkout-section .checkout-box,
+#checkout-section .checkout-form-side,
+#checkout-section .order-card {
+  width: 100%;
+  max-width: var(--checkout-phone-w);
+  margin-inline: auto;
+}
+
 @media (min-width: 900px) {
   .checkout-box {
     grid-template-columns: minmax(0, 1fr) 290px;
@@ -2037,34 +2078,15 @@ button.btn-primary .material-symbols-outlined {
   #checkout-section .order-card {
     margin-inline: 0;
     border-radius: var(--r-lg) var(--r-lg) 0 0;
-    padding-inline: 18px;
+    padding-inline: 0;
   }
-  #checkout-section .checkout-assurance--mobile-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding: 16px 16px 18px;
-    background: linear-gradient(155deg, #5b009e 0%, #3a0068 100%);
-    border-top: none;
+  #checkout-section .order-card-top--slim,
+  #checkout-section .order-card-body--slim,
+  #checkout-section .order-card-footer {
+    padding-inline: 12px;
   }
-  #checkout-section .checkout-assurance--mobile-stack .badge-item {
-    gap: 12px;
-  }
-  #checkout-section .checkout-assurance--mobile-stack .badge-item .material-symbols-outlined {
-    background: rgba(255, 255, 255, 0.14);
-    color: #fff;
-    border-color: rgba(255, 255, 255, 0.28);
-    padding: 9px;
-    font-size: 22px;
-  }
-  #checkout-section .checkout-assurance--mobile-stack .badge-texts strong {
-    color: #fff;
-    font-size: 14px;
-  }
-  #checkout-section .checkout-assurance--mobile-stack .badge-texts span {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 12.5px;
-    font-weight: 600;
+  #checkout-section .checkout-assurance--inline {
+    padding-inline: 12px;
   }
 
   /* Full-width sections — no squish */
@@ -2170,9 +2192,9 @@ button.btn-primary .material-symbols-outlined {
   }
   /* Checkout section becomes the right column */
   .landing-hero #checkout-section {
-    flex: 0 0 380px !important;
-    max-width: 380px !important;
-    width: 380px !important;
+    flex: 0 0 min(var(--checkout-phone-w), 100%) !important;
+    max-width: min(var(--checkout-phone-w), 100%) !important;
+    width: min(var(--checkout-phone-w), 100%) !important;
     padding: 16px 0 0 0 !important;
     margin: 0 !important;
     background: transparent !important;
@@ -2203,34 +2225,22 @@ button.btn-primary .material-symbols-outlined {
     max-width: 100% !important;
     min-width: 0 !important;
   }
-  /* Guarantees: horizontal 3-up strip beneath the form on desktop */
-  .landing-hero #checkout-section .checkout-assurance {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
+  /* Inline guarantees sit inside the card under the price */
+  .landing-hero #checkout-section .checkout-assurance--inline {
+    padding: 8px 12px 10px !important;
     gap: 8px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-top: 12px !important;
-    position: static !important;
-    top: auto !important;
-    padding: 12px !important;
-    background: var(--surface-white) !important;
-    border: 1px solid var(--border) !important;
-    border-radius: var(--r-xl) !important;
-    box-shadow: var(--sh-sm) !important;
   }
-  .landing-hero #checkout-section .checkout-assurance .badge-item {
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
+  .landing-hero #checkout-section .checkout-assurance--inline .badge-item {
     gap: 6px !important;
   }
-  .landing-hero #checkout-section .checkout-assurance .badge-item .material-symbols-outlined {
-    padding: 8px !important;
-    font-size: 22px !important;
+  .landing-hero #checkout-section .checkout-assurance--inline .badge-item .material-symbols-outlined {
+    padding: 6px !important;
+    font-size: 18px !important;
   }
-  .landing-hero #checkout-section .checkout-assurance .badge-texts strong { font-size: 12.5px !important; line-height: 1.25 !important; }
-  .landing-hero #checkout-section .checkout-assurance .badge-texts span { font-size: 11px !important; line-height: 1.3 !important; }
+  .landing-hero #checkout-section .checkout-assurance--inline .badge-texts strong {
+    font-size: 11.5px !important;
+    line-height: 1.2 !important;
+  }
 
   /* Squeeze the form fields tighter so everything stays above the fold */
   .landing-hero #checkout-section .premium-field { margin-bottom: 5px !important; }
@@ -2272,26 +2282,12 @@ button.btn-primary .material-symbols-outlined {
   }
 }
 
-/* Fix: guarantees were hidden between 640–899px (shown only <640 and ≥900) */
+/* Fix: sidebar guarantees removed — inline strip lives inside order card */
 @media (min-width: 640px) and (max-width: 899px) {
-  .checkout-assurance {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding: 16px;
-    margin-top: 16px;
-    background: linear-gradient(155deg, #5b009e 0%, #3a0068 100%);
-    border: none;
-    border-radius: var(--r-xl);
-    box-shadow: var(--sh-md);
+  #checkout-section .checkout-box {
+    max-width: var(--checkout-phone-w);
+    margin-inline: auto;
   }
-  .checkout-assurance .badge-item .material-symbols-outlined {
-    background: rgba(255, 255, 255, 0.14);
-    color: #fff;
-    border-color: rgba(255, 255, 255, 0.28);
-  }
-  .checkout-assurance .badge-texts strong { color: #fff; }
-  .checkout-assurance .badge-texts span { color: rgba(255, 255, 255, 0.9); }
 }
 
 /* ─── Mobile hero — carousel fills first screen top ─── */

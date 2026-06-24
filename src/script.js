@@ -194,7 +194,8 @@
       fr: "Confirmer — paiement à la livraison"
     },
 
-    ct_ship: { ar: "توصيل سريع", en: "Fast Shipping", fr: "Livraison Rapide" },
+    ct_ship: { ar: "توصيل سريع", en: "Fast delivery", fr: "Livraison rapide" },
+    ct_free: { ar: "مجاني", en: "Free", fr: "Gratuit" },
     ct_ship_sub: { ar: "مجاني وسريع (24–48 ساعة)", en: "Free and fast (24–48h)", fr: "Gratuit et rapide (24–48h)" },
     trust_cod_sub: { ar: "تحقق من المنتج ثم ادفع", en: "Check your product, then pay", fr: "Vérifiez avant de payer" },
     ct_guarantee: { ar: "ضمان استرجاع الأموال", en: "Money-back guarantee", fr: "Garantie de remboursement" },
