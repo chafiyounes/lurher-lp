@@ -1,61 +1,29 @@
 {
-  "baseUrl": "https://raw.githubusercontent.com/chafiyounes/mapper-youcant/main/images/hero/",
+  "baseUrl": "https://raw.githubusercontent.com/chafiyounes/lurher-lp/main/images/hero/",
   "slides": [
     {
       "id": "main",
-      "image": "01-main.webp",
-      "thumb": "01-main-thumb.webp",
-      "alt": {
-        "ar": "أكثر من 10 ملايين منتج V34 تباع عالمياً",
-        "en": "10M+ V34 products sold worldwide",
-        "fr": "Plus de 10 millions de produits V34 vendus"
-      }
+      "image": "01-main.png",
+      "thumb": "01-main.png",
+      "alt": { "ar": "عطر Lure Her الأصلي للرجال", "en": "Lure Her authentic men's perfume", "fr": "Lure Her, parfum authentique pour homme" }
     },
     {
-      "id": "main2",
-      "image": {
-        "ar": "02-main2-ar.webp",
-        "en": "02-main2-en.webp",
-        "fr": "02-main2-fr.webp"
-      },
-      "thumb": {
-        "ar": "02-main2-ar-thumb.webp",
-        "en": "02-main2-en-thumb.webp",
-        "fr": "02-main2-fr-thumb.webp"
-      },
-      "alt": {
-        "ar": "نتائج حقيقية — بدون مبالغة",
-        "en": "Real results — no exaggeration",
-        "fr": "Résultats réels — sans exagération"
-      }
+      "id": "lifestyle",
+      "image": "02-lifestyle.png",
+      "thumb": "02-lifestyle.png",
+      "alt": { "ar": "حضور وجاذبية مع Lure Her", "en": "Presence and attraction with Lure Her", "fr": "Présence et attraction avec Lure Her" }
     },
     {
-      "id": "info",
-      "image": {
-        "ar": "03-info-ar.webp",
-        "en": "03-info-en.webp",
-        "fr": "03-info-fr.webp"
-      },
-      "thumb": {
-        "ar": "03-info-ar-thumb.webp",
-        "en": "03-info-en-thumb.webp",
-        "fr": "03-info-fr-thumb.webp"
-      },
-      "alt": {
-        "ar": "96% من المشاركين أسنانهم أفتح بدرجتين أو أكثر",
-        "en": "96% of participants had teeth two shades whiter or more",
-        "fr": "96% des participants : dents deux teintes plus blanches"
-      }
+      "id": "product",
+      "image": "03-product.png",
+      "thumb": "03-product.png",
+      "alt": { "ar": "العطر مع علبته الفاخرة", "en": "The perfume with its luxury box", "fr": "Le parfum avec son coffret de luxe" }
     },
     {
-      "id": "topresults",
-      "image": "04-topresults.webp",
-      "thumb": "04-topresults-thumb.webp",
-      "alt": {
-        "ar": "أفضل نتائج التبييض",
-        "en": "Top teeth whitening results",
-        "fr": "Meilleurs résultats de blanchiment"
-      }
+      "id": "gift",
+      "image": "04-gift.png",
+      "thumb": "04-gift.png",
+      "alt": { "ar": "عطر إضافي هدية مع كل طلب", "en": "Free bonus perfume with every order", "fr": "Parfum offert avec chaque commande" }
     }
   ]
 }

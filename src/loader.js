@@ -10,9 +10,9 @@
     document.head.appendChild(style);
   }
 
-  var REPO = "chafiyounes/mapper-youcant";
+  var REPO = "chafiyounes/lurher-lp";
   var BRANCH = "main";
-  var LOADER_VERSION = "website-fixes-v2-16";
+  var LOADER_VERSION = "lureher-v1-0";
   var BASE = "https://raw.githubusercontent.com/" + REPO + "/" + BRANCH + "/";
 
   var FILES = {
@@ -24,11 +24,11 @@
   function detectV34Lang() {
     var supported = ["fr", "ar"];
     try {
-      var saved = localStorage.getItem("v34_lang");
-      if (saved === "en") return "fr";
+      var saved = localStorage.getItem("lureher_lang");
+      if (saved === "en") return "ar";
       if (saved && supported.indexOf(saved) !== -1) return saved;
     } catch (e) {}
-    return "fr";
+    return "ar";
   }
 
   window.__V34_INITIAL_LANG = detectV34Lang();
@@ -38,19 +38,19 @@
     var wrap = document.createElement("div");
     wrap.id = "v34-seo-meta";
     wrap.innerHTML = [
-      '<meta name="description" content="شرائح Hismile V34 للتبييض — نتائج في 30 دقيقة، آمنة للأسنان الحساسة، الدفع عند الاستلام في المغرب.">',
-      '<meta property="og:title" content="Hismile V34 — شرائح تبييض الأسنان">',
-      '<meta property="og:description" content="تبييض أسنان فوري في 30 دقيقة — بلا بيروكسيد، توصيل مجاني، الدفع عند الاستلام.">',
-      '<meta property="og:image" content="' + BASE + 'images/PP-01-V34Strips_no-badge31_10_15_595x.webp">',
+      '<meta name="description" content="Lure Her — عطر فيرومونات للرجال يدوم طول النهار، جاذبية وثقة لا تُقاوَم. توصيل مجاني والدفع عند الاستلام في المغرب.">',
+      '<meta property="og:title" content="Lure Her — عطر الفيرومونات للرجال">',
+      '<meta property="og:description" content="رائحة فاخرة تدوم +8 ساعات وفيرومونات تزيد جاذبيتك. الدفع عند الاستلام، توصيل مجاني لكل المغرب.">',
+      '<meta property="og:image" content="' + BASE + 'images/hero/01-main.png">',
       '<meta property="og:type" content="product">',
       '<meta name="twitter:card" content="summary_large_image">',
-      '<meta name="twitter:title" content="Hismile V34 — شرائح تبييض الأسنان">',
-      '<meta name="twitter:description" content="تبييض أسنان فوري في 30 دقيقة — الدفع عند الاستلام.">',
-      '<meta name="twitter:image" content="' + BASE + 'images/PP-01-V34Strips_no-badge31_10_15_595x.webp">'
+      '<meta name="twitter:title" content="Lure Her — عطر الفيرومونات للرجال">',
+      '<meta name="twitter:description" content="رائحة فاخرة تدوم وفيرومونات تزيد جاذبيتك — الدفع عند الاستلام.">',
+      '<meta name="twitter:image" content="' + BASE + 'images/hero/01-main.png">'
     ].join("");
     while (wrap.firstChild) document.head.appendChild(wrap.firstChild);
     if (!document.title || document.title === "test2") {
-      document.title = "Hismile V34 — شرائح تبييض الأسنان";
+      document.title = "Lure Her — عطر الفيرومونات للرجال";
     }
   }
 

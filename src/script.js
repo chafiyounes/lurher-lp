@@ -3,7 +3,7 @@
   "use strict";
 
   var I18N = {
-    
+
     announce: {
       ar: "🚚 شحن مجاني إلى جميع أنحاء المغرب",
       en: "🚚 Free shipping anywhere in Morocco",
@@ -15,100 +15,72 @@
       fr: "Reste <strong>{n}</strong> en stock"
     },
     nav_shop: { ar: "اطلب الآن", en: "Order Now", fr: "Commander" },
+    brand_sub: { ar: "PARFUM", en: "PARFUM", fr: "PARFUM" },
 
-    
-    hero_badge: { ar: "🏆 الأكثر مبيعاً في المغرب", en: "🏆 Best Seller in Morocco", fr: "🏆 Meilleure vente au Maroc" },
-    hero_proof: { ar: "+2,000 طلبية سلمات فالمغرب", en: "+2,000 orders delivered in Morocco", fr: "+2 000 commandes livrées au Maroc" },
-    hero_cod:   { ar: "✓ الدفع عند الاستلام   ·   ✓ توصيل مجاني", en: "✓ Cash on Delivery   ·   ✓ Free Shipping", fr: "✓ Paiement à la livraison   ·   ✓ Livraison gratuite" },
-    hero_cod_cod: { ar: "بلا خلاص مسبق", en: "No upfront payment", fr: "Sans paiement d'avance" },
-    hero_cod_ship: { ar: "توصيل مجاني", en: "Free shipping", fr: "Livraison gratuite" },
-    trust_safe: { ar: "آمن على المينا", en: "Enamel-safe", fr: "Sans danger pour l'émail" },
+    home_hero_h: { ar: "Lure Her — حضورٌ لا يُنسى.", en: "Lure Her — an unforgettable presence.", fr: "Lure Her — une présence inoubliable." },
+    home_hero_sub: { ar: "عطر فيرومونات فاخر للرجال. رائحة تدوم طول النهار وحضور يلفت الأنظار.", en: "Luxury pheromone perfume for men. All-day scent and a magnetic presence.", fr: "Parfum aux phéromones pour homme. Une tenue toute la journée et une présence magnétique." },
+    home_cta: { ar: "اكتشف العطر", en: "Discover the scent", fr: "Découvrir le parfum" },
 
-      land_hero_h: { 
-      ar: "تعبتي من الصفر فالأسنان؟ V34 كتبيّضهم فـ30 دقيقة — بلا ألم.", 
-      en: "Tired of yellow teeth in every photo? V34 whitens visibly in 30 minutes — zero pain.",
-      fr: "Marre des dents jaunes sur chaque photo ? V34 blanchit visiblement en 30 minutes — sans douleur."
+    hero_badge: { ar: "🎁 عطر إضافي هدية مع كل طلب", en: "🎁 A free bonus perfume with every order", fr: "🎁 Un parfum offert avec chaque commande" },
+
+    land_hero_h: {
+      ar: "إثارة حقيقية مع عطر جذّاب غاية في الجاذبية.",
+      en: "Real attraction — an irresistibly magnetic scent.",
+      fr: "Une attraction réelle — un parfum irrésistiblement magnétique."
     },
     land_hero_sub: {
-      ar: "نفس النتيجة اللي كتخلّص المئات فعيادات التبييض — ولكن من دارك. 14 استعمال فالعلبة، توصيل مجاني لجميع مدن المغرب، وضمان استرجاع الفلوس.",
-      en: "The same results people pay hundreds for at clinics — but at home. 14 uses per box, free delivery across Morocco, money-back guarantee.",
-      fr: "Le même résultat qu'en clinique — chez vous. 14 utilisations par boîte, livraison gratuite au Maroc, satisfait ou remboursé."
+      ar: "Lure Her عطر فيرومونات أصلي للرجال يدوم طول اليوم. وتتوصل بعطر راقي إضافي هدية مع كل طلب. الدفع عند الاستلام، توصيل مجاني لكل مدن المغرب، وتقدر تشوف المنتج وتشمّو قبل ما تخلّص.",
+      en: "Lure Her is an authentic pheromone perfume for men that lasts all day — plus a premium bonus perfume free with every order. Cash on delivery, free shipping across Morocco, inspect before you pay.",
+      fr: "Lure Her, un parfum authentique aux phéromones pour homme qui tient toute la journée — avec un parfum premium offert à chaque commande. Paiement à la livraison, livraison gratuite au Maroc, vérifiez avant de payer."
     },
-    land_hero_sub_short: {
-      ar: "شرائط تبييض من Hismile — بلا بيروكسيد، آمنة على المينا والسنان الحساسة. الدفع عند الاستلام.",
-      en: "Hismile whitening strips — peroxide-free, enamel-safe, even for sensitive teeth. Pay on delivery.",
-      fr: "Bandes Hismile — sans peroxyde, sans danger pour l'émail ni les dents sensibles. Paiement à la livraison."
-    },
-    land_hero_cta: { ar: "صيفط طلبيتك دابا — 245 درهم", en: "Order now — 245 MAD", fr: "Commander — 245 MAD" },
-    
-    trust_guarantee: { ar: "ضمان استرجاع الفلوس", en: "Money-back guarantee", fr: "Garantie de remboursement" },
-    trust_ship: { ar: "توصيل لجميع المدن", en: "Delivery to all cities", fr: "Livraison partout" },
+
+    trust_lasting: { ar: "يدوم طول اليوم", en: "Lasts all day", fr: "Tient toute la journée" },
+    trust_ship: { ar: "توصيل مجاني", en: "Free shipping", fr: "Livraison gratuite" },
     trust_cod: { ar: "الدفع عند الاستلام", en: "Cash on Delivery", fr: "Paiement à la livraison" },
 
-    why_title: { ar: "التكنولوجيا", en: "Technology", fr: "Technologie" },
-    land_feat1_h: { ar: "تصحيح اللون الفوري", en: "Instant Color Correction", fr: "Correction de couleur instantanée" },
+    gift_note: { ar: "🎁 + عطر راقي هدية مع كل طلب", en: "🎁 + a premium perfume free with every order", fr: "🎁 + un parfum premium offert" },
+    savings_tag: { ar: "وفّرت 61 درهم", en: "You save 61 MAD", fr: "Économie 61 MAD" },
+
+    notes_eyebrow: { ar: "هرم الروائح", en: "Scent pyramid", fr: "Pyramide olfactive" },
+    notes_h: { ar: "رائحة تتطوّر معك طول اليوم", en: "A scent that evolves with you all day", fr: "Un sillage qui évolue toute la journée" },
+    notes_sub: {
+      ar: "ثلاث طبقات من العطر تتكشّف الواحدة بعد الأخرى — من أول رشّة حتى آخر المساء.",
+      en: "Three layers of scent unfold one after another — from the first spray to late evening.",
+      fr: "Trois couches qui se révèlent l'une après l'autre — de la première vaporisation jusqu'au soir."
+    },
+    note_top_h: { ar: "المقدّمة", en: "Top note", fr: "Note de tête" },
+    note_top_p: { ar: "برغموت وحمضيات منعشة — انطباع أول جريء يلفت الانتباه فوراً.", en: "Bergamot and fresh citrus — a bold first impression that grabs attention instantly.", fr: "Bergamote et agrumes frais — une première impression audacieuse." },
+    note_heart_h: { ar: "القلب", en: "Heart note", fr: "Note de cœur" },
+    note_heart_p: { ar: "توابل دافئة ولافندر — قلب رجولي أنيق يدوم لساعات.", en: "Warm spices and lavender — an elegant masculine heart that lasts for hours.", fr: "Épices chaudes et lavande — un cœur masculin élégant qui dure." },
+    note_base_h: { ar: "القاعدة", en: "Base note", fr: "Note de fond" },
+    note_base_p: { ar: "عود، مسك وعنبر — أثر عميق ودافئ يبقى عالق في الذاكرة.", en: "Oud, musk and amber — a deep, warm trail that stays in memory.", fr: "Oud, musc et ambre — un sillage profond et mémorable." },
+
+    ben_eyebrow: { ar: "خصائص المنتج", en: "Product features", fr: "Caractéristiques" },
+    land_benefits_h: { ar: "خصائص المنتج", en: "Product features", fr: "Caractéristiques du produit" },
+    ben_1: { ar: "عطر غير قابل للمقاومة", en: "An irresistible scent", fr: "Un parfum irrésistible" },
+    ben_2: { ar: "يحقق ثقة خيالية بالنفس", en: "Boosts your confidence like never before", fr: "Une confiance en soi incroyable" },
+    ben_3: { ar: "رائحة رجولية ومنعشة وجميلة", en: "A masculine, fresh and beautiful scent", fr: "Une senteur masculine, fraîche et élégante" },
+    ben_4: { ar: "يحقق مفعولاً خيالياً عند العناق", en: "An unforgettable effect up close", fr: "Un effet inoubliable de près" },
+    ben_5: { ar: "مركّب من زيوت أصلية طبيعية", en: "Made from authentic natural oils", fr: "Composé d'huiles naturelles authentiques" },
+    ben_6: { ar: "يدوم طول اليوم", en: "Lasts all day long", fr: "Tient toute la journée" },
+
+    why_eyebrow: { ar: "احذر التقليد", en: "Beware of fakes", fr: "Méfiez-vous des imitations" },
+    why_title: { ar: "عطر Lure Her الأصلي", en: "The authentic Lure Her", fr: "Le véritable Lure Her" },
+    land_feat1_h: { ar: "منتج أصلي 100%", en: "100% authentic", fr: "100% authentique" },
     land_feat1_p: {
-      ar: "الشريطة البنفسجية تقلّل اصفرار الأسنان فوراً — ابتسامة أوضح من أول استعمال.",
-      en: "The purple strip counters yellow stains instantly — a brighter smile from the first use.",
-      fr: "La bande violette atténue le jaune instantanément — un sourire plus éclatant dès la première fois."
+      ar: "نوفّر لكم عطر Lure Her الأصلي وتتوصلون بالخط العطري الأصلي. احذروا المنتجات الرخيصة المقلّدة — الجودة كتبان من أول رشّة.",
+      en: "We supply the authentic Lure Her fragrance line. Beware of cheap imitations — you'll feel the quality from the first spray.",
+      fr: "Nous fournissons la ligne authentique Lure Her. Méfiez-vous des imitations bon marché — la qualité se sent dès la première vaporisation."
     },
-    land_feat2_h: { ar: "تبييض PAP+", en: "PAP+ Whitening", fr: "Blanchiment PAP+" },
+    land_feat2_h: { ar: "هدية مع كل طلب", en: "A gift with every order", fr: "Un cadeau à chaque commande" },
     land_feat2_p: {
-      ar: "تقنية PAP+ تبيّض تدريجياً بدون بيروكسيد وبدون إيذاء المينا.",
-      en: "PAP+ whitens gradually — no peroxide, no enamel damage.",
-      fr: "La PAP+ blanchit en douceur — sans peroxyde, sans abîmer l'émail."
-    },
-    triptych_before: { ar: "قبل", en: "Before", fr: "Avant" },
-    triptych_apply: { ar: "أثناء الاستعمال", en: "During use", fr: "Pendant l'application" },
-    triptych_after: { ar: "بعد", en: "After", fr: "Après" },
-    v34_disclaimer: {
-      ar: "*تختلف النتائج من شخص لآخر. اتبع التعليمات على العلبة للحصول على أفضل نتيجة. الصور للتوضيح فقط.",
-      en: "*Results vary by person. Follow the box instructions for best results. Images are illustrative only.",
-      fr: "*Les résultats varient. Suivez les instructions de la boîte. Images à titre illustratif."
+      ar: "مع كل طلب كتوصلك هدية: عطر راقي إضافي مجاناً — قيمة حقيقية فثمن واحد.",
+      en: "Every order comes with a free premium bonus perfume — real value in one purchase.",
+      fr: "Chaque commande inclut un parfum premium offert — une vraie valeur en un seul achat."
     },
 
-    land_benefits_h: { ar: "خصائص المنتج", en: "Characteristics", fr: "Caractéristiques du produit" },
-    ben_1: { ar: "أسنان أكثر بياضاً بشكل ملحوظ من أول استعمال", en: "Visibly whiter teeth from the very first use", fr: "Des dents visiblement plus blanches dès la première utilisation" },
-    ben_2: { ar: "نتيجة في 30 دقيقة وليس بعد أسابيع", en: "Results in 30 minutes — not weeks", fr: "Résultat en 30 minutes — pas en plusieurs semaines" },
-    ben_3: { ar: "آمن تماماً — بلا ألم وبلا حساسية", en: "Completely safe — no pain, no sensitivity", fr: "Totalement sûr — sans douleur, sans sensibilité" },
-    ben_4: { ar: "سهل الاستعمال: ضع، انتظر 30 دقيقة، ثم أزل", en: "Easy: apply, wait 30 minutes, peel off", fr: "Facile : posez, attendez 30 minutes, retirez" },
-    ben_5: { ar: "14 استعمالاً في كل علبة", en: "14 uses in every box", fr: "14 utilisations dans chaque boîte" },
-    ben_6: { ar: "ضمان استرجاع المال — إذا لم يعجبك، نُعيد لك أموالك", en: "Money-back guarantee — don't love it? Full refund", fr: "Satisfait ou remboursé — si ça ne vous plaît pas, on vous rembourse" },
-
-    proof_10m: { ar: "منتج V34 تباع حول العالم", en: "V34 products sold worldwide", fr: "Produits V34 vendus dans le monde" },
-    proof_96_lead: { ar: "في دراسة سريرية*", en: "In a clinical study*", fr: "Dans une étude clinique*" },
-    proof_96_sub: { ar: "من المشاركين لاحظوا درجتين أفتح أو أكثر", en: "of participants had 2+ shades whiter teeth", fr: "des participants ont eu 2 nuances ou plus" },
-    proof_96_foot: { ar: "*النتائج الفردية كتختلف", en: "*Individual results may vary", fr: "*Les résultats individuels peuvent varier" },
-    proof_one_use: {
-      ar: "أسنان أبيض ملحوظ من <strong>أول استعمال*</strong>",
-      en: "Whiter teeth after <strong>just one use*</strong>",
-      fr: "Dents plus blanches dès la <strong>première utilisation*</strong>"
-    },
-    proof_guarantee: { ar: "ضمان استرجاع الفلوس", en: "Money back guarantee", fr: "Garantie satisfait ou remboursé" },
-    proof_guarantee_sub: { ar: "إلا ما عجبكش — نرجعو ليك فلوسك", en: "Not satisfied? Get your money back", fr: "Pas satisfait ? Remboursement" },
-    proof_morocco: { ar: "طلبية وصلات للمغرب", en: "orders delivered in Morocco", fr: "commandes livrées au Maroc" },
-    proof_results_cap: { ar: "نتائج حقيقية من زبنائنا", en: "Real results from our customers", fr: "Résultats réels de nos clients" },
-
-    land_ba_h: {
-      ar: "يُمكنك أن تدفع آلاف الدراهم عند الأطباء، أو أن تحصل على منتجٍ مؤكَّد ومضمون من منزلك.",
-      en: "You can pay thousands at clinics — or get a proven, guaranteed product from home.",
-      fr: "Vous pouvez payer des milliers chez le dentiste — ou obtenir un produit éprouvé et garanti chez vous."
-    },
-    land_ba_hint: { ar: "← اسحب لكشف النتيجة →", en: "← Drag to reveal →", fr: "← Glissez pour révéler →" },
-    ba_before: { ar: "قبل", en: "BEFORE", fr: "AVANT" },
-    ba_after: { ar: "بعد", en: "AFTER", fr: "APRÈS" },
-    land_checkout_h: {
-      ar: "أكمل طلبك الآن",
-      en: "Complete your order now",
-      fr: "Complétez votre commande"
-    },
-    checkout_eyebrow: { ar: "اطلب دابا", en: "Order now", fr: "Commandez" },
-    why_eyebrow: { ar: "التكنولوجيا", en: "The technology", fr: "La technologie" },
-    ben_eyebrow: { ar: "الفوائد", en: "Benefits", fr: "Avantages" },
-    ba_eyebrow: { ar: "نتائج حقيقية", en: "Real results", fr: "Résultats réels" },
-
-    rev_title: { ar: "آراء العملاء", en: "Customer Reviews", fr: "Avis clients" },
     rev_eyebrow: { ar: "آراء حقيقية", en: "Real reviews", fr: "Avis vérifiés" },
+    rev_title: { ar: "آراء العملاء", en: "Customer Reviews", fr: "Avis clients" },
     rev_sub: {
       ar: "+2,000 طلبية وصلات للمغرب — هادو شي تعليقات من زبنائنا",
       en: "+2,000 orders delivered in Morocco — here are some of our customers' reviews",
@@ -116,160 +88,101 @@
     },
     rev_rating_label: { ar: "معدل التقييم", en: "Average rating", fr: "Note moyenne" },
     rev_verified: { ar: "طلبية مؤكدة", en: "Verified order", fr: "Commande vérifiée" },
-    rev_tap_img: { ar: "اضغط لمشاهدة الصور بوضوح", en: "Tap to view photos clearly", fr: "Appuyez pour voir les photos" },
-    rev_instructions_note: {
-      ar: "نصيحة مهمة: اتبع التعليمات مزيان — نشّف سنانك بالمنشفة الورقية، حط الشرائط، خليهم من 30 دقيقة لساعة (ما كاينش حساسية)، وفرك عادي من بعد. هاد الصور ديال زبناء تبعو نفس الخطوات.",
-      en: "The secret: follow the instructions exactly — dry teeth with a paper towel, apply strips, leave 30 minutes to 1 hour (no sensitivity), then brush normally. These photos are from customers who followed the steps properly.",
-      fr: "Le secret : suivez les instructions à la lettre — séchez avec un essuie, appliquez les bandes, laissez 30 min à 1 h (sans sensibilité), puis brossez normalement."
-    },
-    rev1_name: { ar: "سناء .م", en: "Sanaa .M", fr: "Sanaa .M" },
+    rev1_name: { ar: "ياسين .م", en: "Yassine .M", fr: "Yassine .M" },
     rev1_city: { ar: "الدار البيضاء", en: "Casablanca", fr: "Casablanca" },
     rev1_text: {
-      ar: "منين بديت كنشّف سناني بالورقة وكنطبّق التعليمات كيف ما كاينين، الفرق ولى واضح: قبل، أثناء، وبعد. خليت الشرائط ساعة وما حسّيت بأي ألم.",
-      en: "Once I started drying my teeth with a paper towel and following the instructions exactly, the difference was clear — before, during, and after. I left them on for an hour with zero pain.",
-      fr: "Une fois que j'ai séché mes dents avec un essuie et suivi les instructions à la lettre, la différence était claire — avant, pendant et après. Une heure sans aucune douleur."
+      ar: "رائحة قوية وراقية، وأهم حاجة كتبقى. من أول مرة لبستو، الناس بداو يسولوني على شنو العطر اللي حاطط. صراحة فاق توقعاتي.",
+      en: "Strong, classy scent and most importantly it lasts. The first time I wore it people started asking what perfume I had on. Honestly exceeded my expectations.",
+      fr: "Senteur forte et raffinée, et surtout elle tient. Dès la première fois, on m'a demandé quel parfum je portais. Franchement au-dessus de mes attentes."
     },
-    rev2_name: { ar: "ياسين .ب", en: "Yassine .B", fr: "Yassine .B" },
+    rev2_name: { ar: "أنس .ب", en: "Anas .B", fr: "Anas .B" },
     rev2_city: { ar: "الرباط", en: "Rabat", fr: "Rabat" },
     rev2_text: {
-      ar: "أول مرة ما تبعتش التعليمات وما بان حتى فرق. الثانية نشّفت سناني مزيان، لصقت الشرائط مزيان، خليتها 45 دقيقة وفركت من بعد — النتيجة باينة فالصور.",
-      en: "First time I didn't follow the instructions — nothing happened. Second time I dried properly, applied with the plastic strip, waited 45 minutes, brushed after — the photos speak for themselves.",
-      fr: "La première fois sans suivre les instructions — rien. La deuxième fois : séchage, application, 45 minutes, brossage après — les photos parlent d'elles-mêmes."
+      ar: "كنقلّب على عطر يدوم وما كنلقاش. هاد المرة لقيت اللي بغيت — كنحطّو الصباح وكيبقى حتى الليل. الثبات ديالو ماشي طبيعي.",
+      en: "I'd been searching for a scent that lasts. This time I found it — I put it on in the morning and it stays till night. The longevity is unreal.",
+      fr: "Je cherchais un parfum qui tient. Cette fois j'ai trouvé — je le mets le matin et il reste jusqu'au soir. Une tenue incroyable."
     },
-    rev3_name: { ar: "مريم .أ", en: "Meryem .A", fr: "Meryem .A" },
+    rev3_name: { ar: "مهدي .أ", en: "Mehdi .A", fr: "Mehdi .A" },
     rev3_city: { ar: "طنجة", en: "Tangier", fr: "Tanger" },
     rev3_text: {
-      ar: "عندي سنان حساسة وكنت خايفة نجرب. ولكن بلا بيروكسيد، ما حسّيت بحتى حساسية. من أول أسبوع بدا الفرق يبان، وبعد 14 استعمال سناني أفتح بكثير. توصيتها لـ3 صاحبات وكلهم راضيين.",
-      en: "I have sensitive teeth and was nervous to try. But no peroxide means zero sensitivity. After the first week I started seeing a difference — and after 14 uses my teeth were noticeably brighter. Recommended it to 3 friends, all happy.",
-      fr: "Dents sensibles, j'hésitais. Mais sans peroxyde, aucune sensibilité ressentie. Dès la première semaine la différence se voyait. Après 14 utilisations mes dents sont bien plus claires. Recommandé à 3 amies, toutes satisfaites."
+      ar: "التغليف فاخر والعطر أصلي. خلّصت عند الاستلام بلا أي مشكل، والتوصيل كان سريع. وزادو عطيوني عطر هدية!",
+      en: "Luxury packaging and the perfume is authentic. Paid on delivery with no issues, fast shipping — and they even included a free gift perfume!",
+      fr: "Emballage luxueux et parfum authentique. Payé à la livraison sans souci, livraison rapide — et un parfum offert en cadeau !"
     },
-    rev4_name: { ar: "أمين .ر", en: "Amine .R", fr: "Amine .R" },
+    rev4_name: { ar: "رضا .ح", en: "Reda .H", fr: "Reda .H" },
     rev4_city: { ar: "مراكش", en: "Marrakech", fr: "Marrakech" },
     rev4_text: {
-      ar: "المنتج وصل بالتغليف الأصلي مافيه أي خدش. العلبة فيها 14 شريط — كافيين لشهر كامل. الفرق فسناني بان واضح والناس بدات تلاحظ. صورة المنتج صادقة 100%.",
-      en: "Product arrived in perfect original packaging. The box has 14 strips — enough for a full month. The difference in my teeth was obvious and people started to notice. The product photos are 100% accurate.",
-      fr: "Produit reçu dans son emballage d'origine impeccable. La boîte contient 14 bandes — suffisant pour un mois entier. La différence était visible et mon entourage l'a remarqué. Les photos du produit sont fidèles à la réalité."
+      ar: "عطر رجولي بمعنى الكلمة، دافي وجذّاب. مراتي عجبها بزّاف. واحد من أحسن العطور اللي جربت وبثمن معقول.",
+      en: "A truly masculine scent, warm and attractive. My wife loved it. One of the best perfumes I've tried, and at a fair price.",
+      fr: "Un parfum vraiment masculin, chaud et séduisant. Ma femme a adoré. L'un des meilleurs que j'aie essayés, à un prix juste."
     },
-    land_order_h: { ar: "كل يوم كتأجّل، هو يوم بأسنان أقل بياضًا.", en: "Every day you delay is a day with less white teeth.", fr: "Chaque jour de retard est un jour avec des dents moins blanches." },
-    land_order_sub: { ar: "الدفع عند الاستلام، بلا خلاص مسبق. التوصيل لجميع مدن المغرب.", en: "Cash on Delivery, no upfront payment. Delivery to all Moroccan cities.", fr: "Paiement à la livraison, aucun paiement d'avance. Livraison dans tout le Maroc." },
-    final_cta_sub: {
-      ar: "ضمان استرجاع الفلوس — آخر فرصة على هاد الثمن.",
-      en: "Money-back guarantee — last chance at this price.",
-      fr: "Garantie satisfait ou remboursé — dernière chance à ce prix."
-    },
-    land_price:   { ar: "245 درهم", en: "245 MAD", fr: "245 MAD" },
-        savings_tag:  { ar: "وفّرت 105 درهم (30%)", en: "You save 105 MAD (30%)", fr: "Vous économisez 105 MAD (30%)" },
-    checkout_badge: { ar: "عرض محدود", en: "Limited Offer", fr: "Offre Limitée" },
 
     form_name: { ar: "الإسم الكامل", en: "Full Name", fr: "Nom complet" },
     form_phone: { ar: "رقم الهاتف", en: "Phone Number", fr: "Numéro de téléphone" },
     form_city: { ar: "المدينة", en: "City", fr: "Ville" },
+    form_address: { ar: "العنوان", en: "Address", fr: "Adresse" },
     form_name_ph: { ar: "اسم", en: "Your name", fr: "Votre nom" },
     form_phone_ph: { ar: "06XX XXX XXX", en: "06XX XXX XXX", fr: "06XX XXX XXX" },
-    form_city_ph: { ar: "المدينة", en: "City", fr: "Ville" },
-    form_address: { ar: "العنوان", en: "Address", fr: "Adresse" },
+    form_city_ph: { ar: "مدينة", en: "City", fr: "Ville" },
     form_address_ph: { ar: "العنوان", en: "Address", fr: "Adresse" },
-    form_title: {
-      ar: "أكمل طلبيتك دابا",
-      en: "Complete your order",
-      fr: "Complétez votre commande"
-    },
-    form_subtitle: {
-      ar: "ملي تضغط 'أكد الطلب'، غادي يتواصل معك أحد دفرقة ديالنا باش يأكد التوصيل.",
-      en: "Once you click 'Confirm Order', our team will contact you to confirm delivery.",
-      fr: "Une fois que vous cliquez sur 'Confirmer', notre équipe vous contactera pour confirmer la livraison."
-    },
     form_secure: { ar: "معلوماتك آمنة ومحمية", en: "Your information is safe and secure", fr: "Vos informations sont sécurisées" },
-    submit_order: {
-      ar: "أكد الطلب",
-      en: "Confirm order",
-      fr: "Confirmer"
-    },
-    submit_order_long: {
-      ar: "أكد الطلب — الدفع عند الاستلام",
-      en: "Confirm — cash on delivery",
-      fr: "Confirmer — paiement à la livraison"
-    },
+    submit_order: { ar: "أكد الطلب", en: "Confirm order", fr: "Confirmer" },
 
     ct_ship: { ar: "توصيل مجاني و سريع", en: "Free & fast delivery", fr: "Livraison gratuite et rapide" },
-    ct_ship_sub: { ar: "مجاني وسريع (24–48 ساعة)", en: "Free and fast (24–48h)", fr: "Gratuit et rapide (24–48h)" },
-    trust_cod_sub: { ar: "تحقق من المنتج ثم ادفع", en: "Check your product, then pay", fr: "Vérifiez avant de payer" },
-    ct_guarantee: { ar: "ضمان استرجاع الأموال", en: "Money-back guarantee", fr: "Garantie de remboursement" },
-    ct_guarantee_sub: {
-      ar: "إذا لم تعجبك النتيجة — أموالك مضمونة",
-      en: "Not happy with results? Money back.",
-      fr: "Pas satisfait ? Remboursement garanti."
-    },
+    ct_guarantee: { ar: "منتج أصلي 100%", en: "100% authentic", fr: "100% authentique" },
 
-    sticky_name: { ar: "شرائط V34", en: "V34 Strips", fr: "Bandes V34" },
-    sticky_price: { ar: "245 درهم", en: "245 MAD", fr: "245 MAD" },
+    sticky_name: { ar: "Lure Her", en: "Lure Her", fr: "Lure Her" },
+    sticky_price: { ar: "189 درهم", en: "189 MAD", fr: "189 MAD" },
     sticky_cta: { ar: "اطلب الآن", en: "Order Now", fr: "Commander" },
 
-    foot_copy: { ar: "© 2025 HISMILE. جميع الحقوق محفوظة.", en: "© 2025 HISMILE. All rights reserved.", fr: "© 2025 HISMILE. Tous droits réservés." },
-    foot_tagline: {
-      ar: "تبييض أسنان آمن — توصيل لجميع مدن المغرب",
-      en: "Safe teeth whitening — delivery across Morocco",
-      fr: "Blanchiment sûr — livraison partout au Maroc"
-    },
-
-    
     faq_eyebrow: { ar: "أسئلة شائعة", en: "FAQ", fr: "FAQ" },
-    faq_title: { ar: "كل ما تحتاج معرفته قبل الطلب", en: "Everything you need to know before ordering", fr: "Tout ce qu'il faut savoir avant de commander" },
-    faq_sub: {
-      ar: "مازال عندك شك؟ هاد الإجابات كتغطي الاستعمال، الأمان، التوصيل والإرجاع.",
-      en: "Still unsure? These answers cover usage, safety, delivery and returns.",
-      fr: "Encore des doutes ? Ces réponses couvrent l'utilisation, la sécurité, la livraison et les retours."
-    },
-    faq_cta: {
-      ar: "صيفط طلبيتك دابا",
-      en: "Order now",
-      fr: "Commander"
-    },
-    faq_q1: { ar: "كيفاش كنستعمل شرائط V34؟", en: "How do I use V34 strips?", fr: "Comment utiliser les bandes V34 ?" },
+    faq_title: { ar: "كل ما خصك تعرف قبل الطلب", en: "Everything you need to know before ordering", fr: "Tout savoir avant de commander" },
+    faq_cta: { ar: "صيفط طلبيتك دابا", en: "Order now", fr: "Commander" },
+    faq_q1: { ar: "شحال كيدوم العطر؟", en: "How long does it last?", fr: "Combien de temps tient-il ?" },
     faq_a1: {
-      ar: "① نشّف سنانك مزيان بالورقة أو منشفة ورقية — خاص يكونو جافين باش الشريطة تلصق.<br>② حط الشريطة الكبيرة فالفوق والصغيرة فالتحت، ضغط على البلاستيك باش تثبت.<br>③ خليها من 30 دقيقة لساعة — بلا بيروكسيد، ما كيسببوش حساسية حتى مع وقت طويل.<br>④ حيد الشرائط وفرك سنانك عادي بالشيّتة باش تحيد البقايا البنفسجية. كتبع التعليمات بالحرف باش تجيب أحسن نتيجة.",
-      en: "① Dry teeth thoroughly with a paper towel — they must be dry for strips to stick.<br>② Apply long strip to upper teeth, short to lower, press firmly.<br>③ Leave 30 minutes to 1 hour — peroxide-free, no sensitivity even with longer wear.<br>④ Remove and brush normally to clear purple residue. Follow instructions exactly for best results.",
-      fr: "① Séchez bien avec un essuie — dents sèches pour que les bandes adhèrent.<br>② Bande longue en haut, courte en bas, appuyez fermement.<br>③ Laissez 30 min à 1 h — sans peroxyde, pas de sensibilité.<br>④ Retirez et brossez normalement. Suivez les instructions pour le meilleur résultat."
+      ar: "Lure Her كيدوم طول اليوم فالبشرة، وكيبقى عالق فالحوايج حتى لأكثر. حط رشّة على نقاط النبض (الرقبة، المعصم) باش يدوم أكثر.",
+      en: "Lure Her lasts all day on the skin and even longer on clothes. Spray on pulse points (neck, wrist) for maximum longevity.",
+      fr: "Lure Her tient toute la journée sur la peau, et encore plus sur les vêtements. Vaporisez sur les points de pulsation (cou, poignet) pour une meilleure tenue."
     },
-    faq_q2: { ar: "شحال كتصبر النتيجة؟", en: "How long do results last?", fr: "Combien de temps dure le résultat ?" },
+    faq_q2: { ar: "شنو هي الفيرومونات وكيفاش كتخدم؟", en: "What are pheromones and how do they work?", fr: "Que sont les phéromones et comment agissent-elles ?" },
     faq_a2: {
-      ar: "البياض الفوري يدوم يومين إلى 3 أيام حسب القهوة والتدخين. مع الاستعمال المنتظم، يستمر التبييض.",
-      en: "Instant brightness lasts 2–3 days depending on coffee, tea, and smoking. Regular use keeps improving whiteness.",
-      fr: "L'éclat instantané dure 2 à 3 jours selon café et tabac. L'usage régulier prolonge le blanchiment."
+      ar: "الفيرومونات هي جزيئات كتزيد الجاذبية والحضور. فالعطر، كتعطي إحساس بالثقة وكتخلّي حضورك ألفت للانتباه بطريقة طبيعية وأنيقة.",
+      en: "Pheromones are molecules that enhance attraction and presence. In the perfume they boost confidence and make your presence naturally magnetic.",
+      fr: "Les phéromones sont des molécules qui renforcent l'attraction et la présence. Dans le parfum, elles boostent la confiance et rendent votre présence naturellement magnétique."
     },
-    faq_q3: { ar: "واش آمنة على الأسنان الحساسة والمينا؟", en: "Is it safe for sensitive teeth?", fr: "Est-ce sûr pour les dents sensibles ?" },
+    faq_q3: { ar: "واش هو خاص بالرجال؟", en: "Is it for men?", fr: "Est-il pour homme ?" },
     faq_a3: {
-      ar: "نعم. بدون بيروكسيد — لون بنفسجي فوري وتبييض PAP+ لطيف على المينا.",
-      en: "Yes. Peroxide-free — instant purple tone boost plus gentle PAP+ whitening.",
-      fr: "Oui. Sans peroxyde — éclat violet instantané et blanchiment PAP+ doux pour l'émail."
+      ar: "نعم، Lure Her مصمّم خصيصاً للرجال — رائحة دافئة وجريئة بطابع رجولي راقٍ مناسب للنهار والليل وكل المناسبات.",
+      en: "Yes, Lure Her is made specifically for men — a warm, bold scent with a refined masculine character for day, night and every occasion.",
+      fr: "Oui, Lure Her est conçu pour homme — une senteur chaude et audacieuse au caractère masculin raffiné, pour le jour, le soir et toutes les occasions."
     },
-    faq_q4: { ar: "شحال من استعمال كاين فالباطة؟", en: "How many uses in each box?", fr: "Combien d'utilisations par boîte ?" },
+    faq_q4: { ar: "واش المنتج أصلي؟", en: "Is the product authentic?", fr: "Le produit est-il authentique ?" },
     faq_a4: {
-      ar: "كل باطة كتحتوي على 14 شريطة للأسنان العلوية و 14 شريطة للأسنان السفلية، يعني كافية لـ 14 حصة تبييض كاملة.",
-      en: "Each box contains 14 strips for upper teeth and 14 strips for lower teeth, providing 14 full treatment applications.",
-      fr: "Chaque boîte contient 14 bandes pour le haut et 14 pour le bas, soit 14 applications complètes."
+      ar: "100% أصلي. كيوصلك فالتغليف الأصلي المختوم، وكتقدر تتأكد منو وتشمّو قبل ما تخلّص — الدفع كيكون عند الاستلام. احذر المنتجات الرخيصة المقلّدة.",
+      en: "100% authentic. It arrives in sealed original packaging, and you can check and smell it before you pay — cash on delivery. Beware of cheap imitations.",
+      fr: "100% authentique. Il arrive dans son emballage d'origine scellé, et vous pouvez le vérifier et le sentir avant de payer — paiement à la livraison. Méfiez-vous des imitations."
     },
     faq_q5: { ar: "شحال وقت التوصيل وكيفاش كنخلص؟", en: "What is delivery time & payment?", fr: "Délai de livraison & paiement ?" },
     faq_a5: {
       ar: "التوصيل فابور وسريع لجميع مدن المغرب (من 24 لـ 48 ساعة). الدفع كيكون عند الاستلام (COD)، يعني كتخلص حتى كتوصلك الطلبية ليديك وتأكد منها.",
-      en: "Free and fast delivery across Morocco (24 to 48 hours). Payment is cash on delivery (COD), meaning you only pay when you receive and check your order.",
-      fr: "Livraison gratuite et rapide partout au Maroc (24 à 48h). Paiement en espèces à la livraison (COD), vous ne payez qu'après vérification."
+      en: "Free and fast delivery across Morocco (24 to 48 hours). Payment is cash on delivery (COD) — you only pay when you receive and check your order.",
+      fr: "Livraison gratuite et rapide partout au Maroc (24 à 48h). Paiement en espèces à la livraison (COD) — vous ne payez qu'après vérification."
     },
     faq_q6: { ar: "شنو هي سياسة الإرجاع؟", en: "What is the return policy?", fr: "Quelle est la politique de retour ?" },
     faq_a6: {
-      ar: "إذا لم تلاحظ أي نتيجة بعد استعمال المنتج بالطريقة الصحيحة لمدة 15 يوماً، نُعيد لك أموالك مضمونة — 200 درهم.<br>يجب تقديم طلب الاسترجاع مع صور قبل وبعد قبل انتهاء مدة 15 يوماً من التوصيل.<br>بعد 15 يوماً من التوصيل دون طلب = لا استرجاع.",
-      en: "If you see no results after using the product as directed within 15 days of delivery, you get a guaranteed 200 MAD refund.<br>Submit your claim with before & after photos before the 15-day-from-delivery deadline.<br>No claim within 15 days of delivery = no refund.",
-      fr: "Si aucun résultat après utilisation correcte dans les 15 jours suivant la livraison, remboursement garanti de 200 MAD.<br>Envoyez votre demande avec photos avant/après avant la fin du délai de 15 jours.<br>Passé ce délai, aucun remboursement."
+      ar: "تقدر تشوف وتشمّ العطر قبل ما تخلّص، وإيلا ما عجبكش تقدر ترفضو. وإيلا وصلك مخسور أو مقلّد، تواصل معانا خلال 48 ساعة مع صورة المنتج وكنحلّو ليك المشكل.",
+      en: "You can see and smell the perfume before paying, and refuse it if you don't like it. If it arrives damaged or fake, contact us within 48 hours with a photo and we'll resolve it.",
+      fr: "Vous pouvez voir et sentir le parfum avant de payer, et le refuser s'il ne vous plaît pas. S'il arrive endommagé ou contrefait, contactez-nous sous 48h avec une photo et nous réglerons le problème."
     }
   };
 
-  var langs = ["fr", "ar"];
-  var DEFAULT_LANG = "fr";
+  var langs = ["ar", "fr"];
+  var DEFAULT_LANG = "ar";
   var LANG_LABELS = { fr: "Français", ar: "العربية" };
 
   function resolveInitialLang() {
     try {
-      var savedLang = localStorage.getItem("v34_lang");
+      var savedLang = localStorage.getItem("lureher_lang");
       if (savedLang === "en") return DEFAULT_LANG;
       if (savedLang && langs.indexOf(savedLang) !== -1) return savedLang;
     } catch (e) {}
@@ -283,7 +196,7 @@
   var currentLangIndex = langs.indexOf(resolveInitialLang());
   if (currentLangIndex < 0) currentLangIndex = 0;
 
-  
+
   function localize(root, l) {
     root = root || document;
     var nodes = root.querySelectorAll("[data-i18n]");
@@ -305,7 +218,7 @@
   function applyLang(index) {
     currentLangIndex = index;
     var l = langs[currentLangIndex];
-    try { localStorage.setItem("v34_lang", l); } catch (e) {}
+    try { localStorage.setItem("lureher_lang", l); } catch (e) {}
     var app = document.querySelector(".app");
 
     if (app) {
@@ -326,11 +239,11 @@
 
 
     var titleDict = {
-      ar: "Hismile V34 — شرائح تبييض الأسنان",
-      en: "Hismile V34 — Teeth Whitening Strips",
-      fr: "Hismile V34 — Bandes de Blanchiment"
+      ar: "Lure Her — عطر الفيرومونات للرجال",
+      en: "Lure Her — Pheromone Perfume for Men",
+      fr: "Lure Her — Parfum aux phéromones pour homme"
     };
-    document.title = titleDict[l] || "Hismile V34";
+    document.title = titleDict[l] || "Lure Her";
     updateHeroGalleryAlts();
     updateStockLabels(window.__V34_STOCK_COUNT || computeDeterministicStock());
     if (window.__V34_REFRESH_ANNOUNCE) window.__V34_REFRESH_ANNOUNCE();
@@ -378,56 +291,11 @@
 
   function initStickyCta() {
     var bottomCta = document.getElementById("bottom-cta");
-    var hero = document.getElementById("landing-hero");
-    var checkoutForm = document.getElementById("checkout-form");
     var stickyBtn = document.getElementById("stickyBtn");
     if (!bottomCta) return;
 
     window.__stickyCtaIO = true;
-    bottomCta.classList.remove("visible");
-    bottomCta.classList.remove("is-hidden-over-form");
-
-    function syncStickyState() {
-      var vh = window.innerHeight;
-      var hideForForm = false;
-
-      var shouldShow = window.scrollY > 24;
-
-      if (checkoutForm) {
-        var formRect = checkoutForm.getBoundingClientRect();
-        var visTop = Math.max(0, formRect.top);
-        var visBottom = Math.min(vh, formRect.bottom);
-        var visibleFormH = Math.max(0, visBottom - visTop);
-        hideForForm = visibleFormH >= vh * 0.5 && formRect.top < vh * 0.38;
-      }
-
-      if (hideForForm) {
-        bottomCta.classList.remove("visible");
-        bottomCta.classList.add("is-hidden-over-form");
-      } else if (shouldShow) {
-        bottomCta.classList.add("visible");
-        bottomCta.classList.remove("is-hidden-over-form");
-      } else {
-        bottomCta.classList.remove("visible");
-        bottomCta.classList.remove("is-hidden-over-form");
-      }
-    }
-
-    window.addEventListener("scroll", syncStickyState, { passive: true });
-    window.addEventListener("resize", syncStickyState, { passive: true });
-    window.addEventListener("load", syncStickyState);
-    if (hero && window.ResizeObserver) {
-      new ResizeObserver(syncStickyState).observe(hero);
-    }
-    if (checkoutForm && window.ResizeObserver) {
-      new ResizeObserver(syncStickyState).observe(checkoutForm);
-    }
-    syncStickyState();
-    requestAnimationFrame(function () {
-      requestAnimationFrame(syncStickyState);
-    });
-    setTimeout(syncStickyState, 600);
-    setTimeout(syncStickyState, 2000);
+    bottomCta.classList.add("visible");
 
     if (stickyBtn) {
       stickyBtn.addEventListener("click", function () {
@@ -464,37 +332,37 @@
     }
   });
 
-  var HERO_ASSET_VERSION = 7;
+  var HERO_ASSET_VERSION = 1;
   var HERO_MANIFEST_URL =
-    "https://raw.githubusercontent.com/chafiyounes/mapper-youcant/main/images/hero/manifest.json?v=" +
+    "https://raw.githubusercontent.com/chafiyounes/lurher-lp/main/images/hero/manifest.json?v=" +
     HERO_ASSET_VERSION;
 
   var HERO_MANIFEST_FALLBACK = {
-    baseUrl: "https://raw.githubusercontent.com/chafiyounes/mapper-youcant/main/images/hero/",
+    baseUrl: "https://raw.githubusercontent.com/chafiyounes/lurher-lp/main/images/hero/",
     slides: [
       {
         id: "main",
-        image: "01-main.webp",
-        thumb: "01-main-thumb.webp",
-        alt: { ar: "أكثر من 10 ملايين منتج V34 تباع عالمياً", en: "10M+ V34 products sold worldwide", fr: "Plus de 10 millions de produits V34 vendus" }
+        image: "01-main.png",
+        thumb: "01-main.png",
+        alt: { ar: "عطر Lure Her الأصلي للرجال", en: "Lure Her authentic men's perfume", fr: "Lure Her, parfum authentique pour homme" }
       },
       {
-        id: "main2",
-        image: { ar: "02-main2-ar.webp", en: "02-main2-en.webp", fr: "02-main2-fr.webp" },
-        thumb: { ar: "02-main2-ar-thumb.webp", en: "02-main2-en-thumb.webp", fr: "02-main2-fr-thumb.webp" },
-        alt: { ar: "نتائج حقيقية — بدون مبالغة", en: "Real results — no exaggeration", fr: "Résultats réels — sans exagération" }
+        id: "lifestyle",
+        image: "02-lifestyle.png",
+        thumb: "02-lifestyle.png",
+        alt: { ar: "حضور وجاذبية مع Lure Her", en: "Presence and attraction with Lure Her", fr: "Présence et attraction avec Lure Her" }
       },
       {
-        id: "info",
-        image: { ar: "03-info-ar.webp", en: "03-info-en.webp", fr: "03-info-fr.webp" },
-        thumb: { ar: "03-info-ar-thumb.webp", en: "03-info-en-thumb.webp", fr: "03-info-fr-thumb.webp" },
-        alt: { ar: "96% من المشاركين أسنانهم أفتح بدرجتين أو أكثر", en: "96% of participants had teeth two shades whiter or more", fr: "96% des participants : dents deux teintes plus blanches" }
+        id: "product",
+        image: "03-product.png",
+        thumb: "03-product.png",
+        alt: { ar: "العطر مع علبته الفاخرة", en: "The perfume with its luxury box", fr: "Le parfum avec son coffret de luxe" }
       },
       {
-        id: "topresults",
-        image: "04-topresults.webp",
-        thumb: "04-topresults-thumb.webp",
-        alt: { ar: "أفضل نتائج التبييض", en: "Top teeth whitening results", fr: "Meilleurs résultats de blanchiment" }
+        id: "gift",
+        image: "04-gift.png",
+        thumb: "04-gift.png",
+        alt: { ar: "عطر إضافي هدية مع كل طلب", en: "Free bonus perfume with every order", fr: "Parfum offert avec chaque commande" }
       }
     ]
   };
@@ -616,8 +484,6 @@
         var slideList = slides();
         var w = viewport.clientWidth;
         if (!w || !slideList.length) return;
-        var isRtlScroll = document.querySelector(".app") &&
-          document.querySelector(".app").getAttribute("dir") === "rtl";
         var raw = Math.abs(viewport.scrollLeft) / w;
         var i = Math.round(raw);
         if (i < 0) i = 0;
@@ -821,124 +687,6 @@
       });
   }
 
-  function initSlider() {
-    var slider = document.getElementById("slider");
-    var sliderAfter = document.getElementById("slider-after");
-    var sliderHandle = document.getElementById("slider-handle");
-    var baHint = document.getElementById("ba-hint");
-
-    if (slider && sliderAfter && sliderHandle) {
-      var isDragging = false;
-      var currentPct = 50;
-      var hintHidden = false;
-
-      function hideHint() {
-        if (hintHidden || !baHint) return;
-        hintHidden = true;
-        baHint.classList.add("is-hidden");
-      }
-
-      function moveSlider(clientX) {
-        var rect = slider.getBoundingClientRect();
-        var position = clientX - rect.left;
-        if (position < 0) position = 0;
-        if (position > rect.width) position = rect.width;
-        var pct = (position / rect.width) * 100;
-        currentPct = pct;
-        var isRtl = document.querySelector(".app") &&
-          document.querySelector(".app").getAttribute("dir") === "rtl";
-        sliderHandle.style.left = pct + "%";
-        if (isRtl) {
-          sliderAfter.style.clipPath = "inset(0 " + (100 - pct) + "% 0 0)";
-        } else {
-          sliderAfter.style.clipPath = "inset(0 0 0 " + pct + "%)";
-        }
-        slider.setAttribute("aria-valuenow", Math.round(pct));
-      }
-
-      (function initSliderPosition() {
-        var rect = slider.getBoundingClientRect();
-        if (rect.width > 0) {
-          moveSlider(rect.left + rect.width / 2);
-        } else {
-          requestAnimationFrame(initSliderPosition);
-        }
-      })();
-
-      var startDrag = function (e) {
-        if (e.type === "touchstart" && e.touches) {
-          slider._touchStartX = e.touches[0].clientX;
-          slider._touchStartY = e.touches[0].clientY;
-          slider._touchAxis = null;
-          return;
-        }
-        isDragging = true;
-        hideHint();
-        var cx = e.touches ? e.touches[0].clientX : e.clientX;
-        moveSlider(cx);
-        if (e.cancelable) e.preventDefault();
-      };
-      var moveDrag = function (e) {
-        if (e.type === "touchmove" && e.touches) {
-          var dx = e.touches[0].clientX - slider._touchStartX;
-          var dy = e.touches[0].clientY - slider._touchStartY;
-          if (!slider._touchAxis) {
-            if (Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(dy) * 1.15) {
-              slider._touchAxis = "x";
-              isDragging = true;
-              hideHint();
-            } else if (Math.abs(dy) > 8 && Math.abs(dy) > Math.abs(dx)) {
-              slider._touchAxis = "y";
-              return;
-            } else {
-              return;
-            }
-          }
-          if (slider._touchAxis === "y") return;
-        }
-        if (!isDragging) return;
-        var cx2 = e.touches ? e.touches[0].clientX : e.clientX;
-        moveSlider(cx2);
-        if (e.cancelable) e.preventDefault();
-      };
-      var stopDrag = function () {
-        isDragging = false;
-        slider._touchAxis = null;
-      };
-
-      slider.addEventListener("mousedown", startDrag);
-      slider.addEventListener("touchstart", startDrag, { passive: true });
-      window.addEventListener("mouseup", stopDrag);
-      window.addEventListener("touchend", stopDrag);
-      window.addEventListener("mousemove", moveDrag);
-      window.addEventListener("touchmove", moveDrag, { passive: false });
-      slider.addEventListener("dragstart", function (e) { e.preventDefault(); });
-
-      slider.addEventListener("keydown", function (e) {
-        var isRtl = document.querySelector(".app") &&
-          document.querySelector(".app").getAttribute("dir") === "rtl";
-        var step = 4;
-        if (e.key === "ArrowLeft") {
-          e.preventDefault();
-          hideHint();
-          currentPct = isRtl
-            ? Math.min(100, currentPct + step)
-            : Math.max(0, currentPct - step);
-        } else if (e.key === "ArrowRight") {
-          e.preventDefault();
-          hideHint();
-          currentPct = isRtl
-            ? Math.max(0, currentPct - step)
-            : Math.min(100, currentPct + step);
-        } else {
-          return;
-        }
-        var rect = slider.getBoundingClientRect();
-        moveSlider(rect.left + (rect.width * currentPct / 100));
-      });
-    }
-  }
-
   function initFaq() {
     var faqItems = document.querySelectorAll(".faq-item");
     for (var i = 0; i < faqItems.length; i++) {
@@ -1103,118 +851,8 @@
         }, 10000);
       } else {
         var l = langs[currentLangIndex];
-        alert(l === "ar" ? "خطأ في النظام. حاول مرة أخرى." : "System error. Please try again.");
+        alert(l === "ar" ? "خطأ في النظام. حاول مرة أخرى." : l === "fr" ? "Erreur système. Réessayez." : "System error. Please try again.");
       }
-    });
-  }
-
-  function initReviewLightbox() {
-    var lightbox = document.getElementById("review-lightbox");
-    var lbImg = document.getElementById("review-lightbox-img");
-    var lbCounter = document.getElementById("review-lightbox-counter");
-    var lbAvatar = document.getElementById("review-lightbox-avatar");
-    var lbName = document.getElementById("review-lightbox-name");
-    var lbCity = document.getElementById("review-lightbox-city");
-    var lbStars = document.getElementById("review-lightbox-stars");
-    var lbText = document.getElementById("review-lightbox-text");
-    var btnClose = document.getElementById("review-lightbox-close");
-    var btnBackdrop = document.getElementById("review-lightbox-backdrop");
-    var btnPrev = document.getElementById("review-lightbox-prev");
-    var btnNext = document.getElementById("review-lightbox-next");
-    if (!lightbox || !lbImg) return;
-
-    if (lightbox.parentElement !== document.body) {
-      document.body.appendChild(lightbox);
-    }
-
-    var gallery = [];
-    var index = 0;
-
-    function renderSlide() {
-      if (!gallery.length) return;
-      lbImg.src = gallery[index];
-      lbImg.alt = "Review photo " + (index + 1);
-      if (lbCounter) {
-        lbCounter.textContent = gallery.length > 1 ? (index + 1) + " / " + gallery.length : "";
-      }
-      var multi = gallery.length > 1;
-      if (btnPrev) btnPrev.classList.toggle("is-hidden", !multi);
-      if (btnNext) btnNext.classList.toggle("is-hidden", !multi);
-    }
-
-    function fillDetails(card) {
-      var avatar = card.querySelector(".reviewer-avatar");
-      var name = card.querySelector(".reviewer-name");
-      var city = card.querySelector(".reviewer-city");
-      var stars = card.querySelector(".stars");
-      var text = card.querySelector(".review-text");
-      if (lbAvatar && avatar) lbAvatar.textContent = avatar.textContent;
-      if (lbName && name) lbName.textContent = name.textContent;
-      if (lbCity && city) lbCity.textContent = city.textContent;
-      if (lbStars && stars) lbStars.innerHTML = stars.innerHTML;
-      if (lbText && text) lbText.textContent = text.textContent;
-    }
-
-    function openLightbox(card, images, startAt) {
-      gallery = images;
-      index = startAt || 0;
-      fillDetails(card);
-      renderSlide();
-      lightbox.classList.add("is-open");
-      lightbox.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeLightbox() {
-      lightbox.classList.remove("is-open");
-      lightbox.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
-      lbImg.src = "";
-      gallery = [];
-    }
-
-    function step(dir) {
-      if (gallery.length < 2) return;
-      index = (index + dir + gallery.length) % gallery.length;
-      renderSlide();
-    }
-
-    var cards = document.querySelectorAll(".review-card--gallery");
-    for (var i = 0; i < cards.length; i++) {
-      cards[i].addEventListener("click", function () {
-        try {
-          var imgs = JSON.parse(this.getAttribute("data-review-images") || "[]");
-          if (imgs.length) openLightbox(this, imgs, 0);
-        } catch (e) {}
-      });
-    }
-
-    if (btnClose) btnClose.addEventListener("click", closeLightbox);
-    if (btnBackdrop) btnBackdrop.addEventListener("click", closeLightbox);
-    if (btnPrev) btnPrev.addEventListener("click", function (e) { e.stopPropagation(); step(-1); });
-    if (btnNext) btnNext.addEventListener("click", function (e) { e.stopPropagation(); step(1); });
-
-    var lbMedia = lightbox.querySelector(".review-lightbox-media");
-    if (lbMedia) {
-      var lbTouchX = 0;
-      lbMedia.addEventListener("touchstart", function (e) {
-        lbTouchX = e.touches[0].clientX;
-      }, { passive: true });
-      lbMedia.addEventListener("touchend", function (e) {
-        var dx = e.changedTouches[0].clientX - lbTouchX;
-        if (Math.abs(dx) < 50) return;
-        var isRtl = document.querySelector(".app") &&
-          document.querySelector(".app").getAttribute("dir") === "rtl";
-        if (isRtl) dx = -dx;
-        step(dx > 0 ? -1 : 1);
-      }, { passive: true });
-    }
-
-    document.addEventListener("keydown", function (e) {
-      if (!lightbox.classList.contains("is-open")) return;
-      if (e.key === "Escape") closeLightbox();
-      if (e.key === "ArrowRight") step(-1);
-      if (e.key === "ArrowLeft") step(1);
     });
   }
 
@@ -1359,18 +997,18 @@
     }
   }
 
-  
+
   function computeDeterministicStock() {
-    var MIN = 4;
-    var DROP_PER_DAY = 2;
-    var CYCLE_DAYS = 12;
+    var MIN = 9;
+    var DROP_PER_DAY = 3;
+    var CYCLE_DAYS = 10;
     var dayIndex = Math.floor(Date.now() / 86400000);
     var cycleIndex = Math.floor(dayIndex / CYCLE_DAYS);
     var dayInCycle = dayIndex - cycleIndex * CYCLE_DAYS;
 
     var seed = Math.sin(cycleIndex * 127.13 + 11.7) * 10000;
     var rnd = seed - Math.floor(seed);
-    var startMax = 24 + Math.floor(rnd * 9);
+    var startMax = 30 + Math.floor(rnd * 6);
     var n = startMax - dayInCycle * DROP_PER_DAY;
     return n < MIN ? MIN : n;
   }
@@ -1452,17 +1090,6 @@
     }, { passive: true });
   }
 
-  function deferNonDefaultLangAssets() {
-    if (langs[currentLangIndex] !== DEFAULT_LANG) return;
-    var imgs = document.querySelectorAll(".img-ar:not(.benefits-infographic), .img-en:not(.benefits-infographic)");
-    for (var i = 0; i < imgs.length; i++) {
-      if (!imgs[i].dataset.deferredSrc && imgs[i].getAttribute("src")) {
-        imgs[i].dataset.deferredSrc = imgs[i].getAttribute("src");
-        imgs[i].removeAttribute("src");
-      }
-    }
-  }
-
   function loadDeferredLangAssets(lang) {
     if (lang === DEFAULT_LANG) return;
     var imgs = document.querySelectorAll(".img-" + lang);
@@ -1491,9 +1118,9 @@
 
   function injectPageSeoMeta() {
     var desc = {
-      ar: "شرائح Hismile V34 للتبييض — نتائج في 30 دقيقة، آمنة للأسنان الحساسة، الدفع عند الاستلام في المغرب.",
-      en: "Hismile V34 whitening strips — visible results in 30 minutes, enamel-safe, cash on delivery in Morocco.",
-      fr: "Bandes blanchissantes Hismile V34 — résultats en 30 minutes, sans danger, paiement à la livraison au Maroc."
+      ar: "Lure Her عطر فيرومونات أصلي للرجال يدوم طول اليوم — جاذبية وثقة، مع عطر هدية. الدفع عند الاستلام وتوصيل مجاني في المغرب.",
+      en: "Lure Her — authentic pheromone perfume for men that lasts all day, with a free bonus perfume. Cash on delivery, free shipping in Morocco.",
+      fr: "Lure Her — parfum authentique aux phéromones pour homme, tenue toute la journée, avec un parfum offert. Paiement à la livraison, livraison gratuite au Maroc."
     };
     var l = langs[currentLangIndex];
     var content = desc[l] || desc.ar;
@@ -1512,7 +1139,7 @@
     for (var i = 0; i < views.length; i++) {
       views[i].style.display = 'none';
     }
-    
+
     if (hash === '#landing') {
       var landing = document.getElementById('view-landing');
       if (landing) landing.style.display = 'block';
@@ -1531,11 +1158,9 @@
     applyLang(currentLangIndex);
     handleHashRoute();
     handleScroll();
-    deferNonDefaultLangAssets();
     initLazySections();
     initStockTicker();
     initAnnounceMarquee();
-    initSlider();
     initHeroGallery();
     initStickyCta();
     initCustomCheckout();
@@ -1546,7 +1171,6 @@
     setTimeout(syncPricesFromYouCan, 2500);
     setTimeout(syncFormLabelsFromYouCan, 2500);
     initFaq();
-    initReviewLightbox();
   }
 
   if (document.readyState === "loading") {
