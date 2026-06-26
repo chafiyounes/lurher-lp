@@ -5,174 +5,221 @@
   var I18N = {
 
     announce: {
-      ar: "🚚 شحن مجاني إلى جميع أنحاء المغرب",
-      en: "🚚 Free shipping anywhere in Morocco",
-      fr: "🚚 Livraison gratuite partout au Maroc"
+      ar: "✓ الدفع عند الاستلام · 🚚 توصيل مجاني في كل المغرب",
+      en: "✓ Cash on delivery · 🚚 Free shipping across Morocco",
+      fr: "✓ Paiement à la livraison · 🚚 Livraison gratuite partout au Maroc"
     },
     announce_stock: {
-      ar: "بقي <strong>{n}</strong> فقط في المخزون",
-      en: "Only <strong>{n}</strong> left in stock",
-      fr: "Reste <strong>{n}</strong> en stock"
+      ar: "🔥 ما بقاوش غير <strong>{n}</strong> قطعة",
+      en: "🔥 Only <strong>{n}</strong> pieces left",
+      fr: "🔥 Plus que <strong>{n}</strong> pièces"
     },
     nav_shop: { ar: "اطلب الآن", en: "Order Now", fr: "Commander" },
     brand_sub: { ar: "PARFUM", en: "PARFUM", fr: "PARFUM" },
 
-    home_hero_h: { ar: "Lure Her — حضورٌ لا يُنسى.", en: "Lure Her — an unforgettable presence.", fr: "Lure Her — une présence inoubliable." },
-    home_hero_sub: { ar: "عطر فيرومونات فاخر للرجال. رائحة تدوم طول النهار وحضور يلفت الأنظار.", en: "Luxury pheromone perfume for men. All-day scent and a magnetic presence.", fr: "Parfum aux phéromones pour homme. Une tenue toute la journée et une présence magnétique." },
+    home_hero_h: { ar: "MAGNÉTIQUE by Lure Her", en: "MAGNÉTIQUE by Lure Her", fr: "MAGNÉTIQUE by Lure Her" },
+    home_hero_sub: { ar: "العطر اللي ما غاديش تقدر تقاوموا.", en: "The perfume she won't be able to resist.", fr: "Le parfum auquel elle ne pourra pas résister." },
     home_cta: { ar: "اكتشف العطر", en: "Discover the scent", fr: "Découvrir le parfum" },
 
-    hero_badge: { ar: "🎁 عطر إضافي هدية مع كل طلب", en: "🎁 A free bonus perfume with every order", fr: "🎁 Un parfum offert avec chaque commande" },
+    hero_badge: { ar: "MAGNÉTIQUE by Lure Her", en: "MAGNÉTIQUE by Lure Her", fr: "MAGNÉTIQUE by Lure Her" },
 
     land_hero_h: {
-      ar: "إثارة حقيقية مع عطر جذّاب غاية في الجاذبية.",
-      en: "Real attraction — an irresistibly magnetic scent.",
-      fr: "Une attraction réelle — un parfum irrésistiblement magnétique."
+      ar: "العطر اللي ما غاديش تقدر تقاوموا",
+      en: "The perfume she won't be able to resist",
+      fr: "Le parfum auquel elle ne pourra pas résister"
     },
     land_hero_sub: {
-      ar: "Lure Her عطر فيرومونات أصلي للرجال يدوم طول اليوم. وتتوصل بعطر راقي إضافي هدية مع كل طلب. الدفع عند الاستلام، توصيل مجاني لكل مدن المغرب، وتقدر تشوف المنتج وتشمّو قبل ما تخلّص.",
-      en: "Lure Her is an authentic pheromone perfume for men that lasts all day — plus a premium bonus perfume free with every order. Cash on delivery, free shipping across Morocco, inspect before you pay.",
-      fr: "Lure Her, un parfum authentique aux phéromones pour homme qui tient toute la journée — avec un parfum premium offert à chaque commande. Paiement à la livraison, livraison gratuite au Maroc, vérifiez avant de payer."
+      ar: "مزيج حصري مستوحى من Versace Eros و Bianco Latte — ولكن أقوى وأكثر إغراءً.",
+      en: "An exclusive blend inspired by Versace Eros and Bianco Latte — but more powerful and far more seductive.",
+      fr: "Un mélange exclusif inspiré de Versace Eros et Bianco Latte — mais plus puissant et bien plus séduisant."
     },
 
+    trust_attract: { ar: "يلفت الأنظار", en: "Turns heads", fr: "Attire les regards" },
     trust_lasting: { ar: "يدوم طول اليوم", en: "Lasts all day", fr: "Tient toute la journée" },
-    trust_ship: { ar: "توصيل مجاني", en: "Free shipping", fr: "Livraison gratuite" },
+    trust_authentic: { ar: "أصلي 100%", en: "100% authentic", fr: "100% authentique" },
     trust_cod: { ar: "الدفع عند الاستلام", en: "Cash on Delivery", fr: "Paiement à la livraison" },
 
-    gift_note: { ar: "🎁 + عطر راقي هدية مع كل طلب", en: "🎁 + a premium perfume free with every order", fr: "🎁 + un parfum premium offert" },
-    savings_tag: { ar: "وفّرت 61 درهم", en: "You save 61 MAD", fr: "Économie 61 MAD" },
-
-    notes_eyebrow: { ar: "هرم الروائح", en: "Scent pyramid", fr: "Pyramide olfactive" },
-    notes_h: { ar: "رائحة تتطوّر معك طول اليوم", en: "A scent that evolves with you all day", fr: "Un sillage qui évolue toute la journée" },
-    notes_sub: {
-      ar: "ثلاث طبقات من العطر تتكشّف الواحدة بعد الأخرى — من أول رشّة حتى آخر المساء.",
-      en: "Three layers of scent unfold one after another — from the first spray to late evening.",
-      fr: "Trois couches qui se révèlent l'une après l'autre — de la première vaporisation jusqu'au soir."
+    gift_note: {
+      ar: "🎁 مع كل طلب: PRESTIGE 10ml (مستوحى من Layton) — هدية",
+      en: "🎁 With every order: PRESTIGE 10ml (inspired by Layton) — free",
+      fr: "🎁 Avec chaque commande : PRESTIGE 10ml (inspiré de Layton) — offert"
     },
-    note_top_h: { ar: "المقدّمة", en: "Top note", fr: "Note de tête" },
-    note_top_p: { ar: "برغموت وحمضيات منعشة — انطباع أول جريء يلفت الانتباه فوراً.", en: "Bergamot and fresh citrus — a bold first impression that grabs attention instantly.", fr: "Bergamote et agrumes frais — une première impression audacieuse." },
-    note_heart_h: { ar: "القلب", en: "Heart note", fr: "Note de cœur" },
-    note_heart_p: { ar: "توابل دافئة ولافندر — قلب رجولي أنيق يدوم لساعات.", en: "Warm spices and lavender — an elegant masculine heart that lasts for hours.", fr: "Épices chaudes et lavande — un cœur masculin élégant qui dure." },
-    note_base_h: { ar: "القاعدة", en: "Base note", fr: "Note de fond" },
-    note_base_p: { ar: "عود، مسك وعنبر — أثر عميق ودافئ يبقى عالق في الذاكرة.", en: "Oud, musk and amber — a deep, warm trail that stays in memory.", fr: "Oud, musc et ambre — un sillage profond et mémorable." },
-
-    ben_eyebrow: { ar: "خصائص المنتج", en: "Product features", fr: "Caractéristiques" },
-    land_benefits_h: { ar: "خصائص المنتج", en: "Product features", fr: "Caractéristiques du produit" },
-    ben_1: { ar: "عطر غير قابل للمقاومة", en: "An irresistible scent", fr: "Un parfum irrésistible" },
-    ben_2: { ar: "يحقق ثقة خيالية بالنفس", en: "Boosts your confidence like never before", fr: "Une confiance en soi incroyable" },
-    ben_3: { ar: "رائحة رجولية ومنعشة وجميلة", en: "A masculine, fresh and beautiful scent", fr: "Une senteur masculine, fraîche et élégante" },
-    ben_4: { ar: "يحقق مفعولاً خيالياً عند العناق", en: "An unforgettable effect up close", fr: "Un effet inoubliable de près" },
-    ben_5: { ar: "مركّب من زيوت أصلية طبيعية", en: "Made from authentic natural oils", fr: "Composé d'huiles naturelles authentiques" },
-    ben_6: { ar: "يدوم طول اليوم", en: "Lasts all day long", fr: "Tient toute la journée" },
-
-    why_eyebrow: { ar: "احذر التقليد", en: "Beware of fakes", fr: "Méfiez-vous des imitations" },
-    why_title: { ar: "عطر Lure Her الأصلي", en: "The authentic Lure Her", fr: "Le véritable Lure Her" },
-    land_feat1_h: { ar: "منتج أصلي 100%", en: "100% authentic", fr: "100% authentique" },
-    land_feat1_p: {
-      ar: "نوفّر لكم عطر Lure Her الأصلي وتتوصلون بالخط العطري الأصلي. احذروا المنتجات الرخيصة المقلّدة — الجودة كتبان من أول رشّة.",
-      en: "We supply the authentic Lure Her fragrance line. Beware of cheap imitations — you'll feel the quality from the first spray.",
-      fr: "Nous fournissons la ligne authentique Lure Her. Méfiez-vous des imitations bon marché — la qualité se sent dès la première vaporisation."
+    price_subnote: {
+      ar: "فخامة عطور بأكثر من 1000 درهم — بـ 189 درهم",
+      en: "The luxury of 1,000+ DH perfumes — for 189 DH",
+      fr: "Le luxe des parfums à +1 000 DH — pour 189 DH"
     },
-    land_feat2_h: { ar: "هدية مع كل طلب", en: "A gift with every order", fr: "Un cadeau à chaque commande" },
-    land_feat2_p: {
-      ar: "مع كل طلب كتوصلك هدية: عطر راقي إضافي مجاناً — قيمة حقيقية فثمن واحد.",
-      en: "Every order comes with a free premium bonus perfume — real value in one purchase.",
-      fr: "Chaque commande inclut un parfum premium offert — une vraie valeur en un seul achat."
+    savings_tag: { ar: "وفّرت 61 درهم", en: "You save 61 DH", fr: "Économisez 61 DH" },
+
+    ct_ship: { ar: "توصيل مجاني", en: "Free delivery", fr: "Livraison gratuite" },
+    ct_guarantee: { ar: "أصلي 100%", en: "100% authentic", fr: "100% authentique" },
+
+    tb_cod: {
+      ar: "الدفع عند الاستلام — ما كتخلّص حتى يوصلك المنتج ليديك",
+      en: "Cash on delivery — you only pay once the product is in your hands",
+      fr: "Paiement à la livraison — vous ne payez qu'une fois le produit en main"
+    },
+    tb_ship: {
+      ar: "توصيل مجاني لجميع مدن المغرب",
+      en: "Free delivery to every city in Morocco",
+      fr: "Livraison gratuite dans toutes les villes du Maroc"
+    },
+    tb_return: {
+      ar: "جرّبو بكل ثقة — إيلا ما عجبكش أو شككتي فأصالتو، ترجعو بلا أي مشكل",
+      en: "Try with confidence — if you don't like it or doubt its authenticity, send it back, no hassle",
+      fr: "Essayez en toute confiance — s'il ne vous plaît pas ou si vous doutez de son authenticité, renvoyez-le sans souci"
     },
 
-    rev_eyebrow: { ar: "آراء حقيقية", en: "Real reviews", fr: "Avis vérifiés" },
-    rev_title: { ar: "آراء العملاء", en: "Customer Reviews", fr: "Avis clients" },
+    reframe_eyebrow: { ar: "علاش حنا مختلفين", en: "Why we're different", fr: "Pourquoi nous sommes différents" },
+    reframe_h: {
+      ar: "وحدة كتخدم خير من خمسة ما كيديرو والو",
+      en: "One that works beats five that do nothing",
+      fr: "Un seul qui fonctionne vaut mieux que cinq qui ne font rien"
+    },
+    reframe_p1: {
+      ar: "هاد العطور الرخيصة اللي كيبيعو 5 بـ200؟ كيبانو ريحة الكحول، كيطيرو فساعة، وما كيديرو حتى تأثير.",
+      en: "Those cheap perfumes sold 5 for 200? They smell of alcohol, fade in an hour and produce no effect.",
+      fr: "Ces parfums bon marché vendus 5 pour 200 ? Ils sentent l'alcool, s'évaporent en une heure et ne produisent aucun effet."
+    },
+    reframe_p2: {
+      ar: "حنا درنا العكس. درسنا شنو هي العطور اللي كتجذب بصح — الجواب: Eros و Bianco Latte. مزجناهم بتركيز عالي من الزيوت فقنينة وحدة، سميناها MAGNÉTIQUE.",
+      en: "We did the opposite. We studied which perfumes truly seduce — the answer: Eros and Bianco Latte. We blended them at high oil concentration in a single bottle, named MAGNÉTIQUE.",
+      fr: "Nous avons fait l'inverse. Nous avons étudié quels parfums séduisent vraiment — la réponse : Eros et Bianco Latte. Nous les avons mélangés à forte concentration d'huiles dans un seul flacon, baptisé MAGNÉTIQUE."
+    },
+    reframe_p3: {
+      ar: "ماشي مسألة كمية. مسألة عطر كيدير تأثير بصح.",
+      en: "It was never about quantity. It's about a perfume that actually works.",
+      fr: "Ce n'a jamais été une question de quantité. C'est une question de parfum qui fait vraiment effet."
+    },
+
+    ben_eyebrow: { ar: "الفوائد", en: "The benefits", fr: "Les bénéfices" },
+    land_benefits_h: { ar: "شنو كيوفّر ليك MAGNÉTIQUE", en: "What MAGNÉTIQUE gives you", fr: "Ce que MAGNÉTIQUE vous apporte" },
+    ben_1: { ar: "عطر ما يتقاومش", en: "An irresistible scent", fr: "Un parfum irrésistible" },
+    ben_2: { ar: "ثقة من أول رشّة", en: "Confidence from the first spray", fr: "De la confiance dès la première vaporisation" },
+    ben_3: { ar: "رجولي، منعش وراقٍ", en: "Masculine, fresh and refined", fr: "Masculin, frais et raffiné" },
+    ben_4: { ar: "التأثير الحقيقي كيبان من قريب… فالعناق", en: "The real effect shows up close… in the embrace", fr: "Le véritable effet se révèle de près… dans l'étreinte" },
+
+    proof_eyebrow: { ar: "الجودة والإثبات", en: "Proof & quality", fr: "Preuves & qualité" },
+    proof_h: { ar: "الجودة اللي الشاشة ما تقدرش تشمّها", en: "The quality the screen can't smell", fr: "La qualité que l'écran ne peut pas sentir" },
+    proof_1: {
+      ar: "شعار UV DTF مطبوع على القنينة — ماشي ستيكر كيتقلّع بحال المقلّد",
+      en: "UV DTF logo printed on the bottle — not a sticker that peels like the fakes",
+      fr: "Logo UV DTF imprimé sur le flacon — pas un autocollant qui se décolle comme les contrefaçons"
+    },
+    proof_2: {
+      ar: "تركيز عالي من الزيوت الأصلية = كيدوم طول اليوم",
+      en: "High concentration of authentic oils = lasts all day",
+      fr: "Forte concentration d'huiles authentiques = tient toute la journée"
+    },
+    proof_3: {
+      ar: "مزيج أصلي مستوحى من Eros × Bianco Latte",
+      en: "Authentic blend inspired by Eros × Bianco Latte",
+      fr: "Mélange authentique inspiré de Eros × Bianco Latte"
+    },
+    proof_4: { ar: "بلا ريحة الكحول", en: "No alcohol smell", fr: "Sans odeur d'alcool" },
+
+    box_eyebrow: { ar: "شنو غادي توصلك", en: "What you receive", fr: "Ce que vous recevez" },
+    box_h: { ar: "كل طلب فيه عطرين", en: "Every order contains two perfumes", fr: "Chaque commande contient deux parfums" },
+    box_1_name: { ar: "MAGNÉTIQUE 50ml — مزيج Eros × Bianco Latte", en: "MAGNÉTIQUE 50ml — Eros × Bianco Latte blend", fr: "MAGNÉTIQUE 50ml — mélange Eros × Bianco Latte" },
+    box_1_desc: { ar: "أقوى وأكثر إغراءً من Versace Eros", en: "More powerful and seductive than Versace Eros", fr: "Plus puissant et plus séduisant que Versace Eros" },
+    box_2_name: { ar: "PRESTIGE 10ml — مزيج Eros × Layton · 🎁 هدية", en: "PRESTIGE 10ml — Eros × Layton blend · 🎁 free", fr: "PRESTIGE 10ml — mélange Eros × Layton · 🎁 offert" },
+    box_2_desc: { ar: "مستوحى من Layton، ولكن أكثر فخامة", en: "Inspired by Layton, but more premium", fr: "Inspiré de Layton, mais plus premium" },
+    box_foot: { ar: "👈 الزوج بـ 189 درهم فقط", en: "👈 Both for only 189 DH", fr: "👈 Les deux pour seulement 189 DH" },
+
+    rev_eyebrow: { ar: "آراء الزبناء", en: "Customer reviews", fr: "Avis clients" },
+    rev_title: { ar: "جرّبو MAGNÉTIQUE", en: "They tried MAGNÉTIQUE", fr: "Ils ont essayé MAGNÉTIQUE" },
     rev_sub: {
-      ar: "+2,000 طلبية وصلات للمغرب — هادو شي تعليقات من زبنائنا",
-      en: "+2,000 orders delivered in Morocco — here are some of our customers' reviews",
-      fr: "+2 000 commandes livrées au Maroc — voici quelques avis de nos clients"
+      ar: "+2000 طلبية وصلات للمغرب",
+      en: "+2,000 orders delivered in Morocco",
+      fr: "+2 000 commandes livrées au Maroc"
     },
     rev_rating_label: { ar: "معدل التقييم", en: "Average rating", fr: "Note moyenne" },
     rev_verified: { ar: "طلبية مؤكدة", en: "Verified order", fr: "Commande vérifiée" },
-    rev1_name: { ar: "ياسين .م", en: "Yassine .M", fr: "Yassine .M" },
+    rev1_name: { ar: "يوسف", en: "Youssef", fr: "Youssef" },
     rev1_city: { ar: "الدار البيضاء", en: "Casablanca", fr: "Casablanca" },
     rev1_text: {
-      ar: "رائحة قوية وراقية، وأهم حاجة كتبقى. من أول مرة لبستو، الناس بداو يسولوني على شنو العطر اللي حاطط. صراحة فاق توقعاتي.",
-      en: "Strong, classy scent and most importantly it lasts. The first time I wore it people started asking what perfume I had on. Honestly exceeded my expectations.",
-      fr: "Senteur forte et raffinée, et surtout elle tient. Dès la première fois, on m'a demandé quel parfum je portais. Franchement au-dessus de mes attentes."
+      ar: "وصلني فيومين. العطر خطير وكيدوم. مراتي سولاتني أشنو حاطط 😅",
+      en: "Delivered in two days. The perfume is incredible and it lasts. My wife asked what I was wearing 😅",
+      fr: "Livré en deux jours. Le parfum est incroyable et il tient. Ma femme m'a demandé ce que je portais 😅"
     },
-    rev2_name: { ar: "أنس .ب", en: "Anas .B", fr: "Anas .B" },
-    rev2_city: { ar: "الرباط", en: "Rabat", fr: "Rabat" },
+    rev2_name: { ar: "أنس", en: "Anas", fr: "Anas" },
+    rev2_city: { ar: "مراكش", en: "Marrakech", fr: "Marrakech" },
     rev2_text: {
-      ar: "كنقلّب على عطر يدوم وما كنلقاش. هاد المرة لقيت اللي بغيت — كنحطّو الصباح وكيبقى حتى الليل. الثبات ديالو ماشي طبيعي.",
-      en: "I'd been searching for a scent that lasts. This time I found it — I put it on in the morning and it stays till night. The longevity is unreal.",
-      fr: "Je cherchais un parfum qui tient. Cette fois j'ai trouvé — je le mets le matin et il reste jusqu'au soir. Une tenue incroyable."
+      ar: "كنت خايف يكون بحال المنتجات الرخيصة — ولكن لا، هادا أصلي، راقٍ وكيدوم بزّاف.",
+      en: "I was afraid it'd be like the cheap products — but no, it's the real thing, refined and long-lasting.",
+      fr: "J'avais peur que ce soit comme les produits bon marché — mais non, c'est du vrai, raffiné et longue tenue."
     },
-    rev3_name: { ar: "مهدي .أ", en: "Mehdi .A", fr: "Mehdi .A" },
+    rev3_name: { ar: "مهدي", en: "Mehdi", fr: "Mehdi" },
     rev3_city: { ar: "طنجة", en: "Tangier", fr: "Tanger" },
     rev3_text: {
-      ar: "التغليف فاخر والعطر أصلي. خلّصت عند الاستلام بلا أي مشكل، والتوصيل كان سريع. وزادو عطيوني عطر هدية!",
-      en: "Luxury packaging and the perfume is authentic. Paid on delivery with no issues, fast shipping — and they even included a free gift perfume!",
-      fr: "Emballage luxueux et parfum authentique. Payé à la livraison sans souci, livraison rapide — et un parfum offert en cadeau !"
+      ar: "بزّاف ديال المجاملات فالخدمة. مستاهل الثمن بزّاف.",
+      en: "Tons of compliments at work. More than worth the price.",
+      fr: "Énormément de compliments au travail. Largement à la hauteur du prix."
     },
-    rev4_name: { ar: "رضا .ح", en: "Reda .H", fr: "Reda .H" },
-    rev4_city: { ar: "مراكش", en: "Marrakech", fr: "Marrakech" },
+    rev4_name: { ar: "رضا", en: "Reda", fr: "Reda" },
+    rev4_city: { ar: "أكادير", en: "Agadir", fr: "Agadir" },
     rev4_text: {
-      ar: "عطر رجولي بمعنى الكلمة، دافي وجذّاب. مراتي عجبها بزّاف. واحد من أحسن العطور اللي جربت وبثمن معقول.",
-      en: "A truly masculine scent, warm and attractive. My wife loved it. One of the best perfumes I've tried, and at a fair price.",
-      fr: "Un parfum vraiment masculin, chaud et séduisant. Ma femme a adoré. L'un des meilleurs que j'aie essayés, à un prix juste."
+      ar: "حتى هدية PRESTIGE زوينة بزّاف — عطر راقٍ بصح. خدمة ممتازة، كننصح بيه.",
+      en: "Even the PRESTIGE gift is excellent — a truly classy perfume. Impeccable service, I recommend.",
+      fr: "Même le cadeau PRESTIGE est excellent — un parfum vraiment classe. Service impeccable, je recommande."
     },
 
     form_name: { ar: "الإسم الكامل", en: "Full Name", fr: "Nom complet" },
     form_phone: { ar: "رقم الهاتف", en: "Phone Number", fr: "Numéro de téléphone" },
     form_city: { ar: "المدينة", en: "City", fr: "Ville" },
     form_address: { ar: "العنوان", en: "Address", fr: "Adresse" },
-    form_name_ph: { ar: "اسم", en: "Your name", fr: "Votre nom" },
-    form_phone_ph: { ar: "06XX XXX XXX", en: "06XX XXX XXX", fr: "06XX XXX XXX" },
-    form_city_ph: { ar: "مدينة", en: "City", fr: "Ville" },
+    form_name_ph: { ar: "الإسم الكامل", en: "Full name", fr: "Nom complet" },
+    form_phone_ph: { ar: "رقم الهاتف", en: "Phone number", fr: "Numéro de téléphone" },
+    form_city_ph: { ar: "المدينة", en: "City", fr: "Ville" },
     form_address_ph: { ar: "العنوان", en: "Address", fr: "Adresse" },
     form_secure: { ar: "معلوماتك آمنة ومحمية", en: "Your information is safe and secure", fr: "Vos informations sont sécurisées" },
-    submit_order: { ar: "أكد الطلب", en: "Confirm order", fr: "Confirmer" },
+    submit_order: { ar: "🛒 اطلب الآن — الدفع عند الاستلام", en: "🛒 ORDER — Cash on delivery", fr: "🛒 COMMANDER — Paiement à la livraison" },
 
-    ct_ship: { ar: "توصيل مجاني و سريع", en: "Free & fast delivery", fr: "Livraison gratuite et rapide" },
-    ct_guarantee: { ar: "منتج أصلي 100%", en: "100% authentic", fr: "100% authentique" },
-
-    sticky_name: { ar: "Lure Her", en: "Lure Her", fr: "Lure Her" },
-    sticky_price: { ar: "189 درهم", en: "189 MAD", fr: "189 MAD" },
+    sticky_name: { ar: "MAGNÉTIQUE", en: "MAGNÉTIQUE", fr: "MAGNÉTIQUE" },
+    sticky_price: { ar: "189 درهم", en: "189 DH", fr: "189 DH" },
     sticky_cta: { ar: "اطلب الآن", en: "Order Now", fr: "Commander" },
 
+    fcta_h: { ar: "عطر واحد يقدر يبدّل كلشي", en: "One perfume can change everything", fr: "Un seul parfum peut tout changer" },
+    fcta_offer: {
+      ar: "MAGNÉTIQUE 50ml + PRESTIGE 10ml هدية · 250 درهم ← 189 درهم · الدفع عند الاستلام · توصيل مجاني",
+      en: "MAGNÉTIQUE 50ml + free PRESTIGE 10ml · 250 DH → 189 DH · Cash on delivery · Free shipping",
+      fr: "MAGNÉTIQUE 50ml + PRESTIGE 10ml offert · 250 DH → 189 DH · Paiement à la livraison · Livraison gratuite"
+    },
+    fcta_cta: { ar: "🛒 اطلب الآن", en: "🛒 ORDER", fr: "🛒 COMMANDER" },
+    fcta_stock: { ar: "🔥 ما بقاوش غير 30 قطعة", en: "🔥 Only 30 pieces left", fr: "🔥 Plus que 30 pièces" },
+
     faq_eyebrow: { ar: "أسئلة شائعة", en: "FAQ", fr: "FAQ" },
-    faq_title: { ar: "كل ما خصك تعرف قبل الطلب", en: "Everything you need to know before ordering", fr: "Tout savoir avant de commander" },
-    faq_cta: { ar: "صيفط طلبيتك دابا", en: "Order now", fr: "Commander" },
-    faq_q1: { ar: "شحال كيدوم العطر؟", en: "How long does it last?", fr: "Combien de temps tient-il ?" },
+    faq_title: { ar: "كل ما خصك تعرف قبل ما تطلب", en: "Everything to know before ordering", fr: "Tout savoir avant de commander" },
+    faq_cta: { ar: "اطلب الآن", en: "Order now", fr: "Commander maintenant" },
+    faq_q1: { ar: "واش العطر أصلي؟", en: "Is the perfume authentic?", fr: "Le parfum est-il authentique ?" },
     faq_a1: {
-      ar: "Lure Her كيدوم طول اليوم فالبشرة، وكيبقى عالق فالحوايج حتى لأكثر. حط رشّة على نقاط النبض (الرقبة، المعصم) باش يدوم أكثر.",
-      en: "Lure Her lasts all day on the skin and even longer on clothes. Spray on pulse points (neck, wrist) for maximum longevity.",
-      fr: "Lure Her tient toute la journée sur la peau, et encore plus sur les vêtements. Vaporisez sur les points de pulsation (cou, poignet) pour une meilleure tenue."
+      ar: "أيه — مزيج بتركيز عالي مستوحى من Eros × Bianco Latte، بشعار UV مطبوع على القنينة. بلا أي تقليد رخيص.",
+      en: "Yes — a high-concentration blend inspired by Eros × Bianco Latte, with a UV logo printed on the bottle. No cheap counterfeits.",
+      fr: "Oui — un mélange à forte concentration inspiré de Eros × Bianco Latte, avec un logo UV imprimé sur le flacon. Aucune contrefaçon bon marché."
     },
-    faq_q2: { ar: "شنو هي الفيرومونات وكيفاش كتخدم؟", en: "What are pheromones and how do they work?", fr: "Que sont les phéromones et comment agissent-elles ?" },
+    faq_q2: { ar: "شحال كيدوم؟", en: "How long does it last?", fr: "Combien de temps tient-il ?" },
     faq_a2: {
-      ar: "الفيرومونات هي جزيئات كتزيد الجاذبية والحضور. فالعطر، كتعطي إحساس بالثقة وكتخلّي حضورك ألفت للانتباه بطريقة طبيعية وأنيقة.",
-      en: "Pheromones are molecules that enhance attraction and presence. In the perfume they boost confidence and make your presence naturally magnetic.",
-      fr: "Les phéromones sont des molécules qui renforcent l'attraction et la présence. Dans le parfum, elles boostent la confiance et rendent votre présence naturellement magnétique."
+      ar: "بفضل التركيز العالي للزيوت، كيدوم طول النهار.",
+      en: "Thanks to the high oil concentration, it lasts all day.",
+      fr: "Grâce à la forte concentration d'huiles, il tient toute la journée."
     },
-    faq_q3: { ar: "واش هو خاص بالرجال؟", en: "Is it for men?", fr: "Est-il pour homme ?" },
+    faq_q3: { ar: "كيفاش كنخلّص؟", en: "How do I pay?", fr: "Comment je paie ?" },
     faq_a3: {
-      ar: "نعم، Lure Her مصمّم خصيصاً للرجال — رائحة دافئة وجريئة بطابع رجولي راقٍ مناسب للنهار والليل وكل المناسبات.",
-      en: "Yes, Lure Her is made specifically for men — a warm, bold scent with a refined masculine character for day, night and every occasion.",
-      fr: "Oui, Lure Her est conçu pour homme — une senteur chaude et audacieuse au caractère masculin raffiné, pour le jour, le soir et toutes les occasions."
+      ar: "الدفع عند الاستلام — ما كتخلّص حتى يوصلك العطر ليديك.",
+      en: "Cash on delivery — you only pay once the perfume is in your hands.",
+      fr: "Paiement à la livraison — vous ne payez qu'une fois le parfum en main."
     },
-    faq_q4: { ar: "واش المنتج أصلي؟", en: "Is the product authentic?", fr: "Le produit est-il authentique ?" },
+    faq_q4: { ar: "إمتى غادي يوصلني؟", en: "When will I be delivered?", fr: "Quand serai-je livré ?" },
     faq_a4: {
-      ar: "100% أصلي. كيوصلك فالتغليف الأصلي المختوم، وكتقدر تتأكد منو وتشمّو قبل ما تخلّص — الدفع كيكون عند الاستلام. احذر المنتجات الرخيصة المقلّدة.",
-      en: "100% authentic. It arrives in sealed original packaging, and you can check and smell it before you pay — cash on delivery. Beware of cheap imitations.",
-      fr: "100% authentique. Il arrive dans son emballage d'origine scellé, et vous pouvez le vérifier et le sentir avant de payer — paiement à la livraison. Méfiez-vous des imitations."
+      ar: "توصيل مجاني لكل المغرب، عادةً من 24 إلى 72 ساعة.",
+      en: "Free delivery across Morocco, usually within 24 to 72 hours.",
+      fr: "Livraison gratuite dans tout le Maroc, généralement sous 24 à 72 heures."
     },
-    faq_q5: { ar: "شحال وقت التوصيل وكيفاش كنخلص؟", en: "What is delivery time & payment?", fr: "Délai de livraison & paiement ?" },
+    faq_q5: { ar: "واش نقدر نرجعو؟", en: "Can I return it?", fr: "Puis-je le renvoyer ?" },
     faq_a5: {
-      ar: "التوصيل فابور وسريع لجميع مدن المغرب (من 24 لـ 48 ساعة). الدفع كيكون عند الاستلام (COD)، يعني كتخلص حتى كتوصلك الطلبية ليديك وتأكد منها.",
-      en: "Free and fast delivery across Morocco (24 to 48 hours). Payment is cash on delivery (COD) — you only pay when you receive and check your order.",
-      fr: "Livraison gratuite et rapide partout au Maroc (24 à 48h). Paiement en espèces à la livraison (COD) — vous ne payez qu'après vérification."
-    },
-    faq_q6: { ar: "شنو هي سياسة الإرجاع؟", en: "What is the return policy?", fr: "Quelle est la politique de retour ?" },
-    faq_a6: {
-      ar: "تقدر تشوف وتشمّ العطر قبل ما تخلّص، وإيلا ما عجبكش تقدر ترفضو. وإيلا وصلك مخسور أو مقلّد، تواصل معانا خلال 48 ساعة مع صورة المنتج وكنحلّو ليك المشكل.",
-      en: "You can see and smell the perfume before paying, and refuse it if you don't like it. If it arrives damaged or fake, contact us within 48 hours with a photo and we'll resolve it.",
-      fr: "Vous pouvez voir et sentir le parfum avant de payer, et le refuser s'il ne vous plaît pas. S'il arrive endommagé ou contrefait, contactez-nous sous 48h avec une photo et nous réglerons le problème."
+      ar: "بطبيعة الحال — جرّبو، وإيلا ما عجبكش رجعو بلا أي مشكل.",
+      en: "Of course — try it, and if you don't like it, send it back with no hassle.",
+      fr: "Bien sûr — essayez-le, et s'il ne vous plaît pas, renvoyez-le sans aucun souci."
     }
   };
 
@@ -239,11 +286,11 @@
 
 
     var titleDict = {
-      ar: "Lure Her — عطر الفيرومونات للرجال",
-      en: "Lure Her — Pheromone Perfume for Men",
-      fr: "Lure Her — Parfum aux phéromones pour homme"
+      ar: "MAGNÉTIQUE by Lure Her — العطر اللي ما تتقاومش",
+      en: "MAGNÉTIQUE by Lure Her — The irresistible men's perfume",
+      fr: "MAGNÉTIQUE by Lure Her — Le parfum irrésistible pour homme"
     };
-    document.title = titleDict[l] || "Lure Her";
+    document.title = titleDict[l] || "MAGNÉTIQUE by Lure Her";
     updateHeroGalleryAlts();
     updateStockLabels(window.__V34_STOCK_COUNT || computeDeterministicStock());
     if (window.__V34_REFRESH_ANNOUNCE) window.__V34_REFRESH_ANNOUNCE();
@@ -344,13 +391,13 @@
         id: "main",
         image: "01-main.png",
         thumb: "01-main.png",
-        alt: { ar: "عطر Lure Her الأصلي للرجال", en: "Lure Her authentic men's perfume", fr: "Lure Her, parfum authentique pour homme" }
+        alt: { ar: "MAGNÉTIQUE — القنينة بشعار UV", en: "MAGNÉTIQUE bottle with UV logo", fr: "Flacon MAGNÉTIQUE avec logo UV" }
       },
       {
-        id: "lifestyle",
-        image: "02-lifestyle.png",
-        thumb: "02-lifestyle.png",
-        alt: { ar: "حضور وجاذبية مع Lure Her", en: "Presence and attraction with Lure Her", fr: "Présence et attraction avec Lure Her" }
+        id: "gift",
+        image: "04-gift.png",
+        thumb: "04-gift.png",
+        alt: { ar: "العطرين: MAGNÉTIQUE + PRESTIGE هدية", en: "Both perfumes: MAGNÉTIQUE + free PRESTIGE", fr: "Les deux flacons : MAGNÉTIQUE + PRESTIGE offert" }
       },
       {
         id: "product",
@@ -359,10 +406,10 @@
         alt: { ar: "العطر مع علبته الفاخرة", en: "The perfume with its luxury box", fr: "Le parfum avec son coffret de luxe" }
       },
       {
-        id: "gift",
-        image: "04-gift.png",
-        thumb: "04-gift.png",
-        alt: { ar: "عطر إضافي هدية مع كل طلب", en: "Free bonus perfume with every order", fr: "Parfum offert avec chaque commande" }
+        id: "lifestyle",
+        image: "02-lifestyle.png",
+        thumb: "02-lifestyle.png",
+        alt: { ar: "حضور وجاذبية مع MAGNÉTIQUE", en: "Presence and attraction with MAGNÉTIQUE", fr: "Présence et attraction avec MAGNÉTIQUE" }
       }
     ]
   };
@@ -1101,7 +1148,7 @@
   }
 
   function initLazySections() {
-    var sels = ["#ba-section", "#benefits-section", "#why-section", ".reviews-section", "#faq-section"];
+    var sels = ["#trust-band", "#ba-section", "#benefits-section", "#why-section", "#coffret-section", ".reviews-section", "#faq-section", "#final-cta"];
     for (var i = 0; i < sels.length; i++) {
       var el = document.querySelector(sels[i]);
       if (el) el.setAttribute("data-lazy-section", "");
@@ -1118,9 +1165,9 @@
 
   function injectPageSeoMeta() {
     var desc = {
-      ar: "Lure Her عطر فيرومونات أصلي للرجال يدوم طول اليوم — جاذبية وثقة، مع عطر هدية. الدفع عند الاستلام وتوصيل مجاني في المغرب.",
-      en: "Lure Her — authentic pheromone perfume for men that lasts all day, with a free bonus perfume. Cash on delivery, free shipping in Morocco.",
-      fr: "Lure Her — parfum authentique aux phéromones pour homme, tenue toute la journée, avec un parfum offert. Paiement à la livraison, livraison gratuite au Maroc."
+      ar: "MAGNÉTIQUE by Lure Her — مزيج مستوحى من Eros و Bianco Latte، كيدوم طول اليوم، مع PRESTIGE 10ml هدية. الدفع عند الاستلام وتوصيل مجاني في المغرب بـ 189 درهم.",
+      en: "MAGNÉTIQUE by Lure Her — a blend inspired by Eros and Bianco Latte, lasts all day, with a free PRESTIGE 10ml. Cash on delivery, free shipping in Morocco for 189 DH.",
+      fr: "MAGNÉTIQUE by Lure Her — un mélange inspiré d'Eros et Bianco Latte, tient toute la journée, avec PRESTIGE 10ml offert. Paiement à la livraison, livraison gratuite au Maroc à 189 DH."
     };
     var l = langs[currentLangIndex];
     var content = desc[l] || desc.ar;
