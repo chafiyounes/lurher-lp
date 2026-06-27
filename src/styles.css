@@ -481,8 +481,8 @@
     max-height: none;
   }
   .landing-hero .media-carousel-slide {
-    background: #fff;
-    padding: 8px 12px;
+    background: radial-gradient(120% 120% at 50% 0%, #241a17 0%, #160f0d 55%, #0d0907 100%);
+    padding: 0;
   }
   .landing-hero .media-carousel--crossfade .media-carousel-track {
     position: absolute;
@@ -542,7 +542,7 @@
   overflow: hidden;
   border-radius: var(--r-lg);
   box-shadow: var(--sh-lg);
-  background: #fff;
+  background: radial-gradient(120% 120% at 50% 0%, #241a17 0%, #160f0d 55%, #0d0907 100%);
   border: 1px solid var(--border);
   touch-action: pan-y;
   position: relative;
@@ -587,12 +587,13 @@
   align-items: center;
   justify-content: center;
   min-height: clamp(280px, 50vw, 480px);
-  padding: clamp(12px, 2vw, 20px);
-  background: linear-gradient(160deg, #faf5ff 0%, #fff 50%, #f8f4fc 100%);
+  padding: 0;
+  background: radial-gradient(120% 120% at 50% 0%, #241a17 0%, #160f0d 55%, #0d0907 100%);
 }
 .media-carousel-slide img {
   width: 100%;
-  max-height: clamp(260px, 46vw, 440px);
+  height: 100%;
+  max-height: none;
   object-fit: contain;
   border-radius: var(--r-md);
   user-select: none;
@@ -664,7 +665,7 @@
     min-height: 100%;
     height: 100%;
     padding: 0;
-    background: linear-gradient(160deg, #faf5ff 0%, #fff 50%, #f6f0fc 100%);
+    background: radial-gradient(120% 120% at 50% 0%, #241a17 0%, #160f0d 55%, #0d0907 100%);
   }
   .landing-hero .media-carousel-slide img {
     width: 100%;
@@ -1971,7 +1972,7 @@ button.btn-primary .material-symbols-outlined {
     inset: auto;
     pointer-events: auto;
     gap: 0;
-    background: linear-gradient(160deg, #faf5ff 0%, #fff 50%, #f6f0fc 100%);
+    background: radial-gradient(120% 120% at 50% 0%, #241a17 0%, #160f0d 55%, #0d0907 100%);
   }
   .landing-hero .media-carousel-slide img {
     width: 100%;
@@ -2589,18 +2590,22 @@ button.btn-primary .material-symbols-outlined {
   overflow: hidden; background: var(--surface-white); box-shadow: var(--sh-sm);
 }
 .vs-row {
-  display: grid; grid-template-columns: 1fr 84px 84px; align-items: center;
+  display: grid; grid-template-columns: 1fr 92px 92px; align-items: center;
   gap: 8px; padding: 13px 16px;
   border-top: 1px solid var(--border);
 }
 .vs-row:first-child { border-top: 0; }
 .vs-row--head {
   background: var(--gold-soft);
-  font-family: var(--font-display); font-weight: 700; font-size: 13px;
+  font-family: var(--font-display); font-weight: 700;
   color: var(--primary);
 }
 .vs-feat { font-weight: 600; font-size: 14px; line-height: 1.4; color: var(--ink, #2c241d); }
-.vs-col { text-align: center; }
+.vs-col {
+  text-align: center; font-size: 11.5px; line-height: 1.2;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.vs-col--win { color: var(--primary); }
 .vs-col--lose { color: var(--muted, #7a6f63); }
 .vs-mark { text-align: center; font-size: 18px; font-weight: 800; }
 .vs-yes {
@@ -2613,8 +2618,9 @@ button.btn-primary .material-symbols-outlined {
   font-size: clamp(17px, 2.4vw, 20px);
 }
 @media (max-width: 560px) {
-  .vs-row { grid-template-columns: 1fr 54px 54px; padding: 12px 12px; }
-  .vs-feat { font-size: 13px; }
+  .vs-row { grid-template-columns: 1fr 66px 66px; padding: 12px 12px; gap: 4px; }
+  .vs-feat { font-size: 12.5px; }
+  .vs-col { font-size: 9.5px; }
 }
 
 /* SECTION 4 — Benefits (4-up) */
