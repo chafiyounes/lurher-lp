@@ -5,19 +5,19 @@
       "id": "brand",
       "image": "00-brand.png",
       "thumb": "00-brand.png",
-      "alt": { "ar": "MAGNÉTIQUE by Lure Her — عطر فاخر للرجال", "en": "MAGNÉTIQUE by Lure Her — luxury men's perfume", "fr": "MAGNÉTIQUE by Lure Her — parfum de luxe pour homme" }
+      "alt": { "ar": "Lure Her — عطر فاخر للرجال", "en": "Lure Her — luxury men's perfume", "fr": "Lure Her — parfum de luxe pour homme" }
     },
     {
       "id": "main",
       "image": "01-main.png",
       "thumb": "01-main.png",
-      "alt": { "ar": "MAGNÉTIQUE — القنينة بشعار UV", "en": "MAGNÉTIQUE bottle with UV logo", "fr": "Flacon MAGNÉTIQUE avec logo UV" }
+      "alt": { "ar": "Lure Her — القنينة بشعار UV", "en": "Lure Her bottle with UV logo", "fr": "Flacon Lure Her avec logo UV" }
     },
     {
       "id": "gift",
       "image": "04-gift.png",
       "thumb": "04-gift.png",
-      "alt": { "ar": "العطرين: MAGNÉTIQUE + PRESTIGE هدية", "en": "Both perfumes: MAGNÉTIQUE + free PRESTIGE", "fr": "Les deux flacons : MAGNÉTIQUE + PRESTIGE offert" }
+      "alt": { "ar": "Lure Her 50ml + 10ml هدية", "en": "Lure Her 50ml + free 10ml gift", "fr": "Lure Her 50ml + 10ml offert" }
     },
     {
       "id": "product",
@@ -29,7 +29,7 @@
       "id": "lifestyle",
       "image": "02-lifestyle.png",
       "thumb": "02-lifestyle.png",
-      "alt": { "ar": "حضور وجاذبية مع MAGNÉTIQUE", "en": "Presence and attraction with MAGNÉTIQUE", "fr": "Présence et attraction avec MAGNÉTIQUE" }
+      "alt": { "ar": "حضور وجاذبية مع Lure Her", "en": "Presence and attraction with Lure Her", "fr": "Présence et attraction avec Lure Her" }
     }
   ]
 }

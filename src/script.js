@@ -17,11 +17,11 @@
     nav_shop: { ar: "اطلب الآن", en: "Order Now", fr: "Commander" },
     brand_sub: { ar: "PARFUM", en: "PARFUM", fr: "PARFUM" },
 
-    home_hero_h: { ar: "MAGNÉTIQUE by Lure Her", en: "MAGNÉTIQUE by Lure Her", fr: "MAGNÉTIQUE by Lure Her" },
+    home_hero_h: { ar: "Lure Her", en: "Lure Her", fr: "Lure Her" },
     home_hero_sub: { ar: "العطر اللي ما غاديش تقدر تقاوموا.", en: "The perfume she won't be able to resist.", fr: "Le parfum auquel elle ne pourra pas résister." },
     home_cta: { ar: "اكتشف العطر", en: "Discover the scent", fr: "Découvrir le parfum" },
 
-    hero_badge: { ar: "MAGNÉTIQUE by Lure Her", en: "MAGNÉTIQUE by Lure Her", fr: "MAGNÉTIQUE by Lure Her" },
+    hero_badge: { ar: "Lure Her", en: "Lure Her", fr: "Lure Her" },
 
     land_hero_h: {
       ar: "العطر اللي ما غاديش تقدر تقاوموا",
@@ -29,9 +29,9 @@
       fr: "Le parfum auquel elle ne pourra pas résister"
     },
     land_hero_sub: {
-      ar: "مزيج حصري مستوحى من Versace Eros و Bianco Latte — ولكن أقوى وأكثر إغراءً.",
-      en: "An exclusive blend inspired by Versace Eros and Bianco Latte — but more powerful and far more seductive.",
-      fr: "Un mélange exclusif inspiré de Versace Eros et Bianco Latte — mais plus puissant et bien plus séduisant."
+      ar: "عطر مغناطيسي — حصري، قوي ومثير للإغراء.",
+      en: "A magnetic scent — exclusive, powerful and irresistible.",
+      fr: "Un parfum magnétique — exclusif, puissant et irrésistible."
     },
 
     trust_attract: { ar: "يلفت الأنظار", en: "Turns heads", fr: "Attire les regards" },
@@ -40,9 +40,9 @@
     trust_cod: { ar: "الدفع عند الاستلام", en: "Cash on Delivery", fr: "Paiement à la livraison" },
 
     gift_note: {
-      ar: "🎁 مع كل طلب: PRESTIGE 10ml (مستوحى من Layton) — هدية مجانية",
-      en: "🎁 With every order: PRESTIGE 10ml (inspired by Layton) — free gift",
-      fr: "🎁 Avec chaque commande : PRESTIGE 10ml (inspiré de Layton) — cadeau offert"
+      ar: "🎁 مع كل طلب: 10ml هدية مجانية",
+      en: "🎁 With every order: free 10ml gift",
+      fr: "🎁 Avec chaque commande : 10ml offert en cadeau"
     },
     price_subnote: {
       ar: "فخامة عطور بأكثر من 1000 درهم — بـ 189 درهم",
@@ -92,31 +92,31 @@
       fr: "Ces parfums bon marché vendus 5 pour 200 ? Ils sentent l'alcool, s'évaporent en une heure et ne produisent aucun effet."
     },
     reframe_p2: {
-      ar: "حنا درنا العكس. درسنا شنو هي العطور اللي كتجذب بصح — الجواب: Eros و Bianco Latte. مزجناهم بتركيز عالي من الزيوت فقنينة وحدة، سميناها MAGNÉTIQUE.",
-      en: "We did the opposite. We studied which perfumes truly seduce — the answer: Eros and Bianco Latte. We blended them at high oil concentration in a single bottle, named MAGNÉTIQUE.",
-      fr: "Nous avons fait l'inverse. Nous avons étudié quels parfums séduisent vraiment — la réponse : Eros et Bianco Latte. Nous les avons mélangés à forte concentration d'huiles dans un seul flacon, baptisé MAGNÉTIQUE."
+      ar: "حنا درنا العكس. فورمولة حصرية بتركيز عالي من الزيوت — قنينة وحدة كتدير تأثير بصح.",
+      en: "We did the opposite. An exclusive high-concentration formula — one bottle that actually works.",
+      fr: "Nous avons fait l'inverse. Une formule exclusive à forte concentration d'huiles — un seul flacon qui fait vraiment effet."
     },
     reframe_p3: {
       ar: "ماشي مسألة كمية. مسألة عطر كيدير تأثير بصح.",
       en: "It was never about quantity. It's about a perfume that actually works.",
       fr: "Ce n'a jamais été une question de quantité. C'est une question de parfum qui fait vraiment effet."
     },
-    vs_us_label: { ar: "MAGNÉTIQUE", en: "MAGNÉTIQUE", fr: "MAGNÉTIQUE" },
-    vs_them_label: { ar: "العطور الرخيصة 5 بـ200", en: "Cheap perfumes, 5 for 200", fr: "Parfums bon marché, 5 pour 200" },
+    vs_us_label: { ar: "Lure Her", en: "Lure Her", fr: "Lure Her" },
+    vs_them_label: { ar: "المقلّدات والعطور الرخيصة 5 بـ200", en: "Fakes & cheap perfumes, 5 for 200", fr: "Contrefaçons & parfums 5 pour 200" },
     vs_them_short: { ar: "الباقي", en: "The rest", fr: "Les autres" },
     vs_f1: { ar: "تركيز عالي من الزيوت الأصلية", en: "High concentration of authentic oils", fr: "Forte concentration d'huiles authentiques" },
     vs_f2: { ar: "ثبات يدوم طول اليوم", en: "Lasts all day long", fr: "Tient toute la journée" },
-    vs_f3: { ar: "مزيج أصلي Eros × Bianco Latte", en: "Authentic Eros × Bianco Latte blend", fr: "Mélange authentique Eros × Bianco Latte" },
-    vs_f4: { ar: "عطر هدية مع كل طلب", en: "A free perfume with every order", fr: "Un parfum offert avec chaque commande" },
+    vs_f3: { ar: "شعار UV DTF مطبوع على القنينة", en: "UV DTF logo printed on the bottle", fr: "Logo UV DTF imprimé sur le flacon" },
+    vs_f4: { ar: "10ml هدية مع كل طلب", en: "Free 10ml gift with every order", fr: "10ml offert avec chaque commande" },
 
     ben_eyebrow: { ar: "الفوائد", en: "The benefits", fr: "Les bénéfices" },
-    land_benefits_h: { ar: "شنو كيوفّر ليك MAGNÉTIQUE", en: "What MAGNÉTIQUE gives you", fr: "Ce que MAGNÉTIQUE vous apporte" },
+    land_benefits_h: { ar: "شنو كيوفّر ليك Lure Her", en: "What Lure Her gives you", fr: "Ce que Lure Her vous apporte" },
     ben_1: { ar: "عطر ما يتقاومش", en: "An irresistible scent", fr: "Un parfum irrésistible" },
     ben_1_sub: { ar: "فوحان كيخلّي الناس يسولوك شنو حاطط.", en: "A sillage that makes people ask what you're wearing.", fr: "Un sillage qui fait demander ce que vous portez." },
     ben_2: { ar: "ثقة من أول رشّة", en: "Confidence from the first spray", fr: "Confiance dès la première vaporisation" },
     ben_2_sub: { ar: "كتحسّ بالفرق من اللحظة اللي كترشّو.", en: "You feel the difference the moment you spray.", fr: "Vous sentez la différence dès la vaporisation." },
     ben_3: { ar: "رجولي، منعش وراقٍ", en: "Masculine, fresh and refined", fr: "Masculin, frais et raffiné" },
-    ben_3_sub: { ar: "مزيج Eros × Bianco Latte بتركيز عالي.", en: "A high-concentration Eros × Bianco Latte blend.", fr: "Un mélange Eros × Bianco Latte très concentré." },
+    ben_3_sub: { ar: "فورمولة حصرية بتركيز عالي.", en: "An exclusive high-concentration formula.", fr: "Une formule exclusive à forte concentration." },
     ben_4: { ar: "التأثير الحقيقي فالعناق", en: "The real effect, in the embrace", fr: "Le vrai effet, dans l'étreinte" },
     ben_4_sub: { ar: "مصمّم للحظات القريبة اللي كتبقى فالذاكرة.", en: "Made for the close moments that stay in memory.", fr: "Conçu pour les moments rapprochés qui marquent." },
 
@@ -132,28 +132,19 @@
       en: "High concentration of authentic oils = lasts all day",
       fr: "Forte concentration d'huiles authentiques = tient toute la journée"
     },
-    proof_3: {
-      ar: "مزيج أصلي مستوحى من Eros × Bianco Latte",
-      en: "Authentic blend inspired by Eros × Bianco Latte",
-      fr: "Mélange authentique inspiré de Eros × Bianco Latte"
-    },
     proof_4: { ar: "بلا ريحة الكحول", en: "No alcohol smell", fr: "Sans odeur d'alcool" },
 
     box_eyebrow: { ar: "شنو غادي توصلك", en: "What you receive", fr: "Ce que vous recevez" },
     box_h: { ar: "كل طلب فيه عطرين", en: "Every order contains two perfumes", fr: "Chaque commande contient deux parfums" },
-    box_1_name: { ar: "MAGNÉTIQUE 50ml — مزيج Eros × Bianco Latte", en: "MAGNÉTIQUE 50ml — Eros × Bianco Latte blend", fr: "MAGNÉTIQUE 50ml — mélange Eros × Bianco Latte" },
-    box_1_desc: { ar: "أقوى وأكثر إغراءً من Versace Eros", en: "More powerful and seductive than Versace Eros", fr: "Plus puissant et plus séduisant que Versace Eros" },
-    box_2_name: { ar: "PRESTIGE 10ml — مزيج Eros × Layton · 🎁 هدية", en: "PRESTIGE 10ml — Eros × Layton blend · 🎁 free", fr: "PRESTIGE 10ml — mélange Eros × Layton · 🎁 offert" },
-    box_2_desc: { ar: "مستوحى من Layton، ولكن أكثر فخامة", en: "Inspired by Layton, but more premium", fr: "Inspiré de Layton, mais plus premium" },
-    box_1_title: { ar: "MAGNÉTIQUE", en: "MAGNÉTIQUE", fr: "MAGNÉTIQUE" },
-    box_1_sub: { ar: "مزيج Eros × Bianco Latte — أقوى وأكثر إغراءً", en: "Eros × Bianco Latte blend — stronger and more seductive", fr: "Mélange Eros × Bianco Latte — plus puissant et séduisant" },
-    box_2_title: { ar: "PRESTIGE — هدية مجانية", en: "PRESTIGE — free gift", fr: "PRESTIGE — cadeau offert" },
-    box_2_sub: { ar: "مزيج Eros × Layton — مستوحى من Layton", en: "Eros × Layton blend — inspired by Layton", fr: "Mélange Eros × Layton — inspiré de Layton" },
+    box_1_title: { ar: "Lure Her", en: "Lure Her", fr: "Lure Her" },
+    box_1_sub: { ar: "50ml — قوي ومغناطيسي", en: "50ml — powerful and magnetic", fr: "50ml — puissant et magnétique" },
+    box_2_title: { ar: "10ml — هدية مجانية", en: "10ml — free gift", fr: "10ml — cadeau offert" },
+    box_2_sub: { ar: "مفاجأة حصرية مع كل طلب", en: "An exclusive surprise with every order", fr: "Une surprise exclusive avec chaque commande" },
     box_cta: { ar: "🛒 اطلب الآن", en: "🛒 Order now", fr: "🛒 Commander" },
     box_foot: { ar: "الزوج كامل بـ 189 درهم فقط", en: "Both together for only 189 DH", fr: "Les deux ensemble pour seulement 189 DH" },
 
     rev_eyebrow: { ar: "آراء الزبناء", en: "Customer reviews", fr: "Avis clients" },
-    rev_title: { ar: "جرّبو MAGNÉTIQUE", en: "They tried MAGNÉTIQUE", fr: "Ils ont essayé MAGNÉTIQUE" },
+    rev_title: { ar: "جرّبو Lure Her", en: "They tried Lure Her", fr: "Ils ont essayé Lure Her" },
     rev_sub: {
       ar: "+2000 طلبية وصلات للمغرب",
       en: "+2,000 orders delivered in Morocco",
@@ -185,9 +176,9 @@
     rev4_name: { ar: "رضا", en: "Reda", fr: "Reda" },
     rev4_city: { ar: "أكادير", en: "Agadir", fr: "Agadir" },
     rev4_text: {
-      ar: "حتى هدية PRESTIGE زوينة بزّاف — عطر راقٍ بصح. خدمة ممتازة، كننصح بيه.",
-      en: "Even the PRESTIGE gift is excellent — a truly classy perfume. Impeccable service, I recommend.",
-      fr: "Même le cadeau PRESTIGE est excellent — un parfum vraiment classe. Service impeccable, je recommande."
+      ar: "حتى الهدية 10ml زوينة بزّاف — عطر راقٍ بصح. خدمة ممتازة، كننصح بيه.",
+      en: "Even the 10ml gift is excellent — a truly classy perfume. Impeccable service, I recommend.",
+      fr: "Même le cadeau 10ml est excellent — un parfum vraiment classe. Service impeccable, je recommande."
     },
 
     form_name: { ar: "الإسم الكامل", en: "Full Name", fr: "Nom complet" },
@@ -201,15 +192,15 @@
     form_secure: { ar: "معلوماتك آمنة ومحمية", en: "Your information is safe and secure", fr: "Vos informations sont sécurisées" },
     submit_order: { ar: "🛒 اطلب الآن — الدفع عند الاستلام", en: "🛒 ORDER — Cash on delivery", fr: "🛒 COMMANDER — Paiement à la livraison" },
 
-    sticky_name: { ar: "MAGNÉTIQUE", en: "MAGNÉTIQUE", fr: "MAGNÉTIQUE" },
+    sticky_name: { ar: "Lure Her", en: "Lure Her", fr: "Lure Her" },
     sticky_price: { ar: "189 درهم", en: "189 DH", fr: "189 DH" },
     sticky_cta: { ar: "اطلب الآن", en: "Order Now", fr: "Commander" },
 
     fcta_h: { ar: "عطر واحد يقدر يبدّل كلشي", en: "One perfume can change everything", fr: "Un seul parfum peut tout changer" },
     fcta_offer: {
-      ar: "MAGNÉTIQUE 50ml + PRESTIGE 10ml هدية · 250 درهم ← 189 درهم · الدفع عند الاستلام · توصيل مجاني",
-      en: "MAGNÉTIQUE 50ml + free PRESTIGE 10ml · 250 DH → 189 DH · Cash on delivery · Free shipping",
-      fr: "MAGNÉTIQUE 50ml + PRESTIGE 10ml offert · 250 DH → 189 DH · Paiement à la livraison · Livraison gratuite"
+      ar: "Lure Her 50ml + 10ml هدية · 250 درهم ← 189 درهم · الدفع عند الاستلام · توصيل مجاني",
+      en: "Lure Her 50ml + free 10ml gift · 250 DH → 189 DH · Cash on delivery · Free shipping",
+      fr: "Lure Her 50ml + 10ml offert · 250 DH → 189 DH · Paiement à la livraison · Livraison gratuite"
     },
     fcta_cta: { ar: "🛒 اطلب الآن", en: "🛒 ORDER", fr: "🛒 COMMANDER" },
     fcta_stock: { ar: "🔥 ما بقاوش غير 30 قطعة", en: "🔥 Only 30 pieces left", fr: "🔥 Plus que 30 pièces" },
@@ -219,9 +210,9 @@
     faq_cta: { ar: "اطلب الآن", en: "Order now", fr: "Commander maintenant" },
     faq_q1: { ar: "واش العطر أصلي؟", en: "Is the perfume authentic?", fr: "Le parfum est-il authentique ?" },
     faq_a1: {
-      ar: "أيه — مزيج بتركيز عالي مستوحى من Eros × Bianco Latte، بشعار UV مطبوع على القنينة. بلا أي تقليد رخيص.",
-      en: "Yes — a high-concentration blend inspired by Eros × Bianco Latte, with a UV logo printed on the bottle. No cheap counterfeits.",
-      fr: "Oui — un mélange à forte concentration inspiré de Eros × Bianco Latte, avec un logo UV imprimé sur le flacon. Aucune contrefaçon bon marché."
+      ar: "أيه — فورمولة حصرية بتركيز عالي، بشعار UV مطبوع على القنينة. بلا أي تقليد رخيص.",
+      en: "Yes — an exclusive high-concentration formula, with a UV logo printed on the bottle. No cheap counterfeits.",
+      fr: "Oui — une formule exclusive à forte concentration, avec un logo UV imprimé sur le flacon. Aucune contrefaçon bon marché."
     },
     faq_q2: { ar: "شحال كيدوم؟", en: "How long does it last?", fr: "Combien de temps tient-il ?" },
     faq_a2: {
@@ -312,11 +303,11 @@
 
 
     var titleDict = {
-      ar: "MAGNÉTIQUE by Lure Her — العطر اللي ما تتقاومش",
-      en: "MAGNÉTIQUE by Lure Her — The irresistible men's perfume",
-      fr: "MAGNÉTIQUE by Lure Her — Le parfum irrésistible pour homme"
+      ar: "Lure Her — العطر اللي ما تتقاومش",
+      en: "Lure Her — The irresistible men's perfume",
+      fr: "Lure Her — Le parfum irrésistible pour homme"
     };
-    document.title = titleDict[l] || "MAGNÉTIQUE by Lure Her";
+    document.title = titleDict[l] || "Lure Her";
     updateHeroGalleryAlts();
     updateStockLabels(window.__V34_STOCK_COUNT || computeDeterministicStock());
     if (window.__V34_REFRESH_ANNOUNCE) window.__V34_REFRESH_ANNOUNCE();
@@ -405,7 +396,7 @@
     }
   });
 
-  var HERO_ASSET_VERSION = 1;
+  var HERO_ASSET_VERSION = 2;
   var HERO_MANIFEST_URL =
     "https://raw.githubusercontent.com/chafiyounes/lurher-lp/main/images/hero/manifest.json?v=" +
     HERO_ASSET_VERSION;
@@ -417,19 +408,19 @@
         id: "brand",
         image: "00-brand.png",
         thumb: "00-brand.png",
-        alt: { ar: "MAGNÉTIQUE by Lure Her — عطر فاخر للرجال", en: "MAGNÉTIQUE by Lure Her — luxury men's perfume", fr: "MAGNÉTIQUE by Lure Her — parfum de luxe pour homme" }
+        alt: { ar: "Lure Her — عطر فاخر للرجال", en: "Lure Her — luxury men's perfume", fr: "Lure Her — parfum de luxe pour homme" }
       },
       {
         id: "main",
         image: "01-main.png",
         thumb: "01-main.png",
-        alt: { ar: "MAGNÉTIQUE — القنينة بشعار UV", en: "MAGNÉTIQUE bottle with UV logo", fr: "Flacon MAGNÉTIQUE avec logo UV" }
+        alt: { ar: "Lure Her — القنينة بشعار UV", en: "Lure Her bottle with UV logo", fr: "Flacon Lure Her avec logo UV" }
       },
       {
         id: "gift",
         image: "04-gift.png",
         thumb: "04-gift.png",
-        alt: { ar: "العطرين: MAGNÉTIQUE + PRESTIGE هدية", en: "Both perfumes: MAGNÉTIQUE + free PRESTIGE", fr: "Les deux flacons : MAGNÉTIQUE + PRESTIGE offert" }
+        alt: { ar: "Lure Her 50ml + 10ml هدية", en: "Lure Her 50ml + free 10ml gift", fr: "Lure Her 50ml + 10ml offert" }
       },
       {
         id: "product",
@@ -441,7 +432,7 @@
         id: "lifestyle",
         image: "02-lifestyle.png",
         thumb: "02-lifestyle.png",
-        alt: { ar: "حضور وجاذبية مع MAGNÉTIQUE", en: "Presence and attraction with MAGNÉTIQUE", fr: "Présence et attraction avec MAGNÉTIQUE" }
+        alt: { ar: "حضور وجاذبية مع Lure Her", en: "Presence and attraction with Lure Her", fr: "Présence et attraction avec Lure Her" }
       }
     ]
   };
@@ -1197,9 +1188,9 @@
 
   function injectPageSeoMeta() {
     var desc = {
-      ar: "MAGNÉTIQUE by Lure Her — مزيج مستوحى من Eros و Bianco Latte، كيدوم طول اليوم، مع PRESTIGE 10ml هدية. الدفع عند الاستلام وتوصيل مجاني في المغرب بـ 189 درهم.",
-      en: "MAGNÉTIQUE by Lure Her — a blend inspired by Eros and Bianco Latte, lasts all day, with a free PRESTIGE 10ml. Cash on delivery, free shipping in Morocco for 189 DH.",
-      fr: "MAGNÉTIQUE by Lure Her — un mélange inspiré d'Eros et Bianco Latte, tient toute la journée, avec PRESTIGE 10ml offert. Paiement à la livraison, livraison gratuite au Maroc à 189 DH."
+      ar: "Lure Her — عطر مغناطيسي كيدوم طول اليوم، مع 10ml هدية. الدفع عند الاستلام وتوصيل مجاني في المغرب بـ 189 درهم.",
+      en: "Lure Her — a magnetic men's perfume that lasts all day, with a free 10ml gift. Cash on delivery, free shipping in Morocco for 189 DH.",
+      fr: "Lure Her — un parfum magnétique pour homme qui tient toute la journée, avec 10ml offert. Paiement à la livraison, livraison gratuite au Maroc à 189 DH."
     };
     var l = langs[currentLangIndex];
     var content = desc[l] || desc.ar;

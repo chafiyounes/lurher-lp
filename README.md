@@ -6,6 +6,7 @@ Private landing page assets for YouCan — **Lure Her Parfum** (men's pheromone 
 
 | Path | Purpose |
 |------|---------|
+| `content/website-copy.md` | **Source of truth** — all page copy in fr / ar / en (edit here first) |
 | `src/page.html` | Landing page markup (Arabic-first, RTL) |
 | `src/styles.css` | Styles — bordeaux + gold luxe theme |
 | `src/script.js` | Behaviour + i18n (ar / fr) |
