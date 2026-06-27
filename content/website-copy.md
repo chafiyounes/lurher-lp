@@ -110,7 +110,7 @@
 **en:** See it, smell it, and if you don't like it — send it back, no hassle. Cash on delivery.  
 
 ### Meta (below guarantee text — not redundant chips)
-- **`guarantee_meta_1`:** Livraison en 2 à 4 jours partout au Maroc / توصيل من 2 إلى 4 أيام في كل المغرب / Delivery in 2–4 days across Morocco
+- **`guarantee_meta_1`:** Livraison en 24 à 48 h partout au Maroc / توصيل من 24 إلى 48 ساعة في كل المغرب / Delivery in 24–48 hours across Morocco
 - **`guarantee_meta_2`:** 10ml offert avec chaque commande / 10ml هدية مجانية مع كل طلب / Free 10ml gift with every order
 
 ---
@@ -214,7 +214,7 @@ Reviews 1–4: Youssef (Casablanca), Anas (Marrakech), Mehdi (Tanger), Reda (Aga
 | `faq_q1` Authentic? | Oui — formule exclusive à forte concentration, logo UV imprimé. Aucune contrefaçon. |
 | `faq_q2` Duration? | Forte concentration d'huiles = tient toute la journée. |
 | `faq_q3` Payment? | Paiement à la livraison — payez une fois le parfum en main. |
-| `faq_q4` Delivery? | Livraison gratuite, 2–4 jours au Maroc. |
+| `faq_q4` Delivery? | Livraison gratuite, 24–48 h au Maroc. |
 | `faq_q5` Return? | Essayez — si ça ne vous plaît pas, renvoyez sans souci. |
 
 ---

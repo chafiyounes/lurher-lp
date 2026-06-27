@@ -80,9 +80,9 @@
       fr: "Vous le voyez, vous le sentez, et s'il ne vous plaît pas — vous le retournez, sans souci. Paiement à la livraison."
     },
     guarantee_meta_1: {
-      ar: "توصيل من 2 إلى 4 أيام في كل المغرب",
-      en: "Delivery in 2–4 days across Morocco",
-      fr: "Livraison en 2 à 4 jours partout au Maroc"
+      ar: "توصيل من 24 إلى 48 ساعة في كل المغرب",
+      en: "Delivery in 24–48 hours across Morocco",
+      fr: "Livraison en 24 à 48 h partout au Maroc"
     },
     guarantee_meta_2: {
       ar: "10ml هدية مجانية مع كل طلب",
@@ -238,9 +238,9 @@
     },
     faq_q4: { ar: "إمتى غادي يوصلني؟", en: "When will I be delivered?", fr: "Quand serai-je livré ?" },
     faq_a4: {
-      ar: "توصيل مجاني لكل المغرب، عادةً من 2 إلى 4 أيام.",
-      en: "Free delivery across Morocco, usually within 2 to 4 days.",
-      fr: "Livraison gratuite dans tout le Maroc, généralement sous 2 à 4 jours."
+      ar: "توصيل مجاني لكل المغرب، عادةً من 24 إلى 48 ساعة.",
+      en: "Free delivery across Morocco, usually within 24 to 48 hours.",
+      fr: "Livraison gratuite dans tout le Maroc, généralement sous 24 à 48 h."
     },
     faq_q5: { ar: "واش نقدر نرجعو؟", en: "Can I return it?", fr: "Puis-je le renvoyer ?" },
     faq_a5: {
