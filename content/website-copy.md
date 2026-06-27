@@ -109,9 +109,9 @@
 **ar:** تشوف العطر، تشمّو، وإيلا ما عجبكش — ترجعو بلا أي مشكل. الدفع عند الاستلام.  
 **en:** See it, smell it, and if you don't like it — send it back, no hassle. Cash on delivery.  
 
-### Mini chips
-- **`trust_cod`:** (same as above)
-- **`tb_ship`:** Livraison gratuite dans toutes les villes du Maroc / توصيل مجاني لجميع مدن المغرب / Free delivery to every city in Morocco
+### Meta (below guarantee text — not redundant chips)
+- **`guarantee_meta_1`:** Livraison en 2 à 4 jours partout au Maroc / توصيل من 2 إلى 4 أيام في كل المغرب / Delivery in 2–4 days across Morocco
+- **`guarantee_meta_2`:** 10ml offert avec chaque commande / 10ml هدية مجانية مع كل طلب / Free 10ml gift with every order
 
 ---
 

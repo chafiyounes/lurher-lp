@@ -79,6 +79,16 @@
       en: "See it, smell it, and if you don't like it — send it back, no hassle. Cash on delivery.",
       fr: "Vous le voyez, vous le sentez, et s'il ne vous plaît pas — vous le retournez, sans souci. Paiement à la livraison."
     },
+    guarantee_meta_1: {
+      ar: "توصيل من 2 إلى 4 أيام في كل المغرب",
+      en: "Delivery in 2–4 days across Morocco",
+      fr: "Livraison en 2 à 4 jours partout au Maroc"
+    },
+    guarantee_meta_2: {
+      ar: "10ml هدية مجانية مع كل طلب",
+      en: "Free 10ml gift with every order",
+      fr: "10ml offert avec chaque commande"
+    },
 
     reframe_eyebrow: { ar: "علاش حنا مختلفين", en: "Why we're different", fr: "Pourquoi nous sommes différents" },
     reframe_h: {
@@ -396,7 +406,7 @@
     }
   });
 
-  var HERO_ASSET_VERSION = 2;
+  var HERO_ASSET_VERSION = 3;
   var HERO_MANIFEST_URL =
     "https://raw.githubusercontent.com/chafiyounes/lurher-lp/main/images/hero/manifest.json?v=" +
     HERO_ASSET_VERSION;
