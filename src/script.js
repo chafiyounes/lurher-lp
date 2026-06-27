@@ -40,14 +40,14 @@
     trust_cod: { ar: "الدفع عند الاستلام", en: "Cash on Delivery", fr: "Paiement à la livraison" },
 
     gift_note: {
-      ar: "🎁 مع كل طلب: PRESTIGE 10ml (مستوحى من Layton) — هدية",
-      en: "🎁 With every order: PRESTIGE 10ml (inspired by Layton) — free",
-      fr: "🎁 Avec chaque commande : PRESTIGE 10ml (inspiré de Layton) — offert"
+      ar: "🎁 مع كل طلب: PRESTIGE 10ml (مستوحى من Layton) — هدية مجانية",
+      en: "🎁 With every order: PRESTIGE 10ml (inspired by Layton) — free gift",
+      fr: "🎁 Avec chaque commande : PRESTIGE 10ml (inspiré de Layton) — cadeau offert"
     },
     price_subnote: {
       ar: "فخامة عطور بأكثر من 1000 درهم — بـ 189 درهم",
       en: "The luxury of 1,000+ DH perfumes — for 189 DH",
-      fr: "Le luxe des parfums à +1 000 DH — pour 189 DH"
+      fr: "Le luxe des parfums à plus de 1 000 DH — pour 189 DH"
     },
     savings_tag: { ar: "وفّرت 61 درهم", en: "You save 61 DH", fr: "Économisez 61 DH" },
 
@@ -65,9 +65,9 @@
       fr: "Livraison gratuite dans toutes les villes du Maroc"
     },
     tb_return: {
-      ar: "جرّبو بكل ثقة — إيلا ما عجبكش أو شككتي فأصالتو، ترجعو بلا أي مشكل",
-      en: "Try with confidence — if you don't like it or doubt its authenticity, send it back, no hassle",
-      fr: "Essayez en toute confiance — s'il ne vous plaît pas ou si vous doutez de son authenticité, renvoyez-le sans souci"
+      ar: "جرّبو بكل ثقة — إيلا ما عجبكش العطر أو شككتي فأصالتو، ترجعو بلا أي مشكل",
+      en: "Try with confidence — if you don't like the perfume or doubt its authenticity, you send it back, no hassle",
+      fr: "Essayez en toute confiance — si le parfum ne vous plaît pas ou si vous doutez de son authenticité, vous le renvoyez, sans souci"
     },
 
     reframe_eyebrow: { ar: "علاش حنا مختلفين", en: "Why we're different", fr: "Pourquoi nous sommes différents" },
@@ -211,9 +211,9 @@
     },
     faq_q4: { ar: "إمتى غادي يوصلني؟", en: "When will I be delivered?", fr: "Quand serai-je livré ?" },
     faq_a4: {
-      ar: "توصيل مجاني لكل المغرب، عادةً من 24 إلى 72 ساعة.",
-      en: "Free delivery across Morocco, usually within 24 to 72 hours.",
-      fr: "Livraison gratuite dans tout le Maroc, généralement sous 24 à 72 heures."
+      ar: "توصيل مجاني لكل المغرب، عادةً من 2 إلى 4 أيام.",
+      en: "Free delivery across Morocco, usually within 2 to 4 days.",
+      fr: "Livraison gratuite dans tout le Maroc, généralement sous 2 à 4 jours."
     },
     faq_q5: { ar: "واش نقدر نرجعو؟", en: "Can I return it?", fr: "Puis-je le renvoyer ?" },
     faq_a5: {

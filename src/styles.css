@@ -2466,6 +2466,25 @@ button.btn-primary .material-symbols-outlined {
   letter-spacing: 0.01em;
 }
 
+/* Hero copy block (sits with the form, after the images on mobile) */
+.hero-copy { text-align: center; margin-bottom: 16px; }
+.hero-copy .section-eyebrow { margin-bottom: 10px; }
+.hero-copy-h {
+  font-size: clamp(1.5rem, 6vw, 2.3rem) !important;
+  line-height: 1.12 !important; font-weight: 800 !important;
+  text-wrap: balance; margin: 0 0 10px !important;
+}
+.hero-copy-sub {
+  font-size: 15px; line-height: 1.5; margin: 0 auto 12px; max-width: 52ch;
+}
+.hero-copy-trust { justify-content: center; }
+@media (min-width: 1024px) {
+  .hero-copy { text-align: start; margin-bottom: 18px; }
+  .hero-copy-sub { margin-inline: 0; }
+  .hero-copy-trust { justify-content: flex-start; }
+  .hero-copy-h { font-size: clamp(1.8rem, 2.4vw, 2.6rem) !important; }
+}
+
 /* SECTION 2 — Trust band */
 .trust-band { padding: clamp(20px, 4vw, 32px) 0; background: var(--gold-soft); }
 .trust-band-grid {
