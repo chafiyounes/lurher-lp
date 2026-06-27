@@ -69,6 +69,16 @@
       en: "Try with confidence — if you don't like the perfume or doubt its authenticity, you send it back, no hassle",
       fr: "Essayez en toute confiance — si le parfum ne vous plaît pas ou si vous doutez de son authenticité, vous le renvoyez, sans souci"
     },
+    guarantee_title: {
+      ar: "خلّص فقط من بعد ما تجرّب",
+      en: "Pay only after you've tested it",
+      fr: "Payez seulement après avoir testé"
+    },
+    guarantee_sub: {
+      ar: "تشوف العطر، تشمّو، وإيلا ما عجبكش — ترجعو بلا أي مشكل. الدفع عند الاستلام.",
+      en: "See it, smell it, and if you don't like it — send it back, no hassle. Cash on delivery.",
+      fr: "Vous le voyez, vous le sentez, et s'il ne vous plaît pas — vous le retournez, sans souci. Paiement à la livraison."
+    },
 
     reframe_eyebrow: { ar: "علاش حنا مختلفين", en: "Why we're different", fr: "Pourquoi nous sommes différents" },
     reframe_h: {
@@ -91,13 +101,24 @@
       en: "It was never about quantity. It's about a perfume that actually works.",
       fr: "Ce n'a jamais été une question de quantité. C'est une question de parfum qui fait vraiment effet."
     },
+    vs_us_label: { ar: "MAGNÉTIQUE", en: "MAGNÉTIQUE", fr: "MAGNÉTIQUE" },
+    vs_them_label: { ar: "العطور الرخيصة 5 بـ200", en: "Cheap perfumes, 5 for 200", fr: "Parfums bon marché, 5 pour 200" },
+    vs_them_short: { ar: "الباقي", en: "The rest", fr: "Les autres" },
+    vs_f1: { ar: "تركيز عالي من الزيوت الأصلية", en: "High concentration of authentic oils", fr: "Forte concentration d'huiles authentiques" },
+    vs_f2: { ar: "ثبات يدوم طول اليوم", en: "Lasts all day long", fr: "Tient toute la journée" },
+    vs_f3: { ar: "مزيج أصلي Eros × Bianco Latte", en: "Authentic Eros × Bianco Latte blend", fr: "Mélange authentique Eros × Bianco Latte" },
+    vs_f4: { ar: "عطر هدية مع كل طلب", en: "A free perfume with every order", fr: "Un parfum offert avec chaque commande" },
 
     ben_eyebrow: { ar: "الفوائد", en: "The benefits", fr: "Les bénéfices" },
     land_benefits_h: { ar: "شنو كيوفّر ليك MAGNÉTIQUE", en: "What MAGNÉTIQUE gives you", fr: "Ce que MAGNÉTIQUE vous apporte" },
     ben_1: { ar: "عطر ما يتقاومش", en: "An irresistible scent", fr: "Un parfum irrésistible" },
-    ben_2: { ar: "ثقة من أول رشّة", en: "Confidence from the first spray", fr: "De la confiance dès la première vaporisation" },
+    ben_1_sub: { ar: "فوحان كيخلّي الناس يسولوك شنو حاطط.", en: "A sillage that makes people ask what you're wearing.", fr: "Un sillage qui fait demander ce que vous portez." },
+    ben_2: { ar: "ثقة من أول رشّة", en: "Confidence from the first spray", fr: "Confiance dès la première vaporisation" },
+    ben_2_sub: { ar: "كتحسّ بالفرق من اللحظة اللي كترشّو.", en: "You feel the difference the moment you spray.", fr: "Vous sentez la différence dès la vaporisation." },
     ben_3: { ar: "رجولي، منعش وراقٍ", en: "Masculine, fresh and refined", fr: "Masculin, frais et raffiné" },
-    ben_4: { ar: "التأثير الحقيقي كيبان من قريب… فالعناق", en: "The real effect shows up close… in the embrace", fr: "Le véritable effet se révèle de près… dans l'étreinte" },
+    ben_3_sub: { ar: "مزيج Eros × Bianco Latte بتركيز عالي.", en: "A high-concentration Eros × Bianco Latte blend.", fr: "Un mélange Eros × Bianco Latte très concentré." },
+    ben_4: { ar: "التأثير الحقيقي فالعناق", en: "The real effect, in the embrace", fr: "Le vrai effet, dans l'étreinte" },
+    ben_4_sub: { ar: "مصمّم للحظات القريبة اللي كتبقى فالذاكرة.", en: "Made for the close moments that stay in memory.", fr: "Conçu pour les moments rapprochés qui marquent." },
 
     proof_eyebrow: { ar: "الجودة والإثبات", en: "Proof & quality", fr: "Preuves & qualité" },
     proof_h: { ar: "الجودة اللي الشاشة ما تقدرش تشمّها", en: "The quality the screen can't smell", fr: "La qualité que l'écran ne peut pas sentir" },
@@ -124,7 +145,12 @@
     box_1_desc: { ar: "أقوى وأكثر إغراءً من Versace Eros", en: "More powerful and seductive than Versace Eros", fr: "Plus puissant et plus séduisant que Versace Eros" },
     box_2_name: { ar: "PRESTIGE 10ml — مزيج Eros × Layton · 🎁 هدية", en: "PRESTIGE 10ml — Eros × Layton blend · 🎁 free", fr: "PRESTIGE 10ml — mélange Eros × Layton · 🎁 offert" },
     box_2_desc: { ar: "مستوحى من Layton، ولكن أكثر فخامة", en: "Inspired by Layton, but more premium", fr: "Inspiré de Layton, mais plus premium" },
-    box_foot: { ar: "👈 الزوج بـ 189 درهم فقط", en: "👈 Both for only 189 DH", fr: "👈 Les deux pour seulement 189 DH" },
+    box_1_title: { ar: "MAGNÉTIQUE", en: "MAGNÉTIQUE", fr: "MAGNÉTIQUE" },
+    box_1_sub: { ar: "مزيج Eros × Bianco Latte — أقوى وأكثر إغراءً", en: "Eros × Bianco Latte blend — stronger and more seductive", fr: "Mélange Eros × Bianco Latte — plus puissant et séduisant" },
+    box_2_title: { ar: "PRESTIGE — هدية مجانية", en: "PRESTIGE — free gift", fr: "PRESTIGE — cadeau offert" },
+    box_2_sub: { ar: "مزيج Eros × Layton — مستوحى من Layton", en: "Eros × Layton blend — inspired by Layton", fr: "Mélange Eros × Layton — inspiré de Layton" },
+    box_cta: { ar: "🛒 اطلب الآن", en: "🛒 Order now", fr: "🛒 Commander" },
+    box_foot: { ar: "الزوج كامل بـ 189 درهم فقط", en: "Both together for only 189 DH", fr: "Les deux ensemble pour seulement 189 DH" },
 
     rev_eyebrow: { ar: "آراء الزبناء", en: "Customer reviews", fr: "Avis clients" },
     rev_title: { ar: "جرّبو MAGNÉTIQUE", en: "They tried MAGNÉTIQUE", fr: "Ils ont essayé MAGNÉTIQUE" },
@@ -387,6 +413,12 @@
   var HERO_MANIFEST_FALLBACK = {
     baseUrl: "https://raw.githubusercontent.com/chafiyounes/lurher-lp/main/images/hero/",
     slides: [
+      {
+        id: "brand",
+        image: "00-brand.png",
+        thumb: "00-brand.png",
+        alt: { ar: "MAGNÉTIQUE by Lure Her — عطر فاخر للرجال", en: "MAGNÉTIQUE by Lure Her — luxury men's perfume", fr: "MAGNÉTIQUE by Lure Her — parfum de luxe pour homme" }
+      },
       {
         id: "main",
         image: "01-main.png",

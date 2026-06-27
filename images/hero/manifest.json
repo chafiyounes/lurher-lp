@@ -2,6 +2,12 @@
   "baseUrl": "https://raw.githubusercontent.com/chafiyounes/lurher-lp/main/images/hero/",
   "slides": [
     {
+      "id": "brand",
+      "image": "00-brand.png",
+      "thumb": "00-brand.png",
+      "alt": { "ar": "MAGNÉTIQUE by Lure Her — عطر فاخر للرجال", "en": "MAGNÉTIQUE by Lure Her — luxury men's perfume", "fr": "MAGNÉTIQUE by Lure Her — parfum de luxe pour homme" }
+    },
+    {
       "id": "main",
       "image": "01-main.png",
       "thumb": "01-main.png",
