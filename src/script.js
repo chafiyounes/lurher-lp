@@ -70,9 +70,9 @@
       fr: "Essayez en toute confiance — si le parfum ne vous plaît pas ou si vous doutez de son authenticité, vous le renvoyez, sans souci"
     },
     guarantee_title: {
-      ar: "خلّص فقط من بعد ما تجرّب",
-      en: "Pay only after you've tested it",
-      fr: "Payez seulement après avoir testé"
+      ar: "خلّص فقط من بعد ما تشمّ",
+      en: "Pay only after you smell it",
+      fr: "Payez seulement après avoir senti"
     },
     guarantee_sub: {
       ar: "تشوف العطر، تشمّو، وإيلا ما عجبكش — ترجعو بلا أي مشكل. الدفع عند الاستلام.",
@@ -116,7 +116,7 @@
     vs_them_short: { ar: "الباقي", en: "The rest", fr: "Les autres" },
     vs_f1: { ar: "تركيز عالي من الزيوت الأصلية", en: "High concentration of authentic oils", fr: "Forte concentration d'huiles authentiques" },
     vs_f2: { ar: "ثبات يدوم طول اليوم", en: "Lasts all day long", fr: "Tient toute la journée" },
-    vs_f3: { ar: "شعار UV DTF مطبوع على القنينة", en: "UV DTF logo printed on the bottle", fr: "Logo UV DTF imprimé sur le flacon" },
+    vs_f3: { ar: "شعار مطبوع على القنينة (ماشي ستيكر)", en: "Logo printed on the bottle (not a sticker)", fr: "Logo imprimé sur le flacon (pas un autocollant)" },
     vs_f4: { ar: "10ml هدية مع كل طلب", en: "Free 10ml gift with every order", fr: "10ml offert avec chaque commande" },
 
     ben_eyebrow: { ar: "الفوائد", en: "The benefits", fr: "Les bénéfices" },
@@ -131,7 +131,7 @@
     ben_4_sub: { ar: "مصمّم للحظات القريبة اللي كتبقى فالذاكرة.", en: "Made for the close moments that stay in memory.", fr: "Conçu pour les moments rapprochés qui marquent." },
 
     proof_eyebrow: { ar: "الجودة والإثبات", en: "Proof & quality", fr: "Preuves & qualité" },
-    proof_h: { ar: "الجودة اللي الشاشة ما تقدرش تشمّها", en: "The quality the screen can't smell", fr: "La qualité que l'écran ne peut pas sentir" },
+    proof_h: { ar: "الجودة اللي ما تبانش من الشاشة", en: "Quality you can't judge on a screen", fr: "La vraie qualité — impossible à juger sur écran" },
     proof_1: {
       ar: "شعار UV DTF مطبوع على القنينة — ماشي ستيكر كيتقلّع بحال المقلّد",
       en: "UV DTF logo printed on the bottle — not a sticker that peels like the fakes",
@@ -200,7 +200,7 @@
     form_city_ph: { ar: "المدينة", en: "City", fr: "Ville" },
     form_address_ph: { ar: "العنوان", en: "Address", fr: "Adresse" },
     form_secure: { ar: "معلوماتك آمنة ومحمية", en: "Your information is safe and secure", fr: "Vos informations sont sécurisées" },
-    submit_order: { ar: "🛒 اطلب الآن — الدفع عند الاستلام", en: "🛒 ORDER — Cash on delivery", fr: "🛒 COMMANDER — Paiement à la livraison" },
+    submit_order: { ar: "اطلب الآن", en: "ORDER", fr: "COMMANDER" },
 
     sticky_name: { ar: "Lure Her", en: "Lure Her", fr: "Lure Her" },
     sticky_price: { ar: "189 درهم", en: "189 DH", fr: "189 DH" },
@@ -406,7 +406,7 @@
     }
   });
 
-  var HERO_ASSET_VERSION = 3;
+  var HERO_ASSET_VERSION = 4;
   var HERO_MANIFEST_URL =
     "https://raw.githubusercontent.com/chafiyounes/lurher-lp/main/images/hero/manifest.json?v=" +
     HERO_ASSET_VERSION;
@@ -418,31 +418,31 @@
         id: "brand",
         image: "00-brand.png",
         thumb: "00-brand.png",
-        alt: { ar: "Lure Her — عطر فاخر للرجال", en: "Lure Her — luxury men's perfume", fr: "Lure Her — parfum de luxe pour homme" }
+        alt: { ar: "Lure Her — عطر يأسر الأنظار", en: "Lure Her — irresistible men's perfume", fr: "Lure Her — le parfum irrésistible" }
       },
       {
         id: "main",
         image: "01-main.png",
         thumb: "01-main.png",
-        alt: { ar: "Lure Her — القنينة بشعار UV", en: "Lure Her bottle with UV logo", fr: "Flacon Lure Her avec logo UV" }
-      },
-      {
-        id: "gift",
-        image: "04-gift.png",
-        thumb: "04-gift.png",
-        alt: { ar: "Lure Her 50ml + 10ml هدية", en: "Lure Her 50ml + free 10ml gift", fr: "Lure Her 50ml + 10ml offert" }
-      },
-      {
-        id: "product",
-        image: "03-product.png",
-        thumb: "03-product.png",
-        alt: { ar: "العطر مع علبته الفاخرة", en: "The perfume with its luxury box", fr: "Le parfum avec son coffret de luxe" }
+        alt: { ar: "Lure Her — القنينة", en: "Lure Her bottle", fr: "Flacon Lure Her" }
       },
       {
         id: "lifestyle",
         image: "02-lifestyle.png",
         thumb: "02-lifestyle.png",
-        alt: { ar: "حضور وجاذبية مع Lure Her", en: "Presence and attraction with Lure Her", fr: "Présence et attraction avec Lure Her" }
+        alt: { ar: "حضور وجاذبية مع Lure Her", en: "Presence with Lure Her", fr: "Présence avec Lure Her" }
+      },
+      {
+        id: "product",
+        image: "03-product.png",
+        thumb: "03-product.png",
+        alt: { ar: "العطر مع علبته", en: "Perfume with its box", fr: "Le parfum avec son coffret" }
+      },
+      {
+        id: "gift",
+        image: "04-gift.png",
+        thumb: "04-gift.png",
+        alt: { ar: "Lure Her 50ml + هدية", en: "Lure Her 50ml + gift", fr: "Lure Her 50ml + cadeau" }
       }
     ]
   };
@@ -1181,7 +1181,7 @@
   }
 
   function initLazySections() {
-    var sels = ["#trust-band", "#ba-section", "#benefits-section", "#why-section", "#coffret-section", ".reviews-section", "#faq-section", "#final-cta"];
+    var sels = ["#trust-band", "#ba-section", "#benefits-section", "#why-section", "#coffret-section", ".reviews-section", "#faq-section"];
     for (var i = 0; i < sels.length; i++) {
       var el = document.querySelector(sels[i]);
       if (el) el.setAttribute("data-lazy-section", "");

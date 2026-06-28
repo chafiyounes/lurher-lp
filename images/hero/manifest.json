@@ -5,31 +5,31 @@
       "id": "brand",
       "image": "00-brand.png",
       "thumb": "00-brand.png",
-      "alt": { "ar": "Lure Her — عطر فاخر للرجال", "en": "Lure Her — luxury men's perfume", "fr": "Lure Her — parfum de luxe pour homme" }
+      "alt": { "ar": "Lure Her — عطر يأسر الأنظار", "en": "Lure Her — irresistible men's perfume", "fr": "Lure Her — le parfum irrésistible" }
     },
     {
       "id": "main",
       "image": "01-main.png",
       "thumb": "01-main.png",
-      "alt": { "ar": "Lure Her — القنينة بشعار UV", "en": "Lure Her bottle with UV logo", "fr": "Flacon Lure Her avec logo UV" }
-    },
-    {
-      "id": "gift",
-      "image": "04-gift.png",
-      "thumb": "04-gift.png",
-      "alt": { "ar": "Lure Her 50ml + 10ml هدية", "en": "Lure Her 50ml + free 10ml gift", "fr": "Lure Her 50ml + 10ml offert" }
-    },
-    {
-      "id": "product",
-      "image": "03-product.png",
-      "thumb": "03-product.png",
-      "alt": { "ar": "العطر مع علبته الفاخرة", "en": "The perfume with its luxury box", "fr": "Le parfum avec son coffret de luxe" }
+      "alt": { "ar": "Lure Her — القنينة", "en": "Lure Her bottle", "fr": "Flacon Lure Her" }
     },
     {
       "id": "lifestyle",
       "image": "02-lifestyle.png",
       "thumb": "02-lifestyle.png",
-      "alt": { "ar": "حضور وجاذبية مع Lure Her", "en": "Presence and attraction with Lure Her", "fr": "Présence et attraction avec Lure Her" }
+      "alt": { "ar": "حضور وجاذبية مع Lure Her", "en": "Presence with Lure Her", "fr": "Présence avec Lure Her" }
+    },
+    {
+      "id": "product",
+      "image": "03-product.png",
+      "thumb": "03-product.png",
+      "alt": { "ar": "العطر مع علبته", "en": "Perfume with its box", "fr": "Le parfum avec son coffret" }
+    },
+    {
+      "id": "gift",
+      "image": "04-gift.png",
+      "thumb": "04-gift.png",
+      "alt": { "ar": "Lure Her 50ml + هدية", "en": "Lure Her 50ml + gift", "fr": "Lure Her 50ml + cadeau" }
     }
   ]
 }

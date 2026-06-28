@@ -93,25 +93,27 @@
 - **`form_city` / `form_city_ph`:** Ville / المدينة / City
 - **`form_address` / `form_address_ph`:** Adresse / العنوان / Address
 - **`form_secure`:** Vos informations sont sécurisées / معلوماتك آمنة ومحمية / Your information is safe and secure
-- **`submit_order`:** 🛒 COMMANDER — Paiement à la livraison / 🛒 اطلب الآن — الدفع عند الاستلام / 🛒 ORDER — Cash on delivery
+- **`submit_order`:** COMMANDER / اطلب الآن / ORDER (button text only — no emoji, no COD suffix)
 
 ---
 
 ## S2 — Trust band (single guarantee)
 
 ### `guarantee_title`
-**fr:** Payez seulement après avoir testé  
-**ar:** خلّص فقط من بعد ما تجرّب  
-**en:** Pay only after you've tested it  
+**fr:** Payez seulement après avoir senti  
+**ar:** خلّص فقط من بعد ما تشمّ  
+**en:** Pay only after you smell it  
 
 ### `guarantee_sub`
 **fr:** Vous le voyez, vous le sentez, et s'il ne vous plaît pas — vous le retournez, sans souci. Paiement à la livraison.  
 **ar:** تشوف العطر، تشمّو، وإيلا ما عجبكش — ترجعو بلا أي مشكل. الدفع عند الاستلام.  
 **en:** See it, smell it, and if you don't like it — send it back, no hassle. Cash on delivery.  
 
-### Meta (below guarantee text — not redundant chips)
-- **`guarantee_meta_1`:** Livraison en 24 à 48 h partout au Maroc / توصيل من 24 إلى 48 ساعة في كل المغرب / Delivery in 24–48 hours across Morocco
-- **`guarantee_meta_2`:** 10ml offert avec chaque commande / 10ml هدية مجانية مع كل طلب / Free 10ml gift with every order
+> **Removed from hero checkout:** `gift_note`, `ct_ship` badge, and guarantee meta chips (delivery/gift) — stated elsewhere on page.
+
+### `submit_order`
+**fr:** COMMANDER · **ar:** اطلب الآن · **en:** ORDER  
+(No emoji, no "paiement à la livraison" on button.)
 
 ---
 
@@ -144,7 +146,7 @@
 |-----|----|----|-----|
 | `vs_f1` | Forte concentration d'huiles authentiques | تركيز عالي من الزيوت الأصلية | High concentration of authentic oils |
 | `vs_f2` | Tient toute la journée | ثبات يدوم طول اليوم | Lasts all day long |
-| `vs_f3` | Logo UV DTF imprimé sur le flacon | شعار UV DTF مطبوع على القنينة | UV DTF logo printed on the bottle |
+| `vs_f3` | Logo imprimé sur le flacon (pas un autocollant) | شعار مطبوع على القنينة (ماشي ستيكر) | Logo printed on the bottle (not a sticker) |
 | `vs_f4` | 10ml offert avec chaque commande | 10ml هدية مع كل طلب | Free 10ml gift with every order |
 
 **Images:** Win side = real Lure Her bottle · Lose side = `images/compare/fakes-pile.png` (fake Lure Her copies + generic bottles)
@@ -169,7 +171,7 @@
 
 ## S5 — Proof / characteristics
 
-### `proof_h` — La qualité que l'écran ne peut pas sentir / الجودة اللي الشاشة ما تقدرش تشمّها / The quality the screen can't smell
+### `proof_h` — La vraie qualité — impossible à juger sur écran / الجودة اللي ما تبانش من الشاشة / Quality you can't judge on a screen
 
 | Key | fr |
 |-----|-----|
@@ -221,13 +223,7 @@ Reviews 1–4: Youssef (Casablanca), Anas (Marrakech), Mehdi (Tanger), Reda (Aga
 
 ## S9 — Final CTA
 
-### `fcta_h` — Un seul parfum peut tout changer / عطر واحد يقدر يبدّل كلشي / One perfume can change everything
-### `fcta_offer`
-**fr:** Lure Her 50ml + 10ml offert · 250 DH → 189 DH · Paiement à la livraison · Livraison gratuite  
-**ar:** Lure Her 50ml + 10ml هدية · 250 درهم ← 189 درهم · الدفع عند الاستلام · توصيل مجاني  
-**en:** Lure Her 50ml + free 10ml gift · 250 DH → 189 DH · Cash on delivery · Free shipping  
-
-### `fcta_stock` — 🔥 Plus que 30 pièces / 🔥 ما بقاوش غير 30 قطعة / 🔥 Only 30 pieces left
+**Removed** — sticky bar covers ordering; section deleted from page.
 
 ---
 
