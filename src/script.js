@@ -4,15 +4,25 @@
 
   var I18N = {
 
-    announce: {
-      ar: "✓ الدفع عند الاستلام · توصيل مجاني في كل المغرب",
-      en: "✓ Cash on delivery · Free shipping across Morocco",
-      fr: "✓ Paiement à la livraison · Livraison gratuite partout au Maroc"
+    announce_cod: {
+      ar: "الدفع عند الاستلام",
+      en: "Cash on delivery",
+      fr: "Paiement à la livraison"
+    },
+    announce_ship: {
+      ar: "توصيل مجاني في كل المغرب",
+      en: "Free shipping across Morocco",
+      fr: "Livraison gratuite partout au Maroc"
     },
     announce_stock: {
-      ar: "ما بقاوش غير <strong>{n}</strong> قطعة",
-      en: "Only <strong>{n}</strong> pieces left",
-      fr: "Plus que <strong>{n}</strong> pièces"
+      ar: "أقل من <strong>{n}</strong> باقة متبقية هذا الأسبوع !",
+      en: "Only <strong>{n}</strong> packs left this week!",
+      fr: "Moins de <strong>{n}</strong> packs disponibles cette semaine !"
+    },
+    announce_order: {
+      ar: "اطلب باقتك الآن",
+      en: "Order your pack now",
+      fr: "Commandez votre pack maintenant"
     },
     nav_shop: { ar: "اطلب الآن", en: "Order Now", fr: "Commander" },
     brand_sub: { ar: "PARFUM", en: "PARFUM", fr: "PARFUM" },
@@ -1124,16 +1134,18 @@
 
     function getUnitHtml() {
       var l = langs[currentLangIndex];
-      var announce = (I18N.announce && I18N.announce[l]) ? I18N.announce[l] : "";
-      var stockTpl = (I18N.announce_stock && I18N.announce_stock[l]) ? I18N.announce_stock[l] : "";
       var stockN = window.__V34_STOCK_COUNT || computeDeterministicStock();
-      var stockHtml = stockTpl.replace("{n}", String(stockN));
-      return (
-        '<span class="announce-msg" data-i18n="announce">' + announce + "</span>" +
-        '<span class="announce-sep" aria-hidden="true"> · </span>' +
-        '<span class="announce-msg announce-stock">' + stockHtml + "</span>" +
-        '<span class="announce-sep" aria-hidden="true"> · </span>'
-      );
+      // Four evenly-spaced phrases (each its own .announce-msg = equal padding/gaps).
+      var keys = ["announce_cod", "announce_ship", "announce_stock", "announce_order"];
+      var sep = '<span class="announce-sep" aria-hidden="true"> · </span>';
+      var html = "";
+      for (var i = 0; i < keys.length; i++) {
+        var txt = (I18N[keys[i]] && I18N[keys[i]][l]) ? I18N[keys[i]][l] : "";
+        txt = txt.replace("{n}", String(stockN));
+        var cls = keys[i] === "announce_stock" ? "announce-msg announce-stock" : "announce-msg";
+        html += '<span class="' + cls + '">' + txt + "</span>" + sep;
+      }
+      return html;
     }
 
     function buildLayout() {
@@ -1163,12 +1175,9 @@
     }
 
     function refreshAnnounceContent() {
-      if (!track.querySelector(".announce-group")) {
-        buildLayout();
-        return;
-      }
-      localize(track, langs[currentLangIndex]);
-      updateStockLabels(window.__V34_STOCK_COUNT || computeDeterministicStock());
+      // Rebuild from scratch so a language switch re-renders all 4 phrases
+      // (the spans are generated, not data-i18n-tagged).
+      buildLayout();
     }
 
     buildLayout();
