@@ -1851,7 +1851,7 @@ button.btn-primary .material-symbols-outlined {
 .is-hidden { display: none !important; }
 
 
-.announce-marquee { overflow: hidden; width: 100%; }
+.announce-marquee { overflow: hidden; width: 100%; direction: ltr; }
 .announce-marquee-track {
   display: flex;
   width: max-content;
@@ -1866,15 +1866,18 @@ button.btn-primary .material-symbols-outlined {
   animation-duration: var(--announce-duration, 50s);
 }
 .announce-group { display: flex; flex: 0 0 auto; align-items: center; }
-/* Arabic (RTL): slide right-to-left. */
-.app[dir="rtl"] .announce-marquee-track.is-ready { animation-name: announce-scroll-rtl; animation-direction: reverse; }
-/* French (LTR): slide left-to-right. (Each reverses its own seamless keyframe.) */
+/* The marquee is forced to an LTR physical layout (.announce-marquee direction:ltr),
+   so motion is predictable in BOTH languages:
+     announce-scroll (default)      = scroll LEFT  = right-to-left
+     + animation-direction:reverse  = scroll RIGHT = left-to-right
+   Arabic (RTL page): right-to-left -> keep default (no reverse).
+   French (LTR page): left-to-right -> reverse. */
 .app[dir="ltr"] .announce-marquee-track.is-ready { animation-direction: reverse; }
 /* Phone-only marquee speed: one full loop every 50s (desktop keeps the JS-computed speed). */
 @media (max-width: 600px) {
-  .announce-marquee-track.is-ready { animation-duration: 100s !important; }
+  .announce-marquee-track.is-ready { animation-duration: 65s !important; }
 }
-.announce-msg { white-space: nowrap; padding-inline: 28px; font-size: 13px; font-weight: 600; color: #fff; }
+.announce-msg { white-space: nowrap; padding-inline: 28px; font-size: 13px; font-weight: 600; color: #fff; unicode-bidi: plaintext; }
 .announce-sep { opacity: 0.55; color: rgba(255,255,255,0.85); }
 @keyframes announce-scroll {
   from { transform: translateX(0); }
