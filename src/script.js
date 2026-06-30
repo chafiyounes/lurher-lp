@@ -1130,7 +1130,12 @@
     if (!track || !marquee) return;
 
     var SPEED_PX_PER_SEC = 11;
-    var MOBILE_SPEED_PX_PER_SEC = 2.5;  // phones (<=600px). CONSTANT px/sec => same speed in every language (no slowdown on toggle). Bigger = faster.
+    // Phone marquee speed knob: MOBILE_REF_DURATION = seconds for one Arabic-width
+    // loop (bigger = SLOWER). Speed is derived as a CONSTANT px/sec from a fixed
+    // reference width, so the visual speed is the SAME in both languages (no toggle
+    // slowdown) while you still tune a simple "seconds" number.
+    var MOBILE_REF_WIDTH = 782;
+    var MOBILE_REF_DURATION = 225;
     var lastViewportWidth = 0;
 
     function getUnitHtml() {
@@ -1170,7 +1175,7 @@
       clone.setAttribute("aria-hidden", "true");
       track.appendChild(clone);
 
-      var speed = vw <= 600 ? MOBILE_SPEED_PX_PER_SEC : SPEED_PX_PER_SEC;
+      var speed = vw <= 600 ? (MOBILE_REF_WIDTH / MOBILE_REF_DURATION) : SPEED_PX_PER_SEC;
       var duration = Math.max(96, Math.round(groupWidth / speed));
       track.style.setProperty("--announce-duration", duration + "s");
       track.classList.add("is-ready");
