@@ -1870,9 +1870,9 @@ button.btn-primary .material-symbols-outlined {
    so motion is predictable in BOTH languages:
      announce-scroll (default)      = scroll LEFT  = right-to-left
      + animation-direction:reverse  = scroll RIGHT = left-to-right
-   Arabic (RTL page): left-to-right -> reverse.
-   French (LTR page): right-to-left -> keep default (no reverse). */
-.app[dir="rtl"] .announce-marquee-track.is-ready { animation-direction: reverse; }
+   Arabic (RTL page): right-to-left -> keep default (no reverse).
+   French (LTR page): left-to-right -> reverse. */
+.app[dir="ltr"] .announce-marquee-track.is-ready { animation-direction: reverse; }
 /* Marquee speed lives in script.js (MOBILE_SPEED_PX_PER_SEC) as constant px/sec,
    so the speed is the SAME in every language. A fixed animation-duration here would
    make AR/FR scroll at different speeds (the toggle-slowdown bug) — do NOT add one. */
