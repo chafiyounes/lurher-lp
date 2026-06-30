@@ -1863,7 +1863,7 @@ button.btn-primary .material-symbols-outlined {
 }
 .announce-marquee-track.is-ready {
   animation: announce-scroll linear infinite;
-  animation-duration: var(--announce-duration, 50s);
+  animation-duration: var(--announce-duration, 100s);
 }
 .announce-group { display: flex; flex: 0 0 auto; align-items: center; }
 /* The marquee is forced to an LTR physical layout (.announce-marquee direction:ltr),
