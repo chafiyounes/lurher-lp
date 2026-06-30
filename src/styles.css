@@ -1867,6 +1867,12 @@ button.btn-primary .material-symbols-outlined {
 }
 .announce-group { display: flex; flex: 0 0 auto; align-items: center; }
 .app[dir="rtl"] .announce-marquee-track.is-ready { animation-name: announce-scroll-rtl; }
+/* French (LTR): slide left-to-right. Reversing the same keyframe keeps the loop seamless. */
+.app[dir="ltr"] .announce-marquee-track.is-ready { animation-direction: reverse; }
+/* Phone-only marquee speed: one full loop every 50s (desktop keeps the JS-computed speed). */
+@media (max-width: 600px) {
+  .announce-marquee-track.is-ready { animation-duration: 50s !important; }
+}
 .announce-msg { white-space: nowrap; padding-inline: 28px; font-size: 13px; font-weight: 600; color: #fff; }
 .announce-sep { opacity: 0.55; color: rgba(255,255,255,0.85); }
 @keyframes announce-scroll {

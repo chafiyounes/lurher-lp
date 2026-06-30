@@ -5,14 +5,14 @@
   var I18N = {
 
     announce: {
-      ar: "✓ الدفع عند الاستلام · 🚚 توصيل مجاني في كل المغرب",
-      en: "✓ Cash on delivery · 🚚 Free shipping across Morocco",
-      fr: "✓ Paiement à la livraison · 🚚 Livraison gratuite partout au Maroc"
+      ar: "✓ الدفع عند الاستلام · توصيل مجاني في كل المغرب",
+      en: "✓ Cash on delivery · Free shipping across Morocco",
+      fr: "✓ Paiement à la livraison · Livraison gratuite partout au Maroc"
     },
     announce_stock: {
-      ar: "🔥 ما بقاوش غير <strong>{n}</strong> قطعة",
-      en: "🔥 Only <strong>{n}</strong> pieces left",
-      fr: "🔥 Plus que <strong>{n}</strong> pièces"
+      ar: "ما بقاوش غير <strong>{n}</strong> قطعة",
+      en: "Only <strong>{n}</strong> pieces left",
+      fr: "Plus que <strong>{n}</strong> pièces"
     },
     nav_shop: { ar: "اطلب الآن", en: "Order Now", fr: "Commander" },
     brand_sub: { ar: "PARFUM", en: "PARFUM", fr: "PARFUM" },
@@ -40,9 +40,9 @@
     trust_cod: { ar: "الدفع عند الاستلام", en: "Cash on Delivery", fr: "Paiement à la livraison" },
 
     gift_note: {
-      ar: "🎁 مع كل طلب: 10ml هدية مجانية",
-      en: "🎁 With every order: free 10ml gift",
-      fr: "🎁 Avec chaque commande : 10ml offert en cadeau"
+      ar: "مع كل طلب: 10ml هدية مجانية",
+      en: "With every order: free 10ml gift",
+      fr: "Avec chaque commande : 10ml offert en cadeau"
     },
     price_subnote: {
       ar: "فخامة عطور بأكثر من 1000 درهم — بـ 189 درهم",
@@ -150,7 +150,7 @@
     box_1_sub: { ar: "50ml — قوي ومغناطيسي", en: "50ml — powerful and magnetic", fr: "50ml — puissant et magnétique" },
     box_2_title: { ar: "10ml — هدية مجانية", en: "10ml — free gift", fr: "10ml — cadeau offert" },
     box_2_sub: { ar: "مفاجأة حصرية مع كل طلب", en: "An exclusive surprise with every order", fr: "Une surprise exclusive avec chaque commande" },
-    box_cta: { ar: "🛒 اطلب الآن", en: "🛒 Order now", fr: "🛒 Commander" },
+    box_cta: { ar: "اطلب الآن", en: "Order now", fr: "Commander" },
     box_foot: { ar: "الزوج كامل بـ 189 درهم فقط", en: "Both together for only 189 DH", fr: "Les deux ensemble pour seulement 189 DH" },
 
     rev_eyebrow: { ar: "آراء الزبناء", en: "Customer reviews", fr: "Avis clients" },
@@ -165,9 +165,9 @@
     rev1_name: { ar: "يوسف", en: "Youssef", fr: "Youssef" },
     rev1_city: { ar: "الدار البيضاء", en: "Casablanca", fr: "Casablanca" },
     rev1_text: {
-      ar: "وصلني فيومين. العطر خطير وكيدوم. مراتي سولاتني أشنو حاطط 😅",
-      en: "Delivered in two days. The perfume is incredible and it lasts. My wife asked what I was wearing 😅",
-      fr: "Livré en deux jours. Le parfum est incroyable et il tient. Ma femme m'a demandé ce que je portais 😅"
+      ar: "وصلني فيومين. العطر خطير وكيدوم. مراتي سولاتني أشنو حاطط",
+      en: "Delivered in two days. The perfume is incredible and it lasts. My wife asked what I was wearing",
+      fr: "Livré en deux jours. Le parfum est incroyable et il tient. Ma femme m'a demandé ce que je portais"
     },
     rev2_name: { ar: "أنس", en: "Anas", fr: "Anas" },
     rev2_city: { ar: "مراكش", en: "Marrakech", fr: "Marrakech" },
@@ -212,8 +212,8 @@
       en: "Lure Her 50ml + free 10ml gift · 250 DH → 189 DH · Cash on delivery · Free shipping",
       fr: "Lure Her 50ml + 10ml offert · 250 DH → 189 DH · Paiement à la livraison · Livraison gratuite"
     },
-    fcta_cta: { ar: "🛒 اطلب الآن", en: "🛒 ORDER", fr: "🛒 COMMANDER" },
-    fcta_stock: { ar: "🔥 ما بقاوش غير 30 قطعة", en: "🔥 Only 30 pieces left", fr: "🔥 Plus que 30 pièces" },
+    fcta_cta: { ar: "اطلب الآن", en: "ORDER", fr: "COMMANDER" },
+    fcta_stock: { ar: "ما بقاوش غير 30 قطعة", en: "Only 30 pieces left", fr: "Plus que 30 pièces" },
 
     faq_eyebrow: { ar: "أسئلة شائعة", en: "FAQ", fr: "FAQ" },
     faq_title: { ar: "كل ما خصك تعرف قبل ما تطلب", en: "Everything to know before ordering", fr: "Tout savoir avant de commander" },
