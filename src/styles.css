@@ -1873,10 +1873,9 @@ button.btn-primary .material-symbols-outlined {
    Arabic (RTL page): left-to-right -> reverse.
    French (LTR page): right-to-left -> keep default (no reverse). */
 .app[dir="rtl"] .announce-marquee-track.is-ready { animation-direction: reverse; }
-/* Phone marquee speed: fixed 215s per loop (the pace the owner tuned). */
-@media (max-width: 600px) {
-  .announce-marquee-track.is-ready { animation-duration: 215s !important; }
-}
+/* Marquee speed lives in script.js (MOBILE_SPEED_PX_PER_SEC) as constant px/sec,
+   so the speed is the SAME in every language. A fixed animation-duration here would
+   make AR/FR scroll at different speeds (the toggle-slowdown bug) — do NOT add one. */
 .announce-msg { white-space: nowrap; padding-inline: 28px; font-size: 13px; font-weight: 600; color: #fff; unicode-bidi: plaintext; }
 .announce-sep { opacity: 0.55; color: rgba(255,255,255,0.85); }
 @keyframes announce-scroll {
