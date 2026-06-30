@@ -1870,12 +1870,12 @@ button.btn-primary .material-symbols-outlined {
    so motion is predictable in BOTH languages:
      announce-scroll (default)      = scroll LEFT  = right-to-left
      + animation-direction:reverse  = scroll RIGHT = left-to-right
-   Arabic (RTL page): right-to-left -> keep default (no reverse).
-   French (LTR page): left-to-right -> reverse. */
-.app[dir="ltr"] .announce-marquee-track.is-ready { animation-direction: reverse; }
+   Arabic (RTL page): left-to-right -> reverse.
+   French (LTR page): right-to-left -> keep default (no reverse). */
+.app[dir="rtl"] .announce-marquee-track.is-ready { animation-direction: reverse; }
 /* Phone-only marquee speed: one full loop every 50s (desktop keeps the JS-computed speed). */
 @media (max-width: 600px) {
-  .announce-marquee-track.is-ready { animation-duration: 65s !important; }
+  .announce-marquee-track.is-ready { animation-duration: 30s !important; }
 }
 .announce-msg { white-space: nowrap; padding-inline: 28px; font-size: 13px; font-weight: 600; color: #fff; unicode-bidi: plaintext; }
 .announce-sep { opacity: 0.55; color: rgba(255,255,255,0.85); }
