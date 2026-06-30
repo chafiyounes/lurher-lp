@@ -1129,8 +1129,7 @@
     var marquee = track && track.parentNode;
     if (!track || !marquee) return;
 
-    var SPEED_PX_PER_SEC = 11;          // desktop scroll speed
-    var MOBILE_SPEED_PX_PER_SEC = 3.6;  // phones (<=600px): slower so phrases are readable. Smaller = slower.
+    var SPEED_PX_PER_SEC = 11;
     var lastViewportWidth = 0;
 
     function getUnitHtml() {
@@ -1170,10 +1169,7 @@
       clone.setAttribute("aria-hidden", "true");
       track.appendChild(clone);
 
-      // Speed (px/sec) is constant per device class, so duration scales with
-      // content width -> the visual speed is identical in every language.
-      var speed = vw <= 600 ? MOBILE_SPEED_PX_PER_SEC : SPEED_PX_PER_SEC;
-      var duration = Math.max(96, Math.round(groupWidth / speed));
+      var duration = Math.max(96, Math.round(groupWidth / SPEED_PX_PER_SEC));
       track.style.setProperty("--announce-duration", duration + "s");
       track.classList.add("is-ready");
     }
