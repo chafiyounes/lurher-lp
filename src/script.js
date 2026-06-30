@@ -254,7 +254,23 @@
   var DEFAULT_LANG = "ar";
   var LANG_LABELS = { fr: "Français", ar: "العربية" };
 
+  // Ad-link ?lang= (e.g. ...?lang=fr) overrides any saved preference, so a
+  // French ad always lands in French even for a returning visitor.
+  function langFromUrl() {
+    try {
+      var m = /[?&]lang=([a-zA-Z]{2})/.exec(window.location.search || "");
+      if (m) {
+        var v = m[1].toLowerCase();
+        if (v === "en") return DEFAULT_LANG;
+        if (langs.indexOf(v) !== -1) return v;
+      }
+    } catch (e) {}
+    return null;
+  }
+
   function resolveInitialLang() {
+    var fromUrl = langFromUrl();
+    if (fromUrl) return fromUrl;
     try {
       var savedLang = localStorage.getItem("lureher_lang");
       if (savedLang === "en") return DEFAULT_LANG;
@@ -408,11 +424,11 @@
 
   var HERO_ASSET_VERSION = 4;
   var HERO_MANIFEST_URL =
-    "https://raw.githubusercontent.com/chafiyounes/lurher-lp/main/images/hero/manifest.json?v=" +
+    "https://cdn.jsdelivr.net/gh/chafiyounes/lurher-lp@main/images/hero/manifest.json?v=" +
     HERO_ASSET_VERSION;
 
   var HERO_MANIFEST_FALLBACK = {
-    baseUrl: "https://raw.githubusercontent.com/chafiyounes/lurher-lp/main/images/hero/",
+    baseUrl: "https://cdn.jsdelivr.net/gh/chafiyounes/lurher-lp@main/images/hero/",
     slides: [
       {
         id: "brand",
