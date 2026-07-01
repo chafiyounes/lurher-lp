@@ -55,9 +55,9 @@
       fr: "Avec chaque commande : 10ml offert en cadeau"
     },
     price_subnote: {
-      ar: "فخامة عطور بأكثر من 1000 درهم — بـ 189 درهم",
-      en: "The luxury of 1,000+ DH perfumes — for 189 DH",
-      fr: "Le luxe des parfums à plus de 1 000 DH — pour 189 DH"
+      ar: "فخامة عطور بأكثر من 1000 درهم — بـ 189 درهم<br><strong class='subnote-gift'>ديكانت عطر فاخر هدية مع كل طلب هذا الأسبوع!</strong>",
+      en: "The luxury of 1,000+ DH perfumes — for 189 DH<br><strong class='subnote-gift'>A FREE premium decant perfume with every order this week!</strong>",
+      fr: "Le luxe des parfums à plus de 1 000 DH — pour 189 DH<br><strong class='subnote-gift'>Un décant premium OFFERT avec chaque commande cette semaine !</strong>"
     },
     savings_tag: { ar: "وفّرت 61 درهم", en: "You save 61 DH", fr: "Économisez 61 DH" },
 

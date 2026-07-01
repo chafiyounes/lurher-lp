@@ -2495,6 +2495,13 @@ button.btn-primary .material-symbols-outlined {
   color: var(--muted, #7a6f63);
   letter-spacing: 0.01em;
 }
+.subnote-gift {
+  display: inline-block;
+  margin-top: 5px;
+  color: var(--primary-dark);
+  font-weight: 800;
+  font-size: 13px;
+}
 
 /* Hero copy block (sits with the form, after the images on mobile) */
 /* Hero copy block — above carousel on mobile */
