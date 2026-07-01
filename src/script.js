@@ -1137,6 +1137,7 @@
     }
 
     function buildLayout() {
+      track.classList.remove("is-ready");
       var vw = marquee.clientWidth || window.innerWidth || 360;
       lastViewportWidth = vw;
       var unitHtml = getUnitHtml();
@@ -1160,17 +1161,37 @@
       var speed = vw <= 600 ? (MOBILE_REF_WIDTH / MOBILE_REF_DURATION) : SPEED_PX_PER_SEC;
       var duration = Math.max(96, Math.round(groupWidth / speed));
       track.style.setProperty("--announce-duration", duration + "s");
+      void track.offsetWidth;
       track.classList.add("is-ready");
+    }
+
+    function scheduleBuildLayout() {
+      requestAnimationFrame(function () {
+        requestAnimationFrame(buildLayout);
+      });
+    }
+
+    function initAnnounceLayout() {
+      var run = function () { scheduleBuildLayout(); };
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(function () {
+          run();
+          setTimeout(run, 350);
+        }).catch(run);
+      } else {
+        run();
+        setTimeout(run, 350);
+      }
     }
 
     function refreshAnnounceContent() {
       // Rebuild from scratch so a language switch re-renders all 4 phrases
       // (the spans are generated, not data-i18n-tagged).
-      buildLayout();
+      scheduleBuildLayout();
     }
 
-    buildLayout();
-    window.__V34_REBUILD_MARQUEE = buildLayout;
+    initAnnounceLayout();
+    window.__V34_REBUILD_MARQUEE = scheduleBuildLayout;
     window.__V34_REFRESH_ANNOUNCE = refreshAnnounceContent;
 
     var t;
@@ -1179,7 +1200,7 @@
       t = setTimeout(function () {
         var vw = marquee.clientWidth || window.innerWidth || 360;
         if (Math.abs(vw - lastViewportWidth) < 48) return;
-        buildLayout();
+        scheduleBuildLayout();
       }, 350);
     }, { passive: true });
   }
