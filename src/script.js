@@ -432,7 +432,7 @@
     }
   });
 
-  var HERO_ASSET_VERSION = 4;
+  var HERO_ASSET_VERSION = 5;
   var HERO_MANIFEST_URL =
     "https://cdn.jsdelivr.net/gh/chafiyounes/lurher-lp@main/images/hero/manifest.json?v=" +
     HERO_ASSET_VERSION;
@@ -441,34 +441,22 @@
     baseUrl: "https://cdn.jsdelivr.net/gh/chafiyounes/lurher-lp@main/images/hero/",
     slides: [
       {
-        id: "brand",
-        image: "00-brand.png",
-        thumb: "00-brand.png",
-        alt: { ar: "Lure Her — عطر يأسر الأنظار", en: "Lure Her — irresistible men's perfume", fr: "Lure Her — le parfum irrésistible" }
+        id: "couple",
+        image: "couple.webp",
+        thumb: "couple.webp",
+        alt: { ar: "رجل يضع عطر Lure Her وامرأة تنجذب لرائحته", en: "Man wearing Lure Her, woman drawn to his scent", fr: "Homme portant Lure Her, femme attirée par son parfum" }
       },
       {
-        id: "main",
-        image: "01-main.png",
-        thumb: "01-main.png",
-        alt: { ar: "Lure Her — القنينة", en: "Lure Her bottle", fr: "Flacon Lure Her" }
+        id: "splash",
+        image: "splash.webp",
+        thumb: "splash.webp",
+        alt: { ar: "عطر Lure Her مع علبته", en: "Lure Her perfume with its box", fr: "Le parfum Lure Her avec son coffret" }
       },
       {
-        id: "lifestyle",
-        image: "02-lifestyle.png",
-        thumb: "02-lifestyle.png",
-        alt: { ar: "حضور وجاذبية مع Lure Her", en: "Presence with Lure Her", fr: "Présence avec Lure Her" }
-      },
-      {
-        id: "product",
-        image: "03-product.png",
-        thumb: "03-product.png",
-        alt: { ar: "العطر مع علبته", en: "Perfume with its box", fr: "Le parfum avec son coffret" }
-      },
-      {
-        id: "gift",
-        image: "04-gift.png",
-        thumb: "04-gift.png",
-        alt: { ar: "Lure Her 50ml + هدية", en: "Lure Her 50ml + gift", fr: "Lure Her 50ml + cadeau" }
+        id: "decante",
+        image: "decante.webp",
+        thumb: "decante.webp",
+        alt: { ar: "Lure Her 50ml مع عيّنة", en: "Lure Her 50ml with a sample", fr: "Lure Her 50ml avec un échantillon" }
       }
     ]
   };
