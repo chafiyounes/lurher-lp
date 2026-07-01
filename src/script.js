@@ -432,7 +432,7 @@
     }
   });
 
-  var HERO_ASSET_VERSION = 5;
+  var HERO_ASSET_VERSION = 6;
   var HERO_MANIFEST_URL =
     "https://cdn.jsdelivr.net/gh/chafiyounes/lurher-lp@main/images/hero/manifest.json?v=" +
     HERO_ASSET_VERSION;
@@ -452,12 +452,6 @@
         thumb: "splash.webp",
         alt: { ar: "عطر Lure Her مع علبته", en: "Lure Her perfume with its box", fr: "Le parfum Lure Her avec son coffret" }
       },
-      {
-        id: "decante",
-        image: "decante.webp",
-        thumb: "decante.webp",
-        alt: { ar: "Lure Her 50ml مع عيّنة", en: "Lure Her 50ml with a sample", fr: "Lure Her 50ml avec un échantillon" }
-      }
     ]
   };
 
