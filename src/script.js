@@ -458,7 +458,7 @@
 
   var HERO_ASSET_VERSION = 9;
   var HERO_MANIFEST_URL =
-    "https://cdn.jsdelivr.net/gh/chafiyounes/lurher-lp@main/images/hero/manifest.json?v=" +
+    "https://raw.githubusercontent.com/chafiyounes/lurher-lp/main/images/hero/manifest.json?v=" +
     HERO_ASSET_VERSION;
 
   var HERO_MANIFEST_FALLBACK = {
