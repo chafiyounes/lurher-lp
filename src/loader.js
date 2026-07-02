@@ -20,7 +20,7 @@
 
   var REPO = "chafiyounes/lurher-lp";
   var BRANCH = "main";
-  var LOADER_VERSION = "lureher-v2-0";
+  var LOADER_VERSION = "lureher-v3-0";
 
   // jsDelivr uses @branch; raw uses /branch/ — note the different shape.
   var CDN_BASE = "https://cdn.jsdelivr.net/gh/" + REPO + "@" + BRANCH + "/";
@@ -147,13 +147,14 @@
 
   injectSeoMeta();
 
-  // raw.githubusercontent honors ?t= to bust caches; jsDelivr ignores query
-  // strings (purge via purge.jsdelivr.net instead), so we only append for raw.
+  // jsDelivr ignores ?t= and can serve stale @main for hours after a push.
+  // Fetch from raw first (cache-busted) so script/style changes land immediately;
+  // fall back to jsDelivr if raw is rate-limited or down.
   var cacheBuster = "?t=" + new Date().getTime();
 
-  console.log("[V34 Loader] v" + LOADER_VERSION + " → primary " + CDN_BASE);
+  console.log("[V34 Loader] v" + LOADER_VERSION + " → primary raw, fallback " + CDN_BASE);
 
-  // ---- 2. Fetch one file: try jsDelivr, fall back to raw on any error ----
+  // ---- 2. Fetch one file: try raw (fresh), fall back to jsDelivr ----
   function fetchFile(relPath) {
     function get(base, bust) {
       return fetch(base + relPath + (bust ? cacheBuster : "")).then(function (r) {
@@ -161,9 +162,9 @@
         return r.text();
       });
     }
-    return get(CDN_BASE, false).catch(function (e) {
-      console.warn("[V34 Loader] jsDelivr miss for " + relPath + " → raw fallback:", e.message);
-      return get(RAW_BASE, true);
+    return get(RAW_BASE, true).catch(function (e) {
+      console.warn("[V34 Loader] raw miss for " + relPath + " → jsDelivr fallback:", e.message);
+      return get(CDN_BASE, false);
     });
   }
 

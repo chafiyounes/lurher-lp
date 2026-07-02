@@ -1157,13 +1157,9 @@
     var marquee = track && track.parentNode;
     if (!track || !marquee) return;
 
+    var MARQUEE_BUILD_ID = "v3-raw-speed";
     var SPEED_PX_PER_SEC = 44;
-    // Phone marquee speed knob: MOBILE_REF_DURATION = seconds for one Arabic-width
-    // loop (bigger = SLOWER). Speed is derived as a CONSTANT px/sec from a fixed
-    // reference width, so the visual speed is the SAME in both languages (no toggle
-    // slowdown) while you still tune a simple "seconds" number.
-    var MOBILE_REF_WIDTH = 782;
-    var MOBILE_REF_DURATION = 56;
+    var DURATION_FLOOR_SEC = 12;
     var lastViewportWidth = 0;
 
     function getUnitHtml() {
@@ -1192,23 +1188,61 @@
       group.innerHTML = unitHtml;
       track.innerHTML = "";
       track.appendChild(group);
+      void group.offsetWidth;
 
       var guard = 0;
-      while (group.scrollWidth < vw + 80 && guard < 40) {
+      while (group.scrollWidth > 0 && group.scrollWidth < vw + 80 && guard < 12) {
         group.insertAdjacentHTML("beforeend", unitHtml);
         guard++;
       }
 
       var groupWidth = group.scrollWidth;
+      if (!groupWidth) {
+        // #region agent log
+        fetch('http://127.0.0.1:7455/ingest/95e2fb0a-dd3f-4b7b-b7d2-d4a71c559484',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'0f29fb'},body:JSON.stringify({sessionId:'0f29fb',location:'script.js:buildLayout',message:'marquee zero width defer',data:{MARQUEE_BUILD_ID:MARQUEE_BUILD_ID,vw:vw,guard:guard},timestamp:Date.now(),hypothesisId:'H4'})}).catch(function(){});
+        // #endregion
+        setTimeout(scheduleBuildLayout, 120);
+        return;
+      }
+
       var clone = group.cloneNode(true);
       clone.setAttribute("aria-hidden", "true");
       track.appendChild(clone);
 
-      var speed = vw <= 600 ? (MOBILE_REF_WIDTH / MOBILE_REF_DURATION) : SPEED_PX_PER_SEC;
-      var duration = Math.max(24, Math.round(groupWidth / speed));
+      var speed = SPEED_PX_PER_SEC;
+      var rawDuration = Math.round(groupWidth / speed);
+      var duration = Math.max(DURATION_FLOOR_SEC, rawDuration);
       track.style.setProperty("--announce-duration", duration + "s");
+      track.style.animationDuration = duration + "s";
       void track.offsetWidth;
       track.classList.add("is-ready");
+
+      var computedDur = "";
+      try { computedDur = window.getComputedStyle(track).animationDuration; } catch (e) {}
+      window.__MARQUEE_DBG = {
+        buildId: MARQUEE_BUILD_ID,
+        vw: vw,
+        speed: speed,
+        groupWidth: groupWidth,
+        guard: guard,
+        rawDuration: rawDuration,
+        duration: duration,
+        hitFloor: rawDuration < DURATION_FLOOR_SEC,
+        computedAnimDuration: computedDur
+      };
+      // #region agent log
+      fetch('http://127.0.0.1:7455/ingest/95e2fb0a-dd3f-4b7b-b7d2-d4a71c559484',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'0f29fb'},body:JSON.stringify({sessionId:'0f29fb',location:'script.js:buildLayout',message:'marquee layout built',data:window.__MARQUEE_DBG,timestamp:Date.now(),hypothesisId:'H1-H5'})}).catch(function(){});
+      // #endregion
+      if (/[?&]debug=1/.test(window.location.search || "")) {
+        var box = document.getElementById("marquee-debug-box");
+        if (!box) {
+          box = document.createElement("div");
+          box.id = "marquee-debug-box";
+          box.style.cssText = "position:fixed;bottom:0;left:0;right:0;z-index:999998;background:#111;color:#0f0;font:11px/1.4 monospace;padding:6px 8px;pointer-events:none;white-space:pre-wrap;";
+          document.body.appendChild(box);
+        }
+        box.textContent = "marquee " + JSON.stringify(window.__MARQUEE_DBG);
+      }
     }
 
     function scheduleBuildLayout() {
