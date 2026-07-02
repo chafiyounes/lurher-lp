@@ -1104,6 +1104,28 @@
 .reviews-score-meta { display: flex; flex-direction: column; gap: 4px; align-items: flex-start; }
 .stars-lg { font-size: 20px; }
 .reviews-score-label { font-size: 12px; font-weight: 700; color: var(--on-muted); }
+.reviews-photo-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  max-width: 36ch;
+  margin: -12px auto 28px;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.45;
+  text-align: center;
+  color: var(--primary-dark);
+  background: var(--gold-soft);
+  border: 1px solid rgba(201, 162, 39, 0.28);
+  border-radius: 999px;
+}
+.reviews-photo-note .material-symbols-outlined {
+  flex-shrink: 0;
+  font-size: 18px;
+  color: var(--gold);
+}
 .review-verified {
   display: inline-flex; align-items: center; gap: 4px;
   font-size: 11px; font-weight: 800; color: var(--success);

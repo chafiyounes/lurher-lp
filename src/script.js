@@ -6,7 +6,7 @@
     if (document.getElementById("v34-page-fonts")) return;
     var icons =
     "block,bolt,chevron_left,chevron_right,expand_more,favorite,home,language,local_fire_department," +
-    "local_mall,local_shipping,location_on,lock,mic,payments,person,phone,published_with_changes,redeem," +
+    "local_mall,local_shipping,location_on,lock,mic,payments,person,phone,photo_camera,published_with_changes,redeem," +
       "schedule,science,spa,verified,verified_user";
     var fonts =
       "https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700" +
@@ -195,6 +195,11 @@
       fr: "+2 000 commandes livrées au Maroc"
     },
     rev_rating_label: { ar: "معدل التقييم", en: "Average rating", fr: "Note moyenne" },
+    rev_photos_note: {
+      ar: "تعليقات بصور من زبنائنا — صور حقيقية من بعد ما وصل الطلب",
+      en: "Photo reviews from our customers — real pictures after delivery",
+      fr: "Avis avec photos de nos clients — images réelles après livraison"
+    },
     rev_verified: { ar: "طلبية مؤكدة", en: "Verified order", fr: "Commande vérifiée" },
     rev1_name: { ar: "يوسف", en: "Youssef", fr: "Youssef" },
     rev1_city: { ar: "الدار البيضاء", en: "Casablanca", fr: "Casablanca" },
