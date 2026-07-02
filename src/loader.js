@@ -20,7 +20,7 @@
 
   var REPO = "chafiyounes/lurher-lp";
   var BRANCH = "main";
-  var LOADER_VERSION = "lureher-v3-0";
+  var LOADER_VERSION = "lureher-v4-0";
 
   // jsDelivr uses @branch; raw uses /branch/ — note the different shape.
   var CDN_BASE = "https://cdn.jsdelivr.net/gh/" + REPO + "@" + BRANCH + "/";
@@ -124,6 +124,39 @@
 
   window.__V34_INITIAL_LANG = detectV34Lang();
 
+  var ASSET_VERSION = "9";
+  var LCP_HERO_IMAGE = CDN_BASE + "images/hero/h-couple-v2-800.webp?v=" + ASSET_VERSION;
+  var MATERIAL_ICONS =
+    "block,bolt,chevron_left,chevron_right,expand_more,favorite,home,language,local_fire_department," +
+    "local_mall,local_shipping,location_on,lock,payments,person,phone,published_with_changes,redeem," +
+    "schedule,science,spa,verified,verified_user";
+  var FONT_STYLESHEET =
+    "https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700" +
+    "&family=Outfit:wght@400;500;600;700" +
+    "&family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600" +
+    "&family=El+Messiri:wght@500;600;700&display=swap";
+  var SYMBOLS_STYLESHEET =
+    "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" +
+    "&icon_names=" + MATERIAL_ICONS + "&display=swap";
+
+  function injectHeadResources() {
+    if (document.getElementById("v34-head-resources")) return;
+    var wrap = document.createElement("div");
+    wrap.id = "v34-head-resources";
+    wrap.innerHTML = [
+      '<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>',
+      '<link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>',
+      '<link rel="preconnect" href="https://fonts.googleapis.com">',
+      '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
+      '<link rel="preload" as="image" href="' + LCP_HERO_IMAGE + '" fetchpriority="high">',
+      '<link rel="stylesheet" href="' + FONT_STYLESHEET + '">',
+      '<link rel="stylesheet" href="' + SYMBOLS_STYLESHEET + '">'
+    ].join("");
+    while (wrap.firstChild) document.head.appendChild(wrap.firstChild);
+  }
+
+  injectHeadResources();
+
   function injectSeoMeta() {
     if (document.getElementById("v34-seo-meta")) return;
     var wrap = document.createElement("div");
@@ -132,12 +165,12 @@
       '<meta name="description" content="Lure Her — عطر فيرومونات للرجال يدوم طول النهار، جاذبية وثقة لا تُقاوَم. توصيل مجاني والدفع عند الاستلام في المغرب.">',
       '<meta property="og:title" content="Lure Her — عطر الفيرومونات للرجال">',
       '<meta property="og:description" content="رائحة فاخرة تدوم +8 ساعات وفيرومونات تزيد جاذبيتك. الدفع عند الاستلام، توصيل مجاني لكل المغرب.">',
-      '<meta property="og:image" content="' + BASE + 'images/hero/01-main.png">',
+      '<meta property="og:image" content="' + BASE + 'images/hero/h-couple-v2-800.webp?v=' + ASSET_VERSION + '">',
       '<meta property="og:type" content="product">',
       '<meta name="twitter:card" content="summary_large_image">',
       '<meta name="twitter:title" content="Lure Her — عطر الفيرومونات للرجال">',
       '<meta name="twitter:description" content="رائحة فاخرة تدوم وفيرومونات تزيد جاذبيتك — الدفع عند الاستلام.">',
-      '<meta name="twitter:image" content="' + BASE + 'images/hero/01-main.png">'
+      '<meta name="twitter:image" content="' + BASE + 'images/hero/h-couple-v2-800.webp?v=' + ASSET_VERSION + '">'
     ].join("");
     while (wrap.firstChild) document.head.appendChild(wrap.firstChild);
     if (!document.title || document.title === "test2") {
@@ -211,6 +244,8 @@
           target.innerHTML = htmlText;
 
           var earlyLang = window.__V34_INITIAL_LANG || "ar";
+          document.documentElement.setAttribute("lang", earlyLang);
+          document.documentElement.setAttribute("dir", earlyLang === "ar" ? "rtl" : "ltr");
           var appRoot = target.querySelector(".app");
           if (appRoot) {
             appRoot.setAttribute("lang", earlyLang);
