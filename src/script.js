@@ -1157,9 +1157,9 @@
     var marquee = track && track.parentNode;
     if (!track || !marquee) return;
 
-    var MARQUEE_BUILD_ID = "v4-88px";
-    var SPEED_PX_PER_SEC = 88;
-    var DURATION_FLOOR_SEC = 6;
+    var MARQUEE_BUILD_ID = "v5-70px";
+    var SPEED_PX_PER_SEC = 70;
+    var DURATION_FLOOR_SEC = 8;
     var lastViewportWidth = 0;
 
     function getUnitHtml() {

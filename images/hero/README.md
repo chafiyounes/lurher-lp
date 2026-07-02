@@ -1,33 +1,25 @@
-# Hero gallery images
+# Hero gallery
 
-The hero carousel reads [`manifest.json`](manifest.json). Four slides: **main**, **main2**, **info**, **topresults**.
+Carousel reads [`manifest.json`](manifest.json).
 
-## Slides
+## Current slides (live)
 
-| ID | Files | Language |
-|----|-------|----------|
-| `main` | `01-main.webp` | Same for AR / EN / FR |
-| `main2` | `02-main2-{ar,en,fr}.webp` | Per language |
-| `info` | `03-info-{ar,en,fr}.webp` | Per language (96% study) |
-| `topresults` | `04-topresults.webp` | Same for all |
+| ID | File | Role |
+|----|------|------|
+| `couple` | `h-couple-v2.webp` | Woman smelling man wearing Lure Her |
+| `duo` | `h-duo-v3.webp` | Lure Her + Layton decant gift |
+| `solo` | `h-solo-v2.webp` | 50ml bottle packshot |
+| `decant` | `h-decant-v2.webp` | Layton 10ml decant |
 
-Each slide has a `-thumb.webp` variant for the thumbnail row below the viewport.
+## Also on page (not in carousel)
 
-## Lang-keyed slide (manifest)
+| File | Section |
+|------|---------|
+| `01-main.png` | VS comparison — Lure Her |
+| `decante.webp` | Coffret — 50ml + gift |
 
-```json
-{
-  "id": "main2",
-  "image": { "ar": "02-main2-ar.webp", "en": "02-main2-en.webp", "fr": "02-main2-fr.webp" },
-  "thumb": { "ar": "02-main2-ar-thumb.webp", "en": "02-main2-en-thumb.webp", "fr": "02-main2-fr-thumb.webp" },
-  "alt": { "ar": "...", "en": "...", "fr": "..." }
-}
-```
+## After changes
 
-Regenerate from source assets in `images/`:
-
-```bash
-python scripts/optimize-landing-images.py
-```
-
-Push to `main` and bump `manifest.json?v=` in `src/script.js` if CDN caches stale.
+1. Update `manifest.json` if slides change
+2. Bump `HERO_ASSET_VERSION` in `src/script.js`
+3. Push `images/` to `main`
