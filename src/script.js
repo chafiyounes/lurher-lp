@@ -104,9 +104,9 @@
 
     reframe_eyebrow: { ar: "علاش حنا مختلفين", en: "Why we're different", fr: "Pourquoi nous sommes différents" },
     reframe_h: {
-      ar: "وحدة كتخدم خير من خمسة ما كيديرو والو",
-      en: "One that works beats five that do nothing",
-      fr: "Un seul qui fonctionne vaut mieux que cinq qui ne font rien"
+      ar: "وحدة كتخدم خير من خمسة ما كيريحو بوالو",
+      en: "One that works beats five that smell like nothing",
+      fr: "Un seul qui fonctionne vaut mieux que cinq qui ne sentent à rien"
     },
     reframe_p1: {
       ar: "هاد العطور الرخيصة اللي كيبيعو 5 بـ200؟ كيبانو ريحة الكحول، كيطيرو فساعة، وما كيديرو حتى تأثير.",
@@ -953,6 +953,9 @@
     var form = document.getElementById("custom-express-checkout-form");
     if (!native || !form) return;
 
+    // YouCan's native fields are Arabic. Only mirror them when the page is Arabic;
+    // otherwise keep the localized (e.g. French) placeholders from the i18n dictionary.
+    if (langs[currentLangIndex] === "ar") {
     var nativeGroups = native.querySelectorAll(".form-group");
     for (var g = 0; g < nativeGroups.length; g++) {
       var group = nativeGroups[g];
@@ -971,6 +974,7 @@
         var lbl = ourLabel.querySelector(".field-label");
         if (lbl && labelText) lbl.textContent = labelText;
       }
+    }
     }
 
     var nativeId = native.querySelector('input[name="id"]');
