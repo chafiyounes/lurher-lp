@@ -2644,14 +2644,10 @@ button.btn-primary .material-symbols-outlined {
 }
 .vs-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .vs-side--win .vs-photo { box-shadow: 0 16px 40px rgba(201,162,39,.22); outline: 2px solid var(--gold); outline-offset: -2px; }
-.vs-side--lose .vs-photo {
-  aspect-ratio: 3 / 4;
-  filter: none;
-}
-.vs-side--lose .vs-photo img { object-fit: cover; object-position: center top; }
+.vs-side--lose .vs-photo { filter: grayscale(.35) brightness(.9); }
 .vs-side--lose .vs-photo::after {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(20,18,16,0) 55%, rgba(20,18,16,.22));
+  background: linear-gradient(180deg, rgba(20,18,16,0) 40%, rgba(20,18,16,.35));
 }
 .vs-cap {
   display: block; margin-top: 10px;
