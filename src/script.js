@@ -55,14 +55,16 @@
       fr: "Avec chaque commande : 10ml offert en cadeau"
     },
     price_subnote: {
-      ar: "فخامة عطور بأكثر من 1000 درهم — بـ 189 درهم<br><strong class='subnote-gift'>ديكانت عطر فاخر هدية مع كل طلب هذا الأسبوع!</strong>",
-      en: "The luxury of 1,000+ DH perfumes — for 189 DH<br><strong class='subnote-gift'>A FREE premium decant perfume with every order this week!</strong>",
-      fr: "Le luxe des parfums à plus de 1 000 DH — pour 189 DH<br><strong class='subnote-gift'>Un décant premium OFFERT avec chaque commande cette semaine !</strong>"
+      ar: "<strong class='subnote-gift'>عطر بريميوم 10مل — هدية مع كل طلب هذا الأسبوع</strong>",
+      en: "<strong class='subnote-gift'>A premium 10ml scent — free with every order this week</strong>",
+      fr: "<strong class='subnote-gift'>Un parfum premium 10ml — offert avec chaque commande cette semaine</strong>"
     },
     savings_tag: { ar: "وفّرت 61 درهم", en: "You save 61 DH", fr: "Économisez 61 DH" },
 
     ct_ship: { ar: "توصيل مجاني", en: "Free delivery", fr: "Livraison gratuite" },
     ct_guarantee: { ar: "أصلي 100%", en: "100% authentic", fr: "100% authentique" },
+    trust_shipping: { ar: "توصيل مجاني في كل المغرب", en: "Free shipping in Morocco", fr: "Livraison gratuite au Maroc" },
+    trust_gift: { ar: "عطر بريميوم هدية", en: "Free premium scent", fr: "Parfum premium offert" },
 
     tb_cod: {
       ar: "الدفع عند الاستلام — ما كتخلّص حتى يوصلك المنتج ليديك",
@@ -80,9 +82,9 @@
       fr: "Essayez en toute confiance — si le parfum ne vous plaît pas ou si vous doutez de son authenticité, vous le renvoyez, sans souci"
     },
     guarantee_title: {
-      ar: "خلّص فقط من بعد ما تشمّ",
-      en: "Pay only after you smell it",
-      fr: "Payez seulement après avoir senti"
+      ar: "شمّو قبل ما تخلّص",
+      en: "Smell it before you pay",
+      fr: "Sentez avant de payer"
     },
     guarantee_sub: {
       ar: "تشوف العطر، تشمّو، وإيلا ما عجبكش — ترجعو بلا أي مشكل. الدفع عند الاستلام.",
