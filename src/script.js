@@ -1111,13 +1111,13 @@
     var marquee = track && track.parentNode;
     if (!track || !marquee) return;
 
-    var SPEED_PX_PER_SEC = 11;
+    var SPEED_PX_PER_SEC = 22;
     // Phone marquee speed knob: MOBILE_REF_DURATION = seconds for one Arabic-width
     // loop (bigger = SLOWER). Speed is derived as a CONSTANT px/sec from a fixed
     // reference width, so the visual speed is the SAME in both languages (no toggle
     // slowdown) while you still tune a simple "seconds" number.
     var MOBILE_REF_WIDTH = 782;
-    var MOBILE_REF_DURATION = 225;
+    var MOBILE_REF_DURATION = 112;
     var lastViewportWidth = 0;
 
     function getUnitHtml() {
@@ -1159,7 +1159,7 @@
       track.appendChild(clone);
 
       var speed = vw <= 600 ? (MOBILE_REF_WIDTH / MOBILE_REF_DURATION) : SPEED_PX_PER_SEC;
-      var duration = Math.max(96, Math.round(groupWidth / speed));
+      var duration = Math.max(48, Math.round(groupWidth / speed));
       track.style.setProperty("--announce-duration", duration + "s");
       void track.offsetWidth;
       track.classList.add("is-ready");
