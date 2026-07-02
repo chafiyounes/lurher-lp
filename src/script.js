@@ -5,8 +5,8 @@
   (function injectPageFonts() {
     if (document.getElementById("v34-page-fonts")) return;
     var icons =
-      "block,bolt,chevron_left,chevron_right,expand_more,favorite,home,language,local_fire_department," +
-      "local_mall,local_shipping,location_on,lock,payments,person,phone,published_with_changes,redeem," +
+    "block,bolt,chevron_left,chevron_right,expand_more,favorite,home,language,local_fire_department," +
+    "local_mall,local_shipping,location_on,lock,mic,payments,person,phone,published_with_changes,redeem," +
       "schedule,science,spa,verified,verified_user";
     var fonts =
       "https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700" +
@@ -223,6 +223,18 @@
       ar: "حتى الهدية 10ml زوينة بزّاف — عطر راقٍ بصح. خدمة ممتازة، كننصح بيه.",
       en: "Even the 10ml gift is excellent — a truly classy perfume. Impeccable service, I recommend.",
       fr: "Même le cadeau 10ml est excellent — un parfum vraiment classe. Service impeccable, je recommande."
+    },
+    rev5_name: { ar: "سفيان .ك", en: "Sofiane K.", fr: "Sofiane K." },
+    rev5_city: { ar: "فاس", en: "Fes", fr: "Fès" },
+    rev5_text: {
+      ar: "تصويرة من بعد ما وصلني الطلب — العلبة و القنينة أصليين. ريحة كتجذب بزاف.",
+      en: "Photo right after delivery — box and bottle are genuine. The scent gets a lot of attention.",
+      fr: "Photo juste après la livraison — boîte et flacon authentiques. Le parfum attire beaucoup."
+    },
+    rev_audio_label: {
+      ar: "رسالة صوتية من الزبون",
+      en: "Voice note from customer",
+      fr: "Message vocal du client"
     },
 
     form_name: { ar: "الإسم الكامل", en: "Full Name", fr: "Nom complet" },
