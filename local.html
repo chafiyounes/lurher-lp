@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lure Her — LOCAL preview</title>
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+  // LOCAL dev preview: loads the repo's src/ + images/ straight off this local
+  // server with cache-busting, so what you see is ALWAYS the current code on disk
+  // (no jsDelivr, no browser cache, no propagation lag). Just refresh to see edits.
+  (function () {
+    var cb = "?cb=" + Date.now();
+    var F = { css: "src/styles.css" + cb, html: "src/page.html" + cb, js: "src/script.js" + cb };
+    Promise.all([
+      fetch(F.css).then(function (r) { return r.text(); }),
+      fetch(F.html).then(function (r) { return r.text(); }),
+      fetch(F.js).then(function (r) { return r.text(); })
+    ]).then(function (R) {
+      var s = document.createElement("style"); s.textContent = R[0]; document.head.appendChild(s);
+      // point all jsDelivr asset URLs at the local server (+cache-bust) so images are live too
+      var html = R[1].replace(/https:\/\/cdn\.jsdelivr\.net\/gh\/chafiyounes\/lurher-lp@main\/([^"')\s]+)/g, "$1?cb=" + Date.now());
+      var d = document.createElement("div"); d.id = "v34-root"; d.innerHTML = html; document.body.appendChild(d);
+      var a = document.getElementById("app"); if (a) a.style.display = "none";
+      var sc = document.createElement("script"); sc.textContent = R[2]; document.body.appendChild(sc);
+      document.body.classList.add("loader-active");
+      console.log("[LOCAL preview] loaded fresh from disk");
+    }).catch(function (e) { console.error("[LOCAL preview] failed", e); });
+  })();
+  </script>
+</body>
+</html>

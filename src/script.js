@@ -10,14 +10,14 @@
       fr: "Paiement à la livraison"
     },
     announce_ship: {
-      ar: "توصيل مجاني في كل المغرب",
+      ar: "توصيل مجاني لكل المغرب",
       en: "Free shipping across Morocco",
       fr: "Livraison gratuite partout au Maroc"
     },
     announce_stock: {
-      ar: "أقل من <strong>{n}</strong> باقة متبقية هذا الأسبوع !",
+      ar: "ما بقاو غير <strong>{n}</strong> باك هاد السيمانة",
       en: "Only <strong>{n}</strong> packs left this week!",
-      fr: "Moins de <strong>{n}</strong> packs disponibles cette semaine !"
+      fr: "Plus que <strong>{n}</strong> packs cette semaine !"
     },
     announce_order: {
       ar: "اطلب باقتك الآن",
@@ -28,20 +28,30 @@
     brand_sub: { ar: "PARFUM", en: "PARFUM", fr: "PARFUM" },
 
     home_hero_h: { ar: "Lure Her", en: "Lure Her", fr: "Lure Her" },
-    home_hero_sub: { ar: "العطر اللي ما غاديش تقدر تقاوموا.", en: "The perfume she won't be able to resist.", fr: "Le parfum auquel elle ne pourra pas résister." },
+    home_hero_sub: { ar: "العطر اللي ما غاتقدرش تقاومو.", en: "The perfume she won't be able to resist.", fr: "Le parfum auquel elle ne pourra pas résister." },
     home_cta: { ar: "اكتشف العطر", en: "Discover the scent", fr: "Découvrir le parfum" },
 
     hero_badge: { ar: "Lure Her", en: "Lure Her", fr: "Lure Her" },
 
     land_hero_h: {
-      ar: "العطر اللي ما غاديش تقدر تقاوموا",
-      en: "The perfume she won't be able to resist",
-      fr: "Le parfum auquel elle ne pourra pas résister"
+      ar: "باك العطر اللي غادي يخلّيها ما تقدرش تقاومك",
+      en: "With this perfume pack, she won't be able to resist you",
+      fr: "Avec ce pack de parfum, elle ne pourra plus vous résister"
     },
     land_hero_sub: {
-      ar: "عطر مغناطيسي — حصري، قوي ومثير للإغراء.",
-      en: "A magnetic scent — exclusive, powerful and irresistible.",
-      fr: "Un parfum magnétique — exclusif, puissant et irrésistible."
+      ar: "الريحة اللي غادي تسمع عليها 1000 مجاملة.",
+      en: "The scent you'll hear 1,000 compliments about.",
+      fr: "Le parfum qui vous vaudra 1000 compliments."
+    },
+    hero_offer: {
+      ar: "50ml + Layton 10ml هدية · 189 درهم بلاصة 250",
+      en: "50ml + free Layton 10ml · 189 DH instead of 250",
+      fr: "50ml + Layton 10ml offert · 189 DH au lieu de 250"
+    },
+    offer_name: {
+      ar: "Lure Her 50ml + Layton 10ml أصلي",
+      en: "Lure Her 50ml + original Layton 10ml",
+      fr: "Lure Her 50ml + Layton 10ml original"
     },
 
     trust_attract: { ar: "يلفت الأنظار", en: "Turns heads", fr: "Attire les regards" },
@@ -54,17 +64,11 @@
       en: "With every order: free 10ml gift",
       fr: "Avec chaque commande : 10ml offert en cadeau"
     },
-    price_subnote: {
-      ar: "<strong class='subnote-gift'>عطر بريميوم 10مل — هدية مع كل طلب هذا الأسبوع</strong>",
-      en: "<strong class='subnote-gift'>A premium 10ml scent — free with every order this week</strong>",
-      fr: "<strong class='subnote-gift'>Un parfum premium 10ml — offert avec chaque commande cette semaine</strong>"
-    },
     savings_tag: { ar: "وفّرت 61 درهم", en: "You save 61 DH", fr: "Économisez 61 DH" },
 
     ct_ship: { ar: "توصيل مجاني", en: "Free delivery", fr: "Livraison gratuite" },
-    ct_guarantee: { ar: "أصلي 100%", en: "100% authentic", fr: "100% authentique" },
+    ct_guarantee: { ar: "جوج عطور أصلية 100%", en: "2 original perfumes", fr: "2 parfums 100% originaux" },
     trust_shipping: { ar: "توصيل مجاني في كل المغرب", en: "Free shipping in Morocco", fr: "Livraison gratuite au Maroc" },
-    trust_gift: { ar: "عطر بريميوم هدية", en: "Free premium scent", fr: "Parfum premium offert" },
 
     tb_cod: {
       ar: "الدفع عند الاستلام — ما كتخلّص حتى يوصلك المنتج ليديك",
@@ -87,9 +91,9 @@
       fr: "Sentez avant de payer"
     },
     guarantee_sub: {
-      ar: "تشوف العطر، تشمّو، وإيلا ما عجبكش — ترجعو بلا أي مشكل. الدفع عند الاستلام.",
-      en: "See it, smell it, and if you don't like it — send it back, no hassle. Cash on delivery.",
-      fr: "Vous le voyez, vous le sentez, et s'il ne vous plaît pas — vous le retournez, sans souci. Paiement à la livraison."
+      ar: "شمّو، وإيلا ما عجبكش رجّعو بلا مشكل — كتخلّص غير عند الاستلام.",
+      en: "Smell it — if you don't like it, send it back. You only pay on delivery.",
+      fr: "Sentez-le — s'il ne vous plaît pas, retournez-le. Vous ne payez qu'à la livraison."
     },
     guarantee_meta_1: {
       ar: "توصيل من 24 إلى 48 ساعة في كل المغرب",
@@ -103,10 +107,15 @@
     },
 
     reframe_eyebrow: { ar: "علاش حنا مختلفين", en: "Why we're different", fr: "Pourquoi nous sommes différents" },
-    reframe_h: {
-      ar: "وحدة كتخدم خير من خمسة ما كيريحو بوالو",
-      en: "One that works beats five that smell like nothing",
-      fr: "Un seul qui fonctionne vaut mieux que cinq qui ne sentent à rien"
+    reframe_h_win: {
+      ar: "وحدة كتدير التأثير",
+      en: "One that works",
+      fr: "Un qui fait effet"
+    },
+    reframe_h_lose: {
+      ar: "خمسة ما كيريحو والو",
+      en: "Five that smell like nothing",
+      fr: "Cinq qui ne sentent rien"
     },
     reframe_p1: {
       ar: "هاد العطور الرخيصة اللي كيبيعو 5 بـ200؟ كيبانو ريحة الكحول، كيطيرو فساعة، وما كيديرو حتى تأثير.",
@@ -119,35 +128,24 @@
       fr: "Nous avons fait l'inverse. Une formule exclusive à forte concentration d'huiles — un seul flacon qui fait vraiment effet."
     },
     reframe_p3: {
-      ar: "ماشي مسألة كمية. مسألة عطر كيدير تأثير بصح.",
-      en: "It was never about quantity. It's about a perfume that actually works.",
-      fr: "Ce n'a jamais été une question de quantité. C'est une question de parfum qui fait vraiment effet."
+      ar: "ماشي الكمية اللي مهمة — التأثير.",
+      en: "It's not about quantity — it's about effect.",
+      fr: "Pas une question de quantité — une question d'effet."
     },
     vs_us_label: { ar: "Lure Her", en: "Lure Her", fr: "Lure Her" },
-    vs_them_label: { ar: "المقلّدات والعطور الرخيصة 5 بـ200", en: "Fakes & cheap perfumes, 5 for 200", fr: "Contrefaçons & parfums 5 pour 200" },
+    vs_them_label: { ar: "5 عطور مقلّدة بـ 200 درهم", en: "5 fakes for 200 DH", fr: "5 faux produits pour 200 DH" },
     vs_them_short: { ar: "الباقي", en: "The rest", fr: "Les autres" },
     vs_f1: { ar: "تركيز عالي من الزيوت الأصلية", en: "High concentration of authentic oils", fr: "Forte concentration d'huiles authentiques" },
     vs_f2: { ar: "ثبات يدوم طول اليوم", en: "Lasts all day long", fr: "Tient toute la journée" },
-    vs_f3: { ar: "شعار مطبوع على القنينة (ماشي ستيكر)", en: "Logo printed on the bottle (not a sticker)", fr: "Logo imprimé sur le flacon (pas un autocollant)" },
-    vs_f4: { ar: "10ml هدية مع كل طلب", en: "Free 10ml gift with every order", fr: "10ml offert avec chaque commande" },
-
-    ben_eyebrow: { ar: "الفوائد", en: "The benefits", fr: "Les bénéfices" },
-    land_benefits_h: { ar: "شنو كيوفّر ليك Lure Her", en: "What Lure Her gives you", fr: "Ce que Lure Her vous apporte" },
-    ben_1: { ar: "عطر ما يتقاومش", en: "An irresistible scent", fr: "Un parfum irrésistible" },
-    ben_1_sub: { ar: "فوحان كيخلّي الناس يسولوك شنو حاطط.", en: "A sillage that makes people ask what you're wearing.", fr: "Un sillage qui fait demander ce que vous portez." },
-    ben_2: { ar: "ثقة من أول رشّة", en: "Confidence from the first spray", fr: "Confiance dès la première vaporisation" },
-    ben_2_sub: { ar: "كتحسّ بالفرق من اللحظة اللي كترشّو.", en: "You feel the difference the moment you spray.", fr: "Vous sentez la différence dès la vaporisation." },
-    ben_3: { ar: "رجولي، منعش وراقٍ", en: "Masculine, fresh and refined", fr: "Masculin, frais et raffiné" },
-    ben_3_sub: { ar: "فورمولة حصرية بتركيز عالي.", en: "An exclusive high-concentration formula.", fr: "Une formule exclusive à forte concentration." },
-    ben_4: { ar: "التأثير الحقيقي فالعناق", en: "The real effect, in the embrace", fr: "Le vrai effet, dans l'étreinte" },
-    ben_4_sub: { ar: "مصمّم للحظات القريبة اللي كتبقى فالذاكرة.", en: "Made for the close moments that stay in memory.", fr: "Conçu pour les moments rapprochés qui marquent." },
+    vs_f3: { ar: "شعار مطبوع على القنينة (ماشي ستيكر)", en: "Logo printed on the bottle (not a label)", fr: "Logo imprimé sur le flacon (pas une étiquette)" },
+    vs_f4: { ar: "عطر Layton أصلي هدية مع كل طلب هاد السيمانة", en: "Original Layton perfume free with every order this week", fr: "Layton original offert avec chaque commande cette semaine" },
 
     proof_eyebrow: { ar: "الجودة والإثبات", en: "Proof & quality", fr: "Preuves & qualité" },
     proof_h: { ar: "الجودة اللي ما تبانش من الشاشة", en: "Quality you can't judge on a screen", fr: "La vraie qualité — impossible à juger sur écran" },
     proof_1: {
-      ar: "شعار UV DTF مطبوع على القنينة — ماشي ستيكر كيتقلّع بحال المقلّد",
-      en: "UV DTF logo printed on the bottle — not a sticker that peels like the fakes",
-      fr: "Logo UV DTF imprimé sur le flacon — pas un autocollant qui se décolle comme les contrefaçons"
+      ar: "شعار UV مطبوع فالقنينة — ماشي ستيكر كيتقلّع.",
+      en: "UV logo printed on the bottle — not a label that peels off.",
+      fr: "Logo UV imprimé sur le flacon — pas une étiquette qui se décolle."
     },
     proof_2: {
       ar: "تركيز عالي من الزيوت الأصلية = كيدوم طول اليوم",
@@ -155,15 +153,35 @@
       fr: "Forte concentration d'huiles authentiques = tient toute la journée"
     },
     proof_4: { ar: "بلا ريحة الكحول", en: "No alcohol smell", fr: "Sans odeur d'alcool" },
+    proof_attn: {
+      ar: "كتولي نتا اللي عليه الهضرة — الناس كيسولوك شنو حاطط",
+      en: "You become the center of attention — people ask what you're wearing",
+      fr: "Vous devenez le centre d'attention — on vous demande ce que vous portez"
+    },
+    proof_close: {
+      ar: "التأثير كيبان من قريب — اللحظات القريبة كتبقى فالبال",
+      en: "The effect shows up close — moments they remember",
+      fr: "L'effet se sent de près — des moments proches inoubliables"
+    },
 
     box_eyebrow: { ar: "شنو غادي توصلك", en: "What you receive", fr: "Ce que vous recevez" },
-    box_h: { ar: "كل طلب فيه عطرين", en: "Every order contains two perfumes", fr: "Chaque commande contient deux parfums" },
+    box_h: { ar: "كل باك فيه جوج عطور", en: "Every pack contains two perfumes", fr: "Chaque pack contient deux parfums" },
     box_1_title: { ar: "Lure Her", en: "Lure Her", fr: "Lure Her" },
-    box_1_sub: { ar: "50ml — قوي ومغناطيسي", en: "50ml — powerful and magnetic", fr: "50ml — puissant et magnétique" },
-    box_2_title: { ar: "10ml — هدية مجانية", en: "10ml — free gift", fr: "10ml — cadeau offert" },
-    box_2_sub: { ar: "مفاجأة حصرية مع كل طلب", en: "An exclusive surprise with every order", fr: "Une surprise exclusive avec chaque commande" },
+    box_1_sub: {
+      ar: "قوي ومغناطيسي — فانيلا وكراميل ببداية منعشة",
+      en: "Powerful and magnetic — vanilla & caramel with a fresh opening",
+      fr: "Puissant et magnétique — vanille-caramel, départ frais"
+    },
+    box_2_title: { ar: "Layton أصلي — هدية", en: "Original Layton — free gift", fr: "Layton original — offert" },
+    box_2_sub: {
+      ar: "قيمتو 200 درهم — مع كل طلب هاد السيمانة",
+      en: "Worth 200 DH — with every order this week",
+      fr: "Valeur 200 DH — avec chaque commande cette semaine"
+    },
     box_cta: { ar: "اطلب الآن", en: "Order now", fr: "Commander" },
     box_foot: { ar: "الزوج كامل بـ 189 درهم فقط", en: "Both together for only 189 DH", fr: "Les deux ensemble pour seulement 189 DH" },
+    coffret_strike: { ar: "250 درهم", en: "250 DH", fr: "250 DH" },
+    coffret_now: { ar: "189 درهم", en: "189 DH", fr: "189 DH" },
 
     rev_eyebrow: { ar: "آراء الزبناء", en: "Customer reviews", fr: "Avis clients" },
     rev_title: { ar: "جرّبو Lure Her", en: "They tried Lure Her", fr: "Ils ont essayé Lure Her" },
@@ -172,35 +190,35 @@
       en: "+2,000 orders delivered in Morocco",
       fr: "+2 000 commandes livrées au Maroc"
     },
-    rev_rating_label: { ar: "معدل التقييم", en: "Average rating", fr: "Note moyenne" },
+    rev_rating_label: { ar: "من +300 تقييم", en: "from 300+ ratings", fr: "sur +300 avis" },
     rev_verified: { ar: "طلبية مؤكدة", en: "Verified order", fr: "Commande vérifiée" },
     rev1_name: { ar: "يوسف", en: "Youssef", fr: "Youssef" },
     rev1_city: { ar: "الدار البيضاء", en: "Casablanca", fr: "Casablanca" },
     rev1_text: {
       ar: "وصلني فيومين. العطر خطير وكيدوم. مراتي سولاتني أشنو حاطط",
-      en: "Delivered in two days. The perfume is incredible and it lasts. My wife asked what I was wearing",
-      fr: "Livré en deux jours. Le parfum est incroyable et il tient. Ma femme m'a demandé ce que je portais"
+      en: "Delivered in 2 days. It lasts — my wife asked what I was wearing.",
+      fr: "Livré en 2 jours. Il tient — ma femme m'a demandé ce que je portais."
     },
     rev2_name: { ar: "أنس", en: "Anas", fr: "Anas" },
     rev2_city: { ar: "مراكش", en: "Marrakech", fr: "Marrakech" },
     rev2_text: {
-      ar: "كنت خايف يكون بحال المنتجات الرخيصة — ولكن لا، هادا أصلي، راقٍ وكيدوم بزّاف.",
-      en: "I was afraid it'd be like the cheap products — but no, it's the real thing, refined and long-lasting.",
-      fr: "J'avais peur que ce soit comme les produits bon marché — mais non, c'est du vrai, raffiné et longue tenue."
+      ar: "كنت خايف يكون مقلّد — لا، هادا أصلي وكيدوم بزّاف.",
+      en: "I feared a fake — it's the real thing, and it lasts.",
+      fr: "Je craignais une copie — c'est du vrai, et il tient."
     },
     rev3_name: { ar: "مهدي", en: "Mehdi", fr: "Mehdi" },
     rev3_city: { ar: "طنجة", en: "Tangier", fr: "Tanger" },
     rev3_text: {
-      ar: "بزّاف ديال المجاملات فالخدمة. مستاهل الثمن بزّاف.",
-      en: "Tons of compliments at work. More than worth the price.",
-      fr: "Énormément de compliments au travail. Largement à la hauteur du prix."
+      ar: "بزّاف ديال المجاملات فالخدمة. مستاهل — غير كنت نتمنى القنينة أكبر شوية.",
+      en: "Tons of compliments at work. Worth it — just wish the bottle were bigger.",
+      fr: "Plein de compliments au travail. Ça vaut le prix — j'aurais juste aimé un flacon plus grand."
     },
     rev4_name: { ar: "رضا", en: "Reda", fr: "Reda" },
     rev4_city: { ar: "أكادير", en: "Agadir", fr: "Agadir" },
     rev4_text: {
-      ar: "حتى الهدية 10ml زوينة بزّاف — عطر راقٍ بصح. خدمة ممتازة، كننصح بيه.",
-      en: "Even the 10ml gift is excellent — a truly classy perfume. Impeccable service, I recommend.",
-      fr: "Même le cadeau 10ml est excellent — un parfum vraiment classe. Service impeccable, je recommande."
+      ar: "حتى Layton ديال الهدية زوين بزّاف. خدمة ممتازة، كننصح بيه.",
+      en: "Even the free Layton is great. Impeccable service — I recommend.",
+      fr: "Même le Layton offert est top. Service impeccable, je recommande."
     },
 
     form_name: { ar: "الإسم الكامل", en: "Full Name", fr: "Nom complet" },
@@ -213,6 +231,13 @@
     form_address_ph: { ar: "العنوان", en: "Address", fr: "Adresse" },
     form_secure: { ar: "معلوماتك آمنة ومحمية", en: "Your information is safe and secure", fr: "Vos informations sont sécurisées" },
     submit_order: { ar: "اطلب الآن", en: "ORDER", fr: "COMMANDER" },
+    submit_sub: { ar: "كتخلّص غير ملي يوصلك", en: "You only pay on delivery", fr: "Vous ne payez qu'à la réception" },
+    form_proof: { ar: "⭐ 4.9 · +2000 طلبية فالمغرب", en: "⭐ 4.9 · 2,000+ orders in Morocco", fr: "⭐ 4,9 · +2 000 commandes au Maroc" },
+    footer_line: {
+      ar: "الدفع عند الاستلام · توصيل 24–48 ساعة · إرجاع بلا مشكل",
+      en: "Cash on delivery · 24–48h delivery · easy returns",
+      fr: "Paiement à la livraison · Livraison 24–48 h · Retour sans souci"
+    },
 
     sticky_name: { ar: "Lure Her", en: "Lure Her", fr: "Lure Her" },
     sticky_price: { ar: "189 درهم", en: "189 DH", fr: "189 DH" },
@@ -232,33 +257,33 @@
     faq_cta: { ar: "اطلب الآن", en: "Order now", fr: "Commander maintenant" },
     faq_q1: { ar: "واش العطر أصلي؟", en: "Is the perfume authentic?", fr: "Le parfum est-il authentique ?" },
     faq_a1: {
-      ar: "أيه — فورمولة حصرية بتركيز عالي، بشعار UV مطبوع على القنينة. بلا أي تقليد رخيص.",
-      en: "Yes — an exclusive high-concentration formula, with a UV logo printed on the bottle. No cheap counterfeits.",
-      fr: "Oui — une formule exclusive à forte concentration, avec un logo UV imprimé sur le flacon. Aucune contrefaçon bon marché."
+      ar: "أيه — شعار UV مطبوع فالقنينة وفورمولة مركّزة.",
+      en: "Yes — UV logo printed on the bottle, concentrated formula.",
+      fr: "Oui — logo UV imprimé sur le flacon, formule concentrée."
     },
     faq_q2: { ar: "شحال كيدوم؟", en: "How long does it last?", fr: "Combien de temps tient-il ?" },
     faq_a2: {
-      ar: "بفضل التركيز العالي للزيوت، كيدوم طول النهار.",
-      en: "Thanks to the high oil concentration, it lasts all day.",
-      fr: "Grâce à la forte concentration d'huiles, il tient toute la journée."
+      ar: "طول النهار — تركيز عالي ديال الزيوت.",
+      en: "All day — high oil concentration.",
+      fr: "Toute la journée — forte concentration d'huiles."
     },
     faq_q3: { ar: "كيفاش كنخلّص؟", en: "How do I pay?", fr: "Comment je paie ?" },
     faq_a3: {
-      ar: "الدفع عند الاستلام — ما كتخلّص حتى يوصلك العطر ليديك.",
-      en: "Cash on delivery — you only pay once the perfume is in your hands.",
-      fr: "Paiement à la livraison — vous ne payez qu'une fois le parfum en main."
+      ar: "الدفع عند الاستلام — كتخلّص ملي يوصلك الباك ليديك.",
+      en: "Cash on delivery — you pay once the pack is in your hands.",
+      fr: "Paiement à la livraison — vous payez quand le pack est entre vos mains."
     },
     faq_q4: { ar: "إمتى غادي يوصلني؟", en: "When will I be delivered?", fr: "Quand serai-je livré ?" },
     faq_a4: {
-      ar: "توصيل مجاني لكل المغرب، عادةً من 24 إلى 48 ساعة.",
-      en: "Free delivery across Morocco, usually within 24 to 48 hours.",
-      fr: "Livraison gratuite dans tout le Maroc, généralement sous 24 à 48 h."
+      ar: "من 24 لـ 48 ساعة — توصيل مجاني لكل المغرب.",
+      en: "24–48 hours — free delivery across Morocco.",
+      fr: "Sous 24–48 h — livraison gratuite partout au Maroc."
     },
     faq_q5: { ar: "واش نقدر نرجعو؟", en: "Can I return it?", fr: "Puis-je le renvoyer ?" },
     faq_a5: {
-      ar: "بطبيعة الحال — جرّبو، وإيلا ما عجبكش رجعو بلا أي مشكل.",
-      en: "Of course — try it, and if you don't like it, send it back with no hassle.",
-      fr: "Bien sûr — essayez-le, et s'il ne vous plaît pas, renvoyez-le sans aucun souci."
+      ar: "أيه — إيلا ما عجبكش رجّعو بلا مشكل.",
+      en: "Yes — if you don't like it, send it back, no hassle.",
+      fr: "Oui — s'il ne vous plaît pas, renvoyez-le sans souci."
     }
   };
 
@@ -953,6 +978,37 @@
         }
       }
 
+      // Phone must be a reachable Moroccan number — for COD a bad phone is a
+      // dead order. Accepts 06/05/07 local formats plus +212 / 00212 prefixes,
+      // and normalizes them to the local 0XXXXXXXXX form.
+      var phoneInput = form.querySelector('[name="phone"]');
+      if (phoneInput && phoneInput.value.trim()) {
+        var digits = phoneInput.value.replace(/\D/g, "");
+        if (digits.indexOf("00212") === 0) digits = "0" + digits.slice(5);
+        else if (digits.indexOf("212") === 0 && digits.length === 12) digits = "0" + digits.slice(3);
+        if (!/^0[5-7]\d{8}$/.test(digits)) {
+          hasError = true;
+          var pParent = phoneInput.closest(".form-group, .premium-field");
+          if (pParent) {
+            pParent.classList.add("has-error");
+            var pErr = pParent.querySelector(".error-msg");
+            if (!pErr) {
+              pErr = document.createElement("div");
+              pErr.className = "error-msg";
+              pParent.appendChild(pErr);
+            }
+            var pl = langs[currentLangIndex];
+            pErr.textContent = pl === "ar"
+              ? "رقم غير صحيح — مثال: 0612345678"
+              : pl === "fr"
+                ? "Numéro invalide — ex : 0612345678"
+                : "Invalid number — e.g. 0612345678";
+          }
+        } else if (phoneInput.value !== digits) {
+          phoneInput.value = digits;
+        }
+      }
+
       if (hasError) return;
 
       syncAllInputsToNative();
@@ -1074,20 +1130,32 @@
     var stickyPrice = document.querySelector(".sticky-price span:last-child") ||
       document.querySelector(".sticky-price");
 
-    if (priceText) {
-      if (display) display.textContent = priceText;
-      if (finalPrice) finalPrice.textContent = priceText;
-      if (stickyPrice && stickyPrice.tagName === "SPAN") stickyPrice.textContent = priceText;
-      else if (stickyPrice) {
-        var spans = stickyPrice.querySelectorAll("span");
-        if (spans.length > 1) spans[spans.length - 1].textContent = priceText;
-      }
+    var lang = langs[currentLangIndex];
+    function formatPrice(num) {
+      return lang === "ar" ? num + " درهم" : num + " DH";
     }
 
     var cur = parsePriceNum(priceText);
     var cmp = parsePriceNum(compareText);
+    // YouCan's price text is Arabic-only ("189 درهم") — re-render the numbers in
+    // the page language. When the native store hasn't rendered (or has no
+    // compare-at price), fall back to the numbers already on the page so the
+    // 250→189 anchor survives; it still only shows when anchor > actual price.
+    if (!cur && display) cur = parsePriceNum(display.textContent);
+    if (!cmp && compareEl) cmp = parsePriceNum(compareEl.textContent);
+
+    var curText = cur ? formatPrice(cur) : priceText;
+    if (curText) {
+      if (display) display.textContent = curText;
+      if (finalPrice) finalPrice.textContent = curText;
+      if (stickyPrice && stickyPrice.tagName === "SPAN") stickyPrice.textContent = curText;
+      else if (stickyPrice) {
+        var spans = stickyPrice.querySelectorAll("span");
+        if (spans.length > 1) spans[spans.length - 1].textContent = curText;
+      }
+    }
+
     var showCompare = cmp && cur && cmp > cur;
-    var lang = langs[currentLangIndex];
 
     function setCompare(el, on, text) {
       if (!el) return;
@@ -1106,8 +1174,8 @@
         el.textContent = lang === "ar"
           ? "وفّرت " + saved + " درهم (" + pct + "%)"
           : lang === "fr"
-            ? "Économie " + saved + " MAD (" + pct + "%)"
-            : "You save " + saved + " MAD (" + pct + "%)";
+            ? "Économie " + saved + " DH (" + pct + "%)"
+            : "You save " + saved + " DH (" + pct + "%)";
         el.hidden = false;
         el.classList.remove("is-hidden");
       } else {
@@ -1119,8 +1187,8 @@
     if (showCompare) {
       var saved = Math.round(cmp - cur);
       var pct = Math.round((saved / cmp) * 100);
-      setCompare(compareEl, true, compareText);
-      setCompare(finalCompare, true, compareText);
+      setCompare(compareEl, true, formatPrice(cmp));
+      setCompare(finalCompare, true, formatPrice(cmp));
       setSavings(savingsEl, true, saved, pct);
       setSavings(finalSavings, true, saved, pct);
     } else {
@@ -1152,103 +1220,33 @@
     updateStockLabels(window.__V34_STOCK_COUNT);
   }
 
-  function initAnnounceMarquee() {
-    var track = document.getElementById("announce-track");
-    var marquee = track && track.parentNode;
-    if (!track || !marquee) return;
+  // Static announce bar: no marquee motion competing with the headline.
+  // Alternates two messages (free shipping + COD / stock left) with a soft fade.
+  function initAnnounceRotator() {
+    var el = document.getElementById("announce-static");
+    if (!el) return;
+    var idx = 0;
 
-    var SPEED_PX_PER_SEC = 22;
-    // Phone marquee speed knob: MOBILE_REF_DURATION = seconds for one Arabic-width
-    // loop (bigger = SLOWER). Speed is derived as a CONSTANT px/sec from a fixed
-    // reference width, so the visual speed is the SAME in both languages (no toggle
-    // slowdown) while you still tune a simple "seconds" number.
-    var MOBILE_REF_WIDTH = 782;
-    var MOBILE_REF_DURATION = 112;
-    var lastViewportWidth = 0;
-
-    function getUnitHtml() {
+    function messages() {
       var l = langs[currentLangIndex];
       var stockN = window.__V34_STOCK_COUNT || computeDeterministicStock();
-      // Four evenly-spaced phrases (each its own .announce-msg = equal padding/gaps).
-      var keys = ["announce_cod", "announce_ship", "announce_stock", "announce_order"];
-      var sep = '<span class="announce-sep" aria-hidden="true"> · </span>';
-      var html = "";
-      for (var i = 0; i < keys.length; i++) {
-        var txt = (I18N[keys[i]] && I18N[keys[i]][l]) ? I18N[keys[i]][l] : "";
-        txt = txt.replace("{n}", String(stockN));
-        var cls = keys[i] === "announce_stock" ? "announce-msg announce-stock" : "announce-msg";
-        html += '<span class="' + cls + '">' + txt + "</span>" + sep;
-      }
-      return html;
+      var ship = (I18N.announce_ship && I18N.announce_ship[l]) || "";
+      var cod = (I18N.announce_cod && I18N.announce_cod[l]) || "";
+      var stock = ((I18N.announce_stock && I18N.announce_stock[l]) || "").replace("{n}", String(stockN));
+      return [ship + " · " + cod, stock];
     }
 
-    function buildLayout() {
-      track.classList.remove("is-ready");
-      var vw = marquee.clientWidth || window.innerWidth || 360;
-      lastViewportWidth = vw;
-      var unitHtml = getUnitHtml();
-      var group = document.createElement("div");
-      group.className = "announce-group";
-      group.innerHTML = unitHtml;
-      track.innerHTML = "";
-      track.appendChild(group);
-
-      var guard = 0;
-      while (group.scrollWidth < vw + 80 && guard < 40) {
-        group.insertAdjacentHTML("beforeend", unitHtml);
-        guard++;
-      }
-
-      var groupWidth = group.scrollWidth;
-      var clone = group.cloneNode(true);
-      clone.setAttribute("aria-hidden", "true");
-      track.appendChild(clone);
-
-      var speed = vw <= 600 ? (MOBILE_REF_WIDTH / MOBILE_REF_DURATION) : SPEED_PX_PER_SEC;
-      var duration = Math.max(48, Math.round(groupWidth / speed));
-      track.style.setProperty("--announce-duration", duration + "s");
-      void track.offsetWidth;
-      track.classList.add("is-ready");
+    function render() {
+      var m = messages();
+      el.innerHTML = m[idx % m.length];
+      el.classList.remove("is-in");
+      void el.offsetWidth;
+      el.classList.add("is-in");
     }
 
-    function scheduleBuildLayout() {
-      requestAnimationFrame(function () {
-        requestAnimationFrame(buildLayout);
-      });
-    }
-
-    function initAnnounceLayout() {
-      var run = function () { scheduleBuildLayout(); };
-      if (document.fonts && document.fonts.ready) {
-        document.fonts.ready.then(function () {
-          run();
-          setTimeout(run, 350);
-        }).catch(run);
-      } else {
-        run();
-        setTimeout(run, 350);
-      }
-    }
-
-    function refreshAnnounceContent() {
-      // Rebuild from scratch so a language switch re-renders all 4 phrases
-      // (the spans are generated, not data-i18n-tagged).
-      scheduleBuildLayout();
-    }
-
-    initAnnounceLayout();
-    window.__V34_REBUILD_MARQUEE = scheduleBuildLayout;
-    window.__V34_REFRESH_ANNOUNCE = refreshAnnounceContent;
-
-    var t;
-    window.addEventListener("resize", function () {
-      clearTimeout(t);
-      t = setTimeout(function () {
-        var vw = marquee.clientWidth || window.innerWidth || 360;
-        if (Math.abs(vw - lastViewportWidth) < 48) return;
-        scheduleBuildLayout();
-      }, 350);
-    }, { passive: true });
+    render();
+    setInterval(function () { idx++; render(); }, 5000);
+    window.__V34_REFRESH_ANNOUNCE = render;
   }
 
   function loadDeferredLangAssets(lang) {
@@ -1279,9 +1277,9 @@
 
   function injectPageSeoMeta() {
     var desc = {
-      ar: "Lure Her — عطر مغناطيسي كيدوم طول اليوم، مع 10ml هدية. الدفع عند الاستلام وتوصيل مجاني في المغرب بـ 189 درهم.",
-      en: "Lure Her — a magnetic men's perfume that lasts all day, with a free 10ml gift. Cash on delivery, free shipping in Morocco for 189 DH.",
-      fr: "Lure Her — un parfum magnétique pour homme qui tient toute la journée, avec 10ml offert. Paiement à la livraison, livraison gratuite au Maroc à 189 DH."
+      ar: "Lure Her — عطر مغناطيسي كيدوم طول اليوم + Layton أصلي هدية. الدفع عند الاستلام وتوصيل مجاني في المغرب بـ 189 درهم.",
+      en: "Lure Her — a magnetic men's perfume that lasts all day, with an original Layton gift. Cash on delivery, free shipping in Morocco for 189 DH.",
+      fr: "Lure Her — un parfum magnétique pour homme qui tient toute la journée, avec Layton original offert. Paiement à la livraison, livraison gratuite au Maroc à 189 DH."
     };
     var l = langs[currentLangIndex];
     var content = desc[l] || desc.ar;
@@ -1321,7 +1319,7 @@
     handleScroll();
     initLazySections();
     initStockTicker();
-    initAnnounceMarquee();
+    initAnnounceRotator();
     initHeroGallery();
     initStickyCta();
     initCustomCheckout();

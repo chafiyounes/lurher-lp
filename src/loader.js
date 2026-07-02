@@ -37,6 +37,19 @@
 
   var FILES = { css: "src/styles.css", html: "src/page.html", js: "src/script.js" };
 
+  // Warm up the CDN connections before the fetches below — saves a DNS+TLS
+  // round-trip on cold mobile connections (most ad clicks).
+  (function preconnect() {
+    var hosts = ["https://cdn.jsdelivr.net", "https://raw.githubusercontent.com"];
+    for (var i = 0; i < hosts.length; i++) {
+      var l = document.createElement("link");
+      l.rel = "preconnect";
+      l.href = hosts[i];
+      l.crossOrigin = "anonymous";
+      document.head.appendChild(l);
+    }
+  })();
+
   // ---- 1. Anti-flicker: hide YouCan's default page until ours is ready ----
   if (!document.getElementById("v34-flicker-prevent")) {
     var style = document.createElement("style");
@@ -129,19 +142,19 @@
     var wrap = document.createElement("div");
     wrap.id = "v34-seo-meta";
     wrap.innerHTML = [
-      '<meta name="description" content="Lure Her — عطر فيرومونات للرجال يدوم طول النهار، جاذبية وثقة لا تُقاوَم. توصيل مجاني والدفع عند الاستلام في المغرب.">',
-      '<meta property="og:title" content="Lure Her — عطر الفيرومونات للرجال">',
-      '<meta property="og:description" content="رائحة فاخرة تدوم +8 ساعات وفيرومونات تزيد جاذبيتك. الدفع عند الاستلام، توصيل مجاني لكل المغرب.">',
+      '<meta name="description" content="Lure Her — باك عطر فاخر للرجال: 50ml كيدوم طول النهار + Layton أصلي هدية. توصيل مجاني والدفع عند الاستلام في المغرب.">',
+      '<meta property="og:title" content="Lure Her — باك العطر الفاخر للرجال">',
+      '<meta property="og:description" content="عطر مغناطيسي كيدوم طول النهار + Layton أصلي هدية. الدفع عند الاستلام، توصيل مجاني لكل المغرب — 189 درهم.">',
       '<meta property="og:image" content="' + BASE + 'images/hero/01-main.png">',
       '<meta property="og:type" content="product">',
       '<meta name="twitter:card" content="summary_large_image">',
-      '<meta name="twitter:title" content="Lure Her — عطر الفيرومونات للرجال">',
-      '<meta name="twitter:description" content="رائحة فاخرة تدوم وفيرومونات تزيد جاذبيتك — الدفع عند الاستلام.">',
+      '<meta name="twitter:title" content="Lure Her — باك العطر الفاخر للرجال">',
+      '<meta name="twitter:description" content="عطر مغناطيسي + Layton أصلي هدية — الدفع عند الاستلام.">',
       '<meta name="twitter:image" content="' + BASE + 'images/hero/01-main.png">'
     ].join("");
     while (wrap.firstChild) document.head.appendChild(wrap.firstChild);
     if (!document.title || document.title === "test2") {
-      document.title = "Lure Her — عطر الفيرومونات للرجال";
+      document.title = "Lure Her — باك العطر الفاخر للرجال";
     }
   }
 

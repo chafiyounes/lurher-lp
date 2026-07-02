@@ -1,22 +1,7 @@
 <div class="app" dir="rtl" lang="ar">
 
   <div class="announce-bar" aria-live="polite">
-    <div class="announce-marquee">
-      <div class="announce-marquee-track" id="announce-track">
-        <div class="announce-group">
-          <span class="announce-msg" data-i18n="announce">شحن مجاني إلى جميع أنحاء المغرب</span>
-          <span class="announce-sep" aria-hidden="true"> · </span>
-          <span class="announce-msg announce-stock"></span>
-          <span class="announce-sep" aria-hidden="true"> · </span>
-        </div>
-        <div class="announce-group" aria-hidden="true">
-          <span class="announce-msg" data-i18n="announce">شحن مجاني إلى جميع أنحاء المغرب</span>
-          <span class="announce-sep" aria-hidden="true"> · </span>
-          <span class="announce-msg announce-stock"></span>
-          <span class="announce-sep" aria-hidden="true"> · </span>
-        </div>
-      </div>
-    </div>
+    <div class="announce-static" id="announce-static">توصيل مجاني لكل المغرب · الدفع عند الاستلام</div>
   </div>
 
   <header class="nav-header">
@@ -64,8 +49,9 @@
       <div class="hero-inner hero-inner--visual-first">
         <div class="hero-media">
           <div class="hero-copy hero-copy--above">
-            <h1 class="t-hero hero-copy-h" data-i18n="land_hero_h">العطر اللي ما غاديش تقدر تقاوموا</h1>
-            <p class="t-body t-muted hero-copy-sub" data-i18n="land_hero_sub">عطر مغناطيسي — حصري، قوي ومثير للإغراء.</p>
+            <h1 class="t-hero hero-copy-h" data-i18n="land_hero_h">باك العطر اللي غادي يخلّيها ما تقدرش تقاومك</h1>
+            <p class="t-body t-muted hero-copy-sub" data-i18n="land_hero_sub">الريحة اللي غادي تسمع عليها 1000 مجاملة.</p>
+            <p class="hero-offer-chip" data-i18n="hero_offer">50ml + Layton 10ml هدية · 189 درهم بلاصة 250</p>
           </div>
           <div
             class="media-carousel hero-gallery"
@@ -100,7 +86,7 @@
                     <span class="price-tag-big" id="display-price">189 درهم</span>
                     <span class="savings-tag savings-tag--inline" id="savings-display" data-i18n="savings_tag">وفّرت 61 درهم</span>
                   </div>
-                  <p class="price-subnote" data-i18n="price_subnote">فخامة عطور بأكثر من 1000 درهم — بـ 189 درهم</p>
+                  <p class="price-subnote offer-name-line" data-i18n="offer_name">Lure Her 50ml + Layton 10ml أصلي</p>
                 </div>
               </div>
 
@@ -120,13 +106,7 @@
                 <div class="badge-item">
                   <span class="material-symbols-outlined">verified_user</span>
                   <div class="badge-texts">
-                    <strong data-i18n="ct_guarantee">منتج أصلي 100%</strong>
-                  </div>
-                </div>
-                <div class="badge-item">
-                  <span class="material-symbols-outlined">redeem</span>
-                  <div class="badge-texts">
-                    <strong data-i18n="trust_gift">عطر بريميوم هدية</strong>
+                    <strong data-i18n="ct_guarantee">جوج عطور أصلية 100%</strong>
                   </div>
                 </div>
               </div>
@@ -187,7 +167,9 @@
               <div class="order-card-footer">
                 <button type="submit" form="custom-express-checkout-form" class="btn-primary btn-full btn-submit order-submit">
                   <span class="btn-label" data-i18n="submit_order">COMMANDER</span>
+                  <span class="btn-sublabel" data-i18n="submit_sub">كتخلّص غير ملي يوصلك</span>
                 </button>
+                <p class="form-proof-note" data-i18n="form_proof">⭐ 4.9 · +2000 طلبية فالمغرب</p>
                 <p class="form-security-note">
                   <span class="material-symbols-outlined" aria-hidden="true">lock</span>
                   <span data-i18n="form_secure">معلوماتك آمنة ومحمية</span>
@@ -201,6 +183,44 @@
       </div>
     </section>
 
+    <section class="coffret-section reveal" id="coffret-section">
+      <div class="section-container">
+        <div class="section-head text-center">
+          <span class="section-eyebrow" data-i18n="box_eyebrow">شنو غادي توصلك</span>
+          <h2 class="t-h2" data-i18n="box_h">كل باك فيه جوج عطور</h2>
+        </div>
+        <div class="coffret-panel">
+          <div class="coffret-visual">
+            <img src="https://cdn.jsdelivr.net/gh/chafiyounes/lurher-lp@main/images/hero/decante.webp" alt="Lure Her — العطر 50ml مع ديكانت هدية" width="1080" height="1216" loading="lazy" decoding="async"/>
+          </div>
+          <div class="coffret-detail">
+            <div class="coffret-line">
+              <span class="coffret-badge">50ml</span>
+              <div class="coffret-line-text">
+                <strong data-i18n="box_1_title">Lure Her</strong>
+                <span data-i18n="box_1_sub">قوي ومغناطيسي — فانيلا وكراميل ببداية منعشة</span>
+              </div>
+            </div>
+            <div class="coffret-line coffret-line--gift">
+              <span class="coffret-badge coffret-badge--gift">10ml</span>
+              <div class="coffret-line-text">
+                <strong data-i18n="box_2_title">Layton أصلي — هدية</strong>
+                <span data-i18n="box_2_sub">قيمتو 200 درهم — مع كل طلب هاد السيمانة</span>
+              </div>
+            </div>
+            <div class="coffret-total">
+              <div class="coffret-total-price">
+                <span class="coffret-strike" data-i18n="coffret_strike">250 درهم</span>
+                <span class="coffret-now" data-i18n="coffret_now">189 درهم</span>
+              </div>
+              <span class="coffret-total-label" data-i18n="box_foot">الزوج كامل بـ 189 درهم فقط</span>
+            </div>
+            <button type="button" class="btn-primary btn-full coffret-cta scroll-to-checkout" data-i18n="box_cta">اطلب الآن</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="trust-band reveal" id="trust-band">
       <div class="section-container">
         <div class="guarantee-card">
@@ -209,7 +229,7 @@
           </span>
           <div class="guarantee-body">
             <strong class="guarantee-title" data-i18n="guarantee_title">خلّص فقط من بعد ما تشمّ</strong>
-            <p class="guarantee-sub" data-i18n="guarantee_sub">تشوف العطر، تشمّو، وإيلا ما عجبكش — ترجعو بلا أي مشكل. الدفع عند الاستلام.</p>
+            <p class="guarantee-sub" data-i18n="guarantee_sub">شمّو، وإيلا ما عجبكش رجّعو بلا مشكل — كتخلّص غير عند الاستلام.</p>
           </div>
         </div>
       </div>
@@ -219,7 +239,11 @@
       <div class="section-container reframe-inner">
         <div class="section-head text-center">
           <span class="section-eyebrow" data-i18n="reframe_eyebrow">علاش حنا مختلفين</span>
-          <h2 class="t-h2 reframe-h" data-i18n="reframe_h">وحدة كتخدم خير من خمسة ما كيديرو والو</h2>
+          <h2 class="t-h2 reframe-h reframe-h--split">
+            <span class="rh-side rh-win" data-i18n="reframe_h_win">وحدة كتدير التأثير</span>
+            <span class="rh-vs" aria-hidden="true">VS</span>
+            <span class="rh-side rh-lose" data-i18n="reframe_h_lose">خمسة ما كيريحو والو</span>
+          </h2>
           <p class="section-desc" data-i18n="reframe_p1">هاد العطور الرخيصة اللي كيبيعو 5 بـ200؟ كيبانو ريحة الكحول، كيطيرو فساعة، وما كيديرو حتى تأثير.</p>
         </div>
 
@@ -230,16 +254,15 @@
             </div>
             <figcaption class="vs-cap vs-cap--win" data-i18n="vs_us_label">Lure Her</figcaption>
           </figure>
-          <span class="vs-badge" aria-hidden="true">VS</span>
           <figure class="vs-side vs-side--lose">
             <div class="vs-photo">
               <img src="https://cdn.jsdelivr.net/gh/chafiyounes/lurher-lp@main/images/compare/knockoffs-v2.webp" alt="مقلّدات Lure Her وعطور رخيصة — مجرد كحول" width="1080" height="1440" loading="lazy" decoding="async"/>
             </div>
-            <figcaption class="vs-cap vs-cap--lose" data-i18n="vs_them_label">المقلّدات والعطور الرخيصة 5 بـ200</figcaption>
+            <figcaption class="vs-cap vs-cap--lose" data-i18n="vs_them_label">5 عطور مقلّدة بـ 200 درهم</figcaption>
           </figure>
         </div>
 
-        <p class="reframe-accent" data-i18n="reframe_p3">ماشي مسألة كمية. مسألة عطر كيدير تأثير بصح.</p>
+        <p class="reframe-accent" data-i18n="reframe_p3">ماشي الكمية اللي مهمة — التأثير.</p>
 
         <ul class="vs-table" role="table" aria-label="مقارنة">
           <li class="vs-row vs-row--head" role="row">
@@ -263,42 +286,11 @@
             <span class="vs-mark vs-no" aria-label="لا">✕</span>
           </li>
           <li class="vs-row" role="row">
-            <span class="vs-feat" data-i18n="vs_f4">10ml هدية مع كل طلب</span>
+            <span class="vs-feat" data-i18n="vs_f4">عطر Layton أصلي هدية مع كل طلب هاد السيمانة</span>
             <span class="vs-mark vs-yes" aria-label="نعم">✓</span>
             <span class="vs-mark vs-no" aria-label="لا">✕</span>
           </li>
         </ul>
-      </div>
-    </section>
-
-    <section class="benefits-section reveal" id="benefits-section">
-      <div class="benefits-inner section-container">
-        <div class="section-head text-center">
-          <span class="section-eyebrow" data-i18n="ben_eyebrow">الفوائد</span>
-          <h2 class="t-h2" data-i18n="land_benefits_h">شنو كيوفّر ليك Lure Her</h2>
-        </div>
-        <div class="ben-grid ben-grid--4">
-          <div class="ben-item">
-            <span class="ben-icon" aria-hidden="true"><span class="material-symbols-outlined">local_fire_department</span></span>
-            <h3 class="ben-title" data-i18n="ben_1">عطر ما يتقاومش</h3>
-            <p class="ben-sub" data-i18n="ben_1_sub">فوحان كيخلّي الناس يسولوك شنو حاطط.</p>
-          </div>
-          <div class="ben-item">
-            <span class="ben-icon" aria-hidden="true"><span class="material-symbols-outlined">bolt</span></span>
-            <h3 class="ben-title" data-i18n="ben_2">ثقة من أول رشّة</h3>
-            <p class="ben-sub" data-i18n="ben_2_sub">كتحسّ بالفرق من اللحظة اللي كترشّو.</p>
-          </div>
-          <div class="ben-item">
-            <span class="ben-icon" aria-hidden="true"><span class="material-symbols-outlined">spa</span></span>
-            <h3 class="ben-title" data-i18n="ben_3">رجولي، منعش وراقٍ</h3>
-            <p class="ben-sub" data-i18n="ben_3_sub">فورمولة حصرية بتركيز عالي.</p>
-          </div>
-          <div class="ben-item">
-            <span class="ben-icon" aria-hidden="true"><span class="material-symbols-outlined">favorite</span></span>
-            <h3 class="ben-title" data-i18n="ben_4">التأثير الحقيقي فالعناق</h3>
-            <p class="ben-sub" data-i18n="ben_4_sub">مصمّم للحظات القريبة اللي كتبقى فالذاكرة.</p>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -318,48 +310,12 @@
             <h2 class="t-h2" data-i18n="proof_h">الجودة اللي ما تبانش من الشاشة</h2>
           </div>
           <ul class="proof-list">
-            <li><span class="material-symbols-outlined" aria-hidden="true">verified</span><span data-i18n="proof_1">شعار UV DTF مطبوع على القنينة — ماشي ستيكر كيتقلّع بحال المقلّد</span></li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">verified</span><span data-i18n="proof_1">شعار UV مطبوع فالقنينة — ماشي ستيكر كيتقلّع.</span></li>
             <li><span class="material-symbols-outlined" aria-hidden="true">science</span><span data-i18n="proof_2">تركيز عالي من الزيوت الأصلية = كيدوم طول اليوم</span></li>
             <li><span class="material-symbols-outlined" aria-hidden="true">block</span><span data-i18n="proof_4">بلا ريحة الكحول</span></li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">forum</span><span data-i18n="proof_attn">كتولي نتا اللي عليه الهضرة — الناس كيسولوك شنو حاطط</span></li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">favorite</span><span data-i18n="proof_close">التأثير كيبان من قريب — اللحظات القريبة كتبقى فالبال</span></li>
           </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="coffret-section reveal" id="coffret-section">
-      <div class="section-container">
-        <div class="section-head text-center">
-          <span class="section-eyebrow" data-i18n="box_eyebrow">شنو غادي توصلك</span>
-          <h2 class="t-h2" data-i18n="box_h">كل طلب فيه عطرين</h2>
-        </div>
-        <div class="coffret-panel">
-          <div class="coffret-visual">
-            <img src="https://cdn.jsdelivr.net/gh/chafiyounes/lurher-lp@main/images/hero/decante.webp" alt="Lure Her — العطر 50ml مع ديكانت هدية" width="1080" height="1216" loading="lazy" decoding="async"/>
-          </div>
-          <div class="coffret-detail">
-            <div class="coffret-line">
-              <span class="coffret-badge">50ml</span>
-              <div class="coffret-line-text">
-                <strong data-i18n="box_1_title">Lure Her</strong>
-                <span data-i18n="box_1_sub">50ml — قوي ومغناطيسي</span>
-              </div>
-            </div>
-            <div class="coffret-line coffret-line--gift">
-              <span class="coffret-badge coffret-badge--gift">10ml</span>
-              <div class="coffret-line-text">
-                <strong data-i18n="box_2_title">10ml — هدية مجانية</strong>
-                <span data-i18n="box_2_sub">مفاجأة حصرية مع كل طلب</span>
-              </div>
-            </div>
-            <div class="coffret-total">
-              <div class="coffret-total-price">
-                <span class="coffret-strike">250 درهم</span>
-                <span class="coffret-now">189 درهم</span>
-              </div>
-              <span class="coffret-total-label" data-i18n="box_foot">الزوج كامل بـ 189 درهم فقط</span>
-            </div>
-            <button type="button" class="btn-primary btn-full coffret-cta scroll-to-checkout" data-i18n="box_cta">اطلب الآن</button>
-          </div>
         </div>
       </div>
     </section>
@@ -376,7 +332,7 @@
             <span class="reviews-score-num">4.9</span>
             <div class="reviews-score-meta">
               <span class="stars stars-lg" aria-hidden="true">★★★★★</span>
-              <span class="reviews-score-label" data-i18n="rev_rating_label">معدل التقييم</span>
+              <span class="reviews-score-label" data-i18n="rev_rating_label">من +300 تقييم</span>
             </div>
           </div>
         </div>
@@ -387,7 +343,7 @@
               <div class="reviewer-avatar">ي</div>
               <div class="reviewer-meta">
                 <div class="reviewer-name-row">
-                  <span class="reviewer-name" data-i18n="rev1_name">ياسين .م</span>
+                  <span class="reviewer-name" data-i18n="rev1_name">يوسف</span>
                   <span class="stars" aria-hidden="true">★★★★★</span>
                 </div>
                 <div class="reviewer-sub-row">
@@ -396,7 +352,9 @@
                 </div>
               </div>
             </div>
-            <p class="t-body review-text" data-i18n="rev1_text">رائحة قوية وراقية، وأهم حاجة كتبقى. من أول مرة لبستو، الناس بداو يسولوني على شنو العطر اللي حاطط. صراحة فاق توقعاتي.</p>
+            <p class="t-body review-text" data-i18n="rev1_text">وصلني فيومين. العطر خطير وكيدوم. مراتي سولاتني أشنو حاطط</p>
+            <!-- PLACEHOLDER photo: replace src with a real customer photo (e.g. images/reviews/youssef.webp) -->
+            <img class="review-photo" src="https://cdn.jsdelivr.net/gh/chafiyounes/lurher-lp@main/images/hero/decante.webp" alt="صورة من الزبون" loading="lazy" decoding="async"/>
           </div>
 
           <div class="review-card">
@@ -404,16 +362,16 @@
               <div class="reviewer-avatar">أ</div>
               <div class="reviewer-meta">
                 <div class="reviewer-name-row">
-                  <span class="reviewer-name" data-i18n="rev2_name">أنس .ب</span>
+                  <span class="reviewer-name" data-i18n="rev2_name">أنس</span>
                   <span class="stars" aria-hidden="true">★★★★★</span>
                 </div>
                 <div class="reviewer-sub-row">
-                  <span class="reviewer-city" data-i18n="rev2_city">الرباط</span>
+                  <span class="reviewer-city" data-i18n="rev2_city">مراكش</span>
                   <span class="review-verified"><span class="material-symbols-outlined">verified</span><span data-i18n="rev_verified">طلبية مؤكدة</span></span>
                 </div>
               </div>
             </div>
-            <p class="t-body review-text" data-i18n="rev2_text">كنقلّب على عطر يدوم وما كنلقاش. هاد المرة لقيت اللي بغيت — كنحطّو الصباح وكيبقى حتى الليل. الثبات ديالو ماشي طبيعي.</p>
+            <p class="t-body review-text" data-i18n="rev2_text">كنت خايف يكون مقلّد — لا، هادا أصلي وكيدوم بزّاف.</p>
           </div>
 
           <div class="review-card">
@@ -421,8 +379,8 @@
               <div class="reviewer-avatar">م</div>
               <div class="reviewer-meta">
                 <div class="reviewer-name-row">
-                  <span class="reviewer-name" data-i18n="rev3_name">مهدي .أ</span>
-                  <span class="stars" aria-hidden="true">★★★★★</span>
+                  <span class="reviewer-name" data-i18n="rev3_name">مهدي</span>
+                  <span class="stars" aria-hidden="true">★★★★☆</span>
                 </div>
                 <div class="reviewer-sub-row">
                   <span class="reviewer-city" data-i18n="rev3_city">طنجة</span>
@@ -430,7 +388,7 @@
                 </div>
               </div>
             </div>
-            <p class="t-body review-text" data-i18n="rev3_text">التغليف فاخر والعطر أصلي. خلّصت عند الاستلام بلا أي مشكل، والتوصيل كان سريع. غادي نعاود نطلب وحدة لخويا.</p>
+            <p class="t-body review-text" data-i18n="rev3_text">بزّاف ديال المجاملات فالخدمة. مستاهل — غير كنت نتمنى القنينة أكبر شوية.</p>
           </div>
 
           <div class="review-card">
@@ -438,16 +396,18 @@
               <div class="reviewer-avatar">ر</div>
               <div class="reviewer-meta">
                 <div class="reviewer-name-row">
-                  <span class="reviewer-name" data-i18n="rev4_name">رضا .ح</span>
+                  <span class="reviewer-name" data-i18n="rev4_name">رضا</span>
                   <span class="stars" aria-hidden="true">★★★★★</span>
                 </div>
                 <div class="reviewer-sub-row">
-                  <span class="reviewer-city" data-i18n="rev4_city">مراكش</span>
+                  <span class="reviewer-city" data-i18n="rev4_city">أكادير</span>
                   <span class="review-verified"><span class="material-symbols-outlined">verified</span><span data-i18n="rev_verified">طلبية مؤكدة</span></span>
                 </div>
               </div>
             </div>
-            <p class="t-body review-text" data-i18n="rev4_text">عطر رجالي بمعنى الكلمة، دافي وجذّاب. مراتي عجبها بزّاف. واحد من أحسن العطور اللي جربت وبثمن معقول.</p>
+            <p class="t-body review-text" data-i18n="rev4_text">حتى Layton ديال الهدية زوين بزّاف. خدمة ممتازة، كننصح بيه.</p>
+            <!-- PLACEHOLDER photo: replace src with a real customer photo (e.g. images/reviews/reda.webp) -->
+            <img class="review-photo" src="https://cdn.jsdelivr.net/gh/chafiyounes/lurher-lp@main/images/product/bottle-v2.webp" alt="صورة من الزبون" loading="lazy" decoding="async"/>
           </div>
         </div>
       </div>
@@ -470,7 +430,7 @@
             </button>
             <div class="faq-answer">
               <div class="faq-answer-inner">
-              <p data-i18n="faq_a1">أيه — فورمولة حصرية بتركيز عالي، بشعار UV مطبوع على القنينة. بلا أي تقليد رخيص.</p>
+              <p data-i18n="faq_a1">أيه — شعار UV مطبوع فالقنينة وفورمولة مركّزة.</p>
               </div>
             </div>
           </div>
@@ -484,7 +444,7 @@
             </button>
             <div class="faq-answer">
               <div class="faq-answer-inner">
-              <p data-i18n="faq_a2">بفضل التركيز العالي للزيوت، كيدوم طول النهار.</p>
+              <p data-i18n="faq_a2">طول النهار — تركيز عالي ديال الزيوت.</p>
               </div>
             </div>
           </div>
@@ -498,7 +458,7 @@
             </button>
             <div class="faq-answer">
               <div class="faq-answer-inner">
-              <p data-i18n="faq_a3">الدفع عند الاستلام — ما كتخلّص حتى يوصلك العطر ليديك.</p>
+              <p data-i18n="faq_a3">الدفع عند الاستلام — كتخلّص ملي يوصلك الباك ليديك.</p>
               </div>
             </div>
           </div>
@@ -512,7 +472,7 @@
             </button>
             <div class="faq-answer">
               <div class="faq-answer-inner">
-              <p data-i18n="faq_a4">توصيل مجاني لكل المغرب، عادةً من 24 إلى 48 ساعة.</p>
+              <p data-i18n="faq_a4">من 24 لـ 48 ساعة — توصيل مجاني لكل المغرب.</p>
               </div>
             </div>
           </div>
@@ -526,7 +486,7 @@
             </button>
             <div class="faq-answer">
               <div class="faq-answer-inner">
-              <p data-i18n="faq_a5">بطبيعة الحال — جرّبو، وإيلا ما عجبكش رجعو بلا أي مشكل.</p>
+              <p data-i18n="faq_a5">أيه — إيلا ما عجبكش رجّعو بلا مشكل.</p>
               </div>
             </div>
           </div>
@@ -538,6 +498,12 @@
         </p>
       </div>
     </section>
+
+    <footer class="lp-footer">
+      <img class="lp-footer-logo" src="https://cdn.jsdelivr.net/gh/chafiyounes/lurher-lp@main/images/logos/lureher-logo-gold-v2.webp" alt="Lure Her" width="90" height="39" loading="lazy" decoding="async"/>
+      <p class="lp-footer-line" data-i18n="footer_line">الدفع عند الاستلام · توصيل 24–48 ساعة · إرجاع بلا مشكل</p>
+      <p class="lp-footer-copy">© 2026 Lure Her</p>
+    </footer>
 
     </div>
   </main>
