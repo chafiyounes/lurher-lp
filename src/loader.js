@@ -5,27 +5,30 @@
   /* ----------------------------------------------------------------------
    * Lure Her — YouCan footer loader
    *
-   * Primary CDN  : jsDelivr  — fast, globally cached, built to be hotlinked
-   *                at ad scale (raw.githubusercontent is NOT a CDN and is
-   *                rate-limited).
-   * Fallback     : raw.githubusercontent — always fresh; used only if
-   *                jsDelivr is unreachable, so we have redundancy.
-   * Graceful fail: if BOTH sources fail, OR the network is too slow, we send
+   * Primary CDN  : jsDelivr @DEPLOY_SHA — fast, globally cached, exact version
+   * Fallback 1   : raw.githubusercontent @DEPLOY_SHA — same commit, redundancy
+   * Fallback 2   : jsDelivr @main — if footer SHA wasn't bumped after a push
+   * Graceful fail: if ALL sources fail, OR the network is too slow, we send
    *                the customer to the proven image-based page (FALLBACK_URL)
    *                so they always land on something that sells. (With ?debug=1
    *                we stay put and show the error instead of redirecting.)
    * Debug box    : the red diagnostic banner now appears ONLY with ?debug=1
    *                in the URL — never to real customers.
+   *
+   * On each deploy: bump DEPLOY_SHA + LOADER_VERSION, paste footer once.
    * -------------------------------------------------------------------- */
 
   var REPO = "chafiyounes/lurher-lp";
   var BRANCH = "main";
-  var LOADER_VERSION = "lureher-v4-0";
+  // Bump on each deploy — pins HTML/CSS/JS to an exact commit (no raw @main 5-min lag).
+  var DEPLOY_SHA = "23cb41b";
+  var LOADER_VERSION = "lureher-v4-1";
 
-  // jsDelivr uses @branch; raw uses /branch/ — note the different shape.
-  var CDN_BASE = "https://cdn.jsdelivr.net/gh/" + REPO + "@" + BRANCH + "/";
-  var RAW_BASE = "https://raw.githubusercontent.com/" + REPO + "/" + BRANCH + "/";
-  var BASE = CDN_BASE; // used by the OG/SEO image meta below
+  // jsDelivr uses @ref; raw uses /ref/ — note the different shape.
+  var CDN_BASE = "https://cdn.jsdelivr.net/gh/" + REPO + "@" + DEPLOY_SHA + "/";
+  var RAW_BASE = "https://raw.githubusercontent.com/" + REPO + "/" + DEPLOY_SHA + "/";
+  var CDN_MAIN = "https://cdn.jsdelivr.net/gh/" + REPO + "@" + BRANCH + "/";
+  var BASE = CDN_MAIN; // OG images track @main (images use ?v= cache bust)
 
   var FETCH_TIMEOUT_MS = 5000; // after this we stop waiting and fall back
   var DEBUG = /[?&]debug=1/.test(window.location.search || "");
@@ -180,24 +183,24 @@
 
   injectSeoMeta();
 
-  // jsDelivr ignores ?t= and can serve stale @main for hours after a push.
-  // Fetch from raw first (cache-busted) so script/style changes land immediately;
-  // fall back to jsDelivr if raw is rate-limited or down.
-  var cacheBuster = "?t=" + new Date().getTime();
+  // jsDelivr @SHA = fast global CDN + exact version. raw @SHA = instant fallback.
+  // CDN @main = last resort if footer SHA wasn't bumped after a push.
+  console.log("[V34 Loader] v" + LOADER_VERSION + " @ " + DEPLOY_SHA + " → jsDelivr, raw, @main");
 
-  console.log("[V34 Loader] v" + LOADER_VERSION + " → primary raw, fallback " + CDN_BASE);
-
-  // ---- 2. Fetch one file: try raw (fresh), fall back to jsDelivr ----
+  // ---- 2. Fetch one file: jsDelivr @SHA → raw @SHA → jsDelivr @main ----
   function fetchFile(relPath) {
-    function get(base, bust) {
-      return fetch(base + relPath + (bust ? cacheBuster : "")).then(function (r) {
+    function get(base) {
+      return fetch(base + relPath).then(function (r) {
         if (!r.ok) throw new Error("HTTP " + r.status + " @ " + base);
         return r.text();
       });
     }
-    return get(RAW_BASE, true).catch(function (e) {
-      console.warn("[V34 Loader] raw miss for " + relPath + " → jsDelivr fallback:", e.message);
-      return get(CDN_BASE, false);
+    return get(CDN_BASE).catch(function (e1) {
+      console.warn("[V34 Loader] jsDelivr @" + DEPLOY_SHA + " miss for " + relPath + " → raw:", e1.message);
+      return get(RAW_BASE).catch(function (e2) {
+        console.warn("[V34 Loader] raw @" + DEPLOY_SHA + " miss → @main:", e2.message);
+        return get(CDN_MAIN);
+      });
     });
   }
 
