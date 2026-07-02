@@ -1123,8 +1123,8 @@
 @media (min-width: 640px)  { .reviews-grid { grid-template-columns: repeat(2, 1fr); gap: 22px; padding: 0; } }
 @media (min-width: 900px)  { .reviews-grid { grid-template-columns: repeat(3, 1fr); gap: 22px; } }
 @media (min-width: 1200px) {
-  .reviews-grid { grid-template-columns: repeat(5, 1fr); gap: 18px; }
-  .review-thumbs img { height: 140px; }
+  .reviews-grid { grid-template-columns: repeat(4, 1fr); gap: 22px; }
+  .review-thumbs img { height: 150px; }
 }
 
 .review-card {

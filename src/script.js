@@ -203,13 +203,6 @@
       en: "Delivered in two days. The perfume is incredible and it lasts. My wife asked what I was wearing",
       fr: "Livré en deux jours. Le parfum est incroyable et il tient. Ma femme m'a demandé ce que je portais"
     },
-    rev2_name: { ar: "أنس", en: "Anas", fr: "Anas" },
-    rev2_city: { ar: "مراكش", en: "Marrakech", fr: "Marrakech" },
-    rev2_text: {
-      ar: "كنت خايف يكون بحال المنتجات الرخيصة — ولكن لا، هادا أصلي، راقٍ وكيدوم بزّاف.",
-      en: "I was afraid it'd be like the cheap products — but no, it's the real thing, refined and long-lasting.",
-      fr: "J'avais peur que ce soit comme les produits bon marché — mais non, c'est du vrai, raffiné et longue tenue."
-    },
     rev3_name: { ar: "مهدي", en: "Mehdi", fr: "Mehdi" },
     rev3_city: { ar: "طنجة", en: "Tangier", fr: "Tanger" },
     rev3_text: {
