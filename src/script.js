@@ -434,7 +434,7 @@
     }
   });
 
-  var HERO_ASSET_VERSION = 6;
+  var HERO_ASSET_VERSION = 7;
   var HERO_MANIFEST_URL =
     "https://cdn.jsdelivr.net/gh/chafiyounes/lurher-lp@main/images/hero/manifest.json?v=" +
     HERO_ASSET_VERSION;
@@ -444,15 +444,27 @@
     slides: [
       {
         id: "couple",
-        image: "couple.webp",
-        thumb: "couple.webp",
-        alt: { ar: "رجل يضع عطر Lure Her وامرأة تنجذب لرائحته", en: "Man wearing Lure Her, woman drawn to his scent", fr: "Homme portant Lure Her, femme attirée par son parfum" }
+        image: "h-couple-v2.webp",
+        thumb: "h-couple-v2.webp",
+        alt: { ar: "امرأة تشمّ رجلاً يضع عطر Lure Her", en: "Woman smelling a man wearing Lure Her", fr: "Une femme sent un homme portant Lure Her" }
       },
       {
-        id: "splash",
-        image: "splash.webp",
-        thumb: "splash.webp",
-        alt: { ar: "عطر Lure Her مع علبته", en: "Lure Her perfume with its box", fr: "Le parfum Lure Her avec son coffret" }
+        id: "duo",
+        image: "h-duo-v2.webp",
+        thumb: "h-duo-v2.webp",
+        alt: { ar: "عطر Lure Her مع عيّنة Layton", en: "Lure Her with the Layton decant", fr: "Lure Her avec le décant Layton" }
+      },
+      {
+        id: "solo",
+        image: "h-solo-v2.webp",
+        thumb: "h-solo-v2.webp",
+        alt: { ar: "عطر Lure Her الأصلي 50 مل", en: "Lure Her original 50ml", fr: "Lure Her original 50ml" }
+      },
+      {
+        id: "decant",
+        image: "h-decant-v2.webp",
+        thumb: "h-decant-v2.webp",
+        alt: { ar: "عيّنة عطر Layton 10 مل", en: "Layton parfum decant 10ml", fr: "Décant Layton parfum 10ml" }
       },
     ]
   };
