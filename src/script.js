@@ -434,7 +434,7 @@
     }
   });
 
-  var HERO_ASSET_VERSION = 7;
+  var HERO_ASSET_VERSION = 8;
   var HERO_MANIFEST_URL =
     "https://cdn.jsdelivr.net/gh/chafiyounes/lurher-lp@main/images/hero/manifest.json?v=" +
     HERO_ASSET_VERSION;
@@ -450,8 +450,8 @@
       },
       {
         id: "duo",
-        image: "h-duo-v2.webp",
-        thumb: "h-duo-v2.webp",
+        image: "h-duo-v3.webp",
+        thumb: "h-duo-v3.webp",
         alt: { ar: "عطر Lure Her مع عيّنة Layton", en: "Lure Her with the Layton decant", fr: "Lure Her avec le décant Layton" }
       },
       {
