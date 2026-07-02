@@ -672,6 +672,7 @@
     var root = document.getElementById("hero-gallery");
     var track = document.getElementById("hero-gallery-track");
     var thumbs = document.getElementById("hero-gallery-thumbs");
+    var dots = document.getElementById("hero-gallery-dots");
     if (!root || !track || !thumbs || !manifest || !manifest.slides) return;
 
     heroManifestCache = manifest;
@@ -679,6 +680,7 @@
     var base = manifest.baseUrl || "";
     track.innerHTML = "";
     thumbs.innerHTML = "";
+    if (dots) dots.innerHTML = "";
 
     manifest.slides.forEach(function (slide, i) {
       var mainSrc = heroSlideAsset(slide.image, lang, base);
@@ -719,6 +721,24 @@
         });
       })(i);
       thumbs.appendChild(thumbBtn);
+
+      if (dots) {
+        var dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "media-carousel-dot" + (i === 0 ? " is-active" : "");
+        dot.setAttribute("role", "tab");
+        dot.setAttribute("aria-label", "Slide " + (i + 1));
+        dot.setAttribute("aria-selected", i === 0 ? "true" : "false");
+        (function (idx) {
+          dot.addEventListener("click", function () {
+            if (heroGalleryController) {
+              heroGalleryController.goTo(idx);
+              heroGalleryController.resetAutoplay();
+            }
+          });
+        })(i);
+        dots.appendChild(dot);
+      }
     });
 
     root.style.setProperty("--hero-thumb-cols", String(manifest.slides.length));
@@ -730,7 +750,15 @@
       slideSelector: ".media-carousel-slide",
       autoplayMs: isMobileCarousel ? 0 : 5000,
       crossfade: !isMobileCarousel,
-      scrollSnap: isMobileCarousel
+      scrollSnap: isMobileCarousel,
+      onChange: function (idx) {
+        if (!dots) return;
+        var dotList = dots.querySelectorAll(".media-carousel-dot");
+        for (var d = 0; d < dotList.length; d++) {
+          dotList[d].classList.toggle("is-active", d === idx);
+          dotList[d].setAttribute("aria-selected", d === idx ? "true" : "false");
+        }
+      }
     });
   }
 

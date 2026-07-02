@@ -599,6 +599,35 @@
   user-select: none;
   -webkit-user-drag: none;
 }
+.media-carousel-dots {
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  z-index: 4;
+  gap: 6px;
+  align-items: center;
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: rgba(20, 14, 10, 0.32);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+.media-carousel-dot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: width 0.28s ease, background 0.28s ease;
+}
+.media-carousel-dot.is-active {
+  width: 22px;
+  background: #fff;
+}
 .media-carousel-btn {
   position: absolute;
   top: 50%;
@@ -2527,6 +2556,7 @@ button.btn-primary .material-symbols-outlined {
 .checkout-assurance--duo .badge-item { flex: 1 1 50%; }
 @media (max-width: 639px) {
   .landing-hero .hero-gallery .media-carousel-thumbs { display: none !important; }
+  .landing-hero .hero-gallery .media-carousel-dots { display: flex !important; }
   .landing-hero .media-carousel-viewport {
     aspect-ratio: 1 / 1;
     max-height: none;
