@@ -1157,7 +1157,6 @@
     var marquee = track && track.parentNode;
     if (!track || !marquee) return;
 
-    var MARQUEE_BUILD_ID = "v5-70px";
     var SPEED_PX_PER_SEC = 70;
     var DURATION_FLOOR_SEC = 8;
     var lastViewportWidth = 0;
@@ -1198,9 +1197,6 @@
 
       var groupWidth = group.scrollWidth;
       if (!groupWidth) {
-        // #region agent log
-        fetch('http://127.0.0.1:7455/ingest/95e2fb0a-dd3f-4b7b-b7d2-d4a71c559484',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'0f29fb'},body:JSON.stringify({sessionId:'0f29fb',location:'script.js:buildLayout',message:'marquee zero width defer',data:{MARQUEE_BUILD_ID:MARQUEE_BUILD_ID,vw:vw,guard:guard},timestamp:Date.now(),hypothesisId:'H4'})}).catch(function(){});
-        // #endregion
         setTimeout(scheduleBuildLayout, 120);
         return;
       }
@@ -1209,40 +1205,11 @@
       clone.setAttribute("aria-hidden", "true");
       track.appendChild(clone);
 
-      var speed = SPEED_PX_PER_SEC;
-      var rawDuration = Math.round(groupWidth / speed);
-      var duration = Math.max(DURATION_FLOOR_SEC, rawDuration);
+      var duration = Math.max(DURATION_FLOOR_SEC, Math.round(groupWidth / SPEED_PX_PER_SEC));
       track.style.setProperty("--announce-duration", duration + "s");
       track.style.animationDuration = duration + "s";
       void track.offsetWidth;
       track.classList.add("is-ready");
-
-      var computedDur = "";
-      try { computedDur = window.getComputedStyle(track).animationDuration; } catch (e) {}
-      window.__MARQUEE_DBG = {
-        buildId: MARQUEE_BUILD_ID,
-        vw: vw,
-        speed: speed,
-        groupWidth: groupWidth,
-        guard: guard,
-        rawDuration: rawDuration,
-        duration: duration,
-        hitFloor: rawDuration < DURATION_FLOOR_SEC,
-        computedAnimDuration: computedDur
-      };
-      // #region agent log
-      fetch('http://127.0.0.1:7455/ingest/95e2fb0a-dd3f-4b7b-b7d2-d4a71c559484',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'0f29fb'},body:JSON.stringify({sessionId:'0f29fb',location:'script.js:buildLayout',message:'marquee layout built',data:window.__MARQUEE_DBG,timestamp:Date.now(),hypothesisId:'H1-H5'})}).catch(function(){});
-      // #endregion
-      if (/[?&]debug=1/.test(window.location.search || "")) {
-        var box = document.getElementById("marquee-debug-box");
-        if (!box) {
-          box = document.createElement("div");
-          box.id = "marquee-debug-box";
-          box.style.cssText = "position:fixed;bottom:0;left:0;right:0;z-index:999998;background:#111;color:#0f0;font:11px/1.4 monospace;padding:6px 8px;pointer-events:none;white-space:pre-wrap;";
-          document.body.appendChild(box);
-        }
-        box.textContent = "marquee " + JSON.stringify(window.__MARQUEE_DBG);
-      }
     }
 
     function scheduleBuildLayout() {
