@@ -2,6 +2,28 @@
 (function () {
   "use strict";
 
+  (function injectPageFonts() {
+    if (document.getElementById("v34-page-fonts")) return;
+    var icons =
+    "block,bolt,chevron_left,chevron_right,expand_more,favorite,forum,home,language,local_fire_department," +
+    "local_mall,local_shipping,location_on,lock,mic,payments,person,phone,photo_camera,published_with_changes,redeem," +
+      "schedule,science,spa,verified,verified_user";
+    var fonts =
+      "https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700" +
+      "&family=Outfit:wght@400;500;600;700" +
+      "&family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600" +
+      "&family=El+Messiri:wght@500;600;700&display=swap";
+    var symbols =
+      "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" +
+      "&icon_names=" + icons + "&display=swap";
+    var wrap = document.createElement("div");
+    wrap.id = "v34-page-fonts";
+    wrap.innerHTML =
+      '<link rel="stylesheet" href="' + fonts + '">' +
+      '<link rel="stylesheet" href="' + symbols + '">';
+    while (wrap.firstChild) document.head.appendChild(wrap.firstChild);
+  })();
+
   var I18N = {
 
     announce_cod: {
@@ -191,6 +213,11 @@
       fr: "+2 000 commandes livrées au Maroc"
     },
     rev_rating_label: { ar: "من +300 تقييم", en: "from 300+ ratings", fr: "sur +300 avis" },
+    rev_photos_note: {
+      ar: "تعليقات بصور من زبنائنا — صور حقيقية من بعد ما وصل الطلب",
+      en: "Photo reviews from our customers — real pictures after delivery",
+      fr: "Avis avec photos de nos clients — images réelles après livraison"
+    },
     rev_verified: { ar: "طلبية مؤكدة", en: "Verified order", fr: "Commande vérifiée" },
     rev1_name: { ar: "يوسف", en: "Youssef", fr: "Youssef" },
     rev1_city: { ar: "الدار البيضاء", en: "Casablanca", fr: "Casablanca" },
@@ -198,13 +225,6 @@
       ar: "وصلني فيومين. العطر خطير وكيدوم. مراتي سولاتني أشنو حاطط",
       en: "Delivered in 2 days. It lasts — my wife asked what I was wearing.",
       fr: "Livré en 2 jours. Il tient — ma femme m'a demandé ce que je portais."
-    },
-    rev2_name: { ar: "أنس", en: "Anas", fr: "Anas" },
-    rev2_city: { ar: "مراكش", en: "Marrakech", fr: "Marrakech" },
-    rev2_text: {
-      ar: "كنت خايف يكون مقلّد — لا، هادا أصلي وكيدوم بزّاف.",
-      en: "I feared a fake — it's the real thing, and it lasts.",
-      fr: "Je craignais une copie — c'est du vrai, et il tient."
     },
     rev3_name: { ar: "مهدي", en: "Mehdi", fr: "Mehdi" },
     rev3_city: { ar: "طنجة", en: "Tangier", fr: "Tanger" },
@@ -219,6 +239,18 @@
       ar: "حتى Layton ديال الهدية زوين بزّاف. خدمة ممتازة، كننصح بيه.",
       en: "Even the free Layton is great. Impeccable service — I recommend.",
       fr: "Même le Layton offert est top. Service impeccable, je recommande."
+    },
+    rev5_name: { ar: "سفيان .ك", en: "Sofiane K.", fr: "Sofiane K." },
+    rev5_city: { ar: "فاس", en: "Fes", fr: "Fès" },
+    rev5_text: {
+      ar: "تصويرة من بعد ما وصلني الطلب — العلبة و القنينة أصليين. ريحة كتجذب بزاف.",
+      en: "Photo right after delivery — box and bottle are genuine. The scent gets a lot of attention.",
+      fr: "Photo juste après la livraison — boîte et flacon authentiques. Le parfum attire beaucoup."
+    },
+    rev_audio_label: {
+      ar: "رسالة صوتية من الزبون",
+      en: "Voice note from customer",
+      fr: "Message vocal du client"
     },
 
     form_name: { ar: "الإسم الكامل", en: "Full Name", fr: "Nom complet" },
@@ -459,9 +491,9 @@
     }
   });
 
-  var HERO_ASSET_VERSION = 8;
+  var HERO_ASSET_VERSION = 9;
   var HERO_MANIFEST_URL =
-    "https://cdn.jsdelivr.net/gh/chafiyounes/lurher-lp@main/images/hero/manifest.json?v=" +
+    "https://raw.githubusercontent.com/chafiyounes/lurher-lp/main/images/hero/manifest.json?v=" +
     HERO_ASSET_VERSION;
 
   var HERO_MANIFEST_FALLBACK = {
@@ -469,26 +501,26 @@
     slides: [
       {
         id: "couple",
-        image: "h-couple-v2.webp",
-        thumb: "h-couple-v2.webp",
+        image: "h-couple-v2-800.webp",
+        thumb: "h-couple-v2-800.webp",
         alt: { ar: "امرأة تشمّ رجلاً يضع عطر Lure Her", en: "Woman smelling a man wearing Lure Her", fr: "Une femme sent un homme portant Lure Her" }
       },
       {
         id: "duo",
-        image: "h-duo-v3.webp",
-        thumb: "h-duo-v3.webp",
+        image: "h-duo-v3-800.webp",
+        thumb: "h-duo-v3-800.webp",
         alt: { ar: "عطر Lure Her مع عيّنة Layton", en: "Lure Her with the Layton decant", fr: "Lure Her avec le décant Layton" }
       },
       {
         id: "solo",
-        image: "h-solo-v2.webp",
-        thumb: "h-solo-v2.webp",
+        image: "h-solo-v2-800.webp",
+        thumb: "h-solo-v2-800.webp",
         alt: { ar: "عطر Lure Her الأصلي 50 مل", en: "Lure Her original 50ml", fr: "Lure Her original 50ml" }
       },
       {
         id: "decant",
-        image: "h-decant-v2.webp",
-        thumb: "h-decant-v2.webp",
+        image: "h-decant-v2-800.webp",
+        thumb: "h-decant-v2-800.webp",
         alt: { ar: "عيّنة عطر Layton 10 مل", en: "Layton parfum decant 10ml", fr: "Décant Layton parfum 10ml" }
       },
     ]
@@ -526,6 +558,44 @@
       img.dataset.fallbackTried = "1";
       if (img.src !== fallbackSrc) img.src = fallbackSrc;
     });
+  }
+
+  function assignHeroSlideImage(img, src, eager, fallback) {
+    img.width = 800;
+    img.height = 800;
+    img.removeAttribute("data-src");
+    if (eager) {
+      img.loading = "eager";
+      img.setAttribute("fetchpriority", "high");
+      bindImageFallback(img, src, fallback);
+      return;
+    }
+    img.loading = "lazy";
+    img.removeAttribute("fetchpriority");
+    if (!img.getAttribute("src")) {
+      img.setAttribute("data-src", src);
+      if (fallback) img.setAttribute("data-fallback-src", fallback);
+      return;
+    }
+    bindImageFallback(img, src, fallback);
+  }
+
+  function loadHeroSlideImageByIndex(index) {
+    var img = document.querySelector(
+      '#hero-gallery-track img[data-slide-index="' + index + '"]'
+    );
+    if (!img) return;
+    var pending = img.getAttribute("data-src");
+    if (!pending) return;
+    var fallback = img.getAttribute("data-fallback-src") || null;
+    img.removeAttribute("data-src");
+    img.removeAttribute("data-fallback-src");
+    bindImageFallback(img, pending, fallback);
+  }
+
+  function preloadAdjacentHeroSlides(index, total) {
+    loadHeroSlideImageByIndex(index);
+    if (total > 1) loadHeroSlideImageByIndex((index + 1) % total);
   }
 
   function initMediaCarousel(root, options) {
@@ -703,7 +773,16 @@
     heroManifestCache = manifest;
     var lang = langs[currentLangIndex];
     var base = manifest.baseUrl || "";
-    track.innerHTML = "";
+    var prerendered = track.querySelector(".media-carousel-slide");
+    var startIndex = prerendered ? 1 : 0;
+
+    if (!prerendered) {
+      track.innerHTML = "";
+    } else {
+      while (track.children.length > 1) {
+        track.removeChild(track.lastChild);
+      }
+    }
     thumbs.innerHTML = "";
     if (dots) dots.innerHTML = "";
 
@@ -713,20 +792,21 @@
       var fallback = slide.fallback || null;
       var alt = heroSlideAlt(slide, lang);
 
-      var li = document.createElement("li");
-      li.className = "media-carousel-slide" + (i === 0 ? " is-active" : "");
-      li.setAttribute("data-slide-id", slide.id);
-      var img = document.createElement("img");
-      img.alt = alt;
-      img.loading = i === 0 ? "eager" : "lazy";
-      img.decoding = "async";
-      img.setAttribute("data-slide-index", String(i));
-      img.setAttribute("data-alt-ar", slide.alt && slide.alt.ar ? slide.alt.ar : "");
-      img.setAttribute("data-alt-en", slide.alt && slide.alt.en ? slide.alt.en : "");
-      img.setAttribute("data-alt-fr", slide.alt && slide.alt.fr ? slide.alt.fr : "");
-      bindImageFallback(img, mainSrc, fallback);
-      li.appendChild(img);
-      track.appendChild(li);
+      if (i >= startIndex) {
+        var li = document.createElement("li");
+        li.className = "media-carousel-slide" + (i === 0 ? " is-active" : "");
+        li.setAttribute("data-slide-id", slide.id);
+        var img = document.createElement("img");
+        img.alt = alt;
+        img.decoding = "async";
+        img.setAttribute("data-slide-index", String(i));
+        img.setAttribute("data-alt-ar", slide.alt && slide.alt.ar ? slide.alt.ar : "");
+        img.setAttribute("data-alt-en", slide.alt && slide.alt.en ? slide.alt.en : "");
+        img.setAttribute("data-alt-fr", slide.alt && slide.alt.fr ? slide.alt.fr : "");
+        assignHeroSlideImage(img, mainSrc, i === 0, fallback);
+        li.appendChild(img);
+        track.appendChild(li);
+      }
 
       var thumbBtn = document.createElement("button");
       thumbBtn.type = "button";
@@ -736,6 +816,10 @@
       thumbBtn.setAttribute("aria-selected", i === 0 ? "true" : "false");
       var thumbImg = document.createElement("img");
       thumbImg.alt = "";
+      thumbImg.width = 80;
+      thumbImg.height = 80;
+      thumbImg.loading = "lazy";
+      thumbImg.decoding = "async";
       thumbImg.setAttribute("data-slide-index", String(i));
       bindImageFallback(thumbImg, thumbSrc, fallback);
       thumbBtn.appendChild(thumbImg);
@@ -777,6 +861,7 @@
       crossfade: !isMobileCarousel,
       scrollSnap: isMobileCarousel,
       onChange: function (idx) {
+        preloadAdjacentHeroSlides(idx, manifest.slides.length);
         if (!dots) return;
         var dotList = dots.querySelectorAll(".media-carousel-dot");
         for (var d = 0; d < dotList.length; d++) {
@@ -785,6 +870,7 @@
         }
       }
     });
+    preloadAdjacentHeroSlides(0, manifest.slides.length);
   }
 
   function updateHeroGalleryImages() {
@@ -798,7 +884,11 @@
       var thumbSrc = heroSlideAsset(slide.thumb || slide.image, lang, base);
       if (slideImgs[i]) {
         slideImgs[i].dataset.fallbackTried = "";
-        slideImgs[i].src = mainSrc;
+        if (i === 0 || slideImgs[i].getAttribute("src")) {
+          assignHeroSlideImage(slideImgs[i], mainSrc, i === 0, slide.fallback || null);
+        } else {
+          slideImgs[i].setAttribute("data-src", mainSrc);
+        }
       }
       if (thumbImgs[i]) {
         thumbImgs[i].dataset.fallbackTried = "";
@@ -827,6 +917,9 @@
     var root = document.getElementById("hero-gallery");
     if (!root) return;
 
+    buildHeroGallery(HERO_MANIFEST_FALLBACK);
+    updateHeroGalleryAlts();
+
     fetch(HERO_MANIFEST_URL, { cache: "no-cache" })
       .then(function (r) {
         if (!r.ok) throw new Error("manifest fetch failed");
@@ -836,10 +929,7 @@
         buildHeroGallery(data);
         updateHeroGalleryAlts();
       })
-      .catch(function () {
-        buildHeroGallery(HERO_MANIFEST_FALLBACK);
-        updateHeroGalleryAlts();
-      });
+      .catch(function () {});
   }
 
   function initFaq() {

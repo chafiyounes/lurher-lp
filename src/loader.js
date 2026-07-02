@@ -5,27 +5,30 @@
   /* ----------------------------------------------------------------------
    * Lure Her — YouCan footer loader
    *
-   * Primary CDN  : jsDelivr  — fast, globally cached, built to be hotlinked
-   *                at ad scale (raw.githubusercontent is NOT a CDN and is
-   *                rate-limited).
-   * Fallback     : raw.githubusercontent — always fresh; used only if
-   *                jsDelivr is unreachable, so we have redundancy.
-   * Graceful fail: if BOTH sources fail, OR the network is too slow, we send
+   * Primary CDN  : jsDelivr @DEPLOY_SHA — fast, globally cached, exact version
+   * Fallback 1   : raw.githubusercontent @DEPLOY_SHA — same commit, redundancy
+   * Fallback 2   : jsDelivr @main — if footer SHA wasn't bumped after a push
+   * Graceful fail: if ALL sources fail, OR the network is too slow, we send
    *                the customer to the proven image-based page (FALLBACK_URL)
    *                so they always land on something that sells. (With ?debug=1
    *                we stay put and show the error instead of redirecting.)
    * Debug box    : the red diagnostic banner now appears ONLY with ?debug=1
    *                in the URL — never to real customers.
+   *
+   * On each deploy: bump DEPLOY_SHA + LOADER_VERSION, paste footer once.
    * -------------------------------------------------------------------- */
 
   var REPO = "chafiyounes/lurher-lp";
   var BRANCH = "main";
-  var LOADER_VERSION = "lureher-v2-0";
+  // Bump on each deploy — pins HTML/CSS/JS to an exact commit (no raw @main 5-min lag).
+  var DEPLOY_SHA = "fb9dd05";
+  var LOADER_VERSION = "lureher-v4-1";
 
-  // jsDelivr uses @branch; raw uses /branch/ — note the different shape.
-  var CDN_BASE = "https://cdn.jsdelivr.net/gh/" + REPO + "@" + BRANCH + "/";
-  var RAW_BASE = "https://raw.githubusercontent.com/" + REPO + "/" + BRANCH + "/";
-  var BASE = CDN_BASE; // used by the OG/SEO image meta below
+  // jsDelivr uses @ref; raw uses /ref/ — note the different shape.
+  var CDN_BASE = "https://cdn.jsdelivr.net/gh/" + REPO + "@" + DEPLOY_SHA + "/";
+  var RAW_BASE = "https://raw.githubusercontent.com/" + REPO + "/" + DEPLOY_SHA + "/";
+  var CDN_MAIN = "https://cdn.jsdelivr.net/gh/" + REPO + "@" + BRANCH + "/";
+  var BASE = CDN_MAIN; // OG images track @main (images use ?v= cache bust)
 
   var FETCH_TIMEOUT_MS = 5000; // after this we stop waiting and fall back
   var DEBUG = /[?&]debug=1/.test(window.location.search || "");
@@ -36,19 +39,6 @@
   var FALLBACK_URL = "https://cleopatra.beauty/pages/lure-her";
 
   var FILES = { css: "src/styles.css", html: "src/page.html", js: "src/script.js" };
-
-  // Warm up the CDN connections before the fetches below — saves a DNS+TLS
-  // round-trip on cold mobile connections (most ad clicks).
-  (function preconnect() {
-    var hosts = ["https://cdn.jsdelivr.net", "https://raw.githubusercontent.com"];
-    for (var i = 0; i < hosts.length; i++) {
-      var l = document.createElement("link");
-      l.rel = "preconnect";
-      l.href = hosts[i];
-      l.crossOrigin = "anonymous";
-      document.head.appendChild(l);
-    }
-  })();
 
   // ---- 1. Anti-flicker: hide YouCan's default page until ours is ready ----
   if (!document.getElementById("v34-flicker-prevent")) {
@@ -137,6 +127,39 @@
 
   window.__V34_INITIAL_LANG = detectV34Lang();
 
+  var ASSET_VERSION = "9";
+  var LCP_HERO_IMAGE = CDN_BASE + "images/hero/h-couple-v2-800.webp?v=" + ASSET_VERSION;
+  var MATERIAL_ICONS =
+    "block,bolt,chevron_left,chevron_right,expand_more,favorite,forum,home,language,local_fire_department," +
+    "local_mall,local_shipping,location_on,lock,mic,payments,person,phone,photo_camera,published_with_changes,redeem," +
+    "schedule,science,spa,verified,verified_user";
+  var FONT_STYLESHEET =
+    "https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700" +
+    "&family=Outfit:wght@400;500;600;700" +
+    "&family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600" +
+    "&family=El+Messiri:wght@500;600;700&display=swap";
+  var SYMBOLS_STYLESHEET =
+    "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" +
+    "&icon_names=" + MATERIAL_ICONS + "&display=swap";
+
+  function injectHeadResources() {
+    if (document.getElementById("v34-head-resources")) return;
+    var wrap = document.createElement("div");
+    wrap.id = "v34-head-resources";
+    wrap.innerHTML = [
+      '<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>',
+      '<link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>',
+      '<link rel="preconnect" href="https://fonts.googleapis.com">',
+      '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
+      '<link rel="preload" as="image" href="' + LCP_HERO_IMAGE + '" fetchpriority="high">',
+      '<link rel="stylesheet" href="' + FONT_STYLESHEET + '">',
+      '<link rel="stylesheet" href="' + SYMBOLS_STYLESHEET + '">'
+    ].join("");
+    while (wrap.firstChild) document.head.appendChild(wrap.firstChild);
+  }
+
+  injectHeadResources();
+
   function injectSeoMeta() {
     if (document.getElementById("v34-seo-meta")) return;
     var wrap = document.createElement("div");
@@ -145,12 +168,12 @@
       '<meta name="description" content="Lure Her — باك عطر فاخر للرجال: 50ml كيدوم طول النهار + Layton أصلي هدية. توصيل مجاني والدفع عند الاستلام في المغرب.">',
       '<meta property="og:title" content="Lure Her — باك العطر الفاخر للرجال">',
       '<meta property="og:description" content="عطر مغناطيسي كيدوم طول النهار + Layton أصلي هدية. الدفع عند الاستلام، توصيل مجاني لكل المغرب — 189 درهم.">',
-      '<meta property="og:image" content="' + BASE + 'images/hero/01-main.png">',
+      '<meta property="og:image" content="' + BASE + 'images/hero/h-couple-v2-800.webp?v=' + ASSET_VERSION + '">',
       '<meta property="og:type" content="product">',
       '<meta name="twitter:card" content="summary_large_image">',
       '<meta name="twitter:title" content="Lure Her — باك العطر الفاخر للرجال">',
       '<meta name="twitter:description" content="عطر مغناطيسي + Layton أصلي هدية — الدفع عند الاستلام.">',
-      '<meta name="twitter:image" content="' + BASE + 'images/hero/01-main.png">'
+      '<meta name="twitter:image" content="' + BASE + 'images/hero/h-couple-v2-800.webp?v=' + ASSET_VERSION + '">'
     ].join("");
     while (wrap.firstChild) document.head.appendChild(wrap.firstChild);
     if (!document.title || document.title === "test2") {
@@ -160,23 +183,24 @@
 
   injectSeoMeta();
 
-  // raw.githubusercontent honors ?t= to bust caches; jsDelivr ignores query
-  // strings (purge via purge.jsdelivr.net instead), so we only append for raw.
-  var cacheBuster = "?t=" + new Date().getTime();
+  // jsDelivr @SHA = fast global CDN + exact version. raw @SHA = instant fallback.
+  // CDN @main = last resort if footer SHA wasn't bumped after a push.
+  console.log("[V34 Loader] v" + LOADER_VERSION + " @ " + DEPLOY_SHA + " → jsDelivr, raw, @main");
 
-  console.log("[V34 Loader] v" + LOADER_VERSION + " → primary " + CDN_BASE);
-
-  // ---- 2. Fetch one file: try jsDelivr, fall back to raw on any error ----
+  // ---- 2. Fetch one file: jsDelivr @SHA → raw @SHA → jsDelivr @main ----
   function fetchFile(relPath) {
-    function get(base, bust) {
-      return fetch(base + relPath + (bust ? cacheBuster : "")).then(function (r) {
+    function get(base) {
+      return fetch(base + relPath).then(function (r) {
         if (!r.ok) throw new Error("HTTP " + r.status + " @ " + base);
         return r.text();
       });
     }
-    return get(CDN_BASE, false).catch(function (e) {
-      console.warn("[V34 Loader] jsDelivr miss for " + relPath + " → raw fallback:", e.message);
-      return get(RAW_BASE, true);
+    return get(CDN_BASE).catch(function (e1) {
+      console.warn("[V34 Loader] jsDelivr @" + DEPLOY_SHA + " miss for " + relPath + " → raw:", e1.message);
+      return get(RAW_BASE).catch(function (e2) {
+        console.warn("[V34 Loader] raw @" + DEPLOY_SHA + " miss → @main:", e2.message);
+        return get(CDN_MAIN);
+      });
     });
   }
 
@@ -223,6 +247,8 @@
           target.innerHTML = htmlText;
 
           var earlyLang = window.__V34_INITIAL_LANG || "ar";
+          document.documentElement.setAttribute("lang", earlyLang);
+          document.documentElement.setAttribute("dir", earlyLang === "ar" ? "rtl" : "ltr");
           var appRoot = target.querySelector(".app");
           if (appRoot) {
             appRoot.setAttribute("lang", earlyLang);
