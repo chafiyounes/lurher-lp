@@ -2741,10 +2741,11 @@ button.btn-primary .material-symbols-outlined {
   overflow: hidden;
 }
 .coffret-visual {
-  position: relative; align-self: stretch;
+  position: relative; align-self: center;
+  aspect-ratio: 1182 / 1330;
   background: radial-gradient(120% 100% at 50% 0%, #2a2320, #100c0a);
 }
-.coffret-visual img { width: 100%; height: 100%; min-height: 280px; object-fit: cover; display: block; }
+.coffret-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .coffret-detail { padding: clamp(22px, 3vw, 34px) clamp(22px, 3vw, 34px) clamp(22px, 3vw, 30px); }
 .coffret-line {
   display: flex; align-items: center; gap: 14px;
@@ -2772,7 +2773,6 @@ button.btn-primary .material-symbols-outlined {
 .coffret-cta { margin-top: 4px; }
 @media (max-width: 760px) {
   .coffret-panel { grid-template-columns: 1fr; }
-  .coffret-visual img { min-height: 240px; }
 }
 
 /* SECTION 9 — Final CTA */
