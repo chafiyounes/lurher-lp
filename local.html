@@ -21,7 +21,8 @@
     ]).then(function (R) {
       var s = document.createElement("style"); s.textContent = R[0]; document.head.appendChild(s);
       // point all jsDelivr asset URLs at the local server (+cache-bust) so images are live too
-      var html = R[1].replace(/https:\/\/cdn\.jsdelivr\.net\/gh\/chafiyounes\/lurher-lp@main\/([^"')\s]+)/g, "$1?cb=" + Date.now());
+      var html = R[1].replace(/https:\/\/cdn\.jsdelivr\.net\/gh\/chafiyounes\/lurher-lp@main\/([^"')\s]+)/g, "$1?cb=" + Date.now())
+                     .replace(/https:\/\/raw\.githubusercontent\.com\/chafiyounes\/lurher-lp\/main\/([^"')\s?]+)(\?v=\d+)?/g, "$1?cb=" + Date.now());
       var d = document.createElement("div"); d.id = "v34-root"; d.innerHTML = html; document.body.appendChild(d);
       var a = document.getElementById("app"); if (a) a.style.display = "none";
       var sc = document.createElement("script"); sc.textContent = R[2]; document.body.appendChild(sc);
