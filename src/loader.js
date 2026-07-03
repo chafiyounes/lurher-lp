@@ -130,9 +130,9 @@
   var ASSET_VERSION = "9";
   var LCP_HERO_IMAGE = CDN_BASE + "images/hero/h-couple-v2-800.webp?v=" + ASSET_VERSION;
   var MATERIAL_ICONS =
-    "block,bolt,chevron_left,chevron_right,expand_more,favorite,forum,home,language,local_fire_department," +
-    "local_mall,local_shipping,location_on,lock,mic,payments,person,phone,photo_camera,published_with_changes,redeem," +
-    "schedule,science,spa,verified,verified_user";
+    "block,chevron_left,chevron_right,expand_more,favorite,forum,home,language," +
+    "local_mall,local_shipping,location_on,lock,mic,payments,person,phone,photo_camera,published_with_changes," +
+    "schedule,science,verified,verified_user";
   var FONT_STYLESHEET =
     "https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700" +
     "&family=Outfit:wght@400;500;600;700" +

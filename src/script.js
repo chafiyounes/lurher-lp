@@ -5,9 +5,9 @@
   (function injectPageFonts() {
     if (document.getElementById("v34-page-fonts")) return;
     var icons =
-    "block,bolt,chevron_left,chevron_right,expand_more,favorite,forum,home,language,local_fire_department," +
-    "local_mall,local_shipping,location_on,lock,mic,payments,person,phone,photo_camera,published_with_changes,redeem," +
-      "schedule,science,spa,verified,verified_user";
+    "block,chevron_left,chevron_right,expand_more,favorite,forum,home,language," +
+    "local_mall,local_shipping,location_on,lock,mic,payments,person,phone,photo_camera,published_with_changes," +
+      "schedule,science,verified,verified_user";
     var fonts =
       "https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700" +
       "&family=Outfit:wght@400;500;600;700" +
@@ -163,7 +163,7 @@
     vs_f4: { ar: "عطر Layton أصلي هدية مع كل طلب هاد السيمانة", en: "Original Layton perfume free with every order this week", fr: "Layton original offert avec chaque commande cette semaine" },
 
     proof_eyebrow: { ar: "الجودة والإثبات", en: "Proof & quality", fr: "Preuves & qualité" },
-    proof_h: { ar: "الجودة اللي ما تبانش من الشاشة", en: "Quality you can't judge on a screen", fr: "La vraie qualité، impossible à juger sur écran" },
+    proof_h: { ar: "الجودة اللي ما تبانش من الشاشة", en: "Quality you can't judge on a screen", fr: "La vraie qualité, impossible à juger sur écran" },
     proof_1: {
       ar: "شعار UV مطبوع فالقنينة، ماشي ستيكر كيتقلّع.",
       en: "UV logo printed on the bottle, not a label that peels off.",
