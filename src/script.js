@@ -37,7 +37,7 @@
       fr: "Livraison gratuite partout au Maroc"
     },
     announce_stock: {
-      ar: "ما بقاو غير <strong>{n}</strong> باك هاد السيمانة",
+      ar: "بقا <strong>{n}</strong> طلبيات فقط لهذا الأسبوع",
       en: "Only <strong>{n}</strong> packs left this week!",
       fr: "Plus que <strong>{n}</strong> packs cette semaine !"
     },
@@ -56,19 +56,19 @@
     hero_badge: { ar: "Lure Her", en: "Lure Her", fr: "Lure Her" },
 
     land_hero_h: {
-      ar: "باك العطر اللي غادي يخلّيها ما تقدرش تقاومك",
+      ar: "العطرين اللي غادين يخليوها متقدرش تقاومك",
       en: "With this perfume pack, she won't be able to resist you",
       fr: "Avec ce pack de parfum, elle ne pourra plus vous résister"
     },
     land_hero_sub: {
-      ar: "1000 مجاملة مضمونة.",
+      ar: "غتسمع \"ريحتك زوينة\" 1000 مرة",
       en: "1,000 compliments, guaranteed.",
       fr: "1000 compliments garantis."
     },
     hero_offer: {
-      ar: "Lure Her 50ml + Layton 10ml، 189 درهم بلاصة 350",
-      en: "Lure Her 50ml + Layton 10ml, 189 DH instead of 350",
-      fr: "Lure Her 50ml + Layton 10ml, 189 DH au lieu de 350"
+      ar: "Lure Her 50ml + Layton 10ml، ‏189 درهم <s>350 درهم</s>",
+      en: "Lure Her 50ml + Layton 10ml, 189 DH <s>350 DH</s>",
+      fr: "Lure Her 50ml + Layton 10ml, 189 DH <s>350 DH</s>"
     },
     offer_name: {
       ar: "جوج عطور أصلية: Lure Her 50ml + Layton 10ml",
