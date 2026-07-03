@@ -86,7 +86,7 @@
       en: "With every order: free 10ml gift",
       fr: "Avec chaque commande : 10ml offert en cadeau"
     },
-    savings_tag: { ar: "وفّرت 61 درهم", en: "You save 61 DH", fr: "Économisez 61 DH" },
+    savings_tag: { ar: "وفّرت 161 درهم", en: "You save 161 DH", fr: "Économisez 161 DH" },
 
     ct_ship: { ar: "توصيل مجاني", en: "Free delivery", fr: "Livraison gratuite" },
     ct_guarantee: { ar: "تجرّب قبل ما تخلّص!", en: "Try it before you pay!", fr: "Essayage avant paiement possible !" },
@@ -202,7 +202,7 @@
     },
     box_cta: { ar: "اطلب الآن", en: "Order now", fr: "Commander" },
     box_foot: { ar: "الزوج كامل بـ 189 درهم فقط", en: "Both together for only 189 DH", fr: "Les deux ensemble pour seulement 189 DH" },
-    coffret_strike: { ar: "250 درهم", en: "250 DH", fr: "250 DH" },
+    coffret_strike: { ar: "350 درهم", en: "350 DH", fr: "350 DH" },
     coffret_now: { ar: "189 درهم", en: "189 DH", fr: "189 DH" },
 
     rev_eyebrow: { ar: "آراء الزبناء", en: "Customer reviews", fr: "Avis clients" },
@@ -277,9 +277,9 @@
 
     fcta_h: { ar: "عطر واحد يقدر يبدّل كلشي", en: "One perfume can change everything", fr: "Un seul parfum peut tout changer" },
     fcta_offer: {
-      ar: "Lure Her 50ml + 10ml هدية · 250 درهم ← 189 درهم · الدفع عند الاستلام · توصيل مجاني",
-      en: "Lure Her 50ml + free 10ml gift · 250 DH → 189 DH · Cash on delivery · Free shipping",
-      fr: "Lure Her 50ml + 10ml offert · 250 DH → 189 DH · Paiement à la livraison · Livraison gratuite"
+      ar: "Lure Her 50ml + Layton 10ml هدية · 350 درهم ← 189 درهم · الدفع عند الاستلام · توصيل مجاني",
+      en: "Lure Her 50ml + free Layton 10ml · 350 DH → 189 DH · Cash on delivery · Free shipping",
+      fr: "Lure Her 50ml + Layton 10ml offert · 350 DH → 189 DH · Paiement à la livraison · Livraison gratuite"
     },
     fcta_cta: { ar: "اطلب الآن", en: "ORDER", fr: "COMMANDER" },
     fcta_stock: { ar: "ما بقاوش غير 30 قطعة", en: "Only 30 pieces left", fr: "Plus que 30 pièces" },
