@@ -61,19 +61,19 @@
       fr: "Avec ce pack de parfum, elle ne pourra plus vous résister"
     },
     land_hero_sub: {
-      ar: "الريحة اللي غادي تسمع عليها 1000 مجاملة.",
-      en: "The scent you'll hear 1,000 compliments about.",
-      fr: "Le parfum qui vous vaudra 1000 compliments."
+      ar: "1000 مجاملة مضمونة.",
+      en: "1,000 compliments, guaranteed.",
+      fr: "1000 compliments garantis."
     },
     hero_offer: {
-      ar: "50ml + Layton 10ml هدية · 189 درهم بلاصة 250",
-      en: "50ml + free Layton 10ml · 189 DH instead of 250",
-      fr: "50ml + Layton 10ml offert · 189 DH au lieu de 250"
+      ar: "Lure Her 50ml + Layton 10ml، 189 درهم بلاصة 350",
+      en: "Lure Her 50ml + Layton 10ml, 189 DH instead of 350",
+      fr: "Lure Her 50ml + Layton 10ml, 189 DH au lieu de 350"
     },
     offer_name: {
-      ar: "Lure Her 50ml + Layton 10ml أصلي",
-      en: "Lure Her 50ml + original Layton 10ml",
-      fr: "Lure Her 50ml + Layton 10ml original"
+      ar: "جوج عطور أصلية: Lure Her 50ml + Layton 10ml",
+      en: "Two original perfumes: Lure Her 50ml + Layton 10ml",
+      fr: "Deux parfums originaux : Lure Her 50ml + Layton 10ml"
     },
 
     trust_attract: { ar: "يلفت الأنظار", en: "Turns heads", fr: "Attire les regards" },
@@ -89,13 +89,13 @@
     savings_tag: { ar: "وفّرت 61 درهم", en: "You save 61 DH", fr: "Économisez 61 DH" },
 
     ct_ship: { ar: "توصيل مجاني", en: "Free delivery", fr: "Livraison gratuite" },
-    ct_guarantee: { ar: "جوج عطور أصلية 100%", en: "2 original perfumes", fr: "2 parfums 100% originaux" },
+    ct_guarantee: { ar: "تجرّب قبل ما تخلّص!", en: "Try it before you pay!", fr: "Essayage avant paiement possible !" },
     trust_shipping: { ar: "توصيل مجاني في كل المغرب", en: "Free shipping in Morocco", fr: "Livraison gratuite au Maroc" },
 
     tb_cod: {
-      ar: "الدفع عند الاستلام — ما كتخلّص حتى يوصلك المنتج ليديك",
-      en: "Cash on delivery — you only pay once the product is in your hands",
-      fr: "Paiement à la livraison — vous ne payez qu'une fois le produit en main"
+      ar: "الدفع عند الاستلام، ما كتخلّص حتى يوصلك المنتج ليديك",
+      en: "Cash on delivery, you only pay once the product is in your hands",
+      fr: "Paiement à la livraison, vous ne payez qu'une fois le produit en main"
     },
     tb_ship: {
       ar: "توصيل مجاني لجميع مدن المغرب",
@@ -103,9 +103,9 @@
       fr: "Livraison gratuite dans toutes les villes du Maroc"
     },
     tb_return: {
-      ar: "جرّبو بكل ثقة — إيلا ما عجبكش العطر أو شككتي فأصالتو، ترجعو بلا أي مشكل",
-      en: "Try with confidence — if you don't like the perfume or doubt its authenticity, you send it back, no hassle",
-      fr: "Essayez en toute confiance — si le parfum ne vous plaît pas ou si vous doutez de son authenticité, vous le renvoyez, sans souci"
+      ar: "جرّبو بكل ثقة، إيلا ما عجبكش العطر أو شككتي فأصالتو، ترجعو بلا أي مشكل",
+      en: "Try with confidence, if you don't like the perfume or doubt its authenticity, you send it back, no hassle",
+      fr: "Essayez en toute confiance, si le parfum ne vous plaît pas ou si vous doutez de son authenticité, vous le renvoyez, sans souci"
     },
     guarantee_title: {
       ar: "شمّو قبل ما تخلّص",
@@ -113,9 +113,9 @@
       fr: "Sentez avant de payer"
     },
     guarantee_sub: {
-      ar: "شمّو، وإيلا ما عجبكش رجّعو بلا مشكل — كتخلّص غير عند الاستلام.",
-      en: "Smell it — if you don't like it, send it back. You only pay on delivery.",
-      fr: "Sentez-le — s'il ne vous plaît pas, retournez-le. Vous ne payez qu'à la livraison."
+      ar: "شمّو، وإيلا ما عجبكش رجّعو بلا مشكل، كتخلّص غير عند الاستلام.",
+      en: "Smell it, if you don't like it, send it back. You only pay on delivery.",
+      fr: "Sentez-le, s'il ne vous plaît pas, retournez-le. Vous ne payez qu'à la livraison."
     },
     guarantee_meta_1: {
       ar: "توصيل من 24 إلى 48 ساعة في كل المغرب",
@@ -145,14 +145,14 @@
       fr: "Ces parfums bon marché vendus 5 pour 200 ? Ils sentent l'alcool, s'évaporent en une heure et ne produisent aucun effet."
     },
     reframe_p2: {
-      ar: "حنا درنا العكس. فورمولة حصرية بتركيز عالي من الزيوت — قنينة وحدة كتدير تأثير بصح.",
-      en: "We did the opposite. An exclusive high-concentration formula — one bottle that actually works.",
-      fr: "Nous avons fait l'inverse. Une formule exclusive à forte concentration d'huiles — un seul flacon qui fait vraiment effet."
+      ar: "حنا درنا العكس. فورمولة حصرية بتركيز عالي من الزيوت، قنينة وحدة كتدير تأثير بصح.",
+      en: "We did the opposite. An exclusive high-concentration formula, one bottle that actually works.",
+      fr: "Nous avons fait l'inverse. Une formule exclusive à forte concentration d'huiles, un seul flacon qui fait vraiment effet."
     },
     reframe_p3: {
-      ar: "ماشي الكمية اللي مهمة — التأثير.",
-      en: "It's not about quantity — it's about effect.",
-      fr: "Pas une question de quantité — une question d'effet."
+      ar: "ماشي الكمية اللي مهمة، التأثير.",
+      en: "It's not about quantity, it's about effect.",
+      fr: "Pas une question de quantité, une question d'effet."
     },
     vs_us_label: { ar: "Lure Her", en: "Lure Her", fr: "Lure Her" },
     vs_them_label: { ar: "5 عطور مقلّدة بـ 200 درهم", en: "5 fakes for 200 DH", fr: "5 faux produits pour 200 DH" },
@@ -163,11 +163,11 @@
     vs_f4: { ar: "عطر Layton أصلي هدية مع كل طلب هاد السيمانة", en: "Original Layton perfume free with every order this week", fr: "Layton original offert avec chaque commande cette semaine" },
 
     proof_eyebrow: { ar: "الجودة والإثبات", en: "Proof & quality", fr: "Preuves & qualité" },
-    proof_h: { ar: "الجودة اللي ما تبانش من الشاشة", en: "Quality you can't judge on a screen", fr: "La vraie qualité — impossible à juger sur écran" },
+    proof_h: { ar: "الجودة اللي ما تبانش من الشاشة", en: "Quality you can't judge on a screen", fr: "La vraie qualité، impossible à juger sur écran" },
     proof_1: {
-      ar: "شعار UV مطبوع فالقنينة — ماشي ستيكر كيتقلّع.",
-      en: "UV logo printed on the bottle — not a label that peels off.",
-      fr: "Logo UV imprimé sur le flacon — pas une étiquette qui se décolle."
+      ar: "شعار UV مطبوع فالقنينة، ماشي ستيكر كيتقلّع.",
+      en: "UV logo printed on the bottle, not a label that peels off.",
+      fr: "Logo UV imprimé sur le flacon, pas une étiquette qui se décolle."
     },
     proof_2: {
       ar: "تركيز عالي من الزيوت الأصلية = كيدوم طول اليوم",
@@ -176,29 +176,29 @@
     },
     proof_4: { ar: "بلا ريحة الكحول", en: "No alcohol smell", fr: "Sans odeur d'alcool" },
     proof_attn: {
-      ar: "كتولي نتا اللي عليه الهضرة — الناس كيسولوك شنو حاطط",
-      en: "You become the center of attention — people ask what you're wearing",
-      fr: "Vous devenez le centre d'attention — on vous demande ce que vous portez"
+      ar: "كتولي نتا اللي عليه الهضرة، الناس كيسولوك شنو حاطط",
+      en: "You become the center of attention, people ask what you're wearing",
+      fr: "Vous devenez le centre d'attention, on vous demande ce que vous portez"
     },
     proof_close: {
-      ar: "التأثير كيبان من قريب — اللحظات القريبة كتبقى فالبال",
-      en: "The effect shows up close — moments they remember",
-      fr: "L'effet se sent de près — des moments proches inoubliables"
+      ar: "التأثير كيبان من قريب، اللحظات القريبة كتبقى فالبال",
+      en: "The effect shows up close, moments they remember",
+      fr: "L'effet se sent de près, des moments proches inoubliables"
     },
 
     box_eyebrow: { ar: "شنو غادي توصلك", en: "What you receive", fr: "Ce que vous recevez" },
     box_h: { ar: "كل باك فيه جوج عطور", en: "Every pack contains two perfumes", fr: "Chaque pack contient deux parfums" },
     box_1_title: { ar: "Lure Her", en: "Lure Her", fr: "Lure Her" },
     box_1_sub: {
-      ar: "قوي ومغناطيسي — فانيلا وكراميل ببداية منعشة",
-      en: "Powerful and magnetic — vanilla & caramel with a fresh opening",
-      fr: "Puissant et magnétique — vanille-caramel, départ frais"
+      ar: "عطر حلو كيخلي الناس يقرّبو ليك، نعناع منعش، فانيلا حليبية",
+      en: "A scent so sweet people move closer, minty freshness, milky vanilla",
+      fr: "Un parfum si doux qu'on se rapproche de vous, fraîcheur mentholée, vanille lactée"
     },
-    box_2_title: { ar: "Layton أصلي — هدية", en: "Original Layton — free gift", fr: "Layton original — offert" },
+    box_2_title: { ar: "Layton أصلي، هدية", en: "Original Layton, free gift", fr: "Layton original, offert" },
     box_2_sub: {
-      ar: "قيمتو 200 درهم — مع كل طلب هاد السيمانة",
-      en: "Worth 200 DH — with every order this week",
-      fr: "Valeur 200 DH — avec chaque commande cette semaine"
+      ar: "عطر قوي كيعرفو بلي دخلتي قبل ما يشوفوك، خشبي، متوابل، عنبري.",
+      en: "A scent so powerful they know you walked in before they see you, woody, spicy, ambery.",
+      fr: "Un parfum si puissant qu'on sait que vous êtes entré avant de vous voir, boisé, épicé, ambré."
     },
     box_cta: { ar: "اطلب الآن", en: "Order now", fr: "Commander" },
     box_foot: { ar: "الزوج كامل بـ 189 درهم فقط", en: "Both together for only 189 DH", fr: "Les deux ensemble pour seulement 189 DH" },
@@ -214,38 +214,38 @@
     },
     rev_rating_label: { ar: "من +300 تقييم", en: "from 300+ ratings", fr: "sur +300 avis" },
     rev_photos_note: {
-      ar: "تعليقات بصور من زبنائنا — صور حقيقية من بعد ما وصل الطلب",
-      en: "Photo reviews from our customers — real pictures after delivery",
-      fr: "Avis avec photos de nos clients — images réelles après livraison"
+      ar: "تعليقات بصور من زبنائنا، صور حقيقية من بعد ما وصل الطلب",
+      en: "Photo reviews from our customers, real pictures after delivery",
+      fr: "Avis avec photos de nos clients, images réelles après livraison"
     },
     rev_verified: { ar: "طلبية مؤكدة", en: "Verified order", fr: "Commande vérifiée" },
     rev1_name: { ar: "يوسف", en: "Youssef", fr: "Youssef" },
     rev1_city: { ar: "الدار البيضاء", en: "Casablanca", fr: "Casablanca" },
     rev1_text: {
       ar: "وصلني فيومين. العطر خطير وكيدوم. مراتي سولاتني أشنو حاطط",
-      en: "Delivered in 2 days. It lasts — my wife asked what I was wearing.",
-      fr: "Livré en 2 jours. Il tient — ma femme m'a demandé ce que je portais."
+      en: "Delivered in 2 days. It lasts, my wife asked what I was wearing.",
+      fr: "Livré en 2 jours. Il tient, ma femme m'a demandé ce que je portais."
     },
     rev3_name: { ar: "مهدي", en: "Mehdi", fr: "Mehdi" },
     rev3_city: { ar: "طنجة", en: "Tangier", fr: "Tanger" },
     rev3_text: {
-      ar: "بزّاف ديال المجاملات فالخدمة. مستاهل — غير كنت نتمنى القنينة أكبر شوية.",
-      en: "Tons of compliments at work. Worth it — just wish the bottle were bigger.",
-      fr: "Plein de compliments au travail. Ça vaut le prix — j'aurais juste aimé un flacon plus grand."
+      ar: "بزّاف ديال المجاملات فالخدمة. مستاهل، غير كنت نتمنى القنينة أكبر شوية.",
+      en: "Tons of compliments at work. Worth it, just wish the bottle were bigger.",
+      fr: "Plein de compliments au travail. Ça vaut le prix, j'aurais juste aimé un flacon plus grand."
     },
     rev4_name: { ar: "رضا", en: "Reda", fr: "Reda" },
     rev4_city: { ar: "أكادير", en: "Agadir", fr: "Agadir" },
     rev4_text: {
       ar: "حتى Layton ديال الهدية زوين بزّاف. خدمة ممتازة، كننصح بيه.",
-      en: "Even the free Layton is great. Impeccable service — I recommend.",
+      en: "Even the free Layton is great. Impeccable service, I recommend.",
       fr: "Même le Layton offert est top. Service impeccable, je recommande."
     },
     rev5_name: { ar: "سفيان .ك", en: "Sofiane K.", fr: "Sofiane K." },
     rev5_city: { ar: "فاس", en: "Fes", fr: "Fès" },
     rev5_text: {
-      ar: "تصويرة من بعد ما وصلني الطلب — العلبة و القنينة أصليين. ريحة كتجذب بزاف.",
-      en: "Photo right after delivery — box and bottle are genuine. The scent gets a lot of attention.",
-      fr: "Photo juste après la livraison — boîte et flacon authentiques. Le parfum attire beaucoup."
+      ar: "تصويرة من بعد ما وصلني الطلب، العلبة و القنينة أصليين. ريحة كتجذب بزاف.",
+      en: "Photo right after delivery, box and bottle are genuine. The scent gets a lot of attention.",
+      fr: "Photo juste après la livraison, boîte et flacon authentiques. Le parfum attire beaucoup."
     },
     rev_audio_label: {
       ar: "رسالة صوتية من الزبون",
@@ -289,33 +289,33 @@
     faq_cta: { ar: "اطلب الآن", en: "Order now", fr: "Commander maintenant" },
     faq_q1: { ar: "واش العطر أصلي؟", en: "Is the perfume authentic?", fr: "Le parfum est-il authentique ?" },
     faq_a1: {
-      ar: "أيه — شعار UV مطبوع فالقنينة وفورمولة مركّزة.",
-      en: "Yes — UV logo printed on the bottle, concentrated formula.",
-      fr: "Oui — logo UV imprimé sur le flacon, formule concentrée."
+      ar: "أيه، شعار UV مطبوع فالقنينة وفورمولة مركّزة.",
+      en: "Yes, UV logo printed on the bottle, concentrated formula.",
+      fr: "Oui, logo UV imprimé sur le flacon, formule concentrée."
     },
     faq_q2: { ar: "شحال كيدوم؟", en: "How long does it last?", fr: "Combien de temps tient-il ?" },
     faq_a2: {
-      ar: "طول النهار — تركيز عالي ديال الزيوت.",
-      en: "All day — high oil concentration.",
-      fr: "Toute la journée — forte concentration d'huiles."
+      ar: "طول النهار، تركيز عالي ديال الزيوت.",
+      en: "All day, high oil concentration.",
+      fr: "Toute la journée, forte concentration d'huiles."
     },
     faq_q3: { ar: "كيفاش كنخلّص؟", en: "How do I pay?", fr: "Comment je paie ?" },
     faq_a3: {
-      ar: "الدفع عند الاستلام — كتخلّص ملي يوصلك الباك ليديك.",
-      en: "Cash on delivery — you pay once the pack is in your hands.",
-      fr: "Paiement à la livraison — vous payez quand le pack est entre vos mains."
+      ar: "الدفع عند الاستلام، كتخلّص ملي يوصلك الباك ليديك.",
+      en: "Cash on delivery, you pay once the pack is in your hands.",
+      fr: "Paiement à la livraison, vous payez quand le pack est entre vos mains."
     },
     faq_q4: { ar: "إمتى غادي يوصلني؟", en: "When will I be delivered?", fr: "Quand serai-je livré ?" },
     faq_a4: {
-      ar: "من 24 لـ 48 ساعة — توصيل مجاني لكل المغرب.",
-      en: "24–48 hours — free delivery across Morocco.",
-      fr: "Sous 24–48 h — livraison gratuite partout au Maroc."
+      ar: "من 24 لـ 48 ساعة، توصيل مجاني لكل المغرب.",
+      en: "24–48 hours, free delivery across Morocco.",
+      fr: "Sous 24–48 h, livraison gratuite partout au Maroc."
     },
     faq_q5: { ar: "واش نقدر نرجعو؟", en: "Can I return it?", fr: "Puis-je le renvoyer ?" },
     faq_a5: {
-      ar: "أيه — إيلا ما عجبكش رجّعو بلا مشكل.",
-      en: "Yes — if you don't like it, send it back, no hassle.",
-      fr: "Oui — s'il ne vous plaît pas, renvoyez-le sans souci."
+      ar: "أيه، إيلا ما عجبكش رجّعو بلا مشكل.",
+      en: "Yes, if you don't like it, send it back, no hassle.",
+      fr: "Oui, s'il ne vous plaît pas, renvoyez-le sans souci."
     }
   };
 
@@ -1089,10 +1089,10 @@
             }
             var pl = langs[currentLangIndex];
             pErr.textContent = pl === "ar"
-              ? "رقم غير صحيح — مثال: 0612345678"
+              ? "رقم غير صحيح، مثال: 0612345678"
               : pl === "fr"
-                ? "Numéro invalide — ex : 0612345678"
-                : "Invalid number — e.g. 0612345678";
+                ? "Numéro invalide, ex : 0612345678"
+                : "Invalid number, e.g. 0612345678";
           }
         } else if (phoneInput.value !== digits) {
           phoneInput.value = digits;
