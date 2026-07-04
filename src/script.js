@@ -1383,18 +1383,21 @@
   }
 
   function handleHashRoute() {
+    // Landing (with the order form) is the default for ANY hash — old ad links
+    // carry junk anchors like #PBS-xxxx and must still land on the form.
+    // The teaser home view only shows when explicitly requested via #home.
     var hash = window.location.hash || '#landing';
     var views = document.querySelectorAll('.view-container');
     for (var i = 0; i < views.length; i++) {
       views[i].style.display = 'none';
     }
 
-    if (hash === '#landing') {
-      var landing = document.getElementById('view-landing');
-      if (landing) landing.style.display = 'block';
-    } else {
+    if (hash === '#home') {
       var home = document.getElementById('view-home');
       if (home) home.style.display = 'block';
+    } else {
+      var landing = document.getElementById('view-landing');
+      if (landing) landing.style.display = 'block';
     }
 
     window.scrollTo(0, 0);
