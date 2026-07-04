@@ -22,7 +22,7 @@
   var BRANCH = "main";
   // Bump on each deploy — pins HTML/CSS/JS to an exact commit (no raw @main 5-min lag).
   var DEPLOY_SHA = "4b50c34";
-  var LOADER_VERSION = "lureher-v5-8";
+  var LOADER_VERSION = "lureher-v5-9";
 
   // jsDelivr uses @ref; raw uses /ref/ — note the different shape.
   var CDN_BASE = "https://cdn.jsdelivr.net/gh/" + REPO + "@" + DEPLOY_SHA + "/";
@@ -41,10 +41,21 @@
   var FILES = { css: "src/styles.css", html: "src/page.html", js: "src/script.js" };
 
   // ---- 1. Anti-flicker: hide YouCan's default page until ours is ready ----
+  // Instead of a stark white gap, show a branded splash (cream bg + pulsing
+  // logo) until the page swaps in. The overlay lives in the same style tag,
+  // so revealNativePage() (fallback) removes it together with the hide-rule.
   if (!document.getElementById("v34-flicker-prevent")) {
     var style = document.createElement("style");
     style.id = "v34-flicker-prevent";
-    style.textContent = "#app { display: none !important; } #v34-root { display: none; } .loader-active #v34-root { display: block !important; }";
+    style.textContent =
+      "#app { display: none !important; } " +
+      "#v34-root { display: none; } " +
+      ".loader-active #v34-root { display: block !important; } " +
+      "html::before { content: ''; position: fixed; inset: 0; z-index: 99998; " +
+      "background: #f8f3ea url('" + CDN_MAIN + "images/logos/lureher-logo-nav.webp?v=9') center / 120px auto no-repeat; " +
+      "animation: v34pulse 1.3s ease-in-out infinite; } " +
+      "html.v34-ready::before { display: none; } " +
+      "@keyframes v34pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.55; } }";
     document.head.appendChild(style);
   }
 
@@ -266,6 +277,7 @@
           document.body.appendChild(scriptEl);
 
           document.body.classList.add("loader-active");
+          document.documentElement.classList.add("v34-ready");
           activated = true;
           console.log("[V34 Loader] Activation completed successfully.");
         } catch (injectionError) {
