@@ -2,6 +2,19 @@
 (function () {
   "use strict";
 
+  // This loader is designed for the STORE-LEVEL header/footer code (which
+  // executes before YouCan renders any content — page-builder blocks run too
+  // late and let the native page flash first). Because store-level code runs
+  // on EVERY page, this gate makes it a no-op everywhere except the LP.
+  var RUN_ON_PATHS = /^\/pages\/(lure-her|lureher-1)\/?$/;
+  if (!RUN_ON_PATHS.test(window.location.pathname || "")) return;
+
+  // Idempotence: if the loader is accidentally present twice (store header +
+  // a leftover page-builder block), the second copy must do nothing —
+  // otherwise the page injects twice and form handlers double-fire.
+  if (window.__V34_LOADER_RAN) return;
+  window.__V34_LOADER_RAN = true;
+
   /* ----------------------------------------------------------------------
    * Lure Her — YouCan footer loader
    *
@@ -22,7 +35,7 @@
   var BRANCH = "main";
   // Bump on each deploy — pins HTML/CSS/JS to an exact commit (no raw @main 5-min lag).
   var DEPLOY_SHA = "4b50c34";
-  var LOADER_VERSION = "lureher-v5-9";
+  var LOADER_VERSION = "lureher-v5-10";
 
   // jsDelivr uses @ref; raw uses /ref/ — note the different shape.
   var CDN_BASE = "https://cdn.jsdelivr.net/gh/" + REPO + "@" + DEPLOY_SHA + "/";
