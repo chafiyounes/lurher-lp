@@ -3020,8 +3020,13 @@ button.btn-primary .material-symbols-outlined {
 }
 
 /* Phone digits are an LTR run; in the RTL page they'd hug the left edge.
-   Keep digit order LTR but align the field with the other (right-aligned) inputs. */
+   Keep digit order LTR but align the field with the other (right-aligned)
+   inputs. While EMPTY (placeholder visible) stay fully RTL so the Arabic
+   placeholder renders exactly like the other fields. */
 .app[dir="rtl"] input[type="tel"] {
   direction: ltr;
   text-align: right;
+}
+.app[dir="rtl"] input[type="tel"]:placeholder-shown {
+  direction: rtl;
 }
