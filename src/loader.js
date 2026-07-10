@@ -35,7 +35,7 @@
   var BRANCH = "main";
   // Bump on each deploy — pins HTML/CSS/JS to an exact commit (no raw @main 5-min lag).
   var DEPLOY_SHA = "3a8ad7e";
-  var LOADER_VERSION = "lureher-v5-11";
+  var LOADER_VERSION = "lureher-v5-12";
 
   // jsDelivr uses @ref; raw uses /ref/ — note the different shape.
   var CDN_BASE = "https://cdn.jsdelivr.net/gh/" + REPO + "@" + DEPLOY_SHA + "/";
@@ -65,7 +65,7 @@
       "#v34-root { display: none; } " +
       ".loader-active #v34-root { display: block !important; } " +
       "html::before { content: ''; position: fixed; inset: 0; z-index: 99998; " +
-      "background: #f8f3ea url('" + CDN_MAIN + "images/logos/lureher-logo-nav.webp?v=9') center / 120px auto no-repeat; " +
+      "background: #f8f3ea url('" + CDN_MAIN + "images/logos/lureher-logo-nav.webp?v=10') center / 120px auto no-repeat; " +
       "animation: v34pulse 1.3s ease-in-out infinite; } " +
       "html.v34-ready::before { display: none; } " +
       "@keyframes v34pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.55; } }";
@@ -151,8 +151,11 @@
 
   window.__V34_INITIAL_LANG = detectV34Lang();
 
-  var ASSET_VERSION = "9";
-  var LCP_HERO_IMAGE = CDN_BASE + "images/hero/h-couple-v2-800.webp?v=" + ASSET_VERSION;
+  var ASSET_VERSION = "10";
+  var LCP_HERO_IMAGE = CDN_BASE + "images/hero/h-couple-v2-720.webp?v=" + ASSET_VERSION;
+  var LCP_HERO_SRCSET =
+    CDN_BASE + "images/hero/h-couple-v2-720.webp?v=" + ASSET_VERSION + " 720w, " +
+    CDN_BASE + "images/hero/h-couple-v2-800.webp?v=" + ASSET_VERSION + " 800w";
   var MATERIAL_ICONS =
     "block,chevron_left,chevron_right,expand_more,favorite,forum,home,language," +
     "local_mall,local_shipping,location_on,lock,mic,payments,person,phone,photo_camera,published_with_changes," +
@@ -172,10 +175,10 @@
     wrap.id = "v34-head-resources";
     wrap.innerHTML = [
       '<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>',
-      '<link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>',
+      '<link rel="dns-prefetch" href="https://raw.githubusercontent.com">',
       '<link rel="preconnect" href="https://fonts.googleapis.com">',
       '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
-      '<link rel="preload" as="image" href="' + LCP_HERO_IMAGE + '" fetchpriority="high">',
+      '<link rel="preload" as="image" href="' + LCP_HERO_IMAGE + '" imagesrcset="' + LCP_HERO_SRCSET + '" imagesizes="100vw" fetchpriority="high">',
       '<link rel="stylesheet" href="' + FONT_STYLESHEET + '">',
       '<link rel="stylesheet" href="' + SYMBOLS_STYLESHEET + '">'
     ].join("");

@@ -3,7 +3,7 @@
   "use strict";
 
   (function injectPageFonts() {
-    if (document.getElementById("v34-page-fonts")) return;
+    if (document.getElementById("v34-page-fonts") || document.getElementById("v34-head-resources")) return;
     var icons =
     "block,chevron_left,chevron_right,expand_more,favorite,forum,home,language," +
     "local_mall,local_shipping,location_on,lock,mic,payments,person,phone,photo_camera,published_with_changes," +
@@ -491,7 +491,7 @@
     }
   });
 
-  var HERO_ASSET_VERSION = 9;
+  var HERO_ASSET_VERSION = 10;
   var HERO_MANIFEST_URL =
     "https://raw.githubusercontent.com/chafiyounes/lurher-lp/main/images/hero/manifest.json?v=" +
     HERO_ASSET_VERSION;
@@ -545,6 +545,18 @@
     return url + sep + "v=" + HERO_ASSET_VERSION;
   }
 
+  function heroApplyResponsiveSrc(img, src800) {
+    if (!src800 || src800.indexOf("-800.webp") === -1) {
+      img.removeAttribute("srcset");
+      img.removeAttribute("sizes");
+      return src800;
+    }
+    var src720 = src800.replace("-800.webp", "-720.webp");
+    img.srcset = src720 + " 720w, " + src800 + " 800w";
+    img.sizes = "(max-width: 720px) 100vw, 720px";
+    return src720;
+  }
+
   function heroSlideAlt(slide, lang) {
     if (slide.alt && slide.alt[lang]) return slide.alt[lang];
     return slide.alt && slide.alt.ar ? slide.alt.ar : "";
@@ -564,20 +576,23 @@
     img.width = 800;
     img.height = 800;
     img.removeAttribute("data-src");
+    var displaySrc = heroApplyResponsiveSrc(img, src);
     if (eager) {
       img.loading = "eager";
       img.setAttribute("fetchpriority", "high");
-      bindImageFallback(img, src, fallback);
+      bindImageFallback(img, displaySrc, fallback);
       return;
     }
     img.loading = "lazy";
     img.removeAttribute("fetchpriority");
     if (!img.getAttribute("src")) {
-      img.setAttribute("data-src", src);
+      img.setAttribute("data-src", displaySrc);
+      img.setAttribute("data-srcset", img.srcset || "");
+      img.setAttribute("data-sizes", img.sizes || "");
       if (fallback) img.setAttribute("data-fallback-src", fallback);
       return;
     }
-    bindImageFallback(img, src, fallback);
+    bindImageFallback(img, displaySrc, fallback);
   }
 
   function loadHeroSlideImageByIndex(index) {
@@ -587,9 +602,15 @@
     if (!img) return;
     var pending = img.getAttribute("data-src");
     if (!pending) return;
+    var pendingSrcset = img.getAttribute("data-srcset");
+    var pendingSizes = img.getAttribute("data-sizes");
     var fallback = img.getAttribute("data-fallback-src") || null;
     img.removeAttribute("data-src");
+    img.removeAttribute("data-srcset");
+    img.removeAttribute("data-sizes");
     img.removeAttribute("data-fallback-src");
+    if (pendingSrcset) img.srcset = pendingSrcset;
+    if (pendingSizes) img.sizes = pendingSizes;
     bindImageFallback(img, pending, fallback);
   }
 
