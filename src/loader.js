@@ -34,7 +34,7 @@
   var REPO = "chafiyounes/lurher-lp";
   var BRANCH = "main";
   // Bump on each deploy — pins HTML/CSS/JS to an exact commit (no raw @main 5-min lag).
-  var DEPLOY_SHA = "b57960b";
+  var DEPLOY_SHA = "ea4c4fd";
   var LOADER_VERSION = "lureher-v5-13";
 
   // jsDelivr uses @ref; raw uses /ref/ — note the different shape.
