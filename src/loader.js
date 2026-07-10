@@ -35,7 +35,7 @@
   var BRANCH = "main";
   // Bump on each deploy — pins HTML/CSS/JS to an exact commit (no raw @main 5-min lag).
   var DEPLOY_SHA = "b57960b";
-  var LOADER_VERSION = "lureher-v5-12";
+  var LOADER_VERSION = "lureher-v5-13";
 
   // jsDelivr uses @ref; raw uses /ref/ — note the different shape.
   var CDN_BASE = "https://cdn.jsdelivr.net/gh/" + REPO + "@" + DEPLOY_SHA + "/";
@@ -68,14 +68,53 @@
       "background: #f8f3ea url('" + CDN_MAIN + "images/logos/lureher-logo-nav.webp?v=10') center / 120px auto no-repeat; " +
       "animation: v34pulse 1.3s ease-in-out infinite; } " +
       "html.v34-ready::before { display: none; } " +
-      "@keyframes v34pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.55; } }";
+      "@keyframes v34pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.55; } } " +
+      "#v34-lcp-shell { display: none; position: fixed; inset: 0; z-index: 99997; " +
+      "pointer-events: none; background: #f8f3ea; overflow: hidden; } " +
+      "#v34-lcp-shell img { position: absolute; left: 0; right: 0; width: 100%; " +
+      "height: auto; aspect-ratio: 1 / 1; object-fit: cover; object-position: center; " +
+      "top: calc(33px + 50px + 14px + clamp(72px, 20vw, 128px)); } " +
+      "@media (max-width: 1023px) { " +
+      "#v34-lcp-shell { display: block; } " +
+      "html:not(.v34-ready)::before { display: none !important; } " +
+      "} " +
+      "html.v34-ready #v34-lcp-shell { display: none !important; }";
     document.head.appendChild(style);
   }
 
   var activated = false;
 
   // Drop the hide-rule → YouCan's native page (with its working COD form) shows.
+  function removeLcpShell() {
+    var shell = document.getElementById("v34-lcp-shell");
+    if (shell && shell.parentNode) shell.parentNode.removeChild(shell);
+  }
+
+  function injectLcpShell() {
+    if (document.getElementById("v34-lcp-shell")) return;
+    var shell = document.createElement("div");
+    shell.id = "v34-lcp-shell";
+    shell.setAttribute("aria-hidden", "true");
+    var img = document.createElement("img");
+    img.id = "v34-lcp-img";
+    img.src = LCP_HERO_IMAGE;
+    img.srcset = LCP_HERO_SRCSET;
+    img.sizes = LCP_HERO_SIZES;
+    img.width = 800;
+    img.height = 800;
+    img.alt = LCP_HERO_ALT;
+    img.decoding = "async";
+    img.setAttribute("fetchpriority", "high");
+    shell.appendChild(img);
+    function attach() {
+      if (!document.body) { setTimeout(attach, 10); return; }
+      document.body.appendChild(shell);
+    }
+    attach();
+  }
+
   function revealNativePage(reason) {
+    removeLcpShell();
     var fp = document.getElementById("v34-flicker-prevent");
     if (fp) fp.parentNode && fp.parentNode.removeChild(fp);
     console.warn("[V34 Loader] Fallback → showing YouCan native page. Reason:", reason);
@@ -113,6 +152,7 @@
     console.error("[V34 Loader] Load failed:", err);
     var stray = document.getElementById("v34-root");
     if (stray && stray.parentNode) stray.parentNode.removeChild(stray);
+    removeLcpShell();
     if (DEBUG) {
       // developer mode: stay on the page, reveal the native shell, show the error
       revealNativePage(reason);
@@ -152,10 +192,13 @@
   window.__V34_INITIAL_LANG = detectV34Lang();
 
   var ASSET_VERSION = "10";
+  // Keep in sync with manifest.json slides[0] (couple) and page.html prerendered hero img.
   var LCP_HERO_IMAGE = CDN_BASE + "images/hero/h-couple-v2-720.webp?v=" + ASSET_VERSION;
   var LCP_HERO_SRCSET =
     CDN_BASE + "images/hero/h-couple-v2-720.webp?v=" + ASSET_VERSION + " 720w, " +
     CDN_BASE + "images/hero/h-couple-v2-800.webp?v=" + ASSET_VERSION + " 800w";
+  var LCP_HERO_SIZES = "(max-width: 720px) 100vw, 720px";
+  var LCP_HERO_ALT = "امرأة تشمّ رجلاً يضع عطر Lure Her";
   var MATERIAL_ICONS =
     "block,chevron_left,chevron_right,expand_more,favorite,forum,home,language," +
     "local_mall,local_shipping,location_on,lock,mic,payments,person,phone,photo_camera,published_with_changes," +
@@ -186,6 +229,7 @@
   }
 
   injectHeadResources();
+  injectLcpShell();
 
   function injectSeoMeta() {
     if (document.getElementById("v34-seo-meta")) return;
@@ -294,6 +338,7 @@
 
           document.body.classList.add("loader-active");
           document.documentElement.classList.add("v34-ready");
+          removeLcpShell();
           activated = true;
           console.log("[V34 Loader] Activation completed successfully.");
         } catch (injectionError) {
