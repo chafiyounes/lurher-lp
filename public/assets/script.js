@@ -1116,6 +1116,18 @@
       submitOrder(payload, function onDone() {
         try {
           if (typeof fbq === "function") {
+            // Advanced matching: re-init with the buyer's details so the browser
+            // Lead carries the same match keys the CAPI event sends (fbevents.js
+            // hashes these itself — pass them raw). Phone must match the server's
+            // E.164 digits ("212" + local number without its leading 0).
+            if (window.LH_PIXEL_ID) {
+              fbq("init", window.LH_PIXEL_ID, {
+                ph: "212" + payload.phone.slice(1),
+                fn: payload.name.toLowerCase(),
+                ct: payload.city.toLowerCase().replace(/\s+/g, ""),
+                country: "ma"
+              });
+            }
             fbq("track", "Lead", { currency: "MAD", value: 189 }, { eventID: eventId });
           }
         } catch (err) {}

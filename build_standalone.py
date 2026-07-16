@@ -54,12 +54,13 @@ if PIXEL_ID:
   n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
   t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
   document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  window.LH_PIXEL_ID = '%s';
   fbq('init', '%s');
   fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=%s&ev=PageView&noscript=1"/></noscript>
-""" % (PIXEL_ID, PIXEL_ID)
+""" % (PIXEL_ID, PIXEL_ID, PIXEL_ID)
 
 HEAD = """<!DOCTYPE html>
 <html lang="ar" dir="rtl">
