@@ -15,7 +15,10 @@ import io
 import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SRC = os.path.join(HERE, "src", "page.html")
+# src_live/ = extracted from commit 3a8ad7e — the DEPLOY_SHA the live YouCan
+# loader pins (v5-11). repo HEAD (v5-12/13) has srcset changes never deployed
+# to live; we ship what live traffic actually sees. See CLOUDFLARE.md.
+SRC = os.path.join(HERE, "src_live", "page.html")
 OUT = os.path.join(HERE, "public", "pages", "lure-her", "index.html")
 
 body = io.open(SRC, encoding="utf-8").read()
