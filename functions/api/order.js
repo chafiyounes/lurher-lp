@@ -103,11 +103,11 @@ function buildRow(o, env) {
   const at = o.attribution || {};
   return [
     o.order_id, o.date, env.PRODUCT_NAME || "Lure her", "default",
-    o.city, o.address, o.name, "+212" + o.phone.slice(1),
+    o.city, o.address, o.name,
+    "'+212" + o.phone.slice(1),        // leading ' = literal text in Sheets, keeps the +
     env.PRICE_MAD || "189",
     at.utm_source || "organic", at.utm_data || "", o.ip || "",
-    "", "",
-    o.event_id || "", o.lang || "",
+    // row ends at N — O+ ("2eme jour"...) are the agents' working columns
   ];
 }
 
@@ -115,7 +115,7 @@ async function appendToSheet(o, env) {
   const token = await googleToken(env);
   const tab = encodeURIComponent(env.SHEET_TAB);
   const url = `https://sheets.googleapis.com/v4/spreadsheets/${env.SHEET_ID}` +
-    `/values/${tab}!A:P:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`;
+    `/values/${tab}!A:N:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`;
   const r = await fetch(url, {
     method: "POST",
     headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
