@@ -13,8 +13,19 @@ Run again whenever src/page.html changes during the parallel period:
 import re
 import io
 import os
+import hashlib
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+
+
+def asset_ver(rel_path):
+    """Short content hash for cache-busting. /assets/* is served immutable with
+    a 1-year max-age, so the referencing URL must change when the file changes —
+    otherwise returning visitors stay frozen on stale JS/CSS. Query versioning is
+    honored by `immutable` because a different URL is a different cache entry."""
+    p = os.path.join(HERE, "public", rel_path.lstrip("/"))
+    data = io.open(p, "rb").read()
+    return hashlib.md5(data).hexdigest()[:8]
 # src_live/ = extracted from commit 3a8ad7e — the DEPLOY_SHA the live YouCan
 # loader pins (v5-11). repo HEAD (v5-12/13) has srcset changes never deployed
 # to live; we ship what live traffic actually sees. See CLOUDFLARE.md.
@@ -79,16 +90,16 @@ HEAD = """<!DOCTYPE html>
   <link rel="icon" type="image/webp" href="/images/logos/lureher-logo-nav.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/assets/styles.css">""" + PIXEL_SNIPPET + """
+  <link rel="stylesheet" href="/assets/styles.css?v=%s">""" % asset_ver("assets/styles.css") + PIXEL_SNIPPET + """
 </head>
 <body id="top">
 """
 
 FOOT = """
-<script src="/assets/script.js" defer></script>
+<script src="/assets/script.js?v=%s" defer></script>
 </body>
 </html>
-"""
+""" % asset_ver("assets/script.js")
 
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 io.open(OUT, "w", encoding="utf-8").write(HEAD + body + FOOT)
