@@ -111,8 +111,26 @@ function buildRow(o, env) {
   ];
 }
 
+async function nextOrderId(token, env) {
+  // Continue the numeric YouCan sequence (owner rule 2026-07-17): read the
+  // last numeric Order ID in column A and +1. Falls back to a CB- id if the
+  // read fails — an order must never be lost over an id.
+  const tab = encodeURIComponent(env.SHEET_TAB);
+  const r = await fetch(
+    `https://sheets.googleapis.com/v4/spreadsheets/${env.SHEET_ID}/values/${tab}!A:A?majorDimension=COLUMNS`,
+    { headers: { Authorization: `Bearer ${token}` } });
+  if (!r.ok) throw new Error(`id read ${r.status}`);
+  const col = ((await r.json()).values || [[]])[0];
+  for (let i = col.length - 1; i >= 0; i--) {
+    const n = parseInt(col[i], 10);
+    if (Number.isFinite(n)) return String(n + 1);
+  }
+  throw new Error("no numeric id found");
+}
+
 async function appendToSheet(o, env) {
   const token = await googleToken(env);
+  try { o.order_id = await nextOrderId(token, env); } catch { /* keep CB- fallback id */ }
   const tab = encodeURIComponent(env.SHEET_TAB);
   const url = `https://sheets.googleapis.com/v4/spreadsheets/${env.SHEET_ID}` +
     `/values/${tab}!A:N:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`;
