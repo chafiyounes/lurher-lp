@@ -259,25 +259,3 @@ function json(obj, status = 200) {
   });
 }
 
-/** TEMPORARY debug: GET /api/order?debug=<token-prefix of CAPI_TOKEN, 8 chars>
- *  Attempts a live sheet append and returns the raw error. REMOVE after the
- *  parallel-test phase. Gated so randoms can't poke it. */
-export async function onRequestGet({ request, env }) {
-  const url = new URL(request.url);
-  const gate = url.searchParams.get("debug");
-  if (!gate || !env.CAPI_TOKEN || !env.CAPI_TOKEN.startsWith(gate)) {
-    return json({ ok: false }, 404);
-  }
-  const probe = {
-    order_id: "CB-DEBUG-" + Date.now().toString(36).toUpperCase(),
-    date: casablancaNow(),
-    name: "DEBUG PROBE", phone: "0600000000", city: "DEBUG", address: "debug",
-    ip: "0.0.0.0", lang: "ar", event_id: "debug", attribution: { utm_source: "debug" },
-  };
-  try {
-    await appendToSheet(probe, env);
-    return json({ ok: true, wrote: probe.order_id });
-  } catch (e) {
-    return json({ ok: false, error: String(e).slice(0, 600) }, 500);
-  }
-}
