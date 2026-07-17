@@ -79,7 +79,6 @@ HEAD = """<!DOCTYPE html>
   <link rel="icon" type="image/webp" href="/images/logos/lureher-logo-nav.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="/images/hero/h-couple-v2-800.webp?v=9" fetchpriority="high">
   <link rel="stylesheet" href="/assets/styles.css">""" + PIXEL_SNIPPET + """
 </head>
 <body id="top">
