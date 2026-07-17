@@ -3046,3 +3046,5 @@ html, body { margin: 0; padding: 0; }
 .premium-field .field-row { min-height: 52px; }
 /* quality/proof section body text: match live size */
 .proof-list li { font-size: 17px; }
+/* owner 2026-07-17: inputs measured 274x26, wants 274x50 */
+.premium-field .field-row input { height: 50px; }
