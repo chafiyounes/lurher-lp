@@ -93,19 +93,21 @@ async function googleToken(env) {
 }
 
 /**
- * Row layout mirrors the agent tabs (A..N) + attribution in O..T:
- * A OrderID | B date | C product | D variant | E city | F address | G name
- * H phone | I price | J commentaire | K conf | L saisie | M courier | N delivery
- * O utm_source | P utm_campaign | Q utm_content | R fbclid | S event_id | T lang
+ * Row layout = the REAL Youcan-Orders header (verified 2026-07-17):
+ * A Order ID | B Order date | C Product name | D Product variant | E City
+ * F Region(address) | G Full name | H Phone (+212...) | I Variant price
+ * J utm_source | K utm_data (campaign|adset|ad) | L Customer IP
+ * M commentaire | N Etat_confirmation  [+ O event_id | P lang, extra]
  */
 function buildRow(o, env) {
   const at = o.attribution || {};
   return [
-    o.order_id, o.date, env.PRODUCT_NAME || "lureHer", "-",
-    o.city, o.address, o.name, o.phone, env.PRICE_MAD || "189",
-    "", "", "", "", "",
-    at.utm_source || "", at.utm_campaign || "", at.utm_content || "",
-    at.fbclid || "", o.event_id || "", o.lang || "",
+    o.order_id, o.date, env.PRODUCT_NAME || "Lure her", "default",
+    o.city, o.address, o.name, "+212" + o.phone.slice(1),
+    env.PRICE_MAD || "189",
+    at.utm_source || "organic", at.utm_data || "", o.ip || "",
+    "", "",
+    o.event_id || "", o.lang || "",
   ];
 }
 
@@ -113,7 +115,7 @@ async function appendToSheet(o, env) {
   const token = await googleToken(env);
   const tab = encodeURIComponent(env.SHEET_TAB);
   const url = `https://sheets.googleapis.com/v4/spreadsheets/${env.SHEET_ID}` +
-    `/values/${tab}!A:T:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`;
+    `/values/${tab}!A:P:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`;
   const r = await fetch(url, {
     method: "POST",
     headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
@@ -202,6 +204,7 @@ export async function onRequestPost({ request, env, waitUntil }) {
               Math.random().toString(36).slice(2, 5).toUpperCase(),
     date: casablancaNow(),
     name, phone, city, address,
+    ip: request.headers.get("CF-Connecting-IP") || "",
     lang: String(body.lang || "ar").slice(0, 5),
     event_id: String(body.event_id || "").slice(0, 64),
     attribution: typeof body.attribution === "object" && body.attribution ? body.attribution : {},
@@ -236,4 +239,27 @@ function json(obj, status = 200) {
   return new Response(JSON.stringify(obj), {
     status, headers: { "Content-Type": "application/json" },
   });
+}
+
+/** TEMPORARY debug: GET /api/order?debug=<token-prefix of CAPI_TOKEN, 8 chars>
+ *  Attempts a live sheet append and returns the raw error. REMOVE after the
+ *  parallel-test phase. Gated so randoms can't poke it. */
+export async function onRequestGet({ request, env }) {
+  const url = new URL(request.url);
+  const gate = url.searchParams.get("debug");
+  if (!gate || !env.CAPI_TOKEN || !env.CAPI_TOKEN.startsWith(gate)) {
+    return json({ ok: false }, 404);
+  }
+  const probe = {
+    order_id: "CB-DEBUG-" + Date.now().toString(36).toUpperCase(),
+    date: casablancaNow(),
+    name: "DEBUG PROBE", phone: "0600000000", city: "DEBUG", address: "debug",
+    ip: "0.0.0.0", lang: "ar", event_id: "debug", attribution: { utm_source: "debug" },
+  };
+  try {
+    await appendToSheet(probe, env);
+    return json({ ok: true, wrote: probe.order_id });
+  } catch (e) {
+    return json({ ok: false, error: String(e).slice(0, 600) }, 500);
+  }
 }

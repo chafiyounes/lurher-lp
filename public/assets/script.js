@@ -966,7 +966,7 @@
     // ---- standalone order submission (Cloudflare Pages Function) ----
     // Replaces the old YouCan native-form puppet. Captures utm/fbclid once
     // (first touch wins, survives in sessionStorage) for per-ad attribution.
-    var ATTR_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "fbclid"];
+    var ATTR_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "utm_data", "fbclid"];
     (function captureAttribution() {
       try {
         var qs = new URLSearchParams(window.location.search || "");
