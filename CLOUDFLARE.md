@@ -19,7 +19,7 @@ standalone.config.json             pixel_id
 
 1. **Cloudflare account** — sign up at cloudflare.com with GitHub.
 2. **Workers & Pages → Create → Pages → Connect to git** → pick
-   `chafiyounes/lurher-lp`, branch `main`.
+   `Naim1234-sys/lureher-lp`, branch `main`.
    - Build command: *(leave empty)*
    - Build output directory: `public`
 3. **Settings → Environment variables** (Production) — add:
