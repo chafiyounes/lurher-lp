@@ -3030,3 +3030,19 @@ button.btn-primary .material-symbols-outlined {
 .app[dir="rtl"] input[type="tel"]:placeholder-shown {
   direction: rtl;
 }
+
+/* ==== standalone patches (post-YouCan, 2026-07-17) ====
+   The page used to inherit YouCan's base theme resets + sizing; these
+   restore the live look on a bare document. */
+html, body { margin: 0; padding: 0; }
+/* announce bar: fill edge-to-edge, no container gap */
+.announce-bar { width: 100%; margin: 0; }
+/* hero offer chip: one line (was wrapping to 2 in Arabic) */
+.hero-offer-chip { white-space: nowrap; }
+@media (max-width: 400px) { .hero-offer-chip { font-size: 0.82em; } }
+/* form inputs: match live sizing (compact card was shrinking them) */
+.order-card--compact .premium-field .field-row input { font-size: 16px; }
+.order-card--compact .premium-field .field-row .material-symbols-outlined { font-size: 22px; width: 24px; }
+.premium-field .field-row { min-height: 52px; }
+/* quality/proof section body text: match live size */
+.proof-list li { font-size: 17px; }

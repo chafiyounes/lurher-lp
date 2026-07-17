@@ -66,9 +66,9 @@
       fr: "1000 compliments garantis."
     },
     hero_offer: {
-      ar: "Lure Her 50ml + Layton 10ml، ‏189 درهم <s>250 درهم</s>",
-      en: "Lure Her 50ml + Layton 10ml, 189 DH <s>250 DH</s>",
-      fr: "Lure Her 50ml + Layton 10ml, 189 DH <s>250 DH</s>"
+      ar: "Lure Her 50ml + Layton 10ml، ‏189 درهم <s>350 درهم</s>",
+      en: "Lure Her 50ml + Layton 10ml, 189 DH <s>350 DH</s>",
+      fr: "Lure Her 50ml + Layton 10ml, 189 DH <s>350 DH</s>"
     },
     offer_name: {
       ar: "جوج عطور أصلية: Lure Her 50ml + Layton 10ml",
@@ -202,7 +202,7 @@
     },
     box_cta: { ar: "اطلب الآن", en: "Order now", fr: "Commander" },
     box_foot: { ar: "الزوج كامل بـ 189 درهم فقط", en: "Both together for only 189 DH", fr: "Les deux ensemble pour seulement 189 DH" },
-    coffret_strike: { ar: "250 درهم", en: "250 DH", fr: "250 DH" },
+    coffret_strike: { ar: "350 درهم", en: "350 DH", fr: "350 DH" },
     coffret_now: { ar: "189 درهم", en: "189 DH", fr: "189 DH" },
 
     rev_eyebrow: { ar: "آراء الزبناء", en: "Customer reviews", fr: "Avis clients" },
@@ -257,10 +257,10 @@
     form_phone: { ar: "رقم الهاتف", en: "Phone Number", fr: "Numéro de téléphone" },
     form_city: { ar: "المدينة", en: "City", fr: "Ville" },
     form_address: { ar: "العنوان", en: "Address", fr: "Adresse" },
-    form_name_ph: { ar: "الإسم الكامل", en: "Full name", fr: "Nom complet" },
-    form_phone_ph: { ar: "رقم الهاتف", en: "Phone number", fr: "Numéro de téléphone" },
-    form_city_ph: { ar: "المدينة", en: "City", fr: "Ville" },
-    form_address_ph: { ar: "العنوان", en: "Address", fr: "Adresse" },
+    form_name_ph: { ar: "الإسم الكامل :", en: "Full name:", fr: "Nom complet :" },
+    form_phone_ph: { ar: "رقم الهاتف :", en: "Phone number:", fr: "Numéro de téléphone :" },
+    form_city_ph: { ar: "المدينة :", en: "City:", fr: "Ville :" },
+    form_address_ph: { ar: "العنوان :", en: "Address:", fr: "Adresse :" },
     form_secure: { ar: "معلوماتك آمنة ومحمية", en: "Your information is safe and secure", fr: "Vos informations sont sécurisées" },
     submit_order: { ar: "اطلب الآن", en: "ORDER", fr: "COMMANDER" },
     submit_sub: { ar: "كتخلّص غير ملي يوصلك", en: "You only pay on delivery", fr: "Vous ne payez qu'à la réception" },
@@ -277,9 +277,9 @@
 
     fcta_h: { ar: "عطر واحد يقدر يبدّل كلشي", en: "One perfume can change everything", fr: "Un seul parfum peut tout changer" },
     fcta_offer: {
-      ar: "Lure Her 50ml + Layton 10ml هدية · 250 درهم ← 189 درهم · الدفع عند الاستلام · توصيل مجاني",
-      en: "Lure Her 50ml + free Layton 10ml · 250 DH → 189 DH · Cash on delivery · Free shipping",
-      fr: "Lure Her 50ml + Layton 10ml offert · 250 DH → 189 DH · Paiement à la livraison · Livraison gratuite"
+      ar: "Lure Her 50ml + Layton 10ml هدية · 350 درهم ← 189 درهم · الدفع عند الاستلام · توصيل مجاني",
+      en: "Lure Her 50ml + free Layton 10ml · 350 DH → 189 DH · Cash on delivery · Free shipping",
+      fr: "Lure Her 50ml + Layton 10ml offert · 350 DH → 189 DH · Paiement à la livraison · Livraison gratuite"
     },
     fcta_cta: { ar: "اطلب الآن", en: "ORDER", fr: "COMMANDER" },
     fcta_stock: { ar: "ما بقاوش غير 30 قطعة", en: "Only 30 pieces left", fr: "Plus que 30 pièces" },
@@ -1144,6 +1144,7 @@
   }
 
   function syncFormLabelsFromYouCan() {
+    return; // standalone: no YouCan to mirror — statics are the source of truth
     var native = document.querySelector("#app #express-checkout-form") ||
       document.querySelector(".express-checkout-form-section form") ||
       document.querySelector("[data-pb-type='single-product'] form");
@@ -1187,6 +1188,10 @@
   }
 
   function syncPricesFromYouCan() {
+    // standalone: KILLED — this scanner used to mirror YouCan's product price;
+    // without a native store it scraped OUR OWN anchor text and overwrote the
+    // real price displays (the "form shows the strike price" bug, 2026-07-17).
+    return;
     var nativeRoot = document.getElementById("app") || document.body;
     var priceText = "";
     var compareText = "";
