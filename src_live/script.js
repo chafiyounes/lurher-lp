@@ -154,6 +154,21 @@
       en: "It's not about quantity, it's about effect.",
       fr: "Pas une question de quantité, une question d'effet."
     },
+    creed_kicker: {
+      ar: "ماشي كل عطر بحال بحال.",
+      en: "Not every perfume is the same.",
+      fr: "Tous les parfums ne se valent pas."
+    },
+    creed_lead: {
+      ar: "كاين لي كيبيع ليك 4 ولا 5 قنينات بأرخص ثمن، وكاين لي كيختار ليك جوج عطور مدروسين بتركيبة مستوحاة من أفخم البيوت العالمية. حنا كنمشيو مع الثاني.",
+      en: "Some sell you 4 or 5 bottles at the lowest price. Others pick you two considered perfumes, a formula inspired by the great fragrance houses. We take the second path.",
+      fr: "Certains vous vendent 4 ou 5 flacons au prix le plus bas. D'autres vous choisissent deux parfums réfléchis, une formule inspirée des grandes maisons. Nous, c'est la seconde voie."
+    },
+    creed_close: {
+      ar: "لأن العطر ماشي غير ريحة، هو الانطباع لي كتخليه على الناس قبل ما تهضر.",
+      en: "Because a perfume isn't just a scent, it's the impression you leave before you even speak.",
+      fr: "Parce qu'un parfum n'est pas qu'une odeur, c'est l'impression que vous laissez avant même de parler."
+    },
     vs_us_label: { ar: "Lure Her", en: "Lure Her", fr: "Lure Her" },
     vs_them_label: { ar: "5 عطور مقلّدة بـ 200 درهم", en: "5 fakes for 200 DH", fr: "5 faux produits pour 200 DH" },
     vs_them_short: { ar: "الباقي", en: "The rest", fr: "Les autres" },
