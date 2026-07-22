@@ -1017,15 +1017,15 @@
       // risk, after ordering it just reminds them that backing out is free.
       var msg = {
         ar: { h: "مبروك، طلبك تسجل، " + who + " ✅",
-              p: "غادي نتصلو بيك اليوم باش نأكدو معاك العنوان.<br>" +
+              p: "غادي نتصلو بيك اليوم ولا غدا باش نأكدو معاك العنوان.<br>" +
                  "الطلبية توصلك ما بين يومين و3 أيام.<br>" +
                  "حضّر 189 درهم مع الليفرور، وغادي نبقاو معاك حتى توصلك." },
         fr: { h: "C'est confirmé, " + who + " ✅",
-              p: "Nous vous appelons aujourd'hui pour valider votre adresse.<br>" +
+              p: "Nous vous appelons aujourd'hui ou demain pour valider votre adresse.<br>" +
                  "Votre commande arrive sous 2 à 3 jours.<br>" +
                  "Préparez 189 DH pour le livreur, nous restons avec vous jusqu'à la réception." },
         en: { h: "You're all set, " + who + " ✅",
-              p: "We'll call you today to confirm your address.<br>" +
+              p: "We'll call you today or tomorrow to confirm your address.<br>" +
                  "Your order arrives in 2 to 3 days.<br>" +
                  "Have 189 DH ready for the courier, and we'll stay with you until it arrives." }
       };
