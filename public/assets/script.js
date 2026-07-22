@@ -1008,13 +1008,26 @@
                  document.getElementById("checkout-section");
       if (!card) { return; }
       var l = langs[currentLangIndex];
+      var who = String(name || "").replace(/[&<>"]/g, function (c) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+      });
+      // Post-order copy has a different job than pre-order copy: reinforce the
+      // choice, set a concrete arrival window, and get the cash ready. It no
+      // longer repeats "you only pay on delivery" — before ordering that removes
+      // risk, after ordering it just reminds them that backing out is free.
       var msg = {
-        ar: { h: "توصلنا بطلبك، " + (name || "") + " ✅",
-              p: "غادي يتصل بيك فريقنا اليوم باش يأكد الطلب. الدفع غير ملي توصلك الطلبية." },
-        fr: { h: "Commande reçue, " + (name || "") + " ✅",
-              p: "Notre équipe vous appelle aujourd'hui pour confirmer. Vous ne payez qu'à la réception." },
-        en: { h: "Order received, " + (name || "") + " ✅",
-              p: "Our team will call you today to confirm. You only pay on delivery." }
+        ar: { h: "مبروك، طلبك تسجل، " + who + " ✅",
+              p: "غادي نتصلو بيك اليوم باش نأكدو معاك العنوان.<br>" +
+                 "الطلبية توصلك ما بين يومين و3 أيام.<br>" +
+                 "حضّر 189 درهم مع الليفرور، وغادي نبقاو معاك حتى توصلك." },
+        fr: { h: "C'est confirmé, " + who + " ✅",
+              p: "Nous vous appelons aujourd'hui pour valider votre adresse.<br>" +
+                 "Votre commande arrive sous 2 à 3 jours.<br>" +
+                 "Préparez 189 DH pour le livreur, nous restons avec vous jusqu'à la réception." },
+        en: { h: "You're all set, " + who + " ✅",
+              p: "We'll call you today to confirm your address.<br>" +
+                 "Your order arrives in 2 to 3 days.<br>" +
+                 "Have 189 DH ready for the courier, and we'll stay with you until it arrives." }
       };
       var t = msg[l] || msg.ar;
       card.innerHTML =
