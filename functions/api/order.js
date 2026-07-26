@@ -93,6 +93,19 @@ async function googleToken(env) {
 }
 
 /**
+ * Multi-offer support: the page sends an opaque pack KEY, never a price —
+ * product name and price are resolved server-side from this whitelist. An
+ * unknown or absent key falls through to the env defaults (the live 189
+ * offer), so the original /pages/lure-her keeps working unchanged.
+ */
+const PACKS = {
+  "night-day-249": { product: "LureHer Night+Day", price: "249" },
+};
+function packOf(o) {
+  return (o.pack && PACKS[o.pack]) || null;
+}
+
+/**
  * Row layout = the REAL Youcan-Orders header (verified 2026-07-17):
  * A Order ID | B Order date | C Product name | D Product variant | E City
  * F Region(address) | G Full name | H Phone (+212...) | I Variant price
@@ -101,11 +114,12 @@ async function googleToken(env) {
  */
 function buildRow(o, env) {
   const at = o.attribution || {};
+  const pack = packOf(o);
   return [
-    o.order_id, o.date, env.PRODUCT_NAME || "Lure her", "default",
+    o.order_id, o.date, pack ? pack.product : (env.PRODUCT_NAME || "Lure her"), "default",
     o.city, o.address, o.name,
     "'+212" + o.phone.slice(1),        // leading ' = literal text in Sheets, keeps the +
-    env.PRICE_MAD || "189",
+    pack ? pack.price : (env.PRICE_MAD || "189"),
     at.utm_source || "organic", at.utm_data || "", o.ip || "",
     // row ends at N — O+ ("2eme jour"...) are the agents' working columns
   ];
@@ -165,7 +179,7 @@ async function sendCapiLead(o, req, env) {
       action_source: "website",
       event_source_url: o.source_url,
       user_data: ud,
-      custom_data: { currency: "MAD", value: Number(env.PRICE_MAD || 189) },
+      custom_data: { currency: "MAD", value: Number((packOf(o) || {}).price || env.PRICE_MAD || 189) },
     }],
   };
   if (env.CAPI_TEST_CODE) body.test_event_code = env.CAPI_TEST_CODE;
@@ -225,6 +239,7 @@ export async function onRequestPost({ request, env, waitUntil }) {
     ip: request.headers.get("CF-Connecting-IP") || "",
     lang: String(body.lang || "ar").slice(0, 5),
     event_id: String(body.event_id || "").slice(0, 64),
+    pack: String(body.pack || "").slice(0, 40),
     attribution: typeof body.attribution === "object" && body.attribution ? body.attribution : {},
     source_url: request.headers.get("Referer") || "https://cleopatra.beauty/pages/lure-her",
   };

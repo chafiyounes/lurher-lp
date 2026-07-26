@@ -3082,3 +3082,185 @@ html, body { margin: 0; padding: 0; }
   margin: 0 auto 20px; border-radius: 2px;
   background: linear-gradient(90deg, var(--primary) 0%, var(--gold-bright) 100%);
 }
+
+
+/* ============================================================
+   lureher (Night x Day) additions - new-offer page only
+   ============================================================ */
+
+/* --- marquee announce bar (Varone-style continuous scroll) --- */
+.announce-bar--marquee { padding: 0; }
+.announce-bar--marquee .announce-static { padding: 0; }
+.announce-track {
+  display: flex;
+  width: max-content;
+  direction: ltr; /* keep the translateX loop direction stable under RTL */
+  animation: lh-marquee 22s linear infinite;
+  will-change: transform;
+}
+.announce-seq {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  padding: 8px 0;
+}
+.announce-item { unicode-bidi: plaintext; padding: 0 14px; }
+.announce-sep { opacity: 0.6; }
+@keyframes lh-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .announce-track { animation: none; }
+}
+
+/* --- hero: stock line + product title --- */
+.stock-ready-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--success);
+  background: rgba(46, 125, 50, 0.08);
+  border: 1px solid rgba(46, 125, 50, 0.22);
+  border-radius: 999px;
+  padding: 6px 14px;
+  margin: 0 0 12px;
+}
+.stock-ready-line .material-symbols-outlined { font-size: 16px; }
+.hero-product-title {
+  font-family: var(--font-en);
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  color: var(--on-strong);
+  margin: 10px 0 4px;
+}
+.hero-product-title .hpt-tag {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  background: var(--gold-soft);
+  border-radius: 999px;
+  padding: 3px 10px;
+  margin: 0 8px;
+  vertical-align: middle;
+}
+.two-for-one-line { color: var(--primary-dark); font-weight: 700; }
+
+/* --- hero slide caption overlay --- */
+.media-carousel-slide { position: relative; }
+.slide-caption {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  z-index: 3;
+  background: rgba(26, 16, 18, 0.72);
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.45;
+  border-radius: 10px;
+  padding: 8px 12px;
+  text-align: center;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* --- reviews: score + histogram side by side --- */
+.reviews-summary--split {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.reviews-histogram {
+  min-width: 240px;
+  max-width: 320px;
+  flex: 1 1 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.rh-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  direction: ltr;
+}
+.rh-star {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--on-muted);
+  width: 24px;
+  text-align: right;
+}
+.rh-bar {
+  flex: 1;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--surface-alt);
+  overflow: hidden;
+}
+.rh-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-bright) 100%);
+}
+.rh-n {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--on-muted);
+  width: 32px;
+}
+
+/* --- aromatic notes section --- */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.notes-card {
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 22px 20px;
+  box-shadow: var(--sh-sm);
+  background: var(--surface-white);
+}
+.notes-card--night {
+  background: linear-gradient(160deg, #241a2e 0%, #1a1012 100%);
+  border-color: rgba(201, 162, 39, 0.35);
+  color: #f4ede1;
+}
+.notes-card--night .notes-sub { color: rgba(244, 237, 225, 0.75); }
+.notes-card--night .notes-list strong { color: var(--gold-bright); }
+.notes-card--day .notes-list strong { color: var(--primary-dark); }
+.notes-title {
+  font-family: var(--font-en);
+  font-size: 19px;
+  font-weight: 800;
+  margin: 0 0 4px;
+}
+.notes-sub { font-size: 13px; color: var(--on-muted); margin: 0 0 14px; }
+.notes-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.notes-list li { font-size: 13.5px; line-height: 1.55; }
+.notes-tech {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 22px auto 0;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  text-align: center;
+}
+.notes-tech .material-symbols-outlined { font-size: 18px; }

@@ -55,13 +55,17 @@ PAGES = [
          src=os.path.join("src_live", "page.html"),
          css="/assets/styles.css",
          js="/assets/script.js"),
-    # New-offer build. Currently an exact copy of the live page; its copy, offer
-    # and styling get replaced here without touching lure-her.
+    # New-offer build (Night + Day pack, 249). Own copy, own assets.
     dict(COMMON_META,
          slug="lureher",
          src=os.path.join("src_new", "page.html"),
          css="/assets/lureher/styles.css",
-         js="/assets/lureher/script.js"),
+         js="/assets/lureher/script.js",
+         title="LureHer Night × Day — الباك الأصلي · الدفع عند الاستلام",
+         description="باك LureHer الكامل: Night للجاذبية وDay للحضور. جوج عطور 50ml أصليين، ثبات أكثر من 8 ساعات، توصيل مجاني، الدفع عند الاستلام.",
+         og_title="LureHer Night × LureHer Day — الباك الأصلي",
+         og_description="جوج عطور 50ml بـ249 درهم بلاصة 500 · الدفع عند الاستلام",
+         og_image="/images/hero/h-duo-v3-800.webp"),
 ]
 
 # Meta browser pixel — pixel_id comes from standalone.config.json; the same

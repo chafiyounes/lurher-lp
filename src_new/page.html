@@ -1,7 +1,7 @@
 <div class="app" dir="rtl" lang="ar">
 
-  <div class="announce-bar" aria-live="polite">
-    <div class="announce-static" id="announce-static">توصيل مجاني لكل المغرب · الدفع عند الاستلام</div>
+  <div class="announce-bar announce-bar--marquee" aria-live="off">
+    <div class="announce-static" id="announce-static">مخزون محدود، العرض الحصري ديال هاد الشهر فقط · LureHer، عطور الرجال الحقيقيين · الدفع عند الاستلام، توصيل مجاني</div>
   </div>
 
   <header class="nav-header">
@@ -49,9 +49,11 @@
       <div class="hero-inner hero-inner--visual-first">
         <div class="hero-media">
           <div class="hero-copy hero-copy--above">
-            <h1 class="t-hero hero-copy-h" data-i18n="land_hero_h">العطرين اللي غادين يخليوها متقدرش تقاومك</h1>
+            <p class="stock-ready-line" data-i18n="stock_ready"><span class="material-symbols-outlined" aria-hidden="true">local_shipping</span> المخزون جاهز للإرسال حتى لباب دارك، بقاو غير شي باكات قليلة هاد الشهر</p>
+            <h1 class="t-hero hero-copy-h" data-i18n="land_hero_h">الباك الكامل اللي غادي يخليك فقمة الجاذبية ديالك، ليل ونهار</h1>
             <p class="t-body t-muted hero-copy-sub" data-i18n="land_hero_sub">غتسمع "ريحتك زوينة" 1000 مرة</p>
-            <p class="hero-offer-chip" data-i18n="hero_offer">Lure Her 50ml + Layton 10ml، ‏189 درهم <s>250 درهم</s></p>
+            <p class="hero-product-title" data-i18n="product_title">LureHer Night × LureHer Day <span class="hpt-tag">العطر الأصلي الوحيد</span></p>
+            <p class="hero-offer-chip" data-i18n="hero_offer">جوج عطور 50ml، ‏249 درهم <s>500 درهم</s></p>
           </div>
           <div
             class="media-carousel hero-gallery"
@@ -64,18 +66,18 @@
                 <span class="material-symbols-outlined">chevron_right</span>
               </button>
               <ol class="media-carousel-track" id="hero-gallery-track">
-                <li class="media-carousel-slide is-active" data-slide-id="couple">
+                <li class="media-carousel-slide is-active" data-slide-id="pack">
                   <img
-                    src="https://cdn.jsdelivr.net/gh/chafiyounes/lurher-lp@main/images/hero/h-couple-v2-800.webp?v=9"
-                    alt="امرأة تشمّ رجلاً يضع عطر Lure Her"
+                    src="https://cdn.jsdelivr.net/gh/chafiyounes/lurher-lp@main/images/hero/h-duo-v3-800.webp?v=9"
+                    alt="باك LureHer الكامل، Night و Day"
                     width="800"
                     height="800"
                     loading="eager"
                     decoding="async"
                     data-slide-index="0"
-                    data-alt-ar="امرأة تشمّ رجلاً يضع عطر Lure Her"
-                    data-alt-en="Woman smelling a man wearing Lure Her"
-                    data-alt-fr="Une femme sent un homme portant Lure Her"
+                    data-alt-ar="باك LureHer الكامل، Night و Day"
+                    data-alt-en="The complete LureHer pack, Night and Day"
+                    data-alt-fr="Le pack LureHer complet, Night et Day"
                   />
                 </li>
               </ol>
@@ -97,11 +99,12 @@
                 <img class="order-card-thumb" alt="Lure Her Parfum" src="https://cdn.jsdelivr.net/gh/chafiyounes/lurher-lp@main/images/product/bottle-thumb.webp?v=9" width="80" height="80" loading="eager" decoding="async"/>
                 <div class="order-card-offer">
                   <div class="checkout-price-row">
-                    <span class="strike-price" id="compare-price-display">250 درهم</span>
-                    <span class="price-tag-big" id="display-price">189 درهم</span>
-                    <span class="savings-tag savings-tag--inline" id="savings-display" data-i18n="savings_tag">وفّرت 61 درهم</span>
+                    <span class="strike-price" id="compare-price-display">500 درهم</span>
+                    <span class="price-tag-big" id="display-price">249 درهم</span>
+                    <span class="savings-tag savings-tag--inline" id="savings-display" data-i18n="savings_tag">وفّرت 251 درهم</span>
                   </div>
-                  <p class="price-subnote offer-name-line" data-i18n="offer_name">جوج عطور أصلية: Lure Her 50ml + Layton 10ml</p>
+                  <p class="price-subnote offer-name-line" data-i18n="offer_name">جوج عطور LureHer أصليين: Night 50ml + Day 50ml</p>
+                  <p class="price-subnote two-for-one-line" data-i18n="two_for_one">جوج عطور بثمن وحدة، وكتخلّص غير ملي يوصلوك ليديك</p>
                 </div>
               </div>
 
@@ -121,7 +124,7 @@
                 <div class="badge-item">
                   <span class="material-symbols-outlined">verified_user</span>
                   <div class="badge-texts">
-                    <strong data-i18n="ct_guarantee">تجرّب قبل ما تخلّص!</strong>
+                    <strong data-i18n="ct_guarantee">جرّب جوج العطور قبل ما تخلّص!</strong>
                   </div>
                 </div>
               </div>
@@ -184,11 +187,6 @@
                   <span class="btn-label" data-i18n="submit_order">COMMANDER</span>
                   <span class="btn-sublabel" data-i18n="submit_sub">كتخلّص غير ملي يوصلك</span>
                 </button>
-                <p class="form-proof-note" data-i18n="form_proof">⭐ 4.9 · +2000 طلبية فالمغرب</p>
-                <p class="form-security-note">
-                  <span class="material-symbols-outlined" aria-hidden="true">lock</span>
-                  <span data-i18n="form_secure">معلوماتك آمنة ومحمية</span>
-                </p>
               </div>
             </div>
           </div>
@@ -212,27 +210,57 @@
             <div class="coffret-line">
               <span class="coffret-badge">50ml</span>
               <div class="coffret-line-text">
-                <strong data-i18n="box_1_title">Lure Her</strong>
-                <span data-i18n="box_1_sub">عطر حلو كيخلي الناس يقرّبو ليك، نعناع منعش، فانيلا حليبية</span>
+                <strong data-i18n="box_1_title">LureHer Night، إكسير الفيرومون</strong>
+                <span data-i18n="box_1_sub">50ml / 1.7oz، عطر الليل والخرجات، فانيلا حليبية وكراميل على نعناع منعش، كيخلي الناس يقربو ليك بلا ما يعرفو علاش</span>
               </div>
             </div>
-            <div class="coffret-line coffret-line--gift">
-              <span class="coffret-badge coffret-badge--gift">10ml</span>
+            <div class="coffret-line">
+              <span class="coffret-badge">50ml</span>
               <div class="coffret-line-text">
-                <strong data-i18n="box_2_title">Layton أصلي، هدية</strong>
-                <span data-i18n="box_2_sub">عطر قوي كيعرفو بلي دخلتي قبل ما يشوفوك، خشبي، متوابل، عنبري.</span>
+                <strong data-i18n="box_2_title">LureHer Day، إكسير الحضور</strong>
+                <span data-i18n="box_2_sub">50ml / 1.7oz، عطر النهار والخدمة، تفاحة ولافندر على قاعدة خشبية متوابلة، كيفرض الحضور فالاجتماعات والمواعيد</span>
               </div>
             </div>
             <div class="coffret-total">
               <div class="coffret-total-price">
-                <span class="coffret-strike" data-i18n="coffret_strike">250 درهم</span>
-                <span class="coffret-now" data-i18n="coffret_now">189 درهم</span>
+                <span class="coffret-strike" data-i18n="coffret_strike">500 درهم</span>
+                <span class="coffret-now" data-i18n="coffret_now">249 درهم</span>
               </div>
-              <span class="coffret-total-label" data-i18n="box_foot">الزوج كامل بـ 189 درهم فقط</span>
+              <span class="coffret-total-label" data-i18n="box_foot">الباك كامل بـ 249 درهم فقط</span>
             </div>
             <button type="button" class="btn-primary btn-full coffret-cta scroll-to-checkout" data-i18n="box_cta">اطلب الآن</button>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="notes-section bg-alt reveal" id="notes-section">
+      <div class="section-container">
+        <div class="section-head text-center">
+          <span class="section-eyebrow" data-i18n="notes_eyebrow">النوتات العطرية</span>
+          <h2 class="t-h2" data-i18n="notes_h">شنو كاين فكل قنينة</h2>
+        </div>
+        <div class="notes-grid">
+          <div class="notes-card notes-card--night">
+            <h3 class="notes-title">LureHer Night</h3>
+            <p class="notes-sub" data-i18n="notes_night_sub">عطر الجاذبية، للخرجات والمناسبات والليل</p>
+            <ul class="notes-list">
+              <li><strong data-i18n="notes_top">الافتتاحية:</strong> <span data-i18n="notes_night_top">نعناع منعش، تفاحة خضرا، ليمون</span></li>
+              <li><strong data-i18n="notes_heart">القلب:</strong> <span data-i18n="notes_night_heart">فانيلا حليبية، كراميل، تونكا</span></li>
+              <li><strong data-i18n="notes_base">القاعدة:</strong> <span data-i18n="notes_night_base">عنبر، خشب الأرز، مسك أبيض</span></li>
+            </ul>
+          </div>
+          <div class="notes-card notes-card--day">
+            <h3 class="notes-title">LureHer Day</h3>
+            <p class="notes-sub" data-i18n="notes_day_sub">عطر الحضور، للخدمة والاجتماعات والنهار</p>
+            <ul class="notes-list">
+              <li><strong data-i18n="notes_top">الافتتاحية:</strong> <span data-i18n="notes_day_top">تفاحة، برغموت، لافندر</span></li>
+              <li><strong data-i18n="notes_heart">القلب:</strong> <span data-i18n="notes_day_heart">جيرانيوم، ياسمين، بنفسج</span></li>
+              <li><strong data-i18n="notes_base">القاعدة:</strong> <span data-i18n="notes_day_base">فانيلا، فلفل أسود، خشب الصندل</span></li>
+            </ul>
+          </div>
+        </div>
+        <p class="notes-tech" data-i18n="notes_tech"><span class="material-symbols-outlined" aria-hidden="true">schedule</span> جوج القنينات eau de parfum بتركيز عالي، ثبات أكثر من 8 ساعات على الجلد</p>
       </div>
     </section>
 
@@ -243,8 +271,8 @@
             <span class="material-symbols-outlined">verified_user</span>
           </span>
           <div class="guarantee-body">
-            <strong class="guarantee-title" data-i18n="guarantee_title">خلّص فقط من بعد ما تشمّ</strong>
-            <p class="guarantee-sub" data-i18n="guarantee_sub">شمّو، وإيلا ما عجبكش رجّعو بلا مشكل، كتخلّص غير عند الاستلام.</p>
+            <strong class="guarantee-title" data-i18n="guarantee_title">شمّ جوج العطور قبل ما تخلّص</strong>
+            <p class="guarantee-sub" data-i18n="guarantee_sub">شمّهم بجوج، وإيلا ما عجبوكش رجّعهم بلا مشكل، كتخلّص غير عند الاستلام. وإيلا ما عجبكش العطر من بعد، كنبدلوهولك فـ7 أيام.</p>
           </div>
         </div>
       </div>
@@ -263,7 +291,7 @@
         <div class="section-head text-center">
           <span class="section-eyebrow" data-i18n="reframe_eyebrow">علاش حنا مختلفين</span>
           <h2 class="t-h2 reframe-h reframe-h--split">
-            <span class="rh-side rh-win" data-i18n="reframe_h_win">وحدة كتدير التأثير</span>
+            <span class="rh-side rh-win" data-i18n="reframe_h_win">جوج كيديرو التأثير</span>
             <span class="rh-vs" aria-hidden="true">VS</span>
             <span class="rh-side rh-lose" data-i18n="reframe_h_lose">خمسة ما كيريحو والو</span>
           </h2>
@@ -275,7 +303,7 @@
             <div class="vs-photo">
               <img src="https://cdn.jsdelivr.net/gh/chafiyounes/lurher-lp@main/images/hero/01-main.webp?v=9" alt="Lure Her" width="600" height="600" loading="lazy" decoding="async"/>
             </div>
-            <figcaption class="vs-cap vs-cap--win" data-i18n="vs_us_label">Lure Her</figcaption>
+            <figcaption class="vs-cap vs-cap--win" data-i18n="vs_us_label">LureHer Night × Day</figcaption>
           </figure>
           <figure class="vs-side vs-side--lose">
             <div class="vs-photo">
@@ -301,7 +329,7 @@
           <thead>
             <tr class="vs-row vs-row--head">
               <th class="vs-feat" scope="col"></th>
-              <th class="vs-col vs-col--win" scope="col" data-i18n="vs_us_label">Lure Her</th>
+              <th class="vs-col vs-col--win" scope="col" data-i18n="vs_us_label">LureHer Night × Day</th>
               <th class="vs-col vs-col--lose" scope="col" data-i18n="vs_them_short">الباقي</th>
             </tr>
           </thead>
@@ -322,7 +350,7 @@
               <td class="vs-mark vs-no" aria-label="لا">✕</td>
             </tr>
             <tr class="vs-row">
-              <td class="vs-feat" data-i18n="vs_f4">عطر Layton أصلي هدية مع كل طلب هاد السيمانة</td>
+              <td class="vs-feat" data-i18n="vs_f4">جوج قنينات كاملين 50ml فكل باك، وحدة لليل ووحدة للنهار</td>
               <td class="vs-mark vs-yes" aria-label="نعم">✓</td>
               <td class="vs-mark vs-no" aria-label="لا">✕</td>
             </tr>
@@ -361,16 +389,23 @@
       <div class="section-container">
         <div class="section-head text-center">
           <span class="section-eyebrow" data-i18n="rev_eyebrow">آراء حقيقية</span>
-          <h2 class="t-h2" data-i18n="rev_title">جرّبو Lure Her</h2>
+          <h2 class="t-h2" data-i18n="rev_title">جرّبو باك LureHer</h2>
           <p class="section-desc" data-i18n="rev_sub">+2,000 طلبية وصلات للمغرب، هادو شي تعليقات من زبنائنا</p>
         </div>
-        <div class="reviews-summary">
+        <div class="reviews-summary reviews-summary--split">
           <div class="reviews-score">
-            <span class="reviews-score-num">4.9</span>
+            <span class="reviews-score-num">4.7</span>
             <div class="reviews-score-meta">
               <span class="stars stars-lg" aria-hidden="true">★★★★★</span>
-              <span class="reviews-score-label" data-i18n="rev_rating_label">من +300 تقييم</span>
+              <span class="reviews-score-label" data-i18n="rev_rating_label">من 1,027 تقييم</span>
             </div>
+          </div>
+          <div class="reviews-histogram" aria-label="توزيع التقييمات">
+            <div class="rh-row"><span class="rh-star">5★</span><span class="rh-bar"><span class="rh-fill" style="width:79%"></span></span><span class="rh-n">812</span></div>
+            <div class="rh-row"><span class="rh-star">4★</span><span class="rh-bar"><span class="rh-fill" style="width:15%"></span></span><span class="rh-n">158</span></div>
+            <div class="rh-row"><span class="rh-star">3★</span><span class="rh-bar"><span class="rh-fill" style="width:4%"></span></span><span class="rh-n">43</span></div>
+            <div class="rh-row"><span class="rh-star">2★</span><span class="rh-bar"><span class="rh-fill" style="width:1%"></span></span><span class="rh-n">9</span></div>
+            <div class="rh-row"><span class="rh-star">1★</span><span class="rh-bar"><span class="rh-fill" style="width:1%"></span></span><span class="rh-n">5</span></div>
           </div>
         </div>
 
@@ -394,16 +429,7 @@
                 </div>
               </div>
             </div>
-            <p class="t-body review-text" data-i18n="rev1_text">وصلني فيومين. العطر خطير وكيدوم. مراتي سولاتني أشنو حاطط</p>
-            <div class="review-audio">
-              <div class="review-audio-label">
-                <span class="material-symbols-outlined" aria-hidden="true">mic</span>
-                <span data-i18n="rev_audio_label">رسالة صوتية من الزبون</span>
-              </div>
-              <audio controls preload="none" src="https://raw.githubusercontent.com/chafiyounes/lurher-lp/main/reviews/audio/review.mp3?v=1">
-                <a href="https://raw.githubusercontent.com/chafiyounes/lurher-lp/main/reviews/audio/review.mp3?v=1">تشغيل الرسالة الصوتية</a>
-              </audio>
-            </div>
+            <p class="t-body review-text" data-i18n="rev1_text">طلبت الباك، Night للخرجات وDay للخدمة. جوج فيهم كيدومو بزاف، مراتي عجبها Night. غادي نطلب واحد آخر لخويا قبل ما يسالي العرض</p>
             <div class="review-thumbs review-thumbs--1">
               <img src="https://raw.githubusercontent.com/chafiyounes/lurher-lp/main/reviews/images/ugc-02-real-unbox.webp?v=1" alt="صورة من زبون، فتح طلبية Lure Her مع الهدية" width="900" height="900" loading="lazy" decoding="async"/>
             </div>
@@ -423,16 +449,7 @@
                 </div>
               </div>
             </div>
-            <p class="t-body review-text" data-i18n="rev4_text">حتى Layton ديال الهدية زوين بزّاف. خدمة ممتازة، كننصح بيه.</p>
-            <div class="review-audio">
-              <div class="review-audio-label">
-                <span class="material-symbols-outlined" aria-hidden="true">mic</span>
-                <span data-i18n="rev_audio_label">رسالة صوتية من الزبون</span>
-              </div>
-              <audio controls preload="none" src="https://raw.githubusercontent.com/chafiyounes/lurher-lp/main/reviews/audio/review2.m4a?v=1">
-                <a href="https://raw.githubusercontent.com/chafiyounes/lurher-lp/main/reviews/audio/review2.m4a?v=1">تشغيل الرسالة الصوتية</a>
-              </audio>
-            </div>
+            <p class="t-body review-text" data-i18n="rev4_text">ولا عندي عطر لكل وقت، Day كنحطو كل صباح للخدمة وNight للمناسبات. الباك بدل ليا الروتين كامل، خدمة ممتازة كننصح بيها</p>
             <div class="review-thumbs review-thumbs--1">
               <img src="https://raw.githubusercontent.com/chafiyounes/lurher-lp/main/reviews/images/ugc-04-real-unbox.webp?v=1" alt="صورة من زبون، طلبية Lure Her ملي وصلات" width="900" height="900" loading="lazy" decoding="async"/>
             </div>
@@ -452,7 +469,7 @@
                 </div>
               </div>
             </div>
-            <p class="t-body review-text" data-i18n="rev3_text">بزّاف ديال المجاملات فالخدمة. مستاهل، غير كنت نتمنى القنينة أكبر شوية.</p>
+            <p class="t-body review-text" data-i18n="rev3_text">الباك زوين، Night كيدوم بزاف وجاباتني عليه بزاف ديال المجاملات. Day خفيف شوية على ذوقي فالصيف، ولكن بجوج كيستاهلو الثمن</p>
             <div class="review-thumbs review-thumbs--1">
               <img src="https://raw.githubusercontent.com/chafiyounes/lurher-lp/main/reviews/images/ugc-03-real-shirt.webp?v=1" alt="صورة من زبون، Lure Her مع الهدية" width="900" height="900" loading="lazy" decoding="async"/>
             </div>
@@ -472,7 +489,7 @@
                 </div>
               </div>
             </div>
-            <p class="t-body review-text" data-i18n="rev5_text">تصويرة من بعد ما وصلني الطلب، العلبة و القنينة أصليين. ريحة كتجذب بزاف.</p>
+            <p class="t-body review-text" data-i18n="rev5_text">تصويرة من بعد ما وصلني الباك، جوج القنينات أصليين والتغليف محترف. إيلا بقى العرض غادي نشري باك آخر نهديه لبا</p>
             <div class="review-thumbs review-thumbs--1">
               <img src="https://raw.githubusercontent.com/chafiyounes/lurher-lp/main/reviews/images/ugc-05-real-bathroom.webp?v=1" alt="صورة من زبون، Lure Her فالحمام" width="900" height="900" loading="lazy" decoding="async"/>
             </div>
@@ -580,8 +597,8 @@
     <div class="sticky-info">
       <img alt="Lure Her" src="https://cdn.jsdelivr.net/gh/chafiyounes/lurher-lp@main/images/product/bottle-thumb.webp?v=9" width="48" height="48" loading="lazy" decoding="async"/>
       <div class="sticky-price">
-        <span data-i18n="sticky_name">Lure Her</span>
-        <span data-i18n="sticky_price">189 درهم</span>
+        <span data-i18n="sticky_name">LureHer Night × Day</span>
+        <span data-i18n="sticky_price">249 درهم</span>
       </div>
     </div>
     <button type="button" class="btn-primary scroll-to-checkout sticky-cta-btn" id="stickyBtn">
@@ -593,19 +610,19 @@
   {
     "@context": "https://schema.org/",
     "@type": "Product",
-    "name": "Lure Her",
-    "description": "Luxury magnetic men's perfume. Lasts all day. Comes with a free 10ml gift. Cash on Delivery in Morocco.",
-    "brand": { "@type": "Brand", "name": "Lure Her" },
+    "name": "LureHer Night × LureHer Day",
+    "description": "The complete LureHer pack: Night for attraction, Day for presence. Two original 50ml eau de parfum, 8+ hour longevity. Cash on Delivery in Morocco.",
+    "brand": { "@type": "Brand", "name": "LureHer" },
     "offers": {
       "@type": "Offer",
-      "price": "189",
+      "price": "249",
       "priceCurrency": "MAD",
       "availability": "https://schema.org/InStock"
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "2000"
+      "ratingValue": "4.7",
+      "reviewCount": "1027"
     }
   }
   </script>

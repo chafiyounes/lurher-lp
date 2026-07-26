@@ -27,19 +27,24 @@
   var I18N = {
 
     announce_cod: {
-      ar: "الدفع عند الاستلام",
-      en: "Cash on delivery",
-      fr: "Paiement à la livraison"
+      ar: "الدفع عند الاستلام، توصيل مجاني",
+      en: "Cash on delivery, free shipping",
+      fr: "Paiement à la livraison, livraison gratuite"
     },
     announce_ship: {
-      ar: "توصيل مجاني لكل المغرب",
-      en: "Free shipping across Morocco",
-      fr: "Livraison gratuite partout au Maroc"
+      ar: "مخزون محدود، العرض الحصري ديال هاد الشهر فقط",
+      en: "Limited stock, this month's exclusive offer only",
+      fr: "Stock limité, offre exclusive de ce mois seulement"
+    },
+    announce_brand: {
+      ar: "LureHer، عطور الرجال الحقيقيين",
+      en: "LureHer, perfumes for real men",
+      fr: "LureHer, les parfums des vrais hommes"
     },
     announce_stock: {
-      ar: "بقا <strong>{n}</strong> طلبيات فقط لهذا الأسبوع",
-      en: "Only <strong>{n}</strong> packs left this week!",
-      fr: "Plus que <strong>{n}</strong> packs cette semaine !"
+      ar: "بقا <strong>{n}</strong> باك فقط هاد الشهر",
+      en: "Only <strong>{n}</strong> packs left this month!",
+      fr: "Plus que <strong>{n}</strong> packs ce mois-ci !"
     },
     announce_order: {
       ar: "اطلب باقتك الآن",
@@ -55,25 +60,40 @@
 
     hero_badge: { ar: "Lure Her", en: "Lure Her", fr: "Lure Her" },
 
+    stock_ready: {
+      ar: "<span class=\"material-symbols-outlined\" aria-hidden=\"true\">local_shipping</span> المخزون جاهز للإرسال حتى لباب دارك، بقاو غير شي باكات قليلة هاد الشهر",
+      en: "<span class=\"material-symbols-outlined\" aria-hidden=\"true\">local_shipping</span> Stock ready to ship to your door, only a few packs left this month",
+      fr: "<span class=\"material-symbols-outlined\" aria-hidden=\"true\">local_shipping</span> Stock prêt à expédier jusqu'à votre porte, plus que quelques packs ce mois-ci"
+    },
     land_hero_h: {
-      ar: "العطرين اللي غادين يخليوها متقدرش تقاومك",
-      en: "With this perfume pack, she won't be able to resist you",
-      fr: "Avec ce pack de parfum, elle ne pourra plus vous résister"
+      ar: "الباك الكامل اللي غادي يخليك فقمة الجاذبية ديالك، ليل ونهار",
+      en: "The complete pack that keeps you at the top of your attraction, night and day",
+      fr: "Le pack complet qui vous garde au sommet de votre attraction, nuit et jour"
     },
     land_hero_sub: {
       ar: "غتسمع \"ريحتك زوينة\" 1000 مرة",
       en: "1,000 compliments, guaranteed.",
       fr: "1000 compliments garantis."
     },
+    product_title: {
+      ar: "LureHer Night × LureHer Day <span class=\"hpt-tag\">العطر الأصلي الوحيد</span>",
+      en: "LureHer Night × LureHer Day <span class=\"hpt-tag\">the only original perfume</span>",
+      fr: "LureHer Night × LureHer Day <span class=\"hpt-tag\">le seul parfum original</span>"
+    },
     hero_offer: {
-      ar: "Lure Her 50ml + Layton 10ml، ‏189 درهم <s>250 درهم</s>",
-      en: "Lure Her 50ml + Layton 10ml, 189 DH <s>250 DH</s>",
-      fr: "Lure Her 50ml + Layton 10ml, 189 DH <s>250 DH</s>"
+      ar: "جوج عطور 50ml، ‏249 درهم <s>500 درهم</s>",
+      en: "Two 50ml perfumes, 249 DH <s>500 DH</s>",
+      fr: "Deux parfums 50ml, 249 DH <s>500 DH</s>"
     },
     offer_name: {
-      ar: "جوج عطور أصلية: Lure Her 50ml + Layton 10ml",
-      en: "Two original perfumes: Lure Her 50ml + Layton 10ml",
-      fr: "Deux parfums originaux : Lure Her 50ml + Layton 10ml"
+      ar: "جوج عطور LureHer أصليين: Night 50ml + Day 50ml",
+      en: "Two original LureHer perfumes: Night 50ml + Day 50ml",
+      fr: "Deux parfums LureHer originaux : Night 50ml + Day 50ml"
+    },
+    two_for_one: {
+      ar: "جوج عطور بثمن وحدة، وكتخلّص غير ملي يوصلوك ليديك",
+      en: "Two perfumes for the price of one, and you only pay when they reach your hands",
+      fr: "Deux parfums pour le prix d'un, et vous ne payez qu'à la réception"
     },
 
     trust_attract: { ar: "يلفت الأنظار", en: "Turns heads", fr: "Attire les regards" },
@@ -86,10 +106,10 @@
       en: "With every order: free 10ml gift",
       fr: "Avec chaque commande : 10ml offert en cadeau"
     },
-    savings_tag: { ar: "وفّرت 61 درهم", en: "You save 61 DH", fr: "Économisez 61 DH" },
+    savings_tag: { ar: "وفّرت 251 درهم", en: "You save 251 DH", fr: "Économisez 251 DH" },
 
     ct_ship: { ar: "توصيل مجاني", en: "Free delivery", fr: "Livraison gratuite" },
-    ct_guarantee: { ar: "تجرّب قبل ما تخلّص!", en: "Try it before you pay!", fr: "Essayage avant paiement possible !" },
+    ct_guarantee: { ar: "جرّب جوج العطور قبل ما تخلّص!", en: "Try both perfumes before you pay!", fr: "Essayez les deux parfums avant de payer !" },
     trust_shipping: { ar: "توصيل مجاني في كل المغرب", en: "Free shipping in Morocco", fr: "Livraison gratuite au Maroc" },
 
     tb_cod: {
@@ -108,14 +128,14 @@
       fr: "Essayez en toute confiance, si le parfum ne vous plaît pas ou si vous doutez de son authenticité, vous le renvoyez, sans souci"
     },
     guarantee_title: {
-      ar: "شمّو قبل ما تخلّص",
-      en: "Smell it before you pay",
-      fr: "Sentez avant de payer"
+      ar: "شمّ جوج العطور قبل ما تخلّص",
+      en: "Smell both perfumes before you pay",
+      fr: "Sentez les deux parfums avant de payer"
     },
     guarantee_sub: {
-      ar: "شمّو، وإيلا ما عجبكش رجّعو بلا مشكل، كتخلّص غير عند الاستلام.",
-      en: "Smell it, if you don't like it, send it back. You only pay on delivery.",
-      fr: "Sentez-le, s'il ne vous plaît pas, retournez-le. Vous ne payez qu'à la livraison."
+      ar: "شمّهم بجوج، وإيلا ما عجبوكش رجّعهم بلا مشكل، كتخلّص غير عند الاستلام. وإيلا ما عجبكش العطر من بعد، كنبدلوهولك فـ7 أيام.",
+      en: "Smell them both, if you don't like them send them back, you only pay on delivery. And if a scent disappoints you later, we replace it within 7 days.",
+      fr: "Sentez-les tous les deux, s'ils ne vous plaisent pas renvoyez-les, vous ne payez qu'à la livraison. Et si un parfum vous déçoit après, on vous le remplace sous 7 jours."
     },
     guarantee_meta_1: {
       ar: "توصيل من 24 إلى 48 ساعة في كل المغرب",
@@ -130,9 +150,9 @@
 
     reframe_eyebrow: { ar: "علاش حنا مختلفين", en: "Why we're different", fr: "Pourquoi nous sommes différents" },
     reframe_h_win: {
-      ar: "وحدة كتدير التأثير",
-      en: "One that works",
-      fr: "Un qui fait effet"
+      ar: "جوج كيديرو التأثير",
+      en: "Two that work",
+      fr: "Deux qui font effet"
     },
     reframe_h_lose: {
       ar: "خمسة ما كيريحو والو",
@@ -169,13 +189,13 @@
       en: "Because a perfume isn't just a scent, it's the impression you leave before you even speak.",
       fr: "Parce qu'un parfum n'est pas qu'une odeur, c'est l'impression que vous laissez avant même de parler."
     },
-    vs_us_label: { ar: "Lure Her", en: "Lure Her", fr: "Lure Her" },
+    vs_us_label: { ar: "LureHer Night × Day", en: "LureHer Night × Day", fr: "LureHer Night × Day" },
     vs_them_label: { ar: "5 عطور مقلّدة بـ 200 درهم", en: "5 fakes for 200 DH", fr: "5 faux produits pour 200 DH" },
     vs_them_short: { ar: "الباقي", en: "The rest", fr: "Les autres" },
     vs_f1: { ar: "تركيز عالي من الزيوت الأصلية", en: "High concentration of authentic oils", fr: "Forte concentration d'huiles authentiques" },
     vs_f2: { ar: "ثبات يدوم طول اليوم", en: "Lasts all day long", fr: "Tient toute la journée" },
     vs_f3: { ar: "شعار مطبوع على القنينة (ماشي ستيكر)", en: "Logo printed on the bottle (not a label)", fr: "Logo imprimé sur le flacon (pas une étiquette)" },
-    vs_f4: { ar: "عطر Layton أصلي هدية مع كل طلب هاد السيمانة", en: "Original Layton perfume free with every order this week", fr: "Layton original offert avec chaque commande cette semaine" },
+    vs_f4: { ar: "جوج قنينات كاملين 50ml فكل باك، وحدة لليل ووحدة للنهار", en: "Two full 50ml bottles in every pack, one for night, one for day", fr: "Deux flacons complets de 50ml dans chaque pack, un pour la nuit, un pour le jour" },
 
     proof_eyebrow: { ar: "الجودة والإثبات", en: "Proof & quality", fr: "Preuves & qualité" },
     proof_h: { ar: "الجودة اللي ما تبانش من الشاشة", en: "Quality you can't judge on a screen", fr: "La vraie qualité, impossible à juger sur écran" },
@@ -202,32 +222,51 @@
     },
 
     box_eyebrow: { ar: "شنو غادي توصلك", en: "What you receive", fr: "Ce que vous recevez" },
-    box_h: { ar: "كل باك فيه جوج عطور", en: "Every pack contains two perfumes", fr: "Chaque pack contient deux parfums" },
-    box_1_title: { ar: "Lure Her", en: "Lure Her", fr: "Lure Her" },
+    box_h: { ar: "كل باك فيه جوج عطور كاملين", en: "Every pack contains two full perfumes", fr: "Chaque pack contient deux parfums complets" },
+    box_1_title: { ar: "LureHer Night، إكسير الفيرومون", en: "LureHer Night, the pheromone elixir", fr: "LureHer Night, l'élixir de phéromones" },
     box_1_sub: {
-      ar: "عطر حلو كيخلي الناس يقرّبو ليك، نعناع منعش، فانيلا حليبية",
-      en: "A scent so sweet people move closer, minty freshness, milky vanilla",
-      fr: "Un parfum si doux qu'on se rapproche de vous, fraîcheur mentholée, vanille lactée"
+      ar: "50ml / 1.7oz، عطر الليل والخرجات، فانيلا حليبية وكراميل على نعناع منعش، كيخلي الناس يقربو ليك بلا ما يعرفو علاش",
+      en: "50ml / 1.7oz, the night-out perfume, milky vanilla and caramel over fresh mint, it draws people closer without them knowing why",
+      fr: "50ml / 1.7oz, le parfum des sorties, vanille lactée et caramel sur une menthe fraîche, il attire les gens sans qu'ils sachent pourquoi"
     },
-    box_2_title: { ar: "Layton أصلي، هدية", en: "Original Layton, free gift", fr: "Layton original, offert" },
+    box_2_title: { ar: "LureHer Day، إكسير الحضور", en: "LureHer Day, the presence elixir", fr: "LureHer Day, l'élixir de présence" },
     box_2_sub: {
-      ar: "عطر قوي كيعرفو بلي دخلتي قبل ما يشوفوك، خشبي، متوابل، عنبري.",
-      en: "A scent so powerful they know you walked in before they see you, woody, spicy, ambery.",
-      fr: "Un parfum si puissant qu'on sait que vous êtes entré avant de vous voir, boisé, épicé, ambré."
+      ar: "50ml / 1.7oz، عطر النهار والخدمة، تفاحة ولافندر على قاعدة خشبية متوابلة، كيفرض الحضور فالاجتماعات والمواعيد",
+      en: "50ml / 1.7oz, the daytime and work perfume, apple and lavender over a spiced woody base, it commands presence in meetings and appointments",
+      fr: "50ml / 1.7oz, le parfum du jour et du travail, pomme et lavande sur un fond boisé épicé, il impose votre présence en réunion comme en rendez-vous"
     },
     box_cta: { ar: "اطلب الآن", en: "Order now", fr: "Commander" },
-    box_foot: { ar: "الزوج كامل بـ 189 درهم فقط", en: "Both together for only 189 DH", fr: "Les deux ensemble pour seulement 189 DH" },
-    coffret_strike: { ar: "250 درهم", en: "250 DH", fr: "250 DH" },
-    coffret_now: { ar: "189 درهم", en: "189 DH", fr: "189 DH" },
+    box_foot: { ar: "الباك كامل بـ 249 درهم فقط", en: "The whole pack for only 249 DH", fr: "Le pack complet pour seulement 249 DH" },
+    coffret_strike: { ar: "500 درهم", en: "500 DH", fr: "500 DH" },
+    coffret_now: { ar: "249 درهم", en: "249 DH", fr: "249 DH" },
+
+    notes_eyebrow: { ar: "النوتات العطرية", en: "Fragrance notes", fr: "Notes olfactives" },
+    notes_h: { ar: "شنو كاين فكل قنينة", en: "What's inside each bottle", fr: "Ce qu'il y a dans chaque flacon" },
+    notes_night_sub: { ar: "عطر الجاذبية، للخرجات والمناسبات والليل", en: "The attraction perfume, for nights out and occasions", fr: "Le parfum de l'attraction, pour les sorties et les grandes occasions" },
+    notes_day_sub: { ar: "عطر الحضور، للخدمة والاجتماعات والنهار", en: "The presence perfume, for work, meetings and daytime", fr: "Le parfum de la présence, pour le travail, les réunions et la journée" },
+    notes_top: { ar: "الافتتاحية:", en: "Top:", fr: "Tête :" },
+    notes_heart: { ar: "القلب:", en: "Heart:", fr: "Cœur :" },
+    notes_base: { ar: "القاعدة:", en: "Base:", fr: "Fond :" },
+    notes_night_top: { ar: "نعناع منعش، تفاحة خضرا، ليمون", en: "fresh mint, green apple, lemon", fr: "menthe fraîche, pomme verte, citron" },
+    notes_night_heart: { ar: "فانيلا حليبية، كراميل، تونكا", en: "milky vanilla, caramel, tonka", fr: "vanille lactée, caramel, fève tonka" },
+    notes_night_base: { ar: "عنبر، خشب الأرز، مسك أبيض", en: "amber, cedarwood, white musk", fr: "ambre, bois de cèdre, musc blanc" },
+    notes_day_top: { ar: "تفاحة، برغموت، لافندر", en: "apple, bergamot, lavender", fr: "pomme, bergamote, lavande" },
+    notes_day_heart: { ar: "جيرانيوم، ياسمين، بنفسج", en: "geranium, jasmine, violet", fr: "géranium, jasmin, violette" },
+    notes_day_base: { ar: "فانيلا، فلفل أسود، خشب الصندل", en: "vanilla, black pepper, sandalwood", fr: "vanille, poivre noir, bois de santal" },
+    notes_tech: {
+      ar: "<span class=\"material-symbols-outlined\" aria-hidden=\"true\">schedule</span> جوج القنينات eau de parfum بتركيز عالي، ثبات أكثر من 8 ساعات على الجلد",
+      en: "<span class=\"material-symbols-outlined\" aria-hidden=\"true\">schedule</span> Both bottles are high-concentration eau de parfum, 8+ hours on skin",
+      fr: "<span class=\"material-symbols-outlined\" aria-hidden=\"true\">schedule</span> Les deux flacons sont des eaux de parfum très concentrées, plus de 8 heures sur la peau"
+    },
 
     rev_eyebrow: { ar: "آراء الزبناء", en: "Customer reviews", fr: "Avis clients" },
-    rev_title: { ar: "جرّبو Lure Her", en: "They tried Lure Her", fr: "Ils ont essayé Lure Her" },
+    rev_title: { ar: "جرّبو باك LureHer", en: "They tried the LureHer pack", fr: "Ils ont essayé le pack LureHer" },
     rev_sub: {
       ar: "+2000 طلبية وصلات للمغرب",
       en: "+2,000 orders delivered in Morocco",
       fr: "+2 000 commandes livrées au Maroc"
     },
-    rev_rating_label: { ar: "من +300 تقييم", en: "from 300+ ratings", fr: "sur +300 avis" },
+    rev_rating_label: { ar: "من 1,027 تقييم", en: "from 1,027 ratings", fr: "sur 1 027 avis" },
     rev_photos_note: {
       ar: "تعليقات بصور من زبنائنا، صور حقيقية من بعد ما وصل الطلب",
       en: "Photo reviews from our customers, real pictures after delivery",
@@ -237,30 +276,30 @@
     rev1_name: { ar: "يوسف", en: "Youssef", fr: "Youssef" },
     rev1_city: { ar: "الدار البيضاء", en: "Casablanca", fr: "Casablanca" },
     rev1_text: {
-      ar: "وصلني فيومين. العطر خطير وكيدوم. مراتي سولاتني أشنو حاطط",
-      en: "Delivered in 2 days. It lasts, my wife asked what I was wearing.",
-      fr: "Livré en 2 jours. Il tient, ma femme m'a demandé ce que je portais."
+      ar: "طلبت الباك، Night للخرجات وDay للخدمة. جوج فيهم كيدومو بزاف، مراتي عجبها Night. غادي نطلب واحد آخر لخويا قبل ما يسالي العرض",
+      en: "I ordered the pack, Night for going out and Day for work. Both last long, my wife loves Night. Ordering another one for my brother before the offer ends.",
+      fr: "J'ai commandé le pack, Night pour les sorties et Day pour le travail. Les deux tiennent longtemps, ma femme adore Night. J'en recommande un pour mon frère avant la fin de l'offre."
     },
     rev3_name: { ar: "مهدي", en: "Mehdi", fr: "Mehdi" },
     rev3_city: { ar: "طنجة", en: "Tangier", fr: "Tanger" },
     rev3_text: {
-      ar: "بزّاف ديال المجاملات فالخدمة. مستاهل، غير كنت نتمنى القنينة أكبر شوية.",
-      en: "Tons of compliments at work. Worth it, just wish the bottle were bigger.",
-      fr: "Plein de compliments au travail. Ça vaut le prix, j'aurais juste aimé un flacon plus grand."
+      ar: "الباك زوين، Night كيدوم بزاف وجاباتني عليه بزاف ديال المجاملات. Day خفيف شوية على ذوقي فالصيف، ولكن بجوج كيستاهلو الثمن",
+      en: "Nice pack, Night lasts long and got me plenty of compliments. Day is a bit light for my taste in summer, but together they're worth the price.",
+      fr: "Beau pack, Night tient longtemps et m'a valu plein de compliments. Day est un peu léger à mon goût en été, mais les deux valent le prix."
     },
     rev4_name: { ar: "رضا", en: "Reda", fr: "Reda" },
     rev4_city: { ar: "أكادير", en: "Agadir", fr: "Agadir" },
     rev4_text: {
-      ar: "حتى Layton ديال الهدية زوين بزّاف. خدمة ممتازة، كننصح بيه.",
-      en: "Even the free Layton is great. Impeccable service, I recommend.",
-      fr: "Même le Layton offert est top. Service impeccable, je recommande."
+      ar: "ولا عندي عطر لكل وقت، Day كنحطو كل صباح للخدمة وNight للمناسبات. الباك بدل ليا الروتين كامل، خدمة ممتازة كننصح بيها",
+      en: "Now I have a perfume for every moment, Day each morning for work and Night for occasions. The pack changed my whole routine, excellent service, I recommend.",
+      fr: "J'ai maintenant un parfum pour chaque moment, Day le matin pour le travail et Night pour les occasions. Le pack a changé toute ma routine, service excellent, je recommande."
     },
     rev5_name: { ar: "سفيان .ك", en: "Sofiane K.", fr: "Sofiane K." },
     rev5_city: { ar: "فاس", en: "Fes", fr: "Fès" },
     rev5_text: {
-      ar: "تصويرة من بعد ما وصلني الطلب، العلبة و القنينة أصليين. ريحة كتجذب بزاف.",
-      en: "Photo right after delivery, box and bottle are genuine. The scent gets a lot of attention.",
-      fr: "Photo juste après la livraison, boîte et flacon authentiques. Le parfum attire beaucoup."
+      ar: "تصويرة من بعد ما وصلني الباك، جوج القنينات أصليين والتغليف محترف. إيلا بقى العرض غادي نشري باك آخر نهديه لبا",
+      en: "Photo right after the pack arrived, both bottles are genuine and the packaging is professional. If the offer holds I'm buying another pack as a gift for my father.",
+      fr: "Photo juste après réception du pack, les deux flacons sont authentiques et l'emballage est soigné. Si l'offre tient, j'en achète un autre pour mon père."
     },
     rev_audio_label: {
       ar: "رسالة صوتية من الزبون",
@@ -286,27 +325,27 @@
       fr: "Paiement à la livraison · Livraison 24–48 h · Retour sans souci"
     },
 
-    sticky_name: { ar: "Lure Her", en: "Lure Her", fr: "Lure Her" },
-    sticky_price: { ar: "189 درهم", en: "189 DH", fr: "189 DH" },
+    sticky_name: { ar: "LureHer Night × Day", en: "LureHer Night × Day", fr: "LureHer Night × Day" },
+    sticky_price: { ar: "249 درهم", en: "249 DH", fr: "249 DH" },
     sticky_cta: { ar: "اطلب الآن", en: "Order Now", fr: "Commander" },
 
-    fcta_h: { ar: "عطر واحد يقدر يبدّل كلشي", en: "One perfume can change everything", fr: "Un seul parfum peut tout changer" },
+    fcta_h: { ar: "باك واحد يقدر يبدّل كلشي", en: "One pack can change everything", fr: "Un seul pack peut tout changer" },
     fcta_offer: {
-      ar: "Lure Her 50ml + Layton 10ml هدية · 250 درهم ← 189 درهم · الدفع عند الاستلام · توصيل مجاني",
-      en: "Lure Her 50ml + free Layton 10ml · 250 DH → 189 DH · Cash on delivery · Free shipping",
-      fr: "Lure Her 50ml + Layton 10ml offert · 250 DH → 189 DH · Paiement à la livraison · Livraison gratuite"
+      ar: "LureHer Night 50ml + LureHer Day 50ml · 500 درهم ← 249 درهم · الدفع عند الاستلام · توصيل مجاني",
+      en: "LureHer Night 50ml + LureHer Day 50ml · 500 DH → 249 DH · Cash on delivery · Free shipping",
+      fr: "LureHer Night 50ml + LureHer Day 50ml · 500 DH → 249 DH · Paiement à la livraison · Livraison gratuite"
     },
     fcta_cta: { ar: "اطلب الآن", en: "ORDER", fr: "COMMANDER" },
-    fcta_stock: { ar: "ما بقاوش غير 30 قطعة", en: "Only 30 pieces left", fr: "Plus que 30 pièces" },
+    fcta_stock: { ar: "ما بقاوش غير 30 باك", en: "Only 30 packs left", fr: "Plus que 30 packs" },
 
     faq_eyebrow: { ar: "أسئلة شائعة", en: "FAQ", fr: "FAQ" },
     faq_title: { ar: "كل ما خصك تعرف قبل ما تطلب", en: "Everything to know before ordering", fr: "Tout savoir avant de commander" },
     faq_cta: { ar: "اطلب الآن", en: "Order now", fr: "Commander maintenant" },
-    faq_q1: { ar: "واش العطر أصلي؟", en: "Is the perfume authentic?", fr: "Le parfum est-il authentique ?" },
+    faq_q1: { ar: "واش العطور أصلية؟", en: "Are the perfumes authentic?", fr: "Les parfums sont-ils authentiques ?" },
     faq_a1: {
-      ar: "أيه، شعار UV مطبوع فالقنينة وفورمولة مركّزة.",
-      en: "Yes, UV logo printed on the bottle, concentrated formula.",
-      fr: "Oui, logo UV imprimé sur le flacon, formule concentrée."
+      ar: "أيه، جوج القنينات بشعار UV مطبوع وفورمولة مركّزة.",
+      en: "Yes, both bottles carry the printed UV logo and a concentrated formula.",
+      fr: "Oui, les deux flacons portent le logo UV imprimé et une formule concentrée."
     },
     faq_q2: { ar: "شحال كيدوم؟", en: "How long does it last?", fr: "Combien de temps tient-il ?" },
     faq_a2: {
@@ -328,9 +367,9 @@
     },
     faq_q5: { ar: "واش نقدر نرجعو؟", en: "Can I return it?", fr: "Puis-je le renvoyer ?" },
     faq_a5: {
-      ar: "أيه، إيلا ما عجبكش رجّعو بلا مشكل.",
-      en: "Yes, if you don't like it, send it back, no hassle.",
-      fr: "Oui, s'il ne vous plaît pas, renvoyez-le sans souci."
+      ar: "أيه، إيلا ما عجبكش رجّعو بلا مشكل. وإيلا ما عجبكش العطر من بعد، كنبدلوهولك فـ7 أيام.",
+      en: "Yes, if you don't like it, send it back, no hassle. And if a scent disappoints you later, we replace it within 7 days.",
+      fr: "Oui, s'il ne vous plaît pas, renvoyez-le sans souci. Et si un parfum vous déçoit après, on vous le remplace sous 7 jours."
     }
   };
 
@@ -413,11 +452,11 @@
 
 
     var titleDict = {
-      ar: "Lure Her — العطر اللي ما تتقاومش",
-      en: "Lure Her — The irresistible men's perfume",
-      fr: "Lure Her — Le parfum irrésistible pour homme"
+      ar: "LureHer Night × Day — الباك الأصلي · الدفع عند الاستلام",
+      en: "LureHer Night × Day — The original pack, cash on delivery",
+      fr: "LureHer Night × Day — Le pack original, paiement à la livraison"
     };
-    document.title = titleDict[l] || "Lure Her";
+    document.title = titleDict[l] || "LureHer Night × Day";
     updateHeroGalleryAlts();
     updateStockLabels(window.__V34_STOCK_COUNT || computeDeterministicStock());
     if (window.__V34_REFRESH_ANNOUNCE) window.__V34_REFRESH_ANNOUNCE();
@@ -506,37 +545,50 @@
     }
   });
 
-  var HERO_ASSET_VERSION = 9;
+  var HERO_ASSET_VERSION = 10;
+  // lureher page has its OWN manifest — /images/hero/manifest.json belongs to
+  // the live lure-her page; editing it there would change the live gallery.
   var HERO_MANIFEST_URL =
-    "/images/hero/manifest.json?v=" + HERO_ASSET_VERSION;
+    "/images/hero/manifest-lureher.json?v=" + HERO_ASSET_VERSION;
 
   var HERO_MANIFEST_FALLBACK = {
     baseUrl: "/images/hero/",
     slides: [
       {
-        id: "couple",
-        image: "h-couple-v2-800.webp",
-        thumb: "h-couple-v2-800.webp",
-        alt: { ar: "امرأة تشمّ رجلاً يضع عطر Lure Her", en: "Woman smelling a man wearing Lure Her", fr: "Une femme sent un homme portant Lure Her" }
-      },
-      {
-        id: "duo",
+        id: "pack",
         image: "h-duo-v3-800.webp",
         thumb: "h-duo-v3-800.webp",
-        alt: { ar: "عطر Lure Her مع عيّنة Layton", en: "Lure Her with the Layton decant", fr: "Lure Her avec le décant Layton" }
+        alt: { ar: "باك LureHer الكامل، Night و Day", en: "The complete LureHer pack, Night and Day", fr: "Le pack LureHer complet, Night et Day" },
+        caption: { ar: "الباك الكامل، LureHer Night × LureHer Day", fr: "Le pack complet, LureHer Night × LureHer Day" }
       },
       {
-        id: "solo",
+        id: "night",
+        image: "h-couple-v2-800.webp",
+        thumb: "h-couple-v2-800.webp",
+        alt: { ar: "LureHer Night، عطر الجاذبية", en: "LureHer Night, the attraction perfume", fr: "LureHer Night, le parfum de l'attraction" },
+        caption: { ar: "LureHer Night، الجاذبية الكاملة، كيقرب الناس ليك فالخرجات والمناسبات", fr: "LureHer Night, l'attraction totale, pour les sorties et les grandes occasions" }
+      },
+      {
+        id: "day",
         image: "h-solo-v2-800.webp",
         thumb: "h-solo-v2-800.webp",
-        alt: { ar: "عطر Lure Her الأصلي 50 مل", en: "Lure Her original 50ml", fr: "Lure Her original 50ml" }
+        alt: { ar: "LureHer Day، عطر الحضور", en: "LureHer Day, the presence perfume", fr: "LureHer Day, le parfum de la présence" },
+        caption: { ar: "LureHer Day، الثقة الكاملة، حضور محترف فالخدمة والاجتماعات", fr: "LureHer Day, la confiance totale, une présence pro au travail et en réunion" }
       },
       {
-        id: "decant",
+        id: "tech",
         image: "h-decant-v2-800.webp",
         thumb: "h-decant-v2-800.webp",
-        alt: { ar: "عيّنة عطر Layton 10 مل", en: "Layton parfum decant 10ml", fr: "Décant Layton parfum 10ml" }
+        alt: { ar: "تركيز عالي وثبات أكثر من 8 ساعات", en: "High concentration, 8+ hour longevity", fr: "Haute concentration, plus de 8 h de tenue" },
+        caption: { ar: "تركيز eau de parfum عالي، ثبات أكثر من 8 ساعات فجوج القنينات", fr: "Eau de parfum très concentrée, plus de 8 heures de tenue pour les deux flacons" }
       },
+      {
+        id: "guarantee",
+        image: "01-main.webp",
+        thumb: "01-main.webp",
+        alt: { ar: "ضمان LureHer", en: "The LureHer guarantee", fr: "La garantie LureHer" },
+        caption: { ar: "ضمان الجاذبية والحضور، وإيلا ما عجبكش العطر كنبدلوه فـ7 أيام", fr: "Garantie attraction et présence, remplacement sous 7 jours si un parfum vous déçoit" }
+      }
     ]
   };
 
@@ -562,6 +614,26 @@
   function heroSlideAlt(slide, lang) {
     if (slide.alt && slide.alt[lang]) return slide.alt[lang];
     return slide.alt && slide.alt.ar ? slide.alt.ar : "";
+  }
+
+  // Varone-style info overlay per slide (attraction / confidence / tech / guarantee).
+  function applyHeroCaptions(manifest, lang) {
+    var track = document.getElementById("hero-gallery-track");
+    if (!track || !manifest || !manifest.slides) return;
+    var slides = track.querySelectorAll(".media-carousel-slide");
+    manifest.slides.forEach(function (slide, i) {
+      var li = slides[i];
+      if (!li) return;
+      var text = slide.caption && (slide.caption[lang] || slide.caption.ar) || "";
+      var el = li.querySelector(".slide-caption");
+      if (!text) { if (el) el.remove(); return; }
+      if (!el) {
+        el = document.createElement("div");
+        el.className = "slide-caption";
+        li.appendChild(el);
+      }
+      el.textContent = text;
+    });
   }
 
   function bindImageFallback(img, primarySrc, fallbackSrc) {
@@ -869,6 +941,8 @@
     var isMobileCarousel = window.matchMedia("(max-width: 639px)").matches;
     if (isMobileCarousel) root.classList.add("media-carousel--scroll");
 
+    applyHeroCaptions(manifest, lang);
+
     heroGalleryController = initMediaCarousel(root, {
       slideSelector: ".media-carousel-slide",
       autoplayMs: isMobileCarousel ? 0 : 5000,
@@ -913,6 +987,7 @@
 
   function updateHeroGalleryAlts() {
     updateHeroGalleryImages();
+    if (heroManifestCache) applyHeroCaptions(heroManifestCache, langs[currentLangIndex]);
     var lang = langs[currentLangIndex];
     var imgs = document.querySelectorAll("#hero-gallery-track img[data-alt-ar]");
     for (var i = 0; i < imgs.length; i++) {
@@ -1149,6 +1224,9 @@
         lang: langs[currentLangIndex],
         event_id: eventId,
         page: window.location.pathname,
+        // Server-side whitelist key -> product "LureHer Night+Day", price 249.
+        // The server never trusts a client-sent price, only this key.
+        pack: "night-day-249",
         attribution: attributionPayload()
       };
 
@@ -1170,7 +1248,7 @@
                 country: "ma"
               });
             }
-            fbq("track", "Lead", { currency: "MAD", value: 189 }, { eventID: eventId });
+            fbq("track", "Lead", { currency: "MAD", value: 249 }, { eventID: eventId });
           }
         } catch (err) {}
         showOrderSuccess(payload.name);
@@ -1368,32 +1446,36 @@
     updateStockLabels(window.__V34_STOCK_COUNT);
   }
 
-  // Static announce bar: no marquee motion competing with the headline.
-  // Alternates two messages (free shipping + COD / stock left) with a soft fade.
+  // Varone-style marquee announce bar: one continuous scrolling track.
+  // Content is duplicated so the -50% translateX loop is seamless; the CSS
+  // animation lives in .announce-track (styles.css).
   function initAnnounceRotator() {
     var el = document.getElementById("announce-static");
     if (!el) return;
-    var idx = 0;
-
-    function messages() {
-      var l = langs[currentLangIndex];
-      var stockN = window.__V34_STOCK_COUNT || computeDeterministicStock();
-      var ship = (I18N.announce_ship && I18N.announce_ship[l]) || "";
-      var cod = (I18N.announce_cod && I18N.announce_cod[l]) || "";
-      var stock = ((I18N.announce_stock && I18N.announce_stock[l]) || "").replace("{n}", String(stockN));
-      return [ship + " · " + cod, stock];
-    }
 
     function render() {
-      var m = messages();
-      el.innerHTML = m[idx % m.length];
-      el.classList.remove("is-in");
-      void el.offsetWidth;
-      el.classList.add("is-in");
+      var l = langs[currentLangIndex];
+      var stockN = window.__V34_STOCK_COUNT || computeDeterministicStock();
+      var items = [
+        (I18N.announce_ship && I18N.announce_ship[l]) || "",
+        (I18N.announce_brand && I18N.announce_brand[l]) || "",
+        (I18N.announce_cod && I18N.announce_cod[l]) || "",
+        ((I18N.announce_stock && I18N.announce_stock[l]) || "").replace("{n}", String(stockN))
+      ];
+      var seq = items.filter(Boolean).map(function (t) {
+        return '<span class="announce-item">' + t + "</span>";
+      }).join('<span class="announce-sep" aria-hidden="true">·</span>');
+      // duplicated once: the keyframes travel exactly half the track width
+      el.innerHTML =
+        '<div class="announce-track">' +
+        '<div class="announce-seq">' + seq +
+        '<span class="announce-sep" aria-hidden="true">·</span></div>' +
+        '<div class="announce-seq" aria-hidden="true">' + seq +
+        '<span class="announce-sep" aria-hidden="true">·</span></div>' +
+        "</div>";
     }
 
     render();
-    setInterval(function () { idx++; render(); }, 5000);
     window.__V34_REFRESH_ANNOUNCE = render;
   }
 
@@ -1425,9 +1507,9 @@
 
   function injectPageSeoMeta() {
     var desc = {
-      ar: "Lure Her — عطر مغناطيسي كيدوم طول اليوم + Layton أصلي هدية. الدفع عند الاستلام وتوصيل مجاني في المغرب بـ 189 درهم.",
-      en: "Lure Her — a magnetic men's perfume that lasts all day, with an original Layton gift. Cash on delivery, free shipping in Morocco for 189 DH.",
-      fr: "Lure Her — un parfum magnétique pour homme qui tient toute la journée, avec Layton original offert. Paiement à la livraison, livraison gratuite au Maroc à 189 DH."
+      ar: "باك LureHer الكامل، Night للجاذبية وDay للحضور. جوج عطور 50ml أصليين بـ249 درهم، ثبات أكثر من 8 ساعات، الدفع عند الاستلام وتوصيل مجاني في المغرب.",
+      en: "The complete LureHer pack, Night for attraction and Day for presence. Two original 50ml perfumes for 249 DH, 8+ hour longevity, cash on delivery and free shipping in Morocco.",
+      fr: "Le pack LureHer complet, Night pour l'attraction et Day pour la présence. Deux parfums originaux de 50ml à 249 DH, plus de 8 h de tenue, paiement à la livraison et livraison gratuite au Maroc."
     };
     var l = langs[currentLangIndex];
     var content = desc[l] || desc.ar;

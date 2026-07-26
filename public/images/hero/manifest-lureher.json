@@ -1,0 +1,40 @@
+{
+  "baseUrl": "/images/hero/",
+  "slides": [
+    {
+      "id": "pack",
+      "image": "h-duo-v3-800.webp",
+      "thumb": "h-duo-v3-800.webp",
+      "alt": { "ar": "باك LureHer الكامل، Night و Day", "en": "The complete LureHer pack, Night and Day", "fr": "Le pack LureHer complet, Night et Day" },
+      "caption": { "ar": "الباك الكامل، LureHer Night × LureHer Day", "fr": "Le pack complet, LureHer Night × LureHer Day" }
+    },
+    {
+      "id": "night",
+      "image": "h-couple-v2-800.webp",
+      "thumb": "h-couple-v2-800.webp",
+      "alt": { "ar": "LureHer Night، عطر الجاذبية", "en": "LureHer Night, the attraction perfume", "fr": "LureHer Night, le parfum de l'attraction" },
+      "caption": { "ar": "LureHer Night، الجاذبية الكاملة، كيقرب الناس ليك فالخرجات والمناسبات", "fr": "LureHer Night, l'attraction totale, pour les sorties et les grandes occasions" }
+    },
+    {
+      "id": "day",
+      "image": "h-solo-v2-800.webp",
+      "thumb": "h-solo-v2-800.webp",
+      "alt": { "ar": "LureHer Day، عطر الحضور", "en": "LureHer Day, the presence perfume", "fr": "LureHer Day, le parfum de la présence" },
+      "caption": { "ar": "LureHer Day، الثقة الكاملة، حضور محترف فالخدمة والاجتماعات", "fr": "LureHer Day, la confiance totale, une présence pro au travail et en réunion" }
+    },
+    {
+      "id": "tech",
+      "image": "h-decant-v2-800.webp",
+      "thumb": "h-decant-v2-800.webp",
+      "alt": { "ar": "تركيز عالي وثبات أكثر من 8 ساعات", "en": "High concentration, 8+ hour longevity", "fr": "Haute concentration, plus de 8 h de tenue" },
+      "caption": { "ar": "تركيز eau de parfum عالي، ثبات أكثر من 8 ساعات فجوج القنينات", "fr": "Eau de parfum très concentrée, plus de 8 heures de tenue pour les deux flacons" }
+    },
+    {
+      "id": "guarantee",
+      "image": "01-main.webp",
+      "thumb": "01-main.webp",
+      "alt": { "ar": "ضمان LureHer", "en": "The LureHer guarantee", "fr": "La garantie LureHer" },
+      "caption": { "ar": "ضمان الجاذبية والحضور، وإيلا ما عجبكش العطر كنبدلوه فـ7 أيام", "fr": "Garantie attraction et présence, remplacement sous 7 jours si un parfum vous déçoit" }
+    }
+  ]
+}
