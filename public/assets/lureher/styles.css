@@ -3264,3 +3264,5 @@ html, body { margin: 0; padding: 0; }
   text-align: center;
 }
 .notes-tech .material-symbols-outlined { font-size: 18px; }
+
+/* cache-bump 2026-07-26: edge cached the previous body under the prior hash URL mid-deploy */
