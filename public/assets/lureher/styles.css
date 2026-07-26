@@ -3271,3 +3271,45 @@ html, body { margin: 0; padding: 0; }
 .star-dim { opacity: 0.35; }
 
 /* cache-bump 2 */
+
+/* ============================================================
+   round 3: marquee visible in AR + attention colors + gallery UX
+   ============================================================ */
+
+/* THE AR FIX: pin the whole bar to LTR geometry. Under dir=rtl the
+   shrink-to-fit track was laid out off the clip box, so Arabic users saw an
+   empty bar. Arabic text inside the items still renders RTL via
+   unicode-bidi: plaintext on .announce-item. */
+.announce-bar--marquee {
+  direction: ltr;
+  background: linear-gradient(90deg, #7a1f16 0%, #a83224 45%, #c0392b 50%, #a83224 55%, #7a1f16 100%);
+  color: #fff;
+  border-bottom: 2px solid var(--gold);
+  font-weight: 700;
+}
+.announce-bar--marquee .announce-static { display: block; width: 100%; overflow: hidden; }
+.announce-track { animation-duration: 34s; }
+.announce-sep { color: var(--gold-bright); opacity: 1; }
+
+/* guarantee strip on the order form, right before the fields */
+.form-guarantee {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1.55;
+  color: var(--primary-dark);
+  background: var(--gold-soft);
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin: 0 0 14px;
+}
+.form-guarantee .material-symbols-outlined { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+
+/* photo slider, Varone order: clean photo, thumbs, then dots.
+   Arrows off on touch layouts, swipe + thumbs carry navigation. */
+@media (max-width: 767px) {
+  .media-carousel-prev, .media-carousel-next { display: none; }
+}
