@@ -3269,3 +3269,5 @@ html, body { margin: 0; padding: 0; }
 
 /* dimmed 5th star: 4.7 must not render as a solid five-star row */
 .star-dim { opacity: 0.35; }
+
+/* cache-bump 2 */
