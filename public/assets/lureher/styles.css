@@ -3266,3 +3266,6 @@ html, body { margin: 0; padding: 0; }
 .notes-tech .material-symbols-outlined { font-size: 18px; }
 
 /* cache-bump 2026-07-26: edge cached the previous body under the prior hash URL mid-deploy */
+
+/* dimmed 5th star: 4.7 must not render as a solid five-star row */
+.star-dim { opacity: 0.35; }

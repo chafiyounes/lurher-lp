@@ -61,9 +61,9 @@
     hero_badge: { ar: "Lure Her", en: "Lure Her", fr: "Lure Her" },
 
     stock_ready: {
-      ar: "<span class=\"material-symbols-outlined\" aria-hidden=\"true\">local_shipping</span> المخزون جاهز للإرسال حتى لباب دارك، بقاو غير شي باكات قليلة هاد الشهر",
-      en: "<span class=\"material-symbols-outlined\" aria-hidden=\"true\">local_shipping</span> Stock ready to ship to your door, only a few packs left this month",
-      fr: "<span class=\"material-symbols-outlined\" aria-hidden=\"true\">local_shipping</span> Stock prêt à expédier jusqu'à votre porte, plus que quelques packs ce mois-ci"
+      ar: "<span class=\"material-symbols-outlined\" aria-hidden=\"true\">local_shipping</span> المخزون جاهز للإرسال حتى لباب دارك، بقاو غير شي باكات قليلة",
+      en: "<span class=\"material-symbols-outlined\" aria-hidden=\"true\">local_shipping</span> Stock ready to ship to your door, only a few packs left",
+      fr: "<span class=\"material-symbols-outlined\" aria-hidden=\"true\">local_shipping</span> Stock prêt à expédier jusqu'à votre porte, plus que quelques packs"
     },
     land_hero_h: {
       ar: "الباك الكامل اللي غادي يخليك فقمة الجاذبية ديالك، ليل ونهار",
@@ -76,14 +76,9 @@
       fr: "1000 compliments garantis."
     },
     product_title: {
-      ar: "LureHer Night × LureHer Day <span class=\"hpt-tag\">العطر الأصلي الوحيد</span>",
-      en: "LureHer Night × LureHer Day <span class=\"hpt-tag\">the only original perfume</span>",
-      fr: "LureHer Night × LureHer Day <span class=\"hpt-tag\">le seul parfum original</span>"
-    },
-    hero_offer: {
-      ar: "جوج عطور 50ml، ‏249 درهم <s>500 درهم</s>",
-      en: "Two 50ml perfumes, 249 DH <s>500 DH</s>",
-      fr: "Deux parfums 50ml, 249 DH <s>500 DH</s>"
+      ar: "LureHer Night × LureHer Day <span class=\"hpt-tag\">الباك الأصلي الوحيد</span>",
+      en: "LureHer Night × LureHer Day <span class=\"hpt-tag\">the only original pack</span>",
+      fr: "LureHer Night × LureHer Day <span class=\"hpt-tag\">le seul pack original</span>"
     },
     offer_name: {
       ar: "جوج عطور LureHer أصليين: Night 50ml + Day 50ml",
@@ -91,9 +86,9 @@
       fr: "Deux parfums LureHer originaux : Night 50ml + Day 50ml"
     },
     two_for_one: {
-      ar: "جوج عطور بثمن وحدة، وكتخلّص غير ملي يوصلوك ليديك",
-      en: "Two perfumes for the price of one, and you only pay when they reach your hands",
-      fr: "Deux parfums pour le prix d'un, et vous ne payez qu'à la réception"
+      ar: "جوج عطور بثمن وحدة",
+      en: "Two perfumes for the price of one",
+      fr: "Deux parfums pour le prix d'un"
     },
 
     trust_attract: { ar: "يلفت الأنظار", en: "Turns heads", fr: "Attire les regards" },
@@ -150,9 +145,9 @@
 
     reframe_eyebrow: { ar: "علاش حنا مختلفين", en: "Why we're different", fr: "Pourquoi nous sommes différents" },
     reframe_h_win: {
-      ar: "جوج كيديرو التأثير",
-      en: "Two that work",
-      fr: "Deux qui font effet"
+      ar: "باك واحد كيدير التأثير",
+      en: "One pack that works",
+      fr: "Un pack qui fait effet"
     },
     reframe_h_lose: {
       ar: "خمسة ما كيريحو والو",
@@ -194,15 +189,15 @@
     vs_them_short: { ar: "الباقي", en: "The rest", fr: "Les autres" },
     vs_f1: { ar: "تركيز عالي من الزيوت الأصلية", en: "High concentration of authentic oils", fr: "Forte concentration d'huiles authentiques" },
     vs_f2: { ar: "ثبات يدوم طول اليوم", en: "Lasts all day long", fr: "Tient toute la journée" },
-    vs_f3: { ar: "شعار مطبوع على القنينة (ماشي ستيكر)", en: "Logo printed on the bottle (not a label)", fr: "Logo imprimé sur le flacon (pas une étiquette)" },
+    vs_f3: { ar: "شعار مطبوع على القنينات (ماشي ستيكر)", en: "Logo printed on the bottles (not a label)", fr: "Logo imprimé sur les flacons (pas une étiquette)" },
     vs_f4: { ar: "جوج قنينات كاملين 50ml فكل باك، وحدة لليل ووحدة للنهار", en: "Two full 50ml bottles in every pack, one for night, one for day", fr: "Deux flacons complets de 50ml dans chaque pack, un pour la nuit, un pour le jour" },
 
     proof_eyebrow: { ar: "الجودة والإثبات", en: "Proof & quality", fr: "Preuves & qualité" },
     proof_h: { ar: "الجودة اللي ما تبانش من الشاشة", en: "Quality you can't judge on a screen", fr: "La vraie qualité, impossible à juger sur écran" },
     proof_1: {
-      ar: "شعار UV مطبوع فالقنينة، ماشي ستيكر كيتقلّع.",
-      en: "UV logo printed on the bottle, not a label that peels off.",
-      fr: "Logo UV imprimé sur le flacon, pas une étiquette qui se décolle."
+      ar: "شعار UV مطبوع فالقنينات، ماشي ستيكر كيتقلّع.",
+      en: "UV logo printed on the bottles, not a label that peels off.",
+      fr: "Logo UV imprimé sur les flacons, pas une étiquette qui se décolle."
     },
     proof_2: {
       ar: "تركيز عالي من الزيوت الأصلية = كيدوم طول اليوم",
@@ -223,20 +218,29 @@
 
     box_eyebrow: { ar: "شنو غادي توصلك", en: "What you receive", fr: "Ce que vous recevez" },
     box_h: { ar: "كل باك فيه جوج عطور كاملين", en: "Every pack contains two full perfumes", fr: "Chaque pack contient deux parfums complets" },
+    box_desc: {
+      ar: "وحدة لليل ووحدة للنهار، ما تحتاج حتى عطر آخر",
+      en: "One for the night, one for the day, you'll never need another perfume",
+      fr: "Un pour la nuit, un pour le jour, vous n'aurez plus besoin d'aucun autre parfum"
+    },
     box_1_title: { ar: "LureHer Night، إكسير الفيرومون", en: "LureHer Night, the pheromone elixir", fr: "LureHer Night, l'élixir de phéromones" },
     box_1_sub: {
-      ar: "50ml / 1.7oz، عطر الليل والخرجات، فانيلا حليبية وكراميل على نعناع منعش، كيخلي الناس يقربو ليك بلا ما يعرفو علاش",
-      en: "50ml / 1.7oz, the night-out perfume, milky vanilla and caramel over fresh mint, it draws people closer without them knowing why",
-      fr: "50ml / 1.7oz, le parfum des sorties, vanille lactée et caramel sur une menthe fraîche, il attire les gens sans qu'ils sachent pourquoi"
+      ar: "50ml / 1.7oz، عطر الليل والخرجات، كيخلي الناس يقربو ليك بلا ما يعرفو علاش",
+      en: "50ml / 1.7oz, the night-out perfume, it draws people closer without them knowing why",
+      fr: "50ml / 1.7oz, le parfum des sorties, il attire les gens sans qu'ils sachent pourquoi"
     },
     box_2_title: { ar: "LureHer Day، إكسير الحضور", en: "LureHer Day, the presence elixir", fr: "LureHer Day, l'élixir de présence" },
     box_2_sub: {
-      ar: "50ml / 1.7oz، عطر النهار والخدمة، تفاحة ولافندر على قاعدة خشبية متوابلة، كيفرض الحضور فالاجتماعات والمواعيد",
-      en: "50ml / 1.7oz, the daytime and work perfume, apple and lavender over a spiced woody base, it commands presence in meetings and appointments",
-      fr: "50ml / 1.7oz, le parfum du jour et du travail, pomme et lavande sur un fond boisé épicé, il impose votre présence en réunion comme en rendez-vous"
+      ar: "50ml / 1.7oz، عطر النهار والخدمة، كيفرض الحضور فالاجتماعات والمواعيد",
+      en: "50ml / 1.7oz, the daytime and work perfume, it commands presence in meetings and appointments",
+      fr: "50ml / 1.7oz, le parfum du jour et du travail, il impose votre présence en réunion comme en rendez-vous"
     },
     box_cta: { ar: "اطلب الآن", en: "Order now", fr: "Commander" },
-    box_foot: { ar: "الباك كامل بـ 249 درهم فقط", en: "The whole pack for only 249 DH", fr: "Le pack complet pour seulement 249 DH" },
+    box_foot: {
+      ar: "القنينة وحدها كتباع بـ189 درهم، فالباك الثانية كتجيك غير بـ60 درهم",
+      en: "One bottle alone sells for 189 DH, in the pack the second costs you only 60 DH",
+      fr: "Un flacon seul se vend 189 DH, dans le pack le second ne vous coûte que 60 DH"
+    },
     coffret_strike: { ar: "500 درهم", en: "500 DH", fr: "500 DH" },
     coffret_now: { ar: "249 درهم", en: "249 DH", fr: "249 DH" },
 
@@ -266,7 +270,7 @@
       en: "+2,000 orders delivered in Morocco",
       fr: "+2 000 commandes livrées au Maroc"
     },
-    rev_rating_label: { ar: "من 1,027 تقييم", en: "from 1,027 ratings", fr: "sur 1 027 avis" },
+    rev_rating_label: { ar: "من 327 تقييم", en: "from 327 ratings", fr: "sur 327 avis" },
     rev_photos_note: {
       ar: "تعليقات بصور من زبنائنا، صور حقيقية من بعد ما وصل الطلب",
       en: "Photo reviews from our customers, real pictures after delivery",
@@ -370,6 +374,18 @@
       ar: "أيه، إيلا ما عجبكش رجّعو بلا مشكل. وإيلا ما عجبكش العطر من بعد، كنبدلوهولك فـ7 أيام.",
       en: "Yes, if you don't like it, send it back, no hassle. And if a scent disappoints you later, we replace it within 7 days.",
       fr: "Oui, s'il ne vous plaît pas, renvoyez-le sans souci. Et si un parfum vous déçoit après, on vous le remplace sous 7 jours."
+    },
+    faq_q6: { ar: "شنو الفرق بين Night و Day؟", en: "What's the difference between Night and Day?", fr: "Quelle est la différence entre Night et Day ?" },
+    faq_a6: {
+      ar: "Night عطر الجاذبية، حلو وقوي، للخرجات والمناسبات والليل. Day عطر الحضور، منعش ومحترف، للخدمة والنهار. بجوج كيكملو بعضياتهم.",
+      en: "Night is the attraction perfume, sweet and strong, for nights out and occasions. Day is the presence perfume, fresh and professional, for work and daytime. Together they complete each other.",
+      fr: "Night est le parfum de l'attraction, doux et puissant, pour les sorties et les occasions. Day est le parfum de la présence, frais et professionnel, pour le travail et la journée. Ensemble ils se complètent."
+    },
+    faq_q7: { ar: "واش نقدر نشري غير قنينة وحدة؟", en: "Can I buy just one bottle?", fr: "Puis-je acheter un seul flacon ?" },
+    faq_a7: {
+      ar: "أيه، القنينة وحدها بـ189 درهم. ولكن مع الباك، الثانية كتجيك غير بـ60 درهم، وهادشي علاش أغلب الزبناء كياخدو الباك.",
+      en: "Yes, one bottle alone is 189 DH. But with the pack the second one costs you only 60 DH, which is why most customers take the pack.",
+      fr: "Oui, un flacon seul est à 189 DH. Mais avec le pack, le second ne vous coûte que 60 DH, c'est pourquoi la plupart des clients prennent le pack."
     }
   };
 
@@ -1455,12 +1471,12 @@
 
     function render() {
       var l = langs[currentLangIndex];
-      var stockN = window.__V34_STOCK_COUNT || computeDeterministicStock();
+      // No stock counter here: the hero pill owns stock scarcity. Marquee owns
+      // the offer window + brand + COD, one claim each, no doubling.
       var items = [
         (I18N.announce_ship && I18N.announce_ship[l]) || "",
         (I18N.announce_brand && I18N.announce_brand[l]) || "",
-        (I18N.announce_cod && I18N.announce_cod[l]) || "",
-        ((I18N.announce_stock && I18N.announce_stock[l]) || "").replace("{n}", String(stockN))
+        (I18N.announce_cod && I18N.announce_cod[l]) || ""
       ];
       var seq = items.filter(Boolean).map(function (t) {
         return '<span class="announce-item">' + t + "</span>";
