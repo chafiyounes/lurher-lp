@@ -6,14 +6,37 @@ same page, same look, no YouCan. Orders go straight to the confLureHer sheet
 then dies with the YouCan subscription.
 
 ```
-public/pages/lure-her/index.html   the LP (same path as the live YouCan URL)
-public/assets/{styles.css,script.js}
-public/images/, public/reviews/    all assets, same-origin (no jsDelivr)
+public/pages/lure-her/index.html   the LIVE LP (same path as the live YouCan URL)
+public/assets/{styles.css,script.js}          <- lure-her's assets
+public/pages/lureher/index.html    the NEW-OFFER LP (Night + Day, 249)
+public/assets/lureher/{styles.css,script.js}  <- lureher's OWN assets
+public/images/, public/reviews/    shared assets, same-origin (no jsDelivr)
 public/_redirects                  / -> /pages/lure-her/
 functions/api/order.js             order handler (sheet + CAPI + failure ladder)
-build_standalone.py                regenerates index.html from src/page.html
+build_standalone.py                regenerates both pages from their sources
 standalone.config.json             pixel_id
 ```
+
+## Two pages, deliberately isolated
+
+| | `/pages/lure-her/` | `/pages/lureher/` |
+|---|---|---|
+| offer | LIVE — 189 + Layton decant | NEW — Night + Day, 249 |
+| body source | `src_live/page.html` (frozen at DEPLOY_SHA 3a8ad7e) | `src_new/page.html` |
+| css / js | `/assets/*` | `/assets/lureher/*` |
+| traffic | real ads point here | none until launch |
+
+`src_new/page.html` and `/assets/lureher/*` started as **byte-copies** of the live
+page's. They have separate files **on purpose**: the new page gets rewritten
+heavily (copy, offer, styling) and a shared stylesheet would mean every
+experiment risks breaking the page currently taking real orders.
+
+⚠️ Editing `/assets/styles.css` or `/assets/script.js` changes the **live** page.
+For new-offer work edit `/assets/lureher/*` and `src_new/page.html` only.
+
+Both pages post to the same `functions/api/order.js`. If the new offer needs a
+different price or product name in the sheet row, that is a change to the order
+handler (or a hidden field), not a second endpoint.
 
 ## One-time setup (owner, ~15 min)
 

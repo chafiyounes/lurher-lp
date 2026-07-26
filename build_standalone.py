@@ -1,14 +1,22 @@
 #!/usr/bin/env python3
-"""Generate public/pages/lure-her/index.html from src/page.html — one-shot
-transform for the Cloudflare Pages standalone (post-YouCan) site.
+"""Generate the standalone site's pages from their body fragments — one-shot
+transform for the Cloudflare Pages (post-YouCan) site.
 
+For each page in PAGES:
 - wraps the body fragment in a full HTML document (head: meta/OG/preconnects,
   stylesheet, deferred script)
 - rewrites jsDelivr image URLs -> same-origin /images/... paths
 - strips the YouCan-only hidden inputs from the checkout form
 
-Run again whenever src/page.html changes during the parallel period:
+Run again whenever a source page.html changes:
     python build_standalone.py
+
+Pages:
+  lure-her  LIVE offer (189 + decant). Source src_live/, frozen at the
+            DEPLOY_SHA the YouCan loader pinned. Real traffic is on this.
+  lureher   NEW offer build (Night + Day, 249). Source src_new/, started as a
+            byte-copy of src_live/page.html. Has its OWN assets under
+            /assets/lureher/ so restyling it cannot break the live page.
 """
 import re
 import io
@@ -26,29 +34,35 @@ def asset_ver(rel_path):
     p = os.path.join(HERE, "public", rel_path.lstrip("/"))
     data = io.open(p, "rb").read()
     return hashlib.md5(data).hexdigest()[:8]
+
+
 # src_live/ = extracted from commit 3a8ad7e — the DEPLOY_SHA the live YouCan
 # loader pins (v5-11). repo HEAD (v5-12/13) has srcset changes never deployed
 # to live; we ship what live traffic actually sees. See CLOUDFLARE.md.
-SRC = os.path.join(HERE, "src_live", "page.html")
-OUT = os.path.join(HERE, "public", "pages", "lure-her", "index.html")
+COMMON_META = {
+    "lang": "ar",
+    "dir": "rtl",
+    "title": "Lure Her — عطر رجالي فاخر · الدفع عند الاستلام",
+    "description": "عطر Lure Her الرجالي الفاخر. توصيل مجاني لكل المغرب، الدفع عند الاستلام، تجرّب قبل ما تخلّص.",
+    "og_title": "Lure Her — عطر رجالي فاخر",
+    "og_description": "توصيل مجاني لكل المغرب · الدفع عند الاستلام",
+    "og_image": "/images/hero/01-main.webp",
+}
 
-body = io.open(SRC, encoding="utf-8").read()
-
-# 1. jsDelivr / raw.github asset URLs -> same-origin (images/ + reviews/)
-body = re.sub(
-    r"https://cdn\.jsdelivr\.net/gh/chafiyounes/lurher-lp@[^/]+/(images|reviews)/",
-    r"/\1/", body)
-body = re.sub(
-    r"https://raw\.githubusercontent\.com/chafiyounes/lurher-lp/[^/]+/(images|reviews)/",
-    r"/\1/", body)
-
-# 2. YouCan-only hidden inputs out of the form (the new /api/order needs none)
-for name in ("id", "quantity", "is_page_builder_express_checkout", "extra_payload"):
-    body = re.sub(
-        r'\s*<input type="hidden" name="' + re.escape(name) + r'"[^>]*>', "", body)
-
-# 3. brand link: absolute store URL -> same-page top
-body = re.sub(r'href="https://cleopatra\.beauty/[^"]*"', 'href="#top"', body)
+PAGES = [
+    dict(COMMON_META,
+         slug="lure-her",
+         src=os.path.join("src_live", "page.html"),
+         css="/assets/styles.css",
+         js="/assets/script.js"),
+    # New-offer build. Currently an exact copy of the live page; its copy, offer
+    # and styling get replaced here without touching lure-her.
+    dict(COMMON_META,
+         slug="lureher",
+         src=os.path.join("src_new", "page.html"),
+         css="/assets/lureher/styles.css",
+         js="/assets/lureher/script.js"),
+]
 
 # Meta browser pixel — pixel_id comes from standalone.config.json; the same
 # events are mirrored server-side by /api/order (CAPI) with a shared event_id.
@@ -76,34 +90,64 @@ if PIXEL_ID:
     src="https://www.facebook.com/tr?id=%s&ev=PageView&noscript=1"/></noscript>
 """ % (PIXEL_ID, PIXEL_ID, PIXEL_ID)
 
-HEAD = """<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+
+def build(page):
+    src = os.path.join(HERE, page["src"])
+    out = os.path.join(HERE, "public", "pages", page["slug"], "index.html")
+    body = io.open(src, encoding="utf-8").read()
+
+    # 1. jsDelivr / raw.github asset URLs -> same-origin (images/ + reviews/)
+    body = re.sub(
+        r"https://cdn\.jsdelivr\.net/gh/chafiyounes/lurher-lp@[^/]+/(images|reviews)/",
+        r"/\1/", body)
+    body = re.sub(
+        r"https://raw\.githubusercontent\.com/chafiyounes/lurher-lp/[^/]+/(images|reviews)/",
+        r"/\1/", body)
+
+    # 2. YouCan-only hidden inputs out of the form (the new /api/order needs none)
+    for name in ("id", "quantity", "is_page_builder_express_checkout", "extra_payload"):
+        body = re.sub(
+            r'\s*<input type="hidden" name="' + re.escape(name) + r'"[^>]*>', "", body)
+
+    # 3. brand link: absolute store URL -> same-page top
+    body = re.sub(r'href="https://cleopatra\.beauty/[^"]*"', 'href="#top"', body)
+
+    head = """<!DOCTYPE html>
+<html lang="%s" dir="%s">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lure Her — عطر رجالي فاخر · الدفع عند الاستلام</title>
-  <meta name="description" content="عطر Lure Her الرجالي الفاخر. توصيل مجاني لكل المغرب، الدفع عند الاستلام، تجرّب قبل ما تخلّص.">
-  <meta property="og:title" content="Lure Her — عطر رجالي فاخر">
-  <meta property="og:description" content="توصيل مجاني لكل المغرب · الدفع عند الاستلام">
-  <meta property="og:image" content="/images/hero/01-main.webp">
+  <title>%s</title>
+  <meta name="description" content="%s">
+  <meta property="og:title" content="%s">
+  <meta property="og:description" content="%s">
+  <meta property="og:image" content="%s">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/webp" href="/images/logos/lureher-logo-nav.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/assets/styles.css?v=%s">""" % asset_ver("assets/styles.css") + PIXEL_SNIPPET + """
+  <link rel="stylesheet" href="%s?v=%s">""" % (
+        page["lang"], page["dir"], page["title"], page["description"],
+        page["og_title"], page["og_description"], page["og_image"],
+        page["css"], asset_ver(page["css"])) + PIXEL_SNIPPET + """
 </head>
 <body id="top">
 """
 
-FOOT = """
-<script src="/assets/script.js?v=%s" defer></script>
+    foot = """
+<script src="%s?v=%s" defer></script>
 </body>
 </html>
-""" % asset_ver("assets/script.js")
+""" % (page["js"], asset_ver(page["js"]))
 
-os.makedirs(os.path.dirname(OUT), exist_ok=True)
-io.open(OUT, "w", encoding="utf-8").write(HEAD + body + FOOT)
-print("wrote", OUT, len(HEAD + body + FOOT), "bytes")
-assert "jsdelivr" not in (HEAD + body + FOOT), "jsDelivr URL left behind!"
-assert "youcan" not in (HEAD + body + FOOT).lower(), "YouCan reference left!"
+    doc = head + body + foot
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    io.open(out, "w", encoding="utf-8").write(doc)
+    print("wrote", out, len(doc), "bytes")
+    assert "jsdelivr" not in doc, "jsDelivr URL left behind in %s!" % page["slug"]
+    assert "youcan" not in doc.lower(), "YouCan reference left in %s!" % page["slug"]
+
+
+for _page in PAGES:
+    build(_page)
 print("clean: no jsDelivr / YouCan references")
