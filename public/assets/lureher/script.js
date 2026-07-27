@@ -761,9 +761,14 @@
         }
       } else if (scrollSnap && viewport) {
         track.style.setProperty("transform", "none", "important");
-        var targetSlide = slideList[index];
-        if (targetSlide && targetSlide.scrollIntoView) {
-          targetSlide.scrollIntoView({ inline: "start", block: "nearest", behavior: reducedMotion ? "auto" : "smooth" });
+        // scrollLeft, not scrollIntoView: the latter also scrolls every
+        // ancestor, which yanks the page. The viewport is pinned to ltr, so
+        // slide N always sits at exactly N * clientWidth.
+        var targetLeft = index * viewport.clientWidth;
+        if (viewport.scrollTo) {
+          viewport.scrollTo({ left: targetLeft, behavior: reducedMotion ? "auto" : "smooth" });
+        } else {
+          viewport.scrollLeft = targetLeft;
         }
         for (var sSnap = 0; sSnap < slideList.length; sSnap++) {
           slideList[sSnap].classList.toggle("is-active", sSnap === index);
@@ -993,7 +998,7 @@
       slideSelector: ".media-carousel-slide",
       autoplayMs: 0,
       crossfade: false,
-      scrollSnap: false,
+      scrollSnap: true,
       forceLtrTrack: true,
       onChange: function (idx) {
         preloadAdjacentHeroSlides(idx, manifest.slides.length);

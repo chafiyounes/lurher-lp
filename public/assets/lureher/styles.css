@@ -3358,22 +3358,38 @@ html, body { margin: 0; padding: 0; }
 
 
 
-/* The photo strip is driven by translateX and pinned to LTR geometry.
-   Under dir=rtl two things break: flex items overflow past the inline-start
-   edge (so the scroll port reports scrollWidth but refuses scrollLeft), and
-   the translate direction inverts. Forcing LTR here makes slide N sit at
-   exactly N * 100%, so translateX(-N * 100%) always lands it. Verified on the
-   live page for all five slides. Nothing else on the page changes direction —
-   the slides only hold images. */
+/* THE PHOTO STRIP.
+   Two things had to be true at once and neither was:
+
+   1. direction:ltr on the viewport. Under dir=rtl the flex items overflow past
+      the inline-start edge, and the browser then refuses every scrollLeft
+      assignment (scrollWidth reports 2580 vs clientWidth 516, but the value
+      snaps straight back to 0). Pinned to ltr, scrollLeft works normally.
+      The slides only contain images, so nothing reads backwards.
+
+   2. a mechanism that is not `transform`. On this element transform is ignored
+      outright — an inline `translateX(...) !important` computes to the identity
+      matrix, as does `rotate(45deg)`, while the same declaration transforms the
+      nav logo and a fresh div on the same page, and no active rule sets
+      transform:none on it. Unexplained, so the strip is scroll-driven instead,
+      which is also what gives native swipe on touch.
+
+   Verified live: every slide lands within 6px of the viewport's left edge. */
 .landing-hero .hero-gallery .media-carousel-viewport {
   direction: ltr;
-  overflow: hidden;
-  scroll-snap-type: none;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x pan-y;
+  scrollbar-width: none;
 }
+.landing-hero .hero-gallery .media-carousel-viewport::-webkit-scrollbar { display: none; }
 .landing-hero .hero-gallery .media-carousel-track {
   display: flex;
-  width: 100%;
-  transition: transform .35s ease;
+  width: auto;
+  transform: none;
 }
 .landing-hero .hero-gallery .media-carousel-slide {
   position: relative;
@@ -3384,22 +3400,9 @@ html, body { margin: 0; padding: 0; }
   visibility: visible;
   inset: auto;
   pointer-events: auto;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 @media (prefers-reduced-motion: reduce) {
-  .landing-hero .hero-gallery .media-carousel-track { transition: none; }
-}
-
-/* Phones: the base sheet turns this viewport into a scroll port
-   (overflow-x:auto !important) for the old swipe mode. This gallery is
-   translateX-driven now, so neutralise that or the strip both scrolls and
-   translates. */
-@media (max-width: 639px) {
-  .landing-hero .hero-gallery .media-carousel-viewport {
-    overflow: hidden !important;
-    overflow-x: hidden !important;
-    scroll-snap-type: none !important;
-  }
-  .landing-hero .hero-gallery .media-carousel-slide {
-    scroll-snap-align: none !important;
-  }
+  .landing-hero .hero-gallery .media-carousel-viewport { scroll-behavior: auto; }
 }
