@@ -3423,3 +3423,67 @@ html, body { margin: 0; padding: 0; }
   }
   .landing-hero .hero-gallery .media-carousel-track { transform: none !important; }
 }
+
+/* ============================================================
+   Brand lockup — wordmark + tagline
+   The new wordmark is a plain VP8 webp (no alpha) on a white
+   ground; the nav and footer are both white, so it sits flush.
+   Height is driven here and width left auto so the image keeps
+   its own 2.058:1 ratio and is never stretched.
+   Specificity note: .app .nav-header .nav-logo already sets
+   height:50px !important, so these need the extra .brand-lockup
+   class to win rather than a louder !important.
+   ============================================================ */
+.brand-lockup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  line-height: 1;
+}
+.brand-tagline {
+  font-family: var(--font-body, inherit);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--on-muted, #6b6257);
+  /* the lockup is a fixed English wordmark, so it stays LTR even
+     when the page is Arabic */
+  direction: ltr;
+}
+
+.app .nav-header .brand-lockup .nav-logo,
+.app .nav-brand .brand-lockup .nav-logo,
+.nav-brand .brand-lockup .nav-logo {
+  height: 30px !important;
+  width: auto !important;
+  max-width: min(70vw, 240px) !important;
+  max-height: none !important;
+  margin: 0 !important;
+  display: block;
+}
+
+@media (max-width: 639px) {
+  .app .nav-header .brand-lockup .nav-logo,
+  .app .nav-brand .brand-lockup .nav-logo,
+  .nav-brand .brand-lockup .nav-logo {
+    height: 25px !important;
+    max-width: min(70vw, 200px) !important;
+  }
+  .nav-brand .brand-tagline { font-size: 7px; letter-spacing: 0.16em; }
+}
+
+/* footer: same lockup, a touch larger, keeps the old 10px gap below */
+.brand-lockup--footer { margin-bottom: 10px; }
+.brand-lockup--footer .lp-footer-logo {
+  height: 34px;
+  width: auto;
+  margin: 0;
+  display: block;
+  opacity: 0.9;
+}
+.brand-lockup--footer .brand-tagline { font-size: 8px; opacity: 0.85; }
