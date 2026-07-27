@@ -646,24 +646,31 @@
     return slide.alt && slide.alt.ar ? slide.alt.ar : "";
   }
 
-  // Varone-style info overlay per slide (attraction / confidence / tech / guarantee).
-  function applyHeroCaptions(manifest, lang) {
-    var track = document.getElementById("hero-gallery-track");
-    if (!track || !manifest || !manifest.slides) return;
-    var slides = track.querySelectorAll(".media-carousel-slide");
-    manifest.slides.forEach(function (slide, i) {
-      var li = slides[i];
-      if (!li) return;
-      var text = slide.caption && (slide.caption[lang] || slide.caption.ar) || "";
-      var el = li.querySelector(".slide-caption");
-      if (!text) { if (el) el.remove(); return; }
-      if (!el) {
-        el = document.createElement("div");
-        el.className = "slide-caption";
-        li.appendChild(el);
-      }
-      el.textContent = text;
-    });
+  // Slide info sits BELOW the photo, never on top of it — the image has to read
+  // clean. One caption element, rewritten on slide change, so the layout under
+  // the gallery never jumps as you move between slides.
+  function heroCaptionEl() {
+    var root = document.getElementById("hero-gallery");
+    if (!root) return null;
+    var el = root.querySelector(".gallery-caption");
+    if (!el) {
+      el = document.createElement("p");
+      el.className = "gallery-caption";
+      var vp = root.querySelector(".media-carousel-viewport");
+      if (vp && vp.nextSibling) root.insertBefore(el, vp.nextSibling);
+      else root.appendChild(el);
+    }
+    return el;
+  }
+
+  function setHeroCaption(index) {
+    var el = heroCaptionEl();
+    if (!el || !heroManifestCache || !heroManifestCache.slides) return;
+    var lang = langs[currentLangIndex];
+    var slide = heroManifestCache.slides[index] || {};
+    var text = (slide.caption && (slide.caption[lang] || slide.caption.ar)) || "";
+    el.textContent = text;
+    el.style.display = text ? "" : "none";
   }
 
   function bindImageFallback(img, primarySrc, fallbackSrc) {
@@ -971,15 +978,14 @@
     var isMobileCarousel = window.matchMedia("(max-width: 639px)").matches;
     if (isMobileCarousel) root.classList.add("media-carousel--scroll");
 
-    applyHeroCaptions(manifest, lang);
-
     heroGalleryController = initMediaCarousel(root, {
       slideSelector: ".media-carousel-slide",
-      autoplayMs: isMobileCarousel ? 0 : 5000,
-      crossfade: !isMobileCarousel,
+      autoplayMs: 0,
+      crossfade: false,
       scrollSnap: isMobileCarousel,
       onChange: function (idx) {
         preloadAdjacentHeroSlides(idx, manifest.slides.length);
+        setHeroCaption(idx);
         if (!dots) return;
         var dotList = dots.querySelectorAll(".media-carousel-dot");
         for (var d = 0; d < dotList.length; d++) {
@@ -989,6 +995,7 @@
       }
     });
     preloadAdjacentHeroSlides(0, manifest.slides.length);
+    setHeroCaption(heroGalleryController ? heroGalleryController.getIndex() : 0);
   }
 
   function updateHeroGalleryImages() {
@@ -1017,7 +1024,7 @@
 
   function updateHeroGalleryAlts() {
     updateHeroGalleryImages();
-    if (heroManifestCache) applyHeroCaptions(heroManifestCache, langs[currentLangIndex]);
+    if (heroManifestCache && heroGalleryController) setHeroCaption(heroGalleryController.getIndex());
     var lang = langs[currentLangIndex];
     var imgs = document.querySelectorAll("#hero-gallery-track img[data-alt-ar]");
     for (var i = 0; i < imgs.length; i++) {

@@ -3313,3 +3313,45 @@ html, body { margin: 0; padding: 0; }
 @media (max-width: 767px) {
   .media-carousel-prev, .media-carousel-next { display: none; }
 }
+
+/* ============================================================
+   round 4: the slider the owner actually asked for
+   photo (clean) -> swipe/slide left-right -> thumbnails -> position dots
+
+   Two rules were fighting: the base sheet hides .media-carousel-dots on
+   desktop, and the <=639px block hides .media-carousel-thumbs. So you never
+   saw both at once, and the dots that did show floated ON the photo.
+   These rules come last in the file, so they win at equal specificity.
+   ============================================================ */
+
+/* caption under the photo, replaces the old .slide-caption overlay */
+.landing-hero .hero-gallery .gallery-caption {
+  margin: 12px 0 0;
+  padding: 0 6px;
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.55;
+  color: var(--on-surface);
+  text-align: center;
+}
+
+/* thumbnails: always visible, centred, click to jump */
+.landing-hero .hero-gallery .media-carousel-thumbs {
+  display: flex !important;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+/* position dots: always visible, BELOW the thumbnails, off the photo */
+.landing-hero .hero-gallery .media-carousel-dots {
+  display: flex !important;
+  position: static !important;
+  left: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* nothing overlays the image any more */
+.landing-hero .hero-gallery .slide-caption { display: none !important; }
