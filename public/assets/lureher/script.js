@@ -778,11 +778,14 @@
           document.querySelector(".app") &&
           document.querySelector(".app").getAttribute("dir") === "rtl";
         var offset = isRtl ? index : -index;
-        // setProperty with priority, not `style.transform =`: an author rule
-        // with !important still wins over a plain inline declaration, and the
-        // strip silently refused to move. Inline !important beats it.
-        track.style.setProperty(
-          "transform", "translateX(" + (offset * 100) + "%)", "important");
+        if (options.offsetMode === "left") {
+          // `left`, not transform/scrollLeft — both are silently ignored on
+          // this element (see the stylesheet note). Plain layout always works.
+          track.style.setProperty("left", (offset * 100) + "%", "important");
+        } else {
+          track.style.setProperty(
+            "transform", "translateX(" + (offset * 100) + "%)", "important");
+        }
         for (var s2 = 0; s2 < slideList.length; s2++) {
           slideList[s2].classList.toggle("is-active", s2 === index);
         }
@@ -998,8 +1001,9 @@
       slideSelector: ".media-carousel-slide",
       autoplayMs: 0,
       crossfade: false,
-      scrollSnap: true,
+      scrollSnap: false,
       forceLtrTrack: true,
+      offsetMode: "left",
       onChange: function (idx) {
         preloadAdjacentHeroSlides(idx, manifest.slides.length);
         setHeroCaption(idx);

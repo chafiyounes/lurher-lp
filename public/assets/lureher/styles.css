@@ -3358,38 +3358,37 @@ html, body { margin: 0; padding: 0; }
 
 
 
-/* THE PHOTO STRIP.
-   Two things had to be true at once and neither was:
+/* THE PHOTO STRIP — driven by `left`, deliberately.
 
-   1. direction:ltr on the viewport. Under dir=rtl the flex items overflow past
-      the inline-start edge, and the browser then refuses every scrollLeft
-      assignment (scrollWidth reports 2580 vs clientWidth 516, but the value
-      snaps straight back to 0). Pinned to ltr, scrollLeft works normally.
-      The slides only contain images, so nothing reads backwards.
+   Two mechanisms were tried and both fail on this element, verified live:
 
-   2. a mechanism that is not `transform`. On this element transform is ignored
-      outright — an inline `translateX(...) !important` computes to the identity
-      matrix, as does `rotate(45deg)`, while the same declaration transforms the
-      nav logo and a fresh div on the same page, and no active rule sets
-      transform:none on it. Unexplained, so the strip is scroll-driven instead,
-      which is also what gives native swipe on touch.
+   - `transform` is ignored outright. An inline `translateX(...) !important`
+     computes to the identity matrix, so does `rotate(45deg)`, while the same
+     declaration transforms the nav logo and a fresh div on the same page and
+     no active rule sets transform:none on it.
+   - `scrollLeft` is refused. The viewport reports scrollWidth 2580 against
+     clientWidth 516, yet every assignment snaps back to 0 — with snap type
+     mandatory, proximity and none alike.
+
+   `position:relative` + a percentage `left` is plain layout, so neither quirk
+   applies. direction:ltr is still required: under dir=rtl the flex items
+   overflow past the inline-start edge and the offsets invert, which is what
+   put the Arabic photo a full slide behind its dots. The slides hold only
+   images, so nothing reads backwards.
 
    Verified live: every slide lands within 6px of the viewport's left edge. */
 .landing-hero .hero-gallery .media-carousel-viewport {
   direction: ltr;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  touch-action: pan-x pan-y;
-  scrollbar-width: none;
+  overflow: hidden;
+  scroll-snap-type: none;
 }
-.landing-hero .hero-gallery .media-carousel-viewport::-webkit-scrollbar { display: none; }
 .landing-hero .hero-gallery .media-carousel-track {
   display: flex;
-  width: auto;
+  position: relative;
+  left: 0;
+  width: 100%;
   transform: none;
+  transition: left .35s ease;
 }
 .landing-hero .hero-gallery .media-carousel-slide {
   position: relative;
@@ -3400,9 +3399,18 @@ html, body { margin: 0; padding: 0; }
   visibility: visible;
   inset: auto;
   pointer-events: auto;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+  scroll-snap-align: none;
 }
 @media (prefers-reduced-motion: reduce) {
-  .landing-hero .hero-gallery .media-carousel-viewport { scroll-behavior: auto; }
+  .landing-hero .hero-gallery .media-carousel-track { transition: none; }
+}
+/* phones: the base sheet turns this into a scroll port for the old swipe
+   mode; neutralise it so it cannot fight the `left` offset. */
+@media (max-width: 639px) {
+  .landing-hero .hero-gallery .media-carousel-viewport {
+    overflow: hidden !important;
+    overflow-x: hidden !important;
+    scroll-snap-type: none !important;
+  }
+  .landing-hero .hero-gallery .media-carousel-track { transform: none !important; }
 }
