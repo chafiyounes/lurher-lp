@@ -1,0 +1,33 @@
+{
+  "baseUrl": "/images/hero/",
+  "slides": [
+    {
+      "id": "pack",
+      "image": "h-duo-v3-800.webp",
+      "thumb": "h-duo-v3-800.webp",
+      "alt": { "ar": "باك LureHer الكامل، Night و Day", "en": "The complete LureHer pack, Night and Day", "fr": "Le pack LureHer complet, Night et Day" },
+      "caption": { "ar": "الباك الكامل، LureHer Night × LureHer Day", "fr": "Le pack complet, LureHer Night × LureHer Day" }
+    },
+    {
+      "id": "night",
+      "image": "h-couple-v2-800.webp",
+      "thumb": "h-couple-v2-800.webp",
+      "alt": { "ar": "LureHer Night، عطر الليل والخرجات", "en": "LureHer Night, the night-out perfume", "fr": "LureHer Night, le parfum des sorties" },
+      "caption": { "ar": "LureHer Night 50ml، عطر الليل والخرجات", "fr": "LureHer Night 50ml, le parfum des sorties" }
+    },
+    {
+      "id": "day",
+      "image": "h-solo-v2-800.webp",
+      "thumb": "h-solo-v2-800.webp",
+      "alt": { "ar": "LureHer Day، عطر النهار والخدمة", "en": "LureHer Day, the daytime and work perfume", "fr": "LureHer Day, le parfum du jour et du travail" },
+      "caption": { "ar": "LureHer Day 50ml، عطر النهار والخدمة", "fr": "LureHer Day 50ml, le parfum du jour et du travail" }
+    },
+    {
+      "id": "guarantee",
+      "image": "01-main.webp",
+      "thumb": "01-main.webp",
+      "alt": { "ar": "ضمان LureHer", "en": "The LureHer guarantee", "fr": "La garantie LureHer" },
+      "caption": { "ar": "جرّب جوج العطور قبل ما تخلّص", "fr": "Sentez les deux parfums avant de payer" }
+    }
+  ]
+}
