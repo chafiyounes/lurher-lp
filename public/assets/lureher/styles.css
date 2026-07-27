@@ -3504,8 +3504,19 @@ html, body { margin: 0; padding: 0; }
     height: 32px !important;
     max-width: min(56vw, 170px) !important;
   }
-  .nav-brand .brand-tagline { font-size: 7px; }
-  .app[dir="ltr"] .nav-brand .brand-tagline { letter-spacing: 0.1em; }
+  /* Scales with the viewport so the longest string (French) still sits under
+     the wordmark on a 320px screen instead of running into the flanking
+     columns. */
+  .nav-brand .brand-tagline { font-size: clamp(6px, 1.9vw, 7px); }
+  .app[dir="ltr"] .nav-brand .brand-tagline { letter-spacing: 0.08em; }
+
+  /* The grid is 1fr auto 1fr with min-width:0 on the sides, so a wide centre
+     column lets the language button spill under the tagline rather than push
+     it. The full word costs ~106px on each flank; 106 + tagline + 106 does
+     not fit a phone. Drop to the globe alone here — the icon still reads as
+     "change language" and the button keeps its full label on desktop. */
+  #langLabel { display: none; }
+  .lang-toggle-btn { padding: 6px 8px; }
 }
 
 /* footer: same lockup, a touch larger, keeps the old 10px gap below */
