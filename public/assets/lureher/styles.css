@@ -3358,25 +3358,27 @@ html, body { margin: 0; padding: 0; }
 
 
 
-/* THE PHOTO STRIP — driven by `left`, deliberately.
+/* THE PHOTO STRIP — offset with margin-left, in pixels, deliberately.
 
-   Two mechanisms were tried and both fail on this element, verified live:
+   Three mechanisms were tried against the deployed page and only this one
+   works on this element:
 
-   - `transform` is ignored outright. An inline `translateX(...) !important`
-     computes to the identity matrix, so does `rotate(45deg)`, while the same
-     declaration transforms the nav logo and a fresh div on the same page and
-     no active rule sets transform:none on it.
-   - `scrollLeft` is refused. The viewport reports scrollWidth 2580 against
-     clientWidth 516, yet every assignment snaps back to 0 — with snap type
-     mandatory, proximity and none alike.
+   - `transform` is ignored: an inline translateX(...) !important computes to
+     the identity matrix, as does rotate(45deg), while the same declaration
+     transforms the nav logo and a fresh div on the same page.
+   - `scrollLeft` is refused: scrollWidth 2580 vs clientWidth 516, yet every
+     assignment snaps back to 0, under snap-type mandatory/proximity/none.
+   - `left` (position:relative) computes to 0px, for percentages AND pixels.
 
-   `position:relative` + a percentage `left` is plain layout, so neither quirk
-   applies. direction:ltr is still required: under dir=rtl the flex items
-   overflow past the inline-start edge and the offsets invert, which is what
-   put the Arabic photo a full slide behind its dots. The slides hold only
-   images, so nothing reads backwards.
+   margin-left is ordinary box layout and resolves correctly every time
+   (-516/-1032/-1548/-2064 for a 516px viewport). Pixels, not percentages:
+   percentage values were among the things resolving to zero, and the JS
+   recomputes on resize.
 
-   Verified live: every slide lands within 6px of the viewport's left edge. */
+   direction:ltr on the viewport is still required. Under dir=rtl the flex
+   items overflow past the inline-start edge and offsets invert, which is what
+   left the Arabic photo a full slide behind its dots while French was fine.
+   The slides hold only images, so nothing reads backwards. */
 .landing-hero .hero-gallery .media-carousel-viewport {
   direction: ltr;
   overflow: hidden;
@@ -3384,11 +3386,10 @@ html, body { margin: 0; padding: 0; }
 }
 .landing-hero .hero-gallery .media-carousel-track {
   display: flex;
-  position: relative;
-  left: 0;
+  position: static;
   width: 100%;
   transform: none;
-  transition: left .35s ease;
+  transition: margin-left .35s ease;
 }
 .landing-hero .hero-gallery .media-carousel-slide {
   position: relative;
@@ -3404,8 +3405,7 @@ html, body { margin: 0; padding: 0; }
 @media (prefers-reduced-motion: reduce) {
   .landing-hero .hero-gallery .media-carousel-track { transition: none; }
 }
-/* phones: the base sheet turns this into a scroll port for the old swipe
-   mode; neutralise it so it cannot fight the `left` offset. */
+/* phones: the base sheet makes this a scroll port for the old swipe mode */
 @media (max-width: 639px) {
   .landing-hero .hero-gallery .media-carousel-viewport {
     overflow: hidden !important;

@@ -778,10 +778,14 @@
           document.querySelector(".app") &&
           document.querySelector(".app").getAttribute("dir") === "rtl";
         var offset = isRtl ? index : -index;
-        if (options.offsetMode === "left") {
-          // `left`, not transform/scrollLeft — both are silently ignored on
-          // this element (see the stylesheet note). Plain layout always works.
-          track.style.setProperty("left", (offset * 100) + "%", "important");
+        if (options.offsetMode === "margin") {
+          // margin-left in PIXELS. transform, scrollLeft and left are all
+          // ignored on this element, and percentages resolve to zero — see the
+          // stylesheet note. Recomputed from the live viewport width so it
+          // stays correct across resize and orientation changes.
+          var vpEl = track.parentElement;
+          var stepW = vpEl ? vpEl.clientWidth : 0;
+          track.style.setProperty("margin-left", (-index * stepW) + "px", "important");
         } else {
           track.style.setProperty(
             "transform", "translateX(" + (offset * 100) + "%)", "important");
@@ -901,6 +905,16 @@
 
   var heroGalleryController = null;
 
+  // The strip is offset in pixels, so a resize has to re-apply it.
+  var heroResizeTimer = null;
+  window.addEventListener("resize", function () {
+    if (!heroGalleryController) return;
+    clearTimeout(heroResizeTimer);
+    heroResizeTimer = setTimeout(function () {
+      heroGalleryController.goTo(heroGalleryController.getIndex());
+    }, 120);
+  });
+
   function buildHeroGallery(manifest) {
     var root = document.getElementById("hero-gallery");
     var track = document.getElementById("hero-gallery-track");
@@ -1003,7 +1017,7 @@
       crossfade: false,
       scrollSnap: false,
       forceLtrTrack: true,
-      offsetMode: "left",
+      offsetMode: "margin",
       onChange: function (idx) {
         preloadAdjacentHeroSlides(idx, manifest.slides.length);
         setHeroCaption(idx);
