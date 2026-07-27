@@ -610,7 +610,7 @@
         image: "h-decant-v2-800.webp",
         thumb: "h-decant-v2-800.webp",
         alt: { ar: "تركيز عالي وثبات أكثر من 8 ساعات", en: "High concentration, 8+ hour longevity", fr: "Haute concentration, plus de 8 h de tenue" },
-        caption: { ar: "تركيز eau de parfum عالي، ثبات أكثر من 8 ساعات فجوج القنينات", fr: "Eau de parfum très concentrée, plus de 8 heures de tenue pour les deux flacons" }
+        caption: { ar: "تركيز elixir de parfum عالي، ثبات أكثر من 8 ساعات فجوج القنينات", fr: "Élixirs de parfum très concentrés, plus de 8 heures de tenue pour les deux flacons" }
       },
       {
         id: "guarantee",
