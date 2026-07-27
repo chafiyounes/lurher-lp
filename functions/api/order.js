@@ -106,6 +106,18 @@ function packOf(o) {
 }
 
 /**
+ * Column K = "campaign|adset|ad". Meta never sends a literal `utm_data` param,
+ * it sends the three parts SEPARATELY as utm_campaign / utm_term / utm_content.
+ * The old YouCan store-header script combined them client-side; this standalone
+ * page does not, so `at.utm_data` was always empty and column K silently died
+ * when traffic finished moving to the Pages LP on 2026-07-18. Combine here.
+ */
+function utmData(at) {
+  if (at.utm_data) return at.utm_data;                 // legacy/pre-combined
+  return [at.utm_campaign, at.utm_term, at.utm_content].filter(Boolean).join("|");
+}
+
+/**
  * Row layout = the REAL Youcan-Orders header (verified 2026-07-17):
  * A Order ID | B Order date | C Product name | D Product variant | E City
  * F Region(address) | G Full name | H Phone (+212...) | I Variant price
@@ -120,7 +132,7 @@ function buildRow(o, env) {
     o.city, o.address, o.name,
     "'+212" + o.phone.slice(1),        // leading ' = literal text in Sheets, keeps the +
     pack ? pack.price : (env.PRICE_MAD || "189"),
-    at.utm_source || "organic", at.utm_data || "", o.ip || "",
+    at.utm_source || "organic", utmData(at), o.ip || "",
     // row ends at N — O+ ("2eme jour"...) are the agents' working columns
   ];
 }
