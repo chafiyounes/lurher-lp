@@ -3459,7 +3459,10 @@ html, body { margin: 0; padding: 0; }
 /* The bar grows with the wordmark — the lockup would otherwise be clipped by
    .nav-header's overflow:hidden. Nothing offsets against these heights
    (no scroll-padding/scroll-margin anywhere in the sheet), so raising them
-   is safe. */
+   is safe.
+   Hash rev 2: v=50025bb6 got edge-cached with the previous body and, being
+   immutable for a year, can never be corrected — only a new hash can. Verify
+   deploys by polling the ASSET url, not the HTML that references it. */
 .nav-inner { height: 82px; }
 
 .app .nav-header .brand-lockup .nav-logo,
