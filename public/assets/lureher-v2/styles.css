@@ -3456,34 +3456,47 @@ html, body { margin: 0; padding: 0; }
   direction: ltr;
 }
 
+/* The bar grows with the wordmark — the lockup would otherwise be clipped by
+   .nav-header's overflow:hidden. Nothing offsets against these heights
+   (no scroll-padding/scroll-margin anywhere in the sheet), so raising them
+   is safe. */
+.nav-inner { height: 82px; }
+
 .app .nav-header .brand-lockup .nav-logo,
 .app .nav-brand .brand-lockup .nav-logo,
 .nav-brand .brand-lockup .nav-logo {
-  height: 30px !important;
+  height: 56px !important;
   width: auto !important;
-  max-width: min(70vw, 240px) !important;
+  max-width: min(80vw, 420px) !important;
   max-height: none !important;
   margin: 0 !important;
   display: block;
 }
+.nav-brand .brand-tagline { font-size: 10px; letter-spacing: 0.22em; }
 
 @media (max-width: 639px) {
+  .nav-inner { height: 70px; }
   .app .nav-header .brand-lockup .nav-logo,
   .app .nav-brand .brand-lockup .nav-logo,
   .nav-brand .brand-lockup .nav-logo {
-    height: 25px !important;
-    max-width: min(70vw, 200px) !important;
+    height: 46px !important;
+    max-width: min(76vw, 300px) !important;
   }
-  .nav-brand .brand-tagline { font-size: 7px; letter-spacing: 0.16em; }
+  .nav-brand .brand-tagline { font-size: 8px; letter-spacing: 0.18em; }
 }
 
 /* footer: same lockup, a touch larger, keeps the old 10px gap below */
 .brand-lockup--footer { margin-bottom: 10px; }
 .brand-lockup--footer .lp-footer-logo {
-  height: 34px;
+  height: 60px;
   width: auto;
+  max-width: min(80vw, 420px);
   margin: 0;
   display: block;
   opacity: 0.9;
 }
-.brand-lockup--footer .brand-tagline { font-size: 8px; opacity: 0.85; }
+.brand-lockup--footer .brand-tagline { font-size: 10px; letter-spacing: 0.22em; opacity: 0.85; }
+@media (max-width: 639px) {
+  .brand-lockup--footer .lp-footer-logo { height: 48px; }
+  .brand-lockup--footer .brand-tagline { font-size: 8px; letter-spacing: 0.18em; }
+}
