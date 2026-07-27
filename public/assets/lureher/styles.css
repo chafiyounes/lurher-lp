@@ -3389,7 +3389,16 @@ html, body { margin: 0; padding: 0; }
   position: static;
   width: 100%;
   transform: none;
-  transition: margin-left .35s ease;
+  /* !important because the <=639px block above kills all track transitions
+     with `transition: none !important` — that made every slide change snap
+     instantly on phones, which is where nearly all the traffic is. */
+  transition: margin-left .42s cubic-bezier(.22, 1, .36, 1) !important;
+}
+/* Applied while the strip is being re-positioned for reasons that are not a
+   user navigation (first paint, resize, orientation change) so it jumps
+   straight to the right offset instead of sliding. */
+.landing-hero .hero-gallery .media-carousel-track.is-instant {
+  transition: none !important;
 }
 .landing-hero .hero-gallery .media-carousel-slide {
   position: relative;
@@ -3403,7 +3412,7 @@ html, body { margin: 0; padding: 0; }
   scroll-snap-align: none;
 }
 @media (prefers-reduced-motion: reduce) {
-  .landing-hero .hero-gallery .media-carousel-track { transition: none; }
+  .landing-hero .hero-gallery .media-carousel-track { transition: none !important; }
 }
 /* phones: the base sheet makes this a scroll port for the old swipe mode */
 @media (max-width: 639px) {

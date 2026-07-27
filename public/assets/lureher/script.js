@@ -749,7 +749,7 @@
       return thumbsWrap ? thumbsWrap.querySelectorAll(".media-carousel-thumb") : [];
     }
 
-    function goTo(i) {
+    function goTo(i, instant) {
       var slideList = slides();
       var total = slideList.length;
       if (!total) return;
@@ -785,7 +785,17 @@
           // stays correct across resize and orientation changes.
           var vpEl = track.parentElement;
           var stepW = vpEl ? vpEl.clientWidth : 0;
+          // instant === re-positioning, not navigating (first paint, resize).
+          // Suppress the slide animation for the duration of that one write.
+          if (instant) {
+            track.classList.add("is-instant");
+            void track.offsetWidth; // flush, so the class lands before the write
+          }
           track.style.setProperty("margin-left", (-index * stepW) + "px", "important");
+          if (instant) {
+            void track.offsetWidth;
+            track.classList.remove("is-instant");
+          }
         } else {
           track.style.setProperty(
             "transform", "translateX(" + (offset * 100) + "%)", "important");
@@ -892,7 +902,7 @@
       });
     }
 
-    goTo(0);
+    goTo(0, true);
     resetAutoplay();
 
     return {
@@ -911,7 +921,7 @@
     if (!heroGalleryController) return;
     clearTimeout(heroResizeTimer);
     heroResizeTimer = setTimeout(function () {
-      heroGalleryController.goTo(heroGalleryController.getIndex());
+      heroGalleryController.goTo(heroGalleryController.getIndex(), true);
     }, 120);
   });
 
