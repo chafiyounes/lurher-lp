@@ -575,7 +575,7 @@
     }
   });
 
-  var HERO_ASSET_VERSION = 10;
+  var HERO_ASSET_VERSION = 11;
   // lureher page has its OWN manifest — /images/hero/manifest.json belongs to
   // the live lure-her page; editing it there would change the live gallery.
   var HERO_MANIFEST_URL =
@@ -769,7 +769,8 @@
           slideList[sSnap].classList.toggle("is-active", sSnap === index);
         }
       } else {
-        var isRtl = document.querySelector(".app") &&
+        var isRtl = !options.forceLtrTrack &&
+          document.querySelector(".app") &&
           document.querySelector(".app").getAttribute("dir") === "rtl";
         var offset = isRtl ? index : -index;
         track.style.transform = "translateX(" + (offset * 100) + "%)";
@@ -833,7 +834,8 @@
           resetAutoplay();
           return;
         }
-        var isRtl = document.querySelector(".app") &&
+        var isRtl = !options.forceLtrTrack &&
+          document.querySelector(".app") &&
           document.querySelector(".app").getAttribute("dir") === "rtl";
         if (isRtl) dx = -dx;
         step(dx > 0 ? -1 : 1);
@@ -850,7 +852,8 @@
           if (e.pointerType === "mouse") return;
           var dx = e.clientX - pointerStartX;
           if (Math.abs(dx) < 40) return;
-          var isRtl2 = document.querySelector(".app") &&
+          var isRtl2 = !options.forceLtrTrack &&
+            document.querySelector(".app") &&
             document.querySelector(".app").getAttribute("dir") === "rtl";
           if (isRtl2) dx = -dx;
           step(dx > 0 ? -1 : 1);
@@ -981,13 +984,13 @@
     // The scroll path reads position via Math.abs(scrollLeft), which is
     // direction-agnostic, so RTL and LTR both land correctly.
     var isMobileCarousel = window.matchMedia("(max-width: 639px)").matches;
-    root.classList.add("media-carousel--scroll");
 
     heroGalleryController = initMediaCarousel(root, {
       slideSelector: ".media-carousel-slide",
       autoplayMs: 0,
       crossfade: false,
-      scrollSnap: true,
+      scrollSnap: false,
+      forceLtrTrack: true,
       onChange: function (idx) {
         preloadAdjacentHeroSlides(idx, manifest.slides.length);
         setHeroCaption(idx);

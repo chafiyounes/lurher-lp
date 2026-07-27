@@ -3356,37 +3356,35 @@ html, body { margin: 0; padding: 0; }
 /* nothing overlays the image any more */
 .landing-hero .hero-gallery .slide-caption { display: none !important; }
 
-/* Scroll-snap slider layout at every width. These rules existed only inside
-   @media(max-width:639px); the desktop translateX path put the active slide a
-   full slide-width outside the viewport under dir=rtl, so the photo you saw
-   disagreed with the dots. Scrolling is direction-agnostic, so it works in
-   both Arabic and French. */
+
+
+/* The photo strip is driven by translateX and pinned to LTR geometry.
+   Under dir=rtl two things break: flex items overflow past the inline-start
+   edge (so the scroll port reports scrollWidth but refuses scrollLeft), and
+   the translate direction inverts. Forcing LTR here makes slide N sit at
+   exactly N * 100%, so translateX(-N * 100%) always lands it. Verified on the
+   live page for all five slides. Nothing else on the page changes direction —
+   the slides only hold images. */
 .landing-hero .hero-gallery .media-carousel-viewport {
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scroll-behavior: smooth;
-  touch-action: pan-x pan-y;
-  scrollbar-width: none;
+  direction: ltr;
+  overflow: hidden;
+  scroll-snap-type: none;
 }
-.landing-hero .hero-gallery .media-carousel-viewport::-webkit-scrollbar { display: none; }
 .landing-hero .hero-gallery .media-carousel-track {
   display: flex;
-  transform: none !important;
-  transition: none !important;
-  width: auto;
-  gap: 0;
+  width: 100%;
+  transition: transform .35s ease;
 }
 .landing-hero .hero-gallery .media-carousel-slide {
   position: relative;
-  opacity: 1;
-  visibility: visible;
   flex: 0 0 100%;
   min-width: 100%;
   width: 100%;
+  opacity: 1;
+  visibility: visible;
   inset: auto;
-  scroll-snap-align: center;
-  scroll-snap-stop: always;
   pointer-events: auto;
+}
+@media (prefers-reduced-motion: reduce) {
+  .landing-hero .hero-gallery .media-carousel-track { transition: none; }
 }
