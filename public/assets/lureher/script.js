@@ -76,19 +76,22 @@
     hero_badge: { ar: "Lure Her", en: "Lure Her", fr: "Lure Her" },
 
     land_hero_h: {
-      ar: "الباك الكامل اللي غادي يخليك فقمة الجاذبية ديالك، ليل ونهار",
-      en: "The complete pack that keeps you at the top of your attraction, night and day",
-      fr: "Le pack complet qui vous garde au sommet de votre attraction, nuit et jour"
+      ar: "عطر لليل، وعطر للنهار. ما تحتاج حتى عطر آخر.",
+      en: "A perfume for the night, a perfume for the day. You won't need another.",
+      fr: "Un parfum pour la nuit, un pour le jour. Vous n'en aurez pas besoin d'un autre."
     },
+    // Was the "1000 compliments" line — an invented, uncountable number in the
+    // second-most-read slot. Replaced with the one claim on this page a reader
+    // can verify for themselves: /lure-her really does sell one bottle at 189.
     land_hero_sub: {
-      ar: "غتسمع \"ريحتك زوينة\" 1000 مرة",
-      en: "1,000 compliments, guaranteed.",
-      fr: "1000 compliments garantis."
+      ar: "القنينة وحدها بـ189 درهم. فالباك، الثانية كتجيك بـ60 درهم.",
+      en: "One bottle alone is 189 DH. In the pack, the second costs you 60 DH.",
+      fr: "Un flacon seul coûte 189 DH. Dans le pack, le second vous revient à 60 DH."
     },
     product_title: {
-      ar: "LureHer Night × LureHer Day، ‏249 درهم <span class=\"hpt-tag\">عندك عطر لكل مناسبة</span>",
-      en: "LureHer Night × LureHer Day, 249 DH <span class=\"hpt-tag\">a perfume for every occasion!</span>",
-      fr: "LureHer Night × LureHer Day, 249 DH <span class=\"hpt-tag\">un parfum pour chaque occasion !</span>"
+      ar: "LureHer Night × LureHer Day، ‏249 درهم",
+      en: "LureHer Night × LureHer Day, 249 DH",
+      fr: "LureHer Night × LureHer Day, 249 DH"
     },
     offer_name: {
       ar: "LureHer Night 50ml × LureHer Day 50ml",
@@ -174,25 +177,18 @@
       en: "We did the opposite. An exclusive high-concentration formula, one bottle that actually works.",
       fr: "Nous avons fait l'inverse. Une formule exclusive à forte concentration d'huiles, un seul flacon qui fait vraiment effet."
     },
-    reframe_p3: {
-      ar: "صدقني، اللي بغيتي هو النتيجة، ماشي العدد!",
-      en: "Believe me, you want the outcome, not the numbers!",
-      fr: "Croyez-moi, c'est le résultat que vous voulez, pas les chiffres !"
-    },
-    creed_kicker: {
-      ar: "ماغاديش نبيعو ليك 5 عطور ريحتهم غير الكحول.",
-      en: "We won't sell you 5 perfumes that smell like alcohol.",
-      fr: "On ne vous vendra pas 5 parfums qui sentent l'alcool."
-    },
+    // reframe_p3 removed: "صدقني" — asking to be believed is what you do when
+    // you have nothing to show, and reframe_h_win already carries the idea.
+    // creed_kicker removed: duplicate of reframe_h_lose, which now owns it.
     creed_lead: {
-      ar: "غانبيعو ليك جوج عطور متناسقين غادي تستعملهم بصح كل نهار، غادي تهضر عليهم لصحابك، وغادي تعاود تطلب ملي يساليو. عارفينها حيت مئات الزبناء داروها قبل منك.",
-      en: "We'll sell you two harmonic perfumes you'll genuinely wear every day. You'll tell your friends, and you'll order again when they run out. We know it, because hundreds of our clients did it before you.",
-      fr: "On vous vend deux parfums harmonieux que vous porterez vraiment chaque jour. Vous en parlerez à vos amis, et vous recommanderez quand ils seront finis. On le sait, des centaines de nos clients l'ont fait avant vous."
+      ar: "جوج عطور غادي تستعملهم كل نهار، وغادي تعاود تطلب ملي يساليو.",
+      en: "Two perfumes you'll wear every day, and reorder when they run out.",
+      fr: "Deux parfums que vous porterez chaque jour, et que vous recommanderez une fois finis."
     },
     creed_close: {
-      ar: "عافاك ماتشريش عطر رخيص! العطر هو الانطباع اللي كتعطي على راسك قبل ما تحل فمك.",
-      en: "Please don't buy a cheap perfume! It's the impression you give of yourself before you even open your mouth.",
-      fr: "S'il vous plaît, n'achetez pas un parfum bon marché ! C'est l'impression que vous donnez de vous-même avant même d'ouvrir la bouche."
+      ar: "العطر هو الانطباع اللي كتعطي على راسك قبل ما تحل فمك.",
+      en: "A perfume is the impression you give of yourself before you open your mouth.",
+      fr: "Le parfum est l'impression que vous donnez de vous avant même d'ouvrir la bouche."
     },
     vs_us_label: { ar: "LureHer Night × LureHer Day", en: "LureHer Night × LureHer Day", fr: "LureHer Night × LureHer Day" },
     vs_them_label: { ar: "5 عطور مقلّدة بـ 200 درهم", en: "5 fakes for 200 DH", fr: "5 faux produits pour 200 DH" },
@@ -204,11 +200,9 @@
 
     proof_eyebrow: { ar: "الكيمياء بيناتهم", en: "Their chemistry", fr: "Leur alchimie" },
     proof_h: { ar: "جوج عطور، وريحة ثالثة سرية", en: "Two perfumes, and a secret third scent", fr: "Deux parfums, et un troisième parfum secret" },
-    proof_1: {
-      ar: "شعار LureHer الحقيقي مطبوع فالقنينات. الستيكر هو المنتوج المقلد اللي ريحتو غير الكحول، رد بالك منو.",
-      en: "The real LureHer logo is printed on the bottles. The sticker is the fake product that smells of alcohol, be wary of it.",
-      fr: "Le vrai logo LureHer est imprimé sur les flacons. Le sticker, c'est le faux produit qui sent l'alcool, méfiez-vous-en."
-    },
+    // proof_1 removed: third statement of the printed-logo claim, and it
+    // interrupted the layering argument this section exists to make. The claim
+    // now lives once in the VS table (vs_f3) and once as a direct FAQ answer.
     proof_2: {
       ar: "متناسقين فالتركيبة، كيكملو بعضياتهم بلا ما يتضاربو",
       en: "Harmonized compositions, they complete each other without clashing",
@@ -224,30 +218,23 @@
       en: "You'll only discover that third scent once you try, and you'll understand why customers reorder",
       fr: "Ce troisième parfum, vous ne le découvrirez qu'en essayant, et vous comprendrez pourquoi les clients recommandent"
     },
-    proof_close: {
-      ar: "بجوج elixir de parfum بتركيز عالي، ثبات 8 ساعات",
-      en: "Both are high-concentration elixirs de parfum, 8-hour longevity",
-      fr: "Les deux sont des élixirs de parfum très concentrés, 8 heures de tenue"
-    },
+    // proof_close removed: instance 3 of 5 of the "8 hours" claim, and
+    // notes_tech states it better one section earlier.
 
     box_eyebrow: { ar: "شنو غادي توصلك", en: "What you receive", fr: "Ce que vous recevez" },
     box_h: { ar: "كل باك فيه جوج عطور كاملين", en: "Every pack contains two full perfumes", fr: "Chaque pack contient deux parfums complets" },
-    box_desc: {
-      ar: "وحدة لليل ووحدة للنهار، ما تحتاج حتى عطر آخر",
-      en: "One for the night, one for the day, you'll never need another perfume",
-      fr: "Un pour la nuit, un pour le jour, vous n'aurez plus besoin d'aucun autre parfum"
-    },
+    // box_desc removed: it repeated the hero headline word for word.
     box_1_title: { ar: "LureHer Night، إكسير الفيرومون", en: "LureHer Night, the pheromone elixir", fr: "LureHer Night, l'élixir de phéromones" },
     box_1_sub: {
-      ar: "50ml / 1.7oz، عطر الليل والخرجات، كيخلي الناس يقربو ليك بلا ما يعرفو علاش",
-      en: "50ml / 1.7oz, the night-out perfume, it draws people closer without them knowing why",
-      fr: "50ml / 1.7oz, le parfum des sorties, il attire les gens sans qu'ils sachent pourquoi"
+      ar: "50ml، عطر الليل والخرجات. حلو وقوي، كيبان من بعيد.",
+      en: "50ml, the night-out perfume. Sweet and strong, it carries.",
+      fr: "50ml, le parfum des sorties. Doux et puissant, il porte loin."
     },
     box_2_title: { ar: "LureHer Day، إكسير الحضور", en: "LureHer Day, the presence elixir", fr: "LureHer Day, l'élixir de présence" },
     box_2_sub: {
-      ar: "50ml / 1.7oz، عطر النهار والخدمة، كيفرض الحضور فالاجتماعات والمواعيد",
-      en: "50ml / 1.7oz, the daytime and work perfume, it commands presence in meetings and appointments",
-      fr: "50ml / 1.7oz, le parfum du jour et du travail, il impose votre présence en réunion comme en rendez-vous"
+      ar: "50ml، عطر النهار والخدمة. منعش ومحترف، كيبقى معاك النهار كامل.",
+      en: "50ml, the daytime and work perfume. Fresh and professional, it stays with you all day.",
+      fr: "50ml, le parfum du jour et du travail. Frais et professionnel, il tient toute la journée."
     },
     box_cta: { ar: "اطلب الآن", en: "Order now", fr: "Commander" },
     box_foot: {
@@ -575,7 +562,10 @@
     }
   });
 
-  var HERO_ASSET_VERSION = 11;
+  // Bumped 11 -> 12 for the 4-slide manifest (decant slide removed). The
+  // manifest lives under /images/, served immutable for a year, so a content
+  // change with an unchanged URL would never reach a returning visitor.
+  var HERO_ASSET_VERSION = 12;
   // lureher page has its OWN manifest — /images/hero/manifest.json belongs to
   // the live lure-her page; editing it there would change the live gallery.
   var HERO_MANIFEST_URL =
@@ -595,29 +585,25 @@
         id: "night",
         image: "h-couple-v2-800.webp",
         thumb: "h-couple-v2-800.webp",
-        alt: { ar: "LureHer Night، عطر الجاذبية", en: "LureHer Night, the attraction perfume", fr: "LureHer Night, le parfum de l'attraction" },
-        caption: { ar: "LureHer Night، الجاذبية الكاملة، كيقرب الناس ليك فالخرجات والمناسبات", fr: "LureHer Night, l'attraction totale, pour les sorties et les grandes occasions" }
+        alt: { ar: "LureHer Night، عطر الليل والخرجات", en: "LureHer Night, the night-out perfume", fr: "LureHer Night, le parfum des sorties" },
+        caption: { ar: "LureHer Night 50ml، عطر الليل والخرجات", fr: "LureHer Night 50ml, le parfum des sorties" }
       },
       {
         id: "day",
         image: "h-solo-v2-800.webp",
         thumb: "h-solo-v2-800.webp",
-        alt: { ar: "LureHer Day، عطر الحضور", en: "LureHer Day, the presence perfume", fr: "LureHer Day, le parfum de la présence" },
-        caption: { ar: "LureHer Day، الثقة الكاملة، حضور محترف فالخدمة والاجتماعات", fr: "LureHer Day, la confiance totale, une présence pro au travail et en réunion" }
+        alt: { ar: "LureHer Day، عطر النهار والخدمة", en: "LureHer Day, the daytime and work perfume", fr: "LureHer Day, le parfum du jour et du travail" },
+        caption: { ar: "LureHer Day 50ml، عطر النهار والخدمة", fr: "LureHer Day 50ml, le parfum du jour et du travail" }
       },
-      {
-        id: "tech",
-        image: "h-decant-v2-800.webp",
-        thumb: "h-decant-v2-800.webp",
-        alt: { ar: "تركيز عالي وثبات أكثر من 8 ساعات", en: "High concentration, 8+ hour longevity", fr: "Haute concentration, plus de 8 h de tenue" },
-        caption: { ar: "تركيز elixir de parfum عالي، ثبات أكثر من 8 ساعات فجوج القنينات", fr: "Élixirs de parfum très concentrés, plus de 8 heures de tenue pour les deux flacons" }
-      },
+      // The "tech" slide is gone: its image is the Layton 10ml decant, a product
+      // that is not in this offer, sitting under a caption promising 8h longevity.
+      // Restore a slide here only when there is a real photo to put in it.
       {
         id: "guarantee",
         image: "01-main.webp",
         thumb: "01-main.webp",
         alt: { ar: "ضمان LureHer", en: "The LureHer guarantee", fr: "La garantie LureHer" },
-        caption: { ar: "ضمان الجاذبية والحضور، وإيلا ما عجبكش العطر كنبدلوه فـ7 أيام", fr: "Garantie attraction et présence, remplacement sous 7 jours si un parfum vous déçoit" }
+        caption: { ar: "جرّب جوج العطور قبل ما تخلّص", fr: "Sentez les deux parfums avant de payer" }
       }
     ]
   };
@@ -1539,12 +1525,12 @@
       var l = langs[currentLangIndex];
       // No stock counter here: the hero pill owns stock scarcity. Marquee owns
       // the offer window + brand + COD, one claim each, no doubling.
+      // Trimmed 6 -> 3. The guarantee and "a perfume for every occasion" both
+      // get stated properly further down the page; repeating them in a bar that
+      // scrolls past the reader added impressions, not information.
       var items = [
-        (I18N.announce_ship && I18N.announce_ship[l]) || "",
         (I18N.announce_official && I18N.announce_official[l]) || "",
-        (I18N.announce_guarantee && I18N.announce_guarantee[l]) || "",
         (I18N.announce_brand && I18N.announce_brand[l]) || "",
-        (I18N.announce_occasion && I18N.announce_occasion[l]) || "",
         (I18N.announce_cod && I18N.announce_cod[l]) || ""
       ];
       var seq = items.filter(Boolean).map(function (t) {

@@ -62,9 +62,12 @@ PAGES = [
          css="/assets/lureher/styles.css",
          js="/assets/lureher/script.js",
          title="LureHer Night × LureHer Day — الباك الأصلي · الدفع عند الاستلام",
-         description="باك LureHer الكامل: Night للجاذبية وDay للحضور. جوج عطور 50ml أصليين، ثبات أكثر من 8 ساعات، توصيل مجاني، الدفع عند الاستلام.",
+         # og_description used to say "بلاصة 500" — the pre-round-3 anchor. The
+         # page has said 378 since 9305c7a, so the share card was quoting a
+         # price the page no longer shows.
+         description="جوج عطور 50ml: Night لليل وDay للنهار. القنينة وحدها بـ189 درهم، الباك بـ249. توصيل مجاني، الدفع عند الاستلام.",
          og_title="LureHer Night × LureHer Day — الباك الأصلي",
-         og_description="جوج عطور 50ml بـ249 درهم بلاصة 500 · الدفع عند الاستلام",
+         og_description="جوج عطور 50ml بـ249 درهم · الدفع عند الاستلام",
          og_image="/images/hero/h-duo-v3-800.webp"),
     # Clarity rewrite of the 249 offer (2026-07-27 copy audit applied). Separate
     # slug + separate assets so /pages/lureher stays exactly as it is for
