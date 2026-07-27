@@ -5,7 +5,10 @@
   (function injectPageFonts() {
     if (document.getElementById("v34-page-fonts")) return;
     var icons =
-    "block,chevron_left,chevron_right,expand_more,favorite,forum,home,language," +
+    // Keep this list in sync with every icon name used in the markup — Google
+    // only serves the glyphs named here, and a missing one renders as its raw
+    // literal text ("event_available") across the layout.
+    "block,chevron_left,chevron_right,event_available,expand_more,favorite,forum,home,language," +
     "local_mall,local_shipping,location_on,lock,mic,payments,person,phone,photo_camera,published_with_changes," +
       "schedule,science,verified,verified_user";
     var fonts =
