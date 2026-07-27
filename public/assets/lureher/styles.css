@@ -3523,3 +3523,4 @@ html, body { margin: 0; padding: 0; }
   .brand-lockup--footer .lp-footer-logo { height: 36px; }
   .brand-lockup--footer .brand-tagline { font-size: 8px; }
 }
+/* rev:3 — v=424bc8de was poisoned by polling it before the deploy landed */
