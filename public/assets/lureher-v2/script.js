@@ -94,9 +94,9 @@
       fr: "Un flacon seul coûte 189 DH. Dans le pack, le second vous revient à 60 DH."
     },
     product_title: {
-      ar: "LureHer Night × LureHer Day، ‏249 درهم",
-      en: "LureHer Night × LureHer Day, 249 DH",
-      fr: "LureHer Night × LureHer Day, 249 DH"
+      ar: "LureHer Night × LureHer Day",
+      en: "LureHer Night × LureHer Day",
+      fr: "LureHer Night × LureHer Day"
     },
     offer_name: {
       ar: "LureHer Night 50ml × LureHer Day 50ml",
@@ -117,7 +117,8 @@
     savings_tag: { ar: "وفّرت 129 درهم", en: "You save 129 DH", fr: "Économisez 129 DH" },
 
     ct_ship: { ar: "توصيل مجاني", en: "Free delivery", fr: "Livraison gratuite" },
-    ct_guarantee: { ar: "جرّب جوج العطور قبل ما تخلّص!", en: "Try both perfumes before you pay!", fr: "Essayez les deux parfums avant de payer !" },
+    ct_guarantee: { ar: "جرّب قبل ما تخلّص", en: "Try before you pay", fr: "Essayer avant payer" },
+    ct_guarantee7: { ar: "ضمان 7 أيام من يوم التوصيل", en: "7-day guarantee after reception", fr: "Garantie 7 jours après réception" },
     trust_shipping: { ar: "توصيل مجاني في كل المغرب", en: "Free shipping in Morocco", fr: "Livraison gratuite au Maroc" },
 
     tb_cod: {
@@ -660,8 +661,12 @@
     var lang = langs[currentLangIndex];
     var slide = heroManifestCache.slides[index] || {};
     var text = (slide.caption && (slide.caption[lang] || slide.caption.ar)) || "";
-    el.textContent = text;
-    el.style.display = text ? "" : "none";
+    // Captions removed on request — nothing renders under the photos now.
+    // `text` is still resolved above so the manifest stays the single source
+    // of slide data (alt text still uses it).
+    void text;
+    el.textContent = "";
+    el.style.display = "none";
   }
 
   function bindImageFallback(img, primarySrc, fallbackSrc) {

@@ -3520,3 +3520,40 @@ html, body { margin: 0; padding: 0; }
   .brand-lockup--footer .brand-tagline { font-size: 10px; }
 }
 /* rev:3 — v=424bc8de was poisoned by polling it before the deploy landed */
+
+/* ============================================================
+   Round 8 — his 2026-07-27 list
+   ============================================================ */
+
+/* Arabic renders visually smaller than Latin caps at the same px, so the
+   tagline needs its own size rather than sharing the Latin one. */
+.app[dir="rtl"] .nav-brand .brand-tagline { font-size: 16px; }
+.app[dir="rtl"] .brand-lockup--footer .brand-tagline { font-size: 16px; }
+@media (max-width: 639px) {
+  .app[dir="rtl"] .nav-brand .brand-tagline { font-size: 13px; }
+  .app[dir="rtl"] .brand-lockup--footer .brand-tagline { font-size: 13px; }
+}
+
+/* THE ARABIC SLIDER INVERSION.
+   The slide track is pinned ltr so the photos run 0..n left-to-right, but the
+   thumbnails and dots were still inheriting rtl and laid themselves out
+   right-to-left (measured order 3,2,1,0). So the control on the right drove
+   the image on the left. Pin them ltr too and Arabic behaves like French. */
+.landing-hero .hero-gallery .media-carousel-thumbs,
+.landing-hero .hero-gallery .media-carousel-dots {
+  direction: ltr;
+}
+
+/* Nothing renders under the photos any more. */
+.landing-hero .hero-gallery .gallery-caption { display: none !important; }
+
+/* Four guarantees in the row now, so let them wrap instead of squeezing. */
+.checkout-assurance--inline { flex-wrap: wrap; }
+
+/* The "two perfumes you'll wear every day" line now sits between the VS
+   photos and the comparison table. */
+.creed-lead--vs {
+  text-align: center;
+  margin: 18px auto 22px;
+  max-width: 62ch;
+}
