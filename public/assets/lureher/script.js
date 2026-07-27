@@ -66,6 +66,11 @@
       en: "Order your pack now",
       fr: "Commandez votre pack maintenant"
     },
+    brand_tagline: {
+      ar: "عطور الرجال الحقيقيين",
+      en: "Fragrances for real men",
+      fr: "Parfums pour les vrais hommes"
+    },
     nav_shop: { ar: "اطلب الآن", en: "Order Now", fr: "Commander" },
     brand_sub: { ar: "PARFUM", en: "PARFUM", fr: "PARFUM" },
 

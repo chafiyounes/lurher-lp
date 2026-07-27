@@ -66,6 +66,11 @@
       en: "Order your pack now",
       fr: "Commandez votre pack maintenant"
     },
+    brand_tagline: {
+      ar: "عطور الرجال الحقيقيين",
+      en: "Fragrances for real men",
+      fr: "Parfums pour les vrais hommes"
+    },
     nav_shop: { ar: "اطلب الآن", en: "Order Now", fr: "Commander" },
     brand_sub: { ar: "PARFUM", en: "PARFUM", fr: "PARFUM" },
 
@@ -562,7 +567,10 @@
     }
   });
 
-  var HERO_ASSET_VERSION = 11;
+  // Bumped 11 -> 12 for the 4-slide manifest (decant slide removed). The
+  // manifest lives under /images/, served immutable for a year, so a content
+  // change with an unchanged URL would never reach a returning visitor.
+  var HERO_ASSET_VERSION = 12;
   // lureher page has its OWN manifest — /images/hero/manifest.json belongs to
   // the live lure-her page; editing it there would change the live gallery.
   var HERO_MANIFEST_URL =
