@@ -755,12 +755,12 @@
       if (!total) return;
       index = (i + total) % total;
       if (crossfade) {
-        track.style.transform = "none";
+        track.style.setProperty("transform", "none", "important");
         for (var s = 0; s < slideList.length; s++) {
           slideList[s].classList.toggle("is-active", s === index);
         }
       } else if (scrollSnap && viewport) {
-        track.style.transform = "none";
+        track.style.setProperty("transform", "none", "important");
         var targetSlide = slideList[index];
         if (targetSlide && targetSlide.scrollIntoView) {
           targetSlide.scrollIntoView({ inline: "start", block: "nearest", behavior: reducedMotion ? "auto" : "smooth" });
@@ -773,7 +773,11 @@
           document.querySelector(".app") &&
           document.querySelector(".app").getAttribute("dir") === "rtl";
         var offset = isRtl ? index : -index;
-        track.style.transform = "translateX(" + (offset * 100) + "%)";
+        // setProperty with priority, not `style.transform =`: an author rule
+        // with !important still wins over a plain inline declaration, and the
+        // strip silently refused to move. Inline !important beats it.
+        track.style.setProperty(
+          "transform", "translateX(" + (offset * 100) + "%)", "important");
         for (var s2 = 0; s2 < slideList.length; s2++) {
           slideList[s2].classList.toggle("is-active", s2 === index);
         }

@@ -3388,3 +3388,18 @@ html, body { margin: 0; padding: 0; }
 @media (prefers-reduced-motion: reduce) {
   .landing-hero .hero-gallery .media-carousel-track { transition: none; }
 }
+
+/* Phones: the base sheet turns this viewport into a scroll port
+   (overflow-x:auto !important) for the old swipe mode. This gallery is
+   translateX-driven now, so neutralise that or the strip both scrolls and
+   translates. */
+@media (max-width: 639px) {
+  .landing-hero .hero-gallery .media-carousel-viewport {
+    overflow: hidden !important;
+    overflow-x: hidden !important;
+    scroll-snap-type: none !important;
+  }
+  .landing-hero .hero-gallery .media-carousel-slide {
+    scroll-snap-align: none !important;
+  }
+}
