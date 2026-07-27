@@ -3479,59 +3479,44 @@ html, body { margin: 0; padding: 0; }
    Hash rev 2: v=50025bb6 got edge-cached with the previous body and, being
    immutable for a year, can never be corrected — only a new hash can. Verify
    deploys by polling the ASSET url, not the HTML that references it. */
-.nav-inner { height: 60px; }
+.nav-inner { height: 82px; }
 
 .app .nav-header .brand-lockup .nav-logo,
 .app .nav-brand .brand-lockup .nav-logo,
 .nav-brand .brand-lockup .nav-logo {
-  height: 38px !important;
+  height: 56px !important;
   width: auto !important;
-  max-width: min(60vw, 200px) !important;
+  max-width: min(80vw, 420px) !important;
   max-height: none !important;
   margin: 0 !important;
   display: block;
 }
-/* Sized so the line sits under the wordmark instead of spreading past it into
-   the language button's column. 8px keeps the longest string (the French one)
-   close to the logo's own width. */
-.nav-brand .brand-tagline { font-size: 8px; }
+.nav-brand .brand-tagline { font-size: 12px; }
 
 @media (max-width: 639px) {
-  .nav-inner { height: 54px; }
+  .nav-inner { height: 70px; }
   .app .nav-header .brand-lockup .nav-logo,
   .app .nav-brand .brand-lockup .nav-logo,
   .nav-brand .brand-lockup .nav-logo {
-    height: 32px !important;
-    max-width: min(56vw, 170px) !important;
+    height: 46px !important;
+    max-width: min(76vw, 300px) !important;
   }
-  /* Scales with the viewport so the longest string (French) still sits under
-     the wordmark on a 320px screen instead of running into the flanking
-     columns. */
-  .nav-brand .brand-tagline { font-size: clamp(6px, 1.9vw, 7px); }
-  .app[dir="ltr"] .nav-brand .brand-tagline { letter-spacing: 0.08em; }
-
-  /* The grid is 1fr auto 1fr with min-width:0 on the sides, so a wide centre
-     column lets the language button spill under the tagline rather than push
-     it. The full word costs ~106px on each flank; 106 + tagline + 106 does
-     not fit a phone. Drop to the globe alone here — the icon still reads as
-     "change language" and the button keeps its full label on desktop. */
-  #langLabel { display: none; }
-  .lang-toggle-btn { padding: 6px 8px; }
+  .nav-brand .brand-tagline { font-size: 10px; }
 }
 
 /* footer: same lockup, a touch larger, keeps the old 10px gap below */
 .brand-lockup--footer { margin-bottom: 10px; }
 .brand-lockup--footer .lp-footer-logo {
-  height: 42px;
+  height: 60px;
   width: auto;
-  max-width: min(70vw, 240px);
+  max-width: min(80vw, 420px);
   margin: 0;
   display: block;
   opacity: 0.9;
 }
-.brand-lockup--footer .brand-tagline { font-size: 9px; opacity: 0.85; }
+.brand-lockup--footer .brand-tagline { font-size: 12px; opacity: 0.85; }
 @media (max-width: 639px) {
-  .brand-lockup--footer .lp-footer-logo { height: 36px; }
-  .brand-lockup--footer .brand-tagline { font-size: 8px; }
+  .brand-lockup--footer .lp-footer-logo { height: 48px; }
+  .brand-lockup--footer .brand-tagline { font-size: 10px; }
 }
 /* rev:3 — v=424bc8de was poisoned by polling it before the deploy landed */
