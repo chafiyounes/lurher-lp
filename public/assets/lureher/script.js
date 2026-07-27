@@ -975,14 +975,19 @@
 
     root.style.setProperty("--hero-thumb-cols", String(manifest.slides.length));
 
+    // Scroll-snap at EVERY width, not just mobile. The translateX path
+    // mis-steps under dir=rtl (the active slide lands a full slide-width
+    // outside the viewport, so the photo on screen disagrees with the dots).
+    // The scroll path reads position via Math.abs(scrollLeft), which is
+    // direction-agnostic, so RTL and LTR both land correctly.
     var isMobileCarousel = window.matchMedia("(max-width: 639px)").matches;
-    if (isMobileCarousel) root.classList.add("media-carousel--scroll");
+    root.classList.add("media-carousel--scroll");
 
     heroGalleryController = initMediaCarousel(root, {
       slideSelector: ".media-carousel-slide",
       autoplayMs: 0,
       crossfade: false,
-      scrollSnap: isMobileCarousel,
+      scrollSnap: true,
       onChange: function (idx) {
         preloadAdjacentHeroSlides(idx, manifest.slides.length);
         setHeroCaption(idx);

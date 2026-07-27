@@ -3355,3 +3355,38 @@ html, body { margin: 0; padding: 0; }
 
 /* nothing overlays the image any more */
 .landing-hero .hero-gallery .slide-caption { display: none !important; }
+
+/* Scroll-snap slider layout at every width. These rules existed only inside
+   @media(max-width:639px); the desktop translateX path put the active slide a
+   full slide-width outside the viewport under dir=rtl, so the photo you saw
+   disagreed with the dots. Scrolling is direction-agnostic, so it works in
+   both Arabic and French. */
+.landing-hero .hero-gallery .media-carousel-viewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  touch-action: pan-x pan-y;
+  scrollbar-width: none;
+}
+.landing-hero .hero-gallery .media-carousel-viewport::-webkit-scrollbar { display: none; }
+.landing-hero .hero-gallery .media-carousel-track {
+  display: flex;
+  transform: none !important;
+  transition: none !important;
+  width: auto;
+  gap: 0;
+}
+.landing-hero .hero-gallery .media-carousel-slide {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+  flex: 0 0 100%;
+  min-width: 100%;
+  width: 100%;
+  inset: auto;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  pointer-events: auto;
+}
