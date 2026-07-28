@@ -297,9 +297,9 @@
     rev3_name: { ar: "مهدي", en: "Mehdi", fr: "Mehdi" },
     rev3_city: { ar: "طنجة", en: "Tangier", fr: "Tanger" },
     rev3_text: {
-      ar: "الباك زوين، Night كيدوم بزاف وجاباتني عليه بزاف ديال المجاملات. Day خفيف شوية على ذوقي فالصيف، ولكن بجوج كيستاهلو الثمن",
-      en: "Nice pack, Night lasts long and got me plenty of compliments. Day is a bit light for my taste in summer, but together they're worth the price.",
-      fr: "Beau pack, Night tient longtemps et m'a valu plein de compliments. Day est un peu léger à mon goût en été, mais les deux valent le prix."
+      ar: "وصلاتني الطلبية مغلفة مزيان، Night كيدوم بزاف وجاباتني عليه بزاف ديال المجاملات. Day خفيف شوية على ذوقي فالصيف، ولكن بجوج كيستاهلو الثمن",
+      en: "The parcel arrived properly packed. Night lasts long and got me plenty of compliments. Day is a bit light for my taste in summer, but together they're worth the price.",
+      fr: "Le colis est arrivé bien emballé. Night tient longtemps et m'a valu plein de compliments. Day est un peu léger à mon goût en été, mais les deux valent le prix."
     },
     rev4_name: { ar: "رضا", en: "Reda", fr: "Reda" },
     rev4_city: { ar: "أكادير", en: "Agadir", fr: "Agadir" },
@@ -311,9 +311,9 @@
     rev5_name: { ar: "سفيان .ك", en: "Sofiane K.", fr: "Sofiane K." },
     rev5_city: { ar: "فاس", en: "Fes", fr: "Fès" },
     rev5_text: {
-      ar: "تصويرة من بعد ما وصلني الباك، جوج القنينات أصليين والتغليف محترف. إيلا بقى العرض غادي نشري باك آخر نهديه لبا",
-      en: "Photo right after the pack arrived, both bottles are genuine and the packaging is professional. If the offer holds I'm buying another pack as a gift for my father.",
-      fr: "Photo juste après réception du pack, les deux flacons sont authentiques et l'emballage est soigné. Si l'offre tient, j'en achète un autre pour mon père."
+      ar: "تصويرة من بعد ما وصلني الباك، جوج القنينات أصليين وحاطهم فالحمام كنستعملهم كل نهار. إيلا بقى العرض غادي نشري باك آخر نهديه لبا",
+      en: "Photo after the pack arrived, both bottles are genuine and they live on my bathroom shelf now. If the offer holds I'm buying another pack as a gift for my father.",
+      fr: "Photo après réception du pack, les deux flacons sont authentiques et ils sont posés dans ma salle de bain. Si l'offre tient, j'en achète un autre pour mon père."
     },
     rev_audio_label: {
       ar: "رسالة صوتية من الزبون",
@@ -571,10 +571,10 @@
     }
   });
 
-  // Bumped 11 -> 12 for the 4-slide manifest (decant slide removed). The
+  // Bumped 12 -> 13 for the real product photos (6-slide manifest). The
   // manifest lives under /images/, served immutable for a year, so a content
   // change with an unchanged URL would never reach a returning visitor.
-  var HERO_ASSET_VERSION = 12;
+  var HERO_ASSET_VERSION = 13;
   // lureher page has its OWN manifest — /images/hero/manifest.json belongs to
   // the live lure-her page; editing it there would change the live gallery.
   var HERO_MANIFEST_URL =
@@ -583,36 +583,50 @@
   var HERO_MANIFEST_FALLBACK = {
     baseUrl: "/images/hero/",
     slides: [
+      // Keep in sync with public/images/hero/manifest-lureher.json — this array
+      // is what paints if the manifest fetch fails, so a stale copy here shows a
+      // different gallery to anyone on a bad connection.
       {
         id: "pack",
-        image: "h-duo-v3-800.webp",
-        thumb: "h-duo-v3-800.webp",
-        alt: { ar: "باك LureHer الكامل، Night و Day", en: "The complete LureHer pack, Night and Day", fr: "Le pack LureHer complet, Night et Day" },
+        image: "lh-pack-800.webp",
+        thumb: "lh-pack-800.webp",
+        alt: { ar: "باك LureHer الكامل، Night و Day، جوج قنينات 50ml", en: "The complete LureHer pack, Night and Day, two 50ml bottles", fr: "Le pack LureHer complet, Night et Day, deux flacons 50ml" },
         caption: { ar: "الباك الكامل، LureHer Night × LureHer Day", fr: "Le pack complet, LureHer Night × LureHer Day" }
       },
       {
         id: "night",
-        image: "h-couple-v2-800.webp",
-        thumb: "h-couple-v2-800.webp",
-        alt: { ar: "LureHer Night، عطر الليل والخرجات", en: "LureHer Night, the night-out perfume", fr: "LureHer Night, le parfum des sorties" },
-        caption: { ar: "LureHer Night 50ml، عطر الليل والخرجات", fr: "LureHer Night 50ml, le parfum des sorties" }
+        image: "lh-night-800.webp",
+        thumb: "lh-night-800.webp",
+        alt: { ar: "LureHer Night، إكسير الفيرومونات، أكثر من 8 ساعات من الثبات", en: "LureHer Night, the pheromone elixir, over 8 hours of longevity", fr: "LureHer Night, l'élixir de phéromones, plus de 8 heures de tenue" },
+        caption: { ar: "LureHer Night، إكسير الفيرومونات", fr: "LureHer Night, l'élixir de phéromones" }
+      },
+      {
+        id: "night-notes",
+        image: "lh-night-notes-800.webp",
+        thumb: "lh-night-notes-800.webp",
+        alt: { ar: "LureHer Night، نكهة الكراميل والنعناع، مثير وجذاب وفوحان كبير", en: "LureHer Night, caramel and mint notes, bold with a big sillage", fr: "LureHer Night, notes de caramel et de menthe, sillage puissant" },
+        caption: { ar: "Night، نكهة الكراميل والنعناع", fr: "Night, notes de caramel et de menthe" }
       },
       {
         id: "day",
-        image: "h-solo-v2-800.webp",
-        thumb: "h-solo-v2-800.webp",
-        alt: { ar: "LureHer Day، عطر النهار والخدمة", en: "LureHer Day, the daytime and work perfume", fr: "LureHer Day, le parfum du jour et du travail" },
-        caption: { ar: "LureHer Day 50ml، عطر النهار والخدمة", fr: "LureHer Day 50ml, le parfum du jour et du travail" }
+        image: "lh-day-800.webp",
+        thumb: "lh-day-800.webp",
+        alt: { ar: "LureHer Day، إكسير الحضور، أكثر من 8 ساعات من الثبات", en: "LureHer Day, the presence elixir, over 8 hours of longevity", fr: "LureHer Day, l'élixir de présence, plus de 8 heures de tenue" },
+        caption: { ar: "LureHer Day، إكسير الحضور", fr: "LureHer Day, l'élixir de présence" }
       },
-      // The "tech" slide is gone: its image is the Layton 10ml decant, a product
-      // that is not in this offer, sitting under a caption promising 8h longevity.
-      // Restore a slide here only when there is a real photo to put in it.
       {
-        id: "guarantee",
-        image: "01-main.webp",
-        thumb: "01-main.webp",
-        alt: { ar: "ضمان LureHer", en: "The LureHer guarantee", fr: "La garantie LureHer" },
-        caption: { ar: "جرّب جوج العطور قبل ما تخلّص", fr: "Sentez les deux parfums avant de payer" }
+        id: "day-notes",
+        image: "lh-day-notes-800.webp",
+        thumb: "lh-day-notes-800.webp",
+        alt: { ar: "LureHer Day، نكهة التفاح والخزامة والياسمين، عطر العمل واللحظات المهمة", en: "LureHer Day, apple, lavender and jasmine, the perfume for work and the moments that count", fr: "LureHer Day, pomme, lavande et jasmin, le parfum du travail et des moments qui comptent" },
+        caption: { ar: "Day، نكهة التفاح والخزامة والياسمين", fr: "Day, pomme, lavande et jasmin" }
+      },
+      {
+        id: "mix",
+        image: "lh-mix-800.webp",
+        thumb: "lh-mix-800.webp",
+        alt: { ar: "خلط LureHer Night مع LureHer Day، ريحة ثالثة جديدة، التفاح والكراميل والمسك الأبيض", en: "Layering LureHer Night with LureHer Day, a new third scent of apple, caramel and white musk", fr: "Superposer LureHer Night et LureHer Day, un troisième parfum de pomme, caramel et musc blanc" },
+        caption: { ar: "خلط جوج العطور، ريحة ثالثة سرية", fr: "Les deux superposés, un troisième parfum" }
       }
     ]
   };

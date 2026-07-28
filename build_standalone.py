@@ -68,7 +68,7 @@ PAGES = [
          description="جوج عطور 50ml: Night لليل وDay للنهار. القنينة وحدها بـ189 درهم، الباك بـ249. توصيل مجاني، الدفع عند الاستلام.",
          og_title="LureHer Night × LureHer Day — الباك الأصلي",
          og_description="جوج عطور 50ml بـ249 درهم · الدفع عند الاستلام",
-         og_image="/images/hero/h-duo-v3-800.webp"),
+         og_image="/images/hero/lh-pack-800.webp"),
     # Clarity rewrite of the 249 offer (2026-07-27 copy audit applied). Separate
     # slug + separate assets so /pages/lureher stays exactly as it is for
     # side-by-side comparison. Same offer, same pack key, same /api/order.
@@ -81,7 +81,7 @@ PAGES = [
          description="جوج عطور 50ml: Night لليل وDay للنهار. القنينة وحدها بـ189 درهم، الباك بـ249. توصيل مجاني، الدفع عند الاستلام.",
          og_title="LureHer Night × LureHer Day — الباك الأصلي",
          og_description="جوج عطور 50ml بـ249 درهم · الدفع عند الاستلام",
-         og_image="/images/hero/h-duo-v3-800.webp"),
+         og_image="/images/hero/lh-pack-800.webp"),
 ]
 
 # Meta browser pixel — pixel_id comes from standalone.config.json; the same
