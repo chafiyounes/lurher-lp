@@ -571,10 +571,11 @@
     }
   });
 
-  // Bumped 12 -> 13 for the real product photos (6-slide manifest). The
+  // Bumped 13 -> 14: his slide re-order, and the layering card re-exported
+  // under the same filename. The
   // manifest lives under /images/, served immutable for a year, so a content
   // change with an unchanged URL would never reach a returning visitor.
-  var HERO_ASSET_VERSION = 13;
+  var HERO_ASSET_VERSION = 14;
   // lureher page has its OWN manifest — /images/hero/manifest.json belongs to
   // the live lure-her page; editing it there would change the live gallery.
   var HERO_MANIFEST_URL =
@@ -587,10 +588,10 @@
       // is what paints if the manifest fetch fails, so a stale copy here shows a
       // different gallery to anyone on a bad connection.
       {
-        id: "pack",
-        image: "lh-pack-800.webp",
-        thumb: "lh-pack-800.webp",
-        alt: { ar: "باك LureHer الكامل، Night و Day، جوج قنينات 50ml", en: "The complete LureHer pack, Night and Day, two 50ml bottles", fr: "Le pack LureHer complet, Night et Day, deux flacons 50ml" },
+        id: "hands",
+        image: "lh-hands-800.webp",
+        thumb: "lh-hands-800.webp",
+        alt: { ar: "جوج قنينات LureHer 50ml فاليد، Night و Day", en: "Both LureHer 50ml bottles in hand, Night and Day", fr: "Les deux flacons LureHer 50ml en main, Night et Day" },
         caption: { ar: "الباك الكامل، LureHer Night × LureHer Day", fr: "Le pack complet, LureHer Night × LureHer Day" }
       },
       {
@@ -601,18 +602,18 @@
         caption: { ar: "LureHer Night، إكسير الفيرومونات", fr: "LureHer Night, l'élixir de phéromones" }
       },
       {
-        id: "night-notes",
-        image: "lh-night-notes-800.webp",
-        thumb: "lh-night-notes-800.webp",
-        alt: { ar: "LureHer Night، نكهة الكراميل والنعناع، مثير وجذاب وفوحان كبير", en: "LureHer Night, caramel and mint notes, bold with a big sillage", fr: "LureHer Night, notes de caramel et de menthe, sillage puissant" },
-        caption: { ar: "Night، نكهة الكراميل والنعناع", fr: "Night, notes de caramel et de menthe" }
-      },
-      {
         id: "day",
         image: "lh-day-800.webp",
         thumb: "lh-day-800.webp",
         alt: { ar: "LureHer Day، إكسير الحضور، أكثر من 8 ساعات من الثبات", en: "LureHer Day, the presence elixir, over 8 hours of longevity", fr: "LureHer Day, l'élixir de présence, plus de 8 heures de tenue" },
         caption: { ar: "LureHer Day، إكسير الحضور", fr: "LureHer Day, l'élixir de présence" }
+      },
+      {
+        id: "night-notes",
+        image: "lh-night-notes-800.webp",
+        thumb: "lh-night-notes-800.webp",
+        alt: { ar: "LureHer Night، نكهة الكراميل والنعناع، مثير وجذاب وفوحان كبير", en: "LureHer Night, caramel and mint notes, bold with a big sillage", fr: "LureHer Night, notes de caramel et de menthe, sillage puissant" },
+        caption: { ar: "Night، نكهة الكراميل والنعناع", fr: "Night, notes de caramel et de menthe" }
       },
       {
         id: "day-notes",

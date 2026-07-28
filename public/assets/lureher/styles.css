@@ -2245,6 +2245,14 @@ button.btn-primary .material-symbols-outlined {
 
 
 #why-section .split-row { max-width: var(--max-w); margin-inline: auto; }
+/* Chemistry section reads top-down at every width: title, then the layering
+   photo, then the three lines that explain it. The side-by-side split put the
+   photo before the heading on desktop, so the picture arrived with nothing
+   telling you what it was. */
+.split-row--stacked { flex-direction: column !important; align-items: center; }
+.split-row--stacked .section-head { width: 100%; margin-bottom: 0; }
+.split-row--stacked .split-media { width: 100%; max-width: 520px; }
+.split-row--stacked .split-content { width: 100%; max-width: 640px; }
 #why-section .h-card .t-h3 { margin-bottom: 6px; font-size: clamp(1.05rem, 3.5vw, 1.35rem); }
 #why-section .h-card-p { display: block !important; margin: 0; }
 
